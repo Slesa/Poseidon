@@ -12,6 +12,11 @@ namespace Ics.Model
         /// </summary>
         public virtual int Plu { get; set; }
 
+        public virtual IEnumerable<RecipeItem> RecipeItems
+        {
+            get { return _recipeItems; }
+        }
+
         public virtual void AddRecipeItem(RecipeItem recipeItem)
         {
             recipeItem.Recipe = this;
