@@ -19,7 +19,7 @@ namespace Ics.Model
         /// <summary>
         /// The parent of this unit, if one exists
         /// </summary>
-        public virtual Unit parent { get; set; }
+        public virtual Unit Parent { get; set; }
         /// <summary>
         /// Translation factor to the parent
         /// </summary>
