@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Ums.OfficeModule.View.ListUsersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Resources="clr-namespace:Ums.OfficeModule.Resources" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel LastChildFill="True">
+
+        <StackPanel x:Name="CommandButtons">
+            <Button x:Name="Add"
+                    Content="{x:Static Resources:Strings.Button_Add}"
+                    ToolTip="{x:Static Resources:Strings.ListUsers_Add_ToolTip}"/>
+            <Button x:Name="Edit"
+                    Content="{x:Static Resources:Strings.Button_Edit}"
+                    ToolTip="{x:Static Resources:Strings.ListUsers_Edit_ToolTip}"/>
+            <Button x:Name="Remove"
+                    Content="{x:Static Resources:Strings.Button_Remove}"
+                    ToolTip="{x:Static Resources:Strings.ListUsers_Remove_ToolTip}"/>
+        </StackPanel>
+
+        <ListView x:Name="UserList">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{x:Static Resources:Strings.ListUsers_Header_Name}" DisplayMemberBinding="{Binding Path=Name}"/>
+                    <GridViewColumn Header="{x:Static Resources:Strings.ListUsers_Header_UserRole}" DisplayMemberBinding="{Binding Path=UserRole.Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </DockPanel>
+</UserControl>

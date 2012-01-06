@@ -1,0 +1,38 @@
+﻿<Window x:Class="BackOffice.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" MinHeight="600" MinWidth="480"
+        Icon="Resources/Office.png"
+        Style="{DynamicResource AppShellViewSkin}">
+
+    <DockPanel Margin="5" LastChildFill="True">
+
+        <StackPanel x:Name="AppTitle" Style="{DynamicResource AppTitlePanel}" DockPanel.Dock="Top" >
+            <Rectangle x:Name="TitleIcon" Style="{DynamicResource AppTitleIcon}" >
+                <!-- ToolTipService.ToolTip="{x:Static Resources:Strings.AppTitleToolTip}" -->
+                <Rectangle.Fill>
+                    <ImageBrush Stretch="Uniform" ImageSource="/BackOffice;component/Resources/Office.png" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="TitleText" Style="{DynamicResource AppTitleText}" Text="Poseidon Office">
+            </TextBlock>
+        </StackPanel>
+
+        <ListBox x:Name="Items" MinWidth="10" Style="{DynamicResource AppModuleItemsList}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button ToolTip="{Binding ToolTip}" cal:Message.Attach="ActivateItem($datacontext)" Style="{DynamicResource AppModuleItemButton}">
+                        <StackPanel>
+                            <Image Source="{Binding IconFileName}" Style="{DynamicResource AppModuleItemIcon}"/>
+                            <TextBlock Text="{Binding ModuleName}" Style="{DynamicResource AppModuleItemText}"/>
+                        </StackPanel>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox>
+        
+        <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        
+    </DockPanel>
+
+</Window>

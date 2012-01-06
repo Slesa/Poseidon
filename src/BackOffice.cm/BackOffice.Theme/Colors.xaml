@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    
+                    >
+
+    <SolidColorBrush x:Key="AppShellViewBackground" Color="#FF05010A"/>
+    
+    <SolidColorBrush x:Key="AppTitlePanelBackground" Color="#FFFFAF00"/>
+
+    <SolidColorBrush x:Key="AppTitleTextForeground" Color="#FF05010A"/>
+    <SolidColorBrush x:Key="AppModuleItemsBackground" Color="#FFFFAF00"/>
+
+</ResourceDictionary>
