@@ -55,6 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="InFileDatabaseSpecs.cs" />
     <Compile Include="InMemoryDatabaseSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

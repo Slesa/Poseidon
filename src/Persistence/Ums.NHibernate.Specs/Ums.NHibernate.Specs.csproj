@@ -49,6 +49,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="TokenMapSpecs.cs" />
     <Compile Include="UserMapSpecs.cs" />
     <Compile Include="UserRoleMapSpecs.cs" />

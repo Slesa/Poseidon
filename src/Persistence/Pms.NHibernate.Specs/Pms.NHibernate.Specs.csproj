@@ -49,6 +49,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="CurrencyMapSpecs.cs" />
     <Compile Include="DiscountMapSpecs.cs" />
     <Compile Include="PayformMapSpecs.cs" />
