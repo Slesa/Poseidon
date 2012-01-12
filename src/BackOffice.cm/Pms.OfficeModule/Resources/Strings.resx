@@ -117,46 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Button_Add" xml:space="preserve">
-    <value>_New</value>
+  <data name="CurrenciesItemName" xml:space="preserve">
+    <value>Currencies</value>
   </data>
-  <data name="Button_Edit" xml:space="preserve">
-    <value>_Edit</value>
+  <data name="CurrenciesItemToolTip" xml:space="preserve">
+    <value>Manage your currencies</value>
   </data>
-  <data name="Button_Remove" xml:space="preserve">
-    <value>_Remove</value>
+  <data name="DiscountsItemName" xml:space="preserve">
+    <value>Discounts</value>
   </data>
-  <data name="ListUsers_Add_ToolTip" xml:space="preserve">
-    <value>Add new user...</value>
+  <data name="DiscountsItemToolTip" xml:space="preserve">
+    <value>Manage your discounts</value>
   </data>
-  <data name="ListUsers_Edit_ToolTip" xml:space="preserve">
-    <value>Edit user</value>
+  <data name="PayformsItemName" xml:space="preserve">
+    <value>Payforms</value>
   </data>
-  <data name="ListUsers_Header_Name" xml:space="preserve">
-    <value>Name</value>
+  <data name="PayformsItemToolTip" xml:space="preserve">
+    <value>Manage your payforms</value>
   </data>
-  <data name="ListUsers_Header_UserRole" xml:space="preserve">
-    <value>User role</value>
+  <data name="PmsOfficeModule" xml:space="preserve">
+    <value>POS Management</value>
   </data>
-  <data name="ListUsers_Remove_ToolTip" xml:space="preserve">
-    <value>Remove user</value>
+  <data name="PmsOfficeModuleToolTip" xml:space="preserve">
+    <value>Manage the POSenvironment</value>
   </data>
-  <data name="UmsOfficeModule" xml:space="preserve">
-    <value>User Management</value>
+  <data name="SalesFamiliesItemName" xml:space="preserve">
+    <value>Sales families</value>
   </data>
-  <data name="UmsOfficeModuleToolTip" xml:space="preserve">
-    <value>Manage users of the system, edit their profiles and their rights</value>
+  <data name="SalesFamiliesItemToolTip" xml:space="preserve">
+    <value>Manage your sales families</value>
   </data>
-  <data name="UserRolesItemName" xml:space="preserve">
-    <value>User roles</value>
+  <data name="SalesItemsItemName" xml:space="preserve">
+    <value>Sales items</value>
   </data>
-  <data name="UserRolesItemToolTip" xml:space="preserve">
-    <value>Edit user roles</value>
-  </data>
-  <data name="UsersItemName" xml:space="preserve">
-    <value>Users</value>
-  </data>
-  <data name="UsersItemToolTip" xml:space="preserve">
-    <value>Edit users</value>
+  <data name="SalesItemsItemToolTip" xml:space="preserve">
+    <value>Manage your sales items</value>
   </data>
 </root>

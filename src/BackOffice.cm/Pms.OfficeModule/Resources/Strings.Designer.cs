@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ums.OfficeModule.Resources {
+namespace Pms.OfficeModule.Resources {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace Ums.OfficeModule.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Strings {
+    internal class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace Ums.OfficeModule.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ums.OfficeModule.Resources.Strings", typeof(Strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Pms.OfficeModule.Resources.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Ums.OfficeModule.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,128 +61,110 @@ namespace Ums.OfficeModule.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _New.
+        ///   Looks up a localized string similar to Currencies.
         /// </summary>
-        public static string Button_Add {
+        internal static string CurrenciesItemName {
             get {
-                return ResourceManager.GetString("Button_Add", resourceCulture);
+                return ResourceManager.GetString("CurrenciesItemName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Edit.
+        ///   Looks up a localized string similar to Manage your currencies.
         /// </summary>
-        public static string Button_Edit {
+        internal static string CurrenciesItemToolTip {
             get {
-                return ResourceManager.GetString("Button_Edit", resourceCulture);
+                return ResourceManager.GetString("CurrenciesItemToolTip", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Remove.
+        ///   Looks up a localized string similar to Discounts.
         /// </summary>
-        public static string Button_Remove {
+        internal static string DiscountsItemName {
             get {
-                return ResourceManager.GetString("Button_Remove", resourceCulture);
+                return ResourceManager.GetString("DiscountsItemName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new user....
+        ///   Looks up a localized string similar to Manage your discounts.
         /// </summary>
-        public static string ListUsers_Add_ToolTip {
+        internal static string DiscountsItemToolTip {
             get {
-                return ResourceManager.GetString("ListUsers_Add_ToolTip", resourceCulture);
+                return ResourceManager.GetString("DiscountsItemToolTip", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit user.
+        ///   Looks up a localized string similar to Payforms.
         /// </summary>
-        public static string ListUsers_Edit_ToolTip {
+        internal static string PayformsItemName {
             get {
-                return ResourceManager.GetString("ListUsers_Edit_ToolTip", resourceCulture);
+                return ResourceManager.GetString("PayformsItemName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to Manage your payforms.
         /// </summary>
-        public static string ListUsers_Header_Name {
+        internal static string PayformsItemToolTip {
             get {
-                return ResourceManager.GetString("ListUsers_Header_Name", resourceCulture);
+                return ResourceManager.GetString("PayformsItemToolTip", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User role.
+        ///   Looks up a localized string similar to POS Management.
         /// </summary>
-        public static string ListUsers_Header_UserRole {
+        internal static string PmsOfficeModule {
             get {
-                return ResourceManager.GetString("ListUsers_Header_UserRole", resourceCulture);
+                return ResourceManager.GetString("PmsOfficeModule", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove user.
+        ///   Looks up a localized string similar to Manage the POSenvironment.
         /// </summary>
-        public static string ListUsers_Remove_ToolTip {
+        internal static string PmsOfficeModuleToolTip {
             get {
-                return ResourceManager.GetString("ListUsers_Remove_ToolTip", resourceCulture);
+                return ResourceManager.GetString("PmsOfficeModuleToolTip", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Management.
+        ///   Looks up a localized string similar to Sales families.
         /// </summary>
-        public static string UmsOfficeModule {
+        internal static string SalesFamiliesItemName {
             get {
-                return ResourceManager.GetString("UmsOfficeModule", resourceCulture);
+                return ResourceManager.GetString("SalesFamiliesItemName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage users of the system, edit their profiles and their rights.
+        ///   Looks up a localized string similar to Manage your sales families.
         /// </summary>
-        public static string UmsOfficeModuleToolTip {
+        internal static string SalesFamiliesItemToolTip {
             get {
-                return ResourceManager.GetString("UmsOfficeModuleToolTip", resourceCulture);
+                return ResourceManager.GetString("SalesFamiliesItemToolTip", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User roles.
+        ///   Looks up a localized string similar to Sales items.
         /// </summary>
-        public static string UserRolesItemName {
+        internal static string SalesItemsItemName {
             get {
-                return ResourceManager.GetString("UserRolesItemName", resourceCulture);
+                return ResourceManager.GetString("SalesItemsItemName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit user roles.
+        ///   Looks up a localized string similar to Manage your sales items.
         /// </summary>
-        public static string UserRolesItemToolTip {
+        internal static string SalesItemsItemToolTip {
             get {
-                return ResourceManager.GetString("UserRolesItemToolTip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Users.
-        /// </summary>
-        public static string UsersItemName {
-            get {
-                return ResourceManager.GetString("UsersItemName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit users.
-        /// </summary>
-        public static string UsersItemToolTip {
-            get {
-                return ResourceManager.GetString("UsersItemToolTip", resourceCulture);
+                return ResourceManager.GetString("SalesItemsItemToolTip", resourceCulture);
             }
         }
     }

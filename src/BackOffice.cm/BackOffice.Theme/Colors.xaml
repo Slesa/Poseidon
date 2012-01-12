@@ -4,9 +4,24 @@
                     >
 
     <SolidColorBrush x:Key="AppShellViewBackground" Color="#FF05010A"/>
-    
     <SolidColorBrush x:Key="AppTitlePanelBackground" Color="#FFFFAF00"/>
+    <!-- SolidColorBrush x:Key="AppModuleItemHighlight" Color="#FF000000"/ -->
 
+    <LinearGradientBrush x:Key="AppModuleItemHighlight" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFD9EDFF" Offset="0"/>
+        <GradientStop Color="#FFC0DEFF" Offset="0.445"/>
+        <GradientStop Color="#FFC0D9FB" Offset="1"/>
+        <GradientStop Color="#FFAFD1F8" Offset="0.53"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AppModuleItemBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFBD69" Offset="0"/>
+        <GradientStop Color="#FFFFB75A" Offset="0.0967"/>
+        <GradientStop Color="#FFFFB14C" Offset="0.2580"/>
+        <GradientStop Color="#FFFB8C3C" Offset="0.3870"/>
+        <GradientStop Color="#FFFEB461" Offset="0.9677"/>
+        <GradientStop Color="#FFFEBB67" Offset="1"/>
+    </LinearGradientBrush>
+    
     <SolidColorBrush x:Key="AppTitleTextForeground" Color="#FF05010A"/>
     <SolidColorBrush x:Key="AppModuleItemsBackground" Color="#FFFFAF00"/>
 

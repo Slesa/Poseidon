@@ -1,26 +1,26 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    >
+                    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic">
 
-    <Style x:Key="AppShellViewSkin" TargetType="Window">
+    <Style x:Key="AppShellViewStyle" TargetType="Window">
         <Setter Property="Background" Value="{StaticResource AppShellViewBackground}"/>
     </Style>
-    
-    <Style x:Key="AppTitlePanel" TargetType="StackPanel">
+
+    <Style x:Key="AppTitlePanelStyle" TargetType="StackPanel">
         <Setter Property="Background" Value="{StaticResource AppTitlePanelBackground}"/>
         <Setter Property="Orientation" Value="Horizontal"/>
         <Setter Property="Margin" Value="0,0,0,20"/>
     </Style>
 
-    <Style x:Key="AppTitleIcon" TargetType="Rectangle">
+    <Style x:Key="AppTitleIconStyle" TargetType="Rectangle">
         <Setter Property="Margin" Value="10"/>
         <Setter Property="Height" Value="64"/>
         <Setter Property="Width" Value="64"/>
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="Opacity" Value="0.5"/>
     </Style>
-    
-    <Style x:Key="AppTitleText" TargetType="TextBlock">
+
+    <Style x:Key="AppTitleTextStyle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource AppTitleTextForeground}"/>
         <Setter Property="FontFamily" Value="Century Schoolbook"/>
         <Setter Property="Opacity" Value="0.5"/>
@@ -31,32 +31,146 @@
             <DropShadowEffect BlurRadius="1" Direction="343" ShadowDepth="2" />
         </TextBlock.Effect -->
     </Style>
-    
-    <!-- Style x:Key="AppModuleItemsPanel" TargetType="ItemsControl">
-        <Setter Property="Margin" Value="10"/>
-        <Setter Property="Padding" Value="0,0,10,0"/>
-    </Style -->
-    
-    <Style x:Key="AppModuleItemsList" TargetType="ListBox">
-        <!--<Setter Property="Margin" Value="10,10,10,0"/>-->
+
+    <Style x:Key="OfficeModulesListStyle" TargetType="TabControl">
+        <Setter Property="TabStripPlacement" Value="Bottom"/>
+        <Setter Property="Background" Value="{StaticResource AppModuleItemsBackground}"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="MinWidth" Value="100"/>
+        <Setter Property="MinHeight" Value="10"/>
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="DockPanel.Dock" Value="Left"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="#FF6593CF"/>
+        <Setter Property="BorderThickness" Value="1,1,1,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid ClipToBounds="true" SnapsToDevicePixels="True" KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="Row0" Height="Auto"/>
+                            <RowDefinition x:Name="Row1" Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="Column0"/>
+                            <ColumnDefinition x:Name="Column1" Width="0"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="ContentPanel" Grid.Column="0" Grid.Row="1"
+                              KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" 
+                              KeyboardNavigation.TabNavigation="Local">
+                            <theme:ClassicBorderDecorator
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderStyle="Raised"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                  Margin="2"
+                                                  x:Name="PART_SelectedContentHost"
+                                                  ContentSource="SelectedContent"/>
+                            </theme:ClassicBorderDecorator>
+                        </Grid>
+                        <StackPanel x:Name="HeaderPanel" Grid.Row="1" Margin="0,-2,0,0" 
+                                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                                    Width="Auto" Height="Auto" IsItemsHost="true"/>
+                    </Grid>
+                    <!--ControlTemplate.Triggers>
+                        <Trigger Property="TabStripPlacement" Value="Bottom">
+                            <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                            <Setter Property="Height" TargetName="Row0" Value="*"/>
+                            <Setter Property="Height" TargetName="Row1" Value="Auto"/>
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Left">
+                            <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                            <Setter Property="Grid.Column" TargetName="ContentPanel" Value="1"/>
+                            <Setter Property="Width" TargetName="Column0" Value="Auto"/>
+                            <Setter Property="Width" TargetName="Column1" Value="*"/>
+                            <Setter Property="Height" TargetName="Row0" Value="*"/>
+                            <Setter Property="Height" TargetName="Row1" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Right">
+                            <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                            <Setter Property="Grid.Column" TargetName="ContentPanel" Value="0"/>
+                            <Setter Property="Width" TargetName="Column0" Value="*"/>
+                            <Setter Property="Width" TargetName="Column1" Value="Auto"/>
+                            <Setter Property="Height" TargetName="Row0" Value="*"/>
+                            <Setter Property="Height" TargetName="Row1" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource AppModuleItemHighlight}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OfficeModuleItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="Padding" Value="12,2,12,2"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Background" Value="{DynamicResource AppModuleItemBackground}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border x:Name="Bd" SnapsToDevicePixels="true"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" BorderBrush="#FF6593CF">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                          ContentSource="Header" RecognizesAccessKey="true" HorizontalAlignment="Left"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="true">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource AppModuleItemHighlight}"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OfficeModuleItemIcon" TargetType="Image">
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Height" Value="32"/>
+        <!--Setter Property="HorizontalAlignment" Value="Center"/-->
+    </Style>
+
+    <Style x:Key="OfficeModuleItemText" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5,0,0,0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="ModuleItemsListStyle" TargetType="ListBox">
+        <!--<Setter Property="Margin" Value="-2"/>-->
         <!--<Setter Property="Padding" Value="0,0,20,0"/>-->
         <Setter Property="Background" Value="{StaticResource AppModuleItemsBackground}"/>
         <Setter Property="DockPanel.Dock" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
     </Style>
-    
-    <Style x:Key="AppModuleItemButton" TargetType="Button">
+
+    <Style x:Key="ModuleItemButton" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource AppModuleItemsBackground}"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="Width" Value="Auto"/>
+        <!--<Setter Property="HorizontalContentAlignment" Value="Stretch"/>-->
+        <!--<Setter Property="HorizontalAlignment" Value="Stretch"/>-->
+        <!--<Setter Property="Width" Value="*"/>-->
+        <!--<Setter Property="Width" Value="Auto"/>-->
     </Style>
     
-    <Style x:Key="AppModuleItemIcon" TargetType="Image">
+    <Style x:Key="ModuleItemIcon" TargetType="Image">
         <Setter Property="Width" Value="48"/>
         <Setter Property="Height" Value="48"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
-    
-    <Style x:Key="AppModuleItemText" TargetType="TextBlock">
-        <Setter Property="HorizontalAlignment" Value="Center"/>
+
+    <Style x:Key="ModuleItemText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
     </Style>
 </ResourceDictionary>

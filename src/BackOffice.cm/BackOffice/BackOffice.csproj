@@ -61,14 +61,20 @@
     <Compile Include="..\..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="ShellViewModel.cs" />
+    <Compile Include="AppLogger.cs" />
+    <Compile Include="Resources\AppStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="IShell.cs" />
-    <Page Include="ShellView.xaml">
+    <Page Include="Views\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -91,6 +97,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppStrings.de-DE.resx" />
+    <EmbeddedResource Include="Resources\AppStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -99,6 +110,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Pms.Resources\Pms.Resources.csproj">
+      <Project>{59B74FE4-63FD-49E0-9E51-E7FB3AA4441A}</Project>
+      <Name>Pms.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Domain\Ums.Resources\Ums.Resources.csproj">
       <Project>{A6422E0C-3685-4A10-987B-E4D4458BB088}</Project>
       <Name>Ums.Resources</Name>
@@ -111,6 +126,10 @@
       <Project>{C3A0E276-E481-4F1B-8ABF-0A46C4BD6AD2}</Project>
       <Name>BackOffice.Theme</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pms.OfficeModule\Pms.OfficeModule.csproj">
+      <Project>{3F3FC46A-D238-4C11-8DD2-069ABD443E46}</Project>
+      <Name>Pms.OfficeModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ums.OfficeModule\Ums.OfficeModule.csproj">
       <Project>{464A4464-9F6A-4518-B9AE-5D44C1401A25}</Project>
       <Name>Ums.OfficeModule</Name>
@@ -119,10 +138,7 @@
   <ItemGroup>
     <Resource Include="Resources\Office.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

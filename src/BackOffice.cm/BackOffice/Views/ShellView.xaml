@@ -1,0 +1,101 @@
+﻿<Window x:Class="BackOffice.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
+        xmlns:BackOffice="clr-namespace:BackOffice" 
+        MinHeight="600" MinWidth="480"
+        Icon="../Resources/Office.png"
+        Style="{DynamicResource AppShellViewStyle}">
+
+    <Window.Resources>
+        <DataTemplate x:Key="ModuleItems">
+            <ListBox ItemsSource="{Binding ModuleItems}" Style="{DynamicResource ModuleItemsListStyle}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button ToolTip="{Binding ToolTip}" cal:Message.Attach="OnModuleItemClicked($datacontext)" Style="{DynamicResource ModuleItemButton}">
+                            <StackPanel Orientation="Horizontal" Width="Auto">
+                                <Image Source="{Binding IconFileName}" Style="{DynamicResource ModuleItemIcon}" />
+                                <TextBlock Text="{Binding ItemName}" Style="{DynamicResource ModuleItemText}" />
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ListBox>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="OfficeModule">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding IconFileName}" Style="{DynamicResource OfficeModuleItemIcon}"/>
+                <TextBlock Text="{Binding ModuleName}" Style="{DynamicResource OfficeModuleItemText}"/>
+            </StackPanel>
+        </DataTemplate>
+
+    </Window.Resources>
+    
+    <DockPanel Margin="5" LastChildFill="True">
+
+        <StackPanel x:Name="AppTitle" Style="{DynamicResource AppTitlePanelStyle}" DockPanel.Dock="Top" >
+            <Rectangle x:Name="TitleIcon" Style="{DynamicResource AppTitleIconStyle}" >
+                <!-- ToolTipService.ToolTip="{x:Static Resources:Strings.AppTitleToolTip}" -->
+                <Rectangle.Fill>
+                    <ImageBrush Stretch="Uniform" ImageSource="/BackOffice;component/Resources/Office.png" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="TitleText" Style="{DynamicResource AppTitleTextStyle}" Text="Poseidon Office">
+            </TextBlock>
+        </StackPanel>
+
+        <!-- ListBox x:Name="Items" MinWidth="10" Style="{DynamicResource OfficeModulesListStyle}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button ToolTip="{Binding ToolTip}" cal:Message.Attach="ActivateItem($datacontext)" Style="{DynamicResource AppModuleItemButton}">
+                        <StackPanel>
+                            <Image Source="{Binding IconFileName}" Style="{DynamicResource AppModuleItemIcon}"/>
+                            <TextBlock Text="{Binding ModuleName}" Style="{DynamicResource AppModuleItemText}"/>
+                        </StackPanel>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox -->
+
+        <TabControl x:Name="Modules" Style="{DynamicResource OfficeModulesListStyle}" 
+                    ItemContainerStyle="{DynamicResource OfficeModuleItemStyle}"
+                    ContentTemplate="{Binding Source={StaticResource ModuleItems}}"
+                    ItemTemplate="{Binding Source={StaticResource OfficeModule}}">
+            <!--TabControl.ContentTemplate>
+                <DataTemplate>
+                    <ListBox ItemsSource="{Binding ModuleItems}" ItemTemplate="{DynamicResource }"/>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding IconFileName}" Style="{DynamicResource AppModuleItemIcon}"/>
+                        <TextBlock Text="{Binding ModuleName}" Style="{DynamicResource AppModuleItemText}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TabControl.ItemTemplate-->
+        </TabControl>
+
+        <!--TabControl Width="360" Style="{DynamicResource OfficeModulesListStyle}">
+            <TabItem Header="Mail" Height="30" Style="{DynamicResource OfficeModuleItemStyle}" >
+                <TextBlock Text="Welcome to your mail"/>
+            </TabItem>
+            <TabItem Header="Calendar" Height="30" Style="{DynamicResource OfficeModuleItemStyle}" >
+                <TextBlock Text="This is your Calendar"/>
+            </TabItem>
+            <TabItem Header="Contacts" Height="30" Style="{DynamicResource OfficeModuleItemStyle}" >
+                <Grid/>
+            </TabItem>
+            <TabItem Header="Tasks" Height="30" Style="{DynamicResource OfficeModuleItemStyle}">
+                <Grid/>
+            </TabItem>
+        </TabControl-->
+
+        <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        
+    </DockPanel>
+
+</Window>
