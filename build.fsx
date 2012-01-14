@@ -46,6 +46,8 @@ Target "SetAssemblyInfo" (fun _ ->
     {p with
       CodeLanguage = CSharp;
       Guid = "";
+      ComVisible = None;
+      CLSCompliant = None;
       AssemblyCompany = "Slesa Solutions";
       AssemblyProduct = "Poseidon";
       AssemblyCopyright = "Copyright ©  2012";
@@ -82,6 +84,7 @@ Target "Default" DoNothing
 
 // Dependencies
 "Clean"
+  ==> "SetAssemblyInfo"
   ==> "BuildApp" <=> "BuildTest"
   ==> "Test"
   ==> "Default"
