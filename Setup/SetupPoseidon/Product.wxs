@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Product Id="85d37c9c-685c-41b7-a996-e2c6d92031b6"
+           Manufacturer="Slesa Solutions"
+           Name="Poseidon Setup"
+           Language="!(loc.Language)"
+           Version="1.0.0.0"
+           UpgradeCode="f6f2968f-d114-44b9-874e-4f32ffe64427">
+
+    <Package InstallerVersion="200" Compressed="yes"
+             Description="Poseidon - a POS environment"
+             Comments="(c) 2011 Slesa Solutions"
+             />
+
+    <!-- Systemvoraussetzung -->
+    <PropertyRef Id="NETFRAMEWORK40FULL" />
+    <Condition Message="!(loc.ErrorFramework)">NETFRAMEWORK40FULL</Condition>
+    <Condition Message="!(loc.ErrorAdminRights)">Privileged</Condition>
+
+    <!-- Icons -->
+    <Icon Id="I__BackOfficeIcon.exe" SourceFile="Resources\Poseidon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="I__BackOfficeIcon.exe"/>
+
+
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="APPLICATIONFOLDER" Name="Poseidon" />
+      </Directory>
+      <Directory Id="DesktopFolder"/>
+    </Directory>
+
+    <DirectoryRef Id="APPLICATIONFOLDER" FileSource="..\..\bin\build">
+
+      <Component Id="C__SharedComponents" Guid="b81ad615-4091-49a9-ab09-d0da690bcb05" DiskId="1">
+        <File Id="F__CaliburnMicro" Name="Caliburn.Micro.dll" />
+        <File Id="F__FLuentNHibernate" Name="FluentNHibernate.dll" />
+        <File Id="F__IesiCollections" Name="Iesi.Collections.dll" />
+        <File Id="F__NHibernate" Name="NHibernate.dll" />
+        <File Id="F__Interactivity" Name="System.Windows.Interactivity.dll" />
+      </Component>
+
+      <Component Id="C__BackOffice" Guid="{C46D1942-3C5C-4edf-8E06-36D48DFD8892}" DiskId="1">
+        <File Id="F__BackOffice" Name="BackOffice.exe" KeyPath="yes" />
+        <File Id="F__BackOfficeContract" Name="BackOffice.Contracts.dll" />
+        <File Id="F__BackOfficeTheme" Name="BackOffice.Theme.dll" />
+        <File Id="F__IcsModel" Name="Ics.Model.dll" />
+        <File Id="F__IcsNHibernate" Name="Ics.NHibernate.dll" />
+        <File Id="F__IcsResources" Name="Ics.Resources.dll" />
+        <File Id="F__ModelShared" Name="Model.Shared.dll" />
+        <File Id="F__PersistenceShared" Name="Persistence.Shared.dll" />
+
+        <Shortcut Id="S__BackOffice" Directory ="DesktopFolder"
+                  WorkingDirectory="INSTALLLOCATION"
+                  Name="Poseidon BackOffice"
+                  Icon="I__BackOfficeIcon.exe"
+                  Advertise="yes"
+                  Description="!(loc.BackOfficeDescription)" />
+      </Component>
+
+      <Component Id="C__BackOfficeUms" Guid="{A8A43C44-526D-487F-9319-855EA5BCF725}">
+        <File Id="F__UmsModel" Name="Ums.Model.dll" />
+        <File Id="F__UmsNHibernate" Name="Ums.NHibernate.dll" />
+        <File Id="F__UmsOfficeModule" Name="Ums.OfficeModule.dll" />
+        <File Id="F__UmsResources" Name="Ums.Resources.dll" />
+      </Component>
+
+      <Component Id="C__BackOfficePms" Guid="{BF7884AB-D67D-4773-B69B-6CFD563727B2}">
+        <File Id="F__PmsModel" Name="Pms.Model.dll" />
+        <File Id="F__PmsNHibernate" Name="Pms.NHibernate.dll" />
+        <File Id="F__PmsOfficeModule" Name="Pms.OfficeModule.dll" />
+        <File Id="F__PmsResources" Name="Pms.Resources.dll" />
+      </Component>
+
+    </DirectoryRef>
+
+    <Feature Id="SharedFiles" Level="1" InstallDefault="local" Absent="disallow" AllowAdvertise="no" TypicalDefault="install"
+             Title="!(loc.SharedFeatureTitle)"
+             ConfigurableDirectory="APPLICATIONFOLDER"
+             Description="!(loc.SharedFeatureDescription)">
+      <ComponentRef Id="C__SharedComponents" />
+    </Feature>
+
+    <Feature Id="BackOffice" Level="1" Display="expand" InstallDefault="local" AllowAdvertise="no"
+             Title="!(loc.BackOfficeFeatureTitle)"
+             Description="!(loc.BackOfficeFeatureDescription)">
+      <ComponentRef Id="C__BackOffice" />
+
+      <Feature Id="BackOfficeUms" Level="1" InstallDefault="local" AllowAdvertise="no"
+             Title="!(loc.BackOfficeUmsFeatureTitle)"
+             Description="!(loc.BackOfficeUmsFeatureDescription)">
+        <ComponentRef Id="C__BackOfficeUms" />
+      </Feature>
+      <Feature Id="BackOfficePms" Level="1" InstallDefault="local" AllowAdvertise="no"
+             Title="!(loc.BackOfficePmsFeatureTitle)"
+             Description="!(loc.BackOfficePmsFeatureDescription)">
+        <ComponentRef Id="C__BackOfficePms" />
+      </Feature>
+      
+    </Feature>
+
+    <Property Id="ApplicationFolderName" Value="Poseidon" />
+    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+    <!--<Property Id="ADDLOCAL" Value="SharedFiles" />-->
+
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf"/>
+    <WixVariable Id="WixUIDialogBmp" Value="$(sys.SOURCEFILEDIR)\Resources\WixUI_Bitmap.jpg" />
+    <WixVariable Id="WixUIBannerBmp" Value="$(sys.SOURCEFILEDIR)\Resources\WixUI_Banner.jpg" />
+
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <!--<UIRef Id="WixUI_Mondo" />-->
+    <UIRef Id="WixUI_Advanced" />
+    <!--<UIRef Id="WixUI_FeatureTree" />-->
+    <!--<UIRef Id="CustomUI_Mondo" />-->
+
+  </Product>
+</Wix>

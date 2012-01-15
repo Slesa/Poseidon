@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+
+  <String Id="Language">1031</String>
+  
+  <String Id="BackOfficeDescription">BackOffice to maintain data</String>
+  <String Id="SharedFeatureTitle">Shared files</String>
+  <String Id="SharedFeatureDescription">Files and components used by applications.</String>
+  <String Id="BackOfficeFeatureTitle">BackOffice</String>
+  <String Id="BackOfficeFeatureDescription">Backoffice to manage and maintain data.</String>
+  <String Id="BackOfficeUmsFeatureTitle">User Management System</String>
+  <String Id="BackOfficeUmsFeatureDescription">Modul to manage user and user rights.</String>
+  <String Id="BackOfficePmsFeatureTitle">POS Management System</String>
+  <String Id="BackOfficePmsFeatureDescription">Modul to manage the POS environment.</String>
+
+  <String Id="ErrorAdminRights">[ProductName] needs privileged user rights for installion.</String>
+  <String Id="ErrorFramework">Microsoft .NET Framework is not installed. [ProductName] requires .NET Framework 4.0!</String>
+  
+</WixLocalization>

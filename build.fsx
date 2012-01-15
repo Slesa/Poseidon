@@ -29,6 +29,7 @@ let mspecDir = packagesDir @@ "MSpec"
 let appReferences = !! @"src\**\*.*sproj"
 //  -- "**\*.Specs.*sproj"
 let testReferences = !! @"src\**\*.Specs.*sproj"
+let deployReferences = !! @"Setup\**\*.wixproj"
 
 // Targets
 
@@ -66,6 +67,11 @@ Target "BuildTest" (fun _ ->
     |> Log "TestBuildOutput: "
 )
 
+Target "Deploy" (fun _ ->
+  MSBuildRelease deployDir "Build" deployReferences
+    |> Log "DeployBuildOutput: "
+)
+
 Target "Test" (fun _ ->
 //  let MSpecVersion = GetPackageVersion packagesDir "Machine.Specifications"
 //  trace MSpecVersion
@@ -84,9 +90,10 @@ Target "Default" DoNothing
 
 // Dependencies
 "Clean"
-  ==> "SetAssemblyInfo"
+//  ==> "SetAssemblyInfo"
   ==> "BuildApp" <=> "BuildTest"
   ==> "Test"
+  ==> "Deploy"
   ==> "Default"
 
 if not isLocalBuild then

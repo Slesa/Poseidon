@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="de-de" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+
+  <String Id="Language">1031</String>
+  
+  <String Id="BackOfficeDescription">BackOffice yum Bearbeiten der Stammdaten</String>
+  <String Id="SharedFeatureTitle">Benötigte Dateien</String>
+  <String Id="SharedFeatureDescription">Von den Anwendungen gemeinsam benutze Dateien und Komponenten.</String>
+  <String Id="BackOfficeFeatureTitle">BackOffice</String>
+  <String Id="BackOfficeFeatureDescription">Backoffice zum Bearbeiten der Daten und Beziehungen.</String>
+  <String Id="BackOfficeUmsFeatureTitle">User Management System</String>
+  <String Id="BackOfficeUmsFeatureDescription">Modul zur Verwaltung von Benutzers und Benutzerrechten.</String>
+  <String Id="BackOfficePmsFeatureTitle">POS Management System</String>
+  <String Id="BackOfficePmsFeatureDescription">Modul zur Verwaltung der POS-Umgebung.</String>
+
+  <String Id="ErrorAdminRights">Die Installation von [ProductName] erfordert administrative Privilegien.</String>
+  <String Id="ErrorFramework">Microsoft .NET Framework wurde nicht gefunden. [ProductName] benötigt das .NET Framework 4.0.</String>
+
+  
+</WixLocalization>
