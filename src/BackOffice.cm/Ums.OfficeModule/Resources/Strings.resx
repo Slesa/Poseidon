@@ -126,6 +126,15 @@
   <data name="Button_Remove" xml:space="preserve">
     <value>_Remove</value>
   </data>
+  <data name="ListUserRolesTitle" xml:space="preserve">
+    <value>User roles</value>
+  </data>
+  <data name="ListUserRoles_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ListUsersTitle" xml:space="preserve">
+    <value>Users</value>
+  </data>
   <data name="ListUsers_Add_ToolTip" xml:space="preserve">
     <value>Add new user...</value>
   </data>

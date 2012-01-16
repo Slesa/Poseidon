@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
-using BackOffice.Contracts;
 using BackOffice.Resources;
+using BackOffice.Shared;
 using Caliburn.Micro;
 
 namespace BackOffice.ViewModels

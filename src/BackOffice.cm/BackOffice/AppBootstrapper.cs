@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using Caliburn.Micro;
+using Persistence.Shared;
+using Persistence.Shared.Configuration;
 
 namespace BackOffice
 {
@@ -32,35 +35,50 @@ namespace BackOffice
 
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
+            //batch.AddExportedValue<IPersistenceConfiguration>(
+            //    new SqlServerPersistenceConfiguration(ConfigurationManager.AppSettings["DbConnection"]));
             batch.AddExportedValue(_container);
             batch.AddExportedValue(catalog);
 
+            _container.ComposeExportedValue("ConnectionString", ConfigurationManager.AppSettings["DbConnection"]);
             _container.Compose(batch);
 
             LogManager.GetLog = type => new AppLogger(type);
         }
 
+        static IEnumerable<string> GetAssemblies()
+        {
+            yield return "Persistence.Shared.dll";
+
+            var directoryPath = AppDomain.CurrentDomain.BaseDirectory;
+            foreach (var dllPath in Directory.GetFiles(directoryPath, "*.NHibernate.dll"))
+                yield return dllPath;
+            foreach (var dllPath in Directory.GetFiles(directoryPath, "*.OfficeModule.dll"))
+                yield return dllPath;
+        }
+
         static void PreloadAssemblies()
         {
-            var directoryPath = AppDomain.CurrentDomain.BaseDirectory;
-            foreach (var dllPath in Directory.GetFiles(directoryPath, "*.OfficeModule.dll"))
+            foreach(var assembly in GetAssemblies())
+                PreloadAssembly(assembly);
+        }
+
+        static void PreloadAssembly(string fileName)
+        {
+            try
             {
-                Assembly assembly;
-                try
-                {
-                    assembly = Assembly.LoadFrom(dllPath);
-                    AssemblySource.Instance.Add(assembly);
-                }
-                catch (BadImageFormatException ex)
-                {
-                    System.Diagnostics.Trace.TraceError(ex.ToString());
-                    continue;
-                }
-                catch (FileNotFoundException ex)
-                {
-                    System.Diagnostics.Trace.TraceError(ex.ToString());
-                    continue;
-                }
+                var assembly = Assembly.LoadFrom(fileName);
+                AssemblySource.Instance.Add(assembly);
+            }
+            catch (BadImageFormatException ex)
+            {
+                System.Diagnostics.Trace.TraceError(ex.ToString());
+                return;
+            }
+            catch (FileNotFoundException ex)
+            {
+                System.Diagnostics.Trace.TraceError(ex.ToString());
+                return;
             }
         }
 

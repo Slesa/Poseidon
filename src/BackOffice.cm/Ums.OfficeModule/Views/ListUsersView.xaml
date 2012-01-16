@@ -3,23 +3,59 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Resources="clr-namespace:Ums.OfficeModule.Resources" mc:Ignorable="d" 
+             xmlns:Resources="clr-namespace:Ums.OfficeModule.Resources" 
+             xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <CollectionViewSource x:Key="UsersList" Source="{Binding Path=ElementList}">
+            <CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="DisplayName" Direction="Ascending" />
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+
+        <Style x:Key="ItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{DynamicResource ElementListViewItemStyle}">
+            <Setter Property="cal:Message.Attach" Value="[Event MouseDoubleClick] = [Action Open($this)]"/>
+        </Style>
+
+    </UserControl.Resources>
+
     <DockPanel LastChildFill="True">
 
-        <StackPanel x:Name="CommandButtons">
-            <Button x:Name="Add"
-                    Content="{x:Static Resources:Strings.Button_Add}"
-                    ToolTip="{x:Static Resources:Strings.ListUsers_Add_ToolTip}"/>
-            <Button x:Name="Edit"
-                    Content="{x:Static Resources:Strings.Button_Edit}"
-                    ToolTip="{x:Static Resources:Strings.ListUsers_Edit_ToolTip}"/>
-            <Button x:Name="Remove"
-                    Content="{x:Static Resources:Strings.Button_Remove}"
-                    ToolTip="{x:Static Resources:Strings.ListUsers_Remove_ToolTip}"/>
+        <StackPanel x:Name="CommandButtons" Style="{DynamicResource ModuleCommandsPanelStyle}">
+            <Button x:Name="Add" Style="{DynamicResource ModuleCommandButton}" 
+                    ToolTip="{x:Static Resources:Strings.ListUsers_Add_ToolTip}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{DynamicResource ModuleCommandIcon}" 
+                           Source="/BackOffice.Shared;component/Resources/ButtonAdd.png"/>
+                    <Label Style="{DynamicResource ModuleCommandText}"
+                           Content="{x:Static Resources:Strings.Button_Add}"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="Edit" Style="{DynamicResource ModuleCommandButton}" 
+                    ToolTip="{x:Static Resources:Strings.ListUsers_Edit_ToolTip}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{DynamicResource ModuleCommandIcon}" 
+                           Source="/BackOffice.Shared;component/Resources/ButtonEdit.png"/>
+                    <Label Style="{DynamicResource ModuleCommandText}"
+                           Content="{x:Static Resources:Strings.Button_Edit}"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="Remove" Style="{DynamicResource ModuleCommandButton}" 
+                    ToolTip="{x:Static Resources:Strings.ListUsers_Remove_ToolTip}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{DynamicResource ModuleCommandIcon}" 
+                           Source="/BackOffice.Shared;component/Resources/ButtonRemove.png"/>
+                    <Label Style="{DynamicResource ModuleCommandText}"
+                           Content="{x:Static Resources:Strings.Button_Remove}"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
 
-        <ListView x:Name="UserList">
+        <ListView x:Name="UserList" Style="{DynamicResource ElementsListViewStyle}"  
+                  ItemContainerStyle="{DynamicResource ElementListViewItemStyle}"
+                  DataContext="{StaticResource UsersList}" ItemsSource="{Binding}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{x:Static Resources:Strings.ListUsers_Header_Name}" DisplayMemberBinding="{Binding Path=Name}"/>

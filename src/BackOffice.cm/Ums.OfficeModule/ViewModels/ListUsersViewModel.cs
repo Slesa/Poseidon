@@ -1,22 +1,42 @@
 using System.ComponentModel.Composition;
+using System.Linq;
+using BackOffice.Shared;
 using Caliburn.Micro;
+using Ums.NHibernate.Queries;
 using Ums.OfficeModule.Resources;
 
 namespace Ums.OfficeModule.ViewModels
 {
-    [Export(typeof(IUmsModuleItem))]
-    public class UsersModuleItem : IUmsModuleItem
-    {
-        [Import(typeof (ListUsersViewModel))] ListUsersViewModel _viewModel;
-
-        public string ItemName { get { return Strings.UsersItemName; } }
-        public string ToolTip { get { return Strings.UsersItemToolTip; } }
-        public string IconFileName { get { return @"/Ums.Resources;component/User.png"; } }
-        public IScreen RelatedView { get { return _viewModel; } }
-    }
-
     [Export(typeof(ListUsersViewModel))]
-    public class ListUsersViewModel : Screen
+    public class ListUsersViewModel : SelectionListViewModel<UserRowViewModel>
     {
+        public ListUsersViewModel() 
+            : base(Strings.ListUsersTitle)
+        {
+            EventAggregator.Subscribe(this);
+        }
+
+        public void Add()
+        {
+        }
+
+        public void Edit()
+        {
+        }
+
+        public void Open(UserRowViewModel viewModel)
+        {
+        }
+
+        public void Remove()
+        {
+        }
+
+        protected override BindableCollection<UserRowViewModel> CreateElementList()
+        {
+            return new BindableCollection<UserRowViewModel>(DbConversation
+                .Query(new AllUsersQuery())
+                .Select(x=>new UserRowViewModel(x)));
+        }
     }
 }

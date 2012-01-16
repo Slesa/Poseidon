@@ -3,7 +3,7 @@ using Persistence.Shared;
 
 namespace NHibernate.Specs.Shared
 {
-    class SqLiteInFileDatabaseConfiguration : IPersistenceConfiguration
+    public class SqLiteInFileDatabaseConfiguration : IPersistenceConfiguration
     {
         public IPersistenceConfigurer GetConfiguration()
         {

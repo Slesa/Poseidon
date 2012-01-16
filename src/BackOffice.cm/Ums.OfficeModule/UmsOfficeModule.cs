@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using BackOffice.Contracts;
+using BackOffice.Shared;
 using Ums.OfficeModule.Resources;
 
 namespace Ums.OfficeModule

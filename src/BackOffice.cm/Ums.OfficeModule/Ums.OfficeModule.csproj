@@ -57,11 +57,22 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ListUsersViewModel.cs" />
+    <Compile Include="UserRolesModuleItem.cs" />
+    <Compile Include="ViewModels\UserRoleRowViewModel.cs" />
+    <Compile Include="ViewModels\UserRowViewModel.cs" />
+    <Compile Include="UsersModuleItem.cs" />
+    <Compile Include="Views\ListUserRolesView.xaml.cs">
+      <DependentUpon>ListUserRolesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListUsersView.xaml.cs">
       <DependentUpon>ListUsersView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\ListUserRolesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ListUsersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,13 +92,29 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Model.Shared\Model.Shared.csproj">
+      <Project>{9E81D201-3FDD-4C8F-97A6-6104C8E9CED9}</Project>
+      <Name>Model.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Ums.Model\Ums.Model.csproj">
+      <Project>{0DD60B2B-7035-44A2-B7E9-225DFBDF8B22}</Project>
+      <Name>Ums.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Domain\Ums.Resources\Ums.Resources.csproj">
       <Project>{A6422E0C-3685-4A10-987B-E4D4458BB088}</Project>
       <Name>Ums.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BackOffice.Contracts\BackOffice.Contracts.csproj">
-      <Project>{3E2422C7-FA84-4787-8536-1E27723D813A}</Project>
-      <Name>BackOffice.Contracts</Name>
+    <ProjectReference Include="..\..\Persistence\Persistence.Shared\Persistence.Shared.csproj">
+      <Project>{BA6CB8D1-39B7-4B5A-9872-5FC93688A3B4}</Project>
+      <Name>Persistence.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Persistence\Ums.NHibernate\Ums.NHibernate.csproj">
+      <Project>{2CB7EDBC-A776-4B22-9034-35BFE2601FA3}</Project>
+      <Name>Ums.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Shared\BackOffice.Shared.csproj">
+      <Project>{853D4865-2D84-44F8-880C-87BC92032D96}</Project>
+      <Name>BackOffice.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-using BackOffice.Contracts;
+using BackOffice.Shared;
 
 namespace Ums.OfficeModule
 {

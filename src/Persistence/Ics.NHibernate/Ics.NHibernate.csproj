@@ -41,6 +41,7 @@
       <HintPath>..\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
@@ -48,16 +49,17 @@
     <Compile Include="..\..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="ProductionItemMap.cs" />
-    <Compile Include="PurchaseFamilyMap.cs" />
-    <Compile Include="PurchaseItemMap.cs" />
-    <Compile Include="RecipeableItemMap.cs" />
-    <Compile Include="RecipeItemMap.cs" />
-    <Compile Include="RecipeMap.cs" />
-    <Compile Include="StockItemMap.cs" />
-    <Compile Include="StockMap.cs" />
-    <Compile Include="UnitMap.cs" />
-    <Compile Include="UnitTypeMap.cs" />
+    <Compile Include="IcsModelContributor.cs" />
+    <Compile Include="Maps\ProductionItemMap.cs" />
+    <Compile Include="Maps\PurchaseFamilyMap.cs" />
+    <Compile Include="Maps\PurchaseItemMap.cs" />
+    <Compile Include="Maps\RecipeableItemMap.cs" />
+    <Compile Include="Maps\RecipeItemMap.cs" />
+    <Compile Include="Maps\RecipeMap.cs" />
+    <Compile Include="Maps\StockItemMap.cs" />
+    <Compile Include="Maps\StockMap.cs" />
+    <Compile Include="Maps\UnitMap.cs" />
+    <Compile Include="Maps\UnitTypeMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +73,10 @@
     <ProjectReference Include="..\..\Domain\Model.Shared\Model.Shared.csproj">
       <Project>{9E81D201-3FDD-4C8F-97A6-6104C8E9CED9}</Project>
       <Name>Model.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence.Shared\Persistence.Shared.csproj">
+      <Project>{BA6CB8D1-39B7-4B5A-9872-5FC93688A3B4}</Project>
+      <Name>Persistence.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

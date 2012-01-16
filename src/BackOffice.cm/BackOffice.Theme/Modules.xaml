@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic"
+                    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
+
+    <Style x:Key="ModuleCommandsPanelStyle" TargetType="StackPanel">
+        <Setter Property="Background" Value="{StaticResource AppModuleItemHighlight}"/>
+        <Setter Property="Orientation" Value="Vertical"/>
+        <Setter Property="DockPanel.Dock" Value="Right"/>
+    </Style>
+
+    <Style x:Key="ModuleCommandButton" TargetType="Button">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Background" Value="{StaticResource AppTitlePanelBackground}"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <!--<Setter Property="HorizontalAlignment" Value="Stretch"/>-->
+        <!--<Setter Property="Width" Value="*"/>-->
+        <!--<Setter Property="Width" Value="Auto"/>-->
+    </Style>
+
+    <Style x:Key="ModuleCommandIcon" TargetType="Image">
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Height" Value="32"/>
+    </Style>
+    
+    <Style x:Key="ModuleCommandText" TargetType="Label">
+    </Style>
+
+    <Style x:Key="ElementsListViewStyle" TargetType="ListView">
+        <Setter Property="AlternationCount" Value="2" />
+    </Style>
+
+    <Style x:Key="ElementListViewItemStyle" TargetType="{x:Type ListViewItem}">
+        <Setter Property="cal:Message.Attach" Value="[Event MouseDoubleClick] = [Action Open($this)]"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.AlternationIndex" Value="1" />
+                    <Condition Property="IsSelected" Value="False" />
+                    <Condition Property="IsMouseOver" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#EEEEEEEE" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
+    

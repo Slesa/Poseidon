@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ics.NHibernate", "Ics.NHibe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ics.NHibernate.Specs", "Ics.NHibernate.Specs\Ics.NHibernate.Specs.csproj", "{3AFFADE1-4F64-4B55-BDA8-CA946EA658BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.Shared.Specs", "Model.Shared.Specs\Model.Shared.Specs.csproj", "{E9466A72-DFD3-4D98-AFEA-EA7260CEA13E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Shared.Specs", "Persistence.Shared.Specs\Persistence.Shared.Specs.csproj", "{74CA7D11-9748-4AE0-9AFF-49C1E49A38ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +89,14 @@ Global
 		{3AFFADE1-4F64-4B55-BDA8-CA946EA658BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AFFADE1-4F64-4B55-BDA8-CA946EA658BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AFFADE1-4F64-4B55-BDA8-CA946EA658BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9466A72-DFD3-4D98-AFEA-EA7260CEA13E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9466A72-DFD3-4D98-AFEA-EA7260CEA13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9466A72-DFD3-4D98-AFEA-EA7260CEA13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9466A72-DFD3-4D98-AFEA-EA7260CEA13E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74CA7D11-9748-4AE0-9AFF-49C1E49A38ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CA7D11-9748-4AE0-9AFF-49C1E49A38ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CA7D11-9748-4AE0-9AFF-49C1E49A38ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CA7D11-9748-4AE0-9AFF-49C1E49A38ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

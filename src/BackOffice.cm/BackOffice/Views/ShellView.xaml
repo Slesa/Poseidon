@@ -94,8 +94,8 @@
             </TabItem>
         </TabControl-->
 
-        <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
-        
+        <ContentControl Grid.Row="1" x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+ 
     </DockPanel>
 
 </Window>

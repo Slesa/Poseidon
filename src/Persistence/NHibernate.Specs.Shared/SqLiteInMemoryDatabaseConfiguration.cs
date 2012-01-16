@@ -3,7 +3,7 @@ using Persistence.Shared;
 
 namespace NHibernate.Specs.Shared
 {
-    class SqLiteInMemoryDatabaseConfiguration : IPersistenceConfiguration
+    public class SqLiteInMemoryDatabaseConfiguration : IPersistenceConfiguration
     {
         public IPersistenceConfigurer GetConfiguration()
         {

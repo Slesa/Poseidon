@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.1.2.0\lib\Net40\System.Windows.Interactivity.dll</HintPath>
@@ -102,6 +103,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,9 +120,25 @@
       <Project>{A6422E0C-3685-4A10-987B-E4D4458BB088}</Project>
       <Name>Ums.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BackOffice.Contracts\BackOffice.Contracts.csproj">
-      <Project>{3E2422C7-FA84-4787-8536-1E27723D813A}</Project>
-      <Name>BackOffice.Contracts</Name>
+    <ProjectReference Include="..\..\Persistence\Ics.NHibernate\Ics.NHibernate.csproj">
+      <Project>{AB476BA2-2A37-4332-8477-38FCDA56FD99}</Project>
+      <Name>Ics.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Persistence\Persistence.Shared\Persistence.Shared.csproj">
+      <Project>{BA6CB8D1-39B7-4B5A-9872-5FC93688A3B4}</Project>
+      <Name>Persistence.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Persistence\Pms.NHibernate\Pms.NHibernate.csproj">
+      <Project>{D067F5FF-848D-4ECE-95C4-300C1BDDF31A}</Project>
+      <Name>Pms.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Persistence\Ums.NHibernate\Ums.NHibernate.csproj">
+      <Project>{2CB7EDBC-A776-4B22-9034-35BFE2601FA3}</Project>
+      <Name>Ums.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Shared\BackOffice.Shared.csproj">
+      <Project>{853D4865-2D84-44F8-880C-87BC92032D96}</Project>
+      <Name>BackOffice.Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
       <Project>{C3A0E276-E481-4F1B-8ABF-0A46C4BD6AD2}</Project>
@@ -138,7 +156,6 @@
   <ItemGroup>
     <Resource Include="Resources\Office.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

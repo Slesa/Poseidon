@@ -37,10 +37,14 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Inflector.Net">
+      <HintPath>..\..\..\lib\Inflector.Net.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
@@ -48,8 +52,19 @@
     <Compile Include="..\..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Configuration\FluentMappingConventions.cs" />
+    <Compile Include="Configuration\FluentMappingFromAssembly.cs" />
+    <Compile Include="DbConversation.cs" />
+    <Compile Include="IDbConversation.cs" />
+    <Compile Include="IDomainQuery.cs" />
+    <Compile Include="IMappingContributor.cs" />
+    <Compile Include="INHibernatePersistenceModel.cs" />
+    <Compile Include="INHibernateSessionFactory.cs" />
     <Compile Include="IPersistenceConfiguration.cs" />
+    <Compile Include="NHibernatePersistenceModel.cs" />
+    <Compile Include="NHibernateSessionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configuration\SqlServerPersistenceConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

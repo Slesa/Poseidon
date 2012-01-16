@@ -88,6 +88,24 @@ namespace Ums.OfficeModule.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ListUserRoles_Header_Name {
+            get {
+                return ResourceManager.GetString("ListUserRoles_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User roles.
+        /// </summary>
+        public static string ListUserRolesTitle {
+            get {
+                return ResourceManager.GetString("ListUserRolesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add new user....
         /// </summary>
         public static string ListUsers_Add_ToolTip {
@@ -129,6 +147,15 @@ namespace Ums.OfficeModule.Resources {
         public static string ListUsers_Remove_ToolTip {
             get {
                 return ResourceManager.GetString("ListUsers_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string ListUsersTitle {
+            get {
+                return ResourceManager.GetString("ListUsersTitle", resourceCulture);
             }
         }
         

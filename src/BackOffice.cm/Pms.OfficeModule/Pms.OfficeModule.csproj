@@ -63,9 +63,9 @@
       <Project>{59B74FE4-63FD-49E0-9E51-E7FB3AA4441A}</Project>
       <Name>Pms.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BackOffice.Contracts\BackOffice.Contracts.csproj">
-      <Project>{3E2422C7-FA84-4787-8536-1E27723D813A}</Project>
-      <Name>BackOffice.Contracts</Name>
+    <ProjectReference Include="..\BackOffice.Shared\BackOffice.Shared.csproj">
+      <Project>{853D4865-2D84-44F8-880C-87BC92032D96}</Project>
+      <Name>BackOffice.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
