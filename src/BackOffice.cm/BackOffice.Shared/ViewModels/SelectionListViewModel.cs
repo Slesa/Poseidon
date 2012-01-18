@@ -1,10 +1,9 @@
 using System.ComponentModel;
-using System.ComponentModel.Composition;
 using System.Linq;
 using Caliburn.Micro;
 using Persistence.Shared;
 
-namespace BackOffice.Shared
+namespace BackOffice.Shared.ViewModels
 {
     public abstract class SelectionListViewModel<T> : Screen
         where T : PropertyChangedBase, ISelectableRowViewModelBase
@@ -14,6 +13,7 @@ namespace BackOffice.Shared
         //[Import] // TODO: Importing would be nice
         protected IEventAggregator EventAggregator { get; set; }
         public IObservableCollection<T> ElementList { get; set; }
+
 
         public bool ItemSelected
         {

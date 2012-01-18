@@ -126,6 +126,12 @@
   <data name="Button_Remove" xml:space="preserve">
     <value>_Remove</value>
   </data>
+  <data name="EditUserView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditUserView_UserRole" xml:space="preserve">
+    <value>_User role:</value>
+  </data>
   <data name="ListUserRolesTitle" xml:space="preserve">
     <value>User roles</value>
   </data>
@@ -155,6 +161,15 @@
   </data>
   <data name="UmsOfficeModuleToolTip" xml:space="preserve">
     <value>Manage users of the system, edit their profiles and their rights</value>
+  </data>
+  <data name="UserModel_Name_missing" xml:space="preserve">
+    <value>Name is missing</value>
+  </data>
+  <data name="UserModel_UserRole_missing" xml:space="preserve">
+    <value>User role is missing</value>
+  </data>
+  <data name="UserRoleModel_Name_missing" xml:space="preserve">
+    <value>Name is missing</value>
   </data>
   <data name="UserRolesItemName" xml:space="preserve">
     <value>User roles</value>

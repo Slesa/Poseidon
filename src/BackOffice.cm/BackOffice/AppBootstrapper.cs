@@ -8,8 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Caliburn.Micro;
-using Persistence.Shared;
-using Persistence.Shared.Configuration;
 
 namespace BackOffice
 {

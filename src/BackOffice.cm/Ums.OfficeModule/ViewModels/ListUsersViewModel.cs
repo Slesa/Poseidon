@@ -1,6 +1,7 @@
 using System.ComponentModel.Composition;
 using System.Linq;
-using BackOffice.Shared;
+using BackOffice.Shared.Events;
+using BackOffice.Shared.ViewModels;
 using Caliburn.Micro;
 using Ums.NHibernate.Queries;
 using Ums.OfficeModule.Resources;
@@ -18,14 +19,21 @@ namespace Ums.OfficeModule.ViewModels
 
         public void Add()
         {
+            EventAggregator.Publish(new ActivateScreenEvent(EditUserViewModel.CreateViewModel(DbConversation)));
         }
 
         public void Edit()
         {
+            var user = ElementList.Where(row => row.IsSelected).FirstOrDefault();
+            if (user != null)
+                EventAggregator.Publish(new ActivateScreenEvent(
+                    EditUserViewModel.CreateViewModel(user.Id, DbConversation)));
         }
 
         public void Open(UserRowViewModel viewModel)
         {
+            EventAggregator.Publish(new ActivateScreenEvent(
+                EditUserViewModel.CreateViewModel(viewModel.Id, DbConversation)));
         }
 
         public void Remove()

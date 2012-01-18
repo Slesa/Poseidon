@@ -1,6 +1,6 @@
 using Caliburn.Micro;
 
-namespace BackOffice.Shared
+namespace BackOffice.Shared.ViewModels
 {
     public class SelectableRowViewModelBase<T> : PropertyChangedBase, ISelectableRowViewModelBase
     {

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Ums.OfficeModule.Views.EditUserRoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:BackOffice.Shared.Controls;assembly=BackOffice.Shared" 
+             xmlns:Resources="clr-namespace:Ums.OfficeModule.Resources" 
+             mc:Ignorable="d" 
+             d:DesignHeight="320" d:DesignWidth="480">
+    
+    <DockPanel LastChildFill="True" Style="{DynamicResource EditDialogStyle}">
+        <StackPanel Style="{DynamicResource EditDialogButtonPanelStyle}">
+            <Button x:Name="Save" Style="{DynamicResource EditDialogButtonStyle}" IsDefault="True" 
+                    Content="Save" 
+                    Controls:EyeCandy.Image="/BackOffice.Shared;component/Resources/ButtonOk.png"/>
+            <Button x:Name="Close" Style="{DynamicResource EditDialogButtonStyle}"
+                    Content="Cancel" 
+                    Controls:EyeCandy.Image="/BackOffice.Shared;component/Resources/ButtonCancel.png"/>
+        </StackPanel>
+
+        <TextBlock DockPanel.Dock="Top" x:Name="Title" Style="{DynamicResource EditDialogTitleStyle}"
+            Text="{Binding DisplayName}"/>
+
+        <Grid Style="{DynamicResource EditDialogFieldsPanelStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="0" Target="{Binding ElementName=_textName}" 
+                   Content="{x:Static Resources:Strings.EditUserView_Name}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="_textName" 
+                     Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
+                     ToolTip="{Binding ElementName=__textName, Path=(Validation.Errors).CurrentItem}"/>
+        </Grid>
+    </DockPanel>
+    
+</UserControl>

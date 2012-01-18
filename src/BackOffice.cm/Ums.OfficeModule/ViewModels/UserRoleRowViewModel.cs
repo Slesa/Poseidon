@@ -1,4 +1,4 @@
-﻿using BackOffice.Shared;
+﻿using BackOffice.Shared.ViewModels;
 using Ums.Model;
 
 namespace Ums.OfficeModule.ViewModels
@@ -10,6 +10,8 @@ namespace Ums.OfficeModule.ViewModels
             ElementData = userRole;
         }
 
+        public int Id { get { return ElementData.Id; } }
         public string Name { get { return ElementData.Name; } }
+
     }
 }

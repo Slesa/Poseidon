@@ -88,6 +88,24 @@ namespace Ums.OfficeModule.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditUserView_Name {
+            get {
+                return ResourceManager.GetString("EditUserView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _User role:.
+        /// </summary>
+        public static string EditUserView_UserRole {
+            get {
+                return ResourceManager.GetString("EditUserView_UserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string ListUserRoles_Header_Name {
@@ -174,6 +192,33 @@ namespace Ums.OfficeModule.Resources {
         public static string UmsOfficeModuleToolTip {
             get {
                 return ResourceManager.GetString("UmsOfficeModuleToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name is missing.
+        /// </summary>
+        public static string UserModel_Name_missing {
+            get {
+                return ResourceManager.GetString("UserModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User role is missing.
+        /// </summary>
+        public static string UserModel_UserRole_missing {
+            get {
+                return ResourceManager.GetString("UserModel_UserRole_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name is missing.
+        /// </summary>
+        public static string UserRoleModel_Name_missing {
+            get {
+                return ResourceManager.GetString("UserRoleModel_Name_missing", resourceCulture);
             }
         }
         

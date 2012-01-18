@@ -1,7 +1,26 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic"
-                    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
+                    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
+                    xmlns:Controls="clr-namespace:BackOffice.Shared.Controls;assembly=BackOffice.Shared">
+
+    <Style x:Key="ImageButton" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Width="Auto">
+                        <Image Source="{Binding Path=(Controls:EyeCandy.Image), 
+                            RelativeSource={RelativeSource FindAncestor,
+                            AncestorType={x:Type Button}}}"
+                               Margin="5"
+                               Height="22"
+                               Width="22" />
+                        <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style x:Key="ModuleCommandsPanelStyle" TargetType="StackPanel">
         <Setter Property="Background" Value="{StaticResource AppModuleItemHighlight}"/>
@@ -23,7 +42,7 @@
         <Setter Property="Width" Value="32"/>
         <Setter Property="Height" Value="32"/>
     </Style>
-    
+
     <Style x:Key="ModuleCommandText" TargetType="Label">
     </Style>
 
@@ -47,5 +66,34 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="EditDialogStyle" TargetType="DockPanel">
+        <Setter Property="Background" Value="LightBlue"/>
+    </Style>
+    
+    <Style x:Key="EditDialogButtonPanelStyle" TargetType="StackPanel">
+        <Setter Property="DockPanel.Dock" Value="Bottom"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="EditDialogButtonStyle" TargetType="Button" BasedOn="{StaticResource ImageButton}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="MinHeight" Value="25" />
+        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <Style x:Key="EditDialogTitleStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style x:Key="EditDialogFieldsPanelStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="LightYellow" />
+    </Style>
 </ResourceDictionary>
     
