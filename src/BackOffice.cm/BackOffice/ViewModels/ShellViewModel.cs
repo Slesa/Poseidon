@@ -37,10 +37,10 @@ namespace BackOffice.ViewModels
                 ActivateItem(view);
         }
 
-        public override void ActivateItem(IScreen item)
+        public override void ActivateItem(IScreen screen)
         {
-            Debug.WriteLine("Activating "+item.DisplayName);
-            base.ActivateItem(item);
+            Debug.WriteLine("Activating "+screen.DisplayName);
+            base.ActivateItem(screen);
             Debug.WriteLine("Activated " + this.ActiveItem.DisplayName);
         }
 
@@ -60,7 +60,11 @@ namespace BackOffice.ViewModels
         public void Handle(ActivateScreenEvent message)
         {
             //WindowManager.ShowDialog(message.Screen);
-            message.Screen.AttemptingDeactivation += (obj, args) => Items.Remove(message.Screen);
+            message.Screen.Deactivated += (obj, args) =>
+                {
+                    var screen = message.Screen;
+                    if (screen!=null) Items.Remove(screen);
+                };
             ActivateItem(message.Screen);
         }
         /*

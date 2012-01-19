@@ -34,6 +34,9 @@
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.1.3.0.717\lib\FluentNHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender">
+      <HintPath>..\..\..\lib\NHibernate.Profiler\HibernatingRhinos.Profiler.Appender.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -54,10 +57,12 @@
     </Compile>
     <Compile Include="Configuration\FluentMappingConventions.cs" />
     <Compile Include="Configuration\FluentMappingFromAssembly.cs" />
+    <Compile Include="Configuration\NhProfilerInitializer.cs" />
     <Compile Include="DbConversation.cs" />
     <Compile Include="IDbConversation.cs" />
     <Compile Include="IDomainQuery.cs" />
     <Compile Include="IMappingContributor.cs" />
+    <Compile Include="INHibernateInitializationAware.cs" />
     <Compile Include="INHibernatePersistenceModel.cs" />
     <Compile Include="INHibernateSessionFactory.cs" />
     <Compile Include="IPersistenceConfiguration.cs" />

@@ -8,6 +8,24 @@ using Ums.OfficeModule.Resources;
 
 namespace Ums.OfficeModule.Model
 {
+    public class UserChangedEvent
+    {
+        public UserChangedEvent(User user)
+        {
+            User = user;
+        }
+        public User User { get; set; }
+    }
+
+    public class UserRemovedEvent
+    {
+        public UserRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; set; }
+    }
+
     public class UserModel : PropertyChangedBase, IDataErrorInfo
     {
         readonly User _user;

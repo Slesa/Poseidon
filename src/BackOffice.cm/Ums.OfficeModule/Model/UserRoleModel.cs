@@ -8,6 +8,24 @@ using Ums.OfficeModule.Resources;
 
 namespace Ums.OfficeModule.Model
 {
+    public class UserRoleChangedEvent
+    {
+        public UserRoleChangedEvent(UserRole userRole)
+        {
+            UserRole = userRole;
+        }
+        public UserRole UserRole { get; set; }
+    }
+
+    public class UserRoleRemovedEvent
+    {
+        UserRoleRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; set; }
+    }
+
     public class UserRoleModel : PropertyChangedBase, IDataErrorInfo
     {
         readonly UserRole _userRole;
@@ -27,7 +45,11 @@ namespace Ums.OfficeModule.Model
         public string Name
         {
             get { return _userRole.Name; }
-            set { _userRole.Name = value; NotifyOfPropertyChange(()=>Error); }
+            set
+            {
+                _userRole.Name = value; 
+                NotifyOfPropertyChange(()=>Error);
+            }
         }
 
         public string this [string columnName]

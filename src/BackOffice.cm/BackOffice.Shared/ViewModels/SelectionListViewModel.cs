@@ -12,7 +12,9 @@ namespace BackOffice.Shared.ViewModels
         protected IDbConversation DbConversation;
         //[Import] // TODO: Importing would be nice
         protected IEventAggregator EventAggregator { get; set; }
-        public IObservableCollection<T> ElementList { get; set; }
+
+        IObservableCollection<T> _elementList;
+        public IObservableCollection<T> ElementList { get { return _elementList ?? (_elementList = PrepareElementList()); } }
 
 
         public bool ItemSelected
@@ -40,16 +42,17 @@ namespace BackOffice.Shared.ViewModels
             DbConversation = IoC.Get<IDbConversation>();
             EventAggregator = IoC.Get<IEventAggregator>();
             DisplayName = caption;
-            PrepareElementList();
         }
 
         protected abstract BindableCollection<T> CreateElementList();
 
-        void PrepareElementList()
+        IObservableCollection<T> PrepareElementList()
         {
-            ElementList = CreateElementList();
-            foreach(var element in ElementList)
+            IObservableCollection<T> result = null;
+            DbConversation.UsingTransaction(() => result = CreateElementList());
+            foreach(var element in result)
                 ConnectElement(element);
+            return result;
         }
 
         protected void ConnectElement(T element)

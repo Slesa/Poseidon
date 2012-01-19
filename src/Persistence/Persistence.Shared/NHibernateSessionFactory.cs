@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using FluentNHibernate.Cfg;
+using FluentNHibernate.Utils;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 
@@ -26,6 +27,13 @@ namespace Persistence.Shared
         ~NHibernateSessionFactory()
         {
             Dispose(false);
+        }
+
+        [ImportMany]
+        public INHibernateInitializationAware[] Initializers
+        {
+            get;
+            set;
         }
 
         protected virtual void Dispose(bool @explicit)
@@ -58,8 +66,12 @@ namespace Persistence.Shared
                 .Database(_persistenceConfiguration.GetConfiguration)
                 .Mappings(_persistenceModel.AddMappings);
 
+            var actualConfiguration = configuration.BuildConfiguration();
             CreateDatabaseWhenDebug(configuration);
+
             _sessionFactory = configuration.BuildSessionFactory();
+            Initializers.Each(x => x.Initialized(actualConfiguration, _sessionFactory));
+
             return _sessionFactory;
         }
 

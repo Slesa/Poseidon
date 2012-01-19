@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using BackOffice.Shared.ViewModels;
+using Caliburn.Micro;
 using Persistence.Shared;
 using Ums.Model;
 using Ums.NHibernate.Queries;
@@ -11,18 +12,19 @@ namespace Ums.OfficeModule.ViewModels
 {
     public class EditUserViewModel : EditItemViewModel<UserModel>, IDataErrorInfo
     {
-        static public EditUserViewModel CreateViewModel(IDbConversation dbConversation)
+        static public EditUserViewModel CreateViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
-            var viewModel = new EditUserViewModel(dbConversation);
+            var viewModel = new EditUserViewModel(dbConversation, eventAggregator);
             viewModel.Element = new UserModel();
             viewModel.DisplayName = "Add new user...";
-            viewModel.AllUserRoles = dbConversation.Query(new AllUserRolesQuery()).ToList();
+            dbConversation.UsingTransaction(()=>
+                viewModel.AllUserRoles = dbConversation.Query(new AllUserRolesQuery()).ToList());
             return viewModel;
         }
 
-        static public EditUserViewModel CreateViewModel(int userId, IDbConversation dbConversation)
+        static public EditUserViewModel CreateViewModel(int userId, IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
-            var viewModel = new EditUserViewModel(dbConversation);
+            var viewModel = new EditUserViewModel(dbConversation, eventAggregator);
             dbConversation.UsingTransaction(() =>
                 {
                     viewModel.Element = new UserModel(dbConversation.GetById<User>(userId));
@@ -32,8 +34,8 @@ namespace Ums.OfficeModule.ViewModels
             return viewModel;
         }
 
-        EditUserViewModel(IDbConversation dbConversation)
-            : base(dbConversation)
+        EditUserViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
+            : base(dbConversation, eventAggregator)
         {
         }
 
@@ -59,6 +61,14 @@ namespace Ums.OfficeModule.ViewModels
                 Element.UserRole = value;
                 NotifyOfPropertyChange(()=>UserRole);
             }
+        }
+
+        public void Save()
+        {
+            if (!SuccessfullySaved(() => DbConversation.Insert(Element.User)))
+                return;
+            EventAggregator.Publish(new UserChangedEvent(Element.User));
+            TryClose();
         }
     }
 }
