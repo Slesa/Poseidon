@@ -1,6 +1,7 @@
 using System;
 using FluentNHibernate.Testing;
 using Ics.Model;
+using Ics.NHibernate.Maps;
 using Machine.Specifications;
 using NHibernate;
 using NHibernate.Specs.Shared;
@@ -34,6 +35,7 @@ namespace Ics.NHibernate.Specs
         static PersistenceSpecification<RecipeItem> _check;
     }
 
+    /*
     [Subject(typeof(RecipeItemMap))]
     public class When_checking_persistence_specs_of_recipe_item_w_o_recipe : InMemoryDatabaseSpecs<RecipeItemMap>
     {
@@ -58,6 +60,7 @@ namespace Ics.NHibernate.Specs
 
         static Exception _error;
     }
+    */
 
     [Subject(typeof(RecipeItemMap))]
     public class When_checking_persistence_specs_of_recipe_item_w_o_item : InMemoryDatabaseSpecs<RecipeItemMap>

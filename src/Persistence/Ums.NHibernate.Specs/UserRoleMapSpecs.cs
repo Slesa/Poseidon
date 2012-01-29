@@ -2,6 +2,7 @@
 using Machine.Specifications;
 using NHibernate.Specs.Shared;
 using Ums.Model;
+using Ums.NHibernate.Maps;
 
 namespace Ums.NHibernate.Specs
 {

@@ -1,6 +1,7 @@
 using System;
 using FluentNHibernate.Testing;
 using Ics.Model;
+using Ics.NHibernate.Maps;
 using Machine.Specifications;
 using NHibernate;
 using NHibernate.Specs.Shared;
@@ -34,6 +35,7 @@ namespace Ics.NHibernate.Specs
         static PersistenceSpecification<PurchaseItem> _check;
     }
 
+    /*
     [Subject(typeof(PurchaseItemMap))]
     public class When_checking_persistence_specs_of_purchase_item_w_o_purchase_unit : InMemoryDatabaseSpecs<PurchaseItemMap>
     {
@@ -60,6 +62,7 @@ namespace Ics.NHibernate.Specs
 
         static Exception _error;
     }
+    */
 
     [Subject(typeof(PurchaseItemMap))]
     public class When_checking_persistence_specs_of_purchase_item_w_o_recipe_unit : InMemoryDatabaseSpecs<PurchaseItemMap>
@@ -88,6 +91,7 @@ namespace Ics.NHibernate.Specs
         static Exception _error;
     }
 
+    /*
     [Subject(typeof(PurchaseItemMap))]
     public class When_checking_persistence_specs_of_purchase_item_w_o_family : InMemoryDatabaseSpecs<PurchaseItemMap>
     {
@@ -114,4 +118,5 @@ namespace Ics.NHibernate.Specs
 
         static Exception _error;
     }
+    */
 }
