@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- http://social.msdn.microsoft.com/forums/en-US/tfsbuild/thread/1cc7b91d-1cb4-4850-8f7f-478dd2fc403e 
+    http://www.ageektrapped.com/blog/setting-properties-for-wix-in-msbuild/
+-->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
   <Product Id="85d37c9c-685c-41b7-a996-e2c6d92031b6"
            Manufacturer="Slesa Solutions"
            Name="Poseidon Setup"
            Language="!(loc.Language)"
-           Version="1.0.0.0"
+           Version="$(var.ProductVersion)"
            UpgradeCode="f6f2968f-d114-44b9-874e-4f32ffe64427">
 
     <Package InstallerVersion="200" Compressed="yes"

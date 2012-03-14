@@ -1,6 +1,7 @@
 using System;
 using FluentNHibernate.Testing;
 using Ics.Model;
+using Ics.NHibernate.Maps;
 using Machine.Specifications;
 using NHibernate;
 using NHibernate.Specs.Shared;

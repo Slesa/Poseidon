@@ -7,8 +7,8 @@ namespace Ics.NHibernate.Maps
     {
         public PurchaseItemMap()
         {
-            References(d => d.PurchaseFamily).Not.Nullable();
-            References(d => d.PurchaseUnit).Not.Nullable();
+            References(d => d.PurchaseFamily); //.Not.Nullable();
+            References(d => d.PurchaseUnit); //.Not.Nullable();
         }
     }
 }

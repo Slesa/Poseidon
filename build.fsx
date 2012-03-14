@@ -19,17 +19,17 @@ let testDir = binDir @@ @"test\"
 let metricsDir = binDir @@ @"metrics\"
 let reportDir = binDir @@ @"report\"
 let deployDir = binDir @@ @"deploy\"
-let deployZip = deployDir @@ sprintf "%s-%s.zip" projectName buildVersion
 let packagesDir = binDir @@ @"packages"
 let mspecDir = packagesDir @@ "MSpec"
+
 // tools
- 
 
 // files
 let appReferences = !! @"src\**\*.*sproj"
 //  -- "**\*.Specs.*sproj"
 let testReferences = !! @"src\**\*.Specs.*sproj"
 let deployReferences = !! @"Setup\**\*.wixproj"
+let setupDir = @"Setup\"
 
 // Targets
 
@@ -40,6 +40,10 @@ Target "Clean" (fun _ ->
   !! (@"src\Domain\packages\Machine.Specifications.*\**\*.*")
     |> CopyTo mspecDir
 )
+
+let currentVersion =
+  if not isLocalBuild then buildVersion else
+  "0.0.0.1"
 
 Target "SetAssemblyInfo" (fun _ ->
   AssemblyInfo
@@ -53,7 +57,7 @@ Target "SetAssemblyInfo" (fun _ ->
       AssemblyProduct = "Poseidon";
       AssemblyCopyright = "Copyright ©  2012";
       AssemblyTrademark = "GPL V2";
-      AssemblyVersion = buildVersion;
+      AssemblyVersion = currentVersion;
       OutputFileName = @".\src\VersionInfo.cs"})
 )
 
@@ -68,7 +72,10 @@ Target "BuildTest" (fun _ ->
 )
 
 Target "Deploy" (fun _ ->
-  MSBuildRelease deployDir "Build" deployReferences
+//  let deployMsi = deployDir @@ sprintf "%s-%s.msi" projectName currentVersion
+//  !! (setupDir @@ "*.wxl")
+//    |> WiX (fun p -> WiXDefaults) deployMsi 
+  MSBuildReleaseExt deployDir ["Version", currentVersion] "Build" deployReferences
     |> Log "DeployBuildOutput: "
 )
 
@@ -90,9 +97,9 @@ Target "Default" DoNothing
 
 // Dependencies
 "Clean"
-//  ==> "SetAssemblyInfo"
+  ==> "SetAssemblyInfo"
   ==> "BuildApp" <=> "BuildTest"
-  ==> "Test"
+//  ==> "Test"
   ==> "Deploy"
   ==> "Default"
 
