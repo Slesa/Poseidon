@@ -56,7 +56,7 @@
         <File Id="F__PersistenceShared" Name="Persistence.Shared.dll" />
 
         <Shortcut Id="S__BackOffice" Directory ="DesktopFolder"
-                  WorkingDirectory="INSTALLLOCATION"
+                  WorkingDirectory="ARPPRODUCTICON"
                   Name="Poseidon BackOffice"
                   Icon="I__BackOfficeIcon.exe"
                   Advertise="yes"
@@ -108,15 +108,15 @@
     <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
     <!--<Property Id="ADDLOCAL" Value="SharedFiles" />-->
 
-    <WixVariable Id="WixUILicenseRtf" Value="license.rtf"/>
-    <WixVariable Id="WixUIDialogBmp" Value="$(sys.SOURCEFILEDIR)\Resources\WixUI_Bitmap.jpg" />
-    <WixVariable Id="WixUIBannerBmp" Value="$(sys.SOURCEFILEDIR)\Resources\WixUI_Banner.jpg" />
+    <!--<WixVariable Id="WixUILicenseRtf" Value="license.rtf"/>-->
+    <!--<WixVariable Id="WixUIDialogBmp" Value="$(sys.SOURCEFILEDIR)\Resources\WixUI_Bitmap.jpg" />-->
+    <!--<WixVariable Id="WixUIBannerBmp" Value="$(sys.SOURCEFILEDIR)\Resources\WixUI_Banner.jpg" />-->
 
     <UIRef Id="WixUI_ErrorProgressText" />
     <!--<UIRef Id="WixUI_Mondo" />-->
-    <UIRef Id="WixUI_Advanced" />
+    <!--<UIRef Id="WixUI_Advanced" />-->
     <!--<UIRef Id="WixUI_FeatureTree" />-->
-    <!--<UIRef Id="CustomUI_Mondo" />-->
+    <UIRef Id="CustomUI_Mondo" />
 
   </Product>
 </Wix>

@@ -2,8 +2,13 @@
 <WixLocalization Culture="de-de" xmlns="http://schemas.microsoft.com/wix/2006/localization">
 
   <String Id="Language">1031</String>
-  
-  <String Id="BackOfficeDescription">BackOffice yum Bearbeiten der Stammdaten</String>
+  <String Id="ProductName">Poseidon</String>
+  <String Id="ProductDescr">Poseidon - eine POS-Umgebung</String>
+
+  <String Id="ErrorAdminRights">Die Installation von [ProductName] erfordert administrative Privilegien.</String>
+  <String Id="ErrorFramework">Microsoft .NET Framework wurde nicht gefunden. [ProductName] benötigt das .NET Framework 4.0.</String>
+
+  <String Id="BackOfficeDescription">BackOffice zum Bearbeiten der Stammdaten</String>
   <String Id="SharedFeatureTitle">Benötigte Dateien</String>
   <String Id="SharedFeatureDescription">Von den Anwendungen gemeinsam benutze Dateien und Komponenten.</String>
   <String Id="BackOfficeFeatureTitle">BackOffice</String>
@@ -12,9 +17,13 @@
   <String Id="BackOfficeUmsFeatureDescription">Modul zur Verwaltung von Benutzers und Benutzerrechten.</String>
   <String Id="BackOfficePmsFeatureTitle">POS Management System</String>
   <String Id="BackOfficePmsFeatureDescription">Modul zur Verwaltung der POS-Umgebung.</String>
+  <String Id="BackOfficeIcsFeatureTitle">Inventory Control System</String>
+  <String Id="BackOfficeIcsFeatureDescription">Modul zur Verwaltung von BestandszÃ¤hlern.</String>
 
-  <String Id="ErrorAdminRights">Die Installation von [ProductName] erfordert administrative Privilegien.</String>
-  <String Id="ErrorFramework">Microsoft .NET Framework wurde nicht gefunden. [ProductName] benötigt das .NET Framework 4.0.</String>
+  <String Id="DbConnectionTitle">Konfiguration der Datenbank-Verbindung</String>
+  <String Id="DbConnectionDescr">An dieser Stelle können Sie den Verbindungs-String bearbeiten </String>
+  <String Id="DbConnectionStr">Connection-String:</String>
 
-  
+  <String Id="BannerBitmapText">Banner Bitmap</String>
+
 </WixLocalization>
