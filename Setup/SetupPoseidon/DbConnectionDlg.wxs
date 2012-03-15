@@ -21,8 +21,8 @@
         <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
         <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
 
-        <Control Id="LblDbConnection" Type="Text" X="20" Y="60" Width="240" Height="12" NoPrefix="yes" Text="!(loc.DbConnectionStr)" />
-        <Control Id="EditDbConnection" Type="Edit" X="20" Y="75" Width="240" Height="18" Property="DBCONNECTION" Indirect="no" />
+        <Control Id="LblDbConnection" Type="Text" X="20" Y="60" Width="340" Height="12" NoPrefix="yes" Text="!(loc.DbConnectionStr)" />
+        <Control Id="EditDbConnection" Type="Edit" X="20" Y="75" Width="340" Height="18" Property="DBCONNECTION" Indirect="no" />
 
       </Dialog>
     </UI>

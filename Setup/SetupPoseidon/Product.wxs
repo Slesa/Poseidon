@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- http://social.msdn.microsoft.com/forums/en-US/tfsbuild/thread/1cc7b91d-1cb4-4850-8f7f-478dd2fc403e 
-    http://www.ageektrapped.com/blog/setting-properties-for-wix-in-msbuild/
+<!--
+  http://social.msdn.microsoft.com/forums/en-US/tfsbuild/thread/1cc7b91d-1cb4-4850-8f7f-478dd2fc403e 
+  http://www.ageektrapped.com/blog/setting-properties-for-wix-in-msbuild/
+  http://neilsleightholm.blogspot.com/2008/08/customised-uis-for-wix.html
+  http://wix.sourceforge.net/manual-wix3/WixUI_customizations.htm
 -->
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <!-- Produkt-Definition -->
   <Product Id="85d37c9c-685c-41b7-a996-e2c6d92031b6"
+           UpgradeCode="f6f2968f-d114-44b9-874e-4f32ffe64427"
            Manufacturer="Slesa Solutions"
-           Name="Poseidon Setup"
+           Name="!(loc.ProductName)"
            Language="!(loc.Language)"
            Version="$(var.ProductVersion)"
-           UpgradeCode="f6f2968f-d114-44b9-874e-4f32ffe64427">
+           Codepage="utf-8">
 
-    <Package InstallerVersion="200" Compressed="yes"
-             Description="Poseidon - a POS environment"
+    <!-- Package-Definition -->
+    <Package InstallerVersion="200" 
+             Manufacturer="Slesa Solutions"
+             Compressed="yes"
+             Description="!(loc.ProductDescr)"
              Comments="(c) 2011 Slesa Solutions"
+             InstallPrivileges="elevated"
              />
 
-    <!-- Systemvoraussetzung -->
+    <!-- Requirements -->
     <PropertyRef Id="NETFRAMEWORK40FULL" />
     <Condition Message="!(loc.ErrorFramework)">NETFRAMEWORK40FULL</Condition>
     <Condition Message="!(loc.ErrorAdminRights)">Privileged</Condition>
@@ -25,9 +35,10 @@
     <Icon Id="I__BackOfficeIcon.exe" SourceFile="Resources\Poseidon.ico" />
     <Property Id="ARPPRODUCTICON" Value="I__BackOfficeIcon.exe"/>
 
-
+    <!-- Media -->
     <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
 
+    <!-- Directory-Struktur -->
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="APPLICATIONFOLDER" Name="Poseidon" />
@@ -35,6 +46,8 @@
       <Directory Id="DesktopFolder"/>
     </Directory>
 
+    
+    <!-- Komponenten-Struktur -->
     <DirectoryRef Id="APPLICATIONFOLDER" FileSource="..\..\bin\build">
 
       <Component Id="C__SharedComponents" Guid="b81ad615-4091-49a9-ab09-d0da690bcb05" DiskId="1">
@@ -47,20 +60,32 @@
 
       <Component Id="C__BackOffice" Guid="{C46D1942-3C5C-4edf-8E06-36D48DFD8892}" DiskId="1">
         <File Id="F__BackOffice" Name="BackOffice.exe" KeyPath="yes" />
+        <File Id="F__BackOfficeCfg" Name="BackOffice.exe.config" />
         <File Id="F__BackOfficeContract" Name="BackOffice.Contracts.dll" />
         <File Id="F__BackOfficeTheme" Name="BackOffice.Theme.dll" />
-        <File Id="F__IcsModel" Name="Ics.Model.dll" />
-        <File Id="F__IcsNHibernate" Name="Ics.NHibernate.dll" />
-        <File Id="F__IcsResources" Name="Ics.Resources.dll" />
         <File Id="F__ModelShared" Name="Model.Shared.dll" />
         <File Id="F__PersistenceShared" Name="Persistence.Shared.dll" />
 
         <Shortcut Id="S__BackOffice" Directory ="DesktopFolder"
-                  WorkingDirectory="ARPPRODUCTICON"
+                  WorkingDirectory="APPLICATIONFOLDER"
                   Name="Poseidon BackOffice"
                   Icon="I__BackOfficeIcon.exe"
                   Advertise="yes"
                   Description="!(loc.BackOfficeDescription)" />
+
+        <util:XmlFile Id="X__DbConnection" Action="setValue"
+                      Permanent="yes"
+                      ElementPath="/configuration/appSettings/add[\[]@key='DbConnection'[\]]"
+                      File="[#F__BackOfficeCfg]" Name="value"
+                      Value="[DBCONNECTION]"  Sequence="1" />
+
+      </Component>
+
+      <Component Id="C__BackOfficeIcs" Guid="{613F262E-156E-49FD-82F7-31F659F1511C}">
+        <File Id="F__IcsModel" Name="Ics.Model.dll" />
+        <File Id="F__IcsNHibernate" Name="Ics.NHibernate.dll" />
+        <!-- File Id="F__IcsOfficeModule" Name="Ics.OfficeModule.dll" / -->
+        <File Id="F__IcsResources" Name="Ics.Resources.dll" />
       </Component>
 
       <Component Id="C__BackOfficeUms" Guid="{A8A43C44-526D-487F-9319-855EA5BCF725}">
@@ -79,14 +104,21 @@
 
     </DirectoryRef>
 
-    <Feature Id="SharedFiles" Level="1" InstallDefault="local" Absent="disallow" AllowAdvertise="no" TypicalDefault="install"
+    
+    <!-- Feature-Struktur -->
+    <Feature Id="SharedFiles" Level="1" 
+             InstallDefault="local" 
+             Absent="disallow" 
+             AllowAdvertise="no" 
+             TypicalDefault="install"
              Title="!(loc.SharedFeatureTitle)"
              ConfigurableDirectory="APPLICATIONFOLDER"
              Description="!(loc.SharedFeatureDescription)">
       <ComponentRef Id="C__SharedComponents" />
     </Feature>
 
-    <Feature Id="BackOffice" Level="1" Display="expand" InstallDefault="local" AllowAdvertise="no"
+    <Feature Id="BackOffice" Level="1" Display="expand" 
+             InstallDefault="local" AllowAdvertise="no"
              Title="!(loc.BackOfficeFeatureTitle)"
              Description="!(loc.BackOfficeFeatureDescription)">
       <ComponentRef Id="C__BackOffice" />
@@ -101,12 +133,19 @@
              Description="!(loc.BackOfficePmsFeatureDescription)">
         <ComponentRef Id="C__BackOfficePms" />
       </Feature>
-      
+      <Feature Id="BackOfficeIcs" Level="1" InstallDefault="local" AllowAdvertise="no"
+             Title="!(loc.BackOfficeIcsFeatureTitle)"
+             Description="!(loc.BackOfficeIcsFeatureDescription)">
+        <ComponentRef Id="C__BackOfficeIcs" />
+      </Feature>
+
     </Feature>
 
-    <Property Id="ApplicationFolderName" Value="Poseidon" />
-    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONFOLDER" />
+    <!--<Property Id="ApplicationFolderName" Value="Poseidon" />-->
+    <!--<Property Id="WixAppFolder" Value="WixPerMachineFolder" />-->
     <!--<Property Id="ADDLOCAL" Value="SharedFiles" />-->
+    <!--<Property Id="LicenseAccepted" Value="1" />-->
 
     <!--<WixVariable Id="WixUILicenseRtf" Value="license.rtf"/>-->
     <!--<WixVariable Id="WixUIDialogBmp" Value="$(sys.SOURCEFILEDIR)\Resources\WixUI_Bitmap.jpg" />-->
