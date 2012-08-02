@@ -1,8 +1,8 @@
 using Model.Shared;
 
-namespace Pms.Model
+namespace Pms.Model.Entities
 {
-    public class Payform : DomainEntity
+    public class SalesFamilyGroup : DomainEntity
     {
         public virtual string Name { get; set; }
     }

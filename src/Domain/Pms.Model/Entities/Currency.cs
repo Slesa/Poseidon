@@ -1,6 +1,6 @@
 ﻿using Model.Shared;
 
-namespace Pms.Model
+namespace Pms.Model.Entities
 {
     public class Currency : DomainEntity
     {
@@ -8,6 +8,7 @@ namespace Pms.Model
         {
             DecimalChar = ',';
             ThousandChar = '.';
+            //Rate = 1m;
         }
 
         public virtual string Name { get; set; }

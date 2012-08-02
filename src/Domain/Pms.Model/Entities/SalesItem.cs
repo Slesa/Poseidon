@@ -1,6 +1,6 @@
 using Model.Shared;
 
-namespace Pms.Model
+namespace Pms.Model.Entities
 {
     public class SalesItem : DomainEntity
     {

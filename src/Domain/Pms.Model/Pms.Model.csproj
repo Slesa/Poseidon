@@ -39,12 +39,19 @@
     <Compile Include="..\..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Currency.cs" />
-    <Compile Include="Discount.cs" />
-    <Compile Include="Payform.cs" />
+    <Compile Include="CurrencyConverter.cs" />
+    <Compile Include="Entities\Currency.cs" />
+    <Compile Include="Entities\Discount.cs" />
+    <Compile Include="Entities\SalesFamilyGroup.cs" />
+    <Compile Include="Entities\Waiter.cs" />
+    <Compile Include="Entities\WaiterTeam.cs" />
+    <Compile Include="IConvertCurrencies.cs" />
+    <Compile Include="IFormatSums.cs" />
+    <Compile Include="Entities\Payform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesFamily.cs" />
-    <Compile Include="SalesItem.cs" />
+    <Compile Include="Entities\SalesFamily.cs" />
+    <Compile Include="Entities\SalesItem.cs" />
+    <Compile Include="SumFormatter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model.Shared\Model.Shared.csproj">

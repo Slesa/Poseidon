@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using Pms.OfficeModule.Resources;
@@ -13,8 +14,15 @@ namespace Pms.OfficeModule.ViewModel
         public string ItemName { get { return Strings.CurrenciesItemName; } }
         public string ToolTip { get { return Strings.CurrenciesItemToolTip; } }
         public string IconFileName { get { return @"/Pms.Resources;component/Currency.png"; } }
+        public IEnumerable<string> Keywords
+        {
+            get 
+            { 
+                yield return Strings.KeyCurrencies;
+                yield return Strings.KeyCurrency;
+            }
+        }
         public IScreen RelatedView { get { return _viewModel; } }
-        
     }
 
     [Export(typeof(ListCurrenciesViewModel))]

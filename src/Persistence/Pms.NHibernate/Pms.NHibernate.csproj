@@ -52,6 +52,9 @@
     <Compile Include="Maps\CurrencyMap.cs" />
     <Compile Include="Maps\DiscountMap.cs" />
     <Compile Include="Maps\PayformMap.cs" />
+    <Compile Include="Maps\SalesFamilyGroupMap.cs" />
+    <Compile Include="Maps\WaiterMap.cs" />
+    <Compile Include="Maps\WaiterTeamMap.cs" />
     <Compile Include="PmsModelContributor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Maps\SalesFamilyMap.cs" />

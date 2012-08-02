@@ -1,7 +1,7 @@
 using FluentNHibernate.Testing;
 using Machine.Specifications;
 using NHibernate.Specs.Shared;
-using Pms.Model;
+using Pms.Model.Entities;
 using Pms.NHibernate.Maps;
 
 namespace Pms.NHibernate.Specs

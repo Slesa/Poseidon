@@ -1,5 +1,5 @@
 using FluentNHibernate.Mapping;
-using Pms.Model;
+using Pms.Model.Entities;
 
 namespace Pms.NHibernate.Maps
 {

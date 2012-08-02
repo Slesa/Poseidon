@@ -4,7 +4,7 @@ using Ums.OfficeModule.Views;
 
 namespace Ums.OfficeModule.Specs
 {
-    [Subject(typeof(ListUsersView)), Ignore("Can't test wpf app yet")]
+    //[Subject(typeof(ListUsersView)), Ignore("Can't test wpf app yet")]
     public class When_instancing_list_users_view_model
     {
         Because of = () =>

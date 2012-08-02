@@ -129,6 +129,42 @@
   <data name="DiscountsItemToolTip" xml:space="preserve">
     <value>Manage your discounts</value>
   </data>
+  <data name="KeyCurrencies" xml:space="preserve">
+    <value>Currencies</value>
+  </data>
+  <data name="KeyCurrency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="KeyDiscount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="KeyDiscounts" xml:space="preserve">
+    <value>Discounts</value>
+  </data>
+  <data name="KeyFamilies" xml:space="preserve">
+    <value>Families</value>
+  </data>
+  <data name="KeyFamily" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="KeyPayform" xml:space="preserve">
+    <value>Payform</value>
+  </data>
+  <data name="KeyPayforms" xml:space="preserve">
+    <value>Payforms</value>
+  </data>
+  <data name="KeySalesFamilies" xml:space="preserve">
+    <value>SalesFamilies</value>
+  </data>
+  <data name="KeySalesFamily" xml:space="preserve">
+    <value>SalesFamily</value>
+  </data>
+  <data name="KeySalesItem" xml:space="preserve">
+    <value>SalesItem</value>
+  </data>
+  <data name="KeySalesItems" xml:space="preserve">
+    <value>SalesItems</value>
+  </data>
   <data name="PayformsItemName" xml:space="preserve">
     <value>Payforms</value>
   </data>

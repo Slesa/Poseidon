@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pms.Model", "Pms.Model\Pms.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pms.Resources", "Pms.Resources\Pms.Resources.csproj", "{59B74FE4-63FD-49E0-9E51-E7FB3AA4441A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pms.Model.Specs", "Pms.Model.Specs\Pms.Model.Specs.csproj", "{2575D8B6-AAFD-4729-9679-6F51634F1081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{59B74FE4-63FD-49E0-9E51-E7FB3AA4441A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59B74FE4-63FD-49E0-9E51-E7FB3AA4441A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59B74FE4-63FD-49E0-9E51-E7FB3AA4441A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2575D8B6-AAFD-4729-9679-6F51634F1081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2575D8B6-AAFD-4729-9679-6F51634F1081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2575D8B6-AAFD-4729-9679-6F51634F1081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2575D8B6-AAFD-4729-9679-6F51634F1081}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

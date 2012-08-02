@@ -14,7 +14,7 @@ namespace Ums.OfficeModule.ViewModels
     {
         static public EditUserViewModel CreateViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
-            var viewModel = new EditUserViewModel(dbConversation, eventAggregator);
+            var viewModel = new EditUserViewModel();
             viewModel.Element = new UserModel();
             viewModel.DisplayName = "Add new user...";
             dbConversation.UsingTransaction(()=>
@@ -24,7 +24,7 @@ namespace Ums.OfficeModule.ViewModels
 
         static public EditUserViewModel CreateViewModel(int userId, IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
-            var viewModel = new EditUserViewModel(dbConversation, eventAggregator);
+            var viewModel = new EditUserViewModel();
             dbConversation.UsingTransaction(() =>
                 {
                     viewModel.Element = new UserModel(dbConversation.GetById<User>(userId));
@@ -34,8 +34,7 @@ namespace Ums.OfficeModule.ViewModels
             return viewModel;
         }
 
-        EditUserViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(dbConversation, eventAggregator)
+        EditUserViewModel()
         {
         }
 

@@ -1,34 +1,24 @@
 using System.ComponentModel;
 using BackOffice.Shared.ViewModels;
-using Caliburn.Micro;
-using Persistence.Shared;
 using Ums.Model;
 using Ums.OfficeModule.Model;
+using Ums.OfficeModule.Resources;
 
 namespace Ums.OfficeModule.ViewModels
 {
-    public class EditUserRoleViewModel : EditItemViewModel<UserRoleModel>, IDataErrorInfo
+    public sealed class EditUserRoleViewModel : EditItemViewModel<UserRoleModel>, IDataErrorInfo
     {
-        static public EditUserRoleViewModel CreateViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
+        public EditUserRoleViewModel() 
         {
-            var viewModel = new EditUserRoleViewModel(dbConversation, eventAggregator);
-            viewModel.Element = new UserRoleModel();
-            viewModel.DisplayName = "Add new user role...";
-            return viewModel;
+            Element = new UserRoleModel();
+            DisplayName = Strings.EditUserRole_AddNewUserRole;
         }
 
-        static public EditUserRoleViewModel CreateViewModel(int userRoleId, IDbConversation dbConversation, IEventAggregator eventAggregator)
+        public EditUserRoleViewModel(int userRoleId) 
         {
-            var viewModel = new EditUserRoleViewModel(dbConversation, eventAggregator);
-            dbConversation.UsingTransaction(()=>
-                viewModel.Element = new UserRoleModel(dbConversation.GetById<UserRole>(userRoleId)));
-            viewModel.DisplayName = "Edit user role";
-            return viewModel;
-        }
-
-        EditUserRoleViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(dbConversation, eventAggregator)
-        {
+            DbConversation.UsingTransaction(() =>
+                Element = new UserRoleModel(DbConversation.GetById<UserRole>(userRoleId)));
+            DisplayName = Strings.EditUserRole_EditUserRole;
         }
 
         public string Name

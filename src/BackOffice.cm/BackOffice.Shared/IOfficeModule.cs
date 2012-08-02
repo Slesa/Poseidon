@@ -8,6 +8,7 @@ namespace BackOffice.Shared
         string ItemName { get; }
         string IconFileName { get; }
         string ToolTip { get; }
+        IEnumerable<string> Keywords { get; }
         IScreen RelatedView { get; }
     }
 

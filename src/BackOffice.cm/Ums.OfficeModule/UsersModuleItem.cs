@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using Ums.OfficeModule.Resources;
 using Ums.OfficeModule.ViewModels;
@@ -13,6 +14,14 @@ namespace Ums.OfficeModule
         public string ItemName { get { return Strings.UsersItemName; } }
         public string ToolTip { get { return Strings.UsersItemToolTip; } }
         public string IconFileName { get { return @"/Ums.Resources;component/User.png"; } }
+        public IEnumerable<string> Keywords
+        {
+            get
+            {
+                yield return Strings.KeyUsers;
+                yield return Strings.KeyUser;
+            }
+        }
         public IScreen RelatedView { get { return _viewModel; } }
     }
 }

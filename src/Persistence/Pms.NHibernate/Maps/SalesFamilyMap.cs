@@ -1,5 +1,5 @@
 using FluentNHibernate.Mapping;
-using Pms.Model;
+using Pms.Model.Entities;
 
 namespace Pms.NHibernate.Maps
 {
@@ -10,6 +10,7 @@ namespace Pms.NHibernate.Maps
             Id(d => d.Id).GeneratedBy.HiLo("10");
 
             Map(d => d.Name).Length(40);
+            References(d => d.SalesFamilyGroup).Not.Nullable();
 
             Version(d => d.Version);
         }

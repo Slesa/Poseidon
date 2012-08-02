@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using Pms.OfficeModule.Resources;
@@ -13,6 +14,14 @@ namespace Pms.OfficeModule.ViewModel
         public string ItemName { get { return Strings.PayformsItemName; } }
         public string ToolTip { get { return Strings.PayformsItemToolTip; } }
         public string IconFileName { get { return @"/Pms.Resources;component/Payform.png"; } }
+        public IEnumerable<string> Keywords
+        {
+            get
+            {
+                yield return Strings.KeyPayforms;
+                yield return Strings.KeyPayform;
+            }
+        }
         public IScreen RelatedView { get { return _viewModel; } }
         
     }

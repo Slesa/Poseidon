@@ -126,11 +126,29 @@
   <data name="Button_Remove" xml:space="preserve">
     <value>_Remove</value>
   </data>
+  <data name="EditUserRole_AddNewUserRole" xml:space="preserve">
+    <value>Add new user role...</value>
+  </data>
+  <data name="EditUserRole_EditUserRole" xml:space="preserve">
+    <value>Edit user role</value>
+  </data>
   <data name="EditUserView_Name" xml:space="preserve">
     <value>_Name:</value>
   </data>
   <data name="EditUserView_UserRole" xml:space="preserve">
     <value>_User role:</value>
+  </data>
+  <data name="KeyRole" xml:space="preserve">
+    <value />
+  </data>
+  <data name="KeyRoles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="KeyUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="KeyUsers" xml:space="preserve">
+    <value>Users</value>
   </data>
   <data name="ListUserRolesTitle" xml:space="preserve">
     <value>User roles</value>

@@ -11,8 +11,10 @@ namespace BackOffice.Shared.ViewModels
 {
     public abstract class EditItemViewModel<T> : Screen where T: PropertyChangedBase, IDataErrorInfo
     {
-        protected readonly IDbConversation DbConversation;
-        protected readonly IEventAggregator EventAggregator;
+        //[Import] // TODO: Importing would be nice
+        protected IDbConversation DbConversation;
+        //[Import] // TODO: Importing would be nice
+        protected IEventAggregator EventAggregator;
 
         T _element;
         protected T Element
@@ -20,11 +22,11 @@ namespace BackOffice.Shared.ViewModels
             get { return _element; }
             set { _element = value; _element.PropertyChanged += OnPropertyChanged; }
         }
-
-        protected EditItemViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
+        
+        protected EditItemViewModel()
         {
-            DbConversation = dbConversation;
-            EventAggregator = eventAggregator;
+            DbConversation = IoC.Get<IDbConversation>();
+            EventAggregator = IoC.Get<IEventAggregator>();
         }
 
         public bool CanSave

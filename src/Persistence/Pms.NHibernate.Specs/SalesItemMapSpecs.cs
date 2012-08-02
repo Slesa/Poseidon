@@ -1,7 +1,7 @@
 using FluentNHibernate.Testing;
 using Machine.Specifications;
 using NHibernate.Specs.Shared;
-using Pms.Model;
+using Pms.Model.Entities;
 using Pms.NHibernate.Maps;
 
 namespace Pms.NHibernate.Specs
@@ -12,7 +12,9 @@ namespace Pms.NHibernate.Specs
         Because of = () =>
             {
                 var spec = new PersistenceSpecification<SalesItem>(Session);
-                var salesFamily = new SalesFamily();
+                var salesFamilyGroup = new SalesFamilyGroup();
+                spec.TransactionalSave(salesFamilyGroup);
+                var salesFamily = new SalesFamily {SalesFamilyGroup = salesFamilyGroup};
                 spec.TransactionalSave(salesFamily);
                 _check = spec
                     .CheckProperty(d => d.Name, "A sales item")

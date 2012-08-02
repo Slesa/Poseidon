@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using Pms.OfficeModule.Resources;
@@ -13,8 +14,15 @@ namespace Pms.OfficeModule.ViewModel
         public string ItemName { get { return Strings.SalesItemsItemName; } }
         public string ToolTip { get { return Strings.SalesItemsItemToolTip; } }
         public string IconFileName { get { return @"/Pms.Resources;component/SalesItem.png"; } }
+        public IEnumerable<string> Keywords
+        {
+            get
+            {
+                yield return Strings.KeySalesItems;
+                yield return Strings.KeySalesItem;
+            }
+        }
         public IScreen RelatedView { get { return _viewModel; } }
-        
     }
 
     [Export(typeof(ListSalesItemsViewModel))]
