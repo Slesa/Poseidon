@@ -1,16 +1,19 @@
-using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Windows;
-using Castle.MicroKernel.Registration;
-using log4net.Repository.Hierarchy;
+using Backoffice;
 using Microsoft.Practices.Prism.Logging;
+using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
-using PrismContrib.WindsorExtensions;
+using Poseidon.Backoffice.Views;
+using Poseidon.Ums.OfficeModule;
 
-namespace Backoffice
+namespace Poseidon.Backoffice
 {
-    public class Bootstrapper : WindsorBootstrapper
+    public class Bootstrapper : UnityBootstrapper
     {
         protected override DependencyObject CreateShell()
         {
@@ -20,25 +23,39 @@ namespace Backoffice
         protected override void InitializeShell()
         {
             base.InitializeShell();
-#if SILVERLIGHT
-            Application.Current.RootVisual = (UIElement) Shell;
-#else
-            Application.Current.MainWindow = (Window) Shell;
+
+            log4net.Config.XmlConfigurator.Configure(new FileInfo("log4net.config"));
+
+            Application.Current.MainWindow = (Window)Shell;
             Application.Current.MainWindow.Show();
-#endif
         }
 
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
-            //RegisterTypeIfMissing(typeof(Shell), typeof(Shell), true);
-            Container.Register(GetShellRegistrations().ToArray());
+            
+            RegisterShellObjects();
         }
-
-        static IEnumerable<IRegistration> GetShellRegistrations()
+        
+        void RegisterShellObjects()
         {
-            yield return Component.For<Shell>().ImplementedBy<Shell>();
-            yield return Component.For<ILoggerFacade>().ImplementedBy<Log4NetLogger>();
+            //RegisterTypeIfMissing(typeof(IServiceLocator), typeof(UnityServiceLocatorAdapter), true);
+
+            RegisterTypeIfMissing(typeof(Shell), typeof(Shell), true);
+            RegisterTypeIfMissing(typeof(ILoggerFacade), typeof(Log4NetLogger), true);
+            
+        } 
+        
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            return new DirectoryModuleCatalog {ModulePath = @".\Modules"};
         }
+        
+        /*
+        protected override void ConfigureModuleCatalog()
+        {
+            System.Type officeModule = typeof (UmsOfficeModule);
+            ModuleCatalog.AddModule(new ModuleInfo(officeModule.Name, officeModule.AssemblyQualifiedName));
+        }*/
     }
 }

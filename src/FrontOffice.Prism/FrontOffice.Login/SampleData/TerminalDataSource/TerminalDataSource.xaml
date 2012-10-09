@@ -1,0 +1,19 @@
+﻿<!--
+      *********    DIESE DATEI DARF NICHT GEÄNDERT WERDEN     *********
+      Diese Datei wurde von einem Designwerkzeug erstellt. Änderungen
+      dieser Datei können Fehler verursachen.
+-->
+<SampleData:TerminalDataSource xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.TerminalDataSource">
+	<SampleData:TerminalDataSource.Collection>
+		<SampleData:Item Id="5988" Name="A. Datum Corporation" Description="Nam maecenas" Icon="TerminalDataSource_Files\image01.png"/>
+		<SampleData:Item Id="5024" Name="Adventure Works" Description="Aenean mauris" Icon="TerminalDataSource_Files\image02.png"/>
+		<SampleData:Item Id="7054" Name="Adventure Works" Description="Praesent aliquam" Icon="TerminalDataSource_Files\image03.png"/>
+		<SampleData:Item Id="7773" Name="Alpine Ski House" Description="Integer cras sed class" Icon="TerminalDataSource_Files\image04.png"/>
+		<SampleData:Item Id="4085" Name="Baldwin Museum of Science" Description="Nullam accumsan" Icon="TerminalDataSource_Files\image05.png"/>
+		<SampleData:Item Id="2990" Name="Blue Yonder Airlines" Description="Curae dis quisque" Icon="TerminalDataSource_Files\image01.png"/>
+		<SampleData:Item Id="4428" Name="City Power &amp; Light" Description="Duis est" Icon="TerminalDataSource_Files\image02.png"/>
+		<SampleData:Item Id="3405" Name="Coho Vineyard" Description="Aptent nunc auctor hac" Icon="TerminalDataSource_Files\image03.png"/>
+		<SampleData:Item Id="8693" Name="Coho Winery" Description="Bibendum donec" Icon="TerminalDataSource_Files\image04.png"/>
+		<SampleData:Item Id="4983" Name="Coho Vineyard &amp; Winery" Description="Dictumst eleifend amet etiam" Icon="TerminalDataSource_Files\image05.png"/>
+	</SampleData:TerminalDataSource.Collection>
+</SampleData:TerminalDataSource>
