@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 
-namespace FrontEnd
+namespace Poseidon.FrontEnd.Views
 {
-    public partial class MainWindow : Window
+    public partial class Shell : Window
     {
-        public MainWindow()
+        public Shell()
         {
             InitializeComponent();
         }
