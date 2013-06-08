@@ -4,6 +4,7 @@ using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
+using Poseidon.BackOffice.ViewModels;
 using Poseidon.BackOffice.Views;
 using Poseidon.Common;
 
@@ -31,12 +32,18 @@ namespace Poseidon.BackOffice
         {
             base.ConfigureContainer();
             RegisterShellObjects();
+            RegisterViews();
         }
 
         void RegisterShellObjects()
         {
             RegisterTypeIfMissing(typeof(ILoggerFacade), typeof(Log4NetLogger), true);
             RegisterTypeIfMissing(typeof(IRegionManager), typeof(IRegionManager), true);
+        }
+
+        void RegisterViews()
+        {
+            RegisterTypeIfMissing(typeof(ShellViewModel), typeof(ShellViewModel), true);
         }
     }
 }

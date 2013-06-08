@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
+using Microsoft.Practices.ServiceLocation;
+using Poseidon.BackOffice.ViewModels;
 
 namespace Poseidon.BackOffice.Views
 {
@@ -7,6 +10,11 @@ namespace Poseidon.BackOffice.Views
         public Shell()
         {
             InitializeComponent();
+            
+            if (!DesignerProperties.GetIsInDesignMode(this))
+            {
+                DataContext = ServiceLocator.Current.GetInstance<ShellViewModel>();
+            }
         }
     }
 }

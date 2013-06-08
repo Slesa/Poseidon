@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice", "BackOffice\BackOffice.csproj", "{B15B363E-22DA-4A8B-80DA-1BDEB7F3CED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Prism", "Common.Prism\Common.Prism.csproj", "{DAF28095-0D7E-4544-BA13-4719D839D03D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0FC041D9-FF8A-4177-8E54-67DDEDEF25AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.Theme", "BackOffice.Theme\BackOffice.Theme.csproj", "{230A0AAD-DD39-4D83-92C8-EEE9FB546417}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B15B363E-22DA-4A8B-80DA-1BDEB7F3CED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15B363E-22DA-4A8B-80DA-1BDEB7F3CED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15B363E-22DA-4A8B-80DA-1BDEB7F3CED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15B363E-22DA-4A8B-80DA-1BDEB7F3CED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF28095-0D7E-4544-BA13-4719D839D03D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF28095-0D7E-4544-BA13-4719D839D03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF28095-0D7E-4544-BA13-4719D839D03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF28095-0D7E-4544-BA13-4719D839D03D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC041D9-FF8A-4177-8E54-67DDEDEF25AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC041D9-FF8A-4177-8E54-67DDEDEF25AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC041D9-FF8A-4177-8E54-67DDEDEF25AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC041D9-FF8A-4177-8E54-67DDEDEF25AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230A0AAD-DD39-4D83-92C8-EEE9FB546417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230A0AAD-DD39-4D83-92C8-EEE9FB546417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230A0AAD-DD39-4D83-92C8-EEE9FB546417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230A0AAD-DD39-4D83-92C8-EEE9FB546417}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

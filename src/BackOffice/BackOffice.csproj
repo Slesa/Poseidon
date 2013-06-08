@@ -90,11 +90,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="DesignTime\DesignTimeShellViewModel.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -136,10 +138,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
+      <Project>{230a0aad-dd39-4d83-92c8-eee9fb546417}</Project>
+      <Name>BackOffice.Theme</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
       <Project>{DAF28095-0D7E-4544-BA13-4719D839D03D}</Project>
       <Name>Common.Prism</Name>
