@@ -5,9 +5,14 @@
     Startup="OnApplicationStartup">
     <Application.Resources>
         <ResourceDictionary>
+            
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Themes/Generic.xaml"/>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Rectangle x:Key="workaround" />
+
         </ResourceDictionary>
-        </Application.Resources>
+    </Application.Resources>
 </Application>
