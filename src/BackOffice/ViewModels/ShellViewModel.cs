@@ -9,7 +9,6 @@ namespace Poseidon.BackOffice.ViewModels
         public ShellViewModel()
         {
             OnQuitCommand = new DelegateCommand(OnQuit);
-            OnBackCommand = new DelegateCommand(OnBack);
         }
 
         #region Commands
@@ -19,12 +18,6 @@ namespace Poseidon.BackOffice.ViewModels
         void OnQuit()
         {
             Application.Current.Shutdown();
-        }
-
-        public ICommand OnBackCommand { get; private set; }
-
-        void OnBack()
-        {
         }
 
         #endregion

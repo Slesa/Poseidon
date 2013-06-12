@@ -2,19 +2,22 @@
     x:Class="Poseidon.BackOffice.Views.Shell"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:Resources="clr-namespace:Poseidon.BackOffice.Resources"
-    xmlns:DesignTime="clr-namespace:Poseidon.BackOffice.DesignTime"
-    Title="{x:Static Resources:Strings.AppTitle}"
+    xmlns:resources="clr-namespace:Poseidon.BackOffice.Resources"
+    xmlns:design="clr-namespace:Poseidon.BackOffice.DesignTime"
+    xmlns:regions="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+    xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common" 
+    Title="{x:Static resources:Strings.AppTitle}"
     Width="800"
     Height="600" 
     Style="{DynamicResource Style.Shell}"
-    
+    mc:Ignorable="d" 
     >
     
 
     <Window.Resources>
-        <DesignTime:DesignTimeShellViewModel x:Key="DesignViewModel" />
+        <design:DesignTimeShellViewModel x:Key="DesignViewModel" />
     </Window.Resources>
 
     <Window.DataContext>DesignViewModel</Window.DataContext>
@@ -23,21 +26,12 @@
         <KeyBinding Key="X" Modifiers="Control" Command="{Binding OnQuitCommand}"/>
     </Window.InputBindings>
 
-    <Grid>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <DockPanel Style="{DynamicResource Style.Shell.DockPanel}">
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <Button Content="Back" Command ="{Binding OnBackCommand}"/>
-                <TextBox x:Name="_breadCrumbBox" MinWidth="40"/>
-                <TextBox x:Name="_searchBox"/>
-        </StackPanel>
+        <ContentControl DockPanel.Dock="Bottom" regions:RegionManager.RegionName="{x:Static common:Regions.TagStatusBarRegion}" />
+        <ContentControl DockPanel.Dock="Top" regions:RegionManager.RegionName="{x:Static common:Regions.TagNavigationRegion}" />
+        <ContentControl regions:RegionManager.RegionName="{x:Static common:Regions.TagModulesRegion}" />
         
-        <Grid/>
-    </Grid>
+    </DockPanel>
 
 </Window>

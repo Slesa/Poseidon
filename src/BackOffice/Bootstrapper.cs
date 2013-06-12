@@ -1,9 +1,11 @@
 ﻿using System.IO;
 using System.Windows;
 using Microsoft.Practices.Prism.Logging;
+using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
+using Poseidon.BackOffice.Core;
 using Poseidon.BackOffice.ViewModels;
 using Poseidon.BackOffice.Views;
 using Poseidon.Common;
@@ -33,6 +35,17 @@ namespace Poseidon.BackOffice
             base.ConfigureContainer();
             RegisterShellObjects();
             RegisterViews();
+        }
+
+        protected override void ConfigureModuleCatalog()
+        {
+            var coreModule = typeof(CoreModule);
+            ModuleCatalog.AddModule(new ModuleInfo
+            {
+                ModuleName = coreModule.Name,
+                ModuleType = coreModule.AssemblyQualifiedName
+            });
+
         }
 
         void RegisterShellObjects()

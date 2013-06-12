@@ -140,6 +140,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
+      <Name>BackOffice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Core\BackOffice.Core.csproj">
+      <Project>{cfc26392-df5f-4a9e-92dc-f109bee1a32c}</Project>
+      <Name>BackOffice.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
       <Project>{230a0aad-dd39-4d83-92c8-eee9fb546417}</Project>
       <Name>BackOffice.Theme</Name>
