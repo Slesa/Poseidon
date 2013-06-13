@@ -4,6 +4,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Brushes.xaml"/>
+        <ResourceDictionary Source="Images.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="Style.Navigation" TargetType="{x:Type ContentControl}">
@@ -11,14 +12,44 @@
     </Style>
 
     <Style x:Key="Style.Navigation.Group" TargetType="{x:Type Grid}">
+        <Setter Property="Height" Value="80"/>
     </Style>
     
     <Style x:Key="Style.Navigation.Buttons" TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="{StaticResource Brush.Foreground}" />
-        <Setter Property="Background" Value="{StaticResource Brush.Background}" />
         <Setter Property="Margin" Value="10,5,10,5"/>
+        <Setter Property="MinWidth" Value="20" />
+        <Setter Property="MinHeight" Value="20" />
+        <!-- Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="UIElement.Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="UIElement.Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="10" Color="White" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter -->
     </Style>
-    
+    <Style x:Key="Style.Navigation.Buttons.Back" BasedOn="{StaticResource Style.Navigation.Buttons}" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="{StaticResource Images.Back}" />
+    </Style>
+    <Style x:Key="Style.Navigation.Buttons.Forward" BasedOn="{StaticResource Style.Navigation.Buttons}" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="{StaticResource Images.Forward}" />
+    </Style>
+
     <Style x:Key="Style.Navigation.TextBox" TargetType="{x:Type TextBox}">
         <Setter Property="MinWidth" Value="60"/>
     </Style>
