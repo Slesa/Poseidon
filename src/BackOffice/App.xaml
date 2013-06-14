@@ -4,15 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Startup="OnApplicationStartup">
     <Application.Resources>
+
         <ResourceDictionary>
             
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <Rectangle x:Key="workaround" />
 
         </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

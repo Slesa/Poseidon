@@ -7,22 +7,24 @@
     xmlns:resources="clr-namespace:Poseidon.BackOffice.Resources"
     xmlns:design="clr-namespace:Poseidon.BackOffice.DesignTime"
     xmlns:regions="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
-    xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common" 
+    xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common"
+    xmlns:viewModels="clr-namespace:Poseidon.BackOffice.ViewModels"
     Title="{x:Static resources:Strings.AppTitle}"
     Icon="pack://application:,,,/Resources/BackOffice.jpg"
     Width="800"
     Height="600" 
     Style="{DynamicResource Style.Shell}"
-    mc:Ignorable="d" 
-    >
-    
+    d:DataContext="{StaticResource DesignViewModel}"
+    mc:Ignorable="d">
 
     <Window.Resources>
         <design:DesignTimeShellViewModel x:Key="DesignViewModel" />
     </Window.Resources>
-
-    <Window.DataContext>DesignViewModel</Window.DataContext>
     
+    <Window.DataContext>
+        <viewModels:ShellViewModel />
+    </Window.DataContext>
+   
     <Window.InputBindings>
         <KeyBinding Key="X" Modifiers="Control" Command="{Binding OnQuitCommand}"/>
     </Window.InputBindings>

@@ -90,11 +90,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="DesignTime\DesignTimeShellViewModel.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -136,13 +138,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
       <Project>{DAF28095-0D7E-4544-BA13-4719D839D03D}</Project>
       <Name>Common.Prism</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrontEnd.Theme\FrontEnd.Theme.csproj">
+      <Project>{c841de26-0b2c-4f8c-985b-b5c95e4cd643}</Project>
+      <Name>FrontEnd.Theme</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

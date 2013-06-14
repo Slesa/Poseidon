@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Prism", "Common.Prism\Common.Prism.csproj", "{DAF28095-0D7E-4544-BA13-4719D839D03D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd.Common", "FrontEnd.Common\FrontEnd.Common.csproj", "{D7C11C61-40A1-4E5D-B45B-0E345DCE1D60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd.Theme", "FrontEnd.Theme\FrontEnd.Theme.csproj", "{C841DE26-0B2C-4F8C-985B-B5C95E4CD643}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{DAF28095-0D7E-4544-BA13-4719D839D03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAF28095-0D7E-4544-BA13-4719D839D03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAF28095-0D7E-4544-BA13-4719D839D03D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C11C61-40A1-4E5D-B45B-0E345DCE1D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C11C61-40A1-4E5D-B45B-0E345DCE1D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C11C61-40A1-4E5D-B45B-0E345DCE1D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C11C61-40A1-4E5D-B45B-0E345DCE1D60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C841DE26-0B2C-4F8C-985B-B5C95E4CD643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C841DE26-0B2C-4F8C-985B-B5C95E4CD643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C841DE26-0B2C-4F8C-985B-B5C95E4CD643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C841DE26-0B2C-4F8C-985B-B5C95E4CD643}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
