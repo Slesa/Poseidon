@@ -7,6 +7,7 @@
     xmlns:resources="clr-namespace:Poseidon.FrontEnd.Resources"
     xmlns:viewModels="clr-namespace:Poseidon.FrontEnd.ViewModels"
     xmlns:design="clr-namespace:Poseidon.FrontEnd.DesignTime"
+    Icon="pack://application:,,,/Resources/FrontEnd.png"
     Title="{x:Static resources:Strings.AppTitle}"
     Width="800"
     Height="600"

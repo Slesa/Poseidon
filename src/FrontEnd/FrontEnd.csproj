@@ -138,7 +138,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\FrontEnd.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
       <Project>{DAF28095-0D7E-4544-BA13-4719D839D03D}</Project>
