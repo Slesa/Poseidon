@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Application" xml:space="preserve">
+    <value>Poseidon</value>
+  </data>
   <data name="AppTitle" xml:space="preserve">
     <value>Poseidon Ordering System</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version {0}</value>
   </data>
 </root>

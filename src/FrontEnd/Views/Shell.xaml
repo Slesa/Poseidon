@@ -18,16 +18,16 @@
         <!--<design:DesignTimeShellViewModel x:Key="DesignViewModel" />-->
     </Window.Resources>
 
-    <!--<Window.DataContext>
+    <Window.DataContext>
         <viewModels:ShellViewModel />
-    </Window.DataContext>-->
-    
+    </Window.DataContext>
+
 
     <Window.InputBindings>
         <KeyBinding Key="X" Modifiers="Control" Command="{Binding OnQuitCommand}"/>
     </Window.InputBindings>
 
-    <Grid Style="{DynamicResource Style.Shell.Panel}">
+    <Grid Style="{DynamicResource Style.Shell.Panel}" Margin="0,1,0,-1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
@@ -39,8 +39,8 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <Border BorderBrush="Black" BorderThickness="3" Height="32" Width="200" Grid.Row="1" Grid.Column="1" CornerRadius="12,12,12,12"/>
-        <TextBlock Grid.Row="1" Grid.Column="1"  Text="Poseidon" />
+
+        <Button Grid.Row="1" Grid.Column="1"  Content="{x:Static resources:Strings.Application}" Style="{DynamicResource Style.Shell.Title}" />
+        <TextBlock Grid.Row="3" Grid.Column="1"  Text="{Binding Version}" Style="{DynamicResource Style.Shell.Version}" />
     </Grid>
 </Window>

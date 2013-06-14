@@ -57,4 +57,28 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="Style.Shell.Panel" TargetType="{x:Type Grid}">
+    </Style>
+    
+    <Style x:Key="Style.Shell.Title" TargetType="{x:Type Button}">
+        <Setter Property="IsHitTestVisible" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="AntiqueWhite" BorderThickness="1" CornerRadius="12,12,12,12">
+                        <TextBlock Text="{TemplateBinding Content}" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="AntiqueWhite" FontSize="42" FontFamily="Verdana" FontWeight="Bold" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Style.Shell.Version" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="AntiqueWhite"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+    </Style>
+
 </ResourceDictionary>
