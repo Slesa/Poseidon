@@ -20,14 +20,20 @@
         <Setter Property="Margin" Value="10,5,10,5"/>
         <Setter Property="MinWidth" Value="20" />
         <Setter Property="MinHeight" Value="20" />
-        <!-- Setter Property="Template">
+        <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse x:Name="border" Fill="{TemplateBinding Background}" />
+                            <!--<Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">-->
+                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Aqua"></Setter>
                             <Setter Property="UIElement.Effect">
                                 <Setter.Value>
-                                    <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0"/>
+                                    <DropShadowEffect BlurRadius="20" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="5"/>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
@@ -41,7 +47,7 @@
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
-        </Setter -->
+        </Setter>
     </Style>
     <Style x:Key="Style.Navigation.Buttons.Back" BasedOn="{StaticResource Style.Navigation.Buttons}" TargetType="{x:Type Button}">
         <Setter Property="Content" Value="{StaticResource Images.Back}" />

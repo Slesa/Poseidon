@@ -15,7 +15,7 @@
             </Ellipse>
                 <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
             </Grid>
-            <ControlTemplate.Triggers>
+            <!-- ControlTemplate.Triggers>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="UIElement.Effect">
                         <Setter.Value>
@@ -30,7 +30,7 @@
                         </Setter.Value>
                     </Setter>
                 </Trigger>
-                <!--Trigger Property="Button.IsDefaulted" Value="True">
+                <Trigger Property="Button.IsDefaulted" Value="True">
                     <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                 <Trigger>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -45,8 +45,8 @@
                     <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
                     <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
                     <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
-                </Trigger-->
-            </ControlTemplate.Triggers>
+                </Trigger>
+            </ControlTemplate.Triggers -->
         </ControlTemplate>
     </UserControl.Resources>
 
@@ -60,8 +60,8 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Back" Grid.Column="0" Command="{Binding OnBackCommand}" Style="{DynamicResource Style.Navigation.Buttons.Back}" Template="{DynamicResource Template.RoundButton}"/>
-            <Button x:Name="Forward" Grid.Column="1" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}" Template="{DynamicResource Template.RoundButton}"/>
+            <Button x:Name="Back" Grid.Column="0" Command="{Binding OnBackCommand}" Style="{DynamicResource Style.Navigation.Buttons.Back}" />
+            <Button x:Name="Forward" Grid.Column="1" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}" />
             <TextBox x:Name="Breadcrumb" Grid.Column="2" Style="{DynamicResource Style.Navigation.BreadCrumb}" />
             <TextBox x:Name="Search" Grid.Column="3" Text="{Binding SearchText}" Style="{DynamicResource Style.Navigation.TextBox}"/>
         </Grid>
