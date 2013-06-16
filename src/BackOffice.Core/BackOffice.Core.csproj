@@ -93,6 +93,10 @@
       <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
       <Name>BackOffice.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
+      <Project>{daf28095-0d7e-4544-ba13-4719d839d03d}</Project>
+      <Name>Common.Prism</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
