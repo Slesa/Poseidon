@@ -1,10 +1,10 @@
-﻿using System.Windows;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
+using Poseidon.BackOffice.Core.Contracts;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class NavigationViewModel
+    public class NavigationViewModel : INavigationViewModel
     {
         public NavigationViewModel()
         {
@@ -19,7 +19,6 @@ namespace Poseidon.BackOffice.Core.ViewModels
 
         void OnForward()
         {
-            Application.Current.Shutdown();
         }
 
         public ICommand OnBackCommand { get; private set; }
