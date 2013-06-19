@@ -26,7 +26,7 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button x:Name="Back" Grid.Column="0" Command="{Binding OnBackCommand}" Style="{DynamicResource Style.Navigation.Buttons.Back}" />
-            <Button x:Name="Forward" Grid.Column="1" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}" />
+            <Button x:Name="Forward" IsEnabled="False" Grid.Column="1" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}" />
             <TextBox x:Name="Breadcrumb" Grid.Column="2" Style="{DynamicResource Style.Navigation.BreadCrumb}" />
             
             <!--<AdornerDecorator>-->

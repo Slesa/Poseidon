@@ -62,11 +62,13 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Adorners\WatermarkAdorner.cs" />
+    <Compile Include="Effects\GrayScaleEffect.cs" />
     <Compile Include="Services\WatermarkService.cs" />
     <Compile Include="Log4NetLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Effects\Shaders\Grayscale.ps" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
