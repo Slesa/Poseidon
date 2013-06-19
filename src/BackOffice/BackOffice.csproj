@@ -150,6 +150,10 @@
       <Project>{cfc26392-df5f-4a9e-92dc-f109bee1a32c}</Project>
       <Name>BackOffice.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Module.Ums\BackOffice.Module.Ums.csproj">
+      <Project>{2f2e8016-8c0e-43a1-8cb4-4b865592503c}</Project>
+      <Name>BackOffice.Module.Ums</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
       <Project>{230a0aad-dd39-4d83-92c8-eee9fb546417}</Project>
       <Name>BackOffice.Theme</Name>

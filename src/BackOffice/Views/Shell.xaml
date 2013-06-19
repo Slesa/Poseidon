@@ -14,16 +14,15 @@
     Width="800"
     Height="600" 
     Style="{DynamicResource Style.Shell}"
-    d:DataContext="{StaticResource DesignViewModel}"
     mc:Ignorable="d">
 
-    <Window.Resources>
-        <design:DesignTimeShellViewModel x:Key="DesignViewModel" />
-    </Window.Resources>
-    
     <Window.DataContext>
         <viewModels:ShellViewModel />
     </Window.DataContext>
+    
+    <d:Window.DataContext>
+        <design:DesignTimeShellViewModel />
+    </d:Window.DataContext>
    
     <Window.InputBindings>
         <KeyBinding Key="X" Modifiers="Control" Command="{Binding OnQuitCommand}"/>
