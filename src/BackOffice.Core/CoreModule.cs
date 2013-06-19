@@ -21,7 +21,7 @@ namespace Poseidon.BackOffice.Core
         {
             _regionManager.RegisterViewWithRegion(Regions.TagStatusBarRegion, typeof(StatusbarView));
             _regionManager.RegisterViewWithRegion(Regions.TagNavigationRegion, typeof(NavigationView));
-            
+            _regionManager.RegisterViewWithRegion(Regions.TagModulesRegion, typeof(ModulesView));
         }
     }
 }
