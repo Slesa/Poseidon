@@ -7,7 +7,7 @@
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:Core="clr-namespace:Poseidon.BackOffice.Core"
              mc:Ignorable="d" 
-             d:DesignHeight="30" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300">
 
     <UserControl.Resources>
         <Core:ModulesViewModelLocator x:Key="ModulesViewModel" />
@@ -21,7 +21,16 @@
         <design:DesignTimeModulesViewModel />
     </d:UserControl.DataContext>
     
-    <ListBox>
+    <ListBox ItemsSource="{Binding Modules}">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Vertical">
+                    <Image Source="{Binding IconFileName}"/>
+                    <TextBlock Text="{Binding Title}"/>
+                    <ToolTip Content="{Binding ToolTip}"></ToolTip>
+                </StackPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
         
     </ListBox>
 </UserControl>
