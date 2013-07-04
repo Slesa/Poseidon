@@ -2,20 +2,20 @@
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
 
-namespace Poseidon.BackOffice.Module.Ums
+namespace Poseidon.BackOffice.Module.Pms
 {
-    public class UmsModule : IModule
+    public class PmsModule : IModule
     {
         readonly IUnityContainer _container;
 
-        public UmsModule(IUnityContainer container)
+        public PmsModule(IUnityContainer container)
         {
             _container = container;
         }
 
         public void Initialize()
         {
-            _container.RegisterInstance(typeof (IOfficeModule), new UmsOfficeModule());
+            _container.RegisterInstance(typeof (IOfficeModule), new PmsOfficeModule());
         }
     }
 }

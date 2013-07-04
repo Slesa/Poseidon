@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UmsOfficeModule" xml:space="preserve">
-    <value>Benutzerverwaltung</value>
+  <data name="PmsOfficeModule" xml:space="preserve">
+    <value>POS Verwaltung</value>
   </data>
-  <data name="UmsOfficeModuleTooltip" xml:space="preserve">
-    <value>Varwaltung von Benuztern, Profilen und Rechten</value>
+  <data name="PmsOfficeModuleTooltip" xml:space="preserve">
+    <value>POS Umgebung verwalten</value>
   </data>
 </root>

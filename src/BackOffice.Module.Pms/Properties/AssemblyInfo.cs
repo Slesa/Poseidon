@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BackOffice.Module.Ums")]
+[assembly: AssemblyTitle("BackOffice.Module.Pms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCulture("")]
@@ -15,4 +15,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("11cb1387-fa1f-48e2-ae3f-31441972ab4f")]
+[assembly: Guid("ebbdef93-c0bc-4e56-a8a1-be5d0c5ba88e")]

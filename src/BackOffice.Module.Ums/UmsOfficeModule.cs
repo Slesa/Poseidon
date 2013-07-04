@@ -1,10 +1,9 @@
-﻿using BackOffice.Module.Ums.Resources;
-using Poseidon.BackOffice.Common;
+﻿using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Module.Ums.Resources;
 using Poseidon.Domain.Ums.Resources;
 
-namespace BackOffice.Module.Ums
+namespace Poseidon.BackOffice.Module.Ums
 {
-    [Priority(1)]
     public class UmsOfficeModule : IOfficeModule
     {
         public string Title { get { return Strings.UmsOfficeModule; } }

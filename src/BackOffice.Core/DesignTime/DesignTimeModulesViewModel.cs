@@ -27,10 +27,12 @@ namespace Poseidon.BackOffice.Core.DesignTime
 
         public DesignTimeModulesViewModel()
         {
-            Modules = new List<IOfficeModule>()
+            Modules = new List<IOfficeModule>
                 {
-                     new OfficeModule("User Management", "Manage user, user rights and user groups", @"/Poseidon.Domain.Ums.Resources;component/Ums.png"),
-                     new OfficeModule("POS Management", "Define your POS environment", @"/Poseidon.Domain.Pms.Resources;component/Pms.png"),
+                     new OfficeModule("User Management", "Manage user, user rights and user groups", @"pack://application:,,,/Poseidon.Domain.Ums.Resources;component/Ums.png"),
+                     new OfficeModule("POS Management", "Define your POS environment", @"pack://application:,,,/Poseidon.Domain.Pms.Resources;component/Pms.png"),
+                     new OfficeModule("Customer Relationship", "Know your customers", @"pack://application:,,,/Poseidon.Domain.Crm.Resources;component/Crm.png"),
+                     new OfficeModule("Inventory Control", "Know your inventory", @"pack://application:,,,/Poseidon.Domain.Ics.Resources;component/Ics.png"),
                 };
         }
     }

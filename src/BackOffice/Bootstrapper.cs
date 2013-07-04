@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Windows;
-using BackOffice.Module.Ums;
 using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
 using Poseidon.BackOffice.Core;
+using Poseidon.BackOffice.Module.Pms;
+using Poseidon.BackOffice.Module.Ums;
 using Poseidon.BackOffice.ViewModels;
 using Poseidon.BackOffice.Views;
 using Poseidon.Common;
@@ -46,19 +47,24 @@ namespace Poseidon.BackOffice
 
         IEnumerable<ModuleInfo> GetModules()
         {
-            var coreModule = typeof(CoreModule);
-            yield return new ModuleInfo
-                {
-                    ModuleName = coreModule.Name,
-                    ModuleType = coreModule.AssemblyQualifiedName
-                };
             var umsModule = typeof(UmsModule);
             yield return new ModuleInfo
                 {
                     ModuleName = umsModule.Name,
                     ModuleType = umsModule.AssemblyQualifiedName
                 };
-
+            var pmsModule = typeof(PmsModule);
+            yield return new ModuleInfo
+                {
+                    ModuleName = pmsModule.Name,
+                    ModuleType = pmsModule.AssemblyQualifiedName
+                };
+            var coreModule = typeof(CoreModule);
+            yield return new ModuleInfo
+                {
+                    ModuleName = coreModule.Name,
+                    ModuleType = coreModule.AssemblyQualifiedName
+                };
         }
 
         void RegisterShellObjects()
