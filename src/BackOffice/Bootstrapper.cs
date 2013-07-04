@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Windows;
+using BackOffice.Module.Ums;
 using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -37,14 +39,25 @@ namespace Poseidon.BackOffice
             RegisterViews();
         }
 
-        protected override void ConfigureModuleCatalog()
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            return new ModuleCatalog(GetModules());
+        }
+
+        IEnumerable<ModuleInfo> GetModules()
         {
             var coreModule = typeof(CoreModule);
-            ModuleCatalog.AddModule(new ModuleInfo
-            {
-                ModuleName = coreModule.Name,
-                ModuleType = coreModule.AssemblyQualifiedName
-            });
+            yield return new ModuleInfo
+                {
+                    ModuleName = coreModule.Name,
+                    ModuleType = coreModule.AssemblyQualifiedName
+                };
+            var umsModule = typeof(UmsModule);
+            yield return new ModuleInfo
+                {
+                    ModuleName = umsModule.Name,
+                    ModuleType = umsModule.AssemblyQualifiedName
+                };
 
         }
 

@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.Composition;
-using BackOffice.Module.Ums.Resources;
+﻿using BackOffice.Module.Ums.Resources;
 using Poseidon.BackOffice.Common;
 using Poseidon.Domain.Ums.Resources;
 
 namespace BackOffice.Module.Ums
 {
-    [Export(typeof(IOfficeModule))]
+    [Priority(1)]
     public class UmsOfficeModule : IOfficeModule
     {
         public string Title { get { return Strings.UmsOfficeModule; } }

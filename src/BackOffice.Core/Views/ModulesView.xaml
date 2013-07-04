@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Poseidon.BackOffice.Core.ViewModels"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:Core="clr-namespace:Poseidon.BackOffice.Core"
              mc:Ignorable="d" 
@@ -27,8 +26,8 @@
                 <StackPanel Orientation="Vertical">
                     <Image Source="{Binding IconFileName}"/>
                     <TextBlock Text="{Binding Title}"/>
-                    <ToolTip Content="{Binding ToolTip}"></ToolTip>
                 </StackPanel>
+                <!--<ToolTip Content="{Binding ToolTip}"></ToolTip>-->
             </DataTemplate>
         </ListBox.ItemTemplate>
         
