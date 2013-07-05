@@ -15,7 +15,7 @@ namespace Poseidon.BackOffice.Module.Pms
 
         public void Initialize()
         {
-            _container.RegisterInstance(typeof (IOfficeModule), new PmsOfficeModule());
+            _container.RegisterType<IOfficeModule,PmsOfficeModule>(Modules.PmsModule);
         }
     }
 }

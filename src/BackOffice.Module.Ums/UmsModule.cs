@@ -15,7 +15,7 @@ namespace Poseidon.BackOffice.Module.Ums
 
         public void Initialize()
         {
-            _container.RegisterInstance(typeof (IOfficeModule), new UmsOfficeModule());
+            _container.RegisterType<IOfficeModule, UmsOfficeModule>(Modules.UmsModule);
         }
     }
 }
