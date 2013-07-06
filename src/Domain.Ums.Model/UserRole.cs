@@ -1,6 +1,8 @@
-﻿namespace Domain.Ums.Model
+﻿using Poseidon.Domain.Common;
+
+namespace Domain.Ums.Model
 {
-    public class UserRole
+    public class UserRole : DomainEntity
     {
         public virtual string Name { get; set; } 
     }

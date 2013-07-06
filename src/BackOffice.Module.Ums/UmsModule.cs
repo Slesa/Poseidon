@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Module.Ums.Modules;
 
 namespace Poseidon.BackOffice.Module.Ums
 {
@@ -15,7 +16,9 @@ namespace Poseidon.BackOffice.Module.Ums
 
         public void Initialize()
         {
-            _container.RegisterType<IOfficeModule, UmsOfficeModule>(Modules.UmsModule);
+            var umsModule = new UmsOfficeModule();
+            _container.RegisterType<IOfficeModule, UmsUserModule>(UmsUserModule.Name, new InjectionConstructor(umsModule));
+            _container.RegisterType<IOfficeModule, UmsUserRoleModule>(UmsUserRoleModule.Name, new InjectionConstructor(umsModule));
         }
     }
 }

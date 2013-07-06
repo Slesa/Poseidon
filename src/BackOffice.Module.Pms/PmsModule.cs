@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Module.Pms.Modules;
 
 namespace Poseidon.BackOffice.Module.Pms
 {
@@ -15,7 +16,11 @@ namespace Poseidon.BackOffice.Module.Pms
 
         public void Initialize()
         {
-            _container.RegisterType<IOfficeModule,PmsOfficeModule>(Modules.PmsModule);
+            var pmsModule = new PmsOfficeModule();
+            _container.RegisterType<IOfficeModule,CurrencyModule>(CurrencyModule.Name, new InjectionConstructor(pmsModule));
+            _container.RegisterType<IOfficeModule,DiscountModule>(DiscountModule.Name, new InjectionConstructor(pmsModule));
+            _container.RegisterType<IOfficeModule,SalesFamilyModule>(SalesFamilyModule.Name, new InjectionConstructor(pmsModule));
+            _container.RegisterType<IOfficeModule,SalesItemModule>(SalesItemModule.Name, new InjectionConstructor(pmsModule));
         }
     }
 }

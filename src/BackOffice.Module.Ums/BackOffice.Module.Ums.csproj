@@ -70,7 +70,9 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <Compile Include="UmsModule.cs" />
-    <Compile Include="UmsOfficeModule.cs" />
+    <Compile Include="Modules\UmsOfficeModule.cs" />
+    <Compile Include="Modules\UmsUserModule.cs" />
+    <Compile Include="Modules\UmsUserRoleModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
