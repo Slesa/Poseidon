@@ -1,18 +1,16 @@
-﻿<UserControl x:Class="Poseidon.BackOffice.Core.Views.ModulesView"
+﻿<UserControl x:Class="Poseidon.BackOffice.Module.Ums.Views.UmsModuleView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
-             xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:ums="clr-namespace:Poseidon.BackOffice.Core;assembly=Poseidon.BackOffice.Core"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-
     <UserControl.Resources>
-        <core:ModulesViewModelLocator x:Key="ModulesViewModel" />
+        <ums:ModulesViewModelLocator x:Key="ModulesViewModel" />
 
         <CollectionViewSource x:Key="ModulesCollection" Source="{Binding Modules}">
             <CollectionViewSource.SortDescriptions>
@@ -73,7 +71,7 @@
     </UserControl.DataContext>
 
     <d:UserControl.DataContext>
-        <design:DesignTimeModulesViewModel />
+        <design:DesignTimeUmsModuleViewModel />
     </d:UserControl.DataContext>
 
     <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemTemplate="{StaticResource ItemTemplate.Module}">
