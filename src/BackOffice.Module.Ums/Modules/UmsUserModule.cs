@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
@@ -12,10 +11,11 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
     {
         public static readonly string Name = "UMS.UserModule";
 
-        public IRegionManager RegionManager { get; set; }
+        public IRegionManager RegionManager { get; private set; }
 
-        public UmsUserModule(IOfficeModule parent)
+        public UmsUserModule(UmsOfficeModule parent, IRegionManager regionManager)
         {
+            RegionManager = regionManager;
             Parent = parent;
             SelectedCommand = new DelegateCommand(OnSelection);
         }
@@ -30,9 +30,8 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
 
         void OnSelection()
         {
-            //var moduleRegion = RegionManager.Regions[Regions.TagModulesRegion];
-            //moduleRegion.RequestNavigate(new Uri("UmsModuleView", UriKind.Relative));
-            MessageBox.Show("User Module selected");
+            var moduleRegion = RegionManager.Regions[Regions.TagModulesRegion];
+            moduleRegion.RequestNavigate(new Uri("UmsModuleView", UriKind.Relative));
         }
     }
 }

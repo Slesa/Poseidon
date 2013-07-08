@@ -7,7 +7,7 @@ namespace Poseidon.BackOffice.Module.Pms.Modules
     {
         public static readonly string Name = "PMS.CurrencyModule";
 
-        public CurrencyModule(IOfficeModule parent)
+        public CurrencyModule(PmsOfficeModule parent)
         {
             Parent = parent;
         }

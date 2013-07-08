@@ -7,7 +7,7 @@ namespace Poseidon.BackOffice.Module.Pms.Modules
     {
         public static readonly string Name = "PMS.SalesItemModule";
 
-        public SalesItemModule(IOfficeModule parent)
+        public SalesItemModule(PmsOfficeModule parent)
         {
             Parent = parent;
         }

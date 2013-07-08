@@ -2,6 +2,7 @@
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Ums.Modules;
+using Poseidon.BackOffice.Module.Ums.ViewModels;
 
 namespace Poseidon.BackOffice.Module.Ums
 {
@@ -16,9 +17,13 @@ namespace Poseidon.BackOffice.Module.Ums
 
         public void Initialize()
         {
-            var umsModule = new UmsOfficeModule();
-            _container.RegisterType<IOfficeModule, UmsUserModule>(UmsUserModule.Name, new InjectionConstructor(umsModule));
-            _container.RegisterType<IOfficeModule, UmsUserRoleModule>(UmsUserRoleModule.Name, new InjectionConstructor(umsModule));
+            _container.RegisterType<UmsOfficeModule>(new ContainerControlledLifetimeManager());
+
+            _container.RegisterType<IOfficeModule, UmsUserModule>(UmsUserModule.Name);
+            _container.RegisterType<IOfficeModule, UmsUserRoleModule>(UmsUserRoleModule.Name);
+
+            _container.RegisterType<UserRolesViewModel>();
+            _container.RegisterType<UsersViewModel>();
         }
     }
 }
