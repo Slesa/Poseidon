@@ -8,6 +8,7 @@
              xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:pe="clr-namespace:Poseidon.Common.Prism.Extensions;assembly=Poseidon.Common.Prism"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -31,6 +32,7 @@
                         <Grid Margin="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
@@ -38,13 +40,16 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <!--<Image Grid.ColumnSpan="2" Width="48" Height="48" Source="{Binding Parent.Image, RelativeSource={RelativeSource FindAncestor,}}}" />-->
-                            <TextBlock Grid.Column="1" x:Name="parentName" Text="{Binding Path=Name}" FontSize="20" Foreground="CornflowerBlue" />
+                            <TextBlock Grid.Column="1" x:Name="parentName" Text="{Binding Path=Name, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />
+                            <TextBlock Grid.Column="0" x:Name="parentTitle" Text="{Binding Path=Title, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />
+                            <TextBlock Grid.Column="2" x:Name="count" Text="{Binding Path=Prioity, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />
                             <ItemsControl Grid.Column="1" Grid.Row="1">
-                                <!--  ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <WrapPanel IsItemsHost="True" Orientation="Horizontal" />
+                                        <WrapPanel IsItemsHost="True" Orientation="Horizontal" 
+                                                   MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type ListBox}, Mode=FindAncestor}}" />
                                     </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel -->
+                                </ItemsControl.ItemsPanel>
                                 <ItemsPresenter />
                             </ItemsControl>
                         </Grid>
@@ -53,6 +58,21 @@
             </Setter>
         </Style>
 
+        <Style x:Key="ListBox.Modules" TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="pe:GroupStyleExtension.GroupStyle">
+                <Setter.Value>
+                    <GroupStyle ContainerStyle="{StaticResource GroupItem.Module}">
+                        <GroupStyle.Panel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </GroupStyle.Panel>
+                    </GroupStyle>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
         <DataTemplate x:Key="ItemTemplate.Module">
             <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Horizontal">
@@ -76,7 +96,7 @@
         <design:DesignTimeModulesViewModel />
     </d:UserControl.DataContext>
 
-    <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemTemplate="{StaticResource ItemTemplate.Module}">
+    <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemTemplate="{StaticResource ItemTemplate.Module}" Style="{StaticResource ListBox.Modules}">
         <ListBox.GroupStyle>
             <GroupStyle>
                 <GroupStyle.ContainerStyle>

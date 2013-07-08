@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="Adorners\WatermarkAdorner.cs" />
     <Compile Include="Effects\GrayScaleEffect.cs" />
+    <Compile Include="Extensions\GroupStyleExtension.cs" />
     <Compile Include="Services\WatermarkService.cs" />
     <Compile Include="Log4NetLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
