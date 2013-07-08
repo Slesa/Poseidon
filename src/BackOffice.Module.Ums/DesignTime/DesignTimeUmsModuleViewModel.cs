@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
 
@@ -24,7 +23,6 @@ namespace Poseidon.BackOffice.Module.Ums.DesignTime
             }
         }
 
-        [Dependency]
         public IEnumerable<IOfficeModule> Modules { get; set; }
 
         public DesignTimeUmsModuleViewModel()

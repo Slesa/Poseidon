@@ -9,6 +9,12 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ums:UserRolesViewModelLocator x:Key="ModulesViewModel" />
+
+        <DataTemplate x:Key="ItemTemplate.UserRole">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
+                </StackPanel>
+        </DataTemplate>
     </UserControl.Resources>
 
     <UserControl.DataContext>
@@ -19,7 +25,10 @@
         <design:DesignTimeUserRolesViewModel />
     </d:UserControl.DataContext>
 
-    <Grid>
-            
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
+            <TextBox Text="User roles" TextAlignment="Center" />
+        </Border>
+        <ListBox ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}" />
+    </DockPanel>
 </UserControl>

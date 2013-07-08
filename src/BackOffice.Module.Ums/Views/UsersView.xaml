@@ -9,6 +9,13 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ums:UsersViewModelLocator x:Key="ModulesViewModel" />
+
+        <DataTemplate x:Key="ItemTemplate.User">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
+                <TextBlock VerticalAlignment="Center" Text="{Binding UserRole.Name}"/>
+            </StackPanel>
+        </DataTemplate>
     </UserControl.Resources>
 
     <UserControl.DataContext>
@@ -18,8 +25,11 @@
     <d:UserControl.DataContext>
         <design:DesignTimeUsersViewModel />
     </d:UserControl.DataContext>
-    
-    <Grid>
 
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
+            <TextBox Text="Users" TextAlignment="Center" />
+        </Border>
+        <ListBox ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}" />
+    </DockPanel>
 </UserControl>
