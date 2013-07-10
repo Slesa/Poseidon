@@ -60,6 +60,7 @@
 
         <Style x:Key="ListBox.Modules" TargetType="{x:Type ListBox}">
             <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
             <Setter Property="pe:GroupStyleExtension.GroupStyle">
                 <Setter.Value>
                     <GroupStyle ContainerStyle="{StaticResource GroupItem.Module}">
