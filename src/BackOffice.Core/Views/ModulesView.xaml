@@ -76,17 +76,13 @@
 
         <Style x:Key="ItemTemplate.Item" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="MaxWidth" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <StackPanel ToolTip="{TemplateBinding ToolTip}" Orientation="Horizontal">
                             <Image Width="22" Height="22" Source="{Binding IconFileName}"/>
                             <TextBlock x:Name="menuText" VerticalAlignment="Center" Text="{Binding Title}" Foreground="BurlyWood" />
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="Click">
-                                    <i:InvokeCommandAction Command="{Binding SelectedCommand}"/>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
                         </StackPanel>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -99,7 +95,13 @@
         </Style>
         
         <DataTemplate x:Key="ItemTemplate.Module">
-            <Button Style="{StaticResource ItemTemplate.Item}" />
+            <Button Style="{StaticResource ItemTemplate.Item}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding SelectedCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
         </DataTemplate>
     </UserControl.Resources>
 
