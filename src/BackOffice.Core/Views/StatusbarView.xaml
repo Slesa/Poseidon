@@ -5,12 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Poseidon.BackOffice.Core.ViewModels"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
+             xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="300">
 
+    <UserControl.Resources>
+        <core:StatusBarViewModelLocator x:Key="StatusBarViewModel" />
+    </UserControl.Resources>
+
     <UserControl.DataContext>
-        <local:StatusBarViewModel />
+        <Binding Path="ViewModel" Source="{StaticResource StatusBarViewModel}" />
     </UserControl.DataContext>
+    
     <d:UserControl.DataContext>
         <design:DesignTimeStatusBarViewModel />
     </d:UserControl.DataContext>

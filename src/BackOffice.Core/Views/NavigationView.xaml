@@ -4,15 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:Poseidon.Common.Prism.Services;assembly=Poseidon.Common.Prism"
-             xmlns:local="clr-namespace:Poseidon.BackOffice.Core.ViewModels"
              xmlns:DesignTime="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
+             xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              mc:Ignorable="d" 
              d:DesignHeight="100" 
              d:DesignWidth="300">
+    
+    <UserControl.Resources>
+        <core:NavigationViewModelLocator x:Key="NavigationViewModel" />
+    </UserControl.Resources>
 
     <UserControl.DataContext>
-        <local:NavigationViewModel />
+        <Binding Path="ViewModel" Source="{StaticResource NavigationViewModel}" />
     </UserControl.DataContext>
+    
     <d:UserControl.DataContext>
         <DesignTime:DesignTimeNavigationViewModel />
     </d:UserControl.DataContext>

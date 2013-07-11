@@ -70,7 +70,7 @@ namespace Poseidon.BackOffice
         void RegisterShellObjects()
         {
             RegisterTypeIfMissing(typeof(ILoggerFacade), typeof(Log4NetLogger), true);
-            RegisterTypeIfMissing(typeof(IRegionManager), typeof(IRegionManager), true);
+            RegisterTypeIfMissing(typeof(IRegionManager), typeof(RegionManager), true);
         }
 
         void RegisterViews()
