@@ -30,7 +30,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
 
         void OnSelection()
         {
-            RegionManager.RequestNavigate(Regions.TagModulesRegion, new Uri(View.UserRolesView, UriKind.Relative));
+            RegionManager.RequestNavigate(Regions.TagModulesRegion, View.UserRolesView);
         }
     }
 }
