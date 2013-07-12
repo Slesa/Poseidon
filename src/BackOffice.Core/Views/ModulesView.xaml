@@ -76,7 +76,6 @@
 
         <Style x:Key="ItemTemplate.Item" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="MaxWidth" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
