@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{36081386-6E2C-4CC0-854C-C2070CC6C9B7}</ProjectGuid>
+    <ProjectGuid>{CE4B54DB-63B6-48E2-8268-0AEFB53AEADE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Poseidon.Domain.Ums.Hibernate.Specs</RootNamespace>
-    <AssemblyName>Poseidon.Domain.Ums.Hibernate.Specs</AssemblyName>
+    <RootNamespace>Poseidon.Domain.Pms.Hibernate</RootNamespace>
+    <AssemblyName>Poseidon.Domain.Pms.Hibernate</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,23 +36,8 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Machine.Fakes">
-      <HintPath>..\packages\Machine.Fakes.1.6.0\lib\net40\Machine.Fakes.dll</HintPath>
-    </Reference>
-    <Reference Include="Machine.Fakes.Adapters.RhinoMocks">
-      <HintPath>..\packages\Machine.Fakes.RhinoMocks.1.6.0\lib\net40\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Machine.Specifications">
-      <HintPath>..\packages\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.dll</HintPath>
-    </Reference>
-    <Reference Include="Machine.Specifications.Clr4">
-      <HintPath>..\packages\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
-    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,30 +47,32 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Maps\CurrencyMap.cs" />
+    <Compile Include="Maps\DiscountMap.cs" />
+    <Compile Include="Maps\PayformMap.cs" />
+    <Compile Include="Maps\SalesFamilyGroupMap.cs" />
+    <Compile Include="Maps\SalesFamilyMap.cs" />
+    <Compile Include="Maps\SalesItemMap.cs" />
+    <Compile Include="Maps\WaiterMap.cs" />
+    <Compile Include="Maps\WaiterTeamMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserMapSpecs.cs" />
-    <Compile Include="UserRoleMapSpecs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
       <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
       <Name>Domain.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.Ums.Hibernate\Domain.Ums.Hibernate.csproj">
-      <Project>{11c6f596-a4b7-49a7-8cca-b5b2091acd40}</Project>
-      <Name>Domain.Ums.Hibernate</Name>
+    <ProjectReference Include="..\Domain.Pms.Model\Domain.Pms.Model.csproj">
+      <Project>{43b0af8e-ed61-4d64-b227-83cf3f9a0aba}</Project>
+      <Name>Domain.Pms.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Ums.Model\Domain.Ums.Model.csproj">
       <Project>{BFAF0FB8-E823-4BB8-B8EA-F774D5742FEB}</Project>
       <Name>Domain.Ums.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hibernate.Specs.Common\Hibernate.Specs.Common.csproj">
-      <Project>{1149316A-92EF-477F-9207-2338F0E6F989}</Project>
-      <Name>NHibernate.Specs.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

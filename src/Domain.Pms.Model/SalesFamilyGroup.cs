@@ -2,9 +2,9 @@
 
 namespace Poseidon.Domain.Pms.Model
 {
-    public class SalesItem : DomainEntity
+    public class SalesFamilyGroup : DomainEntity
     {
         public virtual string Name { get; set; }
-        public virtual SalesFamily SalesFamily { get; set; }
+         
     }
 }
