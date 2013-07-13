@@ -45,6 +45,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Pms.Hibernate", "Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Pms.Hibernate.Specs", "Domain.Pms.Hibernate.Specs\Domain.Pms.Hibernate.Specs.csproj", "{FEBA11BE-76AE-44E1-B405-7C6AE790A582}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Ics.Model", "Domain.Ics.Model\Domain.Ics.Model.csproj", "{292252E1-4343-4AA5-B555-B94703DB0374}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Ics.Hibernate", "Domain.Ics.Hibernate\Domain.Ics.Hibernate.csproj", "{506B34DF-E27D-4D5D-B64A-7C0C80107632}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Ics.Hibernate.Specs", "Domain.Ics.Hibernate.Specs\Domain.Ics.Hibernate.Specs.csproj", "{6C8856F0-7DE1-4AD1-8ED7-7B7B11CF9640}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +145,18 @@ Global
 		{FEBA11BE-76AE-44E1-B405-7C6AE790A582}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEBA11BE-76AE-44E1-B405-7C6AE790A582}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEBA11BE-76AE-44E1-B405-7C6AE790A582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292252E1-4343-4AA5-B555-B94703DB0374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292252E1-4343-4AA5-B555-B94703DB0374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292252E1-4343-4AA5-B555-B94703DB0374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292252E1-4343-4AA5-B555-B94703DB0374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{506B34DF-E27D-4D5D-B64A-7C0C80107632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{506B34DF-E27D-4D5D-B64A-7C0C80107632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{506B34DF-E27D-4D5D-B64A-7C0C80107632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{506B34DF-E27D-4D5D-B64A-7C0C80107632}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8856F0-7DE1-4AD1-8ED7-7B7B11CF9640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8856F0-7DE1-4AD1-8ED7-7B7B11CF9640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8856F0-7DE1-4AD1-8ED7-7B7B11CF9640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8856F0-7DE1-4AD1-8ED7-7B7B11CF9640}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

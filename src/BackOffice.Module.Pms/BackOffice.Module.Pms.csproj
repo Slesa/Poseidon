@@ -78,7 +78,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DesignTime\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
       <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
