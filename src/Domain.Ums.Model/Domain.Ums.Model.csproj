@@ -7,8 +7,8 @@
     <ProjectGuid>{BFAF0FB8-E823-4BB8-B8EA-F774D5742FEB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain.Ums.Model</RootNamespace>
-    <AssemblyName>Domain.Ums.Model</AssemblyName>
+    <RootNamespace>Poseidon.Domain.Ums.Model</RootNamespace>
+    <AssemblyName>Poseidon.Domain.Ums.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

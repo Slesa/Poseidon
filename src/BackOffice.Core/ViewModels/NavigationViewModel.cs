@@ -1,7 +1,6 @@
 ﻿using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
 
@@ -26,6 +25,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
         void OnNavigated(object sender, RegionNavigationEventArgs e)
         {
             _navigationJournal = e.NavigationContext.NavigationService.Journal;
+            _navigationJournal.RecordNavigation(e.NavigationContext.NavigationService.Journal.CurrentEntry);
             ((DelegateCommand)OnBackCommand).RaiseCanExecuteChanged();
             ((DelegateCommand)OnForwardCommand).RaiseCanExecuteChanged();
         }
@@ -36,6 +36,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
 
         void OnForward()
         {
+            _navigationJournal.GoForward();
         }
 
         bool CanGoForward()
@@ -47,6 +48,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
 
         void OnBack()
         {
+            _navigationJournal.GoBack();
         }
 
         bool CanGoBack()

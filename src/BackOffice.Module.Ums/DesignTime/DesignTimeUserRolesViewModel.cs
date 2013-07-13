@@ -1,5 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using Domain.Ums.Model;
+using Poseidon.Domain.Ums.Model;
 
 namespace Poseidon.BackOffice.Module.Ums.DesignTime
 {

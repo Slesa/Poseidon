@@ -1,6 +1,6 @@
 ﻿using Poseidon.Domain.Common;
 
-namespace Domain.Ums.Model
+namespace Poseidon.Domain.Ums.Model
 {
     public class UserToken : DomainEntity
     {
