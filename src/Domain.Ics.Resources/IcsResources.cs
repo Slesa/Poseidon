@@ -1,6 +1,6 @@
-﻿namespace Poseidon.Domain.Ums.Resources
+﻿namespace Poseidon.Domain.Ics.Resources
 {
-    public static class UmsResources
+    public static class IcsResources
     {
         public static readonly string IcsIcon = @"/Poseidon.Domain.Ics.Resources;component/Ics.png";
 

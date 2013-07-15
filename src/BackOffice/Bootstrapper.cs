@@ -7,6 +7,7 @@ using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
 using Poseidon.BackOffice.Core;
+using Poseidon.BackOffice.Module.Ics;
 using Poseidon.BackOffice.Module.Pms;
 using Poseidon.BackOffice.Module.Ums;
 using Poseidon.BackOffice.ViewModels;
@@ -47,6 +48,12 @@ namespace Poseidon.BackOffice
 
         IEnumerable<ModuleInfo> GetModules()
         {
+            var icsModule = typeof(IcsModule);
+            yield return new ModuleInfo
+                {
+                    ModuleName = icsModule.Name,
+                    ModuleType = icsModule.AssemblyQualifiedName
+                };
             var umsModule = typeof(UmsModule);
             yield return new ModuleInfo
                 {
