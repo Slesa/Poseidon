@@ -78,8 +78,8 @@
     </Compile>
     <Compile Include="UmsModule.cs" />
     <Compile Include="Modules\UmsOfficeModule.cs" />
-    <Compile Include="Modules\UmsUserModule.cs" />
-    <Compile Include="Modules\UmsUserRoleModule.cs" />
+    <Compile Include="Modules\UserModule.cs" />
+    <Compile Include="Modules\UserRoleModule.cs" />
     <Compile Include="ViewModelLocators.cs" />
     <Compile Include="ViewModels\UmsModuleViewModel.cs" />
     <Compile Include="ViewModels\UserRolesViewModel.cs" />

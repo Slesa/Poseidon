@@ -123,4 +123,16 @@
   <data name="UmsOfficeModuleTooltip" xml:space="preserve">
     <value>Varwaltung von Benuztern, Profilen und Rechten</value>
   </data>
+  <data name="UserModule" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="UserModuleTooltip" xml:space="preserve">
+    <value>Verwalten Sie Ihre Benutzer</value>
+  </data>
+  <data name="UserRoleModule" xml:space="preserve">
+    <value>Benutzerrollen</value>
+  </data>
+  <data name="UserRoleModuleTooltip" xml:space="preserve">
+    <value>Verwalten Sie Ihre Benutzerrollen</value>
+  </data>
 </root>

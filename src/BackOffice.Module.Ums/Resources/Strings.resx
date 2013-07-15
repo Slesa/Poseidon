@@ -123,4 +123,16 @@
   <data name="UmsOfficeModuleTooltip" xml:space="preserve">
     <value>Manage users of the system, edit their profiles and their rights</value>
   </data>
+  <data name="UserModule" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="UserModuleTooltip" xml:space="preserve">
+    <value>Manage your users</value>
+  </data>
+  <data name="UserRoleModule" xml:space="preserve">
+    <value>User roles</value>
+  </data>
+  <data name="UserRoleModuleTooltip" xml:space="preserve">
+    <value>Manage your user roles</value>
+  </data>
 </root>

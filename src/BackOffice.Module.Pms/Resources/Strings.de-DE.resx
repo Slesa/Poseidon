@@ -117,10 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CurrencyModule" xml:space="preserve">
+    <value>Währungen</value>
+  </data>
+  <data name="CurrencyModuleTooltip" xml:space="preserve">
+    <value>Verwalten Sie Ihre Währungen</value>
+  </data>
+  <data name="DiscountModule" xml:space="preserve">
+    <value>Rabatte</value>
+  </data>
+  <data name="DiscountModuleTooltip" xml:space="preserve">
+    <value>Verwalten Sie Ihre Rabatte</value>
+  </data>
   <data name="PmsOfficeModule" xml:space="preserve">
     <value>POS Verwaltung</value>
   </data>
   <data name="PmsOfficeModuleTooltip" xml:space="preserve">
     <value>POS Umgebung verwalten</value>
+  </data>
+  <data name="SalesFamilyModule" xml:space="preserve">
+    <value>Warengruppen</value>
+  </data>
+  <data name="SalesFamilyModuleTooltip" xml:space="preserve">
+    <value>Verwalten Sie Ihre Warengruppen</value>
+  </data>
+  <data name="SalesItemModule" xml:space="preserve">
+    <value>Verkaufsartikel</value>
+  </data>
+  <data name="SalesItemModuleTooltip" xml:space="preserve">
+    <value>Verwalten Sie Ihre Verkausartikel</value>
   </data>
 </root>
