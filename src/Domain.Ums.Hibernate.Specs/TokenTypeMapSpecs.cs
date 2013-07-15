@@ -6,19 +6,19 @@ using Poseidon.Hibernate.Specs.Common;
 
 namespace Poseidon.Domain.Ums.Hibernate.Specs
 {
-    [Subject(typeof(UserRoleMap))]
-    public class When_checking_persistence_specs_of_user_role : InMemoryDatabaseSpecs<UserRoleMap>
+    [Subject(typeof(TokenTypeMap))]
+    public class When_checking_persistence_specs_of_token_type : InMemoryDatabaseSpecs<TokenTypeMap>
     {
         Because of = () =>
             {
-                var spec = new PersistenceSpecification<UserRole>(Session);
+                var spec = new PersistenceSpecification<TokenType>(Session);
                 _check = spec
-                    .CheckProperty(c => c.Name, "A user role")
+                    .CheckProperty(c => c.Name, "A token type")
                     .CheckProperty(c => c.Version, 1);
             };
 
         It should_be_verified = () => _check.VerifyTheMappings();
 
-        static PersistenceSpecification<UserRole> _check;
+        static PersistenceSpecification<TokenType> _check;
     }
 }

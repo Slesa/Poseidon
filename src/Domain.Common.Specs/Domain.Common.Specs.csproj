@@ -46,6 +46,7 @@
     </Compile>
     <Compile Include="DomainEntitySpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjectSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
