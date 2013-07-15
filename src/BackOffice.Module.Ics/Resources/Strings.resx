@@ -123,4 +123,16 @@
   <data name="IcsOfficeModuleTooltip" xml:space="preserve">
     <value>All your inventory at one glance</value>
   </data>
+  <data name="UnitModule" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="UnitModuleTooltip" xml:space="preserve">
+    <value>Manage your units</value>
+  </data>
+  <data name="UnitTypeModule" xml:space="preserve">
+    <value>Unit types</value>
+  </data>
+  <data name="UnitTypeModuleTooltip" xml:space="preserve">
+    <value>Manage your unit types</value>
+  </data>
 </root>
