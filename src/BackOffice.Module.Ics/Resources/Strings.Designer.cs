@@ -79,6 +79,42 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recipes.
+        /// </summary>
+        internal static string RecipeModule {
+            get {
+                return ResourceManager.GetString("RecipeModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your recipes.
+        /// </summary>
+        internal static string RecipeModuleTooltip {
+            get {
+                return ResourceManager.GetString("RecipeModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stocks.
+        /// </summary>
+        internal static string StockModule {
+            get {
+                return ResourceManager.GetString("StockModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your stocks.
+        /// </summary>
+        internal static string StockModuleTooltip {
+            get {
+                return ResourceManager.GetString("StockModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Units.
         /// </summary>
         internal static string UnitModule {

@@ -123,6 +123,18 @@
   <data name="IcsOfficeModuleTooltip" xml:space="preserve">
     <value>All your inventory at one glance</value>
   </data>
+  <data name="RecipeModule" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="RecipeModuleTooltip" xml:space="preserve">
+    <value>Manage your recipes</value>
+  </data>
+  <data name="StockModule" xml:space="preserve">
+    <value>Stocks</value>
+  </data>
+  <data name="StockModuleTooltip" xml:space="preserve">
+    <value>Manage your stocks</value>
+  </data>
   <data name="UnitModule" xml:space="preserve">
     <value>Units</value>
   </data>

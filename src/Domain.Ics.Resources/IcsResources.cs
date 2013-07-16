@@ -7,7 +7,9 @@
         public static readonly string ProductionItemIcon = @"/Poseidon.Domain.Ics.Resources;component/ProductionItem.png";
         public static readonly string PurchaseFamilyIcon = @"/Poseidon.Domain.Ics.Resources;component/PurchaseFamily.png";
         public static readonly string PurchaseItemIcon = @"/Poseidon.Domain.Ics.Resources;component/PurchaseItem.png";
+        public static readonly string RecipeIcon = @"/Poseidon.Domain.Ics.Resources;component/Recipe.png";
         public static readonly string RecipeItemIcon = @"/Poseidon.Domain.Ics.Resources;component/RecipeItem.png";
+        public static readonly string StockIcon = @"/Poseidon.Domain.Ics.Resources;component/Stock.png";
         public static readonly string StockItemIcon = @"/Poseidon.Domain.Ics.Resources;component/StockItem.png";
         public static readonly string UnitIcon = @"/Poseidon.Domain.Ics.Resources;component/Unit.png";
         public static readonly string UnitTypeIcon = @"/Poseidon.Domain.Ics.Resources;component/UnitType.png";

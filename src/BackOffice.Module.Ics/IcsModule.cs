@@ -2,6 +2,8 @@
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Ics.Modules;
+using Poseidon.BackOffice.Module.Ics.ViewModels;
+using Poseidon.BackOffice.Module.Ics.Views;
 
 namespace Poseidon.BackOffice.Module.Ics
 {
@@ -20,6 +22,12 @@ namespace Poseidon.BackOffice.Module.Ics
 
             _container.RegisterType<IOfficeModule,UnitModule>(UnitModule.Name);
             _container.RegisterType<IOfficeModule,UnitTypeModule>(UnitTypeModule.Name);
+
+            _container.RegisterType<object, UnitsView>(View.UnitsView);
+            _container.RegisterType<object, UnitTypesView>(View.UnitTypesView);
+
+            _container.RegisterType<UnitsViewModel>();
+            _container.RegisterType<UnitTypesViewModel>();
         }
     }
 }
