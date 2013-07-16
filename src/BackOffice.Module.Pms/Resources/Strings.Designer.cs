@@ -97,6 +97,24 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Payforms.
+        /// </summary>
+        internal static string PayformModule {
+            get {
+                return ResourceManager.GetString("PayformModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your payforms.
+        /// </summary>
+        internal static string PayformModuleTooltip {
+            get {
+                return ResourceManager.GetString("PayformModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to POS Management.
         /// </summary>
         internal static string PmsOfficeModule {
@@ -111,6 +129,24 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         internal static string PmsOfficeModuleTooltip {
             get {
                 return ResourceManager.GetString("PmsOfficeModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales family groups.
+        /// </summary>
+        internal static string SalesFamilyGroupModule {
+            get {
+                return ResourceManager.GetString("SalesFamilyGroupModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your sales family groups.
+        /// </summary>
+        internal static string SalesFamilyGroupModuleTooltip {
+            get {
+                return ResourceManager.GetString("SalesFamilyGroupModuleTooltip", resourceCulture);
             }
         }
         
@@ -147,6 +183,42 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         internal static string SalesItemModuleTooltip {
             get {
                 return ResourceManager.GetString("SalesItemModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiters.
+        /// </summary>
+        internal static string WaiterModule {
+            get {
+                return ResourceManager.GetString("WaiterModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your waiters.
+        /// </summary>
+        internal static string WaiterModuleTooltip {
+            get {
+                return ResourceManager.GetString("WaiterModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiter teams.
+        /// </summary>
+        internal static string WaiterTeamModule {
+            get {
+                return ResourceManager.GetString("WaiterTeamModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your waiter teams.
+        /// </summary>
+        internal static string WaiterTeamModuleTooltip {
+            get {
+                return ResourceManager.GetString("WaiterTeamModuleTooltip", resourceCulture);
             }
         }
     }

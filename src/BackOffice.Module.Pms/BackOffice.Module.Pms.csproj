@@ -67,6 +67,10 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="DesignTime\DesignTimeCurrenciesViewModel.cs" />
+    <Compile Include="Modules\WaiterTeamModule.cs" />
+    <Compile Include="Modules\WaiterModule.cs" />
+    <Compile Include="Modules\SalesFamilyGroupModule.cs" />
+    <Compile Include="Modules\PayformModule.cs" />
     <Compile Include="Modules\CurrencyModule.cs" />
     <Compile Include="Modules\DiscountModule.cs" />
     <Compile Include="Modules\SalesFamilyModule.cs" />
@@ -82,7 +86,35 @@
     <Compile Include="View.cs" />
     <Compile Include="ViewModelLocators.cs" />
     <Compile Include="ViewModels\CurrenciesViewModel.cs" />
+    <Compile Include="ViewModels\DiscountsViewModel.cs" />
+    <Compile Include="ViewModels\PayformsViewModel.cs" />
     <Compile Include="ViewModels\PmsModuleViewModel.cs" />
+    <Compile Include="ViewModels\SalesFamiliesViewModel.cs" />
+    <Compile Include="ViewModels\SalesFamilyGroupsViewModel.cs" />
+    <Compile Include="ViewModels\SalesItemsViewModel.cs" />
+    <Compile Include="ViewModels\WaitersViewModel.cs" />
+    <Compile Include="ViewModels\WaiterTeamsViewModel.cs" />
+    <Compile Include="Views\SalesItemsView.xaml.cs">
+      <DependentUpon>SalesItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesFamilyGroupsView.xaml.cs">
+      <DependentUpon>SalesFamilyGroupsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesFamiliesView.xaml.cs">
+      <DependentUpon>SalesFamiliesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WaiterTeamsView.xaml.cs">
+      <DependentUpon>WaiterTeamsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WaitersView.xaml.cs">
+      <DependentUpon>WaitersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayformsView.xaml.cs">
+      <DependentUpon>PayformsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DiscountsView.xaml.cs">
+      <DependentUpon>DiscountsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CurrenciesView.xaml.cs">
       <DependentUpon>CurrenciesView.xaml</DependentUpon>
     </Compile>
@@ -121,6 +153,34 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\SalesItemsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalesFamilyGroupsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalesFamiliesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WaiterTeamsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WaitersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PayformsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DiscountsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\CurrenciesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

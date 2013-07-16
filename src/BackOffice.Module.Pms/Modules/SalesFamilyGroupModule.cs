@@ -7,30 +7,30 @@ using Poseidon.Domain.Pms.Resources;
 
 namespace Poseidon.BackOffice.Module.Pms.Modules
 {
-    public class DiscountModule : IOfficeModule
+    public class SalesFamilyGroupModule : IOfficeModule
     {
-        public static readonly string Name = "PMS.DiscountModule";
+        public static readonly string Name = "PMS.SalesFamilyGroupModule";
 
         public IRegionManager RegionManager { get; private set; }
 
-        public DiscountModule(PmsOfficeModule parent, IRegionManager regionManager)
+        public SalesFamilyGroupModule(PmsOfficeModule parent, IRegionManager regionManager)
         {
             Parent = parent;
             RegionManager = regionManager;
             SelectedCommand = new DelegateCommand(OnSelection);
         }
 
-        public string Title { get { return Strings.DiscountModule; } }
-        public string ToolTip { get { return Strings.DiscountModuleTooltip; } }
-        public string IconFileName { get { return PmsResources.DiscountIcon; } }
-        public int Priority { get { return 2; } }
+        public string Title { get { return Strings.SalesFamilyGroupModule; } }
+        public string ToolTip { get { return Strings.SalesFamilyGroupModuleTooltip; } }
+        public string IconFileName { get { return PmsResources.SalesFamilyGroupIcon; } }
+        public int Priority { get { return 10; } }
         public IOfficeModule Parent { get ; private set; }
 
         public ICommand SelectedCommand { get; set; }
 
         void OnSelection()
         {
-            RegionManager.RequestNavigate(Regions.TagModulesRegion, View.DiscountsView);
+            RegionManager.RequestNavigate(Regions.TagModulesRegion, View.SalesFamilyGroupsView);
         }
     }
 }

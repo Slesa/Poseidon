@@ -129,11 +129,23 @@
   <data name="DiscountModuleTooltip" xml:space="preserve">
     <value>Manage your discounts</value>
   </data>
+  <data name="PayformModule" xml:space="preserve">
+    <value>Payforms</value>
+  </data>
+  <data name="PayformModuleTooltip" xml:space="preserve">
+    <value>Manage your payforms</value>
+  </data>
   <data name="PmsOfficeModule" xml:space="preserve">
     <value>POS Management</value>
   </data>
   <data name="PmsOfficeModuleTooltip" xml:space="preserve">
     <value>Configure your POS environment</value>
+  </data>
+  <data name="SalesFamilyGroupModule" xml:space="preserve">
+    <value>Sales family groups</value>
+  </data>
+  <data name="SalesFamilyGroupModuleTooltip" xml:space="preserve">
+    <value>Manage your sales family groups</value>
   </data>
   <data name="SalesFamilyModule" xml:space="preserve">
     <value>Sales families</value>
@@ -146,5 +158,17 @@
   </data>
   <data name="SalesItemModuleTooltip" xml:space="preserve">
     <value>Manage your sales items</value>
+  </data>
+  <data name="WaiterModule" xml:space="preserve">
+    <value>Waiters</value>
+  </data>
+  <data name="WaiterModuleTooltip" xml:space="preserve">
+    <value>Manage your waiters</value>
+  </data>
+  <data name="WaiterTeamModule" xml:space="preserve">
+    <value>Waiter teams</value>
+  </data>
+  <data name="WaiterTeamModuleTooltip" xml:space="preserve">
+    <value>Manage your waiter teams</value>
   </data>
 </root>

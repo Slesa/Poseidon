@@ -7,22 +7,22 @@ using Poseidon.Domain.Pms.Resources;
 
 namespace Poseidon.BackOffice.Module.Pms.Modules
 {
-    public class DiscountModule : IOfficeModule
+    public class PayformModule : IOfficeModule
     {
-        public static readonly string Name = "PMS.DiscountModule";
+        public static readonly string Name = "PMS.PayformModule";
 
         public IRegionManager RegionManager { get; private set; }
 
-        public DiscountModule(PmsOfficeModule parent, IRegionManager regionManager)
+        public PayformModule(PmsOfficeModule parent, IRegionManager regionManager)
         {
             Parent = parent;
             RegionManager = regionManager;
             SelectedCommand = new DelegateCommand(OnSelection);
         }
 
-        public string Title { get { return Strings.DiscountModule; } }
-        public string ToolTip { get { return Strings.DiscountModuleTooltip; } }
-        public string IconFileName { get { return PmsResources.DiscountIcon; } }
+        public string Title { get { return Strings.PayformModule; } }
+        public string ToolTip { get { return Strings.PayformModuleTooltip; } }
+        public string IconFileName { get { return PmsResources.PayformIcon; } }
         public int Priority { get { return 2; } }
         public IOfficeModule Parent { get ; private set; }
 
@@ -30,7 +30,7 @@ namespace Poseidon.BackOffice.Module.Pms.Modules
 
         void OnSelection()
         {
-            RegionManager.RequestNavigate(Regions.TagModulesRegion, View.DiscountsView);
+            RegionManager.RequestNavigate(Regions.TagModulesRegion, View.PayformsView);
         }
     }
 }

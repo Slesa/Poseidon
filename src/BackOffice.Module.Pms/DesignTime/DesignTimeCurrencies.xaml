@@ -1,0 +1,21 @@
+﻿<x:Array xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:model="clr-namespace:Poseidon.Domain.Pms.Model;assembly=Poseidon.Domain.Pms.Model" 
+  xmlns:sys="clr-namespace:System;assembly=mscorlib"
+  Type="model:Currency" x:Name="DesignTimeCurrs">
+  <model:Currency
+    Id="1" 
+    Name="Dollar" 
+    Contraction="USD" 
+    DecimalPosition="2" 
+    Symbol="$">
+	<model:Currency.DecimalChar>
+		<sys:Char>.</sys:Char>
+	</model:Currency.DecimalChar>
+	<model:Currency.Rate>
+		<sys:Decimal>0.934</sys:Decimal>
+	</model:Currency.Rate>
+	<model:Currency.ThousandChar>
+		<sys:Char>,</sys:Char>
+	</model:Currency.ThousandChar>
+    </model:Currency>   
+</x:Array>
