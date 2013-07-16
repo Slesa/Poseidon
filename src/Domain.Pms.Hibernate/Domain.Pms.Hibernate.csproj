@@ -56,11 +56,23 @@
     <Compile Include="Maps\WaiterMap.cs" />
     <Compile Include="Maps\WaiterTeamMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\CurrencyQueries.cs" />
+    <Compile Include="Queries\DiscountQueries.cs" />
+    <Compile Include="Queries\PayformQueries.cs" />
+    <Compile Include="Queries\SalesFamilyGroupQueries.cs" />
+    <Compile Include="Queries\SalesFamilyQueries.cs" />
+    <Compile Include="Queries\SalesItemQueries.cs" />
+    <Compile Include="Queries\WaiterQueries.cs" />
+    <Compile Include="Queries\WaiterTeamQueries.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{14FDBDEF-281A-4CB0-986D-E826145F3839}</Project>
+      <Name>Common.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
       <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
       <Name>Domain.Common</Name>
