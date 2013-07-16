@@ -47,14 +47,34 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Maps\ProductionItemMap.cs" />
+    <Compile Include="Maps\PurchaseFamilyMap.cs" />
+    <Compile Include="Maps\PurchaseItemMap.cs" />
+    <Compile Include="Maps\RecipeableItemMap.cs" />
+    <Compile Include="Maps\RecipeItemMap.cs" />
+    <Compile Include="Maps\RecipeMap.cs" />
+    <Compile Include="Maps\StockItemMap.cs" />
+    <Compile Include="Maps\StockMap.cs" />
     <Compile Include="Maps\UnitTypeMap.cs" />
     <Compile Include="Maps\UnitMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\ProductionItemQueries.cs" />
+    <Compile Include="Queries\PurchaseFamilyQueries.cs" />
+    <Compile Include="Queries\PurchaseItemQueries.cs" />
+    <Compile Include="Queries\RecipeableItemQueries.cs" />
+    <Compile Include="Queries\RecipeQueries.cs" />
+    <Compile Include="Queries\StockQueries.cs" />
+    <Compile Include="Queries\UnitQueries.cs" />
+    <Compile Include="Queries\UnitTypeQueries.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{14FDBDEF-281A-4CB0-986D-E826145F3839}</Project>
+      <Name>Common.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
       <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
       <Name>Domain.Common</Name>

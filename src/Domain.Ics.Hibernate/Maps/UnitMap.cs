@@ -9,8 +9,8 @@ namespace Poseidon.Domain.Ics.Hibernate.Maps
         {
             Id(d => d.Id).GeneratedBy.HiLo("10");
 
-            Map(d => d.Name).Length(20);
-            Map(d => d.Contraction).Length(5);
+            Map(d => d.Name).Length(40);
+            Map(d => d.Contraction).Length(15);
             References(d => d.UnitType).Not.Nullable();
             References(d => d.Parent);
             Map(d => d.FactorToParent).Default("1.0");

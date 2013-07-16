@@ -62,7 +62,14 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="ProductionItemMapSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseFamilyMapSpecs.cs" />
+    <Compile Include="PurchaseItemMapSpecs.cs" />
+    <Compile Include="RecipeItemMapSpecs.cs" />
+    <Compile Include="RecipeMapSpecs.cs" />
+    <Compile Include="StockItemMapSpecs.cs" />
+    <Compile Include="StockMapSpecs.cs" />
     <Compile Include="UnitMapSpecs.cs" />
     <Compile Include="UnitTypeMapSpecs.cs" />
   </ItemGroup>
