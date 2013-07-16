@@ -133,6 +133,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="DesignTime\DesignTimeUserRoles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UmsModuleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

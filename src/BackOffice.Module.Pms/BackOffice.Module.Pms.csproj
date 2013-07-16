@@ -51,17 +51,22 @@
     <Reference Include="Microsoft.Practices.Unity.Configuration">
       <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="DesignTime\DesignTimeCurrenciesViewModel.cs" />
     <Compile Include="Modules\CurrencyModule.cs" />
     <Compile Include="Modules\DiscountModule.cs" />
     <Compile Include="Modules\SalesFamilyModule.cs" />
@@ -74,19 +79,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="View.cs" />
+    <Compile Include="ViewModelLocators.cs" />
+    <Compile Include="ViewModels\CurrenciesViewModel.cs" />
+    <Compile Include="ViewModels\PmsModuleViewModel.cs" />
+    <Compile Include="Views\CurrenciesView.xaml.cs">
+      <DependentUpon>CurrenciesView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DesignTime\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
       <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
       <Name>BackOffice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
+      <Project>{daf28095-0d7e-4544-ba13-4719d839d03d}</Project>
+      <Name>Common.Prism</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
+      <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
+      <Name>Domain.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Pms.Model\Domain.Pms.Model.csproj">
+      <Project>{43B0AF8E-ED61-4D64-B227-83CF3F9A0ABA}</Project>
+      <Name>Domain.Pms.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Pms.Resources\Domain.Pms.Resources.csproj">
       <Project>{5fc58738-5f1d-428c-93b6-999199e68153}</Project>
@@ -99,6 +119,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\CurrenciesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

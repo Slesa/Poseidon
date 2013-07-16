@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <!--http://www.abhisheksur.com/2010/08/woring-with-icollectionviewsource-in.html-->
     <UserControl.Resources>
-        <ums:UserRolesViewModelLocator x:Key="ModulesViewModel" />
+        <ums:UserRolesViewModelLocator x:Key="UserRolesViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.UserRole">
                 <StackPanel Orientation="Horizontal">
@@ -19,7 +19,7 @@
     </UserControl.Resources>
 
     <UserControl.DataContext>
-        <Binding Path="ViewModel" Source="{StaticResource ModulesViewModel}" />
+        <Binding Path="ViewModel" Source="{StaticResource UserRolesViewModel}" />
     </UserControl.DataContext>
 
     <d:UserControl.DataContext>

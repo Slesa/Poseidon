@@ -2,6 +2,8 @@
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Pms.Modules;
+using Poseidon.BackOffice.Module.Pms.ViewModels;
+using Poseidon.BackOffice.Module.Pms.Views;
 
 namespace Poseidon.BackOffice.Module.Pms
 {
@@ -22,6 +24,10 @@ namespace Poseidon.BackOffice.Module.Pms
             _container.RegisterType<IOfficeModule,DiscountModule>(DiscountModule.Name);
             _container.RegisterType<IOfficeModule,SalesFamilyModule>(SalesFamilyModule.Name);
             _container.RegisterType<IOfficeModule,SalesItemModule>(SalesItemModule.Name);
+
+            _container.RegisterType<object, CurrenciesView>(View.CurrenciesView);
+
+            _container.RegisterType<CurrenciesViewModel>();
         }
     }
 }
