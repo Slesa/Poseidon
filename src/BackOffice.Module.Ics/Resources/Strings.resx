@@ -123,6 +123,24 @@
   <data name="IcsOfficeModuleTooltip" xml:space="preserve">
     <value>All your inventory at one glance</value>
   </data>
+  <data name="ProductionItemModule" xml:space="preserve">
+    <value>Production items</value>
+  </data>
+  <data name="ProductionItemModuleTooltip" xml:space="preserve">
+    <value>Manage your production items</value>
+  </data>
+  <data name="PurchaseFamilyModule" xml:space="preserve">
+    <value>Purchase families</value>
+  </data>
+  <data name="PurchaseFamilyModuleTooltip" xml:space="preserve">
+    <value>Manage your purchase families</value>
+  </data>
+  <data name="PurchaseItemModule" xml:space="preserve">
+    <value>Purchase items</value>
+  </data>
+  <data name="PurchaseItemModuleTooltip" xml:space="preserve">
+    <value>Manage your purchase items</value>
+  </data>
   <data name="RecipeModule" xml:space="preserve">
     <value>Recipes</value>
   </data>

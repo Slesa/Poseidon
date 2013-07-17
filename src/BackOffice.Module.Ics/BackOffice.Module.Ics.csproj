@@ -67,6 +67,9 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="IcsModule.cs" />
+    <Compile Include="Modules\ProductionItemModule.cs" />
+    <Compile Include="Modules\PurchaseItemModule.cs" />
+    <Compile Include="Modules\PurchaseFamilyModule.cs" />
     <Compile Include="Modules\RecipeModule.cs" />
     <Compile Include="Modules\StockModule.cs" />
     <Compile Include="Modules\UnitModule.cs" />
@@ -80,9 +83,29 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View.cs" />
     <Compile Include="ViewModelLocators.cs" />
+    <Compile Include="ViewModels\ProductionItemsViewModel.cs" />
+    <Compile Include="ViewModels\PurchaseFamiliesViewModel.cs" />
+    <Compile Include="ViewModels\PurchaseItemsViewModel.cs" />
+    <Compile Include="ViewModels\RecipesViewModel.cs" />
     <Compile Include="ViewModels\IcsModuleViewModel.cs" />
+    <Compile Include="ViewModels\StocksViewModel.cs" />
     <Compile Include="ViewModels\UnitsViewModel.cs" />
     <Compile Include="ViewModels\UnitTypesViewModel.cs" />
+    <Compile Include="Views\PurchaseFamiliesView.xaml.cs">
+      <DependentUpon>PurchaseFamiliesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseItemsView.xaml.cs">
+      <DependentUpon>PurchaseItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductionItemsView.xaml.cs">
+      <DependentUpon>ProductionItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StocksView.xaml.cs">
+      <DependentUpon>StocksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecipesView.xaml.cs">
+      <DependentUpon>RecipesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UnitTypesView.xaml.cs">
       <DependentUpon>UnitTypesView.xaml</DependentUpon>
     </Compile>
@@ -118,6 +141,26 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\PurchaseFamiliesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseItemsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductionItemsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StocksView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RecipesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\UnitTypesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

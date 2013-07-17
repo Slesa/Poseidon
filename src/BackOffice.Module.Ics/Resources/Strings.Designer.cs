@@ -79,6 +79,60 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Production items.
+        /// </summary>
+        internal static string ProductionItemModule {
+            get {
+                return ResourceManager.GetString("ProductionItemModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your production items.
+        /// </summary>
+        internal static string ProductionItemModuleTooltip {
+            get {
+                return ResourceManager.GetString("ProductionItemModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase families.
+        /// </summary>
+        internal static string PurchaseFamilyModule {
+            get {
+                return ResourceManager.GetString("PurchaseFamilyModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your purchase families.
+        /// </summary>
+        internal static string PurchaseFamilyModuleTooltip {
+            get {
+                return ResourceManager.GetString("PurchaseFamilyModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase items.
+        /// </summary>
+        internal static string PurchaseItemModule {
+            get {
+                return ResourceManager.GetString("PurchaseItemModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your purchase items.
+        /// </summary>
+        internal static string PurchaseItemModuleTooltip {
+            get {
+                return ResourceManager.GetString("PurchaseItemModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recipes.
         /// </summary>
         internal static string RecipeModule {

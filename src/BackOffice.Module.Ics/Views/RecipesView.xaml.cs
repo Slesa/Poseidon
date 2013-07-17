@@ -2,9 +2,9 @@
 
 namespace Poseidon.BackOffice.Module.Ics.Views
 {
-    public partial class UnitsView : UserControl
+    public partial class RecipesView : UserControl
     {
-        public UnitsView()
+        public RecipesView()
         {
             InitializeComponent();
         }
