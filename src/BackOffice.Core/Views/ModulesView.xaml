@@ -41,8 +41,8 @@
                             </Grid.RowDefinitions>
                             <!--<Image Grid.ColumnSpan="2" Width="48" Height="48" Source="{Binding Parent.Image, RelativeSource={RelativeSource FindAncestor,}}}" />-->
                             <TextBlock Grid.Column="1" x:Name="parentName" Text="{Binding Path=Name, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />
-                            <TextBlock Grid.Column="0" x:Name="parentTitle" Text="{Binding Path=Title, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />
-                            <TextBlock Grid.Column="2" x:Name="count" Text="{Binding Path=Priority, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />
+                            <!--<TextBlock Grid.Column="0" x:Name="parentTitle" Text="{Binding Path=Title, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />-->
+                            <!--<TextBlock Grid.Column="2" x:Name="count" Text="{Binding Path=Priority, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />-->
                             <ItemsControl Grid.Column="1" Grid.Row="1">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
@@ -80,7 +80,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <StackPanel ToolTip="{TemplateBinding ToolTip}" Orientation="Horizontal">
-                            <Image Width="22" Height="22" Source="{Binding IconFileName}"/>
+                            <Image Width="24" Height="24" Source="{Binding IconFileName}"/>
                             <TextBlock x:Name="menuText" VerticalAlignment="Center" Text="{Binding Title}" Foreground="BurlyWood" />
                         </StackPanel>
                         <ControlTemplate.Triggers>
