@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UnitTypes>
+  <UnitType ID="1" Name="Weight" />
+  <UnitType ID="2" Name="Length" />
+</UnitTypes>

@@ -4,9 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ics="clr-namespace:Poseidon.BackOffice.Module.Ics"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ics.DesignTime"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
     <UserControl.Resources>
+
         <ics:UnitTypesViewModelLocator x:Key="UnitTypesViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.UnitType">
@@ -25,6 +28,6 @@
         <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
             <TextBox Text="Unit types" TextAlignment="Center" />
         </Border>
-        <ListBox ItemsSource="{Binding UnitTypes}" ItemTemplate="{StaticResource ItemTemplate.UnitType}" />
+        <ListBox d:ItemsSource="{Binding Source={StaticResource IcsData}}" ItemsSource="{Binding UnitTypes}" ItemTemplate="{StaticResource ItemTemplate.UnitType}" />
     </DockPanel>
 </UserControl>

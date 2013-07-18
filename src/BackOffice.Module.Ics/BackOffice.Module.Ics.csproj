@@ -66,6 +66,7 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="DesignTime\DesignTimeUnitTypesViewModel.cs" />
     <Compile Include="IcsModule.cs" />
     <Compile Include="Modules\ProductionItemModule.cs" />
     <Compile Include="Modules\PurchaseItemModule.cs" />
@@ -116,9 +117,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DesignTime\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
       <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
@@ -127,6 +126,14 @@
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
       <Project>{daf28095-0d7e-4544-ba13-4719d839d03d}</Project>
       <Name>Common.Prism</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
+      <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
+      <Name>Domain.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Ics.Model\Domain.Ics.Model.csproj">
+      <Project>{292252E1-4343-4AA5-B555-B94703DB0374}</Project>
+      <Name>Domain.Ics.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Ics.Resources\Domain.Ics.Resources.csproj">
       <Project>{b2d18449-f17a-4821-ba8e-ad0d64174e67}</Project>
@@ -141,6 +148,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="DesignTime\DesignTimeData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\PurchaseFamiliesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -169,6 +180,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DesignTime\DesignTypeUnitTypes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
