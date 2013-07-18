@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ics="clr-namespace:Poseidon.BackOffice.Module.Ics"
-             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ics.DesignTime"
+             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ics.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -18,16 +18,25 @@
                 <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
             </StackPanel>
         </DataTemplate>
+        
     </UserControl.Resources>
 
+    
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource UnitTypesViewModel}" />
     </UserControl.DataContext>
 
+    
+    <d:UserControl.DataContext>
+        <Binding Source="{StaticResource DesignTimeUnitTypesViewModel}" />
+    </d:UserControl.DataContext>
+
+    
     <DockPanel LastChildFill="True">
         <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
-            <TextBox Text="Unit types" TextAlignment="Center" />
+            <TextBox Text="{x:Static res:Strings.UnitTypesView_Title}" TextAlignment="Center" />
         </Border>
-        <ListBox d:ItemsSource="{Binding Source={StaticResource IcsData}}" ItemsSource="{Binding UnitTypes}" ItemTemplate="{StaticResource ItemTemplate.UnitType}" />
+        <ListBox ItemsSource="{Binding UnitTypes}" ItemTemplate="{StaticResource ItemTemplate.UnitType}" />
     </DockPanel>
+    
 </UserControl>

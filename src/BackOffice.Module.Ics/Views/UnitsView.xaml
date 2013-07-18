@@ -4,15 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ics="clr-namespace:Poseidon.BackOffice.Module.Ics"
+             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ics.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
     <UserControl.Resources>
+        
         <ics:UnitsViewModelLocator x:Key="UnitsViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.Unit">
             <StackPanel Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" Text="{Binding ID}"/>
                 <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
+                <TextBlock VerticalAlignment="Center" Text="{Binding Contraction}"/>
+                <TextBlock VerticalAlignment="Center" Text="{Binding Parent.Name}"/>
+                <TextBlock VerticalAlignment="Center" Text="{Binding FactorToParent}"/>
+                <TextBlock VerticalAlignment="Center" Text="{Binding ForRecipe}"/>
+                <TextBlock VerticalAlignment="Center" Text="{Binding ForPurchase}"/>
             </StackPanel>
         </DataTemplate>
     </UserControl.Resources>
@@ -21,9 +29,13 @@
         <Binding Path="ViewModel" Source="{StaticResource UnitsViewModel}" />
     </UserControl.DataContext>
 
+    <d:UserControl.DataContext>
+        <Binding Source="{StaticResource DesignTimeUnitsViewModel}" />
+    </d:UserControl.DataContext>
+
     <DockPanel LastChildFill="True">
         <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
-            <TextBox Text="Units" TextAlignment="Center" />
+            <TextBox Text="{x:Static res:Strings.UnitsView_Title}" TextAlignment="Center" />
         </Border>
         <ListBox ItemsSource="{Binding Units}" ItemTemplate="{StaticResource ItemTemplate.Unit}" />
     </DockPanel>

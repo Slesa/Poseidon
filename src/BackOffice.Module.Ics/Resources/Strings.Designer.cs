@@ -22,7 +22,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Poseidon.BackOffice.Module.Ics.Resources.Strings", typeof(Strings).Assembly);
@@ -51,7 +51,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Inventory Control.
         /// </summary>
-        internal static string IcsOfficeModule {
+        public static string IcsOfficeModule {
             get {
                 return ResourceManager.GetString("IcsOfficeModule", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to All your inventory at one glance.
         /// </summary>
-        internal static string IcsOfficeModuleTooltip {
+        public static string IcsOfficeModuleTooltip {
             get {
                 return ResourceManager.GetString("IcsOfficeModuleTooltip", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Production items.
         /// </summary>
-        internal static string ProductionItemModule {
+        public static string ProductionItemModule {
             get {
                 return ResourceManager.GetString("ProductionItemModule", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your production items.
         /// </summary>
-        internal static string ProductionItemModuleTooltip {
+        public static string ProductionItemModuleTooltip {
             get {
                 return ResourceManager.GetString("ProductionItemModuleTooltip", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Purchase families.
         /// </summary>
-        internal static string PurchaseFamilyModule {
+        public static string PurchaseFamilyModule {
             get {
                 return ResourceManager.GetString("PurchaseFamilyModule", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your purchase families.
         /// </summary>
-        internal static string PurchaseFamilyModuleTooltip {
+        public static string PurchaseFamilyModuleTooltip {
             get {
                 return ResourceManager.GetString("PurchaseFamilyModuleTooltip", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Purchase items.
         /// </summary>
-        internal static string PurchaseItemModule {
+        public static string PurchaseItemModule {
             get {
                 return ResourceManager.GetString("PurchaseItemModule", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your purchase items.
         /// </summary>
-        internal static string PurchaseItemModuleTooltip {
+        public static string PurchaseItemModuleTooltip {
             get {
                 return ResourceManager.GetString("PurchaseItemModuleTooltip", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Recipes.
         /// </summary>
-        internal static string RecipeModule {
+        public static string RecipeModule {
             get {
                 return ResourceManager.GetString("RecipeModule", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your recipes.
         /// </summary>
-        internal static string RecipeModuleTooltip {
+        public static string RecipeModuleTooltip {
             get {
                 return ResourceManager.GetString("RecipeModuleTooltip", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Stocks.
         /// </summary>
-        internal static string StockModule {
+        public static string StockModule {
             get {
                 return ResourceManager.GetString("StockModule", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your stocks.
         /// </summary>
-        internal static string StockModuleTooltip {
+        public static string StockModuleTooltip {
             get {
                 return ResourceManager.GetString("StockModuleTooltip", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Units.
         /// </summary>
-        internal static string UnitModule {
+        public static string UnitModule {
             get {
                 return ResourceManager.GetString("UnitModule", resourceCulture);
             }
@@ -180,16 +180,25 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your units.
         /// </summary>
-        internal static string UnitModuleTooltip {
+        public static string UnitModuleTooltip {
             get {
                 return ResourceManager.GetString("UnitModuleTooltip", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Units.
+        /// </summary>
+        public static string UnitsView_Title {
+            get {
+                return ResourceManager.GetString("UnitsView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unit types.
         /// </summary>
-        internal static string UnitTypeModule {
+        public static string UnitTypeModule {
             get {
                 return ResourceManager.GetString("UnitTypeModule", resourceCulture);
             }
@@ -198,9 +207,18 @@ namespace Poseidon.BackOffice.Module.Ics.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your unit types.
         /// </summary>
-        internal static string UnitTypeModuleTooltip {
+        public static string UnitTypeModuleTooltip {
             get {
                 return ResourceManager.GetString("UnitTypeModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit types.
+        /// </summary>
+        public static string UnitTypesView_Title {
+            get {
+                return ResourceManager.GetString("UnitTypesView_Title", resourceCulture);
             }
         }
     }

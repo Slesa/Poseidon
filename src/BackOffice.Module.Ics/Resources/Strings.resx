@@ -159,10 +159,16 @@
   <data name="UnitModuleTooltip" xml:space="preserve">
     <value>Manage your units</value>
   </data>
+  <data name="UnitsView_Title" xml:space="preserve">
+    <value>Units</value>
+  </data>
   <data name="UnitTypeModule" xml:space="preserve">
     <value>Unit types</value>
   </data>
   <data name="UnitTypeModuleTooltip" xml:space="preserve">
     <value>Manage your unit types</value>
+  </data>
+  <data name="UnitTypesView_Title" xml:space="preserve">
+    <value>Unit types</value>
   </data>
 </root>

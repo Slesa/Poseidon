@@ -11,6 +11,7 @@
     <AssemblyName>Poseidon.BackOffice.Module.Ics</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,7 +67,6 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="DesignTime\DesignTimeUnitTypesViewModel.cs" />
     <Compile Include="IcsModule.cs" />
     <Compile Include="Modules\ProductionItemModule.cs" />
     <Compile Include="Modules\PurchaseItemModule.cs" />
@@ -143,14 +143,23 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Strings.de-DE.resx" />
     <EmbeddedResource Include="Resources\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="DesignTime\DesignTimeData.xaml">
+    <Page Include="DesignTime\DesignTimeUnitsViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DesignTime\DesignTimeUnitTypesViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProjectDataSources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDataSources>True</ContainsDataSources>
     </Page>
     <Page Include="Views\PurchaseFamiliesView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -180,11 +189,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="DesignTime\DesignTypeUnitTypes.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
