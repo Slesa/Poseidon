@@ -13,6 +13,7 @@ using Poseidon.BackOffice.Module.Ums;
 using Poseidon.BackOffice.ViewModels;
 using Poseidon.BackOffice.Views;
 using Poseidon.Common;
+using Poseidon.Common.Persistence;
 
 namespace Poseidon.BackOffice
 {
@@ -39,6 +40,7 @@ namespace Poseidon.BackOffice
             base.ConfigureContainer();
             RegisterShellObjects();
             RegisterViews();
+            RegisterPersistence();
         }
 
         protected override IModuleCatalog CreateModuleCatalog()
@@ -83,6 +85,28 @@ namespace Poseidon.BackOffice
         void RegisterViews()
         {
             RegisterTypeIfMissing(typeof(ShellViewModel), typeof(ShellViewModel), true);
+        }
+
+        void RegisterPersistence()
+        {
+            /*
+            yield return Component
+                 .For<IPersistenceConfiguration>()
+                 .ImplementedBy<SqlServerPersistenceConfiguration>()
+                 .Parameters(Parameter.ForKey("connectionString").Eq(ConfigurationManager.AppSettings["DbConnection"]));
+
+            yield return AllTypes
+                .FromAssemblyContaining(typeof(IMappingContributor))
+                .BasedOn(typeof(IMappingContributor))
+                .WithService.Base();*/
+            RegisterTypeIfMissing(typeof(IHibernatePersistenceModel), typeof(HibernatePersistenceModel), true);
+            /*
+            yield return AllTypes
+                .FromAssemblyContaining(typeof(INHibernateInitializationAware))
+                .BasedOn(typeof(INHibernateInitializationAware))
+                .WithService.Base();*/
+            RegisterTypeIfMissing(typeof(IHibernateSessionFactory), typeof(HibernateSessionFactory), true);
+            RegisterTypeIfMissing(typeof(IDbConversation), typeof(DbConversation), true);
         }
     }
 }
