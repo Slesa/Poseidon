@@ -32,11 +32,7 @@
     </d:UserControl.DataContext>
 
 
-    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}">
-
-        <HeaderedContentControl.Header>
-            <TextBlock Text="{x:Static res:Strings.UnitTypesView_Title}" />
-        </HeaderedContentControl.Header>
+    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UnitTypesView_Title}" >
 
         <ListBox ItemsSource="{Binding UnitTypes}" ItemTemplate="{StaticResource ItemTemplate.UnitType}" />
 

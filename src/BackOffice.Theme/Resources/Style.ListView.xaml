@@ -23,23 +23,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="HeaderedContentControl">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Border Background="{StaticResource Brush.Linear}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <Button Content="XXX" Grid.Column="1" />
-                            <TextBlock Text="{TemplateBinding Header}" HorizontalAlignment="Center" FontSize="22" Foreground="{StaticResource Brush.Background}" />
-                        </Grid>
-                        </Border>
-                        <ContentControl Content="{TemplateBinding Content}" Grid.Row="1" />
-                    </Grid>
+                    <DockPanel>
+						<DockPanel DockPanel.Dock="Top" Background="{StaticResource Brush.Linear}">
+							<Button Content="XXX" Margin="5" DockPanel.Dock="Right"/>
+							<TextBlock Text="{TemplateBinding Header}" Foreground="{StaticResource Brush.Background}" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+					    </DockPanel>
+                        <ContentPresenter Content="{TemplateBinding Content}" Grid.Row="1" />
+                    </DockPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
