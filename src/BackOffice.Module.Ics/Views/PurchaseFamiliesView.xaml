@@ -4,27 +4,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ics="clr-namespace:Poseidon.BackOffice.Module.Ics"
+             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ics.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <UserControl.Resources>
+        
         <ics:PurchaseFamiliesViewModelLocator x:Key="PurchaseFamiliesViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.PurchaseFamily">
             <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Text="{Binding ID}"/>
                 <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
             </StackPanel>
         </DataTemplate>
+        
     </UserControl.Resources>
 
+    
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource PurchaseFamiliesViewModel}" />
     </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <Binding Source="{StaticResource DesignTimePurchaseFamiliesViewModel}" />
+    </d:UserControl.DataContext>
 
-    <DockPanel LastChildFill="True">
-        <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
-            <TextBox Text="Purchase families" TextAlignment="Center" />
-        </Border>
-        <ListBox ItemsSource="{Binding PurchaseFamilies}" ItemTemplate="{StaticResource ItemTemplate.PurchaseFamily}" />
-    </DockPanel>
+
+    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.PurchaseFamiliesView_Title}">
+
+        <ListView ItemsSource="{Binding PurchaseFamilies}" ItemTemplate="{StaticResource ItemTemplate.PurchaseFamily}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </HeaderedContentControl>
+
 </UserControl>

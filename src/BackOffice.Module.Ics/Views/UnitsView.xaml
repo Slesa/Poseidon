@@ -23,14 +23,13 @@
                 <TextBlock VerticalAlignment="Center" Text="{Binding ForPurchase}"/>
             </StackPanel>
         </DataTemplate>
+        
     </UserControl.Resources>
 
     
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource UnitsViewModel}" />
     </UserControl.DataContext>
-
-    
     <d:UserControl.DataContext>
         <Binding Source="{StaticResource DesignTimeUnitsViewModel}" />
     </d:UserControl.DataContext>
@@ -38,8 +37,19 @@
 
     <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UnitsView_Title}">
 
-        <ListBox ItemsSource="{Binding Units}" ItemTemplate="{StaticResource ItemTemplate.Unit}" />
-        
+        <ListView ItemsSource="{Binding Units}" ItemTemplate="{StaticResource ItemTemplate.Unit}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Contraction}" DisplayMemberBinding="{Binding Contraction}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Parent}" DisplayMemberBinding="{Binding Parent.Name}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Factor}" DisplayMemberBinding="{Binding FactorToParent}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Recipe}" DisplayMemberBinding="{Binding ForRecipe}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Purchase}" DisplayMemberBinding="{Binding ForPurchase}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </HeaderedContentControl>
 
 </UserControl>

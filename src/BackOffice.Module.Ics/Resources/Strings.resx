@@ -171,4 +171,43 @@
   <data name="UnitTypesView_Title" xml:space="preserve">
     <value>Unit types</value>
   </data>
+  <data name="Heading_Contraction" xml:space="preserve">
+    <value>Contraction</value>
+  </data>
+  <data name="Heading_Factor" xml:space="preserve">
+    <value>Factor</value>
+  </data>
+  <data name="Heading_MainStock" xml:space="preserve">
+    <value>Main stock</value>
+  </data>
+  <data name="Heading_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Heading_Parent" xml:space="preserve">
+    <value>Parent</value>
+  </data>
+  <data name="Heading_Plu" xml:space="preserve">
+    <value>PLU</value>
+  </data>
+  <data name="Heading_Purchase" xml:space="preserve">
+    <value>Purchase</value>
+  </data>
+  <data name="Heading_Recipe" xml:space="preserve">
+    <value>Recipe</value>
+  </data>
+  <data name="ProductionItemsView_Title" xml:space="preserve">
+    <value>Production items</value>
+  </data>
+  <data name="PurchaseFamiliesView_Title" xml:space="preserve">
+    <value>Purchase families</value>
+  </data>
+  <data name="PurchaseItemsView_Title" xml:space="preserve">
+    <value>Purchase items</value>
+  </data>
+  <data name="RecipesView_Title" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="StocksView_Title" xml:space="preserve">
+    <value>Stocks</value>
+  </data>
 </root>

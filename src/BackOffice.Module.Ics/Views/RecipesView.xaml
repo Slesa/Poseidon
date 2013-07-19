@@ -4,27 +4,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ics="clr-namespace:Poseidon.BackOffice.Module.Ics"
+             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ics.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <UserControl.Resources>
+        
         <ics:RecipesViewModelLocator x:Key="RecipesViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.Recipe">
             <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Text="{Binding ID}"/>
                 <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
             </StackPanel>
         </DataTemplate>
+        
     </UserControl.Resources>
 
+    
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource RecipesViewModel}" />
     </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <Binding Source="{StaticResource DesignTimeRecipesViewModel}" />
+    </d:UserControl.DataContext>
 
-    <DockPanel LastChildFill="True">
-        <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
-            <TextBox Text="Recipes" TextAlignment="Center" />
-        </Border>
-        <ListBox ItemsSource="{Binding Recipes}" ItemTemplate="{StaticResource ItemTemplate.Recipe}" />
-    </DockPanel>
+
+    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.RecipesView_Title}">
+
+        <ListView ItemsSource="{Binding Recipes}" ItemTemplate="{StaticResource ItemTemplate.Recipe}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Plu}" DisplayMemberBinding="{Binding Plu}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </HeaderedContentControl>
+
 </UserControl>

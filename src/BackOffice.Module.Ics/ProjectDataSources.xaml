@@ -5,6 +5,11 @@
     mc:Ignorable="d">
     
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/DesignTime/DesignTimeProductionItemsViewModel.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/DesignTime/DesignTimePurchaseFamiliesViewModel.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/DesignTime/DesignTimePurchaseItemsViewModel.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/DesignTime/DesignTimeRecipesViewModel.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/DesignTime/DesignTimeStocksViewModel.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/DesignTime/DesignTimeUnitsViewModel.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/DesignTime/DesignTimeUnitTypesViewModel.xaml"/>
     </ResourceDictionary.MergedDictionaries>
