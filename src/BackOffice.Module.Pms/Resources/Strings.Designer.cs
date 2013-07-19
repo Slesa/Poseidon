@@ -250,6 +250,15 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sales families.
+        /// </summary>
+        public static string SalesFamiliesView_Title {
+            get {
+                return ResourceManager.GetString("SalesFamiliesView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sales family groups.
         /// </summary>
         public static string SalesFamilyGroupModule {
@@ -264,6 +273,15 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         public static string SalesFamilyGroupModuleTooltip {
             get {
                 return ResourceManager.GetString("SalesFamilyGroupModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales family groups.
+        /// </summary>
+        public static string SalesFamilyGroupsView_Title {
+            get {
+                return ResourceManager.GetString("SalesFamilyGroupsView_Title", resourceCulture);
             }
         }
         
@@ -300,6 +318,15 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         public static string SalesItemModuleTooltip {
             get {
                 return ResourceManager.GetString("SalesItemModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales items.
+        /// </summary>
+        public static string SalesItemsView_Title {
+            get {
+                return ResourceManager.GetString("SalesItemsView_Title", resourceCulture);
             }
         }
         

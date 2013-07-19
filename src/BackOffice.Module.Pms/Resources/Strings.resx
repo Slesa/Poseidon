@@ -180,11 +180,17 @@
   <data name="PmsOfficeModuleTooltip" xml:space="preserve">
     <value>Configure your POS environment</value>
   </data>
+  <data name="SalesFamiliesView_Title" xml:space="preserve">
+    <value>Sales families</value>
+  </data>
   <data name="SalesFamilyGroupModule" xml:space="preserve">
     <value>Sales family groups</value>
   </data>
   <data name="SalesFamilyGroupModuleTooltip" xml:space="preserve">
     <value>Manage your sales family groups</value>
+  </data>
+  <data name="SalesFamilyGroupsView_Title" xml:space="preserve">
+    <value>Sales family groups</value>
   </data>
   <data name="SalesFamilyModule" xml:space="preserve">
     <value>Sales families</value>
@@ -197,6 +203,9 @@
   </data>
   <data name="SalesItemModuleTooltip" xml:space="preserve">
     <value>Manage your sales items</value>
+  </data>
+  <data name="SalesItemsView_Title" xml:space="preserve">
+    <value>Sales items</value>
   </data>
   <data name="WaiterModule" xml:space="preserve">
     <value>Waiters</value>

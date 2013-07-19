@@ -1,0 +1,31 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ViewModels="clr-namespace:Poseidon.BackOffice.Module.Pms.ViewModels" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pms="clr-namespace:Poseidon.Domain.Pms.Model;assembly=Poseidon.Domain.Pms.Model"
+    mc:Ignorable="d">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeSalesFamilyGroupsViewModel.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <pms:SalesFamily x:Key="Pig" Name="Schwein" SalesFamilyGroup="{StaticResource Speisen}" />
+    <pms:SalesFamily x:Key="Cow" Name="Rind" SalesFamilyGroup="{StaticResource Speisen}" />
+    <pms:SalesFamily x:Key="Lamb" Name="Lamm" SalesFamilyGroup="{StaticResource Speisen}" />
+
+    <ViewModels:SalesFamiliesViewModel x:Key="DesignTimeSalesFamiliesViewModel" d:IsDataSource="True">
+        <ViewModels:SalesFamiliesViewModel.SalesFamilies>
+            <pms:SalesFamily Name="Schwein" SalesFamilyGroup="{StaticResource Speisen}" />
+            <pms:SalesFamily Name="Rind" SalesFamilyGroup="{StaticResource Speisen}" />
+            <pms:SalesFamily Name="Lamm" SalesFamilyGroup="{StaticResource Speisen}" />
+            <pms:SalesFamily Name="Huhn" SalesFamilyGroup="{StaticResource Speisen}" />
+            <pms:SalesFamily Name="Pute" SalesFamilyGroup="{StaticResource Speisen}" />
+            <pms:SalesFamily Name="Alkoholfrei" SalesFamilyGroup="{StaticResource Drinks}" />
+            <pms:SalesFamily Name="Biere" SalesFamilyGroup="{StaticResource Drinks}" />
+            <pms:SalesFamily Name="Weine" SalesFamilyGroup="{StaticResource Drinks}" />
+        </ViewModels:SalesFamiliesViewModel.SalesFamilies>
+     </ViewModels:SalesFamiliesViewModel>
+    
+</ResourceDictionary>

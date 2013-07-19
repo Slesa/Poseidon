@@ -9,7 +9,11 @@
         <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeCurrenciesViewModel.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeDiscountsViewModel.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimePayformsViewModel.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeSalesFamiliesViewModel.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeSalesFamilyGroupsViewModel.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeSalesItemsViewModel.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeWaiterTeamsViewModel.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeWaitersViewModel.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

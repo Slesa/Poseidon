@@ -153,6 +153,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="DesignTime\DesignTimeSalesItemsViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DesignTime\DesignTimeSalesFamilyGroupsViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DesignTime\DesignTimeSalesFamiliesViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DesignTime\DesignTimeWaitersViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
