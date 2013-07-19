@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CurrenciesView_Title" xml:space="preserve">
+    <value>Currencies</value>
+  </data>
   <data name="CurrencyModule" xml:space="preserve">
     <value>Currencies</value>
   </data>
@@ -129,11 +132,47 @@
   <data name="DiscountModuleTooltip" xml:space="preserve">
     <value>Manage your discounts</value>
   </data>
+  <data name="DiscountsView_Title" xml:space="preserve">
+    <value>Discounts</value>
+  </data>
+  <data name="Heading_Contraction" xml:space="preserve">
+    <value>Contraction</value>
+  </data>
+  <data name="Heading_DecimalChar" xml:space="preserve">
+    <value>DecChar</value>
+  </data>
+  <data name="Heading_DecimalPosition" xml:space="preserve">
+    <value>DecPos</value>
+  </data>
+  <data name="Heading_IsAbsolute" xml:space="preserve">
+    <value>Absolute</value>
+  </data>
+  <data name="Heading_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Heading_Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="Heading_Symbol" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="Heading_ThousandChar" xml:space="preserve">
+    <value>1000</value>
+  </data>
+  <data name="Heading_UseForOrders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="Heading_UseForSale" xml:space="preserve">
+    <value>Sale</value>
+  </data>
   <data name="PayformModule" xml:space="preserve">
     <value>Payforms</value>
   </data>
   <data name="PayformModuleTooltip" xml:space="preserve">
     <value>Manage your payforms</value>
+  </data>
+  <data name="PayformsView_Title" xml:space="preserve">
+    <value>Payforms</value>
   </data>
   <data name="PmsOfficeModule" xml:space="preserve">
     <value>POS Management</value>
@@ -165,10 +204,16 @@
   <data name="WaiterModuleTooltip" xml:space="preserve">
     <value>Manage your waiters</value>
   </data>
+  <data name="WaitersView_Title" xml:space="preserve">
+    <value>Waiters</value>
+  </data>
   <data name="WaiterTeamModule" xml:space="preserve">
     <value>Waiter teams</value>
   </data>
   <data name="WaiterTeamModuleTooltip" xml:space="preserve">
     <value>Manage your waiter teams</value>
+  </data>
+  <data name="WaiterTeamsView_Title" xml:space="preserve">
+    <value>Waiter teams</value>
   </data>
 </root>

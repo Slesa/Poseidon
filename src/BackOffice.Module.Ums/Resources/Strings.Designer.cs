@@ -61,6 +61,24 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Heading_Name {
+            get {
+                return ResourceManager.GetString("Heading_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        public static string Heading_UserRole {
+            get {
+                return ResourceManager.GetString("Heading_UserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Management.
         /// </summary>
         public static string UmsOfficeModule {
@@ -111,6 +129,24 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         public static string UserRoleModuleTooltip {
             get {
                 return ResourceManager.GetString("UserRoleModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User roles.
+        /// </summary>
+        public static string UserRolesView_Title {
+            get {
+                return ResourceManager.GetString("UserRolesView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string UsersView_Title {
+            get {
+                return ResourceManager.GetString("UsersView_Title", resourceCulture);
             }
         }
     }

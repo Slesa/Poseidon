@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ViewModels="clr-namespace:Poseidon.BackOffice.Module.Pms.ViewModels" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pms="clr-namespace:Poseidon.Domain.Pms.Model;assembly=Poseidon.Domain.Pms.Model"
+    mc:Ignorable="d">
+    
+    <ViewModels:CurrenciesViewModel x:Key="DesignTimeCurrenciesViewModel" d:IsDataSource="True">
+        <ViewModels:CurrenciesViewModel.Currencies>
+            <pms:Currency Name="Euro" Contraction="EUR" Symbol="€" Rate="1" ThousandChar="." DecimalChar="," DecimalPosition="2" />
+            <pms:Currency Name="Dollar" Contraction="USD" Symbol="$" Rate="0.93" ThousandChar="," DecimalChar="." DecimalPosition="2" />
+        </ViewModels:CurrenciesViewModel.Currencies>
+     </ViewModels:CurrenciesViewModel>
+    
+</ResourceDictionary>

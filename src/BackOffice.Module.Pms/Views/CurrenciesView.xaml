@@ -4,32 +4,47 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:pms="clr-namespace:Poseidon.BackOffice.Module.Pms"
-             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Pms.DesignTime"
+             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Pms.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <UserControl.Resources>
+        
         <pms:CurrenciesViewModelLocator x:Key="CurrenciesViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.Currency">
             <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Text="{Binding ID}"/>
                 <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
             </StackPanel>
         </DataTemplate>
+        
     </UserControl.Resources>
 
+    
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource CurrenciesViewModel}" />
     </UserControl.DataContext>
-
     <d:UserControl.DataContext>
-        <design:DesignTimeCurrenciesViewModel />
+        <Binding Source="{StaticResource DesignTimeCurrenciesViewModel}" />
     </d:UserControl.DataContext>
 
-    <DockPanel LastChildFill="True">
-        <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
-            <TextBox Text="Currencies" TextAlignment="Center" />
-        </Border>
-        <ListBox ItemsSource="{Binding Currencies}" ItemTemplate="{StaticResource ItemTemplate.Currency}" />
-    </DockPanel>
+
+    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.CurrenciesView_Title}">
+
+        <ListView ItemsSource="{Binding Currencies}" ItemTemplate="{StaticResource ItemTemplate.Currency}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Contraction}" DisplayMemberBinding="{Binding Contraction}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Symbol}" DisplayMemberBinding="{Binding Symbol}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Rate}" DisplayMemberBinding="{Binding Rate}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_DecimalPosition}" DisplayMemberBinding="{Binding DecimalPosition}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_DecimalChar}" DisplayMemberBinding="{Binding DecimalChar}" />
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_ThousandChar}" DisplayMemberBinding="{Binding ThousandChar}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </HeaderedContentControl>
+
 </UserControl>

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Heading_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Heading_UserRole" xml:space="preserve">
+    <value>Role</value>
+  </data>
   <data name="UmsOfficeModule" xml:space="preserve">
     <value>User Management</value>
   </data>
@@ -134,5 +140,11 @@
   </data>
   <data name="UserRoleModuleTooltip" xml:space="preserve">
     <value>Manage your user roles</value>
+  </data>
+  <data name="UserRolesView_Title" xml:space="preserve">
+    <value>User roles</value>
+  </data>
+  <data name="UsersView_Title" xml:space="preserve">
+    <value>Users</value>
   </data>
 </root>

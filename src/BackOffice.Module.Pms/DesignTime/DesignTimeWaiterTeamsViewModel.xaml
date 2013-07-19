@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ViewModels="clr-namespace:Poseidon.BackOffice.Module.Pms.ViewModels" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pms="clr-namespace:Poseidon.Domain.Pms.Model;assembly=Poseidon.Domain.Pms.Model"
+    mc:Ignorable="d">
+
+    <pms:WaiterTeam x:Key="Team1" Name="Team 1" />
+    <pms:WaiterTeam x:Key="Team2" Name="Team 2" />
+    <pms:WaiterTeam x:Key="TeamBlau" Name="Team Blau" />
+    <pms:WaiterTeam x:Key="TeamOrange" Name="Team Orange" />
+
+    <ViewModels:WaiterTeamsViewModel x:Key="DesignTimeWaiterTeamsViewModel" d:IsDataSource="True">
+        <ViewModels:WaiterTeamsViewModel.WaiterTeams>
+            <pms:WaiterTeam Name="Team 1" />
+            <pms:WaiterTeam Name="Team 2" />
+            <pms:WaiterTeam Name="Team Blau" />
+            <pms:WaiterTeam Name="Team Orange" />
+        </ViewModels:WaiterTeamsViewModel.WaiterTeams>
+     </ViewModels:WaiterTeamsViewModel>
+    
+</ResourceDictionary>

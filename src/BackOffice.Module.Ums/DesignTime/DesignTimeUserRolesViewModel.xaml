@@ -1,0 +1,23 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ViewModels="clr-namespace:Poseidon.BackOffice.Module.Ums.ViewModels" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ums="clr-namespace:Poseidon.Domain.Ums.Model;assembly=Poseidon.Domain.Ums.Model"
+    mc:Ignorable="d">
+    
+    <ums:UserRole x:Key="Captain" Name="Caption"/>
+    <ums:UserRole x:Key="Commander" Name="Commander"/>
+    <ums:UserRole x:Key="Lieutenant" Name="Lieutenant"/>
+    <ums:UserRole x:Key="LieutenantCmd" Name="Lieutenant Commander"/>
+    
+    <ViewModels:UserRolesViewModel x:Key="DesignTimeUserRolesViewModel" d:IsDataSource="True">
+        <ViewModels:UserRolesViewModel.UserRoles>
+            <ums:UserRole Name="Capatin" />
+            <ums:UserRole Name="Lieutenant" />
+            <ums:UserRole Name="Lieutenant Commander" />
+        </ViewModels:UserRolesViewModel.UserRoles>
+    </ViewModels:UserRolesViewModel>
+    
+</ResourceDictionary>

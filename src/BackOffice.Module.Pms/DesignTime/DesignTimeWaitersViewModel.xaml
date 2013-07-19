@@ -1,0 +1,21 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ViewModels="clr-namespace:Poseidon.BackOffice.Module.Pms.ViewModels" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pms="clr-namespace:Poseidon.Domain.Pms.Model;assembly=Poseidon.Domain.Pms.Model"
+    mc:Ignorable="d">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/DesignTime/DesignTimeWaiterTeamsViewModel.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <ViewModels:WaitersViewModel x:Key="DesignTimeWaitersViewModel" d:IsDataSource="True">
+        <ViewModels:WaitersViewModel.Waiters>
+            <pms:Waiter Name="Waiter 1"  WaiterTeam="{StaticResource Team1}" />
+            <pms:Waiter Name="Waiter 2" WaiterTeam="{StaticResource TeamBlau}" />
+        </ViewModels:WaitersViewModel.Waiters>
+     </ViewModels:WaitersViewModel>
+    
+</ResourceDictionary>

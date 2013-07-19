@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
+             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <!--http://www.abhisheksur.com/2010/08/woring-with-icollectionviewsource-in.html-->
     <UserControl.Resources>
+        
         <ums:UserRolesViewModelLocator x:Key="UserRolesViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.UserRole">
@@ -16,20 +18,28 @@
                     <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
                 </StackPanel>
         </DataTemplate>
+        
     </UserControl.Resources>
 
+    
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource UserRolesViewModel}" />
     </UserControl.DataContext>
-
     <d:UserControl.DataContext>
-        <design:DesignTimeUserRolesViewModel />
+        <Binding Source="{StaticResource DesignTimeUserRolesViewModel}" />
     </d:UserControl.DataContext>
 
-    <DockPanel LastChildFill="True">
-        <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
-            <TextBox Text="User roles" TextAlignment="Center" />
-        </Border>
-        <ListBox ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}" />
-    </DockPanel>
+
+    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UserRolesView_Title}">
+
+        <ListView ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </HeaderedContentControl>
+
 </UserControl>

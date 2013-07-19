@@ -4,28 +4,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:pms="clr-namespace:Poseidon.BackOffice.Module.Pms"
-             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Pms.DesignTime"
+             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Pms.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <UserControl.Resources>
+        
         <pms:WaiterTeamsViewModelLocator x:Key="WaiterTeamsViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.WaiterTeam">
             <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Text="{Binding ID}"/>
                 <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
             </StackPanel>
         </DataTemplate>
+        
     </UserControl.Resources>
 
+    
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource WaiterTeamsViewModel}" />
     </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <Binding Source="{StaticResource DesignTimeWaiterTeamsViewModel}" />
+    </d:UserControl.DataContext>
 
-    <DockPanel LastChildFill="True">
-        <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
-            <TextBox Text="Waiter teams" TextAlignment="Center" />
-        </Border>
-        <ListBox ItemsSource="{Binding WaiterTeams}" ItemTemplate="{StaticResource ItemTemplate.WaiterTeam}" />
-    </DockPanel>
+
+    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.WaiterTeamsView_Title}">
+
+        <ListView ItemsSource="{Binding WaiterTeams}" ItemTemplate="{StaticResource ItemTemplate.WaiterTeam}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </HeaderedContentControl>
+
 </UserControl>

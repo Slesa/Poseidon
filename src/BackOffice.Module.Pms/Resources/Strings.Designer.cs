@@ -22,7 +22,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Poseidon.BackOffice.Module.Pms.Resources.Strings", typeof(Strings).Assembly);
@@ -51,7 +51,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,16 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Currencies.
         /// </summary>
-        internal static string CurrencyModule {
+        public static string CurrenciesView_Title {
+            get {
+                return ResourceManager.GetString("CurrenciesView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currencies.
+        /// </summary>
+        public static string CurrencyModule {
             get {
                 return ResourceManager.GetString("CurrencyModule", resourceCulture);
             }
@@ -72,7 +81,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your currencies.
         /// </summary>
-        internal static string CurrencyModuleTooltip {
+        public static string CurrencyModuleTooltip {
             get {
                 return ResourceManager.GetString("CurrencyModuleTooltip", resourceCulture);
             }
@@ -81,7 +90,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Discounts.
         /// </summary>
-        internal static string DiscountModule {
+        public static string DiscountModule {
             get {
                 return ResourceManager.GetString("DiscountModule", resourceCulture);
             }
@@ -90,16 +99,115 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your discounts.
         /// </summary>
-        internal static string DiscountModuleTooltip {
+        public static string DiscountModuleTooltip {
             get {
                 return ResourceManager.GetString("DiscountModuleTooltip", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discounts.
+        /// </summary>
+        public static string DiscountsView_Title {
+            get {
+                return ResourceManager.GetString("DiscountsView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contraction.
+        /// </summary>
+        public static string Heading_Contraction {
+            get {
+                return ResourceManager.GetString("Heading_Contraction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DecChar.
+        /// </summary>
+        public static string Heading_DecimalChar {
+            get {
+                return ResourceManager.GetString("Heading_DecimalChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DecPos.
+        /// </summary>
+        public static string Heading_DecimalPosition {
+            get {
+                return ResourceManager.GetString("Heading_DecimalPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Absolute.
+        /// </summary>
+        public static string Heading_IsAbsolute {
+            get {
+                return ResourceManager.GetString("Heading_IsAbsolute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Heading_Name {
+            get {
+                return ResourceManager.GetString("Heading_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate.
+        /// </summary>
+        public static string Heading_Rate {
+            get {
+                return ResourceManager.GetString("Heading_Rate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Symbol.
+        /// </summary>
+        public static string Heading_Symbol {
+            get {
+                return ResourceManager.GetString("Heading_Symbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1000.
+        /// </summary>
+        public static string Heading_ThousandChar {
+            get {
+                return ResourceManager.GetString("Heading_ThousandChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders.
+        /// </summary>
+        public static string Heading_UseForOrders {
+            get {
+                return ResourceManager.GetString("Heading_UseForOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sale.
+        /// </summary>
+        public static string Heading_UseForSale {
+            get {
+                return ResourceManager.GetString("Heading_UseForSale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Payforms.
         /// </summary>
-        internal static string PayformModule {
+        public static string PayformModule {
             get {
                 return ResourceManager.GetString("PayformModule", resourceCulture);
             }
@@ -108,16 +216,25 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your payforms.
         /// </summary>
-        internal static string PayformModuleTooltip {
+        public static string PayformModuleTooltip {
             get {
                 return ResourceManager.GetString("PayformModuleTooltip", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Payforms.
+        /// </summary>
+        public static string PayformsView_Title {
+            get {
+                return ResourceManager.GetString("PayformsView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to POS Management.
         /// </summary>
-        internal static string PmsOfficeModule {
+        public static string PmsOfficeModule {
             get {
                 return ResourceManager.GetString("PmsOfficeModule", resourceCulture);
             }
@@ -126,7 +243,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Configure your POS environment.
         /// </summary>
-        internal static string PmsOfficeModuleTooltip {
+        public static string PmsOfficeModuleTooltip {
             get {
                 return ResourceManager.GetString("PmsOfficeModuleTooltip", resourceCulture);
             }
@@ -135,7 +252,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Sales family groups.
         /// </summary>
-        internal static string SalesFamilyGroupModule {
+        public static string SalesFamilyGroupModule {
             get {
                 return ResourceManager.GetString("SalesFamilyGroupModule", resourceCulture);
             }
@@ -144,7 +261,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your sales family groups.
         /// </summary>
-        internal static string SalesFamilyGroupModuleTooltip {
+        public static string SalesFamilyGroupModuleTooltip {
             get {
                 return ResourceManager.GetString("SalesFamilyGroupModuleTooltip", resourceCulture);
             }
@@ -153,7 +270,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Sales families.
         /// </summary>
-        internal static string SalesFamilyModule {
+        public static string SalesFamilyModule {
             get {
                 return ResourceManager.GetString("SalesFamilyModule", resourceCulture);
             }
@@ -162,7 +279,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your sales families.
         /// </summary>
-        internal static string SalesFamilyModuleTooltip {
+        public static string SalesFamilyModuleTooltip {
             get {
                 return ResourceManager.GetString("SalesFamilyModuleTooltip", resourceCulture);
             }
@@ -171,7 +288,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Sales items.
         /// </summary>
-        internal static string SalesItemModule {
+        public static string SalesItemModule {
             get {
                 return ResourceManager.GetString("SalesItemModule", resourceCulture);
             }
@@ -180,7 +297,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your sales items.
         /// </summary>
-        internal static string SalesItemModuleTooltip {
+        public static string SalesItemModuleTooltip {
             get {
                 return ResourceManager.GetString("SalesItemModuleTooltip", resourceCulture);
             }
@@ -189,7 +306,7 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Waiters.
         /// </summary>
-        internal static string WaiterModule {
+        public static string WaiterModule {
             get {
                 return ResourceManager.GetString("WaiterModule", resourceCulture);
             }
@@ -198,16 +315,25 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your waiters.
         /// </summary>
-        internal static string WaiterModuleTooltip {
+        public static string WaiterModuleTooltip {
             get {
                 return ResourceManager.GetString("WaiterModuleTooltip", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Waiters.
+        /// </summary>
+        public static string WaitersView_Title {
+            get {
+                return ResourceManager.GetString("WaitersView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Waiter teams.
         /// </summary>
-        internal static string WaiterTeamModule {
+        public static string WaiterTeamModule {
             get {
                 return ResourceManager.GetString("WaiterTeamModule", resourceCulture);
             }
@@ -216,9 +342,18 @@ namespace Poseidon.BackOffice.Module.Pms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage your waiter teams.
         /// </summary>
-        internal static string WaiterTeamModuleTooltip {
+        public static string WaiterTeamModuleTooltip {
             get {
                 return ResourceManager.GetString("WaiterTeamModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiter teams.
+        /// </summary>
+        public static string WaiterTeamsView_Title {
+            get {
+                return ResourceManager.GetString("WaiterTeamsView_Title", resourceCulture);
             }
         }
     }

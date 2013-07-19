@@ -4,10 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:pms="clr-namespace:Poseidon.BackOffice.Module.Pms"
-             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Pms.DesignTime"
+             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Pms.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <UserControl.Resources>
+        
         <pms:WaitersViewModelLocator x:Key="WaitersViewModel" />
 
         <DataTemplate x:Key="ItemTemplate.Waiter">
@@ -16,16 +18,28 @@
                 <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
             </StackPanel>
         </DataTemplate>
+        
     </UserControl.Resources>
 
+    
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource WaitersViewModel}" />
     </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <Binding Source="{StaticResource DesignTimeWaitersViewModel}" />
+    </d:UserControl.DataContext>
 
-    <DockPanel LastChildFill="True">
-        <Border DockPanel.Dock="Top" BorderBrush="BlueViolet" BorderThickness="2">
-            <TextBox Text="Waiters" TextAlignment="Center" />
-        </Border>
-        <ListBox ItemsSource="{Binding Waiters}" ItemTemplate="{StaticResource ItemTemplate.Waiter}" />
-    </DockPanel>
+
+    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.WaitersView_Title}">
+
+        <ListView ItemsSource="{Binding Waiters}" ItemTemplate="{StaticResource ItemTemplate.Waiter}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </HeaderedContentControl>
+
 </UserControl>
