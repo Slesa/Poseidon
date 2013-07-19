@@ -27,7 +27,7 @@
                     <ics:UnitType Name="Volume"/>
                 </ics:Unit.UnitType>
             </ics:Unit>
-            <ics:Unit Name="Centiiliter" Contraction="cl" ForRecipe="True" >
+            <ics:Unit Name="Centiliter" Contraction="cl" ForRecipe="True" >
                 <ics:Unit.UnitType>
                     <ics:UnitType Name="Volume"/>
                 </ics:Unit.UnitType>

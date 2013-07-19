@@ -1,0 +1,48 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cp="clr-namespace:Poseidon.Common.Prism.Effects;assembly=Poseidon.Common.Prism">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml"/>
+        <ResourceDictionary Source="Images.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    
+    <Style x:Key="Style.ListView.HeaderedContent" TargetType="{x:Type HeaderedContentControl}">
+        <!--<Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Background="{StaticResource Brush.Linear}">
+                        <Button Content="XXX" />
+                        <TextBlock Text="{TemplateBinding Content}"/>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="HeaderedContentControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Border Background="{StaticResource Brush.Linear}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Content="XXX" Grid.Column="1" />
+                            <TextBlock Text="{TemplateBinding Header}" HorizontalAlignment="Center" FontSize="22" Foreground="{StaticResource Brush.Background}" />
+                        </Grid>
+                        </Border>
+                        <ContentControl Content="{TemplateBinding Content}" Grid.Row="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
