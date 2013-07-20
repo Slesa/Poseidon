@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cp="clr-namespace:Poseidon.Common.Prism.Effects;assembly=Poseidon.Common.Prism">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml"/>
+        <ResourceDictionary Source="Images.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Style.EditView.StackPanel" TargetType="StackPanel">
+        <Setter Property="DockPanel.Dock" Value="Bottom"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <!--<Setter Property="Background" Value="{StaticResource Brush.Linear}"/>-->
+    </Style>
+    
+    <Style x:Key="Style.EditView.DockPanel" TargetType="{x:Type DockPanel}">
+        <Style.Resources>
+            <Style BasedOn="{StaticResource Style.EditView.StackPanel}" TargetType="StackPanel"/>
+        </Style.Resources>
+        <Setter Property="Background" Value="{StaticResource Brush.Background}"/>
+    </Style>
+
+</ResourceDictionary>

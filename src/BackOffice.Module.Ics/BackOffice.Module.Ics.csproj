@@ -92,6 +92,9 @@
     <Compile Include="ViewModels\StocksViewModel.cs" />
     <Compile Include="ViewModels\UnitsViewModel.cs" />
     <Compile Include="ViewModels\UnitTypesViewModel.cs" />
+    <Compile Include="Views\EditUnitTypeView.xaml.cs">
+      <DependentUpon>EditUnitTypeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PurchaseFamiliesView.xaml.cs">
       <DependentUpon>PurchaseFamiliesView.xaml</DependentUpon>
     </Compile>
@@ -180,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <ContainsDataSources>True</ContainsDataSources>
+    </Page>
+    <Page Include="Views\EditUnitTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PurchaseFamiliesView.xaml">
       <Generator>MSBuild:Compile</Generator>

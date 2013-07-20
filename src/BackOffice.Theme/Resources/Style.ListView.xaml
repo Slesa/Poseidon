@@ -25,7 +25,6 @@
                 <ControlTemplate TargetType="HeaderedContentControl">
                     <DockPanel>
                         <DockPanel DockPanel.Dock="Top" Background="{StaticResource Brush.Linear}">
-                            <Button Content="XXX" Margin="5" DockPanel.Dock="Right"/>
                             <TextBlock Text="{TemplateBinding Header}" Foreground="{StaticResource Brush.Background}" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </DockPanel>
                         <ContentPresenter Content="{TemplateBinding Content}" Grid.Row="1" />

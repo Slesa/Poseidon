@@ -29,8 +29,15 @@
         <Binding Source="{StaticResource DesignTimeUnitTypesViewModel}" />
     </d:UserControl.DataContext>
 
-
-    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UnitTypesView_Title}" >
+    <DockPanel>
+        
+        <StackPanel DockPanel.Dock="Bottom" Background="{StaticResource Brush.LinearInverted}" Orientation="Horizontal">
+            <Button Content="New" Command="{Binding NewUnitTypeCommand}" />
+            <Button Content="Edit" Command="{Binding EditUnitTypeCommand}" />
+            <Button Content="Remove" Command="{Binding DelUnitTypeCommand}" />
+        </StackPanel>
+        
+        <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UnitTypesView_Title}" >
 
         <ListView ItemsSource="{Binding UnitTypes}" ItemTemplate="{StaticResource ItemTemplate.UnitType}">
             <ListView.View>
@@ -41,5 +48,6 @@
         </ListView>
 
     </HeaderedContentControl>
-    
+
+    </DockPanel>
 </UserControl>

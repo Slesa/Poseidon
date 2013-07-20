@@ -210,4 +210,7 @@
   <data name="StocksView_Title" xml:space="preserve">
     <value>Stocks</value>
   </data>
+  <data name="EditUnitTypeView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
 </root>

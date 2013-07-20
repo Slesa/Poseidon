@@ -20,4 +20,9 @@
       <GradientStop Color="{StaticResource Color.Background}" Offset="0" />
     </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="Brush.LinearInverted" StartPoint="0,0.6" EndPoint="0,1">
+      <GradientStop Color="{StaticResource Color.Foreground}" Offset="0" />
+      <GradientStop Color="{StaticResource Color.Background}" Offset="1" />
+    </LinearGradientBrush>
+
 </ResourceDictionary>
