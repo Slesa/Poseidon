@@ -35,6 +35,7 @@ namespace Poseidon.BackOffice.Module.Ics
             _container.RegisterType<object, StocksView>(View.StocksView);
             _container.RegisterType<object, UnitsView>(View.UnitsView);
             _container.RegisterType<object, UnitTypesView>(View.UnitTypesView);
+            _container.RegisterType<object, EditUnitTypeView>(View.EditUnitTypeView);
 
             _container.RegisterType<ProductionItemsViewModel>();
             _container.RegisterType<PurchaseItemsViewModel>();
@@ -43,6 +44,7 @@ namespace Poseidon.BackOffice.Module.Ics
             _container.RegisterType<StocksViewModel>();
             _container.RegisterType<UnitsViewModel>();
             _container.RegisterType<UnitTypesViewModel>();
+            _container.RegisterType<EditUnitTypeViewModel>();
         }
     }
 }

@@ -10,5 +10,6 @@
         public static readonly string StocksView = "StocksView";
         public static readonly string UnitsView = "UnitsView";
         public static readonly string UnitTypesView = "UnitTypesView";
+        public static readonly string EditUnitTypeView = "EditUnitTypeView";
     }
 }

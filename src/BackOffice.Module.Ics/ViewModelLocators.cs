@@ -10,5 +10,6 @@ namespace Poseidon.BackOffice.Module.Ics
     public class RecipesViewModelLocator : ViewModelLocator<RecipesViewModel> { }
     public class StocksViewModelLocator : ViewModelLocator<StocksViewModel> { }
     public class UnitsViewModelLocator : ViewModelLocator<UnitsViewModel> { }
+    public class EditUnitTypeViewModelLocator : ViewModelLocator<EditUnitTypeViewModel> { }
     public class UnitTypesViewModelLocator : ViewModelLocator<UnitTypesViewModel> { }
 }

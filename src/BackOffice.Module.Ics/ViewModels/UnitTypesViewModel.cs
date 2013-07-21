@@ -1,14 +1,21 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Microsoft.Practices.Prism;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Regions;
+using Poseidon.BackOffice.Common;
 using Poseidon.Domain.Ics.Model;
 
 namespace Poseidon.BackOffice.Module.Ics.ViewModels
 {
     public class UnitTypesViewModel
     {
-        public UnitTypesViewModel()
+        readonly IRegionManager _regionManager;
+
+        public UnitTypesViewModel(IRegionManager regionManager)
         {
+            _regionManager = regionManager;
             NewUnitTypeCommand = new DelegateCommand(OnNewUnitType);
             EditUnitTypeCommand = new DelegateCommand(OnEditUnitType, CanEditUnitType);
             DelUnitTypeCommand = new DelegateCommand(OnDelUnitType, CanDelUnitType);
@@ -16,16 +23,21 @@ namespace Poseidon.BackOffice.Module.Ics.ViewModels
 
         public ObservableCollection<UnitType> UnitTypes { get; set; }
 
-        public ICommand NewUnitTypeCommand { get; set; }
+        #region Commands
+
+        public ICommand NewUnitTypeCommand { get; private set; }
 
         void OnNewUnitType()
         {
+            _regionManager.RequestNavigate(Regions.TagModulesRegion, View.EditUnitTypeView);
         }
 
-        public ICommand EditUnitTypeCommand { get; set; }
+        public ICommand EditUnitTypeCommand { get; private set; }
 
         void OnEditUnitType()
         {
+            var uriQuery = new UriQuery {{"id", "1"}};
+            _regionManager.RequestNavigate(Regions.TagModulesRegion, new Uri(View.EditUnitTypeView+uriQuery, UriKind.Relative));
         }
 
         bool CanEditUnitType()
@@ -33,7 +45,7 @@ namespace Poseidon.BackOffice.Module.Ics.ViewModels
             return true;
         }
 
-        public ICommand DelUnitTypeCommand { get; set; }
+        public ICommand DelUnitTypeCommand { get; private set; }
 
         void OnDelUnitType()
         {
@@ -43,5 +55,7 @@ namespace Poseidon.BackOffice.Module.Ics.ViewModels
         {
             return true;
         }
+
+        #endregion
     }
 }

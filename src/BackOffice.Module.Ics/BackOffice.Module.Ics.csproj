@@ -84,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View.cs" />
     <Compile Include="ViewModelLocators.cs" />
+    <Compile Include="ViewModels\EditUnitTypeViewModel.cs" />
     <Compile Include="ViewModels\ProductionItemsViewModel.cs" />
     <Compile Include="ViewModels\PurchaseFamiliesViewModel.cs" />
     <Compile Include="ViewModels\PurchaseItemsViewModel.cs" />

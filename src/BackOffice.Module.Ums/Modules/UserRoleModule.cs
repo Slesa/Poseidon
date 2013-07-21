@@ -11,11 +11,11 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
     {
         public static readonly string Name = "UMS.UserRoleModule";
 
-        public IRegionManager RegionManager { get; private set; }
+        IRegionManager _regionManager;
 
         public UserRoleModule(UmsOfficeModule parent, IRegionManager regionManager)
         {
-            RegionManager = regionManager;
+            _regionManager = regionManager;
             Parent = parent;
             SelectedCommand = new DelegateCommand(OnSelection);
         }
@@ -30,7 +30,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
 
         void OnSelection()
         {
-            RegionManager.RequestNavigate(Regions.TagModulesRegion, View.UserRolesView);
+            _regionManager.RequestNavigate(Regions.TagModulesRegion, View.UserRolesView);
         }
     }
 }

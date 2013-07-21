@@ -4,15 +4,31 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ics.Resources"
+             xmlns:ics="clr-namespace:Poseidon.BackOffice.Module.Ics"
              mc:Ignorable="d" 
              FocusManager.FocusedElement="{Binding ElementName=_textName}"
              d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+
+        <ics:EditUnitTypeViewModelLocator x:Key="EditUnitTypeViewModel" />
+
+    </UserControl.Resources>
+
+    
+    <UserControl.DataContext>
+        <Binding Path="ViewModel" Source="{StaticResource EditUnitTypeViewModel}" />
+    </UserControl.DataContext>
+    <!--<d:UserControl.DataContext>
+        <Binding Source="{StaticResource DesignTimeUnitTypesViewModel}" />
+    </d:UserControl.DataContext>-->
+
     
     <DockPanel Style="{DynamicResource Style.EditView.DockPanel}">
         
         <StackPanel>
-            <Button x:Name="SaveButton" IsDefault="True" Content="Save"></Button>
-            <Button x:Name="CancelButton" IsCancel="True" Content="Cancel"></Button>
+            <Button x:Name="SaveButton" IsDefault="True" Content="Save" Command="{Binding SaveCommand}"/>
+            <Button x:Name="CancelButton" IsCancel="True" Content="Cancel" Command="{Binding CancelCommand}"/>
         </StackPanel>
         
         <Grid>
