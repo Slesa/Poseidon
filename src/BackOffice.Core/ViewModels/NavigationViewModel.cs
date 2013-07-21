@@ -39,10 +39,13 @@ namespace Poseidon.BackOffice.Core.ViewModels
             if (e.Uri != StartPage)
             {
                 _backStack.Add(CurrentPage);
+                _forwardStack.Clear();
                 CurrentPage = e.Uri;
             }
             else
+            {
                 CurrentPage = null;
+            }
             ((DelegateCommand)OnBackCommand).RaiseCanExecuteChanged();
             ((DelegateCommand)OnForwardCommand).RaiseCanExecuteChanged();
         }
