@@ -6,8 +6,11 @@
         <ResourceDictionary Source="Brushes.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="Style.StatusBar.Message" TargetType="{x:Type TextBlock}">
+    <Style x:Key="Style.StatusBar.Message" TargetType="{x:Type TextBox}">
         <Setter Property="Margin" Value="10,5,10,5"/>
+        <Setter Property="Background" Value="{StaticResource Brush.Background}"/>
+        <Setter Property="Foreground" Value="{StaticResource Brush.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
 </ResourceDictionary>
