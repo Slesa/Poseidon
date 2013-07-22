@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Windows;
 using Microsoft.Practices.Prism.Logging;
@@ -6,6 +7,7 @@ using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Core;
 using Poseidon.BackOffice.Module.Ics;
 using Poseidon.BackOffice.Module.Pms;
@@ -14,6 +16,7 @@ using Poseidon.BackOffice.ViewModels;
 using Poseidon.BackOffice.Views;
 using Poseidon.Common;
 using Poseidon.Common.Persistence;
+using Unity.AutoRegistration;
 
 namespace Poseidon.BackOffice
 {
@@ -89,12 +92,15 @@ namespace Poseidon.BackOffice
 
         void RegisterPersistence()
         {
+            var dbConnection = ConfigurationManager.AppSettings["DbConnection"];
+            //Container.RegisterType<IPersistenceConfiguration, SqlServerPersistenceConfiguration>(new ContainerControlledLifetimeManager(), new InjectionConstructor(dbConnection));
+            Container.RegisterType<IPersistenceConfiguration, SqlServerPersistenceConfiguration>(new InjectionConstructor(dbConnection));
+            
+            Container.ConfigureAutoRegistration()
+                .Include(If.Implements<IMappingContributor>, Then.Register().UsingPerCallMode())
+                .Include(If.Implements<IHibernateInitializationAware>, Then.Register().UsingPerCallMode())
+                .ApplyAutoRegistration();
             /*
-            yield return Component
-                 .For<IPersistenceConfiguration>()
-                 .ImplementedBy<SqlServerPersistenceConfiguration>()
-                 .Parameters(Parameter.ForKey("connectionString").Eq(ConfigurationManager.AppSettings["DbConnection"]));
-
             yield return AllTypes
                 .FromAssemblyContaining(typeof(IMappingContributor))
                 .BasedOn(typeof(IMappingContributor))

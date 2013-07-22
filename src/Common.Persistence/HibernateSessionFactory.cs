@@ -66,7 +66,8 @@ namespace Poseidon.Common.Persistence
             CreateDatabaseWhenDebug(configuration);
 
             _sessionFactory = configuration.BuildSessionFactory();
-            Initializers.Each(x => x.Initialized(actualConfiguration, _sessionFactory));
+            if (Initializers!=null)
+                Initializers.Each(x => x.Initialized(actualConfiguration, _sessionFactory));
 
             return _sessionFactory;
         }

@@ -5,20 +5,28 @@ using Microsoft.Practices.Prism;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
+using Poseidon.Common.Persistence;
+using Poseidon.Domain.Ics.Hibernate.Queries;
 using Poseidon.Domain.Ics.Model;
 
 namespace Poseidon.BackOffice.Module.Ics.ViewModels
 {
     public class UnitTypesViewModel
     {
+        readonly IDbConversation _dbConversation;
         readonly IRegionManager _regionManager;
 
-        public UnitTypesViewModel(IRegionManager regionManager)
+        public UnitTypesViewModel(IDbConversation dbConversation, IRegionManager regionManager)
         {
+            _dbConversation = dbConversation;
             _regionManager = regionManager;
+
             NewUnitTypeCommand = new DelegateCommand(OnNewUnitType);
             EditUnitTypeCommand = new DelegateCommand(OnEditUnitType, CanEditUnitType);
             DelUnitTypeCommand = new DelegateCommand(OnDelUnitType, CanDelUnitType);
+
+            //dbConversation.UsingTransaction(CreateDatasets);
+            CreateDatasets();
         }
 
         public ObservableCollection<UnitType> UnitTypes { get; set; }
@@ -57,5 +65,10 @@ namespace Poseidon.BackOffice.Module.Ics.ViewModels
         }
 
         #endregion
+
+        void CreateDatasets()
+        {
+            UnitTypes = new ObservableCollection<UnitType>(_dbConversation.Query(new AllUnitTypesQuery()));
+        }
     }
 }

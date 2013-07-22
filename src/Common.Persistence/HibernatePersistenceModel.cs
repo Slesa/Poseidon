@@ -1,15 +1,22 @@
-﻿using FluentNHibernate.Cfg;
+﻿using System.Collections.Generic;
+using FluentNHibernate.Cfg;
 using FluentNHibernate.Utils;
+using Microsoft.Practices.Unity;
 
 namespace Poseidon.Common.Persistence
 {
     public class HibernatePersistenceModel : IHibernatePersistenceModel
     {
-        public IMappingContributor[] MappingContributors { get; set; }
+        public IEnumerable<IMappingContributor> MappingContributors { get; set; }
+
+        public HibernatePersistenceModel(IUnityContainer container)
+        {
+            MappingContributors = container.ResolveAll<IMappingContributor>();
+        }
 
         public void AddMappings(MappingConfiguration configuration)
         {
-            MappingContributors.Each(x => x.Apply(configuration));
+            if (MappingContributors!=null) MappingContributors.Each(x => x.Apply(configuration));
         }
     }
 }

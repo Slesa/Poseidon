@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
@@ -51,6 +55,10 @@
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Configuration">
       <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -127,6 +135,10 @@
       <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
       <Name>BackOffice.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{14fdbdef-281a-4cb0-986d-e826145f3839}</Project>
+      <Name>Common.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
       <Project>{daf28095-0d7e-4544-ba13-4719d839d03d}</Project>
       <Name>Common.Prism</Name>
@@ -134,6 +146,10 @@
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
       <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
       <Name>Domain.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Ics.Hibernate\Domain.Ics.Hibernate.csproj">
+      <Project>{506b34df-e27d-4d5d-b64a-7c0c80107632}</Project>
+      <Name>Domain.Ics.Hibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Ics.Model\Domain.Ics.Model.csproj">
       <Project>{292252E1-4343-4AA5-B555-B94703DB0374}</Project>
