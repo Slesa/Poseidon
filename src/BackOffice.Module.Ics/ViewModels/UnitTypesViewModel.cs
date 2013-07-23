@@ -25,7 +25,6 @@ namespace Poseidon.BackOffice.Module.Ics.ViewModels
             EditUnitTypeCommand = new DelegateCommand(OnEditUnitType, CanEditUnitType);
             DelUnitTypeCommand = new DelegateCommand(OnDelUnitType, CanDelUnitType);
 
-            //dbConversation.UsingTransaction(CreateDatasets);
             CreateDatasets();
         }
 
@@ -68,7 +67,10 @@ namespace Poseidon.BackOffice.Module.Ics.ViewModels
 
         void CreateDatasets()
         {
-            UnitTypes = new ObservableCollection<UnitType>(_dbConversation.Query(new AllUnitTypesQuery()));
+            _dbConversation.UsingTransaction(() =>
+                {
+                    UnitTypes = new ObservableCollection<UnitType>(_dbConversation.Query(new AllUnitTypesQuery()));
+                });
         }
     }
 }

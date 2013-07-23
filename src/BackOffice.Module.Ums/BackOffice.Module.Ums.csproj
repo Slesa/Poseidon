@@ -103,6 +103,10 @@
       <Project>{CFC26392-DF5F-4A9E-92DC-F109BEE1A32C}</Project>
       <Name>BackOffice.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{14fdbdef-281a-4cb0-986d-e826145f3839}</Project>
+      <Name>Common.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
       <Project>{DAF28095-0D7E-4544-BA13-4719D839D03D}</Project>
       <Name>Common.Prism</Name>

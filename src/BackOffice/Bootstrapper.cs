@@ -103,28 +103,15 @@ namespace Poseidon.BackOffice
 
             Container.ConfigureAutoRegistration()
                 .LoadAssembliesFrom(GetRegistrationAssemblies())
-                //.LoadAssemblyFrom("Poseidon.Domain.Ics.Hibernate.dll")
                 //.ExcludeAssemblies(a=>!a.GetName().FullName.Contains("Poseidon"))
-                //.ExcludeAssemblies(a => a.GetName().FullName.Contains("Specs"))
+                .ExcludeAssemblies(a => a.GetName().FullName.Contains("Specs"))
                 //.Include(type => type.IsGenericTypeDefinition .<ClassMap<>>, Then.Register().UsingPerCallMode())
                 .Include(If.Implements<IMappingContributor>, Then.Register().WithTypeName())
                 .Include(If.Implements<IHibernateInitializationAware>, Then.Register().WithTypeName())
-                //.Exclude(t => t.Name.Equals("FluentMappingFromAssembly"))
+                //.Include(If.Implements<IHibernatePersistenceModel>, Then.Register().WithTypeName())
                 .ApplyAutoRegistration();
 
-            var mappingContributors = Container.ResolveAll<IMappingContributor>();
-            //System.Diagnostics.Debug.Assert(mappingContributors.Count()>3);
-            /*
-            yield return AllTypes
-                .FromAssemblyContaining(typeof(IMappingContributor))
-                .BasedOn(typeof(IMappingContributor))
-                .WithService.Base();*/
             RegisterTypeIfMissing(typeof(IHibernatePersistenceModel), typeof(HibernatePersistenceModel), true);
-            /*
-            yield return AllTypes
-                .FromAssemblyContaining(typeof(INHibernateInitializationAware))
-                .BasedOn(typeof(INHibernateInitializationAware))
-                .WithService.Base();*/
             RegisterTypeIfMissing(typeof(IHibernateSessionFactory), typeof(HibernateSessionFactory), true);
             RegisterTypeIfMissing(typeof(IDbConversation), typeof(DbConversation), true);
         }
