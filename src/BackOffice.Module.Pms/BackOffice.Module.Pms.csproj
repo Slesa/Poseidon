@@ -136,6 +136,10 @@
       <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
       <Name>Domain.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain.Pms.Hibernate\Domain.Pms.Hibernate.csproj">
+      <Project>{ce4b54db-63b6-48e2-8268-0aefb53aeade}</Project>
+      <Name>Domain.Pms.Hibernate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Pms.Model\Domain.Pms.Model.csproj">
       <Project>{43B0AF8E-ED61-4D64-B227-83CF3F9A0ABA}</Project>
       <Name>Domain.Pms.Model</Name>

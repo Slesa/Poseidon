@@ -36,6 +36,9 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Inflector">
+      <HintPath>..\packages\Inflector.1.0.0.0\lib\net45\Inflector.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
@@ -74,6 +77,8 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="DbConversation.cs" />
+    <Compile Include="FluentMappingConventions.cs" />
+    <Compile Include="FluentMappingFromAssembly.cs" />
     <Compile Include="IDbConversation.cs" />
     <Compile Include="IDomainQuery.cs" />
     <Compile Include="IMappingContributor.cs" />

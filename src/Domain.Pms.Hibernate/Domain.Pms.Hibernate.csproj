@@ -55,6 +55,7 @@
     <Compile Include="Maps\SalesItemMap.cs" />
     <Compile Include="Maps\WaiterMap.cs" />
     <Compile Include="Maps\WaiterTeamMap.cs" />
+    <Compile Include="PmsMappings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\CurrencyQueries.cs" />
     <Compile Include="Queries\DiscountQueries.cs" />

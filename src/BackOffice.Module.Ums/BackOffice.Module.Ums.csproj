@@ -111,6 +111,10 @@
       <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
       <Name>Domain.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain.Ums.Hibernate\Domain.Ums.Hibernate.csproj">
+      <Project>{11c6f596-a4b7-49a7-8cca-b5b2091acd40}</Project>
+      <Name>Domain.Ums.Hibernate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Ums.Model\Domain.Ums.Model.csproj">
       <Project>{BFAF0FB8-E823-4BB8-B8EA-F774D5742FEB}</Project>
       <Name>Domain.Ums.Model</Name>

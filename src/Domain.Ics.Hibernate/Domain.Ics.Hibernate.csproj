@@ -47,6 +47,7 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="IcsMappings.cs" />
     <Compile Include="Maps\ProductionItemMap.cs" />
     <Compile Include="Maps\PurchaseFamilyMap.cs" />
     <Compile Include="Maps\PurchaseItemMap.cs" />
