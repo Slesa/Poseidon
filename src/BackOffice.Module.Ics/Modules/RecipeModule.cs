@@ -23,7 +23,7 @@ namespace Poseidon.BackOffice.Module.Ics.Modules
         public string Title { get { return Strings.RecipeModule; } }
         public string ToolTip { get { return Strings.RecipeModuleTooltip; } }
         public string IconFileName { get { return IcsResources.RecipeIcon; } }
-        public int Priority { get { return 10; } }
+        public int Priority { get { return 20; } }
         public IOfficeModule Parent { get ; private set; }
 
         public ICommand SelectedCommand { get; set; }
