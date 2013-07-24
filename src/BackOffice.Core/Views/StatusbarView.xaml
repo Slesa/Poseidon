@@ -22,6 +22,6 @@
     </d:UserControl.DataContext>
     
     <Border>
-        <TextBox Text="{Binding Message}" IsReadOnly="True" Style="{DynamicResource Style.StatusBar.Message}" />
+        <TextBox Text="{Binding Message}" IsReadOnly="True" Style="{DynamicResource Style.StatusBar.Message}" Focusable="False" />
     </Border>
 </UserControl>
