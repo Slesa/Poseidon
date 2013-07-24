@@ -40,13 +40,13 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <!--<Image Grid.ColumnSpan="2" Width="48" Height="48" Source="{Binding Parent.Image, RelativeSource={RelativeSource FindAncestor,}}}" />-->
-                            <TextBlock Grid.Column="1" x:Name="parentName" Text="{Binding Path=Name, Mode=OneWay}" FontSize="20" Foreground="WhiteSmoke" />
+                            <TextBlock Grid.Column="1" x:Name="parentName" Text="{Binding Path=Name, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />
                             <!--<TextBlock Grid.Column="0" x:Name="parentTitle" Text="{Binding Path=Title, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />-->
                             <!--<TextBlock Grid.Column="2" x:Name="count" Text="{Binding Path=Priority, Mode=OneWay}" FontSize="20" Foreground="CornflowerBlue" />-->
                             <ItemsControl Grid.Column="1" Grid.Row="1">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <WrapPanel IsItemsHost="True" Orientation="Horizontal" 
+                                        <WrapPanel IsItemsHost="True" Orientation="Horizontal"
                                                    MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type ListBox}, Mode=FindAncestor}}" />
                                     </ItemsPanelTemplate>
                                 </ItemsControl.ItemsPanel>
@@ -66,7 +66,7 @@
                     <GroupStyle ContainerStyle="{StaticResource GroupItem.Module}">
                         <GroupStyle.Panel>
                             <ItemsPanelTemplate>
-                                <VirtualizingStackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal"/>
+                                <VirtualizingStackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" />
                             </ItemsPanelTemplate>
                         </GroupStyle.Panel>
                     </GroupStyle>
@@ -77,6 +77,7 @@
         <Style x:Key="ItemTemplate.Module.Item" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Padding" Value="3" />
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -85,16 +86,11 @@
                             <Image Width="24" Height="24" Source="{Binding IconFileName}"/>
                             <TextBlock x:Name="menuText" VerticalAlignment="Center" Text="{Binding Title}" Foreground="BurlyWood"/>
                         </StackPanel>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="menuText" Property="FontWeight" Value="Bold" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <DataTemplate x:Key="ItemTemplate.Module">
             <Button Style="{StaticResource ItemTemplate.Module.Item}">
                 <i:Interaction.Triggers>
@@ -104,6 +100,44 @@
                 </i:Interaction.Triggers>
             </Button>
         </DataTemplate>
+        
+        <Style x:Key="ListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="Padding" Value="2,0,0,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true" ToolTip="{TemplateBinding ToolTip}" >
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="true"/>
+                                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
 
     <UserControl.DataContext>
@@ -114,7 +148,7 @@
         <design:DesignTimeModulesViewModel />
     </d:UserControl.DataContext>
 
-    <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemTemplate="{StaticResource ItemTemplate.Module}" Style="{StaticResource ListBox.Modules}">
+    <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemTemplate="{StaticResource ItemTemplate.Module}" Style="{StaticResource ListBox.Modules}" ItemContainerStyle="{DynamicResource ListBoxItemStyle}">
         <ListBox.GroupStyle>
             <GroupStyle>
                 <GroupStyle.ContainerStyle>
