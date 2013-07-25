@@ -9,7 +9,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
     {
         public StatusBarViewModel(IEventAggregator eventAggregator)
         {
-            eventAggregator.GetEvent<ClearMessageEvent>().Subscribe(_ => Message = string.Empty);
+            eventAggregator.GetEvent<ClearMessageEvent>().Subscribe(_ => Message = null);
             eventAggregator.GetEvent<ShowMessageEvent>().Subscribe(msg => Message = msg);
         }
 
