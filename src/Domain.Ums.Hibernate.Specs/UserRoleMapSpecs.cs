@@ -7,7 +7,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ums.Hibernate.Specs
 {
     [Subject(typeof(UserRoleMap))]
-    public class When_checking_persistence_specs_of_user_role : InMemoryDatabaseSpecs<UserRoleMap>
+    internal class When_checking_persistence_specs_of_user_role : InMemoryDatabaseSpecs<UserRoleMap>
     {
         Because of = () =>
             {

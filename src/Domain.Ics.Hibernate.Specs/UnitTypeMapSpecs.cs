@@ -7,7 +7,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ics.Hibernate.Specs
 {
     [Subject(typeof(UnitTypeMap))]
-    public class When_checking_persistence_specs_of_unit_type : InMemoryDatabaseSpecs<UnitTypeMap>
+    internal class When_checking_persistence_specs_of_unit_type : InMemoryDatabaseSpecs<UnitTypeMap>
     {
         Because of = () =>
             {

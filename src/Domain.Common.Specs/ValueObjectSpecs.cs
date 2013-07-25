@@ -3,7 +3,7 @@
 namespace Poseidon.Domain.Common.Specs
 {
     [Subject(typeof(ValueObject<>))]
-    public class When_comparing_value_objects_with_identical_values
+    internal class When_comparing_value_objects_with_identical_values
     {
         protected static StreetAddress Address1;
         protected static StreetAddress Address2;
@@ -19,7 +19,7 @@ namespace Poseidon.Domain.Common.Specs
 
 
     [Subject(typeof(ValueObject<>))]
-    public class When_comparing_value_objects_with_different_values
+    internal class When_comparing_value_objects_with_different_values
     {
         protected static StreetAddress Address1;
         protected static StreetAddress Address2;
@@ -35,7 +35,7 @@ namespace Poseidon.Domain.Common.Specs
 
 
     [Subject(typeof(ValueObject<>))]
-    public class When_comparing_different_value_objets_with_null_values_on_one_object
+    internal class When_comparing_different_value_objets_with_null_values_on_one_object
     {
         protected static StreetAddress Address1;
         protected static StreetAddress Address2;
@@ -51,7 +51,7 @@ namespace Poseidon.Domain.Common.Specs
 
 
     [Subject(typeof(ValueObject<>))]
-    public class When_comparing_a_value_object_against_null
+    internal class When_comparing_a_value_object_against_null
     {
         static StreetAddress _streetAddress;
 
@@ -62,7 +62,7 @@ namespace Poseidon.Domain.Common.Specs
 
 
     [Subject(typeof(ValueObject<>))]
-    public class When_comparing_value_object_with_itself
+    internal class When_comparing_value_object_with_itself
     {
         static StreetAddress _streetAddress;
 
@@ -73,7 +73,7 @@ namespace Poseidon.Domain.Common.Specs
 
 
     [Subject(typeof(ValueObject<>))]
-    public class When_comparing_three_value_objects_with_identical_values
+    internal class When_comparing_three_value_objects_with_identical_values
     {
         static StreetAddress _address1;
         static StreetAddress _address2;
@@ -93,7 +93,7 @@ namespace Poseidon.Domain.Common.Specs
 
 
     [Subject(typeof(ValueObject<>))]
-    public class When_comparing_value_objects_with_transposed_field_values
+    internal class When_comparing_value_objects_with_transposed_field_values
     {
         protected static StreetAddress Address1;
         protected static StreetAddress Address2;
@@ -109,7 +109,7 @@ namespace Poseidon.Domain.Common.Specs
 
 
     [Subject(typeof(ValueObject<>))]
-    public class When_comparing_value_objects_against_derived_one_with_same_values
+    internal class When_comparing_value_objects_against_derived_one_with_same_values
     {
         protected static StreetAddress Address1;
         protected static StreetAddressWithNumber Address2;

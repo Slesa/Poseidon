@@ -9,7 +9,7 @@ using Rhino.Mocks;
 namespace Poseidon.Common.Persistence.Specs
 {
     [Subject(typeof(HibernateSessionFactory))]
-    public class When_a_nhibernate_session_created_for_the_first_time
+    internal class When_a_nhibernate_session_created_for_the_first_time
     {
         static IPersistenceConfiguration _persistenceConfiguration;
         static IHibernatePersistenceModel _persistenceModel;
@@ -77,7 +77,7 @@ namespace Poseidon.Common.Persistence.Specs
     }
 
     [Subject(typeof(HibernateSessionFactory))]
-    public class When_a_nhibernate_session_created
+    internal class When_a_nhibernate_session_created
     {
         static IPersistenceConfiguration _persistenceConfiguration;
         static IHibernatePersistenceModel _persistenceModel;

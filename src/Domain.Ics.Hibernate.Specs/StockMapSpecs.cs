@@ -8,7 +8,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ics.Hibernate.Specs
 {
     [Subject(typeof(StockMap))]
-    public class When_checking_persistence_specs_of_stock_map : InMemoryDatabaseSpecs<StockMap>
+    internal class When_checking_persistence_specs_of_stock_map : InMemoryDatabaseSpecs<StockMap>
     {
         static PersistenceSpecification<Stock> _check;
 

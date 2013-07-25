@@ -8,7 +8,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ics.Hibernate.Specs
 {
     [Subject(typeof(RecipeMap))]
-    public class When_checking_persistence_specs_of_recipe_map : InMemoryDatabaseSpecs<RecipeMap>
+    internal class When_checking_persistence_specs_of_recipe_map : InMemoryDatabaseSpecs<RecipeMap>
     {
         static PersistenceSpecification<Recipe> _check;
 

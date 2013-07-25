@@ -8,7 +8,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ics.Hibernate.Specs
 {
     [Subject(typeof(ProductionItemMap))]
-    public class When_checking_persistence_specs_of_productionitem : InMemoryDatabaseSpecs<ProductionItemMap>
+    internal class When_checking_persistence_specs_of_productionitem : InMemoryDatabaseSpecs<ProductionItemMap>
     {
         static PersistenceSpecification<ProductionItem> _check;
 

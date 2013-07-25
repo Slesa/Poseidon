@@ -9,7 +9,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ums.Hibernate.Specs
 {
     [Subject(typeof(TokenMap))]
-    public class When_checking_persistence_specs_of_token : InMemoryDatabaseSpecs<TokenMap>
+    internal class When_checking_persistence_specs_of_token : InMemoryDatabaseSpecs<TokenMap>
     {
         Because of = () =>
             {
@@ -29,7 +29,7 @@ namespace Poseidon.Domain.Ums.Hibernate.Specs
 
 
     [Subject(typeof(TokenMap))]
-    public class When_checking_persistence_specs_of_token_w_o_token_type : InMemoryDatabaseSpecs<TokenMap>
+    internal class When_checking_persistence_specs_of_token_w_o_token_type : InMemoryDatabaseSpecs<TokenMap>
     {
         Because of = () =>
             {

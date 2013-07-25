@@ -1,12 +1,13 @@
 ﻿using FluentNHibernate.Testing;
 using Machine.Specifications;
+using Poseidon.Domain.Ics.Hibernate.Maps;
 using Poseidon.Domain.Ics.Model;
 using Poseidon.Hibernate.Specs.Common;
 
-namespace Poseidon.Domain.Ics.Hibernate.Maps
+namespace Poseidon.Domain.Ics.Hibernate.Specs
 {
     [Subject(typeof(StockItemMap))]
-    public class When_checking_persistence_specs_of_stock_item_map : InMemoryDatabaseSpecs<StockItemMap>
+    internal class When_checking_persistence_specs_of_stock_item_map : InMemoryDatabaseSpecs<StockItemMap>
     {
         static PersistenceSpecification<StockItem> _check;
 

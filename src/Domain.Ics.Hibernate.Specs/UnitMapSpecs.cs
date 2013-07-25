@@ -9,7 +9,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ics.Hibernate.Specs
 {
     [Subject(typeof(UnitMap))]
-    public class When_checking_persistence_specs_of_unit : InMemoryDatabaseSpecs<UnitMap>
+    internal class When_checking_persistence_specs_of_unit : InMemoryDatabaseSpecs<UnitMap>
     {
         Because of = () =>
             {
@@ -35,7 +35,7 @@ namespace Poseidon.Domain.Ics.Hibernate.Specs
     }
 
     [Subject(typeof(UnitMap))]
-    public class When_checking_persistence_specs_of_unit_w_o_parent : InMemoryDatabaseSpecs<UnitMap>
+    internal class When_checking_persistence_specs_of_unit_w_o_parent : InMemoryDatabaseSpecs<UnitMap>
     {
         Because of = () =>
             {
@@ -58,7 +58,7 @@ namespace Poseidon.Domain.Ics.Hibernate.Specs
     }
 
     [Subject(typeof(UnitMap))]
-    public class When_checking_persistence_specs_of_unit_w_o_type : InMemoryDatabaseSpecs<UnitMap>
+    internal class When_checking_persistence_specs_of_unit_w_o_type : InMemoryDatabaseSpecs<UnitMap>
     {
         Because of = () =>
             {

@@ -7,7 +7,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ums.Hibernate.Specs
 {
     [Subject(typeof(TokenTypeMap))]
-    public class When_checking_persistence_specs_of_token_type : InMemoryDatabaseSpecs<TokenTypeMap>
+    internal class When_checking_persistence_specs_of_token_type : InMemoryDatabaseSpecs<TokenTypeMap>
     {
         Because of = () =>
             {

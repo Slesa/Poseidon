@@ -9,7 +9,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Ums.Hibernate.Specs
 {
     [Subject(typeof(UserMap))]
-    public class When_checking_persistence_specs_of_user : InMemoryDatabaseSpecs<UserMap>
+    internal class When_checking_persistence_specs_of_user : InMemoryDatabaseSpecs<UserMap>
     {
         Because of = () =>
             {
@@ -29,7 +29,7 @@ namespace Poseidon.Domain.Ums.Hibernate.Specs
 
 
     [Subject(typeof(UserMap))]
-    public class When_checking_persistence_specs_of_user_w_o_user_role : InMemoryDatabaseSpecs<UserMap>
+    internal class When_checking_persistence_specs_of_user_w_o_user_role : InMemoryDatabaseSpecs<UserMap>
     {
         Because of = () =>
             {

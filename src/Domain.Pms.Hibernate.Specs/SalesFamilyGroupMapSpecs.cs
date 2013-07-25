@@ -7,7 +7,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Pms.Hibernate.Specs
 {
     [Subject(typeof(SalesFamilyGroupMap))]
-    public class When_checking_persistence_specs_of_sales_family_group : InMemoryDatabaseSpecs<SalesFamilyGroupMap>
+    internal class When_checking_persistence_specs_of_sales_family_group : InMemoryDatabaseSpecs<SalesFamilyGroupMap>
     {
         Because of = () =>
             {

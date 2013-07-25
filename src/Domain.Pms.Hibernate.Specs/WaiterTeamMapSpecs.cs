@@ -7,7 +7,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Pms.Hibernate.Specs
 {
     [Subject(typeof(WaiterTeamMap))]
-    public class When_checking_persistence_specs_of_waiter_team : InMemoryDatabaseSpecs<WaiterTeamMap>
+    internal class When_checking_persistence_specs_of_waiter_team : InMemoryDatabaseSpecs<WaiterTeamMap>
     {
         Because of = () =>
             {

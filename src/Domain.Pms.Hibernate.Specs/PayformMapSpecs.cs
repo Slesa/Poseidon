@@ -7,7 +7,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Domain.Pms.Hibernate.Specs
 {
     [Subject(typeof(PayformMap))]
-    public class When_checking_persistence_specs_of_payform : InMemoryDatabaseSpecs<PayformMap>
+    internal class When_checking_persistence_specs_of_payform : InMemoryDatabaseSpecs<PayformMap>
     {
         Because of = () =>
             {

@@ -7,7 +7,7 @@ using Poseidon.Hibernate.Specs.Common;
 namespace Poseidon.Hibernate.Specs
 {
     [Subject(typeof(AnyEntity))]
-    public class When_saving_an_entity : InMemoryDatabaseSpecs<AnyEntityMap>
+    internal class When_saving_an_entity : InMemoryDatabaseSpecs<AnyEntityMap>
     {
         Establish context = () =>
             {
@@ -34,7 +34,7 @@ namespace Poseidon.Hibernate.Specs
 
 
     [Subject(typeof(AnyEntity))]
-    public class When_saving_same_entity_twice : InFileDatabaseSpecs<AnyEntityMap>
+    internal class When_saving_same_entity_twice : InFileDatabaseSpecs<AnyEntityMap>
     {
         Establish context = () =>
             {
