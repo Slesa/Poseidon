@@ -1,7 +1,7 @@
 ﻿using Microsoft.Practices.Prism.Logging;
 using log4net;
 
-namespace Poseidon.Common
+namespace Poseidon.Common.Prism
 {
     public class Log4NetLogger : ILoggerFacade
     {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Windows;
 using Microsoft.Practices.Prism.Logging;
@@ -17,8 +16,8 @@ using Poseidon.BackOffice.Module.Pms;
 using Poseidon.BackOffice.Module.Ums;
 using Poseidon.BackOffice.ViewModels;
 using Poseidon.BackOffice.Views;
-using Poseidon.Common;
 using Poseidon.Common.Persistence;
+using Poseidon.Common.Prism;
 using Unity.AutoRegistration;
 
 namespace Poseidon.BackOffice

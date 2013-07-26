@@ -4,7 +4,7 @@ using Microsoft.Practices.Prism.Events;
 using Poseidon.BackOffice.Core.ViewModels;
 using Poseidon.Common.Prism;
 
-namespace BackOffice.Core.Specs
+namespace Poseidon.BackOffice.Core.Specs
 {
     [Subject(typeof(StatusBarViewModel))]
     internal class When_creating_new_statusbar_viewmodel : StatusBarViewModelSpecBase
