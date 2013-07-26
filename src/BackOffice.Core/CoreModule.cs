@@ -2,6 +2,7 @@
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Core.Services;
 using Poseidon.BackOffice.Core.ViewModels;
 using Poseidon.BackOffice.Core.Views;
 
@@ -20,6 +21,8 @@ namespace Poseidon.BackOffice.Core
 
         public void Initialize()
         {
+            _container.RegisterType<INavigationService, NavigationService>();
+
             _regionManager.RegisterViewWithRegion(Regions.TagStatusBarRegion, typeof(StatusbarView));
             _regionManager.RegisterViewWithRegion(Regions.TagNavigationRegion, typeof(NavigationView));
             _regionManager.RegisterViewWithRegion(Regions.TagModulesRegion, () => _container.Resolve<ModulesView>());

@@ -1,51 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
+using Poseidon.BackOffice.Core.Services;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
     public class NavigationViewModel : INavigationViewModel
     {
         readonly IRegionManager _regionManager;
-        readonly List<Uri> _backStack = new List<Uri>();
-        readonly List<Uri> _forwardStack = new List<Uri>();
+        readonly INavigationService _navigationService;
 
-        Uri _startPage;
-        Uri StartPage { get { return _startPage ?? new Uri("ModulesView", UriKind.Relative); } }
-        Uri _currentPage;
-        Uri CurrentPage { get { return _currentPage ?? StartPage; } set { _currentPage = value; } }
-
-        public NavigationViewModel(IRegionManager regionManager)
+        public NavigationViewModel(IRegionManager regionManager, INavigationService navigationService)
         {
             _regionManager = regionManager;
+            _navigationService = navigationService;
 
             var modules = _regionManager.Regions[Regions.TagModulesRegion];
             modules.NavigationService.Navigated += OnNavigated;
             
-            //_navigationJournal = navigationJournal;
-            
-            //_navigationJournal = navigationJournal;
             OnBackCommand = new DelegateCommand(OnBack, CanGoBack);
             OnForwardCommand = new DelegateCommand(OnForward, CanGoForward);
         }
 
         void OnNavigated(object sender, RegionNavigationEventArgs e)
         {
-            if (e.Uri != StartPage)
-            {
-                _backStack.Add(CurrentPage);
-                _forwardStack.Clear();
-                CurrentPage = e.Uri;
-            }
-            else
-            {
-                CurrentPage = null;
-            }
+            _navigationService.ReportNavigation(e.Uri);
             ((DelegateCommand)OnBackCommand).RaiseCanExecuteChanged();
             ((DelegateCommand)OnForwardCommand).RaiseCanExecuteChanged();
         }
@@ -56,31 +37,28 @@ namespace Poseidon.BackOffice.Core.ViewModels
 
         void OnForward()
         {
-            if (!_forwardStack.Any()) return;
-            var uri = _forwardStack.Take(1).FirstOrDefault();
-            _forwardStack.RemoveAt(0);
+            var uri = _navigationService.GoForwardOnePage();
+            if (uri == null) return;
             _regionManager.RequestNavigate(Regions.TagModulesRegion, uri);
         }
 
         bool CanGoForward()
         {
-            return _forwardStack.Any();
+            return _navigationService.CanGoForward;
         }
 
         public ICommand OnBackCommand { get; private set; }
 
         void OnBack()
         {
-            if (!_backStack.Any()) return;
-            var uri = _backStack.Take(1).FirstOrDefault();
-            _backStack.RemoveAt(0);
-            _forwardStack.Add(CurrentPage);
+            var uri = _navigationService.GoBackOnePage();
+            if( uri==null) return;
             _regionManager.RequestNavigate(Regions.TagModulesRegion, uri);
         }
 
         bool CanGoBack()
         {
-            return _backStack.Any();
+            return _navigationService.CanGoBack;
         }
 
         #endregion
