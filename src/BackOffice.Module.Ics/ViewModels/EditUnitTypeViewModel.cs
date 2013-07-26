@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
@@ -73,8 +74,9 @@ namespace Poseidon.BackOffice.Module.Ics.ViewModels
         void OnCancel()
         {
             _eventAggregator.GetEvent<ClearMessageEvent>().Publish(0);
+
             var region = _regionManager.Regions[Regions.TagModulesRegion];
-            region.Remove(this);
+            region.Remove(region.ActiveViews.First());
         }
 
         #endregion
