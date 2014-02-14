@@ -16,6 +16,10 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -235,6 +239,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cafe.Contracts\Cafe.Contracts.csproj">
+      <Project>{665D934E-587B-487D-A9F4-0025EBF54A9B}</Project>
+      <Name>Cafe.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cafe.Infrastructure\Cafe.Infrastructure.csproj">
+      <Project>{dfeaf136-aae5-4670-adaa-51e55148a24b}</Project>
+      <Name>Cafe.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CafeReadModels\CafeReadModels.csproj">
       <Project>{6F605353-EDF1-4EC1-900C-4C55C105E24C}</Project>
       <Name>CafeReadModels</Name>
@@ -246,10 +258,6 @@
     <ProjectReference Include="..\Edument.CQRS\Edument.CQRS.csproj">
       <Project>{D2BAB57D-225D-4F4C-9410-ED39495A8FE0}</Project>
       <Name>Edument.CQRS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Events\Events.csproj">
-      <Project>{36635EE7-A3B5-4F39-8AF8-3625F6BBE43D}</Project>
-      <Name>Events</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

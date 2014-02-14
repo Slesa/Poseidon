@@ -1,4 +1,5 @@
-﻿using Edument.CQRS;
+﻿using Cafe.Infrastructure;
+using Edument.CQRS;
 using CafeReadModels;
 using Cafe.Tab;
 

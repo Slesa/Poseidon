@@ -47,6 +47,10 @@
     <Compile Include="TabTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cafe.Contracts\Cafe.Contracts.csproj">
+      <Project>{665D934E-587B-487D-A9F4-0025EBF54A9B}</Project>
+      <Name>Cafe.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cafe\Cafe.csproj">
       <Project>{93C9E435-6BF0-4A40-98FA-2BDFFF04F506}</Project>
       <Name>Cafe</Name>
@@ -54,10 +58,6 @@
     <ProjectReference Include="..\Edument.CQRS\Edument.CQRS.csproj">
       <Project>{D2BAB57D-225D-4F4C-9410-ED39495A8FE0}</Project>
       <Name>Edument.CQRS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Events\Events.csproj">
-      <Project>{36635EE7-A3B5-4F39-8AF8-3625F6BBE43D}</Project>
-      <Name>Events</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

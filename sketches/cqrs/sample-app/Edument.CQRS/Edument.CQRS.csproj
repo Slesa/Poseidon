@@ -45,8 +45,6 @@
   <ItemGroup>
     <Compile Include="Aggregate.cs" />
     <Compile Include="BDDTest.cs" />
-    <Compile Include="InMemoryEventStore.cs" />
-    <Compile Include="SqlEventStore.cs" />
     <Compile Include="IApplyEvent.cs" />
     <Compile Include="IEventStore.cs" />
     <Compile Include="IHandleCommand.cs" />

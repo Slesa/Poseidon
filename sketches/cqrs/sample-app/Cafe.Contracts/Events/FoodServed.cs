@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Cafe.Tab
+namespace Cafe.Contracts.Events
 {
-    public class MarkFoodServed
+    public class FoodServed
     {
         public Guid Id;
         public List<int> MenuNumbers;

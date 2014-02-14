@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Events.Cafe
+namespace Cafe.Contracts.Events
 {
     public class TabOpened
     {

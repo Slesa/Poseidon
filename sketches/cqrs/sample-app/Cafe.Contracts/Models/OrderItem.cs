@@ -1,4 +1,4 @@
-﻿namespace Events.Cafe
+﻿namespace Cafe.Contracts.Models
 {
     public class OrderedItem
     {

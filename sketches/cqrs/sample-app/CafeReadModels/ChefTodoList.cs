@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Events.Cafe;
+using Cafe.Contracts.Events;
 using Edument.CQRS;
 
 namespace CafeReadModels

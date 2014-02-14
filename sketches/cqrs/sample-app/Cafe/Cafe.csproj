@@ -33,32 +33,22 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tab\CloseTab.cs" />
     <Compile Include="Tab\Exceptions.cs" />
-    <Compile Include="Tab\MarkDrinksServed.cs" />
-    <Compile Include="Tab\MarkFoodPrepared.cs" />
-    <Compile Include="Tab\OpenTab.cs" />
-    <Compile Include="Tab\PlaceOrder.cs" />
-    <Compile Include="Tab\MarkFoodServed.cs" />
     <Compile Include="Tab\TabAggregate.cs" />
     <Compile Include="Tab\TabCommandHandlers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cafe.Contracts\Cafe.Contracts.csproj">
+      <Project>{665d934e-587b-487d-a9f4-0025ebf54a9b}</Project>
+      <Name>Cafe.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Edument.CQRS\Edument.CQRS.csproj">
       <Project>{D2BAB57D-225D-4F4C-9410-ED39495A8FE0}</Project>
       <Name>Edument.CQRS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Events\Events.csproj">
-      <Project>{36635EE7-A3B5-4F39-8AF8-3625F6BBE43D}</Project>
-      <Name>Events</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

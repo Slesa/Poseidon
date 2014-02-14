@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using Cafe.Tab;
+using Cafe.Contracts.Commands;
 using System.Text.RegularExpressions;
 using WebFrontend.ActionFilters;
 

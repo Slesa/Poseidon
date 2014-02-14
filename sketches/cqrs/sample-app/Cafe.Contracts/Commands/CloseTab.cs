@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cafe.Tab
+namespace Cafe.Contracts.Commands
 {
     public class CloseTab
     {

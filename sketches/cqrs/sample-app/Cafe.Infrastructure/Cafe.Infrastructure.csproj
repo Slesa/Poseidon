@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6F605353-EDF1-4EC1-900C-4C55C105E24C}</ProjectGuid>
+    <ProjectGuid>{DFEAF136-AAE5-4670-ADAA-51E55148A24B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CafeReadModels</RootNamespace>
-    <AssemblyName>CafeReadModels</AssemblyName>
+    <RootNamespace>Cafe.Infrastructure</RootNamespace>
+    <AssemblyName>Cafe.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,21 +34,18 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChefTodoList.cs" />
-    <Compile Include="IChefTodoListQueries.cs" />
-    <Compile Include="IOpenTabQueries.cs" />
+    <Compile Include="InMemoryEventStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OpenTabs.cs" />
+    <Compile Include="SqlEventStore.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cafe.Contracts\Cafe.Contracts.csproj">
-      <Project>{665d934e-587b-487d-a9f4-0025ebf54a9b}</Project>
-      <Name>Cafe.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Edument.CQRS\Edument.CQRS.csproj">
-      <Project>{D2BAB57D-225D-4F4C-9410-ED39495A8FE0}</Project>
+      <Project>{d2bab57d-225d-4f4c-9410-ed39495a8fe0}</Project>
       <Name>Edument.CQRS</Name>
     </ProjectReference>
   </ItemGroup>

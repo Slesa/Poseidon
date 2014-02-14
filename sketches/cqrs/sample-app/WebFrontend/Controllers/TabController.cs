@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using Cafe.Tab;
+using Cafe.Contracts.Commands;
+using Cafe.Contracts.Models;
 using WebFrontend.ActionFilters;
 using WebFrontend.Models;
 using System.Text.RegularExpressions;
@@ -47,11 +48,11 @@ namespace WebFrontend.Controllers
         [HttpPost]
         public ActionResult Order(int id, OrderModel order)
         {
-            var items = new List<Events.Cafe.OrderedItem>();
+            var items = new List<OrderedItem>();
             var menuLookup = StaticData.Menu.ToDictionary(k => k.MenuNumber, v => v);
             foreach (var item in order.Items)
                 for (int i = 0; i < item.NumberToOrder; i++)
-                    items.Add(new Events.Cafe.OrderedItem
+                    items.Add(new OrderedItem
                     {
                         MenuNumber = item.MenuNumber,
                         Description = menuLookup[item.MenuNumber].Description,

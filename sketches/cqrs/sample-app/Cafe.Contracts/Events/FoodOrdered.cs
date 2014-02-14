@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cafe.Contracts.Models;
 
-namespace Events.Cafe
+namespace Cafe.Contracts.Events
 {
-    public class DrinksOrdered
+    public class FoodOrdered
     {
         public Guid Id;
         public List<OrderedItem> Items;

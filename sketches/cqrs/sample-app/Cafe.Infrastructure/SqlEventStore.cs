@@ -5,8 +5,9 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Xml.Serialization;
 using System.IO;
+using Edument.CQRS;
 
-namespace Edument.CQRS
+namespace Cafe.Infrastructure
 {
     /// <summary>
     /// This is a simple example implementation of an event store, using a SQL database

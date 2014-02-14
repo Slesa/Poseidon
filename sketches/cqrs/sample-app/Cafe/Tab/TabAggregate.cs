@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Cafe.Contracts.Events;
+using Cafe.Contracts.Models;
 using Edument.CQRS;
-using Events.Cafe;
 
 namespace Cafe.Tab
 {

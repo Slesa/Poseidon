@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cafe.Contracts.Commands;
+using Cafe.Contracts.Events;
+using Cafe.Contracts.Models;
 using Edument.CQRS;
 using NUnit.Framework;
 using Cafe.Tab;
-using Events.Cafe;
 
 namespace CafeTests
 {

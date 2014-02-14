@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Threading;
+using Edument.CQRS;
 
-namespace Edument.CQRS
+namespace Cafe.Infrastructure
 {
     public class InMemoryEventStore : IEventStore
     {
