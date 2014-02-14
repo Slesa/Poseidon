@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Edument.CQRS;
+﻿using Edument.CQRS;
 using CafeReadModels;
 using Cafe.Tab;
 

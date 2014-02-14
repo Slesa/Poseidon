@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Edument.CQRS
+﻿namespace Edument.CQRS
 {
     /// <summary>
     /// Implemented by anything that wishes to subscribe to an event emitted by
