@@ -35,7 +35,7 @@ namespace Poseidon.FrontEnd
 
         void RegisterShellObjects()
         {
-            RegisterTypeIfMissing(typeof(ILoggerFacade), typeof(Log4NetLogger), true);
+            //RegisterTypeIfMissing(typeof(ILoggerFacade), typeof(Log4NetLogger), true);
             RegisterTypeIfMissing(typeof(IRegionManager), typeof(IRegionManager), true);
         }
     }
