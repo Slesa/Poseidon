@@ -1,6 +1,6 @@
 using System.ComponentModel.Composition;
 using System.Diagnostics;
-using HibernatingRhinos.Profiler.Appender.NHibernate;
+//using HibernatingRhinos.Profiler.Appender.NHibernate;
 using NHibernate;
 
 namespace Persistence.Shared.Configuration
@@ -25,7 +25,7 @@ namespace Persistence.Shared.Configuration
         {
             if(!Enabled)
                 return;
-            NHibernateProfiler.Initialize();
+            //NHibernateProfiler.Initialize();
         }
     }
 }
