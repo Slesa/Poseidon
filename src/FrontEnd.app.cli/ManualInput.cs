@@ -17,13 +17,13 @@ namespace FrontEnd.app.cli
             _cursorTop = Console.CursorTop;
         }
 
-        public int GetNumber(bool allowZero=false)
+        public uint GetNumber(bool allowZero=false)
         {
-            var value = 0;
+            uint value = 0;
             for (;;)
             {
                 var input = GetInput(allowZero);
-                if (!int.TryParse(input, out value))
+                if (!uint.TryParse(input, out value))
                     continue;
                 if (value == 0 && !allowZero)
                     continue;

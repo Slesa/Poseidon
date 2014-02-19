@@ -14,7 +14,7 @@ namespace FrontEnd.app.cli
             _items = items;
         }
 
-        public int Select()
+        public uint Select()
         {
             var count = 1;
             Console.WriteLine("---[{0}]---", _title);

@@ -45,6 +45,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{14fdbdef-281a-4cb0-986d-e826145f3839}</Project>
+      <Name>Common.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pms.Business\Pms.Business.csproj">
+      <Project>{c4fe26b6-eac0-460b-bb11-ad339b5940f1}</Project>
+      <Name>Pms.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
