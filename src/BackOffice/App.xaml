@@ -9,9 +9,9 @@
             
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Themes/Generic.xaml" />
-                <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/ProjectDataSources.xaml"/>
+                <!--<ResourceDictionary Source="/Poseidon.BackOffice.Module.Ics;component/ProjectDataSources.xaml"/>-->
                 <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ums;component/ProjectDataSources.xaml"/>
-                <ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/ProjectDataSources.xaml"/>
+                <!--<ResourceDictionary Source="/Poseidon.BackOffice.Module.Pms;component/ProjectDataSources.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
 
             <Rectangle x:Key="workaround" />
