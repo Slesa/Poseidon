@@ -10,4 +10,8 @@ namespace Pms.Business
     public class InvalidWorkbenchException : Exception { }
     public class WaiterNotFoundException : Exception { }
 
+    public class InvalidTableIdException : Exception { }
+    public class InvalidPartyException : Exception { }
+    public class InvalidTableException : Exception { }
+
 }

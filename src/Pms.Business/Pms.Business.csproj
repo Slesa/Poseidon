@@ -35,12 +35,15 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IProvideTable.cs" />
     <Compile Include="Contracts\IProvideTerminals.cs" />
     <Compile Include="Contracts\IProvideWorkbenches.cs" />
     <Compile Include="Errors.cs" />
+    <Compile Include="Models\PmsTable.cs" />
     <Compile Include="Models\PmsTerminal.cs" />
     <Compile Include="Models\PmsWorkbench.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TableProvider.cs" />
     <Compile Include="Services\TerminalProvider.cs" />
     <Compile Include="Services\WorkbenchProvider.cs" />
   </ItemGroup>

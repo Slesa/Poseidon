@@ -8,6 +8,7 @@ namespace Pms.Business.Services
     public class WorkbenchProvider : IProvideWorkbenches
     {
         public IDbConversation DbConversation { get; set; }
+        public IProvideTable TableProvider { get; set; }
 
         public PmsWorkbench ClaimWorkbench(uint waiterId)
         {
@@ -16,7 +17,7 @@ namespace Pms.Business.Services
             var waiter = DbConversation.GetById<Waiter>(waiterId);
             if (waiter == null) throw new WaiterNotFoundException();
 
-            return new PmsWorkbench {Waiter = waiter};
+            return new PmsWorkbench(TableProvider) {Waiter = waiter};
         }
 
         public void FreeWorkbench(PmsWorkbench workbench)

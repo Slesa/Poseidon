@@ -9,6 +9,5 @@ namespace Pms.Business.Contracts
     {
         PmsWorkbench ClaimWorkbench(uint waiterId);
         void FreeWorkbench(PmsWorkbench workbench);
-
     }
 }
