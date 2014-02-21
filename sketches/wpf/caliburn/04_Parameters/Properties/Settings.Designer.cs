@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _01_Start.Properties {
+namespace _04_Parameters.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
