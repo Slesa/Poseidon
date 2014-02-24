@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _07_Screens.Properties
+namespace _11_Screens.Properties
 {
 
 
