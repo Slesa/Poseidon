@@ -1,0 +1,7 @@
+[submodule "cqrs-starter-kit"]
+	path = sketches/cqrs/cqrs-starter-kit
+	url = https://github.com/edumentab/cqrs-starter-kit.git 
+
+[submodule "Caliburn.Micro"]
+	path = sketches/wpf/caliburn/Caliburn.Micro
+	url = https://github.com/BlueSpire/Caliburn.Micro.git 
