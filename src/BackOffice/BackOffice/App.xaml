@@ -5,9 +5,13 @@
     <Application.Resources>
          <ResourceDictionary>
              <ResourceDictionary.MergedDictionaries>
+                 
+                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Themes/Generic.xaml"/>
+                 
                  <ResourceDictionary>
                     <local:AppBootstrapper x:Key="bootstrapper" />
                  </ResourceDictionary>
+                 
              </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>
