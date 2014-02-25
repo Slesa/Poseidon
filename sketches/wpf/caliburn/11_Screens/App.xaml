@@ -2,23 +2,23 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Converters="clr-namespace:_11_Screens.Framework.Converters"
-             xmlns:Shell="clr-namespace:_11_Screens.Shell" 
-             xmlns:local="clr-namespace:_11_Screens">
+             xmlns:Shell="clr-namespace:_11_Screens.Shell" >
     <Application.Resources>
         <ResourceDictionary>
-<!--
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/DefaultStyles.xaml" />
                 <ResourceDictionary Source="Resources/NamedStyles.xaml" />
+                
+                <ResourceDictionary>
+                    <Shell:ScreensBootstrapper x:Key="bootstrapper" />
+                </ResourceDictionary>
+                
             </ResourceDictionary.MergedDictionaries>
--->
 
-            <local:ScreensBootstrapper x:Key="bootstrapper" />
-
-<!--
             <BooleanToVisibilityConverter x:Key="booleanToVisibility" />
             <Converters:NullToCollapsedConverter x:Key="nullToCollapsed" />
--->
+
         </ResourceDictionary>
 
     </Application.Resources>
