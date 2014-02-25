@@ -1,6 +1,7 @@
 ﻿<Application x:Class="_11_Screens.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
              xmlns:Converters="clr-namespace:_11_Screens.Framework.Converters"
              xmlns:Shell="clr-namespace:_11_Screens.Shell" >
     <Application.Resources>

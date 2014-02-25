@@ -1,5 +1,7 @@
-namespace _11_Screens.Framework {
-    public enum DocumentWorkspaceState {
+namespace _11_Screens.Framework 
+{
+    public enum DocumentWorkspaceState 
+    {
         Master,
         Detail
     }

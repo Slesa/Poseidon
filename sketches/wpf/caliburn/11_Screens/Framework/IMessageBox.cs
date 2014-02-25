@@ -1,7 +1,9 @@
 ﻿using Caliburn.Micro;
 
-namespace _11_Screens.Framework {
-    public interface IMessageBox : IScreen {
+namespace _11_Screens.Framework 
+{
+    public interface IMessageBox : IScreen 
+    {
         string Message { get; set; }
         MessageBoxOptions Options { get; set; }
 

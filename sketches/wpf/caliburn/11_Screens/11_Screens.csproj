@@ -68,17 +68,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Settings\SettingsViewModel.cs" />
-    <Compile Include="Shell\ApplicationCloseStrategy.cs" />
-    <Compile Include="Shell\DialogConductorView.xaml.cs">
-      <DependentUpon>DialogConductorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Shell\DialogConductorViewModel.cs" />
-    <Compile Include="Shell\MessageBoxViewModel.cs" />
-    <Compile Include="Shell\ScreensBootstrapper.cs" />
-    <Compile Include="Shell\ShellViewModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Customers\AddressViewModel.cs" />
     <Compile Include="Customers\CustomersWorkspaceViewModel.cs" />
     <Compile Include="Customers\CustomerViewModel.cs" />
@@ -98,28 +87,24 @@
     <Compile Include="Framework\MessageBoxOptions.cs" />
     <Compile Include="Orders\OrdersWorkspaceViewModel.cs" />
     <Compile Include="Orders\OrderViewModel.cs" />
+    <Compile Include="Settings\SettingsViewModel.cs" />
+    <Compile Include="Shell\ApplicationCloseStrategy.cs" />
+    <Compile Include="Shell\DialogConductorView.xaml.cs">
+      <DependentUpon>DialogConductorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\DialogConductorViewModel.cs" />
+    <Compile Include="Shell\MessageBoxViewModel.cs" />
+    <Compile Include="Shell\ScreensBootstrapper.cs" />
+    <Compile Include="Shell\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\ShellViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
@@ -188,14 +173,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Images\backgroundshadow.png" />
+    <Resource Include="Resources\Images\backgroundtexture.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Customers\Resources\Images\man1-48.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Orders\Resources\Images\shopping-cart-full48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\backgroundshadow.png" />
-    <Resource Include="Resources\Images\backgroundtexture.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Settings\Resources\Images\report48.png" />

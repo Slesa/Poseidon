@@ -2,57 +2,69 @@
 using Caliburn.Micro;
 using _11_Screens.Framework;
 
-namespace _11_Screens.Shell {
+namespace _11_Screens.Shell 
+{
     [Export(typeof(IMessageBox)), PartCreationPolicy(CreationPolicy.NonShared)]
-    
-    public class MessageBoxViewModel : Screen, IMessageBox {
-        MessageBoxOptions selection;
+    public class MessageBoxViewModel : Screen, IMessageBox 
+    {
+        MessageBoxOptions _selection;
 
-        public bool OkVisible {
+        public bool OkVisible 
+        {
             get { return IsVisible(MessageBoxOptions.Ok); }
         }
 
-        public bool CancelVisible {
+        public bool CancelVisible 
+        {
             get { return IsVisible(MessageBoxOptions.Cancel); }
         }
 
-        public bool YesVisible {
+        public bool YesVisible 
+        {
             get { return IsVisible(MessageBoxOptions.Yes); }
         }
 
-        public bool NoVisible {
+        public bool NoVisible 
+        {
             get { return IsVisible(MessageBoxOptions.No); }
         }
 
         public string Message { get; set; }
         public MessageBoxOptions Options { get; set; }
 
-        public void Ok() {
+        public void Ok() 
+        {
             Select(MessageBoxOptions.Ok);
         }
 
-        public void Cancel() {
+        public void Cancel() 
+        {
             Select(MessageBoxOptions.Cancel);
         }
 
-        public void Yes() {
+        public void Yes() 
+        {
             Select(MessageBoxOptions.Yes);
         }
 
-        public void No() {
+        public void No() 
+        {
             Select(MessageBoxOptions.No);
         }
 
-        public bool WasSelected(MessageBoxOptions option) {
-            return (selection & option) == option;
+        public bool WasSelected(MessageBoxOptions option) 
+        {
+            return (_selection & option) == option;
         }
 
-        bool IsVisible(MessageBoxOptions option) {
+        bool IsVisible(MessageBoxOptions option) 
+        {
             return (Options & option) == option;
         }
 
-        void Select(MessageBoxOptions option) {
-            selection = option;
+        void Select(MessageBoxOptions option) 
+        {
+            _selection = option;
             TryClose();
         }
     }

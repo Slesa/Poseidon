@@ -4,23 +4,29 @@ using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using _11_Screens.Framework;
 
-namespace _11_Screens.Shell {
-    [Export(typeof(IDialogManager)), PartCreationPolicy(CreationPolicy.NonShared)]
-    public class DialogConductorViewModel : PropertyChangedBase, IDialogManager, IConductActiveItem {
-        readonly Func<IMessageBox> createMessageBox;
+namespace _11_Screens.Shell 
+{
+    [Export(typeof(IDialogManager))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
+    public class DialogConductorViewModel : PropertyChangedBase, IDialogManager, IConductActiveItem 
+    {
+        readonly Func<IMessageBox> _createMessageBox;
 
         [ImportingConstructor]
-        public DialogConductorViewModel(Func<IMessageBox> messageBoxFactory) {
-            createMessageBox = messageBoxFactory;
+        public DialogConductorViewModel(Func<IMessageBox> messageBoxFactory) 
+        {
+            _createMessageBox = messageBoxFactory;
         }
 
         public IScreen ActiveItem { get; private set; }
 
-        public IEnumerable GetChildren() {
+        public IEnumerable GetChildren() 
+        {
             return ActiveItem != null ? new[] { ActiveItem } : new object[0];
         }
 
-        public void ActivateItem(object item) {
+        public void ActivateItem(object item) 
+        {
             ActiveItem = item as IScreen;
 
             var child = ActiveItem as IChild;
@@ -34,13 +40,16 @@ namespace _11_Screens.Shell {
             ActivationProcessed(this, new ActivationProcessedEventArgs { Item = ActiveItem, Success = true });
         }
 
-        public void DeactivateItem(object item, bool close) {
+        public void DeactivateItem(object item, bool close) 
+        {
             var guard = item as IGuardClose;
-            if(guard != null) {
-                guard.CanClose(result => {
-                    if(result)
-                        CloseActiveItemCore();
-                });
+            if(guard != null)
+            {
+                guard.CanClose(result =>
+                    {
+                        if (result)
+                            CloseActiveItemCore();
+                    });
             }
             else CloseActiveItemCore();
         }
@@ -53,12 +62,14 @@ namespace _11_Screens.Shell {
 
         public event EventHandler<ActivationProcessedEventArgs> ActivationProcessed = delegate { };
 
-        public void ShowDialog(IScreen dialogModel) {
+        public void ShowDialog(IScreen dialogModel) 
+        {
             ActivateItem(dialogModel);
         }
 
-        public void ShowMessageBox(string message, string title = "Hello Screens", MessageBoxOptions options = MessageBoxOptions.Ok, Action<IMessageBox> callback = null) {
-            var box = createMessageBox();
+        public void ShowMessageBox(string message, string title = "Hello Screens", MessageBoxOptions options = MessageBoxOptions.Ok, Action<IMessageBox> callback = null) 
+        {
+            var box = _createMessageBox();
 
             box.DisplayName = title;
             box.Options = options;
@@ -70,7 +81,8 @@ namespace _11_Screens.Shell {
             ActivateItem(box);
         }
 
-        void CloseActiveItemCore() {
+        void CloseActiveItemCore() 
+        {
             var oldItem = ActiveItem;
             ActivateItem(null);
             oldItem.Deactivate(true);

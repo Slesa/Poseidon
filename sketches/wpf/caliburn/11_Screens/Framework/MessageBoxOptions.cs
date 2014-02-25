@@ -1,8 +1,10 @@
 ﻿using System;
 
-namespace _11_Screens.Framework {
+namespace _11_Screens.Framework 
+{
     [Flags]
-    public enum MessageBoxOptions {
+    public enum MessageBoxOptions 
+    {
         Ok = 2,
         Cancel = 4,
         Yes = 8,

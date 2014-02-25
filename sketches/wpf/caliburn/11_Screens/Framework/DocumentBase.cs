@@ -2,14 +2,16 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace _11_Screens.Framework {
-    public class DocumentBase : Screen, IHaveShutdownTask {
-        bool isDirty;
-
-        public bool IsDirty {
-            get { return isDirty; }
+namespace _11_Screens.Framework 
+{
+    public class DocumentBase : Screen, IHaveShutdownTask 
+    {
+        bool _isDirty;
+        public bool IsDirty 
+        {
+            get { return _isDirty; }
             set {
-                isDirty = value;
+                _isDirty = value;
                 NotifyOfPropertyChange(() => IsDirty);
             }
         }
@@ -24,11 +26,13 @@ namespace _11_Screens.Framework {
             else callback(true);
         }
 
-        public IResult GetShutdownTask() {
+        public IResult GetShutdownTask() 
+        {
             return IsDirty ? new ApplicationCloseCheck(this, DoCloseCheck) : null;
         }
 
-        protected virtual void DoCloseCheck(IDialogManager dialogs, Action<bool> callback) {
+        protected virtual void DoCloseCheck(IDialogManager dialogs, Action<bool> callback) 
+        {
             dialogs.ShowMessageBox(
                 "You have unsaved data. Are you sure you want to close this document? All changes will be lost.",
                 "Unsaved Data",

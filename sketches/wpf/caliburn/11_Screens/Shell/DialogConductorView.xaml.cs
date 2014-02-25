@@ -5,21 +5,26 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 
-namespace _11_Screens.Shell {
-    public partial class DialogConductorView : UserControl {
-        bool disabled;
+namespace _11_Screens.Shell 
+{
+    public partial class DialogConductorView : UserControl 
+    {
+        bool _disabled;
 
-        public DialogConductorView() {
+        public DialogConductorView() 
+        {
             InitializeComponent();
-            ActiveItem.ContentChanged += OnTransitionCompleted;
+            //ActiveItem.ContentChanged += OnTransitionCompleted;
             Loaded += OnLoad;
         }
 
-        void OnLoad(object sender, RoutedEventArgs e) {
-            if(disabled) DisableBackground();
+        void OnLoad(object sender, RoutedEventArgs e) 
+        {
+            if(_disabled) DisableBackground();
         }
 
-        void OnTransitionCompleted(object sender, EventArgs e) {
+        void OnTransitionCompleted(object sender, EventArgs e) 
+        {
             if(ActiveItem.Content == null)
                 EnableBackground();
             else {
@@ -31,24 +36,29 @@ namespace _11_Screens.Shell {
             }
         }
 
-        public void EnableBackground() {
-            disabled = false;
+        public void EnableBackground() 
+        {
+            _disabled = false;
             ChangeEnabledState(GetBackground(), true);
         }
 
-        public void DisableBackground() {
-            disabled = true;
+        public void DisableBackground() 
+        {
+            _disabled = true;
             ChangeEnabledState(GetBackground(), false);
         }
 
-        IEnumerable<UIElement> GetBackground() {
+        IEnumerable<UIElement> GetBackground() 
+        {
             var contentControl = (ContentControl)Parent;
             var container = (Panel)contentControl.Parent;
             return container.Children.Cast<object>().Where(child => child != contentControl).Cast<UIElement>();
         }
 
-        void ChangeEnabledState(IEnumerable<UIElement> background, bool state) {
-            foreach(var uiElement in background) {
+        void ChangeEnabledState(IEnumerable<UIElement> background, bool state) 
+        {
+            foreach(var uiElement in background) 
+            {
                 var control = uiElement as Control;
                 if (control != null)
                     control.IsEnabled = state;

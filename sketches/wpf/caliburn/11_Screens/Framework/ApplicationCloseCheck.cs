@@ -2,14 +2,17 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace _11_Screens.Framework {
-    public class ApplicationCloseCheck : IResult {
-        readonly Action<IDialogManager, Action<bool>> closeCheck;
-        readonly IChild screen;
+namespace _11_Screens.Framework 
+{
+    public class ApplicationCloseCheck : IResult 
+    {
+        readonly Action<IDialogManager, Action<bool>> _closeCheck;
+        readonly IChild _screen;
 
-        public ApplicationCloseCheck(IChild screen, Action<IDialogManager, Action<bool>> closeCheck) {
-            this.screen = screen;
-            this.closeCheck = closeCheck;
+        public ApplicationCloseCheck(IChild screen, Action<IDialogManager, Action<bool>> closeCheck) 
+        {
+            _screen = screen;
+            _closeCheck = closeCheck;
         }
 
         [Import]
@@ -17,11 +20,11 @@ namespace _11_Screens.Framework {
 
         public void Execute(ActionExecutionContext context)
         {
-            var documentWorkspace = screen.Parent as IDocumentWorkspace;
+            var documentWorkspace = _screen.Parent as IDocumentWorkspace;
             if (documentWorkspace != null)
-                documentWorkspace.Edit(screen);
+                documentWorkspace.Edit(_screen);
 
-            closeCheck(Shell.Dialogs, result => Completed(this, new ResultCompletionEventArgs { WasCancelled = !result }));
+            _closeCheck(Shell.Dialogs, result => Completed(this, new ResultCompletionEventArgs { WasCancelled = !result }));
         }
 
         public event EventHandler<ResultCompletionEventArgs> Completed = delegate { };

@@ -7,12 +7,14 @@ namespace _11_Screens.Customers
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class CustomerViewModel : DocumentBase
     {
-        public void Save() {
+        public void Save() 
+        {
             IsDirty = false;
             Dialogs.ShowMessageBox("Your data has been successfully saved.", "Data Saved");
         }
 
-        public void EditAddress() {
+        public void EditAddress() 
+        {
             Dialogs.ShowDialog(new AddressViewModel());
         }
     }

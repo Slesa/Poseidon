@@ -1,7 +1,6 @@
 ﻿<UserControl x:Class="_11_Screens.Shell.DialogConductorView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:Controls2="clr-namespace:_11_Screens.Framework.Controls">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid Visibility="{Binding ActiveItem, Mode=TwoWay, Converter={StaticResource nullToCollapsed}}"
           Background="Transparent"
           IsHitTestVisible="True">
@@ -31,7 +30,7 @@
                                Margin="4 2 2 2"
                                Foreground="White" />
                 </Border>
-                <Controls2:CustomTransitionControl x:Name="ActiveItem"
+                <ContentControl x:Name="ActiveItem"
                                                Margin="8" />
             </StackPanel>
         </Border>
