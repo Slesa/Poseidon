@@ -49,7 +49,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\INavigationService.cs" />
+    <Compile Include="Contracts\INavigationViewModel.cs" />
     <Compile Include="Contracts\IStatusBarViewModel.cs" />
+    <Compile Include="DesignTime\DesignTimeNavigationViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeStatusBarViewModel.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -65,8 +68,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModelLocators.cs" />
+    <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViewModel.cs" />
+    <Compile Include="Views\NavigationView.xaml.cs">
+      <DependentUpon>NavigationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StatusBarView.xaml.cs">
       <DependentUpon>StatusBarView.xaml</DependentUpon>
     </Compile>
@@ -82,6 +90,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StatusBarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -6,6 +6,7 @@
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Brushes.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Images.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Shell.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.NavigationBar.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.StatusBar.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 

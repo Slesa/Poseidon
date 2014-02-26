@@ -26,7 +26,8 @@
     </i:Interaction.Triggers>
 
     <DockPanel Style="{DynamicResource Style.Shell.DockPanel}">
-        <views:StatusBarView />
+        <views:StatusBarView DockPanel.Dock="Bottom" />
+        <views:NavigationView DockPanel.Dock="Top" />
     </DockPanel>
 
 </Window>

@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="BackOffice.Core.Views.NavigationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:core="clr-namespace:BackOffice.Core"
+             xmlns:DesignTime="clr-namespace:BackOffice.Core.DesignTime"
+             xmlns:controls="clr-namespace:Common.Wpf.Services;assembly=Poseidon.Common.Wpf"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+             mc:Ignorable="d" 
+             Width="800" Height="200"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <core:NavigationViewModelLocator x:Key="NavigationViewModel" />
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Path="ViewModel" Source="{StaticResource NavigationViewModel}" />
+    </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <DesignTime:DesignTimeNavigationViewModel />
+    </d:UserControl.DataContext>
+
+    <ContentControl Style="{DynamicResource Style.Navigation}" BorderBrush="Aquamarine" BorderThickness="3">
+        
+        <Grid Style="{DynamicResource Style.Navigation.Group}">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="GoBack" Grid.Column="0" Style="{DynamicResource Style.Navigation.Buttons.Back}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <cal:ActionMessage MethodName="GoBack" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            
+            <Button x:Name="GoForward" Grid.Column="1" Style="{DynamicResource Style.Navigation.Buttons.Forward}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <cal:ActionMessage MethodName="GoForward" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            
+            <TextBox x:Name="Breadcrumb" Grid.Column="2" Style="{DynamicResource Style.Navigation.BreadCrumb}" />
+
+            <!--<AdornerDecorator>-->
+            <TextBox x:Name="Search" Grid.Column="3" Text="{Binding SearchText}" Style="{DynamicResource Style.Navigation.TextBox}">
+                <controls:WatermarkService.Watermark>
+                    <TextBlock Text="Enter search term" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </controls:WatermarkService.Watermark>
+            </TextBox>
+            <!--</AdornerDecorator>-->
+            
+        </Grid>
+    </ContentControl>
+    
+</UserControl>

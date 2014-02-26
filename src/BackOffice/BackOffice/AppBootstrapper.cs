@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using BackOffice.Core.Contracts;
+using BackOffice.Core.Services;
 using BackOffice.Input;
 using BackOffice.ViewModels;
 using Caliburn.Micro;
@@ -20,6 +22,7 @@ namespace BackOffice
             _builder = new ContainerBuilder();
             _builder.Register<IWindowManager, WindowManager>();
             _builder.Register<IEventAggregator, EventAggregator>();
+            _builder.Register<INavigationService, NavigationService>();
             _builder.Register<IShell, ShellViewModel>();
 
             _container = _builder.Build();
