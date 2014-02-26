@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace BackOffice
+namespace Poseidon.BackOffice
 {
     public partial class App : Application
     {

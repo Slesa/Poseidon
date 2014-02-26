@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace BackOffice.Views
+namespace Poseidon.BackOffice.Views
 {
     public partial class ShellView : Window
     {

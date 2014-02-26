@@ -1,7 +1,7 @@
-﻿using BackOffice.Core.ViewModels;
-using Common.Wpf;
+﻿using Poseidon.BackOffice.Core.ViewModels;
+using Poseidon.Common.Wpf;
 
-namespace BackOffice.Core
+namespace Poseidon.BackOffice.Core
 {
     public class StatusBarViewModelLocator : ViewModelLocator<StatusBarViewModel> { }
     public class NavigationViewModelLocator : ViewModelLocator<NavigationViewModel> { }

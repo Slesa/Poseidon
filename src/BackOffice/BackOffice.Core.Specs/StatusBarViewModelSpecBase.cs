@@ -1,10 +1,9 @@
-﻿using BackOffice.Core.Contracts;
-using BackOffice.Core.ViewModels;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using Machine.Fakes;
 using Machine.Specifications;
+using Poseidon.BackOffice.Core.ViewModels;
 
-namespace BackOffice.Core.Specs
+namespace Poseidon.BackOffice.Core.Specs
 {
     [Subject(typeof(StatusBarViewModel))]
     internal class When_creating_new_statusbar_viewmodel : StatusBarViewModelSpecBase

@@ -1,4 +1,4 @@
-﻿namespace BackOffice.Core
+﻿namespace Poseidon.BackOffice.Core
 {
     public class StatusBarMessageEvent
     {

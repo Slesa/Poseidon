@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BackOffice.Core.Contracts
+namespace Poseidon.BackOffice.Core.Contracts
 {
     public interface INavigationService
     {

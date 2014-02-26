@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BackOffice.Core.Contracts;
-using Caliburn.Micro;
+using Poseidon.BackOffice.Core.Contracts;
 
-namespace BackOffice.Core.Services
+namespace Poseidon.BackOffice.Core.Services
 {
     public class NavigationService : INavigationService
     {

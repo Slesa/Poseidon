@@ -1,6 +1,6 @@
-﻿using BackOffice.Core.Contracts;
+﻿using Poseidon.BackOffice.Core.Contracts;
 
-namespace BackOffice.Core.ViewModels
+namespace Poseidon.BackOffice.Core.ViewModels
 {
     public class NavigationViewModel
     {

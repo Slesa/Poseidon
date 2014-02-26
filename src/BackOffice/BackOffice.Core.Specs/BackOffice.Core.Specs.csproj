@@ -7,7 +7,7 @@
     <ProjectGuid>{EF03053C-09C7-4444-BF55-E97E7B8BFB15}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BackOffice.Core.Specs</RootNamespace>
+    <RootNamespace>Poseidon.BackOffice.Core.Specs</RootNamespace>
     <AssemblyName>Poseidon.BackOffice.Core.Specs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -59,8 +59,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="NavigationServiceSpecs.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="StatusBarViewModelSpecBase.cs" />
   </ItemGroup>
   <ItemGroup>

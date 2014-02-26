@@ -1,7 +1,7 @@
-﻿using BackOffice.Core.Contracts;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
+using Poseidon.BackOffice.Core.Contracts;
 
-namespace BackOffice.Core.ViewModels
+namespace Poseidon.BackOffice.Core.ViewModels
 {
     public class StatusBarViewModel : PropertyChangedBase, IStatusBarViewModel
         , IHandle<StatusBarMessageEvent>

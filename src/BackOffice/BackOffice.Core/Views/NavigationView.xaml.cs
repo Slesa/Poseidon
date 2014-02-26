@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace BackOffice.Core.Views
+namespace Poseidon.BackOffice.Core.Views
 {
     public partial class NavigationView : UserControl
     {

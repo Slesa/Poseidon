@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace BackOffice.Core.Contracts
+namespace Poseidon.BackOffice.Core.Contracts
 {
     public interface IStatusBarViewModel : INotifyPropertyChanged
     {

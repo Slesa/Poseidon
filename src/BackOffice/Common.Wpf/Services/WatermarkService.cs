@@ -5,9 +5,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
-using Common.Wpf.Adorners;
+using Poseidon.Common.Wpf.Adorners;
 
-namespace Common.Wpf.Services
+namespace Poseidon.Common.Wpf.Services
 {
     /// <summary>
     /// Class that provides the Watermark attached property

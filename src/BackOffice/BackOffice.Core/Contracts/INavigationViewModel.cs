@@ -1,4 +1,4 @@
-﻿namespace BackOffice.Core.Contracts
+﻿namespace Poseidon.BackOffice.Core.Contracts
 {
     public interface INavigationViewModel
     {

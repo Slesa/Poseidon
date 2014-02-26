@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using BackOffice.Core.Contracts;
+using Poseidon.BackOffice.Core.Contracts;
 
-namespace BackOffice.Core.DesignTime
+namespace Poseidon.BackOffice.Core.DesignTime
 {
     public class DesignTimeStatusBarViewModel : IStatusBarViewModel
     {

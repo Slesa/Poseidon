@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using System.Windows.Interactivity;
 
-namespace BackOffice.Input
+namespace Poseidon.BackOffice.Input
 {
     public class KeyTrigger : TriggerBase<UIElement>
     {

@@ -1,6 +1,6 @@
-﻿using BackOffice.Core.Contracts;
+﻿using Poseidon.BackOffice.Core.Contracts;
 
-namespace BackOffice.Core.DesignTime
+namespace Poseidon.BackOffice.Core.DesignTime
 {
     public class DesignTimeNavigationViewModel : INavigationViewModel
     {

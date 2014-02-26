@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 
-namespace BackOffice.Input
+namespace Poseidon.BackOffice.Input
 {
     public class MultiKeyBinding : InputBinding
     {

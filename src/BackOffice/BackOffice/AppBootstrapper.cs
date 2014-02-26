@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Input;
-using BackOffice.Core.Contracts;
-using BackOffice.Core.Services;
-using BackOffice.Input;
-using BackOffice.ViewModels;
 using Caliburn.Micro;
 using LightCore;
 using LightCore.CommonServiceLocator;
 using Microsoft.Practices.ServiceLocation;
+using Poseidon.BackOffice.Core.Contracts;
+using Poseidon.BackOffice.Core.Services;
+using Poseidon.BackOffice.Input;
+using Poseidon.BackOffice.ViewModels;
 
-namespace BackOffice
+namespace Poseidon.BackOffice
 {
     public class AppBootstrapper : Bootstrapper<IShell>
     {

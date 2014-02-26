@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Caliburn.Micro;
 
-namespace BackOffice.ViewModels
+namespace Poseidon.BackOffice.ViewModels
 {
     public class ShellViewModel : Screen, IShell
     {

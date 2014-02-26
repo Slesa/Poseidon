@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 
-namespace BackOffice.Input
+namespace Poseidon.BackOffice.Input
 {
     /// <summary>
     /// Class used to define a multi-key gesture.

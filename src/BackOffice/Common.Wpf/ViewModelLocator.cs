@@ -3,7 +3,7 @@ using System.Windows;
 using LightCore;
 using Microsoft.Practices.ServiceLocation;
 
-namespace Common.Wpf
+namespace Poseidon.Common.Wpf
 {
     public class ViewModelLocator<TViewModel> where TViewModel : class
     {

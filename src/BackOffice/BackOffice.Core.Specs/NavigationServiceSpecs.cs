@@ -1,9 +1,9 @@
 ﻿using System;
-using BackOffice.Core.Services;
 using Machine.Fakes;
 using Machine.Specifications;
+using Poseidon.BackOffice.Core.Services;
 
-namespace BackOffice.Core.Specs
+namespace Poseidon.BackOffice.Core.Specs
 {
     [Subject(typeof(NavigationService))]
     internal class When_creating_navigation_service : NavigationServiceSpecBase

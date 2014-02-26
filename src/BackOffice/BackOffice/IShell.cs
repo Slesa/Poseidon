@@ -1,4 +1,4 @@
-﻿namespace BackOffice
+﻿namespace Poseidon.BackOffice
 {
     public interface IShell
     {

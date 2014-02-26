@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="Style.ListView.HeaderedContent" TargetType="{x:Type HeaderedContentControl}">
+        <!--<Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Background="{StaticResource Brush.Linear}">
+                        <Button Content="XXX" />
+                        <TextBlock Text="{TemplateBinding Content}"/>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="HeaderedContentControl">
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top" Background="{StaticResource Brush.Linear}">
+                            <TextBlock Text="{TemplateBinding Header}" Foreground="{StaticResource Brush.Background}" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </DockPanel>
+                        <ContentPresenter Content="{TemplateBinding Content}" Grid.Row="1" />
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
