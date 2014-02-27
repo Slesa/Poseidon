@@ -39,7 +39,7 @@
         <ListView ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
                     <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_UserRole}" DisplayMemberBinding="{Binding UserRole.Name}" />
                 </GridView>
             </ListView.View>

@@ -32,9 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Expression\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Expression\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -46,9 +54,10 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Contracts\IUmsModulesViewModel.cs" />
     <Compile Include="Contracts\IUserRolesViewModel.cs" />
     <Compile Include="Contracts\IUsersViewModel.cs" />
-    <Compile Include="DesignTime\DesignTimeUmsModuleViewModel.cs" />
+    <Compile Include="DesignTime\DesignTimeUmsModulesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUserRolesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUsersViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -63,8 +72,8 @@
     <Compile Include="ViewModels\UmsModuleViewModel.cs" />
     <Compile Include="ViewModels\UserRolesViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
-    <Compile Include="Views\UmsModuleView.xaml.cs">
-      <DependentUpon>UmsModuleView.xaml</DependentUpon>
+    <Compile Include="Views\UmsModulesView.xaml.cs">
+      <DependentUpon>UmsModulesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserRolesView.xaml.cs">
       <DependentUpon>UserRolesView.xaml</DependentUpon>
@@ -81,7 +90,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Page Include="Views\UmsModuleView.xaml">
+    <Page Include="Views\UmsModulesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,6 +104,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{9f588452-447c-4efd-8fb2-4817cc0043c8}</Project>
+      <Name>BackOffice.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
       <Project>{f2f299af-2b1a-43a2-ae10-6b23af9721fd}</Project>
       <Name>BackOffice.Theme</Name>
@@ -110,6 +123,10 @@
     <ProjectReference Include="..\Ums.Domain.Model\Ums.Domain.Model.csproj">
       <Project>{da8a5822-355b-4138-80c3-b03193917fea}</Project>
       <Name>Ums.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ums.Domain.Resources\Ums.Domain.Resources.csproj">
+      <Project>{1476dce7-4aac-4dc9-bcb3-a4ae61012d33}</Project>
+      <Name>Ums.Domain.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

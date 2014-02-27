@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Common", "Domain.Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Common.Specs", "Domain.Common.Specs\Domain.Common.Specs.csproj", "{77EEC1BB-5A83-4734-B6FE-AB02A561E69D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ums.Domain.Resources", "Ums.Domain.Resources\Ums.Domain.Resources.csproj", "{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{77EEC1BB-5A83-4734-B6FE-AB02A561E69D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77EEC1BB-5A83-4734-B6FE-AB02A561E69D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77EEC1BB-5A83-4734-B6FE-AB02A561E69D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

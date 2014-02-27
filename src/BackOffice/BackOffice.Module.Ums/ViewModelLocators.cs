@@ -3,7 +3,7 @@ using Poseidon.Common.Wpf;
 
 namespace Poseidon.BackOffice.Module.Ums
 {
-    public class UmsModuleViewModelLocator : ViewModelLocator<UmsModuleViewModel> { }
+    public class UmsModulesViewModelLocator : ViewModelLocator<UmsModuleViewModel> { }
     public class UserRolesViewModelLocator : ViewModelLocator<UserRolesViewModel> { }
     public class UsersViewModelLocator : ViewModelLocator<UsersViewModel> { }
 }
