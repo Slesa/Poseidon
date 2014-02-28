@@ -10,11 +10,11 @@ namespace Poseidon.BackOffice
 {
     public class ModuleLoader
     {
-        IContainer _container;
+        readonly IContainerBuilder _builder;
 
-        public ModuleLoader(IContainer container)
+        public ModuleLoader(IContainerBuilder builder)
         {
-            _container = container;
+            _builder = builder;
         }
 
         public void LoadModules()
@@ -30,7 +30,7 @@ namespace Poseidon.BackOffice
                     {
                         var instance = Activator.CreateInstance(type) as IRegisterModule;
                         if(instance==null) continue;
-                        _container = instance.Register(_container);
+                        instance.Register(_builder);
                     }
                     //var assembly = Assembly.LoadFile(dll);
                     //LoadAssembly(assembly);

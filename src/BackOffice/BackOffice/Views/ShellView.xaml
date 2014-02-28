@@ -25,9 +25,10 @@
         </ei:KeyTrigger>
     </i:Interaction.Triggers>
 
-    <DockPanel Style="{DynamicResource Style.Shell.DockPanel}">
+    <DockPanel Style="{DynamicResource Style.Shell.DockPanel}" LastChildFill="True">
         <views:StatusBarView DockPanel.Dock="Bottom" />
         <views:NavigationView DockPanel.Dock="Top" />
+        <views:ModulesView />
     </DockPanel>
 
 </Window>

@@ -14,21 +14,20 @@ namespace Poseidon.BackOffice
 {
     public class AppBootstrapper : Bootstrapper<IShell>
     {
-        IContainerBuilder _builder;
         IContainer _container;
 
         protected override void Configure()
         {
-            _builder = new ContainerBuilder();
-            _builder.Register<IWindowManager, WindowManager>();
-            _builder.Register<IEventAggregator, EventAggregator>();
-            _builder.Register<INavigationService, NavigationService>();
-            _builder.Register<IShell, ShellViewModel>();
+            var builder = new ContainerBuilder();
+            builder.Register<IWindowManager, WindowManager>();
+            builder.Register<IEventAggregator, EventAggregator>();
+            builder.Register<INavigationService, NavigationService>();
+            builder.Register<IShell, ShellViewModel>();
 
-            _container = _builder.Build();
-
-            var moduleLoader = new ModuleLoader(_container);
+            var moduleLoader = new ModuleLoader(builder);
             moduleLoader.LoadModules();
+
+            _container = builder.Build();
 
             ServiceLocator.SetLocatorProvider(() => new LightCoreAdapter(_container));
 

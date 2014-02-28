@@ -4,6 +4,6 @@ namespace Poseidon.BackOffice.Common
 {
     public interface IRegisterModule
     {
-        IContainer Register(IContainer container);
+        void Register(IContainerBuilder builder);
     }
 }

@@ -126,11 +126,17 @@
   <data name="UmsOfficeModule" xml:space="preserve">
     <value>User Management</value>
   </data>
+  <data name="UmsOfficeModuleKeywords" xml:space="preserve">
+    <value>User,Token,UserRole,Role,Rights</value>
+  </data>
   <data name="UmsOfficeModuleTooltip" xml:space="preserve">
     <value>Manage users of the system, edit their profiles and their rights</value>
   </data>
   <data name="UserModule" xml:space="preserve">
     <value>Users</value>
+  </data>
+  <data name="UserModuleDescription" xml:space="preserve">
+    <value>Manage users of the system, edit their profiles and their rights</value>
   </data>
   <data name="UserModuleTooltip" xml:space="preserve">
     <value>Manage your users</value>

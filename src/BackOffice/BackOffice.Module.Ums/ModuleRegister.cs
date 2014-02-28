@@ -5,12 +5,9 @@ namespace Poseidon.BackOffice.Module.Ums
 {
     public class ModuleRegister : IRegisterModule
     {
-        public IContainer Register(IContainer container)
+        public void Register(IContainerBuilder builder)
         {
-            var builder = new ContainerBuilder();
             builder.Register<IOfficeModule, UmsOfficeModule>();
-            container = builder.Build();
-            return container;
         }
 
     }

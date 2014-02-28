@@ -88,6 +88,15 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User,Token,UserRole,Role,Rights.
+        /// </summary>
+        public static string UmsOfficeModuleKeywords {
+            get {
+                return ResourceManager.GetString("UmsOfficeModuleKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage users of the system, edit their profiles and their rights.
         /// </summary>
         public static string UmsOfficeModuleTooltip {
@@ -102,6 +111,15 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         public static string UserModule {
             get {
                 return ResourceManager.GetString("UserModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage users of the system, edit their profiles and their rights.
+        /// </summary>
+        public static string UserModuleDescription {
+            get {
+                return ResourceManager.GetString("UserModuleDescription", resourceCulture);
             }
         }
         

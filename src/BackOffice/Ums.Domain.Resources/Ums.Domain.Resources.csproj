@@ -42,10 +42,10 @@
     <Compile Include="UmsResources.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Token.png" />
-    <Content Include="Ums.png" />
-    <Content Include="User.png" />
-    <Content Include="UserRole.png" />
+    <Resource Include="Token.png" />
+    <Resource Include="Ums.png" />
+    <Resource Include="User.png" />
+    <Resource Include="UserRole.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
