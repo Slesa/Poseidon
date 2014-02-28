@@ -27,6 +27,9 @@ namespace Poseidon.BackOffice
 
             _container = _builder.Build();
 
+            var moduleLoader = new ModuleLoader(_container);
+            moduleLoader.LoadModules();
+
             ServiceLocator.SetLocatorProvider(() => new LightCoreAdapter(_container));
 
             ConfigureKeyTrigger();

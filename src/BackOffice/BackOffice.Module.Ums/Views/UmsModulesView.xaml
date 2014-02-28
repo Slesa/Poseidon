@@ -7,6 +7,7 @@
              xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -53,7 +54,7 @@
             </Setter>
         </Style>
 
-        <DataTemplate x:Key="ItemTemplate.Module">
+        <DataTemplate x:Key="ItemTemplate.Module" DataType="{x:Type common:IOfficeModule}">
             <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Horizontal">
                     <Image Width="22" Height="22" Source="{Binding IconFileName}"/>

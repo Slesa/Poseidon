@@ -83,6 +83,7 @@
     <Compile Include="Input\MultiKeyBinding.cs" />
     <Compile Include="Input\MultiKeyGesture.cs" />
     <Compile Include="Input\MultiKeyGestureConverter.cs" />
+    <Compile Include="ModuleLoader.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
@@ -128,9 +129,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{9f588452-447c-4efd-8fb2-4817cc0043c8}</Project>
+      <Name>BackOffice.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BackOffice.Core\BackOffice.Core.csproj">
       <Project>{22ceac00-d65c-416c-97d7-21c83e98d856}</Project>
       <Name>BackOffice.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Module.Ums\BackOffice.Module.Ums.csproj">
+      <Project>{de09647f-374a-4bb7-b83a-070a19b6b166}</Project>
+      <Name>BackOffice.Module.Ums</Name>
     </ProjectReference>
     <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
       <Project>{f2f299af-2b1a-43a2-ae10-6b23af9721fd}</Project>
