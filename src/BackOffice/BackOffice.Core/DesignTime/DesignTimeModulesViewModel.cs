@@ -16,12 +16,37 @@ namespace Poseidon.BackOffice.Core.DesignTime
 
         IEnumerable<ModuleViewModel> CreateModules()
         {
-            yield return new ModuleViewModel(new OfficeModule
+            var userModule = new OfficeModule
                 {
-                    Title = "Office Module 1", 
+                    Title = "Users",
+                    Description = "Manage all users",
+                    IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/User.png",
+                };
+            var userRoleModule = new OfficeModule
+                {
+                    Title = "User Roles",
+                    Description = "Manage all user roles",
+                    IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/UserRole.png",
+                };
+            var tokenModule = new OfficeModule
+                {
+                    Title = "Tokens",
+                    Description = "Manage all tokens",
+                    IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Token.png",
+                };
+            var umsModule = new ModuleViewModel(new OfficeModule
+                {
+                    Title = "Office Module 1",
                     Description = "This is the Office module number one.",
-                    IconFileName = "/Poseidon.Ums.Domain.Resources;component/Ums.png"
+                    IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Ums.png",
+                    Children = new List<IOfficeModule>
+                        {
+                            userModule,
+                            userRoleModule,
+                            tokenModule,
+                        },
                 });
+            yield return umsModule;
         }
     }
 }

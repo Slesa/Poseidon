@@ -79,6 +79,33 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tokens.
+        /// </summary>
+        public static string TokenModule {
+            get {
+                return ResourceManager.GetString("TokenModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage all used tokens by your users.
+        /// </summary>
+        public static string TokenModule_Description {
+            get {
+                return ResourceManager.GetString("TokenModule_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage your tokens.
+        /// </summary>
+        public static string TokenModule_Tooltip {
+            get {
+                return ResourceManager.GetString("TokenModule_Tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Management.
         /// </summary>
         public static string UmsOfficeModule {
@@ -88,20 +115,29 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User and user roles management.
+        /// </summary>
+        public static string UmsOfficeModule_Description {
+            get {
+                return ResourceManager.GetString("UmsOfficeModule_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User,Token,UserRole,Role,Rights.
         /// </summary>
-        public static string UmsOfficeModuleKeywords {
+        public static string UmsOfficeModule_Keywords {
             get {
-                return ResourceManager.GetString("UmsOfficeModuleKeywords", resourceCulture);
+                return ResourceManager.GetString("UmsOfficeModule_Keywords", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Manage users of the system, edit their profiles and their rights.
         /// </summary>
-        public static string UmsOfficeModuleTooltip {
+        public static string UmsOfficeModule_Tooltip {
             get {
-                return ResourceManager.GetString("UmsOfficeModuleTooltip", resourceCulture);
+                return ResourceManager.GetString("UmsOfficeModule_Tooltip", resourceCulture);
             }
         }
         
@@ -117,18 +153,18 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Manage users of the system, edit their profiles and their rights.
         /// </summary>
-        public static string UserModuleDescription {
+        public static string UserModule_Description {
             get {
-                return ResourceManager.GetString("UserModuleDescription", resourceCulture);
+                return ResourceManager.GetString("UserModule_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Manage your users.
         /// </summary>
-        public static string UserModuleTooltip {
+        public static string UserModule_Tooltip {
             get {
-                return ResourceManager.GetString("UserModuleTooltip", resourceCulture);
+                return ResourceManager.GetString("UserModule_Tooltip", resourceCulture);
             }
         }
         
@@ -142,11 +178,20 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manage user roles, the users can act as.
+        /// </summary>
+        public static string UserRoleModule_Description {
+            get {
+                return ResourceManager.GetString("UserRoleModule_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage your user roles.
         /// </summary>
-        public static string UserRoleModuleTooltip {
+        public static string UserRoleModule_Tooltip {
             get {
-                return ResourceManager.GetString("UserRoleModuleTooltip", resourceCulture);
+                return ResourceManager.GetString("UserRoleModule_Tooltip", resourceCulture);
             }
         }
         

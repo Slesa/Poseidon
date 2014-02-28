@@ -16,7 +16,8 @@
         <core:ModulesViewModelLocator x:Key="ModulesViewModel" />
 
         <HierarchicalDataTemplate DataType="{x:Type local:ModuleViewModel}">
-            <Border ToolTip="{Binding ToolTip}" HorizontalAlignment="Left">
+            
+            <Border ToolTip="{Binding ToolTip}" HorizontalAlignment="Left" CornerRadius="5" BorderBrush="Black" BorderThickness="1">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <cal:ActionMessage MethodName="{Binding Activate}" />
@@ -25,7 +26,7 @@
 
                 <StackPanel Orientation="Vertical">
 
-                    <Grid Background="LightBlue" FocusVisualStyle="{x:Null}" Margin="10">
+                    <Grid FocusVisualStyle="{x:Null}" Margin="10">
                        <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -34,9 +35,12 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Image Grid.RowSpan="2" Width="32" Height="32" Source="{Binding IconFileName}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" />
+
+                        <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightBlue" CornerRadius="5" />
+                        <Image Margin="2"  Grid.RowSpan="2" Width="48" Height="48" Source="{Binding IconFileName}"/>
+                        <TextBlock Margin="2" Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" FontSize="24" />
                         <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
+                        
                     </Grid>
                     <ItemsControl ItemsSource="{Binding Children}" />
                 </StackPanel>
@@ -50,8 +54,8 @@
             </Border>
         </HierarchicalDataTemplate>
 
-        <HierarchicalDataTemplate DataType="{x:Type common:IOfficeModule}">
-            <Border ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch">
+        <HierarchicalDataTemplate DataType="{x:Type common:OfficeModule}">
+            <Border ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" CornerRadius="5">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <cal:ActionMessage MethodName="{Binding Activate}" />
@@ -60,7 +64,7 @@
 
                 <StackPanel Orientation="Vertical">
 
-                    <Grid Background="LightBlue" FocusVisualStyle="{x:Null}">
+                    <Grid>
                        <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -69,7 +73,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Image Grid.RowSpan="2" Width="32" Height="32" Source="{Binding IconFileName}"/>
+                        <Image Grid.RowSpan="2" Width="24" Height="24" Source="{Binding IconFileName}"/>
                         <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" />
                         <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
                     </Grid>

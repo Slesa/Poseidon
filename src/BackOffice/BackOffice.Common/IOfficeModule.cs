@@ -28,7 +28,6 @@ namespace Poseidon.BackOffice.Common
         public int Priority { get; set; }
         public IEnumerable<string> Keywords { get; private set; }
 
-        IEnumerable<IOfficeModule> _children;
-        public IEnumerable<IOfficeModule> Children { get { return _children ?? (_children = new List<IOfficeModule>()); }}
+        public IEnumerable<IOfficeModule> Children { get; set; }
     }
 }

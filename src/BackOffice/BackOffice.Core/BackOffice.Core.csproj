@@ -90,6 +90,7 @@
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModelLocators.cs" />
     <Compile Include="ViewModels\ModulesViewModel.cs" />
+    <Compile Include="ViewModels\ModuleViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViewModel.cs" />
     <Compile Include="Views\ModulesView.xaml.cs">
@@ -142,6 +143,12 @@
       <Project>{eab8e2bf-b1a4-400d-9db0-b90ea8edf860}</Project>
       <Name>Common.Wpf</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DesignTime\Resources\Token.png" />
+    <Resource Include="DesignTime\Resources\Ums.png" />
+    <Resource Include="DesignTime\Resources\User.png" />
+    <Resource Include="DesignTime\Resources\UserRole.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

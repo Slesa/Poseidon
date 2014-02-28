@@ -123,28 +123,43 @@
   <data name="Heading_UserRole" xml:space="preserve">
     <value>Role</value>
   </data>
+  <data name="TokenModule" xml:space="preserve">
+    <value>Tokens</value>
+  </data>
+  <data name="TokenModule_Description" xml:space="preserve">
+    <value>Manage all used tokens by your users</value>
+  </data>
+  <data name="TokenModule_Tooltip" xml:space="preserve">
+    <value>Manage your tokens</value>
+  </data>
   <data name="UmsOfficeModule" xml:space="preserve">
     <value>User Management</value>
   </data>
-  <data name="UmsOfficeModuleKeywords" xml:space="preserve">
+  <data name="UmsOfficeModule_Description" xml:space="preserve">
+    <value>User and user roles management</value>
+  </data>
+  <data name="UmsOfficeModule_Keywords" xml:space="preserve">
     <value>User,Token,UserRole,Role,Rights</value>
   </data>
-  <data name="UmsOfficeModuleTooltip" xml:space="preserve">
+  <data name="UmsOfficeModule_Tooltip" xml:space="preserve">
     <value>Manage users of the system, edit their profiles and their rights</value>
   </data>
   <data name="UserModule" xml:space="preserve">
     <value>Users</value>
   </data>
-  <data name="UserModuleDescription" xml:space="preserve">
+  <data name="UserModule_Description" xml:space="preserve">
     <value>Manage users of the system, edit their profiles and their rights</value>
   </data>
-  <data name="UserModuleTooltip" xml:space="preserve">
+  <data name="UserModule_Tooltip" xml:space="preserve">
     <value>Manage your users</value>
   </data>
   <data name="UserRoleModule" xml:space="preserve">
     <value>User roles</value>
   </data>
-  <data name="UserRoleModuleTooltip" xml:space="preserve">
+  <data name="UserRoleModule_Description" xml:space="preserve">
+    <value>Manage user roles, the users can act as</value>
+  </data>
+  <data name="UserRoleModule_Tooltip" xml:space="preserve">
     <value>Manage your user roles</value>
   </data>
   <data name="UserRolesView_Title" xml:space="preserve">

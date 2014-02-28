@@ -10,11 +10,11 @@ namespace Poseidon.BackOffice.Module.Ums
         public UmsOfficeModule()
         {
             Title = Strings.UmsOfficeModule;
-            Description = Strings.UserModuleDescription;
-            ToolTip = Strings.UmsOfficeModuleTooltip;
+            Description = Strings.UserModule_Description;
+            ToolTip = Strings.UmsOfficeModule_Tooltip;
             IconFileName = UmsResources.UmsIcon;
             Priority = 1;
-            Keywords = Strings.UmsOfficeModuleKeywords.Split(',');
+            Keywords = Strings.UmsOfficeModule_Keywords.Split(',');
             Children = CreateChildren();
         }
 
@@ -29,7 +29,28 @@ namespace Poseidon.BackOffice.Module.Ums
 
         IEnumerable<IOfficeModule> CreateChildren()
         {
-            yield return new OfficeModule {Title = "Module 1", Description = "Some description about module 1"};
+            yield return new OfficeModule
+                {
+                    Title = Strings.UserModule,
+                    Description = Strings.UserModule_Description,
+                    ToolTip = Strings.UserModule_Tooltip,
+                    IconFileName = UmsResources.UserIcon,
+                };
+
+            yield return new OfficeModule
+                {
+                    Title = Strings.UserRoleModule,
+                    Description = Strings.UserRoleModule_Description,
+                    ToolTip = Strings.UserRoleModule_Tooltip,
+                    IconFileName = UmsResources.UserRoleIcon,
+                };
+            yield return new OfficeModule
+                {
+                    Title = Strings.TokenModule,
+                    Description = Strings.TokenModule_Description,
+                    ToolTip = Strings.TokenModule_Tooltip,
+                    IconFileName = UmsResources.TokenIcon,
+                };
         }
     }
 }
