@@ -11,7 +11,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
         public ModulesViewModel(IContainer container)
         {
             var modules = container.ResolveAll<IOfficeModule>();
-            Modules = modules.Select(x => new ModuleViewModel(x));
+            Modules = modules.Select(x => new OfficeModuleViewModel(x));
         }
 
         public IEnumerable<ModuleViewModel> Modules { get; private set; }

@@ -34,7 +34,7 @@ namespace Poseidon.BackOffice.Core.DesignTime
                     Description = "Manage all tokens",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Token.png",
                 };
-            var umsModule = new ModuleViewModel(new OfficeModule
+            var umsModule = new OfficeModuleViewModel(new OfficeModule
                 {
                     Title = "Office Module 1",
                     Description = "This is the Office module number one.",

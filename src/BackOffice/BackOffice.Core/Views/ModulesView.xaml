@@ -8,64 +8,83 @@
              xmlns:local="clr-namespace:Poseidon.BackOffice.Core.ViewModels"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
-             xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    
+
     <UserControl.Resources>
+
         <core:ModulesViewModelLocator x:Key="ModulesViewModel" />
+        
+        
+        <Style x:Key="HeaderedContentControlStyle1" TargetType="{x:Type HeaderedContentControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                        <StackPanel>
+                            <ContentPresenter ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" ContentStringFormat="{TemplateBinding HeaderStringFormat}" ContentSource="Header"/>
+                            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-        <HierarchicalDataTemplate DataType="{x:Type local:ModuleViewModel}">
+        
+        <DataTemplate DataType="{x:Type local:OfficeModuleViewModel}">
+
+            <HeaderedContentControl>
+                <HeaderedContentControl.Header>
+                    <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
+                            FocusVisualStyle="{x:Null}"
+                        cal:Message.Attach="ActivateCommand()" 
+                        cal:Action.TargetWithoutContext="{Binding RelativeSource={RelativeSource Self}}">
+                        <!--<i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <cal:ActionMessage cal:Message.Attach="SomeMethod()" cal:Action.TargetWithoutContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>-->
+                        <StackPanel Orientation="Vertical" Margin="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightBlue" CornerRadius="5" />
+                            <Image Margin="2"  Grid.RowSpan="2" Width="48" Height="48" Source="{Binding IconFileName}"/>
+                            <TextBlock Margin="2" Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" FontSize="24" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Margin="2"  Text="{Binding Description}"/>
+                        </Grid>
+                    </StackPanel>
+                    </Button>
+                </HeaderedContentControl.Header>
+                <HeaderedContentControl.Content>
+                    <ListBox ItemsSource="{Binding Children}" FocusVisualStyle="{x:Null}" BorderThickness="0" />
+                </HeaderedContentControl.Content>
+            </HeaderedContentControl>
             
-            <Border ToolTip="{Binding ToolTip}" HorizontalAlignment="Left" CornerRadius="5" BorderBrush="Black" BorderThickness="1">
-                <i:Interaction.Triggers>
+        </DataTemplate>
+
+        
+        <DataTemplate DataType="{x:Type local:ModuleViewModel}">
+            
+            <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
+                    FocusVisualStyle="{x:Null}"
+                    cal:Message.Attach="ActivateCommand()" 
+                    cal:Action.TargetWithoutContext="{Binding RelativeSource={RelativeSource Self}}">
+                <!--<i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
-                        <cal:ActionMessage MethodName="{Binding Activate}" />
+                        <cal:ActionMessage  />
                     </i:EventTrigger>
-                </i:Interaction.Triggers>
+                </i:Interaction.Triggers>-->
 
-                <StackPanel Orientation="Vertical">
-
-                    <Grid FocusVisualStyle="{x:Null}" Margin="10">
-                       <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightBlue" CornerRadius="5" />
-                        <Image Margin="2"  Grid.RowSpan="2" Width="48" Height="48" Source="{Binding IconFileName}"/>
-                        <TextBlock Margin="2" Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" FontSize="24" />
-                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
-                        
-                    </Grid>
-                    <ItemsControl ItemsSource="{Binding Children}" />
-                </StackPanel>
-                <!--
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <i:InvokeCommandAction Command="{Binding SelectedCommand}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
--->
-            </Border>
-        </HierarchicalDataTemplate>
-
-        <HierarchicalDataTemplate DataType="{x:Type common:OfficeModule}">
-            <Border ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" CornerRadius="5">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <cal:ActionMessage MethodName="{Binding Activate}" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-
-                <StackPanel Orientation="Vertical">
-
+                <StackPanel Orientation="Vertical" Margin="23,0,0,0">
                     <Grid>
-                       <Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
@@ -86,11 +105,18 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
 -->
-            </Border>
-        </HierarchicalDataTemplate>
+            </Button>
+            
+        </DataTemplate>
+        
+        
+        <ItemsPanelTemplate x:Key="ModuleListPanelTemplate">
+            <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+        </ItemsPanelTemplate>
 
     </UserControl.Resources>
 
+    
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource ModulesViewModel}" />
     </UserControl.DataContext>
@@ -98,7 +124,9 @@
         <DesignTime:DesignTimeModulesViewModel />
     </d:UserControl.DataContext>
 
+    
     <Grid>
-         <TreeView ItemsSource="{Binding Modules}" />   
+        <ListBox ItemsSource="{Binding Modules}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
     </Grid>
+    
 </UserControl>

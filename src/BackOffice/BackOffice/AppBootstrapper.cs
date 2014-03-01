@@ -59,6 +59,7 @@ namespace Poseidon.BackOffice
                     if (triggerText == null)
                     {
                         var defaults = ConventionManager.GetElementConvention(target.GetType());
+                        if (defaults == null) return trigger(target, string.Empty);
                         return defaults.CreateTrigger();
                     }
 

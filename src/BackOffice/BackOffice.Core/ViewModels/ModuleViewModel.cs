@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Poseidon.BackOffice.Common;
 
 namespace Poseidon.BackOffice.Core.ViewModels
@@ -19,11 +20,19 @@ namespace Poseidon.BackOffice.Core.ViewModels
 
         public int Priority { get { return _module.Priority; } }
         public IEnumerable<string> Keywords { get { return _module.Keywords; } }
-        public IEnumerable<IOfficeModule> Children { get { return _module.Children; } }
+        public IEnumerable<ModuleViewModel> Children { get; protected set; }
 
-        public void Activate()
+        public void ActivateCommand()
         {
             System.Diagnostics.Debug.WriteLine("Activate "+Title);
+        }
+    }
+
+    public class OfficeModuleViewModel : ModuleViewModel
+    {
+        public OfficeModuleViewModel(IOfficeModule module) : base(module)
+        {
+            if (module.Children != null) Children = module.Children.Select(x => new ModuleViewModel(x));
         }
     }
 }
