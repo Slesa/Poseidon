@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Input;
 using Caliburn.Micro;
 using LightCore;
 using LightCore.CommonServiceLocator;
 using Microsoft.Practices.ServiceLocation;
+using Poseidon.BackOffice.Core;
 using Poseidon.BackOffice.Core.Contracts;
 using Poseidon.BackOffice.Core.Services;
 using Poseidon.BackOffice.Input;
+using Poseidon.BackOffice.Module.Ums;
 using Poseidon.BackOffice.ViewModels;
 
 namespace Poseidon.BackOffice
@@ -19,15 +23,25 @@ namespace Poseidon.BackOffice
         protected override void Configure()
         {
             var builder = new ContainerBuilder();
-            builder.Register<IWindowManager, WindowManager>();
-            builder.Register<IEventAggregator, EventAggregator>();
-            builder.Register<INavigationService, NavigationService>();
-            builder.Register<IShell, ShellViewModel>();
 
+            var windowManager = new WindowManager();
+            builder.Register<IWindowManager>(windowManager);
+
+            var eventManager = new EventAggregator();
+            builder.Register<IEventAggregator>(eventManager);
+            builder.Register<INavigationService>(new NavigationService());
+
+            builder.Register<ModulesViewModel>();
+            builder.Register<ModulesView>();
+
+            var shellViewModel = new ShellViewModel(eventManager, windowManager);
+            builder.Register<IShell>(shellViewModel);
+            
             var moduleLoader = new ModuleLoader(builder);
             moduleLoader.LoadModules();
 
             _container = builder.Build();
+            shellViewModel.Container = _container;
 
             ServiceLocator.SetLocatorProvider(() => new LightCoreAdapter(_container));
 
@@ -48,6 +62,13 @@ namespace Poseidon.BackOffice
         protected override void BuildUp(object instance)
         {
             _container.InjectProperties(instance);
+        }
+
+        protected override IEnumerable<Assembly> SelectAssemblies()
+        {
+            var x = base.SelectAssemblies().ToList();
+            x.Add(typeof(UmsModulesViewModel).GetTypeInfo().Assembly);
+            return x;
         }
 
         void ConfigureKeyTrigger()

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Poseidon.BackOffice.Module.Ums.Views
+namespace Poseidon.BackOffice.Module.Ums
 {
     public partial class UmsModulesView : UserControl
     {

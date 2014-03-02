@@ -1,16 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Caliburn.Micro;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Core.Events;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
     public class ModuleViewModel
     {
         readonly IOfficeModule _module;
+        readonly IEventAggregator _eventAggregator;
 
-        public ModuleViewModel(IOfficeModule module)
+        public ModuleViewModel(IOfficeModule module, IEventAggregator eventAggregator)
         {
             _module = module;
+            _eventAggregator = eventAggregator;
         }
 
         public string Title { get { return _module.Title; } }
@@ -24,15 +28,17 @@ namespace Poseidon.BackOffice.Core.ViewModels
 
         public void ActivateCommand()
         {
-            System.Diagnostics.Debug.WriteLine("Activate "+Title);
+            _eventAggregator.Publish(new StatusBarMessageEvent("Activating "+ _module.Title));
+            _eventAggregator.Publish(new ActivateScreenEvent(_module.ViewType));
         }
     }
 
     public class OfficeModuleViewModel : ModuleViewModel
     {
-        public OfficeModuleViewModel(IOfficeModule module) : base(module)
+        public OfficeModuleViewModel(IOfficeModule module, IEventAggregator eventAggregator)
+            : base(module, eventAggregator)
         {
-            if (module.Children != null) Children = module.Children.Select(x => new ModuleViewModel(x));
+            if (module.Children != null) Children = module.Children.Select(x => new ModuleViewModel(x, eventAggregator));
         }
     }
 }

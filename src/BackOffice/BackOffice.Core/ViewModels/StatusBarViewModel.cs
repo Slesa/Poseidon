@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using Poseidon.BackOffice.Core.Contracts;
+using Poseidon.BackOffice.Core.Events;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
