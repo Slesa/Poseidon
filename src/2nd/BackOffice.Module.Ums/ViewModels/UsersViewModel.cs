@@ -1,5 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using Poseidon.Domain.Ums.Model;
+using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.BackOffice.Module.Ums.ViewModels
 {

@@ -4,7 +4,7 @@
     xmlns:ViewModels="clr-namespace:Poseidon.BackOffice.Module.Ums.ViewModels" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ums="clr-namespace:Poseidon.Domain.Ums.Model;assembly=Poseidon.Domain.Ums.Model"
+    xmlns:ums="clr-namespace:Poseidon.Ums.Domain.Model;assembly=Poseidon.Ums.Domain.Model"
     mc:Ignorable="d">
     
     <ums:UserRole x:Key="Captain" Name="Caption"/>

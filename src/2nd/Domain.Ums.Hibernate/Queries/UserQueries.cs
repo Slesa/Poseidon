@@ -2,7 +2,7 @@
 using NHibernate;
 using NHibernate.Linq;
 using Poseidon.Common.Persistence;
-using Poseidon.Domain.Ums.Model;
+using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.Domain.Ums.Hibernate.Queries
 {

@@ -3,8 +3,8 @@ using FluentNHibernate.Testing;
 using Machine.Specifications;
 using NHibernate;
 using Poseidon.Domain.Ums.Hibernate.Maps;
-using Poseidon.Domain.Ums.Model;
 using Poseidon.Hibernate.Specs.Common;
+using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.Domain.Ums.Hibernate.Specs
 {

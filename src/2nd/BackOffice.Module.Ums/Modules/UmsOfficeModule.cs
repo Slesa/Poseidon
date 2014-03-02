@@ -1,10 +1,9 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Ums.Resources;
-using Poseidon.Domain.Ums.Resources;
+using Poseidon.Ums.Domain.Resources;
 
 namespace Poseidon.BackOffice.Module.Ums.Modules
 {

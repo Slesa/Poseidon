@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Poseidon.Common.Persistence;
 using Poseidon.Domain.Ums.Hibernate.Queries;
-using Poseidon.Domain.Ums.Model;
+using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.BackOffice.Module.Ums.ViewModels
 {

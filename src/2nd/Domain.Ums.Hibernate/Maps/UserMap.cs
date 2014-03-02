@@ -1,5 +1,5 @@
 ﻿using FluentNHibernate.Mapping;
-using Poseidon.Domain.Ums.Model;
+using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.Domain.Ums.Hibernate.Maps
 {

@@ -71,17 +71,17 @@
     <Compile Include="UserRoleMapSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
-      <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
+    <ProjectReference Include="..\..\BackOffice\Domain.Common\Domain.Common.csproj">
+      <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
       <Name>Domain.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BackOffice\Ums.Domain.Model\Ums.Domain.Model.csproj">
+      <Project>{da8a5822-355b-4138-80c3-b03193917fea}</Project>
+      <Name>Ums.Domain.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Ums.Hibernate\Domain.Ums.Hibernate.csproj">
       <Project>{11c6f596-a4b7-49a7-8cca-b5b2091acd40}</Project>
       <Name>Domain.Ums.Hibernate</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Ums.Model\Domain.Ums.Model.csproj">
-      <Project>{BFAF0FB8-E823-4BB8-B8EA-F774D5742FEB}</Project>
-      <Name>Domain.Ums.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hibernate.Specs.Common\Hibernate.Specs.Common.csproj">
       <Project>{1149316A-92EF-477F-9207-2338F0E6F989}</Project>
