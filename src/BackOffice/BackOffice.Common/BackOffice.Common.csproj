@@ -71,6 +71,7 @@
     <Compile Include="Events.cs" />
     <Compile Include="IRegisterModule.cs" />
     <Compile Include="IOfficeModule.cs" />
+    <Compile Include="OfficeModule.cs" />
     <Compile Include="Regions.cs" />
     <Compile Include="SortModuleAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

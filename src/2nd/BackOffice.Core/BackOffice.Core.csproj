@@ -111,8 +111,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
-      <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
+    <ProjectReference Include="..\..\BackOffice\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{9f588452-447c-4efd-8fb2-4817cc0043c8}</Project>
       <Name>BackOffice.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
@@ -120,9 +120,7 @@
       <Name>Common.Prism</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
@@ -21,9 +22,12 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
         }
 
         public string Title { get { return Strings.UserRoleModule; } }
+        public string Description { get; private set; }
         public string ToolTip { get { return Strings.UserRoleModuleTooltip; } }
         public string IconFileName { get { return UmsResources.UserRoleIcon; } }
         public int Priority { get { return 2; } }
+        public IEnumerable<string> Keywords { get; private set; }
+        public IEnumerable<IOfficeModule> Children { get; private set; }
         public IOfficeModule Parent { get ; private set; }
 
         public ICommand SelectedCommand { get; set; }

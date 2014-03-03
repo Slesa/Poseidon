@@ -95,6 +95,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BackOffice\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{9f588452-447c-4efd-8fb2-4817cc0043c8}</Project>
+      <Name>BackOffice.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\BackOffice\Domain.Common\Domain.Common.csproj">
       <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
       <Name>Domain.Common</Name>
@@ -106,10 +110,6 @@
     <ProjectReference Include="..\..\BackOffice\Ums.Domain.Resources\Ums.Domain.Resources.csproj">
       <Project>{1476dce7-4aac-4dc9-bcb3-a4ae61012d33}</Project>
       <Name>Ums.Domain.Resources</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
-      <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
-      <Name>BackOffice.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\BackOffice.Core\BackOffice.Core.csproj">
       <Project>{CFC26392-DF5F-4A9E-92DC-F109BEE1A32C}</Project>
