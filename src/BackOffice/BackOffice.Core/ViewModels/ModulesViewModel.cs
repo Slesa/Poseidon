@@ -1,19 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Caliburn.Micro;
-using LightCore;
+using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
-using Poseidon.BackOffice.Core.ViewModels;
 
-namespace Poseidon.BackOffice.Core
+namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class ModulesViewModel : Screen, IModulesViewModel
+    public class ModulesViewModel : IModulesViewModel
     {
-        public ModulesViewModel(IContainer container, IEventAggregator eventAggregator)
+        public ModulesViewModel(IUnityContainer container)
         {
             var modules = container.ResolveAll<IOfficeModule>();
-            Modules = modules.Select(x => new OfficeModuleViewModel(x, eventAggregator));
+            Modules = modules.Select(x => new OfficeModuleViewModel(x));
         }
 
         public IEnumerable<ModuleViewModel> Modules { get; private set; }

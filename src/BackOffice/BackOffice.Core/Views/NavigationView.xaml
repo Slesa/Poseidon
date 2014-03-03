@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:DesignTime="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:controls="clr-namespace:Poseidon.Common.Wpf.Services;assembly=Poseidon.Common.Wpf"
@@ -37,7 +36,7 @@
             <Button x:Name="GoBack" Grid.Column="0" Style="{DynamicResource Style.Navigation.Buttons.Back}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
-                        <cal:ActionMessage MethodName="GoBack" />
+                        <i:InvokeCommandAction Command="{Binding GoBack, RelativeSource={RelativeSource Self}}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
@@ -45,7 +44,7 @@
             <Button x:Name="GoForward" Grid.Column="1" Style="{DynamicResource Style.Navigation.Buttons.Forward}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
-                        <cal:ActionMessage MethodName="GoForward" />
+                        <i:InvokeCommandAction Command="{Binding GoForward, RelativeSource={RelativeSource Self}}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>

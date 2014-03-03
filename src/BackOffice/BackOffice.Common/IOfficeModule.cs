@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Caliburn.Micro;
+﻿using System.Collections.Generic;
 
 namespace Poseidon.BackOffice.Common
 {
@@ -13,7 +11,6 @@ namespace Poseidon.BackOffice.Common
         int Priority { get; }
         IEnumerable<string> Keywords { get; }
         IEnumerable<IOfficeModule> Children { get; }
-        Type ViewType { get; }
     }
 
     public class OfficeModule : IOfficeModule
@@ -29,8 +26,6 @@ namespace Poseidon.BackOffice.Common
         public string IconFileName { get; set; }
         public int Priority { get; set; }
         public IEnumerable<string> Keywords { get; private set; }
-
         public IEnumerable<IOfficeModule> Children { get; set; }
-        public Type ViewType { get; set; }
     }
 }

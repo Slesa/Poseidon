@@ -1,10 +1,9 @@
 ﻿using System.Collections.ObjectModel;
-using Caliburn.Micro;
 using Poseidon.BackOffice.Common;
 
-namespace Poseidon.BackOffice.Module.Ums
+namespace Poseidon.BackOffice.Module.Ums.ViewModels
 {
-    public class UmsModulesViewModel : Screen
+    public class UmsModulesViewModel
     {
         public ObservableCollection<IOfficeModule> Modules { get; private set; }
     }

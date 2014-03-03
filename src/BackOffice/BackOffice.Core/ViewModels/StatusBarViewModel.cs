@@ -1,17 +1,18 @@
-﻿using Caliburn.Micro;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Microsoft.Practices.Prism.Events;
+using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
-using Poseidon.BackOffice.Core.Events;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class StatusBarViewModel : PropertyChangedBase, IStatusBarViewModel
-        , IHandle<StatusBarMessageEvent>
-        , IHandle<StatusBarClearEvent>
+    public class StatusBarViewModel : IStatusBarViewModel
     {
         public StatusBarViewModel(IEventAggregator eventAggregator)
         {
             Message = string.Empty;
-            eventAggregator.Subscribe(this);
+            eventAggregator.GetEvent<StatusBarClearEvent>().Subscribe(_ => Message = string.Empty);
+            eventAggregator.GetEvent<StatusBarMessageEvent>().Subscribe(msg => Message = msg);
         }
 
         string _message;
@@ -21,18 +22,16 @@ namespace Poseidon.BackOffice.Core.ViewModels
             set
             {
                 _message = value;
-                NotifyOfPropertyChange(()=>Message);
+                OnPropertyChanged();
             }
         }
 
-        public void Handle(StatusBarMessageEvent mevent)
-        {
-            Message = mevent.Message;
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void Handle(StatusBarClearEvent message)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            Message = string.Empty;
+            var handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

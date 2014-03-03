@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Poseidon.BackOffice.Core.ModulesView"
+﻿<UserControl x:Class="Poseidon.BackOffice.Core.Views.ModulesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,8 +6,8 @@
              xmlns:DesignTime="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:local="clr-namespace:Poseidon.BackOffice.Core.ViewModels"
-             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
              xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -30,14 +30,12 @@
             <HeaderedContentControl>
                 <HeaderedContentControl.Header>
                     <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
-                            FocusVisualStyle="{x:Null}"
-                        cal:Message.Attach="ActivateCommand()" 
-                        cal:Action.TargetWithoutContext="{Binding RelativeSource={RelativeSource Self}}">
-                        <!--<i:Interaction.Triggers>
+                            FocusVisualStyle="{x:Null}">
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <cal:ActionMessage cal:Message.Attach="SomeMethod()" cal:Action.TargetWithoutContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}"/>
+                                <i:InvokeCommandAction Command="{Binding ActivateCommand, RelativeSource={RelativeSource Self}}"/>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                         <StackPanel Orientation="Vertical" Margin="3">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -66,9 +64,12 @@
         
         <DataTemplate DataType="{x:Type local:ModuleViewModel}">
             <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
-                    FocusVisualStyle="{x:Null}"
-                    cal:Message.Attach="ActivateCommand()" 
-                    cal:Action.TargetWithoutContext="{Binding RelativeSource={RelativeSource Self}}">
+                    FocusVisualStyle="{x:Null}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding ActivateCommand, RelativeSource={RelativeSource Self}}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <StackPanel Orientation="Vertical" Margin="23,0,0,0">
                     <Grid>
                         <Grid.ColumnDefinitions>

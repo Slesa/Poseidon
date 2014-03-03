@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Ums.Resources;
+using Poseidon.BackOffice.Module.Ums.ViewModels;
 using Poseidon.Ums.Domain.Resources;
 
 namespace Poseidon.BackOffice.Module.Ums
