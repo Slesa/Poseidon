@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using Machine.Fakes;
 using Machine.Specifications;
+using Poseidon.BackOffice.Core.Events;
 using Poseidon.BackOffice.Core.ViewModels;
 
 namespace Poseidon.BackOffice.Core.Specs

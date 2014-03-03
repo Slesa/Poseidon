@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Caliburn.Micro;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
 using Poseidon.BackOffice.Core.ViewModels;
@@ -45,7 +46,7 @@ namespace Poseidon.BackOffice.Core.DesignTime
                             userRoleModule,
                             tokenModule,
                         },
-                });
+                }, new EventAggregator());
             yield return umsModule;
         }
     }

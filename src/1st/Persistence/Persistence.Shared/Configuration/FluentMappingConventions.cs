@@ -11,9 +11,9 @@ namespace Persistence.Shared.Configuration
         public void Apply(MappingConfiguration configuration)
         {
             var conventions = configuration.FluentMappings.Conventions;
-            conventions.Add(ConventionBuilder
-                                .Class.Always(
-                                    x => x.Table(Inflector.Net.Inflector.Pluralize(x.EntityType.Name).Escape())));
+            //conventions.Add(ConventionBuilder
+            //                    .Class.Always(
+            //                        x => x.Table(Inflector.Net.Inflector.Pluralize(x.EntityType.Name).Escape())));
             conventions.Add(ConventionBuilder.Property.Always(x => x.Column(x.Property.Name)));
             conventions.Add(DefaultLazy.Always());
         }

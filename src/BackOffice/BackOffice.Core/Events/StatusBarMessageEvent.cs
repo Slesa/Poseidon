@@ -1,4 +1,4 @@
-﻿namespace Poseidon.BackOffice.Core
+namespace Poseidon.BackOffice.Core.Events
 {
     public class StatusBarMessageEvent
     {
@@ -9,6 +9,4 @@
 
         public string Message { get; private set; }
     }
-
-    public class StatusBarClearEvent { }
 }

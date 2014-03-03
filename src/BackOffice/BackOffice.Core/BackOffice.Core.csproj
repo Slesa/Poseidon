@@ -73,7 +73,9 @@
     <Compile Include="DesignTime\DesignTimeModulesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeNavigationViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeStatusBarViewModel.cs" />
-    <Compile Include="Events.cs" />
+    <Compile Include="Events\ActivateScreenEvent.cs" />
+    <Compile Include="Events\StatusBarClearEvent.cs" />
+    <Compile Include="Events\StatusBarMessageEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -28,7 +28,10 @@
     <DockPanel Style="{DynamicResource Style.Shell.DockPanel}" LastChildFill="True">
         <views:StatusBarView DockPanel.Dock="Bottom" />
         <views:NavigationView DockPanel.Dock="Top" />
+        <ContentControl x:Name="ActiveItem" />
+<!--
         <views:ModulesView />
+-->
     </DockPanel>
 
 </Window>

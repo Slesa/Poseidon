@@ -8,7 +8,8 @@ namespace Poseidon.BackOffice.Module.Ums
         public void Register(IContainerBuilder builder)
         {
             builder.Register<IOfficeModule, UmsOfficeModule>();
+            builder.Register<UmsModulesView>();
+            builder.Register<UmsModulesViewModel>();
         }
-
     }
 }
