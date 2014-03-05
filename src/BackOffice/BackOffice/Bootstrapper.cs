@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Windows;
+using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
 using Poseidon.BackOffice.ViewModels;
 using Poseidon.BackOffice.Views;
+using Poseidon.Common.Wpf;
 
 namespace Poseidon.BackOffice
 {
@@ -24,10 +26,8 @@ namespace Poseidon.BackOffice
         {
             base.InitializeShell();
 
-/*
             var logFile = new FileInfo("Poseidon.BackOffice.log4net.config");
             log4net.Config.XmlConfigurator.Configure(logFile);
-*/
 
             Application.Current.MainWindow = (Window)Shell;
             Application.Current.MainWindow.Show();
@@ -48,7 +48,7 @@ namespace Poseidon.BackOffice
 
         void RegisterShellObjects()
         {
-            //RegisterTypeIfMissing(typeof(ILoggerFacade), typeof(Log4NetLogger), true);
+            RegisterTypeIfMissing(typeof(ILoggerFacade), typeof(Log4NetLogger), true);
             RegisterTypeIfMissing(typeof(IRegionManager), typeof(RegionManager), true);
         }
 
