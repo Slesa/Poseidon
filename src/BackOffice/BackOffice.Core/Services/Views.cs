@@ -1,7 +1,6 @@
-﻿// ok
-namespace Poseidon.BackOffice.Core
+﻿namespace Poseidon.BackOffice.Core.Services
 {
-    public class View
+    internal static class Views
     {
         public static readonly string ModulesView = "ModulesView";
     }

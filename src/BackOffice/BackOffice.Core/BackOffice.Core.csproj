@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="RegisterCoreModule.cs" />
     <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\Views.cs" />
     <Compile Include="ViewModelLocators.cs" />
     <Compile Include="ViewModels\ModulesViewModel.cs" />
     <Compile Include="ViewModels\ModuleViewModel.cs" />

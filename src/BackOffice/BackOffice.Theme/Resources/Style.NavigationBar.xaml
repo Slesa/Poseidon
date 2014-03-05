@@ -61,6 +61,9 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="Style.Navigation.Buttons.Home" BasedOn="{StaticResource Style.Navigation.Buttons}" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="{StaticResource Images.Home}" />
+    </Style>
     <Style x:Key="Style.Navigation.Buttons.Back" BasedOn="{StaticResource Style.Navigation.Buttons}" TargetType="{x:Type Button}">
         <Setter Property="Content" Value="{StaticResource Images.Back}" />
     </Style>

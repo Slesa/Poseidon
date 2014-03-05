@@ -24,13 +24,13 @@ namespace Poseidon.BackOffice.Core
         {
             _container.RegisterType<INavigationService, NavigationService>();
 
-            _regionManager.RegisterViewWithRegion(Regions.TagStatusBarRegion, typeof(StatusBarView));
-            _regionManager.RegisterViewWithRegion(Regions.TagNavigationRegion, typeof(NavigationView));
-            _regionManager.RegisterViewWithRegion(Regions.TagModulesRegion, () => _container.Resolve<ModulesView>());
-
             _container.RegisterType<StatusBarViewModel>();
             _container.RegisterType<NavigationViewModel>();
             _container.RegisterType<ModulesViewModel>();
+
+            _regionManager.RegisterViewWithRegion(Regions.TagStatusBarRegion, typeof(StatusBarView));
+            _regionManager.RegisterViewWithRegion(Regions.TagNavigationRegion, typeof(NavigationView));
+            _regionManager.RegisterViewWithRegion(Regions.TagModulesRegion, () => _container.Resolve<ModulesView>());
         }
     }
 }

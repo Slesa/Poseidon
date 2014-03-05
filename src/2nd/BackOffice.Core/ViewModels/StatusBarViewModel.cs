@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Prism.Events;
+﻿// ok
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Core.Contracts;
 using Poseidon.Common.Prism;

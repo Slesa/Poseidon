@@ -25,10 +25,22 @@ namespace Poseidon.BackOffice.Core.Services
         }
 
         Uri _startPage;
-        internal Uri StartPage { get { return _startPage ?? (_startPage = new Uri("Module", UriKind.Relative)); } }
+        public Uri StartPage { get { return _startPage ?? (_startPage = new Uri(Views.ModulesView, UriKind.Relative)); } }
 
         Uri _currentPage;
-        internal Uri CurrentPage { get { return _currentPage ?? StartPage; } set { _currentPage = value; } }
+        public Uri CurrentPage { get { return _currentPage ?? StartPage; } internal set { _currentPage = value; } }
+
+        public Uri GoHome()
+        {
+            var uri = StartPage;
+            _forwardStack.Push(CurrentPage);
+            return uri;
+        }
+
+        public bool CanGoHome
+        {
+            get { return CurrentPage != StartPage; }
+        }
 
         public Uri GoBackOnePage()
         {

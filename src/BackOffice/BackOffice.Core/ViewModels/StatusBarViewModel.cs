@@ -1,12 +1,11 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using Microsoft.Practices.Prism.Events;
+﻿using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class StatusBarViewModel : IStatusBarViewModel
+    public class StatusBarViewModel : NotificationObject, IStatusBarViewModel
     {
         public StatusBarViewModel(IEventAggregator eventAggregator)
         {
@@ -21,17 +20,10 @@ namespace Poseidon.BackOffice.Core.ViewModels
             get { return _message; }
             set
             {
+                if (_message == value) return;
                 _message = value;
-                OnPropertyChanged();
+                RaisePropertyChanged(() => Message);
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

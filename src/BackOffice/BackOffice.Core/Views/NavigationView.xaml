@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
-             xmlns:DesignTime="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:controls="clr-namespace:Poseidon.Common.Wpf.Services;assembly=Poseidon.Common.Wpf"
              mc:Ignorable="d" 
              Width="800" Height="200"
@@ -19,7 +18,7 @@
         <Binding Path="ViewModel" Source="{StaticResource NavigationViewModel}" />
     </UserControl.DataContext>
     <d:UserControl.DataContext>
-        <DesignTime:DesignTimeNavigationViewModel />
+        <design:DesignTimeNavigationViewModel />
     </d:UserControl.DataContext>
 
     <ContentControl Style="{DynamicResource Style.Navigation}" BorderBrush="Aquamarine" BorderThickness="3">
@@ -29,30 +28,19 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             
-            <Button x:Name="GoBack" Grid.Column="0" Style="{DynamicResource Style.Navigation.Buttons.Back}">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <i:InvokeCommandAction Command="{Binding GoBack, RelativeSource={RelativeSource Self}}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
+            <Button x:Name="GoHome" Grid.Column="0" Command="{Binding OnHomeCommand}" Style="{DynamicResource Style.Navigation.Buttons.Home}"/>
+            <Button x:Name="GoBack" Grid.Column="1" Command="{Binding OnBackCommand}" Style="{DynamicResource Style.Navigation.Buttons.Back}"/>
+            <Button x:Name="GoForward" Grid.Column="2" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}"/>
             
-            <Button x:Name="GoForward" Grid.Column="1" Style="{DynamicResource Style.Navigation.Buttons.Forward}">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <i:InvokeCommandAction Command="{Binding GoForward, RelativeSource={RelativeSource Self}}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
-            
-            <TextBox x:Name="Breadcrumb" Grid.Column="2" Style="{DynamicResource Style.Navigation.BreadCrumb}" />
+            <TextBox x:Name="Breadcrumb" Grid.Column="3" Style="{DynamicResource Style.Navigation.BreadCrumb}" />
 
             <!--<AdornerDecorator>-->
-            <TextBox x:Name="Search" Grid.Column="3" Text="{Binding SearchText}" Style="{DynamicResource Style.Navigation.TextBox}">
+            <TextBox x:Name="Search" Grid.Column="4" Text="{Binding SearchText}" Style="{DynamicResource Style.Navigation.TextBox}">
                 <controls:WatermarkService.Watermark>
                     <TextBlock Text="Enter search term" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </controls:WatermarkService.Watermark>
