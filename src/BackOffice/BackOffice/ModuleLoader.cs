@@ -13,9 +13,6 @@ namespace Poseidon.BackOffice
     {
         public static IEnumerable<ModuleInfo> CollectModules()
         {
-            var coreRegister = new RegisterCoreModule();
-            yield return coreRegister.GetModuleInfo();
-
             var binPath = /*Path.Combine(System.*/AppDomain.CurrentDomain.BaseDirectory/*, "bin")*/;
             foreach (var dll in Directory.GetFiles(binPath, "*.Module.*.dll", SearchOption.AllDirectories))
             {
@@ -43,6 +40,9 @@ namespace Poseidon.BackOffice
                 //var assembly = Assembly.LoadFile(dll);
                 //LoadAssembly(assembly);
             }
+
+            var coreRegister = new RegisterCoreModule();
+            yield return coreRegister.GetModuleInfo();
         }
     }
 

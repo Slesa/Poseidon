@@ -17,7 +17,7 @@ namespace Poseidon.BackOffice.Module.Ums
 
         public void Initialize()
         {
-            _container.RegisterType<IOfficeModule, UmsOfficeModule>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<IOfficeModule, UmsOfficeModule>("UmsofficeModule"); // new ContainerControlledLifetimeManager());
 
             //_container.RegisterType<IOfficeModule, UserModule>(UserModule.Name);
             //_container.RegisterType<IOfficeModule, UserRoleModule>(UserRoleModule.Name);
