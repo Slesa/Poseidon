@@ -29,6 +29,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
         void OnNavigated(object sender, RegionNavigationEventArgs e)
         {
             _navigationService.ReportNavigation(e.Uri);
+            ((DelegateCommand)OnHomeCommand).RaiseCanExecuteChanged();
             ((DelegateCommand)OnBackCommand).RaiseCanExecuteChanged();
             ((DelegateCommand)OnForwardCommand).RaiseCanExecuteChanged();
         }

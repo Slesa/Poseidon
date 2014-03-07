@@ -77,6 +77,9 @@
     <Compile Include="DesignTime\DesignTimeUmsModulesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUserRolesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUsersViewModel.cs" />
+    <Compile Include="Modules\TokenModule.cs" />
+    <Compile Include="Modules\UserModule.cs" />
+    <Compile Include="Modules\UserRoleModule.cs" />
     <Compile Include="RegisterUmsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -88,6 +91,7 @@
     </Compile>
     <Compile Include="UmsPrismModule.cs" />
     <Compile Include="Modules\UmsOfficeModule.cs" />
+    <Compile Include="UmsViews.cs" />
     <Compile Include="ViewModelLocators.cs" />
     <Compile Include="ViewModels\UmsModulesViewModel.cs" />
     <Compile Include="ViewModels\UserRolesViewModel.cs" />

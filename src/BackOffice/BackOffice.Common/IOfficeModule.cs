@@ -9,7 +9,8 @@ namespace Poseidon.BackOffice.Common
         string ToolTip { get; }
         string IconFileName { get; }
         int Priority { get; }
-        IEnumerable<string> Keywords { get; }
+        string ViewName { get; set; }
         IOfficeModule Parent { get; }
+        IEnumerable<string> Keywords { get; }
     }
 }

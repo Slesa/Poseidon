@@ -36,46 +36,4 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
 
         public Type ViewType { get; private set; }
     }
-
-    public class UserModule : OfficeModule
-    {
-        public static readonly string Name = "UMS.UserModule";
-
-        public UserModule(UmsOfficeModule parent)
-        {
-            Title = Strings.UserModule;
-            Description = Strings.UserModule_Description;
-            ToolTip = Strings.UserModule_Tooltip;
-            IconFileName = UmsResources.UserIcon;
-            Parent = parent;
-        }
-    }
-
-    public class UserRoleModule : OfficeModule
-    {
-        public static readonly string Name = "UMS.UserRoleModule";
-
-        public UserRoleModule(UmsOfficeModule parent)
-        {
-            Title = Strings.UserRoleModule;
-            Description = Strings.UserRoleModule_Description;
-            ToolTip = Strings.UserRoleModule_Tooltip;
-            IconFileName = UmsResources.UserRoleIcon;
-            Parent = parent;
-        }
-    }
-
-    public class TokenModule : OfficeModule
-    {
-        public static readonly string Name = "UMS.TokenModule";
-
-        public TokenModule(UmsOfficeModule parent)
-        {
-            Title = Strings.TokenModule;
-            Description = Strings.TokenModule_Description;
-            ToolTip = Strings.TokenModule_Tooltip;
-            IconFileName = UmsResources.TokenIcon;
-            Parent = parent;
-        }
-    }
 }

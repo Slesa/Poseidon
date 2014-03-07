@@ -23,9 +23,9 @@ namespace Poseidon.BackOffice.Module.Ums
             _container.RegisterType<IOfficeModule, UserRoleModule>(UserRoleModule.Name);
             _container.RegisterType<IOfficeModule, TokenModule>(TokenModule.Name);
 
-            _container.RegisterType<object, UserRolesView>("UserRolesView");
-            _container.RegisterType<object, UsersView>("UsersView");
-            _container.RegisterType<object, UmsModulesView>("UmsModulesView");
+            _container.RegisterType<object, UserRolesView>(UmsViews.UserRolesView);
+            _container.RegisterType<object, UsersView>(UmsViews.UsersView);
+            _container.RegisterType<object, UmsModulesView>(UmsViews.ModuleView);
 
             _container.RegisterType<UserRolesViewModel>();
             _container.RegisterType<UsersViewModel>();

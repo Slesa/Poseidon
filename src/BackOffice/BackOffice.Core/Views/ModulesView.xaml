@@ -145,12 +145,12 @@
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource ModulesViewModel}" />
     </UserControl.DataContext>
-
     <d:UserControl.DataContext>
         <design:DesignTimeModulesViewModel />
     </d:UserControl.DataContext>
 
-    <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemTemplate="{StaticResource ItemTemplate.Module}" Style="{StaticResource ListBox.Modules}" ItemContainerStyle="{DynamicResource ListBoxItemStyle}">
+    <!--ItemsSource="{Binding Source={StaticResource ModulesCollection}}"-->
+    <ListBox ItemsSource="{Binding Modules}" ItemTemplate="{StaticResource ItemTemplate.Module}" Style="{StaticResource ListBox.Modules}" ItemContainerStyle="{DynamicResource ListBoxItemStyle}">
         <ListBox.GroupStyle>
             <GroupStyle>
                 <GroupStyle.ContainerStyle>

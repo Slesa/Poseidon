@@ -10,6 +10,7 @@ namespace Poseidon.BackOffice.Core.Specs
     {
         It should_have_no_current_page = () => Subject.CurrentPage.ShouldEqual(Subject.StartPage);
         It should_start_with_modules_view = () => Subject.StartPage.ToString().ShouldEqual(Module);
+        It should_not_enable_home = () => Subject.CanGoHome.ShouldBeFalse();
         It should_not_enable_back = () => Subject.CanGoBack.ShouldBeFalse();
         It should_not_enable_forward = () => Subject.CanGoForward.ShouldBeFalse();
     }
@@ -22,6 +23,7 @@ namespace Poseidon.BackOffice.Core.Specs
 
         It should_not_change_start_view = () => Subject.StartPage.ToString().ShouldEqual(Module);
         It should_have_current_page = () => Subject.CurrentPage.ShouldEqual(FirstPage);
+        It should_enable_home = () => Subject.CanGoHome.ShouldBeTrue();
         It should_enable_back = () => Subject.CanGoBack.ShouldBeTrue();
         It should_not_enable_forward = () => Subject.CanGoForward.ShouldBeFalse();
     }
@@ -74,6 +76,37 @@ namespace Poseidon.BackOffice.Core.Specs
     }
 
 
+    [Subject(typeof(NavigationService))]
+    internal class When_navigating_to_page_and_back_then_to_other_page : NavigationServiceSpecBase
+    {
+        Because of = () =>
+            {
+                Subject.ReportNavigation(FirstPage);
+                Subject.ReportNavigation(Subject.GoBackOnePage());
+                Subject.ReportNavigation(SecondPage);
+            };
+
+        It should_have_second_page_as_current_page = () => Subject.CurrentPage.ShouldEqual(SecondPage);
+        It should_enable_back = () => Subject.CanGoBack.ShouldBeTrue();
+        It should_disable_forward = () => Subject.CanGoForward.ShouldBeFalse();
+    }
+
+
+    [Subject(typeof(NavigationService))]
+    internal class When_navigating_to_page_and_then_home : NavigationServiceSpecBase
+    {
+        Because of = () =>
+            {
+                Subject.ReportNavigation(FirstPage);
+                Subject.ReportNavigation(Subject.GoHome());
+            };
+
+        It should_have_second_page_as_current_page = () => Subject.CurrentPage.ShouldEqual(SecondPage);
+        It should_enable_back = () => Subject.CanGoBack.ShouldBeTrue();
+        It should_disable_forward = () => Subject.CanGoForward.ShouldBeFalse();
+    }
+
+
 
     [Subject(typeof(NavigationService))]
     internal class NavigationServiceSpecBase : WithSubject<NavigationService>
@@ -81,6 +114,6 @@ namespace Poseidon.BackOffice.Core.Specs
         protected static Uri FirstPage = new Uri("FirstPage", UriKind.Relative);
         protected static Uri SecondPage = new Uri("SecondPage", UriKind.Relative);
 
-        protected const string Module = "Module";
+        protected const string Module = "ModulesView";
     }
 }

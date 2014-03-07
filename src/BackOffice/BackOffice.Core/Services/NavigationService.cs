@@ -9,19 +9,22 @@ namespace Poseidon.BackOffice.Core.Services
     {
         readonly Stack<Uri> _backStack = new Stack<Uri>();
         readonly Stack<Uri> _forwardStack = new Stack<Uri>();
+        
+        bool _stackInvolved;
 
         public void ReportNavigation(Uri uri)
         {
             if (uri != StartPage)
             {
+                if (!_stackInvolved) _forwardStack.Clear();
                 _backStack.Push(CurrentPage);
                 CurrentPage = uri;
             }
             else
             {
-                //_forwardStack.Clear();
                 CurrentPage = null;
             }
+            _stackInvolved = false;
         }
 
         Uri _startPage;
@@ -34,6 +37,7 @@ namespace Poseidon.BackOffice.Core.Services
         {
             var uri = StartPage;
             _forwardStack.Push(CurrentPage);
+            _stackInvolved = true;
             return uri;
         }
 
@@ -47,6 +51,7 @@ namespace Poseidon.BackOffice.Core.Services
             if (!_backStack.Any()) return null;
             var uri = _backStack.Pop();
             _forwardStack.Push(CurrentPage);
+            _stackInvolved = true;
             return uri;
         }
 
@@ -59,6 +64,7 @@ namespace Poseidon.BackOffice.Core.Services
         {
             if (!_forwardStack.Any()) return null;
             var uri = _forwardStack.Pop();
+            _stackInvolved = true;
             return uri;
         }
 
