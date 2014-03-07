@@ -16,37 +16,37 @@ namespace Poseidon.BackOffice.Core.DesignTime
 
         IEnumerable<ModuleViewModel> CreateModules()
         {
+            var umsModule = new OfficeModule
+                {
+                    Title = "Office Module 1",
+                    Description = "This is the Office module number one.",
+                    IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Ums.png",
+                };
+            yield return new ModuleViewModel(umsModule);
             var userModule = new OfficeModule
                 {
                     Title = "Users",
                     Description = "Manage all users",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/User.png",
+                    Parent = umsModule,
                 };
+            yield return new ModuleViewModel(userModule);
             var userRoleModule = new OfficeModule
                 {
                     Title = "User Roles",
                     Description = "Manage all user roles",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/UserRole.png",
+                    Parent = umsModule,
                 };
+            yield return new ModuleViewModel(userRoleModule);
             var tokenModule = new OfficeModule
                 {
                     Title = "Tokens",
                     Description = "Manage all tokens",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Token.png",
+                    Parent = umsModule,
                 };
-            var umsModule = new OfficeModuleViewModel(new OfficeModule
-                {
-                    Title = "Office Module 1",
-                    Description = "This is the Office module number one.",
-                    IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Ums.png",
-                    Children = new List<IOfficeModule>
-                        {
-                            userModule,
-                            userRoleModule,
-                            tokenModule,
-                        },
-                });
-            yield return umsModule;
+            yield return new ModuleViewModel(tokenModule);
         }
     }
 }

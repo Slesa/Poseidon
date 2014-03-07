@@ -8,6 +8,7 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
              xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             xmlns:pe="clr-namespace:Poseidon.Common.Wpf.Extensions;assembly=Poseidon.Common.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -58,9 +59,10 @@
         </Style>
 
         <Style x:Key="ListBox.Modules" TargetType="{x:Type ListBox}">
+            <Setter Property="BorderBrush" Value="{x:Null}" />
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
-            <!-- Setter Property="pe:GroupStyleExtension.GroupStyle">
+            <Setter Property="pe:GroupStyleExtension.GroupStyle">
                 <Setter.Value>
                     <GroupStyle ContainerStyle="{StaticResource GroupItem.Module}">
                         <GroupStyle.Panel>
@@ -70,7 +72,7 @@
                         </GroupStyle.Panel>
                     </GroupStyle>
                 </Setter.Value>
-            </Setter -->
+            </Setter>
         </Style>
 
         <Style x:Key="ItemTemplate.Module.Item" TargetType="Button">

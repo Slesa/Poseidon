@@ -73,7 +73,7 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="NavigationServiceSpecs.cs" />
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatusBarViewModelSpecBase.cs" />
   </ItemGroup>
   <ItemGroup>

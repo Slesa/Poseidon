@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common"
         xmlns:regions="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+        xmlns:viewModels="clr-namespace:Poseidon.BackOffice.ViewModels"
         mc:Ignorable="d" 
         Title="Poseidon Backoffice"
         Icon="pack://application:,,,/Resources/BackOffice.jpg"
@@ -18,6 +19,10 @@
             </d:ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+
+    <Window.DataContext>
+        <viewModels:ShellViewModel />
+    </Window.DataContext>
 
     <Window.InputBindings>
         <KeyBinding Key="X" Modifiers="Control" Command="{Binding OnQuitCommand}"/>

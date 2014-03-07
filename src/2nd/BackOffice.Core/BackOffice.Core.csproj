@@ -115,6 +115,10 @@
       <Project>{9f588452-447c-4efd-8fb2-4817cc0043c8}</Project>
       <Name>BackOffice.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\BackOffice\Common.Wpf\Common.Wpf.csproj">
+      <Project>{eab8e2bf-b1a4-400d-9db0-b90ea8edf860}</Project>
+      <Name>Common.Wpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
       <Project>{daf28095-0d7e-4544-ba13-4719d839d03d}</Project>
       <Name>Common.Prism</Name>

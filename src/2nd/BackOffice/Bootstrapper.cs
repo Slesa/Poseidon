@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ok
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -10,6 +11,7 @@ using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using NHibernate;
 using Poseidon.BackOffice.Core;
 using Poseidon.BackOffice.Module.Ums;
 using Poseidon.BackOffice.ViewModels;

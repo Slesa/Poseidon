@@ -10,6 +10,6 @@ namespace Poseidon.BackOffice.Common
         string IconFileName { get; }
         int Priority { get; }
         IEnumerable<string> Keywords { get; }
-        IEnumerable<IOfficeModule> Children { get; }
+        IOfficeModule Parent { get; }
     }
 }

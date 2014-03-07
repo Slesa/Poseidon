@@ -1,5 +1,5 @@
 ﻿using Poseidon.BackOffice.Module.Ums.ViewModels;
-using Poseidon.Common.Prism;
+using Poseidon.Common.Wpf;
 
 namespace Poseidon.BackOffice.Module.Ums
 {

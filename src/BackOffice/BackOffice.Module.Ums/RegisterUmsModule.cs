@@ -7,7 +7,7 @@ namespace Poseidon.BackOffice.Module.Ums
     {
         public ModuleInfo GetModuleInfo()
         {
-            var umsModule = typeof(UmsModule);
+            var umsModule = typeof(UmsPrismModule);
             return new ModuleInfo
                 {
                     ModuleName = umsModule.Name,

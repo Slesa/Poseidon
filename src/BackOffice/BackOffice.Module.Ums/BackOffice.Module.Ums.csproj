@@ -86,8 +86,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="UmsModule.cs" />
-    <Compile Include="UmsOfficeModule.cs" />
+    <Compile Include="UmsPrismModule.cs" />
+    <Compile Include="Modules\UmsOfficeModule.cs" />
     <Compile Include="ViewModelLocators.cs" />
     <Compile Include="ViewModels\UmsModulesViewModel.cs" />
     <Compile Include="ViewModels\UserRolesViewModel.cs" />
@@ -152,6 +152,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

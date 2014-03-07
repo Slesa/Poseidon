@@ -1,6 +1,6 @@
 ﻿// ok
 using Poseidon.BackOffice.Core.ViewModels;
-using Poseidon.Common.Prism;
+using Poseidon.Common.Wpf;
 
 namespace Poseidon.BackOffice.Core
 {
