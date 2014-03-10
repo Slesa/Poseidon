@@ -8,14 +8,14 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
     {
         public static readonly string Name = "UMS.UserRoleModule";
 
-        public UserRoleModule(UmsOfficeModule parent)
+        public UserRoleModule()
         {
             Title = Strings.UserRoleModule;
             Description = Strings.UserRoleModule_Description;
             ToolTip = Strings.UserRoleModule_Tooltip;
             IconFileName = UmsResources.UserRoleIcon;
             ViewName = UmsViews.UserRolesView;
-            Parent = parent;
+            ParentType = typeof(UmsOfficeModule);
         }
     }
 }

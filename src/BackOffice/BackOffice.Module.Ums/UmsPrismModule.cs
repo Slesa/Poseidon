@@ -18,10 +18,10 @@ namespace Poseidon.BackOffice.Module.Ums
 
         public void Initialize()
         {
-            _container.RegisterType<UmsOfficeModule, UmsOfficeModule>(new ContainerControlledLifetimeManager());
-            _container.RegisterType<IOfficeModule, UserModule>(UserModule.Name);
-            _container.RegisterType<IOfficeModule, UserRoleModule>(UserRoleModule.Name);
-            _container.RegisterType<IOfficeModule, TokenModule>(TokenModule.Name);
+            _container.RegisterType<IOfficeModule, UmsOfficeModule>(UmsOfficeModule.Name, new ContainerControlledLifetimeManager());
+            _container.RegisterType<IOfficeModule, UserModule>(UserModule.Name, new ContainerControlledLifetimeManager());
+            _container.RegisterType<IOfficeModule, UserRoleModule>(UserRoleModule.Name, new ContainerControlledLifetimeManager());
+            _container.RegisterType<IOfficeModule, TokenModule>(TokenModule.Name, new ContainerControlledLifetimeManager());
 
             _container.RegisterType<object, UserRolesView>(UmsViews.UserRolesView);
             _container.RegisterType<object, UsersView>(UmsViews.UsersView);
@@ -30,6 +30,5 @@ namespace Poseidon.BackOffice.Module.Ums
             _container.RegisterType<UserRolesViewModel>();
             _container.RegisterType<UsersViewModel>();
         }
-         
     }
 }

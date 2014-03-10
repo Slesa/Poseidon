@@ -96,6 +96,7 @@
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\Views.cs" />
     <Compile Include="ViewModelLocators.cs" />
+    <Compile Include="ViewModels\OfficeModuleViewModel.cs" />
     <Compile Include="ViewModels\ModulesViewModel.cs" />
     <Compile Include="ViewModels\ModuleViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
@@ -122,6 +123,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\Copy of ModulesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ModulesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

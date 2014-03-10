@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Poseidon.BackOffice.Common
 {
@@ -10,7 +11,7 @@ namespace Poseidon.BackOffice.Common
         string IconFileName { get; }
         int Priority { get; }
         string ViewName { get; set; }
-        IOfficeModule Parent { get; }
+        Type ParentType { get; }
         IEnumerable<string> Keywords { get; }
     }
 }

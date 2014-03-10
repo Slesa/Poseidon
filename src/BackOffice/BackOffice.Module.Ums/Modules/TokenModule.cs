@@ -8,13 +8,13 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
     {
         public static readonly string Name = "UMS.TokenModule";
 
-        public TokenModule(UmsOfficeModule parent)
+        public TokenModule()
         {
             Title = Strings.TokenModule;
             Description = Strings.TokenModule_Description;
             ToolTip = Strings.TokenModule_Tooltip;
             IconFileName = UmsResources.TokenIcon;
-            Parent = parent;
+            ParentType = typeof(UmsOfficeModule);
         }
     }
 }

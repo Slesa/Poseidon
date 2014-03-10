@@ -22,31 +22,35 @@ namespace Poseidon.BackOffice.Core.DesignTime
                     Description = "This is the Office module number one.",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Ums.png",
                 };
-            yield return new ModuleViewModel(umsModule, null);
+            yield return new OfficeModuleViewModel(umsModule, CreateUmsChildren(umsModule), null);
+        }
+
+        IEnumerable<OfficeModule> CreateUmsChildren(IOfficeModule umsModule)
+        {
             var userModule = new OfficeModule
                 {
                     Title = "Users",
                     Description = "Manage all users",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/User.png",
-                    Parent = umsModule,
+                    //Parent = umsModule,
                 };
-            yield return new ModuleViewModel(userModule, null);
+            yield return userModule;
             var userRoleModule = new OfficeModule
                 {
                     Title = "User Roles",
                     Description = "Manage all user roles",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/UserRole.png",
-                    Parent = umsModule,
+                    //Parent = umsModule,
                 };
-            yield return new ModuleViewModel(userRoleModule, null);
+            yield return userRoleModule;
             var tokenModule = new OfficeModule
                 {
                     Title = "Tokens",
                     Description = "Manage all tokens",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Token.png",
-                    Parent = umsModule,
+                    //Parent = umsModule,
                 };
-            yield return new ModuleViewModel(tokenModule, null);
+            yield return tokenModule;
         }
     }
 }

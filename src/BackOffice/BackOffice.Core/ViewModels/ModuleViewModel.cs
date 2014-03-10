@@ -36,14 +36,4 @@ namespace Poseidon.BackOffice.Core.ViewModels
             _regionManager.RequestNavigate(Regions.TagModulesRegion, ViewName);
         }
     }
-
-/*
-    public class OfficeModuleViewModel : ModuleViewModel
-    {
-        public OfficeModuleViewModel(IOfficeModule module)
-            : base(module)
-        {
-        }
-    }
-*/
 }
