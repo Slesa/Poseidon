@@ -13,6 +13,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
             Title = Strings.TokenModule;
             Description = Strings.TokenModule_Description;
             ToolTip = Strings.TokenModule_Tooltip;
+            Priority = 0;
             IconFileName = UmsResources.TokenIcon;
             ParentType = typeof(UmsOfficeModule);
         }

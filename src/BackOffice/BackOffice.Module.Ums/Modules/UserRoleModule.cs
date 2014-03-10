@@ -13,6 +13,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
             Title = Strings.UserRoleModule;
             Description = Strings.UserRoleModule_Description;
             ToolTip = Strings.UserRoleModule_Tooltip;
+            Priority = 2;
             IconFileName = UmsResources.UserRoleIcon;
             ViewName = UmsViews.UserRolesView;
             ParentType = typeof(UmsOfficeModule);
