@@ -25,16 +25,12 @@
         </CollectionViewSource>
 
         
-        <DataTemplate DataType="{x:Type local:OfficeModuleViewModel}">
+        <HierarchicalDataTemplate DataType="{x:Type local:OfficeModuleViewModel}">
             <HeaderedContentControl>
                 <HeaderedContentControl.Header>
                     <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
-                            FocusVisualStyle="{x:Null}">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding SelectedCommand, RelativeSource={RelativeSource Self}}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
+                            FocusVisualStyle="{x:Null}" BorderBrush="{x:Null}" 
+                            Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeViewItem}}}">
                         <StackPanel Orientation="Vertical" Margin="3">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -55,21 +51,17 @@
                     </Button>
                 </HeaderedContentControl.Header>
                 <HeaderedContentControl.Content>
-                    <ListBox ItemsSource="{Binding Children}" FocusVisualStyle="{x:Null}" BorderThickness="0" />
+                    <ListBox ItemsSource="{Binding Children}" FocusVisualStyle="{x:Null}" BorderThickness="0" Margin="23,0,0,0" />
                 </HeaderedContentControl.Content>
             </HeaderedContentControl>
-        </DataTemplate>
+        </HierarchicalDataTemplate>
 
         
-        <DataTemplate DataType="{x:Type local:ModuleViewModel}">
+        <HierarchicalDataTemplate DataType="{x:Type local:ModuleViewModel}">
             <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
-                    FocusVisualStyle="{x:Null}">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <i:InvokeCommandAction Command="{Binding SelectedCommand, RelativeSource={RelativeSource Self}}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-                <StackPanel Orientation="Vertical" Margin="23,0,0,0">
+                    FocusVisualStyle="{x:Null}" BorderBrush="{x:Null}" 
+                    Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}">
+                <StackPanel Orientation="Vertical" >
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
@@ -83,10 +75,9 @@
                         <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" />
                         <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
                     </Grid>
-                    <ItemsControl ItemsSource="{Binding Children}" />
                 </StackPanel>
             </Button>
-        </DataTemplate>
+        </HierarchicalDataTemplate>
         
         
         <ItemsPanelTemplate x:Key="ModuleListPanelTemplate">
@@ -106,7 +97,7 @@
     
     <Grid>
         <!--<ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />-->
-        <ListBox ItemsSource="{Binding Modules}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
+        <TreeView ItemsSource="{Binding Modules}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
     </Grid>
     
 </UserControl>
