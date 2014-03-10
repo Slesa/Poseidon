@@ -13,6 +13,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <ums:UserRolesViewModelLocator x:Key="UserRolesViewModel" />
@@ -34,16 +35,29 @@
         <design:DesignTimeUserRolesViewModel />
     </d:UserControl.DataContext>
 
-    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UserRolesView_Title}">
+    <Grid>
 
-        <ListView ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Width="180">
+            <Image Source="{StaticResource Image.UserRole}" Width="48" Height="48"/>
+            <TextBlock Text="{x:Static res:Strings.UserRoleModule}" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="{x:Static res:Strings.UserRoleModule_Description}" FontSize="12" TextWrapping="Wrap" />
+        </StackPanel>
+
+        <ListView Grid.Column="1" ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
                 </GridView>
             </ListView.View>
         </ListView>
-
-    </HeaderedContentControl>
+    </Grid>
+    
+    <!--<HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UserRolesView_Title}">
+    </HeaderedContentControl>-->
 
 </UserControl>

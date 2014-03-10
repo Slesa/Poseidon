@@ -13,6 +13,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <ums:UsersViewModelLocator x:Key="UsersViewModel" />
@@ -34,9 +35,20 @@
         <design:DesignTimeUsersViewModel />
     </d:UserControl.DataContext>
 
-    <HeaderedContentControl Style="{StaticResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UsersView_Title}">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Orientation="Vertical" Width="180">
+            <Image Source="{StaticResource Image.User}" Width="48" Height="48"/>
+            <TextBlock Text="{x:Static res:Strings.UserModule}" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="{x:Static res:Strings.UserModule_Description}" FontSize="12" TextWrapping="Wrap" />
+        </StackPanel>
 
-        <ListView ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}">
+        <ListView Grid.Column="1" ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
@@ -45,6 +57,8 @@
             </ListView.View>
         </ListView>
 
-    </HeaderedContentControl>
+    </Grid>
+    <!--<HeaderedContentControl Style="{StaticResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UsersView_Title}">
+    </HeaderedContentControl>-->
     
 </UserControl>
