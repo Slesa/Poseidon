@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Common.Specs", "Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ums.Domain.Resources", "Ums.Domain.Resources\Ums.Domain.Resources.csproj", "{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.Module.Pms", "BackOffice.Module.Pms\BackOffice.Module.Pms.csproj", "{F45A5A20-8D8F-4F95-9D80-958B96A44D40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pms.Domain.Model", "Pms.Domain.Model\Pms.Domain.Model.csproj", "{A0395D6C-430B-49D4-966B-060AA5CEFEF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pms.Domain.Resources", "Pms.Domain.Resources\Pms.Domain.Resources.csproj", "{B894D560-86F2-4AB2-8872-5A8F50CA5AC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,11 +79,23 @@ Global
 		{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1476DCE7-4AAC-4DC9-BCB3-A4AE61012D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45A5A20-8D8F-4F95-9D80-958B96A44D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45A5A20-8D8F-4F95-9D80-958B96A44D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45A5A20-8D8F-4F95-9D80-958B96A44D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45A5A20-8D8F-4F95-9D80-958B96A44D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0395D6C-430B-49D4-966B-060AA5CEFEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0395D6C-430B-49D4-966B-060AA5CEFEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0395D6C-430B-49D4-966B-060AA5CEFEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0395D6C-430B-49D4-966B-060AA5CEFEF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B894D560-86F2-4AB2-8872-5A8F50CA5AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B894D560-86F2-4AB2-8872-5A8F50CA5AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B894D560-86F2-4AB2-8872-5A8F50CA5AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B894D560-86F2-4AB2-8872-5A8F50CA5AC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal
