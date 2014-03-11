@@ -10,6 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
     xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
+    xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
     d:DesignHeight="300"
     d:DesignWidth="300"
     mc:Ignorable="d">
@@ -65,25 +66,14 @@
             </Style>
 
             <DataTemplate x:Key="ItemTemplate.Module" DataType="{x:Type common:IOfficeModule}">
-                <Button HorizontalAlignment="Stretch" ToolTip="{Binding ToolTip}" Background="Transparent" BorderThickness="0"
-                        FocusVisualStyle="{x:Null}" BorderBrush="{x:Null}" 
-                        Command="{Binding SelectedCommand}">
-                    <StackPanel Orientation="Vertical" >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Image Grid.RowSpan="2" Width="24" Height="24" Source="{Binding IconFileName}"/>
-                            <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" />
-                            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
-                        </Grid>
-                    </StackPanel>
-                </Button>
+                <Controls:ModuleButton 
+                    Command="{Binding SelectedCommand}"
+                    Content="{Binding Title}"
+                    Description="{Binding Description}"
+                    IconFile="{Binding IconFileName}" 
+                    IconSize="24"
+                    TitleFontWeight="Bold"
+                    ToolTip="{Binding ToolTip}" />
             </DataTemplate>
         </ResourceDictionary>
 
@@ -105,14 +95,16 @@
                 Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel
-            Width="180"
-            Margin="20"
-            Orientation="Vertical">
-            <Image Width="48" Height="48" Source="{StaticResource Image.UmsModule}" />
-            <TextBlock HorizontalAlignment="Center" FontSize="24" Text="{x:Static res:Strings.UmsOfficeModule}" />
-            <TextBlock FontSize="12" Text="{x:Static res:Strings.UmsOfficeModule_Description}" TextWrapping="Wrap" />
-        </StackPanel>
+        <DockPanel>
+            <Controls:ModuleInfoArea 
+                Content="{x:Static res:Strings.UmsOfficeModule}"
+                Description="{x:Static res:Strings.UmsOfficeModule_Description}"
+                DockPanel.Dock="Top"
+                    FontSize="12"
+                IconFile="{StaticResource Image.UmsModule}"
+                IconSize="48"
+                TitleFontSize="24"/>
+        </DockPanel>
 
         <!--  <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemTemplate="{StaticResource ItemTemplate.Module}">  -->
         <ListBox Grid.Column="1" ItemTemplate="{StaticResource ItemTemplate.Module}" ItemsSource="{Binding Modules}">

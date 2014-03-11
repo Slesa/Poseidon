@@ -6,6 +6,7 @@
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
+             xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -42,11 +43,16 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Vertical" Width="180" Margin="20">
-            <Image Source="{StaticResource Image.UserRole}" Width="48" Height="48"/>
-            <TextBlock Text="{x:Static res:Strings.UserRoleModule}" FontSize="24" HorizontalAlignment="Center"/>
-            <TextBlock Text="{x:Static res:Strings.UserRoleModule_Description}" FontSize="12" TextWrapping="Wrap" />
-        </StackPanel>
+        <DockPanel>
+            <Controls:ModuleInfoArea
+                Content="{x:Static res:Strings.UserRoleModule}"
+                Description="{x:Static res:Strings.UserRoleModule_Description}"
+                DockPanel.Dock="Top"
+                MaxWidth="200"
+                IconFile="{StaticResource Image.UserRole}"
+                IconSize="48"
+                TitleFontSize="24"/>
+        </DockPanel>
 
         <ListView Grid.Column="1" ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}">
             <ListView.View>

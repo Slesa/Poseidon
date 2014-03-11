@@ -9,6 +9,7 @@
              xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:viewModels="clr-namespace:Poseidon.BackOffice.Common.ViewModels;assembly=Poseidon.BackOffice.Common"
+             xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -29,27 +30,16 @@
         <HierarchicalDataTemplate DataType="{x:Type local:OfficeModuleViewModel}">
             <HeaderedContentControl>
                 <HeaderedContentControl.Header>
-                    <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
-                            FocusVisualStyle="{x:Null}" BorderBrush="{x:Null}" 
-                            Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeViewItem}}}">
-                        <StackPanel Orientation="Vertical" Margin="3">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-
-                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightBlue" CornerRadius="5" />
-                            <Image Margin="2"  Grid.RowSpan="2" Width="48" Height="48" Source="{Binding IconFileName}"/>
-                            <TextBlock Margin="2" Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" FontSize="24" />
-                            <TextBlock Grid.Column="1" Grid.Row="1" Margin="2"  Text="{Binding Description}"/>
-                        </Grid>
-                    </StackPanel>
-                    </Button>
+                    <Controls:ModuleButton 
+                        Background="LightBlue"
+                        Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeViewItem}}}"
+                        Content="{Binding Title}"
+                        Description="{Binding Description}"
+                        IconFile="{Binding IconFileName}" 
+                        IconSize="48"
+                        TitleFontSize="24"
+                        TitleFontWeight="Bold"
+                        ToolTip="{Binding ToolTip}" />
                 </HeaderedContentControl.Header>
                 <HeaderedContentControl.Content>
                     <ListBox ItemsSource="{Binding Children}" FocusVisualStyle="{x:Null}" BorderThickness="0" Margin="23,0,0,0" />
@@ -59,25 +49,15 @@
 
         
         <HierarchicalDataTemplate DataType="{x:Type viewModels:ModuleViewModel}">
-            <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
-                    FocusVisualStyle="{x:Null}" BorderBrush="{x:Null}" 
-                    Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}">
-                <StackPanel Orientation="Vertical" >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Image Grid.RowSpan="2" Width="24" Height="24" Source="{Binding IconFileName}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" />
-                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
-                    </Grid>
-                </StackPanel>
-            </Button>
+            <Controls:ModuleButton
+                    Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}"
+                    Content="{Binding Title}"
+                    Description="{Binding Description}"
+                    IconFile="{Binding IconFileName}" 
+                    IconSize="24"
+                    TitleFontSize="16"
+                    TitleFontWeight="SemiBold"
+                    ToolTip="{Binding ToolTip}" />
         </HierarchicalDataTemplate>
         
         
