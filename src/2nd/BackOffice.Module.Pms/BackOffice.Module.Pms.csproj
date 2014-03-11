@@ -124,9 +124,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
-      <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
+    <ProjectReference Include="..\..\BackOffice\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{9f588452-447c-4efd-8fb2-4817cc0043c8}</Project>
       <Name>BackOffice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BackOffice\Domain.Common\Domain.Common.csproj">
+      <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
+      <Name>Domain.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
       <Project>{14fdbdef-281a-4cb0-986d-e826145f3839}</Project>
@@ -135,10 +139,6 @@
     <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
       <Project>{daf28095-0d7e-4544-ba13-4719d839d03d}</Project>
       <Name>Common.Prism</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
-      <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
-      <Name>Domain.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Pms.Hibernate\Domain.Pms.Hibernate.csproj">
       <Project>{ce4b54db-63b6-48e2-8268-0aefb53aeade}</Project>

@@ -7,7 +7,7 @@ namespace Poseidon.BackOffice.Core.DesignTime
 {
     public class DesignTimeModulesViewModel : IModulesView
     {
-        class OfficeModule : IOfficeModule
+        class OfficeModule : OfficeModule
         {
             public string Title { get; private set; }
             public string Description { get; private set; }

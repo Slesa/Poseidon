@@ -49,13 +49,13 @@
     <Compile Include="WaiterTeam.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
-      <Project>{b0df0642-43e5-4608-a1c2-87a7092477ff}</Project>
+    <ProjectReference Include="..\..\BackOffice\Domain.Common\Domain.Common.csproj">
+      <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
       <Name>Domain.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.Ums.Model\Domain.Ums.Model.csproj">
-      <Project>{bfaf0fb8-e823-4bb8-b8ea-f774d5742feb}</Project>
-      <Name>Domain.Ums.Model</Name>
+    <ProjectReference Include="..\..\BackOffice\Ums.Domain.Model\Ums.Domain.Model.csproj">
+      <Project>{da8a5822-355b-4138-80c3-b03193917fea}</Project>
+      <Name>Ums.Domain.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,7 +7,7 @@ using Poseidon.Domain.Pms.Resources;
 
 namespace Poseidon.BackOffice.Module.Pms.Modules
 {
-    public class DiscountModule : IOfficeModule
+    public class DiscountModule : OfficeModule
     {
         public static readonly string Name = "PMS.DiscountModule";
 
