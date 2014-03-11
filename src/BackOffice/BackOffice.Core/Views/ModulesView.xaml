@@ -8,6 +8,7 @@
              xmlns:local="clr-namespace:Poseidon.BackOffice.Core.ViewModels"
              xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:viewModels="clr-namespace:Poseidon.BackOffice.Common.ViewModels;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -57,7 +58,7 @@
         </HierarchicalDataTemplate>
 
         
-        <HierarchicalDataTemplate DataType="{x:Type local:ModuleViewModel}">
+        <HierarchicalDataTemplate DataType="{x:Type viewModels:ModuleViewModel}">
             <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
                     FocusVisualStyle="{x:Null}" BorderBrush="{x:Null}" 
                     Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}">

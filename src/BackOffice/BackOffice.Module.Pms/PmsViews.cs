@@ -2,7 +2,7 @@
 {
     public static class PmsViews
     {
-        public static readonly string ModuleView = "PmsModuleView";
+        public static readonly string PmsModuleView = "PmsModuleView";
         //public static readonly string CurrenciesView = "CurrenciesView";
         public static readonly string DiscountsView = "DiscountsView";
         public static readonly string PayformsView = "PayformsView";

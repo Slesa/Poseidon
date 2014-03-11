@@ -1,7 +1,5 @@
-﻿using System;
-using Poseidon.BackOffice.Common;
+﻿using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Ums.Resources;
-using Poseidon.BackOffice.Module.Ums.ViewModels;
 using Poseidon.Ums.Domain.Resources;
 
 namespace Poseidon.BackOffice.Module.Ums.Modules
@@ -18,9 +16,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
             IconFileName = UmsResources.UmsIcon;
             Priority = 1;
             Keywords = Strings.UmsOfficeModule_Keywords.Split(',');
-            ViewType = typeof (UmsModulesViewModel);
+            ViewName = UmsViews.UmsModuleView;
         }
-
-        public Type ViewType { get; private set; }
     }
 }

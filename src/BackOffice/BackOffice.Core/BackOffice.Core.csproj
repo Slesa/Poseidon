@@ -98,7 +98,6 @@
     <Compile Include="ViewModelLocators.cs" />
     <Compile Include="ViewModels\OfficeModuleViewModel.cs" />
     <Compile Include="ViewModels\ModulesViewModel.cs" />
-    <Compile Include="ViewModels\ModuleViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViewModel.cs" />
     <Compile Include="Views\ModulesView.xaml.cs">

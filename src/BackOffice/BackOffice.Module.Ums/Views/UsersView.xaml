@@ -42,7 +42,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
-        <StackPanel Orientation="Vertical" Width="180">
+        <StackPanel Orientation="Vertical" Width="180" Margin="20">
             <Image Source="{StaticResource Image.User}" Width="48" Height="48"/>
             <TextBlock Text="{x:Static res:Strings.UserModule}" FontSize="24" HorizontalAlignment="Center"/>
             <TextBlock Text="{x:Static res:Strings.UserModule_Description}" FontSize="12" TextWrapping="Wrap" />
@@ -58,7 +58,5 @@
         </ListView>
 
     </Grid>
-    <!--<HeaderedContentControl Style="{StaticResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UsersView_Title}">
-    </HeaderedContentControl>-->
     
 </UserControl>

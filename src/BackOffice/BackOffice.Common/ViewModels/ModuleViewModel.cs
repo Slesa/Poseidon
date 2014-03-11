@@ -2,9 +2,8 @@
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
-using Poseidon.BackOffice.Common;
 
-namespace Poseidon.BackOffice.Core.ViewModels
+namespace Poseidon.BackOffice.Common.ViewModels
 {
     public class ModuleViewModel
     {

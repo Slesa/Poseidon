@@ -28,7 +28,7 @@ namespace Poseidon.BackOffice.Module.Pms
             _container.RegisterType<object, UserRolesView>(UmsViews.UserRolesView);
             _container.RegisterType<object, UsersView>(UmsViews.UsersView);
 */
-            _container.RegisterType<object, PmsModulesView>(PmsViews.ModuleView);
+            _container.RegisterType<object, PmsModulesView>(PmsViews.PmsModuleView);
 
 /*
             _container.RegisterType<UserRolesViewModel>();

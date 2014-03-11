@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Common.ViewModels;
 using Poseidon.BackOffice.Core.Contracts;
 using Poseidon.BackOffice.Core.ViewModels;
 

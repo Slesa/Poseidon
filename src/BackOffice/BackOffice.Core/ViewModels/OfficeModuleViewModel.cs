@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Common.ViewModels;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
