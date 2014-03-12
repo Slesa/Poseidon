@@ -6,11 +6,13 @@
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:controls="clr-namespace:Poseidon.Common.Wpf.Services;assembly=Poseidon.Common.Wpf"
+             xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="800">
 
     <UserControl.Resources>
         <core:NavigationViewModelLocator x:Key="NavigationViewModel" />
+        <core:BreadCrumbViewModelLocator x:Key="BreadCrumbViewModel" />
     </UserControl.Resources>
 
     <UserControl.DataContext>
@@ -47,10 +49,14 @@
             <Button x:Name="GoBack" Grid.Column="2" Grid.Row="1" Command="{Binding OnBackCommand}" Style="{DynamicResource Style.Navigation.Buttons.Back}"/>
             <Button x:Name="GoForward" Grid.Column="3" Grid.Row="1" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}"/>
 
-            <TextBox x:Name="Breadcrumb" Grid.Column="4" Grid.Row="1" Style="{DynamicResource Style.Navigation.BreadCrumb}" VerticalAlignment="Center" Margin="1" />
+            <ListBox x:Name="Breadcrumb" ItemsSource="{Binding CurrentModules}" Grid.Column="4" Grid.Row="1" Style="{DynamicResource Style.Navigation.BreadCrumb}" VerticalAlignment="Center" Margin="1">
+                <ListBox.DataContext>
+                    <Binding Path="ViewModel" Source="{StaticResource BreadCrumbViewModel}" />
+                </ListBox.DataContext>
+            </ListBox>
 
             <!--<AdornerDecorator>-->
-            <TextBox x:Name="Search" Grid.Column="5" Grid.Row="1" Text="{Binding SearchText}" Style="{DynamicResource Style.Navigation.TextBox}" VerticalAlignment="Center" Margin="1">
+            <TextBox x:Name="Search" Grid.Column="5" Grid.Row="1" Text="{Binding SearchText}" Style="{DynamicResource Style.Navigation.TextBox}">
                 <controls:WatermarkService.Watermark>
                     <TextBlock Text="Enter search term" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </controls:WatermarkService.Watermark>
