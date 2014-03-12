@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
-using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Common.ViewModels;
 
@@ -11,12 +11,17 @@ namespace Poseidon.BackOffice.Core.ViewModels
 {
     public class BreadCrumbViewModel : NotificationObject
     {
-        [Dependency]
-        public IEnumerable<ModuleViewModel> AvailableModules { get; set; }
+        readonly IRegionManager _regionManager;
+        readonly IOfficeModule _homePage;
 
-        public BreadCrumbViewModel(IEventAggregator eventAggregator)
+        IEnumerable<IOfficeModule> AvailableModules { get; set; }
+
+        public BreadCrumbViewModel(IEventAggregator eventAggregator, IRegionManager regionManager, IOfficeModule[] modules)
         {
+            _regionManager = regionManager;
             eventAggregator.GetEvent<CurrentModuleChangedEvent>().Subscribe(UpdateBreadCrumbList);
+            AvailableModules = modules;
+            _homePage = CreateHomePage();
         }
 
         IEnumerable<ModuleViewModel> _currentModules;
@@ -34,17 +39,27 @@ namespace Poseidon.BackOffice.Core.ViewModels
         {
             var viewName = modulePath.OriginalString;
             var activeModule = AvailableModules.FirstOrDefault(m => m.ViewName == viewName);
-            
-            var currentModules = new List<ModuleViewModel>();
+
+            var currentModules = new List<IOfficeModule>();
             while (activeModule != null)
             {
                 currentModules.Add(activeModule);
-                var parentView = activeModule.ViewName;
-                if (parentView == null) break;
-                activeModule = AvailableModules.FirstOrDefault(m => m.ViewName == parentView);
-                //parent = (IOfficeModule) _container.Resolve(type);
+                var parentType = activeModule.ParentType;
+                if (parentType == null) break;
+                activeModule = AvailableModules.FirstOrDefault(m => m.GetType() == parentType);
             }
-            CurrentModules = currentModules;
+            currentModules.Add(_homePage);
+            currentModules.Reverse();
+            CurrentModules = currentModules.Select(x=>new ModuleViewModel(x, _regionManager));
+        }
+
+        static IOfficeModule CreateHomePage()
+        {
+            return new OfficeModule
+                {
+                    Title = "Home",
+                    Description = "Go directly to the start page",
+                };
         }
     }
 }

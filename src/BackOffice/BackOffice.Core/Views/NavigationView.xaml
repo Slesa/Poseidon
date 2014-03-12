@@ -49,7 +49,9 @@
             <Button x:Name="GoBack" Grid.Column="2" Grid.Row="1" Command="{Binding OnBackCommand}" Style="{DynamicResource Style.Navigation.Buttons.Back}"/>
             <Button x:Name="GoForward" Grid.Column="3" Grid.Row="1" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}"/>
 
-            <ListBox x:Name="Breadcrumb" ItemsSource="{Binding CurrentModules}" Grid.Column="4" Grid.Row="1" Style="{DynamicResource Style.Navigation.BreadCrumb}" VerticalAlignment="Center" Margin="1">
+            <ListBox x:Name="Breadcrumb" Grid.Column="4" Grid.Row="1" VerticalAlignment="Center" Margin="1"
+                     ItemsSource="{Binding CurrentModules}"
+                     Style="{DynamicResource Style.Navigation.BreadCrumb}">
                 <ListBox.DataContext>
                     <Binding Path="ViewModel" Source="{StaticResource BreadCrumbViewModel}" />
                 </ListBox.DataContext>

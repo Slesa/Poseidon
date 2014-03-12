@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.Practices.Prism.Events;
-using Poseidon.BackOffice.Common.ViewModels;
 
 namespace Poseidon.BackOffice.Common
 {
