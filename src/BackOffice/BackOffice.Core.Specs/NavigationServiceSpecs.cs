@@ -107,6 +107,23 @@ namespace Poseidon.BackOffice.Core.Specs
     }
 
 
+    [Subject(typeof(NavigationService))]
+    internal class When_navigating_to_two_pages_then_go_back_two_times : NavigationServiceSpecBase
+    {
+        Because of = () =>
+            {
+                Subject.ReportNavigation(FirstPage);
+                Subject.ReportNavigation(SecondPage);
+                Subject.ReportNavigation(Subject.GoBackOnePage());
+                Subject.ReportNavigation(Subject.GoBackOnePage());
+            };
+
+        It should_have_start_page_as_current_page = () => Subject.CurrentPage.ShouldEqual(Subject.StartPage);
+        It should_disable_back = () => Subject.CanGoBack.ShouldBeFalse();
+        It should_not_disable_forward = () => Subject.CanGoForward.ShouldBeTrue();
+    }
+
+
 
     [Subject(typeof(NavigationService))]
     internal class NavigationServiceSpecBase : WithFakes

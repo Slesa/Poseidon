@@ -13,7 +13,8 @@ namespace Poseidon.BackOffice.Core.Services
         readonly Stack<Uri> _backStack = new Stack<Uri>();
         readonly Stack<Uri> _forwardStack = new Stack<Uri>();
         
-        bool _stackInvolved;
+        bool _inBackwardMode;
+        bool _inForwardMode;
 
         public NavigationService(IEventAggregator eventAggregator)
         {
@@ -22,17 +23,15 @@ namespace Poseidon.BackOffice.Core.Services
 
         public void ReportNavigation(Uri uri)
         {
-            if (uri != StartPage)
+            if (!_inBackwardMode)
             {
-                if (!_stackInvolved) _forwardStack.Clear();
                 _backStack.Push(CurrentPage);
-                CurrentPage = uri;
+                if (!_inForwardMode) _forwardStack.Clear();
             }
-            else
-            {
-                CurrentPage = null;
-            }
-            _stackInvolved = false;
+
+            CurrentPage = uri == StartPage ? null : uri;
+            _inBackwardMode = false;
+            _inForwardMode = false;
 
             if (_eventAggregator!=null) _eventAggregator.GetEvent<CurrentModuleChangedEvent>().Publish(uri);
         }
@@ -46,8 +45,6 @@ namespace Poseidon.BackOffice.Core.Services
         public Uri GoHome()
         {
             var uri = StartPage;
-            //_forwardStack.Push(CurrentPage);
-            //_stackInvolved = true;
             return uri;
         }
 
@@ -61,7 +58,7 @@ namespace Poseidon.BackOffice.Core.Services
             if (!_backStack.Any()) return null;
             var uri = _backStack.Pop();
             _forwardStack.Push(CurrentPage);
-            _stackInvolved = true;
+            _inBackwardMode = true;
             return uri;
         }
 
@@ -74,7 +71,7 @@ namespace Poseidon.BackOffice.Core.Services
         {
             if (!_forwardStack.Any()) return null;
             var uri = _forwardStack.Pop();
-            _stackInvolved = true;
+            _inForwardMode = true;
             return uri;
         }
 
