@@ -101,7 +101,7 @@ namespace Poseidon.BackOffice.Core.Specs
                 Subject.ReportNavigation(Subject.GoHome());
             };
 
-        It should_have_second_page_as_current_page = () => Subject.CurrentPage.ShouldEqual(SecondPage);
+        It should_have_home_page_as_current_page = () => Subject.CurrentPage.ShouldEqual(Subject.StartPage);
         It should_enable_back = () => Subject.CanGoBack.ShouldBeTrue();
         It should_disable_forward = () => Subject.CanGoForward.ShouldBeFalse();
     }
@@ -109,10 +109,14 @@ namespace Poseidon.BackOffice.Core.Specs
 
 
     [Subject(typeof(NavigationService))]
-    internal class NavigationServiceSpecBase : WithSubject<NavigationService>
+    internal class NavigationServiceSpecBase : WithFakes
     {
+        Establish context = () => Subject = new NavigationService(null);
+
         protected static Uri FirstPage = new Uri("FirstPage", UriKind.Relative);
         protected static Uri SecondPage = new Uri("SecondPage", UriKind.Relative);
+
+        protected static NavigationService Subject;
 
         protected const string Module = "ModulesView";
     }

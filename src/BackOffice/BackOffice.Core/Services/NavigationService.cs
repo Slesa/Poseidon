@@ -34,7 +34,7 @@ namespace Poseidon.BackOffice.Core.Services
             }
             _stackInvolved = false;
 
-            _eventAggregator.GetEvent<CurrentModuleChangedEvent>().Publish(uri);
+            if (_eventAggregator!=null) _eventAggregator.GetEvent<CurrentModuleChangedEvent>().Publish(uri);
         }
 
         Uri _startPage;
@@ -46,8 +46,8 @@ namespace Poseidon.BackOffice.Core.Services
         public Uri GoHome()
         {
             var uri = StartPage;
-            _forwardStack.Push(CurrentPage);
-            _stackInvolved = true;
+            //_forwardStack.Push(CurrentPage);
+            //_stackInvolved = true;
             return uri;
         }
 
