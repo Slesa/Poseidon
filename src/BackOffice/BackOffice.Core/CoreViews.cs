@@ -1,6 +1,6 @@
-﻿namespace Poseidon.BackOffice.Core.Services
+﻿namespace Poseidon.BackOffice.Core
 {
-    internal static class Views
+    internal static class CoreViews
     {
         public static readonly string ModulesView = "ModulesView";
     }

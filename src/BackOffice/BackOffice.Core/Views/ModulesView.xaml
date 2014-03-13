@@ -31,7 +31,7 @@
             <HeaderedContentControl>
                 <HeaderedContentControl.Header>
                     <Controls:ModuleButton 
-                        Background="LightBlue"
+                        Background="{StaticResource Brush.Module.Header}"
                         Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeViewItem}}}"
                         Content="{Binding Title}"
                         Description="{Binding Description}"

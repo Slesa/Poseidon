@@ -5,4 +5,16 @@
     <Color x:Key="Color.Foreground">BlanchedAlmond</Color>
     <Color x:Key="Color.Background">#FF445566</Color>
 
+    <Color x:Key="Color.BreadCrumb.Foreground">Black</Color>
+    <Color x:Key="Color.BreadCrumb.Inverted">White</Color>
+    <Color x:Key="Color.BreadCrumb.Background">Transparent</Color>
+    <Color x:Key="Color.BreadCrumb.Button">#FF445566</Color>
+    <Color x:Key="Color.BreadCrumb.Button.Pressed">White</Color>
+    <Color x:Key="Color.BreadCrumb.Button.Hover">LightBlue</Color>
+    
+    <Color x:Key="Color.Navigation.Button">DarkCyan</Color>
+    <Color x:Key="Color.Navigation.Button.Pressed">DarkCyan</Color>
+
+    <Color x:Key="Color.Module.Header">LightBlue</Color>
+
 </ResourceDictionary>

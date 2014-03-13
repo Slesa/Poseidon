@@ -38,7 +38,7 @@ namespace Poseidon.BackOffice.Core.Services
         }
 
         Uri _startPage;
-        public Uri StartPage { get { return _startPage ?? (_startPage = new Uri(Views.ModulesView, UriKind.Relative)); } }
+        public Uri StartPage { get { return _startPage ?? (_startPage = new Uri(CoreViews.ModulesView, UriKind.Relative)); } }
 
         Uri _currentPage;
         public Uri CurrentPage { get { return _currentPage ?? StartPage; } internal set { _currentPage = value; } }

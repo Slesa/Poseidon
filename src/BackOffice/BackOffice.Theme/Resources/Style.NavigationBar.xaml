@@ -33,7 +33,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="Aqua"></Setter>
+                            <Setter Property="Background" Value="{StaticResource Brush.Navigation.Button.Pressed}"></Setter>
                             <Setter Property="UIElement.Effect">
                                 <Setter.Value>
                                     <DropShadowEffect BlurRadius="20" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="5"/>
@@ -49,15 +49,6 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.50"></Setter>
-                            <!--<Setter Property="UIElement.Effect">
-                                <Setter.Value>
-                                    <cp:GrayscaleEffect />
-                                </Setter.Value>
-                            </Setter>-->
-
-                            <!--<Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -79,26 +70,46 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
 
-    <Style x:Key="Style.Navigation.BreadCrumb.Button" TargetType="Button">
-        <Setter Property="Background" Value="Transparent"/>
-        <!--<Setter Property="Co"></Setter>-->
+    <Style x:Key="Style.Navigation.BreadCrumb.Button" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource Brush.BreadCrumb.Background}"/>
+        <Setter Property="Foreground" Value="{StaticResource Brush.BreadCrumb.Foreground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="Border" Margin="4" BorderBrush="{StaticResource Brush.BreadCrumb.Button}" Height="24" CornerRadius="4" BorderThickness="2"/>
+                        <TextBlock Margin="8" Text="{TemplateBinding Content}" VerticalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource Brush.BreadCrumb.Button.Pressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Brush.BreadCrumb.Button.Hover}" TargetName="Border"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.50"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     
     <DataTemplate x:Key="Style.Navigation.BreadCrumb.Item" DataType="ListBoxItem">
         <Button Content="{Binding Title}" Style="{StaticResource Style.Navigation.BreadCrumb.Button}"
-                Command="{Binding SelectedCommand}"/>
+                Command="{Binding SelectedCommand}" ToolTip="{Binding ToolTip}"/>
     </DataTemplate>
     
     <Style x:Key="Style.Navigation.BreadCrumb" TargetType="{x:Type ListBox}">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="1"/>
         <Setter Property="ItemTemplate" Value="{StaticResource Style.Navigation.BreadCrumb.Item}" />
-        <Setter Property="ItemsPanel" Value="{StaticResource Style.Navigation.BreadCrumb.Panel}"/>
         <Setter Property="SelectionMode" Value="Single"/>
         <Setter Property="ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" />
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
                 </ItemsPanelTemplate>
             </Setter.Value>
         </Setter>

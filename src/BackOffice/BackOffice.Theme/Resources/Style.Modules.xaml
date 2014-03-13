@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common">
 
-  <Style TargetType="{x:Type Controls:ModuleButton}">
+    <Style TargetType="{x:Type Controls:ModuleButton}">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="BorderBrush" Value="{x:Null}"/>
     <Setter Property="BorderThickness" Value="0"/>

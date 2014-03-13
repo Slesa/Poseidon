@@ -12,7 +12,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
     {
         public ModulesViewModel(IUnityContainer container, IRegionManager regionManager)
         {
-            var modules = container.ResolveAll<IOfficeModule>();
+            var modules = container.ResolveAll<IOfficeModule>().ToArray();
             Modules = modules.Where(x=>x.ParentType==null).OrderBy(x=>x.Priority).Select(x => new OfficeModuleViewModel(x, modules, regionManager));
         }
 

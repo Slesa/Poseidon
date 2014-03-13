@@ -6,6 +6,7 @@ using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Common.ViewModels;
+using Poseidon.BackOffice.Core.Resources;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
@@ -22,6 +23,8 @@ namespace Poseidon.BackOffice.Core.ViewModels
             eventAggregator.GetEvent<CurrentModuleChangedEvent>().Subscribe(UpdateBreadCrumbList);
             AvailableModules = modules;
             _homePage = CreateHomePage();
+
+            UpdateBreadCrumbList(null);
         }
 
         IEnumerable<ModuleViewModel> _currentModules;
@@ -37,16 +40,19 @@ namespace Poseidon.BackOffice.Core.ViewModels
 
         void UpdateBreadCrumbList(Uri modulePath)
         {
-            var viewName = modulePath.OriginalString;
-            var activeModule = AvailableModules.FirstOrDefault(m => m.ViewName == viewName);
-
             var currentModules = new List<IOfficeModule>();
-            while (activeModule != null)
+            if (modulePath != null)
             {
-                currentModules.Add(activeModule);
-                var parentType = activeModule.ParentType;
-                if (parentType == null) break;
-                activeModule = AvailableModules.FirstOrDefault(m => m.GetType() == parentType);
+                var viewName = modulePath.OriginalString;
+                var activeModule = AvailableModules.FirstOrDefault(m => m.ViewName == viewName);
+
+                while (activeModule != null)
+                {
+                    currentModules.Add(activeModule);
+                    var parentType = activeModule.ParentType;
+                    if (parentType == null) break;
+                    activeModule = AvailableModules.FirstOrDefault(m => m.GetType() == parentType);
+                }
             }
             currentModules.Add(_homePage);
             currentModules.Reverse();
@@ -57,8 +63,10 @@ namespace Poseidon.BackOffice.Core.ViewModels
         {
             return new OfficeModule
                 {
-                    Title = "Home",
-                    Description = "Go directly to the start page",
+                    Title = Strings.CoreModule_Title,
+                    Description = Strings.CoreModule_Description,
+                    ToolTip = Strings.CoreModule_Tooltip,
+                    ViewName = CoreViews.ModulesView,
                 };
         }
     }
