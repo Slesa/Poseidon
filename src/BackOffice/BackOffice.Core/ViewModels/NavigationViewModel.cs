@@ -34,7 +34,12 @@ namespace Poseidon.BackOffice.Core.ViewModels
             ((DelegateCommand)OnForwardCommand).RaiseCanExecuteChanged();
         }
 
-        public string SearchText { get; set; }
+        string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set { _searchText = value; }
+        }
 
         #region Commands
 
