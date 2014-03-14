@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
@@ -9,11 +11,13 @@ namespace Poseidon.BackOffice.Core.ViewModels
 {
     public class NavigationViewModel
     {
+        readonly IEventAggregator _eventAggregator;
         readonly IRegionManager _regionManager;
         readonly INavigationService _navigationService;
 
-        public NavigationViewModel(IRegionManager regionManager, INavigationService navigationService)
+        public NavigationViewModel(IEventAggregator eventAggregator, IRegionManager regionManager, INavigationService navigationService)
         {
+            _eventAggregator = eventAggregator;
             _regionManager = regionManager;
             _navigationService = navigationService;
 
@@ -21,28 +25,39 @@ namespace Poseidon.BackOffice.Core.ViewModels
             var modules = _regionManager.Regions[Regions.TagModulesRegion];
             modules.NavigationService.Navigated += OnNavigated;
 
-            OnHomeCommand = new DelegateCommand(GoHome, CanGoHome);
+            //OnHomeCommand = new DelegateCommand(GoHome, CanGoHome);
             OnBackCommand = new DelegateCommand(GoBack, CanGoBack);
             OnForwardCommand = new DelegateCommand(GoForward, CanGoForward);
-        }
 
-        void OnNavigated(object sender, RegionNavigationEventArgs e)
-        {
-            _navigationService.ReportNavigation(e.Uri);
-            ((DelegateCommand)OnHomeCommand).RaiseCanExecuteChanged();
-            ((DelegateCommand)OnBackCommand).RaiseCanExecuteChanged();
-            ((DelegateCommand)OnForwardCommand).RaiseCanExecuteChanged();
         }
 
         string _searchText;
         public string SearchText
         {
             get { return _searchText; }
-            set { _searchText = value; }
+            set
+            {
+                _searchText = value;
+                _eventAggregator.GetEvent<CurrentSearchTextChangedEvent>().Publish(_searchText.Split(' '));
+/*
+                var filterProcessor = _regionManager.Regions[Regions.TagModulesRegion].ActiveViews.FirstOrDefault() as IProcessFiltering;
+                if(filterProcessor!=null) filterProcessor.SearchTextChanged(_searchText);
+*/
+            }
+        }
+
+        
+        void OnNavigated(object sender, RegionNavigationEventArgs e)
+        {
+            _navigationService.ReportNavigation(e.Uri);
+            //((DelegateCommand)OnHomeCommand).RaiseCanExecuteChanged();
+            ((DelegateCommand)OnBackCommand).RaiseCanExecuteChanged();
+            ((DelegateCommand)OnForwardCommand).RaiseCanExecuteChanged();
         }
 
         #region Commands
 
+/*
         public ICommand OnHomeCommand { get; private set; }
 
         void GoHome()
@@ -56,6 +71,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
         {
             return _navigationService.CanGoHome;
         }
+*/
 
         public ICommand OnForwardCommand { get; private set; }
 

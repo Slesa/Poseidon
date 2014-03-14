@@ -71,10 +71,7 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Contracts\IModulesViewModel.cs" />
     <Compile Include="Contracts\INavigationService.cs" />
-    <Compile Include="Contracts\INavigationViewModel.cs" />
-    <Compile Include="Contracts\IStatusBarViewModel.cs" />
     <Compile Include="CoreModule.cs" />
     <Compile Include="DesignTime\DesignTimeModulesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeNavigationViewModel.cs" />

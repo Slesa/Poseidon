@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Common.ViewModels;
-using Poseidon.BackOffice.Core.Contracts;
 using Poseidon.BackOffice.Core.ViewModels;
 
 namespace Poseidon.BackOffice.Core.DesignTime
 {
-    public class DesignTimeModulesViewModel : IModulesViewModel
+    public class DesignTimeModulesViewModel
     {
         IEnumerable<ModuleViewModel> _modules;
 
-        public IEnumerable<ModuleViewModel> Modules
+        public IEnumerable<ModuleViewModel> ModulesCollection
         {
             get { return _modules ?? (_modules = CreateModules()); }
         }

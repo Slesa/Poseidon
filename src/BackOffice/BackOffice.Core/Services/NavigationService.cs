@@ -33,7 +33,7 @@ namespace Poseidon.BackOffice.Core.Services
             _inBackwardMode = false;
             _inForwardMode = false;
 
-            if (_eventAggregator!=null) _eventAggregator.GetEvent<CurrentModuleChangedEvent>().Publish(uri);
+            if (_eventAggregator!=null) _eventAggregator.GetEvent<CurrentModuleUriChangedEvent>().Publish(uri);
         }
 
         Uri _startPage;

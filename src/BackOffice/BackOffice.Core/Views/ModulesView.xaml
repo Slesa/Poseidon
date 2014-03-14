@@ -6,8 +6,6 @@
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:local="clr-namespace:Poseidon.BackOffice.Core.ViewModels"
-             xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:viewModels="clr-namespace:Poseidon.BackOffice.Common.ViewModels;assembly=Poseidon.BackOffice.Common"
              xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
@@ -17,16 +15,6 @@
 
         <core:ModulesViewModelLocator x:Key="ModulesViewModel" />
 
-        <CollectionViewSource x:Key="ModulesCollection" Source="{Binding Modules}">
-            <CollectionViewSource.SortDescriptions>
-                <cm:SortDescription PropertyName="Priority" />
-            </CollectionViewSource.SortDescriptions>
-            <CollectionViewSource.GroupDescriptions>
-                <PropertyGroupDescription PropertyName="Parent.Title"></PropertyGroupDescription>
-            </CollectionViewSource.GroupDescriptions>
-        </CollectionViewSource>
-
-        
         <HierarchicalDataTemplate DataType="{x:Type local:OfficeModuleViewModel}">
             <HeaderedContentControl>
                 <HeaderedContentControl.Header>
@@ -78,7 +66,7 @@
     
     <Grid>
         <!--<ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />-->
-        <TreeView ItemsSource="{Binding Modules}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
+        <TreeView ItemsSource="{Binding ModulesCollection}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
     </Grid>
     
 </UserControl>

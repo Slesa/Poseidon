@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Poseidon.BackOffice.Core.Contracts;
 
 namespace Poseidon.BackOffice.Core.DesignTime
 {
-    public class DesignTimeStatusBarViewModel : IStatusBarViewModel
+    public class DesignTimeStatusBarViewModel
     {
         public string Message { get { return "This is a message"; } }
 

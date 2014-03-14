@@ -1,11 +1,10 @@
 ﻿using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common;
-using Poseidon.BackOffice.Core.Contracts;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class StatusBarViewModel : NotificationObject, IStatusBarViewModel
+    public class StatusBarViewModel : NotificationObject
     {
         public StatusBarViewModel(IEventAggregator eventAggregator)
         {

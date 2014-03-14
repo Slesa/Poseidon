@@ -20,7 +20,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
         public BreadCrumbViewModel(IEventAggregator eventAggregator, IRegionManager regionManager, IOfficeModule[] modules)
         {
             _regionManager = regionManager;
-            eventAggregator.GetEvent<CurrentModuleChangedEvent>().Subscribe(UpdateBreadCrumbList);
+            eventAggregator.GetEvent<CurrentModuleUriChangedEvent>().Subscribe(UpdateBreadCrumbList);
             AvailableModules = modules;
             _homePage = CreateHomePage();
 
