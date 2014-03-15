@@ -68,6 +68,7 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Actions\SetFocusAction.cs" />
+    <Compile Include="Contracts\IProcessFiltering.cs" />
     <Compile Include="Controls\ModuleButton.cs" />
     <Compile Include="Controls\ModuleInfoArea.cs" />
     <Compile Include="Controls\ModuleListControl.cs" />

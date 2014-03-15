@@ -2,22 +2,20 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Data;
-using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Common.Contracts;
 using Poseidon.BackOffice.Common.ViewModels;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class ModulesViewModel
+    public class ModulesViewModel : IProcessFiltering
     {
-        public ModulesViewModel(IEventAggregator eventAggregator, IUnityContainer container, IRegionManager regionManager)
+        public ModulesViewModel(IUnityContainer container, IRegionManager regionManager)
         {
             var modules = container.ResolveAll<IOfficeModule>().ToArray();
             Modules = modules.Where(x=>x.ParentType==null).OrderBy(x=>x.Priority).Select(x => new OfficeModuleViewModel(x, modules, regionManager));
-
-            eventAggregator.GetEvent<CurrentSearchTextChangedEvent>().Subscribe(OnSearchTextChanged);
         }
 
         IEnumerable<ModuleViewModel> Modules { get; set; }
@@ -52,9 +50,9 @@ namespace Poseidon.BackOffice.Core.ViewModels
         }
 
         IList<string> _searchList;
-        void OnSearchTextChanged(IList<string> searchList)
+        public void SearchTermsChanged(IList<string> searchList)
         {
-            _searchList = searchList.Select(x=>x.ToLower()).ToList();
+            _searchList = searchList.Select(x => x.ToLower()).ToList();
             ModulesCollection.Refresh();
         }
     }

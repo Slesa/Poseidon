@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Linq;
+using System.Windows.Controls;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
+using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Common.Contracts;
 using Poseidon.BackOffice.Core.Contracts;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class NavigationViewModel
+    public class NavigationViewModel : NotificationObject
     {
         readonly IEventAggregator _eventAggregator;
         readonly IRegionManager _regionManager;
@@ -38,17 +41,23 @@ namespace Poseidon.BackOffice.Core.ViewModels
             set
             {
                 _searchText = value;
-                _eventAggregator.GetEvent<CurrentSearchTextChangedEvent>().Publish(_searchText.Split(' '));
-/*
-                var filterProcessor = _regionManager.Regions[Regions.TagModulesRegion].ActiveViews.FirstOrDefault() as IProcessFiltering;
-                if(filterProcessor!=null) filterProcessor.SearchTextChanged(_searchText);
-*/
+                RaisePropertyChanged(()=>SearchText);
+
+                var searchTerms = _searchText.Split(' ');
+
+                var view = _regionManager.Regions[Regions.TagModulesRegion].ActiveViews.FirstOrDefault() as ContentControl;
+                if (view == null) return;
+                var filterProcessor = view.DataContext as IProcessFiltering;
+                if (filterProcessor == null) return;
+                filterProcessor.SearchTermsChanged(searchTerms);
             }
         }
 
         
         void OnNavigated(object sender, RegionNavigationEventArgs e)
         {
+            SearchText = string.Empty;
+
             _navigationService.ReportNavigation(e.Uri);
             //((DelegateCommand)OnHomeCommand).RaiseCanExecuteChanged();
             ((DelegateCommand)OnBackCommand).RaiseCanExecuteChanged();
