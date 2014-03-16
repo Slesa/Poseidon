@@ -15,6 +15,7 @@
     <UserControl.Resources>
         <core:NavigationViewModelLocator x:Key="NavigationViewModel" />
         <core:BreadCrumbViewModelLocator x:Key="BreadCrumbViewModel" />
+        <design:DesignTimeBreadCrumbViewModel x:Key="DesignTimeBreadCrumbViewModel" />
     </UserControl.Resources>
 
     <UserControl.DataContext>
@@ -49,7 +50,8 @@
             <Button x:Name="GoBack" Grid.Column="1" Grid.Row="1" Command="{Binding OnBackCommand}" Style="{DynamicResource Style.Navigation.Buttons.Back}"/>
             <Button x:Name="GoForward" Grid.Column="2" Grid.Row="1" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}"/>
 
-            <ListBox x:Name="Breadcrumb" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Margin="1"
+            <ListBox x:Name="Breadcrumb" Grid.Column="3" Grid.Row="1" VerticalAlignment="Stretch" Margin="1" 
+                     d:DataContext="{StaticResource DesignTimeBreadCrumbViewModel}"
                      ItemsSource="{Binding CurrentModules}"
                      Style="{DynamicResource Style.Navigation.BreadCrumb}">
                 <ListBox.DataContext>
