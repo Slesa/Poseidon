@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5EC3ACC-137F-44B4-8AA0-03B842C680FB}</ProjectGuid>
+    <ProjectGuid>{B35541F8-0A6A-4900-A28C-1F1533FB8A9A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FamilyApp</RootNamespace>
-    <AssemblyName>FamilyApp</AssemblyName>
+    <RootNamespace>MyPeg</RootNamespace>
+    <AssemblyName>MyPeg</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,10 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Axiom.Runtime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5b0e82bb6cea5d26, processorArchitecture=MSIL" />
-    <Reference Include="family, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\family.dll</HintPath>
-    </Reference>
+    <Reference Include="peg" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,13 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="family.pro" />
+    <None Include="peg.pro" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>copy $(ProjectDir)..\..\tools\*.dll $(TargetDir)
-$(ProjectDir)..\..\tools\prologc /target:dll $(ProjectDir)family.pro
-copy $(ProjectDir)family.dll $(TargetDir)</PreBuildEvent>
+    <PreBuildEvent>copy $(ProjectDir)..\tools\*.dll $(TargetDir)
+$(ProjectDir)..\tools\prologc /target:dll $(ProjectDir)peg.pro
+copy $(ProjectDir)peg.dll $(TargetDir)</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
