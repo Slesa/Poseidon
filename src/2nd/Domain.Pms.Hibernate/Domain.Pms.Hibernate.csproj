@@ -70,21 +70,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BackOffice\Domain.Common\Domain.Common.csproj">
+      <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
+      <Name>Domain.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
       <Project>{14FDBDEF-281A-4CB0-986D-E826145F3839}</Project>
       <Name>Common.Persistence</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
-      <Project>{B0DF0642-43E5-4608-A1C2-87A7092477FF}</Project>
-      <Name>Domain.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain.Pms.Model\Domain.Pms.Model.csproj">
       <Project>{43b0af8e-ed61-4d64-b227-83cf3f9a0aba}</Project>
       <Name>Domain.Pms.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Ums.Model\Domain.Ums.Model.csproj">
-      <Project>{BFAF0FB8-E823-4BB8-B8EA-F774D5742FEB}</Project>
-      <Name>Domain.Ums.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

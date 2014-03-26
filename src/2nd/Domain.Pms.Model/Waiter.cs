@@ -1,5 +1,5 @@
 ﻿using Poseidon.Domain.Common;
-using Poseidon.Domain.Ums.Model;
+using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.Domain.Pms.Model
 {

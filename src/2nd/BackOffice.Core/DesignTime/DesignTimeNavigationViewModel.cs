@@ -1,4 +1,5 @@
-﻿using Poseidon.BackOffice.Core.Contracts;
+﻿// ok
+using Poseidon.BackOffice.Core.Contracts;
 
 namespace Poseidon.BackOffice.Core.DesignTime
 {

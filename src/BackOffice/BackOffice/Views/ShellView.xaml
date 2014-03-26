@@ -3,13 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
-        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-        xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
-        xmlns:views="clr-namespace:Poseidon.BackOffice.Core.Views;assembly=Poseidon.BackOffice.Core"
+        xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common"
+        xmlns:regions="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+        xmlns:viewModels="clr-namespace:Poseidon.BackOffice.ViewModels"
         mc:Ignorable="d" 
+        Title="Poseidon Backoffice"
+        Icon="pack://application:,,,/Resources/BackOffice.jpg"
         Style="{DynamicResource Style.Shell}"
-        d:DesignHeight="300" d:DesignWidth="300">
+        MinWidth="800"
+        MinHeight="600"
+        d:DesignHeight="300" d:DesignWidth="800">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -19,19 +22,18 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <i:Interaction.Triggers>
-        <ei:KeyTrigger Key="X" Modifiers="Control">
-            <cal:ActionMessage MethodName="DoQuit" />
-        </ei:KeyTrigger>
-    </i:Interaction.Triggers>
+    <Window.DataContext>
+        <viewModels:ShellViewModel />
+    </Window.DataContext>
+
+    <Window.InputBindings>
+        <KeyBinding Key="X" Modifiers="Control" Command="{Binding OnQuitCommand}"/>
+    </Window.InputBindings>
 
     <DockPanel Style="{DynamicResource Style.Shell.DockPanel}" LastChildFill="True">
-        <views:StatusBarView DockPanel.Dock="Bottom" />
-        <views:NavigationView DockPanel.Dock="Top" />
-        <ContentControl x:Name="ActiveItem" />
-<!--
-        <views:ModulesView />
--->
+        <ContentControl DockPanel.Dock="Top" regions:RegionManager.RegionName="{x:Static common:Regions.TagNavigationRegion}" />
+        <ContentControl DockPanel.Dock="Bottom" regions:RegionManager.RegionName="{x:Static common:Regions.TagStatusBarRegion}" />
+        <ContentControl regions:RegionManager.RegionName="{x:Static common:Regions.TagModulesRegion}" />
     </DockPanel>
 
 </Window>

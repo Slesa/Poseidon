@@ -95,6 +95,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BackOffice\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{9f588452-447c-4efd-8fb2-4817cc0043c8}</Project>
+      <Name>BackOffice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BackOffice\Common.Wpf\Common.Wpf.csproj">
+      <Project>{eab8e2bf-b1a4-400d-9db0-b90ea8edf860}</Project>
+      <Name>Common.Wpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\BackOffice\Domain.Common\Domain.Common.csproj">
       <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
       <Name>Domain.Common</Name>
@@ -107,21 +115,13 @@
       <Project>{1476dce7-4aac-4dc9-bcb3-a4ae61012d33}</Project>
       <Name>Ums.Domain.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
-      <Project>{0c130849-a0f9-4974-b044-78e5e4dae78d}</Project>
-      <Name>BackOffice.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BackOffice.Core\BackOffice.Core.csproj">
-      <Project>{CFC26392-DF5F-4A9E-92DC-F109BEE1A32C}</Project>
+      <Project>{cfc26392-df5f-4a9e-92dc-f109bee1a32c}</Project>
       <Name>BackOffice.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
       <Project>{14fdbdef-281a-4cb0-986d-e826145f3839}</Project>
       <Name>Common.Persistence</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Common.Prism\Common.Prism.csproj">
-      <Project>{DAF28095-0D7E-4544-BA13-4719D839D03D}</Project>
-      <Name>Common.Prism</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Ums.Hibernate\Domain.Ums.Hibernate.csproj">
       <Project>{11c6f596-a4b7-49a7-8cca-b5b2091acd40}</Project>

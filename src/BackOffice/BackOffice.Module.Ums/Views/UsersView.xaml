@@ -6,6 +6,7 @@
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
+             xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -13,6 +14,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <ums:UsersViewModelLocator x:Key="UsersViewModel" />
@@ -34,9 +36,25 @@
         <design:DesignTimeUsersViewModel />
     </d:UserControl.DataContext>
 
-    <HeaderedContentControl Style="{StaticResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UsersView_Title}">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <DockPanel>
+            <Controls:ModuleInfoArea
+                Content="{x:Static res:Strings.UserModule}"
+                Description="{x:Static res:Strings.UserModule_Description}"
+                DockPanel.Dock="Top"
+                MaxWidth="200"
+                IconFile="{StaticResource Image.User}"
+                IconSize="48"
+                TitleFontSize="24"/>
+        </DockPanel>
 
-        <ListView ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}">
+        <ListView Grid.Column="1" ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
@@ -45,6 +63,6 @@
             </ListView.View>
         </ListView>
 
-    </HeaderedContentControl>
+    </Grid>
     
 </UserControl>

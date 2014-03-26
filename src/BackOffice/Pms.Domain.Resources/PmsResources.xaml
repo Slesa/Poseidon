@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <BitmapImage x:Key="Image.Discount" UriSource="Discount.png"/>
+    <BitmapImage x:Key="Image.Payform" UriSource="Payform.png"/>
+    <BitmapImage x:Key="Image.SalesFamilyGroup" UriSource="SalesFamilyGroup.png"/>
+    <BitmapImage x:Key="Image.SalesFamily" UriSource="SalesFamily.png"/>
+    <BitmapImage x:Key="Image.SalesItem" UriSource="SalesItem.png"/>
+    <BitmapImage x:Key="Image.Waiter" UriSource="Waiter.png"/>
+    <BitmapImage x:Key="Image.WaiterTeam" UriSource="WaiterTeam.png"/>
+    
+</ResourceDictionary>

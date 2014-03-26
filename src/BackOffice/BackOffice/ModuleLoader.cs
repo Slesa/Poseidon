@@ -3,37 +3,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using LightCore;
+using Microsoft.Practices.Prism.Modularity;
 using Poseidon.BackOffice.Common;
+using Poseidon.BackOffice.Core;
 
 namespace Poseidon.BackOffice
 {
-    public class ModuleLoader
+    public static class ModuleLoader
     {
-        readonly IContainerBuilder _builder;
-
-        public ModuleLoader(IContainerBuilder builder)
-        {
-            _builder = builder;
-        }
-
-        public void LoadModules()
+        public static IEnumerable<ModuleInfo> CollectModules()
         {
             var binPath = /*Path.Combine(System.*/AppDomain.CurrentDomain.BaseDirectory/*, "bin")*/;
             foreach (var dll in Directory.GetFiles(binPath, "*.Module.*.dll", SearchOption.AllDirectories))
             {
+                IEnumerable<Type> types = null;
                 try
                 {
                     var assembly = Assembly.LoadFile(dll);
-                    var types = assembly.GetLoadableTypes().Where(x => typeof(IRegisterModule).IsAssignableFrom(x));
-                    foreach(var type in types)
-                    {
-                        var instance = Activator.CreateInstance(type) as IRegisterModule;
-                        if(instance==null) continue;
-                        instance.Register(_builder);
-                    }
-                    //var assembly = Assembly.LoadFile(dll);
-                    //LoadAssembly(assembly);
+                    types = assembly.GetLoadableTypes().Where(x => typeof(IRegisterModule).IsAssignableFrom(x));
                 }
                 catch (FileLoadException ex)
                 {
@@ -43,7 +30,19 @@ namespace Poseidon.BackOffice
                 {
                     System.Diagnostics.Debug.WriteLine("ModuleLoader, bad image assembly: " + ex);
                 }
+                if (types == null) continue;
+                foreach (var type in types)
+                {
+                    var instance = Activator.CreateInstance(type) as IRegisterModule;
+                    if (instance == null) continue;
+                    yield return instance.GetModuleInfo();
+                }
+                //var assembly = Assembly.LoadFile(dll);
+                //LoadAssembly(assembly);
             }
+
+            var coreRegister = new RegisterCoreModule();
+            yield return coreRegister.GetModuleInfo();
         }
     }
 

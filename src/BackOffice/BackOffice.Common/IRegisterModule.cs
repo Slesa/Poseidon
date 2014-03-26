@@ -1,9 +1,9 @@
-﻿using LightCore;
+﻿using Microsoft.Practices.Prism.Modularity;
 
 namespace Poseidon.BackOffice.Common
 {
     public interface IRegisterModule
     {
-        void Register(IContainerBuilder builder);
+        ModuleInfo GetModuleInfo();
     }
 }

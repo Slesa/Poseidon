@@ -7,12 +7,15 @@ namespace Poseidon.BackOffice.Core.DesignTime
 {
     public class DesignTimeModulesViewModel : IModulesView
     {
-        class OfficeModule : IOfficeModule
+        class OfficeModule : OfficeModule
         {
             public string Title { get; private set; }
+            public string Description { get; private set; }
             public string ToolTip { get; private set; }
             public string IconFileName { get; private set; }
             public int Priority { get; private set; }
+            public IEnumerable<string> Keywords { get; private set; }
+            public IEnumerable<IOfficeModule> Children { get; private set; }
             public IOfficeModule Parent { get; private set; }
             public OfficeModule(int priority, string title, string toolTip, string icon, IOfficeModule parent=null)
             {

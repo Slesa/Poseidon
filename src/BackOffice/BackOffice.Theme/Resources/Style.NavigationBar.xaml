@@ -8,18 +8,21 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="Style.Navigation" TargetType="{x:Type ContentControl}">
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
 
     <Style x:Key="Style.Navigation.Group" TargetType="{x:Type Grid}">
-        <Setter Property="Height" Value="50"/>
+        <!--<Setter Property="Height" Value="50"/>-->
     </Style>
 
     <Style x:Key="Style.Navigation.Buttons" TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="{StaticResource Brush.Foreground}" />
-        <Setter Property="Margin" Value="5,5,10,5"/>
-        <Setter Property="MinWidth" Value="20" />
-        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="Margin" Value="1,1,2,1"/>
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -30,7 +33,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="Aqua"></Setter>
+                            <Setter Property="Background" Value="{StaticResource Brush.Navigation.Button.Pressed}"></Setter>
                             <Setter Property="UIElement.Effect">
                                 <Setter.Value>
                                     <DropShadowEffect BlurRadius="20" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="5"/>
@@ -46,20 +49,14 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.50"></Setter>
-                            <!--<Setter Property="UIElement.Effect">
-                                <Setter.Value>
-                                    <cp:GrayscaleEffect />
-                                </Setter.Value>
-                            </Setter>-->
-
-                            <!--<Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    <Style x:Key="Style.Navigation.Buttons.Home" BasedOn="{StaticResource Style.Navigation.Buttons}" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="{StaticResource Images.Home}" />
     </Style>
     <Style x:Key="Style.Navigation.Buttons.Back" BasedOn="{StaticResource Style.Navigation.Buttons}" TargetType="{x:Type Button}">
         <Setter Property="Content" Value="{StaticResource Images.Back}" />
@@ -73,7 +70,62 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
 
-    <Style x:Key="Style.Navigation.BreadCrumb" TargetType="{x:Type TextBox}">
+    <Style x:Key="Style.Navigation.BreadCrumb.Button" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource Brush.BreadCrumb.Background}"/>
+        <Setter Property="Foreground" Value="{StaticResource Brush.BreadCrumb.Foreground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="Border" Margin="4" BorderBrush="{StaticResource Brush.BreadCrumb.Button}" Height="24" CornerRadius="4" BorderThickness="2"/>
+                        <TextBlock Margin="8" Text="{TemplateBinding Content}" VerticalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource Brush.BreadCrumb.Button.Pressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Brush.BreadCrumb.Button.Hover}" TargetName="Border"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.50"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <DataTemplate x:Key="Style.Navigation.BreadCrumb.Item" DataType="ListBoxItem">
+        <Button Content="{Binding Title}" Style="{StaticResource Style.Navigation.BreadCrumb.Button}"
+                Command="{Binding SelectedCommand}" ToolTip="{Binding ToolTip}"/>
+    </DataTemplate>
+    
+    <Style x:Key="Style.Navigation.BreadCrumb" TargetType="{x:Type ListBox}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="1"/>
+        <Setter Property="ItemTemplate" Value="{StaticResource Style.Navigation.BreadCrumb.Item}" />
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+<!--
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <ItemsControl ItemTemplate="{StaticResource Style.Navigation.BreadCrumb.Item}">
+                        <ItemsControl.ItemsPanel>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsPresenter />
+                    </ItemsControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+-->
     </Style>
 
 </ResourceDictionary>

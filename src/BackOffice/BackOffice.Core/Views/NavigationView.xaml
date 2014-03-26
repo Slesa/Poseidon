@@ -3,57 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
-             xmlns:DesignTime="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:controls="clr-namespace:Poseidon.Common.Wpf.Services;assembly=Poseidon.Common.Wpf"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:actions="clr-namespace:Poseidon.BackOffice.Common.Actions;assembly=Poseidon.BackOffice.Common"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             Width="800" Height="200"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="150" d:DesignWidth="800">
 
     <UserControl.Resources>
         <core:NavigationViewModelLocator x:Key="NavigationViewModel" />
+        <core:BreadCrumbViewModelLocator x:Key="BreadCrumbViewModel" />
+        <design:DesignTimeBreadCrumbViewModel x:Key="DesignTimeBreadCrumbViewModel" />
     </UserControl.Resources>
 
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource NavigationViewModel}" />
     </UserControl.DataContext>
     <d:UserControl.DataContext>
-        <DesignTime:DesignTimeNavigationViewModel />
+        <design:DesignTimeNavigationViewModel />
     </d:UserControl.DataContext>
-
-    <ContentControl Style="{DynamicResource Style.Navigation}" BorderBrush="Aquamarine" BorderThickness="3">
+        
+    <ContentControl Style="{DynamicResource Style.Navigation}" BorderBrush="Aquamarine" BorderThickness="3" >
         
         <Grid Style="{DynamicResource Style.Navigation.Group}">
             
+<!--
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="48" />
+            </Grid.RowDefinitions>
+-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
+            <!--<Image Grid.Row="0" Grid.RowSpan="2" Source="../Resources/BackOffice.jpg" VerticalAlignment="Bottom" Width="128" Height="128" Stretch="Fill" Margin="10" />-->
             
-            <Button x:Name="GoBack" Grid.Column="0" Style="{DynamicResource Style.Navigation.Buttons.Back}">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <cal:ActionMessage MethodName="GoBack" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
+            <!--<TextBlock Grid.Column="1" Grid.ColumnSpan="5" Foreground="Bisque" HorizontalAlignment="Center" Text="Poseidon BackOffice" FontSize="48" VerticalAlignment="Center" />-->
             
-            <Button x:Name="GoForward" Grid.Column="1" Style="{DynamicResource Style.Navigation.Buttons.Forward}">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <cal:ActionMessage MethodName="GoForward" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
-            
-            <TextBox x:Name="Breadcrumb" Grid.Column="2" Style="{DynamicResource Style.Navigation.BreadCrumb}" />
+            <Button x:Name="GoBack" Grid.Column="1" Grid.Row="1" Command="{Binding OnBackCommand}" Style="{DynamicResource Style.Navigation.Buttons.Back}"/>
+            <Button x:Name="GoForward" Grid.Column="2" Grid.Row="1" Command="{Binding OnForwardCommand}" Style="{DynamicResource Style.Navigation.Buttons.Forward}"/>
+
+            <ListBox x:Name="Breadcrumb" Grid.Column="3" Grid.Row="1" VerticalAlignment="Stretch" Margin="1" 
+                     d:DataContext="{StaticResource DesignTimeBreadCrumbViewModel}"
+                     ItemsSource="{Binding CurrentModules}"
+                     Style="{DynamicResource Style.Navigation.BreadCrumb}">
+                <ListBox.DataContext>
+                    <Binding Path="ViewModel" Source="{StaticResource BreadCrumbViewModel}" />
+                </ListBox.DataContext>
+            </ListBox>
 
             <!--<AdornerDecorator>-->
-            <TextBox x:Name="Search" Grid.Column="3" Text="{Binding SearchText}" Style="{DynamicResource Style.Navigation.TextBox}">
+            <TextBox x:Name="Search" Grid.Column="4" Grid.Row="1" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500}" Style="{DynamicResource Style.Navigation.TextBox}">
                 <controls:WatermarkService.Watermark>
                     <TextBlock Text="Enter search term" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </controls:WatermarkService.Watermark>
@@ -62,5 +69,12 @@
             
         </Grid>
     </ContentControl>
-    
+
+    <i:Interaction.Triggers>
+        <ei:KeyTrigger Key="F" Modifiers="Control">
+            <actions:SetFocusAction Target="{Binding ElementName=Search}"/>
+        </ei:KeyTrigger>
+                       
+    </i:Interaction.Triggers>
+
 </UserControl>

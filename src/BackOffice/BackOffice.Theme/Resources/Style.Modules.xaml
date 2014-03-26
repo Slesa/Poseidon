@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common">
+
+    <Style TargetType="{x:Type Controls:ModuleButton}">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderBrush" Value="{x:Null}"/>
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Controls:ModuleButton">
+          <StackPanel Orientation="Vertical" Margin="3">
+            
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+
+              <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{TemplateBinding Background}" CornerRadius="5" />
+              <Image Margin="2"  Grid.RowSpan="2" Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}" Source="{TemplateBinding IconFile}"/>
+              <TextBlock Margin="2" Grid.Column="1" Text="{TemplateBinding Content}" FontWeight="{TemplateBinding TitleFontWeight}" FontSize="{TemplateBinding TitleFontSize}" />
+              <TextBlock Grid.Column="1" Grid.Row="1" Margin="2"  Text="{TemplateBinding Description}"/>
+            </Grid>
+            
+          </StackPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+    
+  <Style TargetType="{x:Type Controls:ModuleInfoArea}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Controls:ModuleInfoArea">
+          <StackPanel Margin="20" Orientation="Vertical">
+            <Image Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}" Source="{TemplateBinding IconFile}" />
+            <TextBlock HorizontalAlignment="Center" FontSize="{TemplateBinding TitleFontSize}" Text="{TemplateBinding Content}" />
+            <TextBlock Text="{TemplateBinding Description}" TextWrapping="Wrap" />
+          </StackPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  
+</ResourceDictionary>

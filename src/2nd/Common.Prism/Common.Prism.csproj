@@ -70,22 +70,13 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Adorners\WatermarkAdorner.cs" />
-    <Compile Include="Effects\GrayScaleEffect.cs" />
-    <Compile Include="Events.cs" />
     <Compile Include="Extensions\GroupStyleExtension.cs" />
-    <Compile Include="Services\WatermarkService.cs" />
-    <Compile Include="Log4NetLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Effects\Shaders\Grayscale.ps" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Behaviors\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

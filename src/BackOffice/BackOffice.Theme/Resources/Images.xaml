@@ -3,5 +3,6 @@
 
     <Image x:Key="Images.Back" Source="Images/back.png" />
     <Image x:Key="Images.Forward" Source="Images/forward.png" />
+    <Image x:Key="Images.Home" Source="Images/home.png" />
 
 </ResourceDictionary>

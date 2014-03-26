@@ -1,4 +1,5 @@
-﻿namespace Poseidon.BackOffice.Core.Contracts
+﻿// ok
+namespace Poseidon.BackOffice.Core.Contracts
 {
     public interface IStatusBarViewModel
     {

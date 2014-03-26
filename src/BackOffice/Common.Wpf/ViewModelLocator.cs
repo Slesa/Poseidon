@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Windows;
-using LightCore;
 using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
 
 namespace Poseidon.Common.Wpf
 {
     public class ViewModelLocator<TViewModel> where TViewModel : class
     {
-        readonly Lazy<IContainer> _container;
+        readonly Lazy<IUnityContainer> _container;
         readonly bool _inDesignTime = System.ComponentModel.DesignerProperties.GetIsInDesignMode(new DependencyObject());
 
         public ViewModelLocator()
         {
             if (!_inDesignTime)
             {
-                _container = new Lazy<IContainer>(() => ServiceLocator.Current != null ? ServiceLocator.Current.GetInstance<IContainer>() : null);
+                _container = new Lazy<IUnityContainer>(() => ServiceLocator.Current != null ? ServiceLocator.Current.GetInstance<IUnityContainer>() : null);
             }
         }
 

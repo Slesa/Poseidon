@@ -1,7 +1,8 @@
-﻿using Microsoft.Practices.Prism.Events;
+﻿// ok
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.ViewModel;
+using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.Contracts;
-using Poseidon.Common.Prism;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
@@ -9,8 +10,8 @@ namespace Poseidon.BackOffice.Core.ViewModels
     {
         public StatusBarViewModel(IEventAggregator eventAggregator)
         {
-            eventAggregator.GetEvent<ClearMessageEvent>().Subscribe(_ => Message = null);
-            eventAggregator.GetEvent<ShowMessageEvent>().Subscribe(msg => Message = msg);
+            eventAggregator.GetEvent<StatusBarClearEvent>().Subscribe(_ => Message = null);
+            eventAggregator.GetEvent<StatusBarMessageEvent>().Subscribe(msg => Message = msg);
         }
 
         string _message;

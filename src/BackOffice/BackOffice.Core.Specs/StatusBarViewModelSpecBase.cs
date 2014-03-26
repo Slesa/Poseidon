@@ -1,7 +1,7 @@
-﻿using Caliburn.Micro;
-using Machine.Fakes;
+﻿using Machine.Fakes;
 using Machine.Specifications;
-using Poseidon.BackOffice.Core.Events;
+using Microsoft.Practices.Prism.Events;
+using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.ViewModels;
 
 namespace Poseidon.BackOffice.Core.Specs
@@ -45,7 +45,7 @@ namespace Poseidon.BackOffice.Core.Specs
                     };
             };
 
-        Because of = () => EventAggregator.Publish(new StatusBarMessageEvent(Message));
+        Because of = () => EventAggregator.GetEvent<StatusBarMessageEvent>().Publish(Message);
 
         It should_raise_property_changed_event = () => _propertyName.ShouldEqual("Message");
         It should_change_message = () => Subject.Message.ShouldEqual(Message);
@@ -63,7 +63,7 @@ namespace Poseidon.BackOffice.Core.Specs
                 Subject.Message = NewMessage;
             };
 
-        Because of = () => EventAggregator.Publish(new StatusBarClearEvent());
+        Because of = () => EventAggregator.GetEvent<StatusBarClearEvent>().Publish(0);
 
         It should_reset_message = () => Subject.Message.ShouldBeEmpty();
 

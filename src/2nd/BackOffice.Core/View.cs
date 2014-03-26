@@ -1,4 +1,5 @@
-﻿namespace Poseidon.BackOffice.Core
+﻿// ok
+namespace Poseidon.BackOffice.Core
 {
     public class View
     {

@@ -27,4 +27,16 @@
         <GradientStop Color="{StaticResource Color.Background}" Offset="1" />
     </LinearGradientBrush>
 
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Foreground"  Color="{StaticResource Color.BreadCrumb.Foreground}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Inverted"  Color="{StaticResource Color.BreadCrumb.Inverted}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Background"  Color="{StaticResource Color.BreadCrumb.Background}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Button"  Color="{StaticResource Color.BreadCrumb.Button}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Button.Pressed"  Color="{StaticResource Color.BreadCrumb.Button.Pressed}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Button.Hover"  Color="{StaticResource Color.BreadCrumb.Button.Hover}" />
+    
+    <SolidColorBrush x:Key="Brush.Navigation.Button"  Color="{StaticResource Color.Navigation.Button}" />
+    <SolidColorBrush x:Key="Brush.Navigation.Button.Pressed"  Color="{StaticResource Color.Navigation.Button.Pressed}" />
+    
+    <SolidColorBrush x:Key="Brush.Module.Header"  Color="{StaticResource Color.Module.Header}" />
+
 </ResourceDictionary>
