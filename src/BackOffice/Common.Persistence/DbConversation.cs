@@ -1,8 +1,8 @@
 ﻿using System;
-using Common.Persistence.Contracts;
 using NHibernate;
+using Poseidon.Common.Persistence.Contracts;
 
-namespace Common.Persistence
+namespace Poseidon.Common.Persistence
 {
     public class DbConversation : IDbConversation
     {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
-using Common.Persistence.Contracts;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Utils;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
+using Poseidon.Common.Persistence.Contracts;
 
-namespace Common.Persistence
+namespace Poseidon.Common.Persistence
 {
     public class HibernateSessionFactory : IHibernateSessionFactory
     {

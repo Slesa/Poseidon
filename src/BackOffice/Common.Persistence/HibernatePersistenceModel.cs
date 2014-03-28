@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Common.Persistence.Contracts;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Utils;
 using Microsoft.Practices.Unity;
+using Poseidon.Common.Persistence.Contracts;
 
-namespace Common.Persistence
+namespace Poseidon.Common.Persistence
 {
     public class HibernatePersistenceModel : IHibernatePersistenceModel
     {

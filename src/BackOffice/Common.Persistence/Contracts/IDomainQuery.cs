@@ -1,6 +1,6 @@
 ﻿using NHibernate;
 
-namespace Common.Persistence.Contracts
+namespace Poseidon.Common.Persistence.Contracts
 {
     public interface IDomainQuery<out TResult>
     {

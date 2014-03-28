@@ -61,11 +61,29 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string Heading_Data {
+            get {
+                return ResourceManager.GetString("Heading_Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Heading_Name {
             get {
                 return ResourceManager.GetString("Heading_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Token type.
+        /// </summary>
+        public static string Heading_TokenType {
+            get {
+                return ResourceManager.GetString("Heading_TokenType", resourceCulture);
             }
         }
         

@@ -1,9 +1,9 @@
 ﻿using System;
-using Common.Persistence.Contracts;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Conventions.Helpers;
+using Poseidon.Common.Persistence.Contracts;
 
-namespace Common.Persistence
+namespace Poseidon.Common.Persistence
 {
     public class FluentMappingConventions : IMappingContributor
     {

@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hibernate.Specs.Common", "H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hibernate.Specs", "Hibernate.Specs\Hibernate.Specs.csproj", "{1A231A6C-8A6D-4759-9EF0-C372B6672FB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ums.Domain.Hibernate", "Ums.Domain.Hibernate\Ums.Domain.Hibernate.csproj", "{A1BCADDC-62FA-4FB4-A4EF-06315EA85311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ums.Domain.Hibernate.Specs", "Ums.Domain.Hibernate.Specs\Ums.Domain.Hibernate.Specs.csproj", "{513A74FF-B5DB-4226-B091-2B13985C7FC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +119,14 @@ Global
 		{1A231A6C-8A6D-4759-9EF0-C372B6672FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A231A6C-8A6D-4759-9EF0-C372B6672FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A231A6C-8A6D-4759-9EF0-C372B6672FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1BCADDC-62FA-4FB4-A4EF-06315EA85311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BCADDC-62FA-4FB4-A4EF-06315EA85311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BCADDC-62FA-4FB4-A4EF-06315EA85311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BCADDC-62FA-4FB4-A4EF-06315EA85311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{513A74FF-B5DB-4226-B091-2B13985C7FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513A74FF-B5DB-4226-B091-2B13985C7FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513A74FF-B5DB-4226-B091-2B13985C7FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513A74FF-B5DB-4226-B091-2B13985C7FC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

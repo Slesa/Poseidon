@@ -1,13 +1,13 @@
 ﻿using System.Linq;
-using Common.Persistence.Contracts;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Mapping;
-using Hibernate.Specs.Common;
 using Machine.Specifications;
 using NHibernate;
+using Poseidon.Common.Persistence.Contracts;
+using Poseidon.Hibernate.Specs.Common;
 using Rhino.Mocks;
 
-namespace Common.Persistence.Specs
+namespace Poseidon.Common.Persistence.Specs
 {
     [Subject(typeof(HibernateSessionFactory))]
     internal class When_a_nhibernate_session_created_for_the_first_time

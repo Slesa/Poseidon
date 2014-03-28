@@ -1,7 +1,7 @@
-﻿using Common.Persistence.Contracts;
-using FluentNHibernate.Cfg.Db;
+﻿using FluentNHibernate.Cfg.Db;
+using Poseidon.Common.Persistence.Contracts;
 
-namespace Common.Persistence
+namespace Poseidon.Common.Persistence
 {
     public class SqlServerPersistenceConfiguration : IPersistenceConfiguration
     {

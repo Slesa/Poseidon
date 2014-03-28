@@ -62,6 +62,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
@@ -70,6 +71,9 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.XML" />
+    <Reference Include="Unity.AutoRegistration">
+      <HintPath>..\packages\UnityAutoRegistration.1.0.0.2\lib\net35\Unity.AutoRegistration.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -150,6 +154,10 @@
     <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
       <Project>{f2f299af-2b1a-43a2-ae10-6b23af9721fd}</Project>
       <Name>BackOffice.Theme</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{b9af147e-06d4-400e-a8d5-9adf291993ba}</Project>
+      <Name>Common.Persistence</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common.Wpf\Common.Wpf.csproj">
       <Project>{eab8e2bf-b1a4-400d-9db0-b90ea8edf860}</Project>

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using FluentNHibernate.Cfg;
 
-namespace Common.Persistence
+namespace Poseidon.Common.Persistence
 {
     public class FluentMappingFromAssembly
     {

@@ -71,9 +71,11 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Contracts\ITokensViewModel.cs" />
     <Compile Include="Contracts\IUmsModulesViewModel.cs" />
     <Compile Include="Contracts\IUserRolesViewModel.cs" />
     <Compile Include="Contracts\IUsersViewModel.cs" />
+    <Compile Include="DesignTime\DesignTimeTokensViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUmsModulesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUserRolesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUsersViewModel.cs" />
@@ -93,9 +95,13 @@
     <Compile Include="Modules\UmsOfficeModule.cs" />
     <Compile Include="UmsViews.cs" />
     <Compile Include="ViewModelLocators.cs" />
+    <Compile Include="ViewModels\TokensViewModel.cs" />
     <Compile Include="ViewModels\UmsModulesViewModel.cs" />
     <Compile Include="ViewModels\UserRolesViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="Views\TokensView.xaml.cs">
+      <DependentUpon>TokensView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UmsModulesView.xaml.cs">
       <DependentUpon>UmsModulesView.xaml</DependentUpon>
     </Compile>
@@ -113,6 +119,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\TokensView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UmsModulesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +145,10 @@
       <Project>{f2f299af-2b1a-43a2-ae10-6b23af9721fd}</Project>
       <Name>BackOffice.Theme</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{b9af147e-06d4-400e-a8d5-9adf291993ba}</Project>
+      <Name>Common.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Wpf\Common.Wpf.csproj">
       <Project>{eab8e2bf-b1a4-400d-9db0-b90ea8edf860}</Project>
       <Name>Common.Wpf</Name>
@@ -142,6 +156,10 @@
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
       <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
       <Name>Domain.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ums.Domain.Hibernate\Ums.Domain.Hibernate.csproj">
+      <Project>{a1bcaddc-62fa-4fb4-a4ef-06315ea85311}</Project>
+      <Name>Ums.Domain.Hibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ums.Domain.Model\Ums.Domain.Model.csproj">
       <Project>{da8a5822-355b-4138-80c3-b03193917fea}</Project>

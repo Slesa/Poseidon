@@ -1,7 +1,7 @@
 ﻿using System;
 using NHibernate;
 
-namespace Common.Persistence.Contracts
+namespace Poseidon.Common.Persistence.Contracts
 {
     public interface IHibernateSessionFactory : IDisposable
     {

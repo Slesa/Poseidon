@@ -7,8 +7,8 @@
     <ProjectGuid>{B9AF147E-06D4-400E-A8D5-9ADF291993BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Persistence</RootNamespace>
-    <AssemblyName>Common.Persistence</AssemblyName>
+    <RootNamespace>Poseidon.Common.Persistence</RootNamespace>
+    <AssemblyName>Poseidon.Common.Persistence</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

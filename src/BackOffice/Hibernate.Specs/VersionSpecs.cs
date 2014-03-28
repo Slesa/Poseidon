@@ -1,10 +1,10 @@
 ﻿using System;
 using FluentNHibernate.Mapping;
-using Hibernate.Specs.Common;
 using Machine.Specifications;
 using Poseidon.Domain.Common;
+using Poseidon.Hibernate.Specs.Common;
 
-namespace Hibernate.Specs
+namespace Poseidon.Hibernate.Specs
 {
     [Subject(typeof(AnyEntity))]
     internal class When_saving_an_entity : InMemoryDatabaseSpecs<AnyEntityMap>

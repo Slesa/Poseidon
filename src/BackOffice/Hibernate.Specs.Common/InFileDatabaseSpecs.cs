@@ -6,7 +6,7 @@ using Machine.Specifications;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 
-namespace Hibernate.Specs.Common
+namespace Poseidon.Hibernate.Specs.Common
 {
     [Subject(typeof(SQLiteConfiguration))]
     public class InFileDatabaseSpecs<TMappingAssembly>

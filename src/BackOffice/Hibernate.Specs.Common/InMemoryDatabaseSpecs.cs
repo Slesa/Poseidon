@@ -6,7 +6,7 @@ using FluentNHibernate.Testing;
 using Machine.Specifications;
 using NHibernate;
 
-namespace Hibernate.Specs.Common
+namespace Poseidon.Hibernate.Specs.Common
 {
     [Subject(typeof(SQLiteConfiguration))]
     public class InMemoryDatabaseSpecs<TMappingAssembly>

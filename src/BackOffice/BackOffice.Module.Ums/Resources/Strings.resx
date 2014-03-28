@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Heading_Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
   <data name="Heading_Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="Heading_TokenType" xml:space="preserve">
+    <value>Token type</value>
   </data>
   <data name="Heading_UserRole" xml:space="preserve">
     <value>Role</value>

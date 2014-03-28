@@ -25,10 +25,12 @@ namespace Poseidon.BackOffice.Module.Ums
 
             _container.RegisterType<object, UserRolesView>(UmsViews.UserRolesView);
             _container.RegisterType<object, UsersView>(UmsViews.UsersView);
+            _container.RegisterType<object, TokensView>(UmsViews.TokensView);
             _container.RegisterType<object, UmsModulesView>(UmsViews.UmsModuleView);
 
             _container.RegisterType<UserRolesViewModel>();
             _container.RegisterType<UsersViewModel>();
+            _container.RegisterType<TokensViewModel>();
         }
     }
 }

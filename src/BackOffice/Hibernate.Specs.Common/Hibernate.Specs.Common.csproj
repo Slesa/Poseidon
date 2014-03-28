@@ -7,8 +7,8 @@
     <ProjectGuid>{FAECA6DD-67C8-4A9F-A6CC-AA397161FC34}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hibernate.Specs.Common</RootNamespace>
-    <AssemblyName>Hibernate.Specs.Common</AssemblyName>
+    <RootNamespace>Poseidon.Hibernate.Specs.Common</RootNamespace>
+    <AssemblyName>Poseidon.Hibernate.Specs.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

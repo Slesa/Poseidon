@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Persistence.Contracts
+namespace Poseidon.Common.Persistence.Contracts
 {
     public interface IDbConversation : IDisposable
     {

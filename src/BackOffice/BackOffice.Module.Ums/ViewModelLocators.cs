@@ -6,4 +6,5 @@ namespace Poseidon.BackOffice.Module.Ums
     public class UmsModulesViewModelLocator : ViewModelLocator<UmsModulesViewModel> { }
     public class UserRolesViewModelLocator : ViewModelLocator<UserRolesViewModel> { }
     public class UsersViewModelLocator : ViewModelLocator<UsersViewModel> { }
+    public class TokensViewModelLocator : ViewModelLocator<TokensViewModel> { }
 }
