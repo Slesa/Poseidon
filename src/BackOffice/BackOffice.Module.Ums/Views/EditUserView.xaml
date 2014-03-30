@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Poseidon.BackOffice.Module.Ums.Views.EditUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Resources="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    
+    <StackPanel Orientation="Vertical">
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+            <Label Target="{Binding ElementName=_textName}"  Content="{x:Static Resources:Strings.EditUserView_Name}"/>
+            <TextBox x:Name="_textName" 
+                     HorizontalAlignment="Stretch"
+                     Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
+                     ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Target="{Binding ElementName=_comboUserRole}" Content="{x:Static Resources:Strings.EditUserView_UserRole}"/>
+            <ComboBox Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
+                      ItemsSource="{Binding Path=AllUserRoles}" DisplayMemberPath="Name" 
+                      SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                      IsEditable="False" />
+        </StackPanel>
+
+    </StackPanel>
+    
+</UserControl>

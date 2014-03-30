@@ -61,6 +61,33 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditUserRoleView_Name {
+            get {
+                return ResourceManager.GetString("EditUserRoleView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditUserView_Name {
+            get {
+                return ResourceManager.GetString("EditUserView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _User role:.
+        /// </summary>
+        public static string EditUserView_UserRole {
+            get {
+                return ResourceManager.GetString("EditUserView_UserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data.
         /// </summary>
         public static string Heading_Data {

@@ -44,6 +44,9 @@
         </Grid.ColumnDefinitions>
         
         <DockPanel>
+
+            <Button DockPanel.Dock="Bottom" Content="Add new user" Command="{Binding AddNewUserCommand}"/>
+            
             <Controls:ModuleInfoArea
                 Content="{x:Static res:Strings.UserModule}"
                 Description="{x:Static res:Strings.UserModule_Description}"

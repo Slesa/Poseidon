@@ -44,6 +44,9 @@
         </Grid.ColumnDefinitions>
 
         <DockPanel>
+
+            <Button DockPanel.Dock="Bottom" Content="Add new user role" Command="{Binding AddNewUserRoleCommand}"/>
+
             <Controls:ModuleInfoArea
                 Content="{x:Static res:Strings.UserRoleModule}"
                 Description="{x:Static res:Strings.UserRoleModule_Description}"

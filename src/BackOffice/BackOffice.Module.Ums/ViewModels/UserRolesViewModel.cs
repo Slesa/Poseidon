@@ -1,6 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
+using Microsoft.Practices.Prism.Commands;
 using Poseidon.BackOffice.Module.Ums.Contracts;
+using Poseidon.BackOffice.Module.Ums.Views;
 using Poseidon.Common.Persistence.Contracts;
 using Poseidon.Ums.Domain.Hibernate.Queries;
 using Poseidon.Ums.Domain.Model;
@@ -16,9 +20,27 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             _dbConversation = dbConversation;
 
             CreateDatasets();
+
+            AddNewUserRoleCommand = new DelegateCommand(AddNewUserRole);
         }
 
         public ObservableCollection<UserRole> UserRoles { get; private set; }
+
+    #region Commands
+
+        public ICommand AddNewUserRoleCommand { get; private set; }
+
+        void AddNewUserRole()
+        {
+            var editUserRole = EditUserRoleViewModel.CreateViewModel(_dbConversation);
+            var view = new EditUserRoleView {DataContext = editUserRole};
+
+            var dialog = new Window();
+            dialog.Content = view;
+            /*return */dialog.ShowDialog();
+        }
+
+    #endregion
 
         void CreateDatasets()
         {

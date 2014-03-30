@@ -95,10 +95,18 @@
     <Compile Include="Modules\UmsOfficeModule.cs" />
     <Compile Include="UmsViews.cs" />
     <Compile Include="ViewModelLocators.cs" />
+    <Compile Include="ViewModels\EditUserRoleViewModel.cs" />
+    <Compile Include="ViewModels\EditUserViewModel.cs" />
     <Compile Include="ViewModels\TokensViewModel.cs" />
     <Compile Include="ViewModels\UmsModulesViewModel.cs" />
     <Compile Include="ViewModels\UserRolesViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="Views\EditUserRoleView.xaml.cs">
+      <DependentUpon>EditUserRoleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditUserView.xaml.cs">
+      <DependentUpon>EditUserView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TokensView.xaml.cs">
       <DependentUpon>TokensView.xaml</DependentUpon>
     </Compile>
@@ -119,6 +127,14 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\EditUserRoleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TokensView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
