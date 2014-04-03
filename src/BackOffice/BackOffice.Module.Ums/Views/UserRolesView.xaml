@@ -45,7 +45,10 @@
 
         <DockPanel>
 
-            <Button DockPanel.Dock="Bottom" Content="Add new user role" Command="{Binding AddNewUserRoleCommand}"/>
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button Content="Add" Command="{Binding AddNewUserRoleCommand}"/>
+                <Button Content="Edit" Command="{Binding EditUserRoleCommand}"/>
+            </StackPanel>
 
             <Controls:ModuleInfoArea
                 Content="{x:Static res:Strings.UserRoleModule}"
@@ -57,7 +60,7 @@
                 TitleFontSize="24"/>
         </DockPanel>
 
-        <ListView Grid.Column="1" ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}">
+        <ListView Grid.Column="1" ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}" SelectionMode="Extended">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />

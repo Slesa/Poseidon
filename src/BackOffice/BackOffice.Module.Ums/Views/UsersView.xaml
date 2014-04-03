@@ -45,8 +45,11 @@
         
         <DockPanel>
 
-            <Button DockPanel.Dock="Bottom" Content="Add new user" Command="{Binding AddNewUserCommand}"/>
-            
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button Content="Add" Command="{Binding AddNewUserCommand}"/>
+                <Button Content="Edit" Command="{Binding EditUserCommand}"/>
+            </StackPanel>
+
             <Controls:ModuleInfoArea
                 Content="{x:Static res:Strings.UserModule}"
                 Description="{x:Static res:Strings.UserModule_Description}"
@@ -57,7 +60,7 @@
                 TitleFontSize="24"/>
         </DockPanel>
 
-        <ListView Grid.Column="1" ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}">
+        <ListView Grid.Column="1" ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}" SelectionMode="Extended">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />

@@ -22,6 +22,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             CreateDatasets();
 
             AddNewUserRoleCommand = new DelegateCommand(AddNewUserRole);
+            EditUserRoleCommand = new DelegateCommand(EditUserRole);
         }
 
         public ObservableCollection<UserRole> UserRoles { get; private set; }
@@ -31,6 +32,18 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
         public ICommand AddNewUserRoleCommand { get; private set; }
 
         void AddNewUserRole()
+        {
+            var editUserRole = EditUserRoleViewModel.CreateViewModel(_dbConversation);
+            var view = new EditUserRoleView {DataContext = editUserRole};
+
+            var dialog = new Window();
+            dialog.Content = view;
+            /*return */dialog.ShowDialog();
+        }
+
+        public ICommand EditUserRoleCommand { get; private set; }
+
+        void EditUserRole()
         {
             var editUserRole = EditUserRoleViewModel.CreateViewModel(_dbConversation);
             var view = new EditUserRoleView {DataContext = editUserRole};

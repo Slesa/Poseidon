@@ -7,24 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     
-    <StackPanel Orientation="Vertical">
+    <Grid>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-            <Label Target="{Binding ElementName=_textName}"  Content="{x:Static Resources:Strings.EditUserView_Name}"/>
-            <TextBox x:Name="_textName" 
-                     HorizontalAlignment="Stretch"
-                     Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
-                     ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal">
-            <Label Target="{Binding ElementName=_comboUserRole}" Content="{x:Static Resources:Strings.EditUserView_UserRole}"/>
-            <ComboBox Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
-                      ItemsSource="{Binding Path=AllUserRoles}" DisplayMemberPath="Name" 
-                      SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                      IsEditable="False" />
-        </StackPanel>
+        <Label Grid.Row="0" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="{x:Static Resources:Strings.EditUserView_Name}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="_textName" 
+                 HorizontalAlignment="Stretch"
+                 Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
+                 ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}"/>
 
-    </StackPanel>
+        <Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=_comboUserRole}" Content="{x:Static Resources:Strings.EditUserView_UserRole}"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
+                  ItemsSource="{Binding Path=AllUserRoles}" DisplayMemberPath="Name" 
+                  SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                  IsEditable="False" />
+
+    </Grid>
     
 </UserControl>

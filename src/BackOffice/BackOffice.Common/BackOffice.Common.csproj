@@ -80,6 +80,7 @@
     <Compile Include="SortModuleAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators.cs" />
+    <Compile Include="ViewModels\EditItemsViewModel.cs" />
     <Compile Include="ViewModels\ModuleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{b9af147e-06d4-400e-a8d5-9adf291993ba}</Project>
+      <Name>Common.Persistence</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

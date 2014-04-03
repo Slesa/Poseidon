@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Poseidon.BackOffice.Common.ViewModels;
 using Poseidon.Common.Persistence.Contracts;
 using Poseidon.Ums.Domain.Hibernate.Queries;
 using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.BackOffice.Module.Ums.ViewModels
 {
-    public class EditUserViewModel
+    public class EditUserViewModel 
     {
         static public EditUserViewModel CreateViewModel(IDbConversation dbConversation/*, IEventAggregator eventAggregator*/)
         {

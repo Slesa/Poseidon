@@ -21,6 +21,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             CreateDatasets();
 
             AddNewUserCommand = new DelegateCommand(AddNewUser);
+            EditUserCommand = new DelegateCommand(EditUser);
         }
 
         public ObservableCollection<User> Users { get; private set; }
@@ -30,6 +31,19 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
         public ICommand AddNewUserCommand { get; private set; }
 
         void AddNewUser()
+        {
+            var editUser = EditUserViewModel.CreateViewModel(_dbConversation);
+            var view = new EditUserView { DataContext = editUser };
+
+            var dialog = new Window();
+            dialog.Content = view;
+            /*return */
+            dialog.ShowDialog();
+        }
+
+        public ICommand EditUserCommand { get; private set; }
+
+        void EditUser()
         {
             var editUser = EditUserViewModel.CreateViewModel(_dbConversation);
             var view = new EditUserView { DataContext = editUser };
