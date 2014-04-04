@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewSwitchingNavigation.Ema
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewSwitchingNavigation.Infrastructure", "ViewSwitchingNavigation.Infrastructure\ViewSwitchingNavigation.Infrastructure.csproj", "{1D550275-838B-4314-8CD7-88A030404724}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewSwitchingNavigation.InfoTip", "ViewSwitchingNavigation.InfoTip\ViewSwitchingNavigation.InfoTip.csproj", "{DACD60C7-08B2-485A-9925-F00269EDC532}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{1D550275-838B-4314-8CD7-88A030404724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D550275-838B-4314-8CD7-88A030404724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D550275-838B-4314-8CD7-88A030404724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACD60C7-08B2-485A-9925-F00269EDC532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACD60C7-08B2-485A-9925-F00269EDC532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACD60C7-08B2-485A-9925-F00269EDC532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACD60C7-08B2-485A-9925-F00269EDC532}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

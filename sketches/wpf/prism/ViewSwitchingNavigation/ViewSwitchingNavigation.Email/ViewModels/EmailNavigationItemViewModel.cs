@@ -8,7 +8,7 @@ namespace ViewSwitchingNavigation.Email.ViewModels
     public class EmailNavigationItemViewModel
     {
         readonly IRegionManager _regionManager;
-        private static Uri emailsViewUri = new Uri("/InboxView", UriKind.Relative);
+        public static Uri EmailsViewUri = new Uri("/InboxView", UriKind.Relative);
         Uri _lastUri;
 
 
@@ -20,7 +20,7 @@ namespace ViewSwitchingNavigation.Email.ViewModels
             var mainContentRegion = _regionManager.Regions[RegionNames.MainContentRegion];
             if (mainContentRegion != null && mainContentRegion.NavigationService != null)
             {
-                mainContentRegion.NavigationService.Navigated += this.MainContentRegion_Navigated;
+                mainContentRegion.NavigationService.Navigated += MainContentRegion_Navigated;
             }
         }
 
@@ -36,12 +36,12 @@ namespace ViewSwitchingNavigation.Email.ViewModels
 
         void OnClick()
         {
-            _regionManager.RequestNavigate(RegionNames.MainContentRegion, emailsViewUri);
+            _regionManager.RequestNavigate(RegionNames.MainContentRegion, EmailsViewUri);
         }
 
         bool CanClick()
         {
-            return (_lastUri == emailsViewUri);
+            return (_lastUri == EmailsViewUri);
         }
 
         #endregion

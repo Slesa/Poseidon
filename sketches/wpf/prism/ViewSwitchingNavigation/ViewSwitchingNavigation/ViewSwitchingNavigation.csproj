@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Expression\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
@@ -73,6 +77,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ChildWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,6 +90,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ChildWindow.xaml.cs">
+      <DependentUpon>ChildWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
@@ -128,6 +139,10 @@
     <ProjectReference Include="..\ViewSwitchingNavigation.Email\ViewSwitchingNavigation.Email.csproj">
       <Project>{fce85bc9-1f4f-481d-94cb-272234a46a27}</Project>
       <Name>ViewSwitchingNavigation.Email</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewSwitchingNavigation.InfoTip\ViewSwitchingNavigation.InfoTip.csproj">
+      <Project>{dacd60c7-08b2-485a-9925-f00269edc532}</Project>
+      <Name>ViewSwitchingNavigation.InfoTip</Name>
     </ProjectReference>
     <ProjectReference Include="..\ViewSwitchingNavigation.Infrastructure\ViewSwitchingNavigation.Infrastructure.csproj">
       <Project>{1d550275-838b-4314-8cd7-88a030404724}</Project>

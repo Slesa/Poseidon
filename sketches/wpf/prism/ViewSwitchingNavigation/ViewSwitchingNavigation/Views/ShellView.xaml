@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
         xmlns:viewModels="clr-namespace:ViewSwitchingNavigation.ViewModels"
-        xmlns:Infrastructure="clr-namespace:ViewSwitchingNavigation.Infrastructure;assembly=ViewSwitchingNavigation.Infrastructure"
+        xmlns:infoTip="clr-namespace:ViewSwitchingNavigation.InfoTip;assembly=ViewSwitchingNavigation.InfoTip"
         Title="MainWindow" Height="350" Width="525">
 
     <Window.DataContext>
@@ -29,16 +29,18 @@
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <TextBlock HorizontalAlignment="Left" Width="Auto" Text="View-Switching Navigation" FontWeight="Normal" Foreground="#FFFFFFFF" FontSize="24" FontFamily="Comic Sans MS" VerticalAlignment="Center"/>
             </StackPanel>
-            <Infrastructure:InfoTipToggleButton Grid.Row="1">
+            <infoTip:InfoTipToggleButton Grid.Row="1">
                 <StackPanel MinWidth="100" MinHeight="24" MaxWidth="500">
                     <TextBlock TextWrapping="Wrap">This Navigation Quickstart demonstrates navigation within Prism's Regions to show new views, move between existing views, and how to pass context to views during navigaton.</TextBlock>
                 </StackPanel>
-            </Infrastructure:InfoTipToggleButton>
+            </infoTip:InfoTipToggleButton>
             <Border Grid.Column="0" Grid.Row="2" Background="LightGray" MinWidth="250" Margin="5,0,0,5">
                 <ItemsControl x:Name="NavigationItemsControl" prism:RegionManager.RegionName="MainNavigationRegion" Grid.Column="0" Margin="5" Padding="5" />
             </Border>
+
             <ContentControl prism:RegionManager.RegionName="MainContentRegion" 
                         Grid.Column="1" Grid.Row="2" Margin="5,0,5,5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+
         </Grid>
     </Grid>
     

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Infrastructure="clr-namespace:ViewSwitchingNavigation.Infrastructure;assembly=ViewSwitchingNavigation.Infrastructure"
              xmlns:core="clr-namespace:ViewSwitchingNavigation.Email"
+             xmlns:infoTip="clr-namespace:ViewSwitchingNavigation.InfoTip;assembly=ViewSwitchingNavigation.InfoTip"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -25,13 +25,13 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <RadioButton x:Name="NavigateToEmailRadioButton" GroupName="MainNavigation" Command="{Binding OnClickCommand}" Style="{StaticResource MainViewRadioButtonStyle}">Mail</RadioButton>
-        <Infrastructure:InfoTipToggleButton Grid.Column="1">
+        <infoTip:InfoTipToggleButton Grid.Column="1">
             <StackPanel MinWidth="100" MinHeight="24" MaxWidth="400">
                 <TextBlock Margin="2" TextWrapping="Wrap">The view made visible by this button demonstrates supplying context for navigation and navigating to views that have not been registered previously with a region.</TextBlock>
                 <TextBlock Margin="2" TextWrapping="Wrap">In this case, the context will be the selected email which is passed as part of the navigation Uri.</TextBlock>
                 <TextBlock Margin="2" TextWrapping="Wrap">Many of the view models in this area also implement the INavigationAware to participate in the navigation.</TextBlock>
             </StackPanel>
-        </Infrastructure:InfoTipToggleButton>
+        </infoTip:InfoTipToggleButton>
     </Grid>
     
 </UserControl>
