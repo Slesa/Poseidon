@@ -21,9 +21,6 @@ namespace ViewSwitchingNavigation.Email.ViewModels
 
         private readonly SynchronizationContext _synchronizationContext;
         private readonly IEmailService _emailService;
-        private readonly DelegateCommand _sendEmailCommand;
-        private readonly DelegateCommand _cancelEmailCommand;
-        private readonly InteractionRequest<Confirmation> _confirmExitInteractionRequest;
         private EmailDocument _emailDocument;
         private string _sendState;
         private IRegionNavigationJournal _navigationJournal;
@@ -39,20 +36,27 @@ namespace ViewSwitchingNavigation.Email.ViewModels
             _emailService = emailService;
         }
 
+    #region Commands
+
+        private readonly DelegateCommand _sendEmailCommand;
         public ICommand SendEmailCommand
         {
             get { return _sendEmailCommand; }
         }
 
+        private readonly DelegateCommand _cancelEmailCommand;
         public ICommand CancelEmailCommand
         {
             get { return _cancelEmailCommand; }
         }
 
+        private readonly InteractionRequest<Confirmation> _confirmExitInteractionRequest;
         public IInteractionRequest ConfirmExitInteractionRequest
         {
             get { return _confirmExitInteractionRequest; }
         }
+
+    #endregion
 
         public EmailDocument EmailDocument
         {
@@ -71,10 +75,7 @@ namespace ViewSwitchingNavigation.Email.ViewModels
 
         public string SendState
         {
-            get
-            {
-                return _sendState;
-            }
+            get { return _sendState; }
 
             private set
             {

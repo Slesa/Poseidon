@@ -9,8 +9,10 @@
     public interface IPopupDialogWindow
     {
         void Show();
+
         PopupDialogResult DialogResult { get; set; }
-        System.Windows.Input.ICommand DialogResultCommand { get; set; }
         //object Owner { get; set; }
+        string Title { get; set; }
+        string MessageText { get; set; }
     }
 }

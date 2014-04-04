@@ -15,10 +15,6 @@
 
     <UserControl.Resources>
         <email:ComposeEmailViewModelLocator x:Key="ComposeEmailViewModel" />
-        
-        <DataTemplate x:Key="ConfirmExitDialogTemplate">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding}"/>
-        </DataTemplate>
     </UserControl.Resources>
 
     <UserControl.DataContext>
@@ -31,7 +27,7 @@
         </ei:Interaction.Behaviors>
         <ei:Interaction.Triggers>
             <prism:InteractionRequestTrigger SourceObject="{Binding ConfirmExitInteractionRequest}">
-                <infrastructure:OpenPopupWindowAction PopupDailogResultCommand="{Binding OnNavigationConfirmed}" />
+                <infrastructure:OpenPopupWindowAction />
             </prism:InteractionRequestTrigger>
         </ei:Interaction.Triggers>
         <VisualStateManager.VisualStateGroups>
