@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateBasedNavigation", "StateBasedNavigation\StateBasedNavigation.csproj", "{E7990D4C-6335-4E91-88CB-757538DD85FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateBasedNavigation.InfoTip", "StateBasedNavigation.InfoTip\StateBasedNavigation.InfoTip.csproj", "{2CA682BA-4362-4E9F-AAFD-F9AED25D275F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7990D4C-6335-4E91-88CB-757538DD85FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7990D4C-6335-4E91-88CB-757538DD85FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7990D4C-6335-4E91-88CB-757538DD85FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7990D4C-6335-4E91-88CB-757538DD85FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CA682BA-4362-4E9F-AAFD-F9AED25D275F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA682BA-4362-4E9F-AAFD-F9AED25D275F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA682BA-4362-4E9F-AAFD-F9AED25D275F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA682BA-4362-4E9F-AAFD-F9AED25D275F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
