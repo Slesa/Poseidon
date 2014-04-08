@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace StateBasedNavigation
+namespace StateBasedNavigation.Views
 {
     public partial class ShellView : Window
     {

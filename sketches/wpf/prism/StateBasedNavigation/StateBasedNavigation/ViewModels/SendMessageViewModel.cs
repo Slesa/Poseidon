@@ -39,7 +39,7 @@ namespace StateBasedNavigation.ViewModels
             {
                 if (value == message) return;
                 message = value;
-                RaisePropertyChanged(() => this.Message);
+                RaisePropertyChanged(() => Message);
             }
         }
 

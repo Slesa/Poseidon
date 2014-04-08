@@ -1046,6 +1046,7 @@
         <Setter Property="Background" Value="#00000000" />
         <Setter Property="Padding" Value="8,4" />
         <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
+        <!--
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
@@ -1325,6 +1326,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        -->
     </Style>
 
     <!--ChildWindow-->

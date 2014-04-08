@@ -10,11 +10,13 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:InfoTip="clr-namespace:StateBasedNavigation.InfoTip;assembly=StateBasedNavigation.InfoTip"
              xmlns:cb="clr-namespace:StateBasedNavigation.Infrastructure.Behaviors"
-             xmlns:vs="clr-namespace:StateBasedNavigation.Views"
+             xmlns:local="clr-namespace:StateBasedNavigation"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
     <UserControl.Resources>
+        <local:ChatViewViewModelLocator x:Key="ChatViewModel" />
+        
         <infra:SizeToBooleanConverter x:Key="SizeToBooleanConverter"/>
 
         <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
@@ -61,12 +63,16 @@
             <Border BorderThickness="2" BorderBrush="#FF4E80C4" Background="#FFECECEF" CornerRadius="3" IsHitTestVisible="False">
                 <StackPanel Orientation="Vertical" Width="230">
                     <TextBlock><Run Text="Message from "/><Run Text="{Binding Contact.Name}"/><Run Text=":"/></TextBlock>
-                    <TextBlock><Run Text="{Binding Message}" FontStyle="Italic"/></TextBlock>
+                    <TextBlock><Run Text="{Binding Message,Mode=OneWay}" FontStyle="Italic"/></TextBlock>
                 </StackPanel>
             </Border>
         </DataTemplate>
 
     </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Path="ViewModel" Source="{StaticResource ChatViewModel}" />
+    </UserControl.DataContext>
 
     <Grid x:Name="LayoutRoot">
 
@@ -77,7 +83,7 @@
             <ei:DataStateBehavior Binding="{Binding IsChecked, ElementName=ShowAsListButton}" 
                                   Value="True" 
                                   TrueState="ShowAsList" FalseState="ShowAsIcons"/>
-            <ei:DataStateBehavior Binding="{Binding ConnectionStatus}" 
+            <ei:DataStateBehavior Binding="{Binding CurrentConnectionState}" 
                                   Value="Available" 
                                   TrueState="Available" FalseState="Unavailable"/>
             <ei:DataStateBehavior Binding="{Binding SendingMessage}" 
@@ -255,9 +261,11 @@
                 <VisualState x:Name="Unavailable">
                     <Storyboard>
 
+<!--
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="MainPane">
                             <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="False"/>
                         </ObjectAnimationUsingKeyFrames>
+-->
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="OfflineMask">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
@@ -318,11 +326,9 @@
                     </Grid.ColumnDefinitions>
 
                     <ComboBox x:Name="comboBox" 
-                      SelectedValue="{Binding ConnectionStatus, Mode=TwoWay}"
-                      SelectedValuePath="Content"
-                      HorizontalAlignment="Stretch" Padding="10,3" Margin="0">
-                        <ComboBoxItem>Available</ComboBoxItem>
-                        <ComboBoxItem>Unavailable</ComboBoxItem>
+                              ItemsSource="{Binding ConnectionStates}"
+                              SelectedValue="{Binding CurrentConnectionState, Mode=TwoWay}"
+                              HorizontalAlignment="Stretch"  Margin="0">
                     </ComboBox>
 
                     <InfoTip:InfoTipToggleButton Grid.Column="1">

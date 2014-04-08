@@ -108,6 +108,7 @@
     <Compile Include="Model\IChatService.cs" />
     <Compile Include="Model\ITimer.cs" />
     <Compile Include="Model\ReceivedMessage.cs" />
+    <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\ChatViewModel.cs" />
     <Compile Include="ViewModels\SendMessageViewModel.cs" />
     <Compile Include="Views\ChatView.xaml.cs">

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
@@ -25,7 +26,7 @@ namespace StateBasedNavigation.ViewModels
 
             _chatService = chatService;
             _chatService.Connected = true;
-            _chatService.ConnectionStatusChanged += (s, e) => RaisePropertyChanged(() => ConnectionStatus);
+            _chatService.ConnectionStatusChanged += (s, e) => RaisePropertyChanged(() => CurrentConnectionState);
             _chatService.MessageReceived += OnMessageReceived;
 
             _chatService.GetContacts(
@@ -37,6 +38,7 @@ namespace StateBasedNavigation.ViewModels
                             _contacts.Add(item);
                         }
                     });
+            RaisePropertyChanged(() => CurrentConnectionState);
         }
 
         readonly ObservableCollection<Contact> _contacts;
@@ -63,10 +65,24 @@ namespace StateBasedNavigation.ViewModels
             get { return _showReceivedMessageRequest; }
         }
 
-        public string ConnectionStatus
+        public enum ConnectionState
         {
-            get { return _chatService.Connected ? "Available" : "Unavailable"; }
-            set { _chatService.Connected = value == "Available"; }
+            Available, Unavailable
+        }
+
+        public IEnumerable<ConnectionState> ConnectionStates
+        {
+            get
+            {
+                yield return ConnectionState.Available;
+                yield return ConnectionState.Unavailable;
+            }
+        }
+
+        public ConnectionState CurrentConnectionState
+        {
+            get { return _chatService.Connected ? ConnectionState.Available : ConnectionState.Unavailable; }
+            set { _chatService.Connected = value == ConnectionState.Available; }
         }
 
         public Contact CurrentContact

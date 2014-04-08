@@ -5,12 +5,11 @@ using System.Diagnostics;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
-using Microsoft.Practices.Prism.ViewModel;
 using StateBasedNavigation.Infrastructure;
 
 namespace StateBasedNavigation.Model
 {
-    public class ChatService : NotificationObject
+    public class ChatService : IChatService
     {
         static readonly string Avatar1Uri = @"/StateBasedNavigation;component/Images/MC900432625.PNG";
         static readonly string Avatar2Uri = @"/StateBasedNavigation;component/Images/MC900433938.PNG";
@@ -42,7 +41,7 @@ namespace StateBasedNavigation.Model
         {
         }
 
-        public ChatService(ITimer timer)
+        ChatService(ITimer timer)
         {
             _dispatcher = Application.Current.Dispatcher;
             _random = new Random();
@@ -67,6 +66,7 @@ namespace StateBasedNavigation.Model
                     });
         }
 
+        public event EventHandler ConnectionStatusChanged;
         public event EventHandler<MessageReceivedEventArgs> MessageReceived;
 
         public bool Connected
@@ -80,7 +80,8 @@ namespace StateBasedNavigation.Model
             {
                 if (_connected == value) return;
                 _connected = value;
-                RaisePropertyChanged(()=>Connected);
+                var handler = ConnectionStatusChanged;
+                if (handler != null) handler(this, EventArgs.Empty);
             }
         }
 
