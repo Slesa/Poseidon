@@ -1,4 +1,5 @@
-﻿using Poseidon.BackOffice.Common;
+﻿using System;
+using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Ums.Resources;
 using Poseidon.Ums.Domain.Resources;
 
@@ -6,7 +7,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
 {
     public class UmsOfficeModule : OfficeModule
     {
-        public static readonly string Name = "UMS.UmsModule";
+        public static readonly string Name = "UmsModulesView";
 
         public UmsOfficeModule()
         {
@@ -16,7 +17,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
             IconFileName = UmsResources.UmsIcon;
             Priority = 1;
             Keywords = Strings.UmsOfficeModule_Keywords.Split(',');
-            ViewName = UmsViews.UmsModuleView;
+            TargetUri = new Uri(UmsViews.UmsModuleView, UriKind.Relative);
         }
     }
 }

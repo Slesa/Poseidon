@@ -38,13 +38,12 @@ namespace Poseidon.BackOffice.Core.ViewModels
             }
         }
 
-        void UpdateBreadCrumbList(Uri modulePath)
+        void UpdateBreadCrumbList(Uri targetUri)
         {
             var currentModules = new List<IOfficeModule>();
-            if (modulePath != null)
+            if (targetUri != null)
             {
-                var viewName = modulePath.OriginalString;
-                var activeModule = AvailableModules.FirstOrDefault(m => m.ViewName == viewName);
+                var activeModule = AvailableModules.FirstOrDefault(m => m.TargetUri == targetUri);
 
                 while (activeModule != null)
                 {
@@ -66,7 +65,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
                     Title = Strings.CoreModule_Title,
                     Description = Strings.CoreModule_Description,
                     ToolTip = Strings.CoreModule_Tooltip,
-                    ViewName = CoreViews.ModulesView,
+                    TargetUri = new Uri(CoreViews.ModulesView, UriKind.Relative),
                 };
         }
     }

@@ -1,4 +1,5 @@
-﻿using Poseidon.BackOffice.Common;
+﻿using System;
+using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Ums.Resources;
 using Poseidon.Ums.Domain.Resources;
 
@@ -6,7 +7,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
 {
     public class TokenModule : OfficeModule
     {
-        public static readonly string Name = "UMS.TokenModule";
+        public static readonly string Name = "TokensView";
 
         public TokenModule()
         {
@@ -15,7 +16,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
             ToolTip = Strings.TokenModule_Tooltip;
             Priority = 0;
             IconFileName = UmsResources.TokenIcon;
-            ViewName = UmsViews.TokensView;
+            TargetUri = new Uri(UmsViews.TokensView, UriKind.Relative);
             ParentType = typeof(UmsOfficeModule);
         }
     }

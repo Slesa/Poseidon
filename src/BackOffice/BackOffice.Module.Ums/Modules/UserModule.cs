@@ -1,4 +1,5 @@
-﻿using Poseidon.BackOffice.Common;
+﻿using System;
+using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Module.Ums.Resources;
 using Poseidon.Ums.Domain.Resources;
 
@@ -6,7 +7,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
 {
     public class UserModule : OfficeModule
     {
-        public static readonly string Name = "UMS.UserModule";
+        public static readonly string Name = "UsersView";
 
         public UserModule()
         {
@@ -15,7 +16,7 @@ namespace Poseidon.BackOffice.Module.Ums.Modules
             ToolTip = Strings.UserModule_Tooltip;
             Priority = 1;
             IconFileName = UmsResources.UserIcon;
-            ViewName = UmsViews.UsersView;
+            TargetUri = new Uri(UmsViews.UsersView, UriKind.Relative);
             ParentType = typeof(UmsOfficeModule);
         }
     }

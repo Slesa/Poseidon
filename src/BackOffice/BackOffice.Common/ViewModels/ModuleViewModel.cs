@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
@@ -21,7 +22,7 @@ namespace Poseidon.BackOffice.Common.ViewModels
         public string Description { get { return _module.Description; } }
         public string ToolTip { get { return _module.ToolTip; } }
         public string IconFileName { get { return _module.IconFileName; } }
-        public string ViewName { get { return _module.ViewName; } }
+        public Uri TargetUri { get { return _module.TargetUri; } }
 
         public int Priority { get { return _module.Priority; } }
         public IEnumerable<string> Keywords { get { return _module.Keywords; } }
@@ -31,8 +32,8 @@ namespace Poseidon.BackOffice.Common.ViewModels
 
         void OnSelection()
         {
-            if (string.IsNullOrEmpty(ViewName)) return;
-            _regionManager.RequestNavigate(Regions.TagModulesRegion, ViewName);
+            if (TargetUri==null) return;
+            _regionManager.RequestNavigate(Regions.TagModulesRegion, TargetUri);
         }
     }
 }
