@@ -18,7 +18,7 @@ namespace Poseidon.BackOffice.Module.Ums.DesignTime
 
         public ICommand AddNewUserRoleCommand { get { return null; } }
 
-        IEnumerable<UserRole> CreateUserRoles()
+        public static IEnumerable<UserRole> CreateUserRoles()
         {
             yield return new UserRole { Name = "Captain" };
             yield return new UserRole { Name = "Lieutenant" };

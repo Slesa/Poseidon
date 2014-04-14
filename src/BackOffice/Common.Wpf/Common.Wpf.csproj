@@ -71,7 +71,9 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Adorners\WatermarkAdorner.cs" />
+    <Compile Include="Behaviors\SelectedItemsBehavior.cs" />
     <Compile Include="Extensions\GroupStyleExtension.cs" />
+    <Compile Include="Helpers\WeakEventHandler.cs" />
     <Compile Include="Log4NetLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\WatermarkService.cs" />

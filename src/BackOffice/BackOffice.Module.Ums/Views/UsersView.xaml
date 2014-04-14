@@ -7,6 +7,8 @@
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
              xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -58,9 +60,13 @@
                 IconFile="{StaticResource Image.User}"
                 IconSize="48"
                 TitleFontSize="24"/>
+            
         </DockPanel>
 
         <ListView Grid.Column="1" ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}" SelectionMode="Extended">
+            <i:Interaction.Behaviors>
+                <behaviors:SelectedItemsBehavior Selections="{Binding SelectedItems}" />
+            </i:Interaction.Behaviors>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />

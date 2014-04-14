@@ -4,9 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Resources="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
+             xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ums:EditUserViewModelLocator x:Key="EditUserViewModel" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Path="ViewModel" Source="{StaticResource EditUserViewModel}" />
+    </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <design:DesignTimeEditUserViewModel />
+    </d:UserControl.DataContext>
+
     <Grid>
 
         <Grid.ColumnDefinitions>
