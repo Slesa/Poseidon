@@ -11,6 +11,10 @@
 
     <UserControl.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
             <ums:EditUserRoleViewModelLocator x:Key="EditUserRoleViewModel" />
         </ResourceDictionary>
     </UserControl.Resources>
@@ -30,14 +34,22 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="{x:Static Resources:Strings.EditUserRoleView_Name}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="_textName"
+        <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Width="24" Height="24" Source="{StaticResource Image.UserRole}"/>
+            <TextBlock VerticalAlignment="Center" FontSize="24" Text="{Binding TitleText}"/>
+        </StackPanel>
+
+        <Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="{x:Static Resources:Strings.EditUserRoleView_Name}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="_textName"
                  Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
                  ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}"/>
 
+        <Button Grid.ColumnSpan="3" Grid.Row="3" HorizontalAlignment="Right" Content="Back" Command="{Binding CommitCommand}"/>
     </Grid>
     
 </UserControl>

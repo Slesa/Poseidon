@@ -11,6 +11,10 @@
 
     <UserControl.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
             <ums:EditUserViewModelLocator x:Key="EditUserViewModel" />
         </ResourceDictionary>
     </UserControl.Resources>
@@ -31,21 +35,29 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="{x:Static Resources:Strings.EditUserView_Name}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="_textName" 
+        <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Width="24" Height="24" Source="{StaticResource Image.User}"/>
+            <TextBlock VerticalAlignment="Center" FontSize="24" Text="{Binding TitleText}"/>
+        </StackPanel>
+
+        <Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="{x:Static Resources:Strings.EditUserView_Name}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="_textName" 
                  HorizontalAlignment="Stretch"
                  Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
                  ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}"/>
 
-        <Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=_comboUserRole}" Content="{x:Static Resources:Strings.EditUserView_UserRole}"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
+        <Label Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=_comboUserRole}" Content="{x:Static Resources:Strings.EditUserView_UserRole}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
                   ItemsSource="{Binding Path=AllUserRoles}" DisplayMemberPath="Name" 
                   SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                   IsEditable="False" />
 
+        <Button Grid.ColumnSpan="3" Grid.Row="4" HorizontalAlignment="Right" Content="Back" Command="{Binding CommitCommand}"/>
     </Grid>
     
 </UserControl>
