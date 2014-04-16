@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common.ViewModels;
@@ -12,14 +13,16 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
     public class EditUserRoleViewModel : NotificationObject, INavigationAware
     {
         readonly IDbConversation _dbConversation;
+        readonly IEventAggregator _eventAggregator;
         IRegionNavigationJournal _navigationJournal;
         readonly IList<UserRole> _editedUserRoles = new List<UserRole>();
         readonly UserRole _currentEdit = new UserRole();
 
-        public EditUserRoleViewModel(IDbConversation dbConversation)
+        public EditUserRoleViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
             EditMode = EditMode.Add;
             _dbConversation = dbConversation;
+            _eventAggregator = eventAggregator;
             CommitCommand = new DelegateCommand(OnCommit);
         }
 
@@ -88,11 +91,13 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
                 if (EditMode == EditMode.Add)
                 {
                     _dbConversation.Insert(_currentEdit);
+                    _eventAggregator.GetEvent<UserRoleAddedEvent>().Publish(_currentEdit);
                 }
                 else
                     foreach (var userRole in _editedUserRoles)
                     {
                         if(_currentEdit.Name!=null) userRole.Name = _currentEdit.Name;
+                        _eventAggregator.GetEvent<UserRoleChangedEvent>().Publish(userRole);
                     }
             });
 

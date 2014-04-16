@@ -6,37 +6,44 @@ using System.Text;
 using System.Windows.Input;
 using Microsoft.Practices.Prism;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
-using Poseidon.BackOffice.Module.Ums.Contracts;
 using Poseidon.Common.Persistence.Contracts;
 using Poseidon.Ums.Domain.Hibernate.Queries;
 using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.BackOffice.Module.Ums.ViewModels
 {
-    public class UsersViewModel : IUsersViewModel
+    public class UsersViewModel
     {
         readonly IDbConversation _dbConversation;
         readonly IRegionManager _regionManager;
+        readonly IEventAggregator _eventAggregator;
 
-        public UsersViewModel(IDbConversation dbConversation, IRegionManager regionManager)
+        public UsersViewModel(IDbConversation dbConversation, IRegionManager regionManager, IEventAggregator eventAggregator)
         {
             _dbConversation = dbConversation;
             _regionManager = regionManager;
+            _eventAggregator = eventAggregator;
 
             CreateDatasets();
 
             AddNewUserCommand = new DelegateCommand(AddNewUser);
             EditUserCommand = new DelegateCommand(EditUser, CanEditUser);
-            SelectedItems = new ObservableCollection<User>();
+            SelectedItems = new ObservableCollection<UserViewModel>();
             SelectedItems.CollectionChanged += (sender, args) => ((DelegateCommand)EditUserCommand).RaiseCanExecuteChanged();
+
+            _eventAggregator.GetEvent<UserAddedEvent>().Subscribe(OnUserAdded);
+            _eventAggregator.GetEvent<UserChangedEvent>().Subscribe(OnUserChanged);
+            _eventAggregator.GetEvent<UserRemovedEvent>().Subscribe(OnUserRemoved);
+            _eventAggregator.GetEvent<UserRoleChangedEvent>().Subscribe(OnUserRoleChanged);
         }
 
-        public ObservableCollection<User> Users { get; private set; }
-        public ObservableCollection<User> SelectedItems { get; private set; }
+        public ObservableCollection<UserViewModel> Users { get; private set; }
+        public ObservableCollection<UserViewModel> SelectedItems { get; private set; }
 
-        #region Commands
+    #region Commands
 
         public ICommand AddNewUserCommand { get; private set; }
 
@@ -63,8 +70,31 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             return SelectedItems.Any();
         }
 
+    #endregion
 
-        #endregion
+    #region Events
+
+        void OnUserAdded(User user)
+        {
+            Users.Add(new UserViewModel(user));
+        }
+
+        void OnUserChanged(User user)
+        {
+            var viewModel = Users.FirstOrDefault(x => x.Id == user.Id);
+            if (viewModel != null) viewModel.UseDataFrom(user);
+        }
+
+        void OnUserRemoved(int id)
+        {
+            Users.Remove(Users.FirstOrDefault(x => x.Id == id));
+        }
+
+        void OnUserRoleChanged(UserRole userRole)
+        {
+        }
+
+    #endregion
 
         void CreateDatasets()
         {
@@ -73,7 +103,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             {
                 _dbConversation.UsingTransaction(() =>
                     {
-                        Users = new ObservableCollection<User>(_dbConversation.Query(new AllUsersQuery()));
+                        Users = new ObservableCollection<UserViewModel>(_dbConversation.Query(new AllUsersQuery()).Select(x=>new UserViewModel(x)));
                     });
             }
             finally

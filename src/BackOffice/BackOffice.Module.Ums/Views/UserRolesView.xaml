@@ -66,6 +66,7 @@
         <ListView Grid.Column="1" ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}" SelectionMode="Extended">
             <i:Interaction.Behaviors>
                 <behaviors:SelectedItemsBehavior Selections="{Binding SelectedItems}" />
+                <behaviors:MouseDoubleClickBehavior Command="{Binding EditUserRoleCommand}" />
             </i:Interaction.Behaviors>
             <ListView.View>
                 <GridView>

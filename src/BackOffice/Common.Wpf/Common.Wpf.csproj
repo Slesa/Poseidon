@@ -71,6 +71,7 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Adorners\WatermarkAdorner.cs" />
+    <Compile Include="Behaviors\MouseDoubleClickBehavior.cs" />
     <Compile Include="Behaviors\SelectedItemsBehavior.cs" />
     <Compile Include="Extensions\GroupStyleExtension.cs" />
     <Compile Include="Helpers\WeakEventHandler.cs" />

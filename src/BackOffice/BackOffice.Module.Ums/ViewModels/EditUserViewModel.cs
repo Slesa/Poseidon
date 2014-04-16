@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common.ViewModels;
@@ -13,14 +14,16 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
     public class EditUserViewModel : NotificationObject, INavigationAware
     {
         readonly IDbConversation _dbConversation;
+        readonly IEventAggregator _eventAggregator;
         IRegionNavigationJournal _navigationJournal;
         readonly IList<User> _editedUsers = new List<User>();
         readonly User _currentEdit = new User();
 
-        public EditUserViewModel(IDbConversation dbConversation)
+        public EditUserViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
             EditMode = EditMode.Add;
             _dbConversation = dbConversation;
+            _eventAggregator = eventAggregator;
             dbConversation.UsingTransaction(() =>
                 AllUserRoles = dbConversation.Query(new AllUserRolesQuery()).ToList());
             CommitCommand = new DelegateCommand(OnCommit);
@@ -104,12 +107,14 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
                 if (EditMode == EditMode.Add)
                 {
                     _dbConversation.Insert(_currentEdit);
+                    _eventAggregator.GetEvent<UserAddedEvent>().Publish(_currentEdit);
                 }
                 else
-                    foreach (var userRole in _editedUsers)
+                    foreach (var user in _editedUsers)
                     {
-                        if(_currentEdit.Name!=null) userRole.Name = _currentEdit.Name;
-                        if(_currentEdit.UserRole!=null) userRole.UserRole = _currentEdit.UserRole;
+                        if(_currentEdit.Name!=null) user.Name = _currentEdit.Name;
+                        if(_currentEdit.UserRole!=null) user.UserRole = _currentEdit.UserRole;
+                        _eventAggregator.GetEvent<UserChangedEvent>().Publish(user);
                     }
             });
 

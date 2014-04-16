@@ -6,16 +6,28 @@
              xmlns:Resources="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
     <UserControl.Resources>
         <ResourceDictionary>
+            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <ums:EditUserViewModelLocator x:Key="EditUserViewModel" />
+
+            <Style x:Key="LayoutRoot" TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger Property="UIElement.Visibility" Value="Visible">
+                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=_textName}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -26,7 +38,7 @@
         <design:DesignTimeEditUserViewModel />
     </d:UserControl.DataContext>
 
-    <Grid>
+    <Grid Style="{StaticResource LayoutRoot}">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -59,5 +71,11 @@
 
         <Button Grid.ColumnSpan="3" Grid.Row="4" HorizontalAlignment="Right" Content="Back" Command="{Binding CommitCommand}"/>
     </Grid>
-    
+
+    <i:Interaction.Triggers>
+        <ei:KeyTrigger Key="Enter" Modifiers="Control">
+            <i:InvokeCommandAction Command="{Binding CommitCommand}" />
+        </ei:KeyTrigger>
+    </i:Interaction.Triggers>
+
 </UserControl>

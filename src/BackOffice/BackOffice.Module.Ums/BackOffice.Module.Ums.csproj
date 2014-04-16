@@ -73,8 +73,6 @@
     </Compile>
     <Compile Include="Contracts\ITokensViewModel.cs" />
     <Compile Include="Contracts\IUmsModulesViewModel.cs" />
-    <Compile Include="Contracts\IUserRolesViewModel.cs" />
-    <Compile Include="Contracts\IUsersViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeEditUserRoleViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeEditUserViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeTokensViewModel.cs" />
@@ -93,6 +91,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="UmsEvents.cs" />
     <Compile Include="UmsPrismModule.cs" />
     <Compile Include="Modules\UmsOfficeModule.cs" />
     <Compile Include="UmsViews.cs" />
@@ -102,7 +101,9 @@
     <Compile Include="ViewModels\TokensViewModel.cs" />
     <Compile Include="ViewModels\UmsModulesViewModel.cs" />
     <Compile Include="ViewModels\UserRolesViewModel.cs" />
+    <Compile Include="ViewModels\UserRoleViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Views\EditUserRoleView.xaml.cs">
       <DependentUpon>EditUserRoleView.xaml</DependentUpon>
     </Compile>
