@@ -3,38 +3,32 @@ using System.Linq;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common.ViewModels;
 using Poseidon.Common.Persistence.Contracts;
 using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.BackOffice.Module.Ums.ViewModels
 {
-    public class EditUserRoleViewModel : NotificationObject, INavigationAware
+    public class EditUserRoleViewModel : EditItemsViewModel<UserRole>, INavigationAware
     {
-        readonly IDbConversation _dbConversation;
-        readonly IEventAggregator _eventAggregator;
         IRegionNavigationJournal _navigationJournal;
         readonly IList<UserRole> _editedUserRoles = new List<UserRole>();
-        readonly UserRole _currentEdit = new UserRole();
 
-        public EditUserRoleViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
+        public EditUserRoleViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
+            : base(dbConversation, eventAggregator)
         {
-            EditMode = EditMode.Add;
-            _dbConversation = dbConversation;
-            _eventAggregator = eventAggregator;
             CommitCommand = new DelegateCommand(OnCommit);
         }
 
         public DelegateCommand CommitCommand { get; private set; }
-        public string TitleText { get { return EditMode==EditMode.Add ? "Add new user role" : "Edit user role"; } }
+        public override string TitleText { get { return EditMode==EditMode.Add ? "Add new user role" : "Edit user role"; } }
 
         public string Name
         {
-            get { return _currentEdit.Name; }
+            get { return CurrentEdit.Name; }
             set
             {
-                _currentEdit.Name = value;
+                CurrentEdit.Name = value;
                 RaisePropertyChanged(()=>Name);
             }
         }
@@ -50,14 +44,14 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             var userRoles = GetUserRoles(navigationContext).ToList();
             if (userRoles.Any())
             {
-                _dbConversation.UsingTransaction(() =>
+                DbConversation.UsingTransaction(() =>
                     {
                         EditMode = EditMode.Edit;
                         var first = true;
                         foreach (var userRoleId in userRoles)
                         {
-                            var userRole = _dbConversation.GetById<UserRole>(userRoleId);
-                            Name = EditItemsViewModel.GetTargetValue(first, _currentEdit.Name, userRole.Name, null);
+                            var userRole = DbConversation.GetById<UserRole>(userRoleId);
+                            Name = EditItemsViewModel.GetTargetValue(first, CurrentEdit.Name, userRole.Name, null);
                             _editedUserRoles.Add(userRole);
                             first = false;
                         }
@@ -86,18 +80,18 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
 
         void OnCommit()
         {
-            _dbConversation.UsingTransaction(() =>
+            DbConversation.UsingTransaction(() =>
             {
                 if (EditMode == EditMode.Add)
                 {
-                    _dbConversation.Insert(_currentEdit);
-                    _eventAggregator.GetEvent<UserRoleAddedEvent>().Publish(_currentEdit);
+                    DbConversation.Insert(CurrentEdit);
+                    EventAggregator.GetEvent<UserRoleAddedEvent>().Publish(CurrentEdit);
                 }
                 else
                     foreach (var userRole in _editedUserRoles)
                     {
-                        if(_currentEdit.Name!=null) userRole.Name = _currentEdit.Name;
-                        _eventAggregator.GetEvent<UserRoleChangedEvent>().Publish(userRole);
+                        if(CurrentEdit.Name!=null) userRole.Name = CurrentEdit.Name;
+                        EventAggregator.GetEvent<UserRoleChangedEvent>().Publish(userRole);
                     }
             });
 
@@ -105,15 +99,5 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
                 _navigationJournal.GoBack();
         }
 
-        EditMode _editMode;
-        EditMode EditMode
-        {
-            get { return _editMode; }
-            set
-            {
-                _editMode = value;
-                RaisePropertyChanged(() => TitleText);
-            }
-        }
     }
 }

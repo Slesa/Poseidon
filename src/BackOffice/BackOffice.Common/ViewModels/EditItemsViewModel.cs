@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using Microsoft.Practices.Prism.Events;
+﻿using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.Common.Persistence.Contracts;
 
@@ -21,24 +19,31 @@ namespace Poseidon.BackOffice.Common.ViewModels
         }
     }
 
-    public abstract class EditItemsViewModel<T> /*: NotificationObject, IDataErrorInfo*/
+    public abstract class EditItemsViewModel<T> : NotificationObject /*, IDataErrorInfo*/ where T : new()
     {
-        protected IDbConversation DbConversation;
-        protected IEventAggregator EventAggregator;
+        protected readonly IDbConversation DbConversation;
+        protected readonly IEventAggregator EventAggregator;
+        protected readonly T CurrentEdit = new T();
 
 
         protected EditItemsViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
+            EditMode = EditMode.Add;
             DbConversation = dbConversation;
             EventAggregator = eventAggregator;
         }
 
+        public abstract string TitleText { get; }
 
-        T _resultingElement;
-        protected T ResultingElement
+        EditMode _editMode;
+        protected EditMode EditMode
         {
-            get { return _resultingElement; }
-            set { _resultingElement = value; }
+            get { return _editMode; }
+            set
+            {
+                _editMode = value;
+                RaisePropertyChanged(() => TitleText);
+            }
         }
     }
 }

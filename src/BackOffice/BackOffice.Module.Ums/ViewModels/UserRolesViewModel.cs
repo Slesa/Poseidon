@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
@@ -31,8 +32,13 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
 
             AddNewUserRoleCommand = new DelegateCommand(AddNewUserRole);
             EditUserRoleCommand = new DelegateCommand(EditUserRole, CanEditUserRole);
+            RemoveUserRoleCommand = new DelegateCommand(RemoveUserRole, CanRemoveUserRole);
             SelectedItems = new ObservableCollection<UserRoleViewModel>();
-            SelectedItems.CollectionChanged += (sender, args) => ((DelegateCommand)EditUserRoleCommand).RaiseCanExecuteChanged();
+            SelectedItems.CollectionChanged += (sender, args) =>
+                {
+                    ((DelegateCommand) EditUserRoleCommand).RaiseCanExecuteChanged();
+                    ((DelegateCommand) RemoveUserRoleCommand).RaiseCanExecuteChanged();
+                };
 
             _eventAggregator.GetEvent<UserRoleAddedEvent>().Subscribe(OnUserRoleAdded);
             _eventAggregator.GetEvent<UserRoleChangedEvent>().Subscribe(OnUserRoleChanged);
@@ -65,6 +71,27 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
         }
 
         bool CanEditUserRole()
+        {
+            return SelectedItems.Any();
+        }
+
+        public ICommand RemoveUserRoleCommand { get; private set; }
+
+        void RemoveUserRole()
+        {
+            var removed = new List<int>();
+            _dbConversation.UsingTransaction(() =>
+                {
+                    foreach (var viewModel in SelectedItems)
+                    {
+                        _dbConversation.Remove(_dbConversation.GetById<UserRole>(viewModel.Id));
+                        removed.Add(viewModel.Id);
+                    }
+                });
+            foreach(var id in removed) _eventAggregator.GetEvent<UserRoleRemovedEvent>().Publish(id);
+        }
+
+        bool CanRemoveUserRole()
         {
             return SelectedItems.Any();
         }

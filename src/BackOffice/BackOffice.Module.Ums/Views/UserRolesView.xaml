@@ -50,6 +50,7 @@
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                 <Button Content="Add" Command="{Binding AddNewUserRoleCommand}"/>
                 <Button Content="Edit" Command="{Binding EditUserRoleCommand}"/>
+                <Button Content="Remove" Command="{Binding RemoveUserRoleCommand}"/>
             </StackPanel>
 
             <Controls:ModuleInfoArea

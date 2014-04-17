@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
@@ -31,8 +32,13 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
 
             AddNewUserCommand = new DelegateCommand(AddNewUser);
             EditUserCommand = new DelegateCommand(EditUser, CanEditUser);
+            RemoveUserCommand = new DelegateCommand(RemoveUser, CanRemoveUser);
             SelectedItems = new ObservableCollection<UserViewModel>();
-            SelectedItems.CollectionChanged += (sender, args) => ((DelegateCommand)EditUserCommand).RaiseCanExecuteChanged();
+            SelectedItems.CollectionChanged += (sender, args) =>
+                {
+                    ((DelegateCommand) EditUserCommand).RaiseCanExecuteChanged();
+                    ((DelegateCommand) RemoveUserCommand).RaiseCanExecuteChanged();
+                };
 
             _eventAggregator.GetEvent<UserAddedEvent>().Subscribe(OnUserAdded);
             _eventAggregator.GetEvent<UserChangedEvent>().Subscribe(OnUserChanged);
@@ -66,6 +72,27 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
         }
 
         bool CanEditUser()
+        {
+            return SelectedItems.Any();
+        }
+
+        public ICommand RemoveUserCommand { get; private set; }
+
+        void RemoveUser()
+        {
+            var removed = new List<int>();
+            _dbConversation.UsingTransaction(() =>
+                {
+                    foreach (var viewModel in SelectedItems)
+                    {
+                        _dbConversation.Remove(_dbConversation.GetById<User>(viewModel.Id));
+                        removed.Add(viewModel.Id);
+                    }
+                });
+            foreach (var id in removed) _eventAggregator.GetEvent<UserRemovedEvent>().Publish(id);
+        }
+
+        bool CanRemoveUser()
         {
             return SelectedItems.Any();
         }

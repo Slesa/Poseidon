@@ -8,6 +8,7 @@
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
+             xmlns:Behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -61,7 +62,11 @@
         <TextBox Grid.Row="1" Grid.Column="1" x:Name="_textName" 
                  HorizontalAlignment="Stretch"
                  Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
-                 ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}"/>
+                 ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}">
+            <i:Interaction.Behaviors>
+                <Behaviors:SelectAllOnFocusBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
 
         <Label Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=_comboUserRole}" Content="{x:Static Resources:Strings.EditUserView_UserRole}"/>
         <ComboBox Grid.Row="2" Grid.Column="1" Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
@@ -70,6 +75,7 @@
                   IsEditable="False" />
 
         <Button Grid.ColumnSpan="3" Grid.Row="4" HorizontalAlignment="Right" Content="Back" Command="{Binding CommitCommand}"/>
+        
     </Grid>
 
     <i:Interaction.Triggers>

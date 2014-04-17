@@ -8,6 +8,7 @@
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
+             xmlns:Behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -60,7 +61,11 @@
         <Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="{x:Static Resources:Strings.EditUserRoleView_Name}"/>
         <TextBox Grid.Row="1" Grid.Column="1" x:Name="_textName"
                  Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
-                 ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}"/>
+                 ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}">
+            <i:Interaction.Behaviors>
+                <Behaviors:SelectAllOnFocusBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
 
         <Button Grid.ColumnSpan="3" Grid.Row="3" HorizontalAlignment="Right" Content="Back" Command="{Binding CommitCommand}"/>
 

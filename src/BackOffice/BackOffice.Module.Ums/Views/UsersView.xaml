@@ -50,6 +50,7 @@
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                 <Button Content="Add" Command="{Binding AddNewUserCommand}"/>
                 <Button Content="Edit" Command="{Binding EditUserCommand}"/>
+                <Button Content="Remove" Command="{Binding RemoveUserCommand}"/>
             </StackPanel>
 
             <Controls:ModuleInfoArea
@@ -66,6 +67,7 @@
         <ListView Grid.Column="1" ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}" SelectionMode="Extended">
             <i:Interaction.Behaviors>
                 <behaviors:SelectedItemsBehavior Selections="{Binding SelectedItems}" />
+                <behaviors:MouseDoubleClickBehavior Command="{Binding EditUserCommand}" />
             </i:Interaction.Behaviors>
             <ListView.View>
                 <GridView>

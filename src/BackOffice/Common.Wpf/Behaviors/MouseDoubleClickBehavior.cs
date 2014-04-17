@@ -5,57 +5,42 @@ using System.Windows.Interactivity;
 
 namespace Poseidon.Common.Wpf.Behaviors
 {
-    public class MouseDoubleClickBehavior : Behavior<ListBox>
+    public class MouseDoubleClickBehavior : Behavior<Control>
     {
-        public static DependencyProperty CommandProperty =
-            DependencyProperty.RegisterAttached(
-                "Command",
-                typeof(ICommand),
-                typeof(MouseDoubleClickBehavior),
-                new UIPropertyMetadata(CommandChanged));
+        public static readonly DependencyProperty CommandProperty =
+            DependencyProperty.Register("Command", typeof (ICommand), typeof (MouseDoubleClickBehavior), new PropertyMetadata(default(ICommand)));
 
-        public static DependencyProperty CommandParameterProperty =
-            DependencyProperty.RegisterAttached(
-                "CommandParameter",
-                typeof(object),
-                typeof(MouseDoubleClickBehavior),
-                new UIPropertyMetadata(null));
-
-        public static void SetCommand(DependencyObject target, ICommand value)
+        public ICommand Command
         {
-            target.SetValue(CommandProperty, value);
+            get { return (ICommand) GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
         }
 
-        public static void SetCommandParameter(DependencyObject target, object value)
-        {
-            target.SetValue(CommandParameterProperty, value);
-        }
-        public static object GetCommandParameter(DependencyObject target)
-        {
-            return target.GetValue(CommandParameterProperty);
-        }
+        public static readonly DependencyProperty CommandParameterProperty =
+            DependencyProperty.Register("CommandParameter", typeof (object), typeof (MouseDoubleClickBehavior), new PropertyMetadata(default(object)));
 
-        static void CommandChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
+        public object CommandParameter
         {
-            var control = target as Control;
-            if (control == null) return;
-
-            if ((e.NewValue != null) && (e.OldValue == null))
-            {
-                control.MouseDoubleClick += OnMouseDoubleClick;
-            }
-            else if ((e.NewValue == null) && (e.OldValue != null))
-            {
-                control.MouseDoubleClick -= OnMouseDoubleClick;
-            }
+            get { return GetValue(CommandParameterProperty); }
+            set { SetValue(CommandParameterProperty, value); }
         }
 
-        static void OnMouseDoubleClick(object sender, RoutedEventArgs e)
+        protected override void OnAttached()
         {
-            var control = sender as Control;
-            var command = (ICommand)control.GetValue(CommandProperty);
-            var commandParameter = control.GetValue(CommandParameterProperty);
-            command.Execute(commandParameter);
+            base.OnAttached();
+            AssociatedObject.MouseDoubleClick += OnMouseDoubleClick;
+        }
+
+        protected override void OnDetaching()
+        {
+            AssociatedObject.MouseDoubleClick -= OnMouseDoubleClick;
+            base.OnDetaching();
+        }
+
+        void OnMouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            if (Command == null) return;
+            Command.Execute(CommandParameter);
         }
     }
 }
