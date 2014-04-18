@@ -162,8 +162,17 @@
   <data name="UserModule" xml:space="preserve">
     <value>Users</value>
   </data>
+  <data name="UserModule_AddUser" xml:space="preserve">
+    <value>Add new user...</value>
+  </data>
   <data name="UserModule_Description" xml:space="preserve">
     <value>Manage users of the system, edit their profiles and their rights</value>
+  </data>
+  <data name="UserModule_EditUser" xml:space="preserve">
+    <value>Edit users...</value>
+  </data>
+  <data name="UserModule_RemoveUser" xml:space="preserve">
+    <value>Remove users...</value>
   </data>
   <data name="UserModule_Tooltip" xml:space="preserve">
     <value>Manage your users</value>
@@ -171,8 +180,17 @@
   <data name="UserRoleModule" xml:space="preserve">
     <value>User roles</value>
   </data>
+  <data name="UserRoleModule_AddUserRole" xml:space="preserve">
+    <value>Add new user role...</value>
+  </data>
   <data name="UserRoleModule_Description" xml:space="preserve">
     <value>Manage user roles, the users can act as</value>
+  </data>
+  <data name="UserRoleModule_EditUserRole" xml:space="preserve">
+    <value>Edit user roles...</value>
+  </data>
+  <data name="UserRoleModule_RemoveUserRole" xml:space="preserve">
+    <value>Remove user roles...</value>
   </data>
   <data name="UserRoleModule_Tooltip" xml:space="preserve">
     <value>Manage your user roles</value>

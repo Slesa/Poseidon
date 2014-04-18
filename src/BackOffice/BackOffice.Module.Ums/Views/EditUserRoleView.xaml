@@ -67,7 +67,7 @@
             </i:Interaction.Behaviors>
         </TextBox>
 
-        <Button Grid.ColumnSpan="3" Grid.Row="3" HorizontalAlignment="Right" Content="Back" Command="{Binding CommitCommand}"/>
+        <Button Grid.ColumnSpan="3" Grid.Row="3" Command="{Binding CommitCommand}" Style="{DynamicResource Style.Edit.Buttons.Ok}"/>
 
     </Grid>
     

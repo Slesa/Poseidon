@@ -74,7 +74,7 @@
                   SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                   IsEditable="False" />
 
-        <Button Grid.ColumnSpan="3" Grid.Row="4" HorizontalAlignment="Right" Content="Back" Command="{Binding CommitCommand}"/>
+        <Button Grid.ColumnSpan="3" Grid.Row="4" Command="{Binding CommitCommand}" Style="{DynamicResource Style.Edit.Buttons.Ok}" />
         
     </Grid>
 

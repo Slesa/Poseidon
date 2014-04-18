@@ -5,11 +5,13 @@
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Colors.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Brushes.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Images.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Buttons.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Shell.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.NavigationBar.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.StatusBar.xaml"/>
         <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Modules.xaml"/>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Edit.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
