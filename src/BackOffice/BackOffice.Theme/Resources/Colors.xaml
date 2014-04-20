@@ -16,5 +16,7 @@
     <Color x:Key="Color.Navigation.Button.Pressed">DarkCyan</Color>
 
     <Color x:Key="Color.Module.Header">LightBlue</Color>
+    <Color x:Key="Color.Module.Border">DimGray</Color>
+    <Color x:Key="Color.Module.Hightlighted">LightCyan</Color>
 
 </ResourceDictionary>

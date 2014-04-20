@@ -38,5 +38,7 @@
     <SolidColorBrush x:Key="Brush.Navigation.Button.Pressed"  Color="{StaticResource Color.Navigation.Button.Pressed}" />
     
     <SolidColorBrush x:Key="Brush.Module.Header"  Color="{StaticResource Color.Module.Header}" />
+    <SolidColorBrush x:Key="Brush.Module.Highlighted"  Color="{StaticResource Color.Module.Hightlighted}" />
+    <SolidColorBrush x:Key="Brush.Module.Border"  Color="{StaticResource Color.Module.Border}" />
 
 </ResourceDictionary>
