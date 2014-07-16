@@ -31,21 +31,39 @@ namespace Tutorial
             PrologMachine lastMachine = null;
             while (true)
             {
-                Console.Write("Hint.: "+_queryHint);
+                Console.WriteLine("Hint.: "+_queryHint);
                 Console.Write("Query: ");
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input)) return;
 
-                if (input.ToLower() == "n" && lastMachine!=null)
-                {
-                    lastMachine.RunToBacktrack();
-                    continue;
-                }
-
                 var query = GetQuery(input);
                 if (query == null) continue;
 
+                if (input.ToLower() == ";" && lastMachine != null)
+                {
+                    lastMachine = Execute(lastMachine, query);
+                    continue;
+                }
+
                 lastMachine = Execute(program, query);
+            }
+        }
+
+        PrologMachine Execute(PrologMachine machine, Query query)
+        {
+            try
+            {
+                machine.ExecutionComplete += CodeExecuted;
+                machine.RunToBacktrack();
+                machine.Restart();
+                var result = machine.RunToSuccess();
+                Console.WriteLine(Enum.GetName(typeof(ExecutionResults), result));
+                return machine;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error, got exception: {0}", ex.Message);
+                return null;
             }
         }
 
