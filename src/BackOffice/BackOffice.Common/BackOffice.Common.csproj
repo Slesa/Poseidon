@@ -73,6 +73,7 @@
     <Compile Include="Controls\ModuleInfoArea.cs" />
     <Compile Include="Controls\ModuleListControl.cs" />
     <Compile Include="Events.cs" />
+    <Compile Include="Helpers\SharedResourceDictionary.cs" />
     <Compile Include="IRegisterModule.cs" />
     <Compile Include="IOfficeModule.cs" />
     <Compile Include="OfficeModule.cs" />
