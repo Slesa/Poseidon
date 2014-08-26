@@ -10,6 +10,9 @@
 
     <UserControl.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Common;component/Resources/Converters.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
             <d:ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.StatusBar.xaml"/>
             </d:ResourceDictionary.MergedDictionaries>
@@ -27,7 +30,7 @@
         <design:DesignTimeStatusBarViewModel />
     </d:UserControl.DataContext>
 
-    <Border>
+    <Border Visibility="{Binding Message, Converter={StaticResource StringEmptyToVisibilityCollapsedConverter}}">
         <TextBox Text="{Binding Message, Mode=OneWay}" IsReadOnly="True" Style="{DynamicResource Style.StatusBar.Message}" Focusable="False" />
     </Border>
 

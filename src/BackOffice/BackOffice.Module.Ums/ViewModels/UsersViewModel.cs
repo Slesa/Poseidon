@@ -66,7 +66,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
 
             var sb = new StringBuilder();
             sb.Append(UmsViews.EditUserView);
-            var query = new UriQuery() { { "Selection", string.Join(",", selection) } };
+            var query = new UriQuery { { "Selection", string.Join(",", selection) } };
             sb.Append(query);
             _regionManager.RequestNavigate(Regions.TagModulesRegion, new Uri(sb.ToString(), UriKind.Relative));
         }

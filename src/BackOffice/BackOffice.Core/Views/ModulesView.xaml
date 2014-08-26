@@ -30,7 +30,7 @@
                         ToolTip="{Binding ToolTip}" />
                 </HeaderedContentControl.Header>
                 <HeaderedContentControl.Content>
-                    <ListBox ItemsSource="{Binding Children}" FocusVisualStyle="{x:Null}" BorderThickness="0" Margin="23,0,0,0" />
+                    <ListBox ItemsSource="{Binding Children}" FocusVisualStyle="{x:Null}" BorderThickness="0" Margin="23,0,0,0" HorizontalContentAlignment="Stretch" />
                 </HeaderedContentControl.Content>
             </HeaderedContentControl>
         </HierarchicalDataTemplate>

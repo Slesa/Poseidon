@@ -7,6 +7,11 @@ namespace Poseidon.BackOffice.Core.DesignTime
 {
     public class DesignTimeModulesViewModel
     {
+        class UmsOfficeModule : OfficeModule
+        {
+            
+        }
+
         IEnumerable<ModuleViewModel> _modules;
 
         public IEnumerable<ModuleViewModel> ModulesCollection
@@ -16,7 +21,7 @@ namespace Poseidon.BackOffice.Core.DesignTime
 
         IEnumerable<ModuleViewModel> CreateModules()
         {
-            var umsModule = new OfficeModule
+            var umsModule = new UmsOfficeModule
                 {
                     Title = "Office Module 1",
                     Description = "This is the Office module number one.",
@@ -32,7 +37,7 @@ namespace Poseidon.BackOffice.Core.DesignTime
                     Title = "Users",
                     Description = "Manage all users",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/User.png",
-                    //Parent = umsModule,
+                    ParentType = typeof(UmsOfficeModule),
                 };
             yield return userModule;
             var userRoleModule = new OfficeModule
@@ -40,7 +45,7 @@ namespace Poseidon.BackOffice.Core.DesignTime
                     Title = "User Roles",
                     Description = "Manage all user roles",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/UserRole.png",
-                    //Parent = umsModule,
+                    ParentType = typeof(UmsOfficeModule),
                 };
             yield return userRoleModule;
             var tokenModule = new OfficeModule
@@ -48,7 +53,7 @@ namespace Poseidon.BackOffice.Core.DesignTime
                     Title = "Tokens",
                     Description = "Manage all tokens",
                     IconFileName = "/Poseidon.BackOffice.Core;component/DesignTime/Resources/Token.png",
-                    //Parent = umsModule,
+                    ParentType = typeof(UmsOfficeModule),
                 };
             yield return tokenModule;
         }

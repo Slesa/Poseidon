@@ -1,12 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Image x:Key="Images.Back" Source="Images/back.png" />
-    <Image x:Key="Images.Forward" Source="Images/forward.png" />
-    <Image x:Key="Images.Home" Source="Images/home.png" />
-    <Image x:Key="Images.Add" Source="Images/add.png" />
-    <Image x:Key="Images.Edit" Source="Images/edit.png" />
-    <Image x:Key="Images.Remove" Source="Images/remove.png" />
-    <Image x:Key="Images.Ok" Source="Images/ok.png" />
+    <Image x:Key="Images.Back" Source="Images/back.png" x:Shared="false" />
+    <Image x:Key="Images.Forward" Source="Images/forward.png" x:Shared="false" />
+    <Image x:Key="Images.Home" Source="Images/home.png" x:Shared="false" />
+    <Image x:Key="Images.Add" Source="Images/add.png" x:Shared="false" />
+    <Image x:Key="Images.Edit" Source="Images/edit.png" x:Shared="false" />
+    <Image x:Key="Images.Remove" Source="Images/remove.png" x:Shared="false" />
+    <Image x:Key="Images.Ok" Source="Images/ok.png" x:Shared="false" />
 
 </ResourceDictionary>
