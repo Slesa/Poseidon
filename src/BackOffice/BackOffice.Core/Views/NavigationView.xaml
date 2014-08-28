@@ -25,9 +25,9 @@
         <design:DesignTimeNavigationViewModel />
     </d:UserControl.DataContext>
         
-    <ContentControl Style="{DynamicResource Style.Navigation}" BorderBrush="Aquamarine" BorderThickness="3" >
+    <ContentControl Style="{DynamicResource Style.Navigation}" BorderBrush="Aquamarine" BorderThickness="3" VerticalAlignment="Top" >
         
-        <Grid Style="{DynamicResource Style.Navigation.Group}">
+        <Grid Style="{DynamicResource Style.Navigation.Group}" VerticalAlignment="Top">
             
 <!--
             <Grid.RowDefinitions>

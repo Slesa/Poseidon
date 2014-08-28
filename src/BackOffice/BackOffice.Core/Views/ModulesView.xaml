@@ -64,7 +64,7 @@
     </d:UserControl.DataContext>
 
     
-    <Grid>
+    <Grid Margin="10">
         <!--<ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />-->
         <TreeView ItemsSource="{Binding ModulesCollection}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
     </Grid>

@@ -31,9 +31,9 @@
     </Window.InputBindings>
 
     <DockPanel Style="{DynamicResource Style.Shell.DockPanel}" LastChildFill="True">
-        <ContentControl DockPanel.Dock="Top" regions:RegionManager.RegionName="{x:Static common:Regions.TagNavigationRegion}" />
-        <ContentControl DockPanel.Dock="Bottom" regions:RegionManager.RegionName="{x:Static common:Regions.TagStatusBarRegion}" />
-        <ContentControl regions:RegionManager.RegionName="{x:Static common:Regions.TagModulesRegion}" />
+        <ContentControl x:Name="Navigation" DockPanel.Dock="Top" regions:RegionManager.RegionName="{x:Static common:Regions.TagNavigationRegion}" />
+        <ContentControl x:Name="StatusBar" DockPanel.Dock="Bottom" regions:RegionManager.RegionName="{x:Static common:Regions.TagStatusBarRegion}" />
+        <ContentControl x:Name="Modules" regions:RegionManager.RegionName="{x:Static common:Regions.TagModulesRegion}" />
     </DockPanel>
 
 </Window>
