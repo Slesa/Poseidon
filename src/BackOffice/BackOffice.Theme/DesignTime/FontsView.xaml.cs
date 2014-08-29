@@ -2,9 +2,9 @@
 
 namespace Poseidon.BackOffice.Theme
 {
-	public partial class BrushesView : UserControl
+	public partial class FontsView : UserControl
 	{
-		public BrushesView()
+		public FontsView()
 		{
 			this.InitializeComponent();
 		}

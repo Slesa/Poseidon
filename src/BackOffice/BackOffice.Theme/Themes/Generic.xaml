@@ -3,6 +3,7 @@
                     xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common">
 
     <ResourceDictionary.MergedDictionaries>
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Fonts.xaml" />
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Colors.xaml" />
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Brushes.xaml" />
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Images.xaml" />

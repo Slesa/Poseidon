@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Poseidon.BackOffice.Theme.BrushesView"
+﻿<UserControl x:Class="Poseidon.BackOffice.Theme.FontsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -25,7 +25,7 @@
                             <Rectangle Fill="{TemplateBinding Background}" />
                             <TextBlock HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
-                                       Foreground="{TemplateBinding Foreground}"
+                                       FontFamily="{TemplateBinding FontFamily}"
                                        Text="{TemplateBinding Text}" />
                         </Grid>
                     </ControlTemplate>
@@ -34,21 +34,12 @@
         </Style>
     </UserControl.Resources>
 
-    <StackPanel>
-
-        <StackPanel>
-            
-            <TextBlock Text="Normal" />
             <WrapPanel Orientation="Horizontal">
-                <TextBox Background="{DynamicResource Brush.Background}"
-                         Foreground="{DynamicResource Brush.Foreground}"
-                         Text="Background" />
-                <TextBox Background="{DynamicResource Brush.Foreground}"
-                         Foreground="{DynamicResource Brush.Background}"
-                         Text="Foreground" />
+                <TextBox 
+                         FontFamily="{DynamicResource Font.Title}"
+                         Text="Normal" />
+                <TextBox FontFamily="{DynamicResource Font.Title}"
+                         Text="Title" />
             </WrapPanel>
             
-        </StackPanel>
-
-    </StackPanel>
 </UserControl>

@@ -4,6 +4,7 @@
                     xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common">
 
     <ResourceDictionary.MergedDictionaries>
+        <helpers:SharedResourceDictionary Source="Fonts.xaml" />
         <helpers:SharedResourceDictionary Source="Brushes.xaml" />
         <helpers:SharedResourceDictionary Source="Images.xaml" />
         <helpers:SharedResourceDictionary Source="Buttons.xaml" />
@@ -44,6 +45,7 @@
                                    Source="{TemplateBinding IconFile}" />
                             <TextBlock Grid.Column="1"
                                        Margin="2,4,4,2"
+                                       FontFamily="{StaticResource Font.Title}"
                                        FontSize="{TemplateBinding TitleFontSize}"
                                        FontWeight="{TemplateBinding TitleFontWeight}"
                                        Text="{TemplateBinding Content}" />

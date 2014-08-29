@@ -47,6 +47,9 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="DesignTime\FontsView.xaml.cs">
+      <DependentUpon>FontsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DesignTime\BrushesView.xaml.cs">
       <DependentUpon>BrushesView.xaml</DependentUpon>
     </Compile>
@@ -73,11 +76,20 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Fonts\axis.otf" />
+    <Page Include="DesignTime\FontsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DesignTime\BrushesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Fonts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
