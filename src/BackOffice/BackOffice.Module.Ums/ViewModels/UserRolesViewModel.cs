@@ -5,9 +5,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
-using Microsoft.Practices.Prism;
 using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
 using Poseidon.Common.Persistence.Contracts;
@@ -65,7 +64,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
 
             var sb = new StringBuilder();
             sb.Append(UmsViews.EditUserRoleView);
-            var query = new UriQuery {{"Selection", string.Join(",", selection)}};
+            var query = new NavigationParameters {{"Selection", string.Join(",", selection)}};
             sb.Append(query);
             _regionManager.RequestNavigate(Regions.TagModulesRegion, new Uri(sb.ToString(), UriKind.Relative));
         }

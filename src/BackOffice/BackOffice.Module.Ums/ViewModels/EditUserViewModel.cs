@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common.ViewModels;
 using Poseidon.Common.Persistence.Contracts;
@@ -83,7 +83,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
 
         IEnumerable<int> GetUsers(NavigationContext navigationContext)
         {
-            var selection = navigationContext.Parameters["Selection"];
+            var selection = navigationContext.Parameters["Selection"] as string;
             if (selection == null) yield break;
 
             foreach (var item in selection.Split(','))

@@ -1,6 +1,6 @@
 ﻿using Machine.Fakes;
 using Machine.Specifications;
-using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Core.ViewModels;
 

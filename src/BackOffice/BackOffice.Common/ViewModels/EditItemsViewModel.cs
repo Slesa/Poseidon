@@ -1,4 +1,4 @@
-﻿using Microsoft.Practices.Prism.Events;
+﻿using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.Common.Persistence.Contracts;
 
