@@ -92,6 +92,7 @@
     <Compile Include="Controls\ModuleListControl.cs" />
     <Compile Include="Converter\StringEmptyToVisibilityCollapsedConverter.cs" />
     <Compile Include="Events.cs" />
+    <Compile Include="Helpers\DesignResourceDictionary.cs" />
     <Compile Include="Helpers\SharedResourceDictionary.cs" />
     <Compile Include="IRegisterModule.cs" />
     <Compile Include="IOfficeModule.cs" />

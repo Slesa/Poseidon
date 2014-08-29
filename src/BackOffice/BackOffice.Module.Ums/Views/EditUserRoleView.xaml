@@ -6,8 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:interactivity="http://www.codeplex.com/prism"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              d:DesignHeight="300"
@@ -92,7 +91,7 @@
 
     <i:Interaction.Triggers>
         <ei:KeyTrigger Key="Enter" Modifiers="Control">
-            <interactivity:InvokeCommandAction Command="{Binding CommitCommand}" />
+            <i:InvokeCommandAction Command="{Binding CommitCommand}" />
         </ei:KeyTrigger>
     </i:Interaction.Triggers>
 

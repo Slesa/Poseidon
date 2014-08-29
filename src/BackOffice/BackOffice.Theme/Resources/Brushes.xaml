@@ -1,44 +1,44 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        mc:Ignorable="d">
+                    xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Colors.xaml"/>
+        <helpers:SharedResourceDictionary Source="Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="Brush.Foreground"  Color="{StaticResource Color.Foreground}" />
-    <SolidColorBrush x:Key="Brush.Background"  Color="{StaticResource Color.Background}" />
+    <SolidColorBrush x:Key="Brush.Foreground" Color="{StaticResource Color.Foreground}" />
+    <SolidColorBrush x:Key="Brush.Background" Color="{StaticResource Color.Background}" />
 
-    <RadialGradientBrush x:Key="Brush.Radial"  GradientOrigin="0.5,0.5" Center="0.5,0.5" 
-      RadiusX="0.7" RadiusY="0.8">
-        <GradientStop Color="{StaticResource Color.Foreground}" Offset="0" />
-        <GradientStop Color="{StaticResource Color.Background}" Offset="1" />
+    <RadialGradientBrush x:Key="Brush.Radial" Center="0.5,0.5" GradientOrigin="0.5,0.5" RadiusX="0.7" RadiusY="0.8">
+        <GradientStop Offset="0" Color="{StaticResource Color.Foreground}" />
+        <GradientStop Offset="1" Color="{StaticResource Color.Background}" />
     </RadialGradientBrush>
 
     <LinearGradientBrush x:Key="Brush.Linear" StartPoint="0,0" EndPoint="0,0.4">
-        <GradientStop Color="{StaticResource Color.Foreground}" Offset="1" />
-        <GradientStop Color="{StaticResource Color.Background}" Offset="0" />
+        <GradientStop Offset="1" Color="{StaticResource Color.Foreground}" />
+        <GradientStop Offset="0" Color="{StaticResource Color.Background}" />
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="Brush.LinearInverted" StartPoint="0,0.6" EndPoint="0,1">
-        <GradientStop Color="{StaticResource Color.Foreground}" Offset="0" />
-        <GradientStop Color="{StaticResource Color.Background}" Offset="1" />
+        <GradientStop Offset="0" Color="{StaticResource Color.Foreground}" />
+        <GradientStop Offset="1" Color="{StaticResource Color.Background}" />
     </LinearGradientBrush>
 
-    <SolidColorBrush x:Key="Brush.BreadCrumb.Foreground"  Color="{StaticResource Color.BreadCrumb.Foreground}" />
-    <SolidColorBrush x:Key="Brush.BreadCrumb.Inverted"  Color="{StaticResource Color.BreadCrumb.Inverted}" />
-    <SolidColorBrush x:Key="Brush.BreadCrumb.Background"  Color="{StaticResource Color.BreadCrumb.Background}" />
-    <SolidColorBrush x:Key="Brush.BreadCrumb.Button"  Color="{StaticResource Color.BreadCrumb.Button}" />
-    <SolidColorBrush x:Key="Brush.BreadCrumb.Button.Pressed"  Color="{StaticResource Color.BreadCrumb.Button.Pressed}" />
-    <SolidColorBrush x:Key="Brush.BreadCrumb.Button.Hover"  Color="{StaticResource Color.BreadCrumb.Button.Hover}" />
-    
-    <SolidColorBrush x:Key="Brush.Navigation.Button"  Color="{StaticResource Color.Navigation.Button}" />
-    <SolidColorBrush x:Key="Brush.Navigation.Button.Pressed"  Color="{StaticResource Color.Navigation.Button.Pressed}" />
-    
-    <SolidColorBrush x:Key="Brush.Module.Header"  Color="{StaticResource Color.Module.Header}" />
-    <SolidColorBrush x:Key="Brush.Module.Highlighted"  Color="{StaticResource Color.Module.Hightlighted}" />
-    <SolidColorBrush x:Key="Brush.Module.Border"  Color="{StaticResource Color.Module.Border}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Foreground" Color="{StaticResource Color.BreadCrumb.Foreground}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Inverted" Color="{StaticResource Color.BreadCrumb.Inverted}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Background" Color="{StaticResource Color.BreadCrumb.Background}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Button" Color="{StaticResource Color.BreadCrumb.Button}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Button.Pressed" Color="{StaticResource Color.BreadCrumb.Button.Pressed}" />
+    <SolidColorBrush x:Key="Brush.BreadCrumb.Button.Hover" Color="{StaticResource Color.BreadCrumb.Button.Hover}" />
+
+    <SolidColorBrush x:Key="Brush.Navigation.Button" Color="{StaticResource Color.Navigation.Button}" />
+    <SolidColorBrush x:Key="Brush.Navigation.Button.Pressed" Color="{StaticResource Color.Navigation.Button.Pressed}" />
+
+    <SolidColorBrush x:Key="Brush.Module.Header" Color="{StaticResource Color.Module.Header}" />
+    <SolidColorBrush x:Key="Brush.Module.Highlighted" Color="{StaticResource Color.Module.Hightlighted}" />
+    <SolidColorBrush x:Key="Brush.Module.Border" Color="{StaticResource Color.Module.Border}" />
 
 </ResourceDictionary>
