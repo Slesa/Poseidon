@@ -76,6 +76,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Fonts\comic.ttf" />
+    <Resource Include="Resources\Fonts\comicbd.ttf" />
+    <Resource Include="Resources\Fonts\Candara.ttf" />
+    <Resource Include="Resources\Fonts\Candarab.ttf" />
+    <Resource Include="Resources\Fonts\Candarai.ttf" />
+    <Resource Include="Resources\Fonts\Candaraz.ttf" />
     <Resource Include="Resources\Fonts\axis.otf" />
     <Page Include="DesignTime\FontsView.xaml">
       <Generator>MSBuild:Compile</Generator>

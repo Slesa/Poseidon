@@ -52,6 +52,7 @@
                             <TextBlock Grid.Row="1"
                                        Grid.Column="1"
                                        Margin="2,2,4,4"
+                                       FontFamily="{StaticResource Font.Normal}"
                                        Text="{TemplateBinding Description}" />
                         </Grid>
 
