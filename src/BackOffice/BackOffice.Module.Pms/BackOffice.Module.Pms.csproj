@@ -93,6 +93,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="DesignTime\DesignTimePmsModulesViewModel.cs" />
     <Compile Include="Modules\DiscountModule.cs" />
     <Compile Include="Modules\PmsOfficeModule.cs" />
