@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Data;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Unity;
 using Poseidon.BackOffice.Common;
@@ -12,10 +13,11 @@ namespace Poseidon.BackOffice.Core.ViewModels
 {
     public class ModulesViewModel : IProcessFiltering
     {
-        public ModulesViewModel(IUnityContainer container, IRegionManager regionManager)
+        public ModulesViewModel(IEventAggregator eventAggregator, IUnityContainer container, IRegionManager regionManager)
         {
             var modules = container.ResolveAll<IOfficeModule>().ToArray();
             Modules = modules.Where(x=>x.ParentType==null).OrderBy(x=>x.Priority).Select(x => new OfficeModuleViewModel(x, modules, regionManager));
+            eventAggregator.GetEvent<StatusBarMessageEvent>().Publish("Ready");
         }
 
         IEnumerable<ModuleViewModel> Modules { get; set; }

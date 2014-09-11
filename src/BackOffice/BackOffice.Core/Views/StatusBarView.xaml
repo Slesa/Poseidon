@@ -30,8 +30,7 @@
         <design:DesignTimeStatusBarViewModel />
     </d:UserControl.DataContext>
 
-    <Border Width="300"
-            HorizontalAlignment="Right"
+    <Border Style ="{DynamicResource Style.StatusBar.Border}"
             Visibility="{Binding Message,
                                  Converter={StaticResource StringEmptyToVisibilityCollapsedConverter}}">
         <TextBox Focusable="False"
