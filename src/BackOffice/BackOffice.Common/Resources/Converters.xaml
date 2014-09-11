@@ -3,5 +3,6 @@
                     xmlns:Converter="clr-namespace:Poseidon.BackOffice.Common.Converter">
 
     <Converter:StringEmptyToVisibilityCollapsedConverter x:Key="StringEmptyToVisibilityCollapsedConverter" />
+    <Converter:StringEmptyToFalseConverter x:Key="StringEmptyToFalseConverter" />
     
 </ResourceDictionary>

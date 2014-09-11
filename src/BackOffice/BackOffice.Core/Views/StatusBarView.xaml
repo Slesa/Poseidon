@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -29,11 +31,49 @@
     <d:UserControl.DataContext>
         <design:DesignTimeStatusBarViewModel />
     </d:UserControl.DataContext>
+    <!-- Visibility="{Binding Message,
+                                 Converter={StaticResource StringEmptyToVisibilityCollapsedConverter}}" -->
+    <Border x:Name="border" Style ="{DynamicResource Style.StatusBar.Border}"
+             RenderTransformOrigin="0.5,0.5">
+        <Border.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Border.RenderTransform>
 
-    <Border Style ="{DynamicResource Style.StatusBar.Border}"
-            Visibility="{Binding Message,
-                                 Converter={StaticResource StringEmptyToVisibilityCollapsedConverter}}">
-        <TextBox Focusable="False"
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ContentAvailGroup">
+                <VisualState x:Name="NoDataState">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="border">
+                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background)" Storyboard.TargetName="text">
+                            <DiscreteObjectKeyFrame KeyTime="0:0:1">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <SolidColorBrush Color="Green"/>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="HasDataState"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <i:Interaction.Triggers>
+            <ei:DataTrigger Binding="{Binding Message, Converter={StaticResource StringEmptyToFalseConverter}}" Value="False">
+                <ei:GoToStateAction StateName="NoDataState" />
+            </ei:DataTrigger>
+            <ei:DataTrigger Binding="{Binding Message, Converter={StaticResource StringEmptyToFalseConverter}}" Value="True">
+                <ei:GoToStateAction StateName="HasDataState" />
+            </ei:DataTrigger>
+        </i:Interaction.Triggers>
+
+        <TextBox x:Name="text"  Focusable="False"
                  IsReadOnly="True"
                  Style="{DynamicResource Style.StatusBar.Message}"
                  Text="{Binding Message,
