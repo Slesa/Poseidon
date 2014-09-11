@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A1BCADDC-62FA-4FB4-A4EF-06315EA85311}</ProjectGuid>
+    <ProjectGuid>{CC405901-F232-415E-886F-2C96EFD97D3F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Poseidon.Ums.Domain.Hibernate</RootNamespace>
-    <AssemblyName>Poseidon.Ums.Domain.Hibernate</AssemblyName>
+    <RootNamespace>Common.Crypto</RootNamespace>
+    <AssemblyName>Common.Crypto</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,17 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentNHibernate">
-      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NHibernate.3.3.1.4000\lib\Net35\NHibernate.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,34 +38,8 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Maps\TokenMap.cs" />
-    <Compile Include="Maps\TokenTypeMap.cs" />
-    <Compile Include="Maps\UserMap.cs" />
-    <Compile Include="Maps\UserRoleMap.cs" />
+    <Compile Include="PasswordGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\TokenQueries.cs" />
-    <Compile Include="Queries\UserQueries.cs" />
-    <Compile Include="Queries\UserRoleQueries.cs" />
-    <Compile Include="UmsMappings.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
-      <Project>{b9af147e-06d4-400e-a8d5-9adf291993ba}</Project>
-      <Name>Common.Persistence</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
-      <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
-      <Name>Domain.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ums.Domain.Model\Ums.Domain.Model.csproj">
-      <Project>{da8a5822-355b-4138-80c3-b03193917fea}</Project>
-      <Name>Ums.Domain.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

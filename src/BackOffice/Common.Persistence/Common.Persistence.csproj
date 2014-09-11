@@ -92,6 +92,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Contracts\IDbConversation.cs" />
     <Compile Include="Contracts\IDomainQuery.cs" />
     <Compile Include="Contracts\IHibernateInitializationAware.cs" />
