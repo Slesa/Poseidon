@@ -32,7 +32,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             set
             {
                 CurrentEdit.Name = value;
-                RaisePropertyChanged(() => Name);
+                OnPropertyChanged(() => Name);
             }
         }
 
@@ -42,7 +42,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             set
             {
                 CurrentEdit.UserRole = value;
-                RaisePropertyChanged(() => UserRole);
+                OnPropertyChanged(() => UserRole);
             }
         }
 

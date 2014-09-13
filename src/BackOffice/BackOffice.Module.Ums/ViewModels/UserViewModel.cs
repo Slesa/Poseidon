@@ -1,9 +1,9 @@
-﻿using Microsoft.Practices.Prism.ViewModel;
+﻿using Microsoft.Practices.Prism.Mvvm;
 using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.BackOffice.Module.Ums.ViewModels
 {
-    public class UserViewModel : NotificationObject
+    public class UserViewModel : BindableBase
     {
         readonly User _user;
 
@@ -29,7 +29,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             set
             {
                 _user.Name = value;
-                RaisePropertyChanged(() => Name);
+                OnPropertyChanged(() => Name);
             }
         }
 
@@ -39,7 +39,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             set
             {
                 _user.UserRole = value;
-                RaisePropertyChanged(() => UserRole);
+                OnPropertyChanged(() => UserRole);
             }
         }
     }

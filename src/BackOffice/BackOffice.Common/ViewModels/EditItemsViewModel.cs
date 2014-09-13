@@ -1,5 +1,5 @@
-﻿using Microsoft.Practices.Prism.PubSubEvents;
-using Microsoft.Practices.Prism.ViewModel;
+﻿using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Poseidon.Common.Persistence.Contracts;
 
 namespace Poseidon.BackOffice.Common.ViewModels
@@ -19,7 +19,7 @@ namespace Poseidon.BackOffice.Common.ViewModels
         }
     }
 
-    public abstract class EditItemsViewModel<T> : NotificationObject /*, IDataErrorInfo*/ where T : new()
+    public abstract class EditItemsViewModel<T> : BindableBase /*, IDataErrorInfo*/ where T : new()
     {
         protected readonly IDbConversation DbConversation;
         protected readonly IEventAggregator EventAggregator;
@@ -42,7 +42,7 @@ namespace Poseidon.BackOffice.Common.ViewModels
             set
             {
                 _editMode = value;
-                RaisePropertyChanged(() => TitleText);
+                OnPropertyChanged(() => TitleText);
             }
         }
     }
