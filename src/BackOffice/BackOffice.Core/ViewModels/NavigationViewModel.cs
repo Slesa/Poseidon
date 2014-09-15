@@ -2,16 +2,16 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Common.Contracts;
 using Poseidon.BackOffice.Core.Contracts;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class NavigationViewModel : NotificationObject
+    public class NavigationViewModel : BindableBase
     {
         readonly IEventAggregator _eventAggregator;
         readonly IRegionManager _regionManager;
@@ -40,7 +40,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
             set
             {
                 _searchText = value;
-                RaisePropertyChanged(()=>SearchText);
+                OnPropertyChanged(()=>SearchText);
 
                 var searchTerms = _searchText.Split(' ');
 

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Prism.ViewModel;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Common.ViewModels;
 using Poseidon.BackOffice.Core.Resources;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
-    public class BreadCrumbViewModel : NotificationObject
+    public class BreadCrumbViewModel : BindableBase
     {
         readonly IRegionManager _regionManager;
         readonly IOfficeModule _homePage;
@@ -34,7 +34,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
             set
             {
                 _currentModules = value;
-                RaisePropertyChanged(() => CurrentModules);
+                OnPropertyChanged(() => CurrentModules);
             }
         }
 

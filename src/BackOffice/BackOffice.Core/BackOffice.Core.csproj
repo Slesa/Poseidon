@@ -119,10 +119,14 @@
     <Compile Include="CoreViews.cs" />
     <Compile Include="ViewModelLocators.cs" />
     <Compile Include="ViewModels\BreadCrumbViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\OfficeModuleViewModel.cs" />
     <Compile Include="ViewModels\ModulesViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViewModel.cs" />
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModulesView.xaml.cs">
       <DependentUpon>ModulesView.xaml</DependentUpon>
     </Compile>
@@ -158,6 +162,10 @@
     <Page Include="Views\Copy of ModulesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ModulesView.xaml">
       <SubType>Designer</SubType>

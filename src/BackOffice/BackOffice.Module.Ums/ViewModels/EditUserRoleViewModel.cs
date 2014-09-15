@@ -29,7 +29,7 @@ namespace Poseidon.BackOffice.Module.Ums.ViewModels
             set
             {
                 CurrentEdit.Name = value;
-                RaisePropertyChanged(()=>Name);
+                OnPropertyChanged(()=>Name);
             }
         }
 
