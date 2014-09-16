@@ -1,10 +1,10 @@
 ﻿using System;
-using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace Poseidon.BackOffice.Common
 {
-    public class StatusBarClearEvent : CompositePresentationEvent<int>  { }
-    public class StatusBarMessageEvent : CompositePresentationEvent<string> { }
+    public class StatusBarClearEvent : PubSubEvent<int>  { }
+    public class StatusBarMessageEvent : PubSubEvent<string> { }
 
-    public class CurrentModuleUriChangedEvent : CompositePresentationEvent<Uri> { }
+    public class CurrentModuleUriChangedEvent : PubSubEvent<Uri> { }
 }

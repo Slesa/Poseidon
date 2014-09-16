@@ -2,19 +2,112 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
+             xmlns:w="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="500"
+             Style="{DynamicResource Style.Dialog.Container}">
     
+    <UserControl.Resources>
+
+        <core:LoginViewModelLocator x:Key="LoginViewModel" />
+
+        <Style x:Key="Style.Dialog.Label" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Margin" Value="3,3,0,3" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Grid>
+                            <Border CornerRadius="8,0,0,8" Background="Khaki" />
+                            <Label Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" Target="{TemplateBinding Target}"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Style.Dialog.TextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="0,3,3,3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border CornerRadius="0,8,8,0" Background="Lavender" />
+                            <TextBlock Text="{TemplateBinding Text}"
+                                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" /> 
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+<!--
+        <Style x:Key="Style.Dialog.PasswordBox" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="0,3,3,3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Grid>
+                            <Border CornerRadius="0,8,8,0" Background="Lavender" />
+                            <PasswordBox w:PasswordHelper.Attach="True" w:PasswordHelper.Password="{TemplateBinding Text}"
+                                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" /> 
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+-->
+        <Style x:Key="Style.Dialog.Button" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="IndianRed" />
+            <Setter Property="MinWidth" Value="60" />
+            <Setter Property="MinHeight" Value="25" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style x:Key="Style.Dialog.Container" TargetType="{x:Type UserControl}">
+            <Setter Property="Background" Value="LightCyan"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type UserControl}">
+                        <Border BorderBrush="Gray" BorderThickness="2" CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentControl Content="{TemplateBinding Content}" Margin="5"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Path="ViewModel" Source="{StaticResource LoginViewModel}" />
+    </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <design:DesignTimeLoginViewModel />
+    </d:UserControl.DataContext>
+
     <DockPanel>
         
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-            <Button Content="Ok"/>
-            <Button Content="Cancel" />
-        </StackPanel>        
+        <Grid DockPanel.Dock="Bottom">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="..." Style="{DynamicResource Style.Dialog.Button}" />
+            <Button Grid.Column="2" Content="Ok" Style="{DynamicResource Style.Dialog.Button}" />
+            <Button Grid.Column="3" Content="Cancel" Style="{DynamicResource Style.Dialog.Button}" />
+        </Grid>        
     
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -22,14 +115,17 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
-            <TextBlock Grid.Row="1" Text="User:"/>
-            <TextBox  Grid.Row="1" Grid.Column="1"/>
+            <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding Image}" />
+
+            <Label Grid.Column="1" Grid.Row="1" Content="_User:" Style="{DynamicResource Style.Dialog.Label}" />
+            <TextBox  Grid.Column="2" Grid.Row="1" Text="{Binding User}" Style="{DynamicResource Style.Dialog.TextBox}" />
             
-            <TextBlock Grid.Row="2" Text="Password:"/>
-            <TextBox  Grid.Row="2" Grid.Column="1"/>
+            <Label Grid.Row="2" Grid.Column="1" Content="_Password:"  Style="{DynamicResource Style.Dialog.Label}" />
+            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Password}" Style="{DynamicResource Style.Dialog.TextBox}"/>
             
         </Grid>
         
