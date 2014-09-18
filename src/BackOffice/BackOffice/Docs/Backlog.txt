@@ -1,0 +1,24 @@
+﻿Minimum valuable product:
+* Office Framework with loadable modules and database support
+* UMS: manage users with their roles
+* Allow login into office by setting
+* Add shift calculator for existing users with rules, holidays, weekends
+
+
+Todo:
+--------------------------------------
+[Tools]	Use git flow
+[Tools]	Use latest FAKE version
+[Tools]	Add clickonce setup according to new features of latest FAKE
+[Tools]	Review latest WiX setup.exe
+[Style]	Review statusbar fading - render transform?
+[Style]	Find according colours
+[Style]	Find according fonts, define font sizes
+[Style]	Style buttons with normal, disabled, mouse over, pressed
+[Task]	Remove module references. Use loading per directory
+
+
+
+V 0.1
+--------------------------------------
+

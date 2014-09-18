@@ -1,0 +1,5 @@
+﻿YouTack:
+http://slesa.myjetbrains.com/youtrack/rest/agile/Poseidon+Board-0/sprint/Version+0.1
+
+Paket:
+http://fsprojects.github.io/Paket/
