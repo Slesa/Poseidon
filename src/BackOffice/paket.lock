@@ -39,3 +39,4 @@ NUGET
     UnityAutoRegistration (1.0.0.2)
       Unity (>= 2.1.505.0)
     log4net (2.0.3)
+    FAKE (3.4.3)
