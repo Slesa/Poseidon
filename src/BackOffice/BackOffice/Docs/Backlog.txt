@@ -7,7 +7,6 @@
 
 Todo:
 --------------------------------------
-[Tools]	Use git flow
 [Tools]	Use latest FAKE version
 [Tools]	Add clickonce setup according to new features of latest FAKE
 [Tools]	Review latest WiX setup.exe
@@ -16,6 +15,12 @@ Todo:
 [Style]	Find according fonts, define font sizes
 [Style]	Style buttons with normal, disabled, mouse over, pressed
 [Task]	Remove module references. Use loading per directory
+
+
+In progress:
+--------------------------------------
+[Tools]	Use git flow
+[Tools]	Use Paket
 
 
 
