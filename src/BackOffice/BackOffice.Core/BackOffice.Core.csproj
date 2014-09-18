@@ -93,6 +93,7 @@
     <Compile Include="Contracts\INavigationService.cs" />
     <Compile Include="CoreModule.cs" />
     <Compile Include="DesignTime\DesignTimeBreadCrumbViewModel.cs" />
+    <Compile Include="DesignTime\DesignTimeLoginViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeModulesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeNavigationViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeStatusBarViewModel.cs" />
