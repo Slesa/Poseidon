@@ -78,7 +78,7 @@ Target "Deploy" (fun _ ->
 
 Target "Test" (fun _ ->
 
-  let mspecTool = findToolInSubPath "mspec-x86-clr4.exe" (currentDirectory @@ @"src\BackOffice\packages")
+  let mspecTool = findToolInSubPath "mspec-x86-clr4.exe" @".\src\BackOffice\packages"
   trace mspecTool
 
   !! (testDir @@ "*.Specs.dll")
@@ -91,11 +91,10 @@ Target "Test" (fun _ ->
 Target "Default" DoNothing
 
 // Dependencies
-//"Clean"
-//  ==> "SetAssemblyInfo"
-//  ==> "BuildApp" <=> "BuildTest"
-"Test"
-//  ==> "Test"
+"Clean"
+  ==> "SetAssemblyInfo"
+  ==> "BuildApp" <=> "BuildTest"
+  ==> "Test"
   ==> "Deploy"
   ==> "Default"
 

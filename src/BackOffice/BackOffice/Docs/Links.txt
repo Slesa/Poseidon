@@ -3,3 +3,6 @@ http://slesa.myjetbrains.com/youtrack/rest/agile/Poseidon+Board-0/sprint/Version
 
 Paket:
 http://fsprojects.github.io/Paket/
+
+Console Framework:
+https://github.com/elw00d/consoleframework
