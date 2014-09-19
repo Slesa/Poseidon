@@ -2,6 +2,8 @@
 #r "FakeLib.dll"
 
 open Fake
+open System.IO
+open Fake.AssemblyInfoFile
 
 // properties
 let projectName = "Poseidon"
@@ -25,10 +27,13 @@ let mspecDir = packagesDir @@ "MSpec"
 // tools
 
 // files
-let appReferences = !! @"src\BackOffice\**\*.*sproj"
-//  -- "**\*.Specs.*sproj"
+let appReferences = 
+  !! @"src\BackOffice\BackOffice.sln"
+    
 let testReferences = !! @"src\BackOffice\**\*.Specs.*sproj"
-let deployReferences = !! @"Setup\**\*.wixproj"
+let deployReferences =
+  !! @"Setup\Setup.sln"
+   
 let setupDir = @"Setup\"
 
 // Targets
@@ -38,24 +43,21 @@ Target "Clean" (fun _ ->
 
 )
 
+
 let currentVersion =
   if not isLocalBuild then buildVersion else
   "0.0.0.1"
 
+
 Target "SetAssemblyInfo" (fun _ ->
-  AssemblyInfo
-    (fun p ->
-    {p with
-      CodeLanguage = CSharp;
-      Guid = "";
-      ComVisible = None;
-      CLSCompliant = None;
-      AssemblyCompany = "Slesa Solutions";
-      AssemblyProduct = "Poseidon";
-      AssemblyCopyright = "Copyright ©  2012";
-      AssemblyTrademark = "GPL V2";
-      AssemblyVersion = currentVersion;
-      OutputFileName = @".\src\VersionInfo.cs"})
+
+    [Attribute.Product projectName
+     Attribute.Version currentVersion
+     Attribute.Company "Slesa Solutions"
+     Attribute.Copyright "Copyright ©  2012"
+     Attribute.Trademark "GPL V2"]
+     |> CreateCSharpAssemblyInfo "./src/VersionInfo.cs"
+
 )
 
 Target "BuildApp" (fun _ ->
@@ -69,10 +71,11 @@ Target "BuildTest" (fun _ ->
 )
 
 Target "Deploy" (fun _ ->
-//  let deployMsi = deployDir @@ sprintf "%s-%s.msi" projectName currentVersion
-//  !! (setupDir @@ "*.wxl")
-//    |> WiX (fun p -> WiXDefaults) deployMsi 
-  MSBuildReleaseExt deployDir ["Version", currentVersion] "Build" deployReferences
+
+  let outputName = sprintf "%s-Setup.%s.msi" projectName currentVersion
+  let defines = "Version="+currentVersion
+
+  MSBuildReleaseExt deployDir ["ProductVersion", currentVersion; "DefineConstants", defines; "OutputName", outputName] "Build" deployReferences
     |> Log "DeployBuildOutput: "
 )
 
@@ -94,7 +97,7 @@ Target "Default" DoNothing
 "Clean"
   ==> "SetAssemblyInfo"
   ==> "BuildApp" <=> "BuildTest"
-  ==> "Test"
+//  ==> "Test"
   ==> "Deploy"
   ==> "Default"
 
