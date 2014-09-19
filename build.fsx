@@ -25,9 +25,9 @@ let mspecDir = packagesDir @@ "MSpec"
 // tools
 
 // files
-let appReferences = !! @"src\**\*.*sproj"
+let appReferences = !! @"src\BackOffice\**\*.*sproj"
 //  -- "**\*.Specs.*sproj"
-let testReferences = !! @"src\**\*.Specs.*sproj"
+let testReferences = !! @"src\BackOffice\**\*.Specs.*sproj"
 let deployReferences = !! @"Setup\**\*.wixproj"
 let setupDir = @"Setup\"
 
@@ -36,9 +36,6 @@ let setupDir = @"Setup\"
 Target "Clean" (fun _ ->
   CleanDirs [buildDir; testDir; deployDir; metricsDir; reportDir; packagesDir]
 
-  CreateDir mspecDir
-  !! (@"src\Domain\packages\Machine.Specifications.*\**\*.*")
-    |> CopyTo mspecDir
 )
 
 let currentVersion =
@@ -80,10 +77,8 @@ Target "Deploy" (fun _ ->
 )
 
 Target "Test" (fun _ ->
-//  let MSpecVersion = GetPackageVersion packagesDir "Machine.Specifications"
-//  trace MSpecVersion
-  let mspecTool = mspecDir @@ "mspec-clr4.exe"
-//  sprintf @"%sMachine.Specifications.%s\tools\mspec-clr4.exe" packagesDir MSpecVersion
+
+  let mspecTool = findToolInSubPath "mspec-x86-clr4.exe" (currentDirectory @@ @"src\BackOffice\packages")
   trace mspecTool
 
   !! (testDir @@ "*.Specs.dll")
@@ -96,9 +91,10 @@ Target "Test" (fun _ ->
 Target "Default" DoNothing
 
 // Dependencies
-"Clean"
-  ==> "SetAssemblyInfo"
-  ==> "BuildApp" <=> "BuildTest"
+//"Clean"
+//  ==> "SetAssemblyInfo"
+//  ==> "BuildApp" <=> "BuildTest"
+"Test"
 //  ==> "Test"
   ==> "Deploy"
   ==> "Default"
