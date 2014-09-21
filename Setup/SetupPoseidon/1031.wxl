@@ -5,6 +5,7 @@
   <String Id="ProductName">Poseidon</String>
   <String Id="ProductDescr">Poseidon - eine POS-Umgebung</String>
 
+  <String Id="ErrorNewerVersion">Es ist bereits eine aktuellere Version von [ProductName] installiert.</String>
   <String Id="ErrorAdminRights">Die Installation von [ProductName] erfordert administrative Privilegien.</String>
   <String Id="ErrorFramework">Microsoft .NET Framework wurde nicht gefunden. [ProductName] benötigt das .NET Framework 4.0.</String>
 
