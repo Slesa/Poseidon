@@ -92,13 +92,18 @@
         <File Id="F__BackOfficeCfg" Name="Poseidon.BackOffice.exe.config" />
         <File Id="F__BackOffice_Common" Name="Poseidon.BackOffice.Common.dll" />
         <File Id="F__BackOffice_Core" Name="Poseidon.BackOffice.Core.dll" />
-        <File Id="F__BackOffice_Module_Pms" Name="Poseidon.BackOffice.Module.Pms.dll" />
-        <File Id="F__BackOffice_Module_Ums" Name="Poseidon.BackOffice.Module.Ums.dll" />
         <File Id="F__BackOffice_Theme" Name="Poseidon.BackOffice.Theme.dll" />
         <File Id="F__Common_Persistence" Name="Poseidon.Common.Persistence.dll" />
         <File Id="F__Common_Wpf" Name="Poseidon.Common.Wpf.dll" />
         <File Id="F__Domain_Common" Name="Poseidon.Domain.Common.dll" />
 
+        <!--<File Id="F__Pms_Domain_Hibernate" Name="Poseidon.Pms.Domain.Hibernate.dll" />-->
+        <File Id="F__Pms_Domain_Model" Name="Poseidon.Pms.Domain.Model.dll" />
+        <File Id="F__Pms_Domain_Resources" Name="Poseidon.Pms.Domain.Resources.dll" />
+
+        <File Id="F__Ums_Domain_Hibernate" Name="Poseidon.Ums.Domain.Hibernate.dll" />
+        <File Id="F__Ums_Domain_Model" Name="Poseidon.Ums.Domain.Model.dll" />
+        <File Id="F__Ums_Domain_Resources" Name="Poseidon.Ums.Domain.Resources.dll" />
 
         <util:XmlFile Id="X__DbConnection" Action="setValue"
                       Permanent="yes"
@@ -112,15 +117,11 @@
       </Component>-->
 
       <Component Id="C__BackOfficeUms" Guid="{A8A43C44-526D-487F-9319-855EA5BCF725}">
-        <File Id="F__Ums_Domain_Hibernate" Name="Poseidon.Ums.Domain.Hibernate.dll" />
-        <File Id="F__Ums_Domain_Model" Name="Poseidon.Ums.Domain.Model.dll" />
-        <File Id="F__Ums_Domain_Resources" Name="Poseidon.Ums.Domain.Resources.dll" />
+        <File Id="F__BackOffice_Module_Ums" Name="Poseidon.BackOffice.Module.Ums.dll" />
       </Component>
 
       <Component Id="C__BackOfficePms" Guid="{BF7884AB-D67D-4773-B69B-6CFD563727B2}">
-        <!--<File Id="F__Pms_Domain_Hibernate" Name="Poseidon.Pms.Domain.Hibernate.dll" />-->
-        <File Id="F__Pms_Domain_Model" Name="Poseidon.Pms.Domain.Model.dll" />
-        <File Id="F__Pms_Domain_Resources" Name="Poseidon.Pms.Domain.Resources.dll" />
+        <File Id="F__BackOffice_Module_Pms" Name="Poseidon.BackOffice.Module.Pms.dll" />
       </Component>
 
     </DirectoryRef>
