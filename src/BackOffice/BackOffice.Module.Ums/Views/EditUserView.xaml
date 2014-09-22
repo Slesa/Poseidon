@@ -69,12 +69,13 @@
         </TextBox>
 
         <Label Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=_comboUserRole}" Content="{x:Static Resources:Strings.EditUserView_UserRole}"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
+<!--Style="{StaticResource EditDialogComboBoxSkin}"--> 
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="_comboUserRole" 
                   ItemsSource="{Binding Path=AllUserRoles}" DisplayMemberPath="Name" 
                   SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                   IsEditable="False" />
 
-        <Button Grid.ColumnSpan="3" Grid.Row="4" Command="{Binding CommitCommand}" Style="{DynamicResource Style.Edit.Buttons.Ok}" />
+        <Button Grid.ColumnSpan="3" Grid.Row="4" Command="{Binding CommitCommand}" Style="{StaticResource Style.Edit.Buttons.Ok}" />
         
     </Grid>
 

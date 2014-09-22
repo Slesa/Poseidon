@@ -48,10 +48,10 @@
 
         <DockPanel>
 
-            <StackPanel DockPanel.Dock="Bottom" Style="{DynamicResource Style.ModuleInfo.Commands}">
-                <Button ToolTip="{x:Static res:Strings.UserRoleModule_AddUserRole}" Command="{Binding AddNewUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
-                <Button ToolTip="{x:Static res:Strings.UserRoleModule_EditUserRole}" Command="{Binding EditUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
-                <Button ToolTip="{x:Static res:Strings.UserRoleModule_RemoveUserRole}" Command="{Binding RemoveUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
+            <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource Style.ModuleInfo.Commands}">
+                <Button ToolTip="{x:Static res:Strings.UserRoleModule_AddUserRole}" Command="{Binding AddNewUserRoleCommand}" Style="{StaticResource Style.ModuleInfo.Buttons.Add}" />
+                <Button ToolTip="{x:Static res:Strings.UserRoleModule_EditUserRole}" Command="{Binding EditUserRoleCommand}" Style="{StaticResource Style.ModuleInfo.Buttons.Edit}" />
+                <Button ToolTip="{x:Static res:Strings.UserRoleModule_RemoveUserRole}" Command="{Binding RemoveUserRoleCommand}" Style="{StaticResource Style.ModuleInfo.Buttons.Remove}" />
             </StackPanel>
 
             <Controls:ModuleInfoArea

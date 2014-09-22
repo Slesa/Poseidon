@@ -10,8 +10,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="Style.Shell" TargetType="{x:Type Window}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush.Foreground}" />
-        <Setter Property="Background" Value="{DynamicResource Brush.Background}" />
+        <Setter Property="Foreground" Value="{StaticResource Brush.Foreground}" />
+        <Setter Property="Background" Value="{StaticResource Brush.Background}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
@@ -27,7 +27,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
-                <Setter Property="Template" Value="{DynamicResource WindowTemplateKey}" />
+                <Setter Property="Template" Value="{StaticResource WindowTemplateKey}" />
             </Trigger>
         </Style.Triggers>
     </Style>

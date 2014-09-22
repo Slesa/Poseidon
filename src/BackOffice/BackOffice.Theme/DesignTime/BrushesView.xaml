@@ -48,11 +48,11 @@
 
             <TextBlock Text="Normal" />
             <WrapPanel Orientation="Horizontal">
-                <TextBox Background="{DynamicResource Brush.Background}"
-                         Foreground="{DynamicResource Brush.Foreground}"
+                <TextBox Background="{StaticResource Brush.Background}"
+                         Foreground="{StaticResource Brush.Foreground}"
                          Text="Background" />
-                <TextBox Background="{DynamicResource Brush.Foreground}"
-                         Foreground="{DynamicResource Brush.Background}"
+                <TextBox Background="{StaticResource Brush.Foreground}"
+                         Foreground="{StaticResource Brush.Background}"
                          Text="Foreground" />
             </WrapPanel>
 

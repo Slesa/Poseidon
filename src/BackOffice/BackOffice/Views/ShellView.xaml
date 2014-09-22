@@ -11,7 +11,7 @@
         MinWidth="800"
         MinHeight="600"
         Icon="pack://application:,,,/Resources/BackOffice.jpg"
-        Style="{DynamicResource Style.Shell}"
+        Style="{StaticResource Style.Shell}"
         d:DesignHeight="300"
         d:DesignWidth="800"
         mc:Ignorable="d">
@@ -34,7 +34,7 @@
                     Modifiers="Control" />
     </Window.InputBindings>
 
-    <DockPanel LastChildFill="True" Style="{DynamicResource Style.Shell.DockPanel}">
+    <DockPanel LastChildFill="True" Style="{StaticResource Style.Shell.DockPanel}">
         <ContentControl x:Name="Navigation"
                         DockPanel.Dock="Top"
                         regions:RegionManager.RegionName="{x:Static common:Regions.TagNavigationRegion}" />

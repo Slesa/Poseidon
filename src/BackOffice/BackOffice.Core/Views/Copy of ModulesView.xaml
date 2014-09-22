@@ -117,8 +117,8 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="true">
-                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                                 <Setter Property="FontWeight" Value="Bold" />
                             </Trigger>
                             <MultiTrigger>
@@ -126,11 +126,11 @@
                                     <Condition Property="IsSelected" Value="true"/>
                                     <Condition Property="Selector.IsSelectionActive" Value="false"/>
                                 </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
                             </MultiTrigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="FontWeight" Value="Bold" />
@@ -150,7 +150,7 @@
     </d:UserControl.DataContext>
 
     <!--ItemsSource="{Binding Source={StaticResource ModulesCollection}}"-->
-    <ListBox ItemsSource="{Binding Modules}" ItemTemplate="{StaticResource ItemTemplate.Module}" Style="{StaticResource ListBox.Modules}" ItemContainerStyle="{DynamicResource ListBoxItemStyle}">
+    <ListBox ItemsSource="{Binding Modules}" ItemTemplate="{StaticResource ItemTemplate.Module}" Style="{StaticResource ListBox.Modules}" ItemContainerStyle="{StaticResource ListBoxItemStyle}">
         <ListBox.GroupStyle>
             <GroupStyle>
                 <GroupStyle.ContainerStyle>

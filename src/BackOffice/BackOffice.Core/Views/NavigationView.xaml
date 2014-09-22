@@ -29,9 +29,9 @@
     <ContentControl VerticalAlignment="Top"
                     BorderBrush="Aquamarine"
                     BorderThickness="3"
-                    Style="{DynamicResource Style.Navigation}">
+                    Style="{StaticResource Style.Navigation}">
 
-        <Grid VerticalAlignment="Top" Style="{DynamicResource Style.Navigation.Group}">
+        <Grid VerticalAlignment="Top" Style="{StaticResource Style.Navigation.Group}">
 
             <!--
                 <Grid.RowDefinitions>
@@ -54,18 +54,18 @@
             <Button Grid.Row="1"
                     Grid.Column="1"
                     Command="{Binding OnBackCommand}"
-                    Style="{DynamicResource Style.Navigation.Buttons.Back}" />
+                    Style="{StaticResource Style.Navigation.Buttons.Back}" />
             <Button Grid.Row="1"
                     Grid.Column="2"
                     Command="{Binding OnForwardCommand}"
-                    Style="{DynamicResource Style.Navigation.Buttons.Forward}" />
+                    Style="{StaticResource Style.Navigation.Buttons.Forward}" />
 
             <ListBox Grid.Row="1"
                      Grid.Column="3"
                      Margin="1"
                      VerticalAlignment="Stretch"
                      ItemsSource="{Binding CurrentModules}"
-                     Style="{DynamicResource Style.Navigation.BreadCrumb}"
+                     Style="{StaticResource Style.Navigation.BreadCrumb}"
                      d:DataContext="{StaticResource DesignTimeBreadCrumbViewModel}">
                 <ListBox.DataContext>
                     <Binding Path="ViewModel" Source="{StaticResource BreadCrumbViewModel}" />
@@ -76,7 +76,7 @@
             <TextBox x:Name="Search"
                      Grid.Row="1"
                      Grid.Column="4"
-                     Style="{DynamicResource Style.Navigation.TextBox}"
+                     Style="{StaticResource Style.Navigation.TextBox}"
                      Text="{Binding SearchText,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged,
