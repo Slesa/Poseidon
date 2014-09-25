@@ -47,12 +47,6 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="DesignTime\FontsView.xaml.cs">
-      <DependentUpon>FontsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DesignTime\BrushesView.xaml.cs">
-      <DependentUpon>BrushesView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -83,14 +77,6 @@
     <Resource Include="Resources\Fonts\Candarai.ttf" />
     <Resource Include="Resources\Fonts\Candaraz.ttf" />
     <Resource Include="Resources\Fonts\axis.otf" />
-    <Page Include="DesignTime\FontsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="DesignTime\BrushesView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Resources\Buttons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

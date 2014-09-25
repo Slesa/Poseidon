@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Poseidon.BackOffice.Theme
+namespace BackOffice.Theme.Design.Views
 {
 	public partial class FontsView : UserControl
 	{

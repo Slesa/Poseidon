@@ -6,7 +6,12 @@
 
     <Color x:Key="Color.Foreground">BlanchedAlmond</Color>
     <Color x:Key="Color.Background">#FF445566</Color>
+    <Color x:Key="Color.Warning">#FFFF8000</Color>
+    <Color x:Key="Color.Error">#FFFF0000</Color>
+    <Color x:Key="Color.Selection">#FFB300FF</Color>
 
+
+    
     <Color x:Key="Color.BreadCrumb.Foreground">Black</Color>
     <Color x:Key="Color.BreadCrumb.Inverted">White</Color>
     <Color x:Key="Color.BreadCrumb.Background">Transparent</Color>

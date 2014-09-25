@@ -11,6 +11,14 @@
 
     <SolidColorBrush x:Key="Brush.Foreground" Color="{StaticResource Color.Foreground}" />
     <SolidColorBrush x:Key="Brush.Background" Color="{StaticResource Color.Background}" />
+    <SolidColorBrush x:Key="Brush.Select.Foreground" Color="{StaticResource Color.Background}" />
+    <SolidColorBrush x:Key="Brush.Select.Background" Color="{StaticResource Color.Foreground}" />
+    <SolidColorBrush x:Key="Brush.Warning" Color="{StaticResource Color.Warning}" />
+    <SolidColorBrush x:Key="Brush.Error" Color="{StaticResource Color.Error}" />
+    <SolidColorBrush x:Key="Brush.Selection" Color="{StaticResource Color.Selection}" />
+
+    
+    
 
     <RadialGradientBrush x:Key="Brush.Radial" Center="0.5,0.5" GradientOrigin="0.5,0.5" RadiusX="0.7" RadiusY="0.8">
         <GradientStop Offset="0" Color="{StaticResource Color.Foreground}" />

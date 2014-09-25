@@ -1,6 +1,16 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+    <sys:Double x:Key="FontSize.Title">40</sys:Double>
+    <sys:Double x:Key="FontSize.Normal">12</sys:Double>
+    <sys:Double x:Key="FontSize.Hint">8</sys:Double>
+    <sys:Double x:Key="FontSize.Tooltip">10</sys:Double>
+    
     <FontFamily x:Key="Font.Title">Fonts/#Axis</FontFamily>
     <FontFamily x:Key="Font.Normal">Fonts/#Comic Sans MS</FontFamily>
+    <FontFamily x:Key="Font.Hint">Fonts/#Comic Sans MS</FontFamily>
+    <FontFamily x:Key="Font.Tooltip">Fonts/#Comic Sans MS</FontFamily>
 
 </ResourceDictionary>

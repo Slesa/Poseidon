@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Crypto", "Common.Cry
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Crypto.Specs", "Common.Crypto.Specs\Common.Crypto.Specs.csproj", "{9E0CEE49-4330-433D-AE9E-08FB11E4A084}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.Theme.Design", "BackOffice.Theme.Design\BackOffice.Theme.Design.csproj", "{AD821642-893A-455B-9854-AEE8EF553667}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{9E0CEE49-4330-433D-AE9E-08FB11E4A084}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E0CEE49-4330-433D-AE9E-08FB11E4A084}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E0CEE49-4330-433D-AE9E-08FB11E4A084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD821642-893A-455B-9854-AEE8EF553667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD821642-893A-455B-9854-AEE8EF553667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD821642-893A-455B-9854-AEE8EF553667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD821642-893A-455B-9854-AEE8EF553667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

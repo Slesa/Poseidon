@@ -1,8 +1,7 @@
-﻿<UserControl x:Class="Poseidon.BackOffice.Theme.BrushesView"
+﻿<UserControl x:Class="BackOffice.Theme.Design.Views.BrushesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Name="UserControl"
              d:DesignHeight="480"
@@ -13,7 +12,7 @@
         <ResourceDictionary>
 
             <ResourceDictionary.MergedDictionaries>
-                <helpers:SharedResourceDictionary Source="../Resources/Brushes.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Brushes.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="{x:Type TextBlock}">
@@ -42,21 +41,46 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <StackPanel>
+    <ScrollViewer Background="{StaticResource Brush.Background}"><StackPanel>
 
         <StackPanel>
-
             <TextBlock Text="Normal" />
             <WrapPanel Orientation="Horizontal">
-                <TextBox Background="{DynamicResource Brush.Background}"
-                         Foreground="{DynamicResource Brush.Foreground}"
+                <TextBox Background="{StaticResource Brush.Background}"
+                         Foreground="{StaticResource Brush.Foreground}"
                          Text="Background" />
-                <TextBox Background="{DynamicResource Brush.Foreground}"
-                         Foreground="{DynamicResource Brush.Background}"
+                <TextBox Background="{StaticResource Brush.Foreground}"
+                         Foreground="{StaticResource Brush.Background}"
                          Text="Foreground" />
             </WrapPanel>
-
         </StackPanel>
 
-    </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Selected" />
+            <WrapPanel Orientation="Horizontal">
+                <TextBox Background="{StaticResource Brush.Select.Background}"
+                         Foreground="{StaticResource Brush.Select.Foreground}"
+                         Text="Background" />
+                <TextBox Background="{StaticResource Brush.Select.Foreground}"
+                         Foreground="{StaticResource Brush.Select.Background}"
+                         Text="Foreground" />
+            </WrapPanel>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Options" />
+            <WrapPanel Orientation="Horizontal">
+                <TextBox Background="{StaticResource Brush.Background}"
+                         Foreground="{StaticResource Brush.Warning}"
+                         Text="Warning" />
+                <TextBox Background="{StaticResource Brush.Background}"
+                         Foreground="{StaticResource Brush.Error}"
+                         Text="Error" />
+                <TextBox Background="{StaticResource Brush.Background}"
+                         Foreground="{StaticResource Brush.Selection}"
+                         Text="Selection" />
+            </WrapPanel>
+        </StackPanel>
+
+    </StackPanel></ScrollViewer>
 </UserControl>
