@@ -22,9 +22,9 @@
                 <Setter Property="FontWeight" Value="Bold" />
             </Style>
             <Style TargetType="{x:Type TextBox}">
-                <Setter Property="Margin" Value="1" />
-                <Setter Property="Width" Value="100" />
-                <Setter Property="Height" Value="100" />
+                <Setter Property="Margin" Value="10" />
+                <!--<Setter Property="Width" Value="100" />-->
+                <Setter Property="Height" Value="50" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TextBox}">

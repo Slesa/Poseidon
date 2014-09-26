@@ -55,6 +55,9 @@
     <Compile Include="Views\BrushesView.xaml.cs">
       <DependentUpon>BrushesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ImagesView.xaml.cs">
+      <DependentUpon>ImagesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FontsView.xaml.cs">
       <DependentUpon>FontsView.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ImagesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\FontsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

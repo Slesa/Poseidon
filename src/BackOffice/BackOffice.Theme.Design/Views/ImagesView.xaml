@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="BackOffice.Theme.Design.Views.ImagesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="UserControl"
+             d:DesignHeight="480"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Brushes.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Images.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontSize" Value="42" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FontWeight" Value="Bold" />
+            </Style>
+            <Style TargetType="{x:Type ContentControl}">
+                <Setter Property="Width" Value="50" />
+                <Setter Property="Height" Value="50" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer Background="{StaticResource Brush.Background}">
+        <StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Icons" />
+                <WrapPanel Orientation="Horizontal">
+                    <ContentControl Content="{StaticResource Images.Back}" />
+                    <ContentControl Content="{StaticResource Images.Forward}" />
+                    <ContentControl Content="{StaticResource Images.Home}" />
+                    <ContentControl Content="{StaticResource Images.Add}" />
+                    <ContentControl Content="{StaticResource Images.Edit}" />
+                    <ContentControl Content="{StaticResource Images.Remove}" />
+                    <ContentControl Content="{StaticResource Images.Ok}" />
+                    <ContentControl Content="{StaticResource Images.Cancel}" />
+                    <ContentControl Content="{StaticResource Images.Help}" />
+                </WrapPanel>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+
+</UserControl>

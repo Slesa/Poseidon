@@ -8,5 +8,7 @@
     <Image x:Key="Images.Edit" Source="Images/edit.png" x:Shared="false" />
     <Image x:Key="Images.Remove" Source="Images/remove.png" x:Shared="false" />
     <Image x:Key="Images.Ok" Source="Images/ok.png" x:Shared="false" />
+    <Image x:Key="Images.Cancel" Source="Images/cancel.png" x:Shared="false" />
+    <Image x:Key="Images.Help" Source="Images/help.png" x:Shared="false" />
 
 </ResourceDictionary>
