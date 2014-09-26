@@ -11,13 +11,21 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.Shell.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontSize" Value="42" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+            </Style>
+
         </ResourceDictionary>
     </UserControl.Resources>
 
     <StackPanel>
 
         <StackPanel>
-            <TextBox Text="Checkboxes" Background="Transparent" Foreground="{StaticResource Brush.Foreground}" BorderBrush="{x:Null}"/>
+            <TextBlock Text="Checkboxes" />
             <WrapPanel Orientation="Horizontal">
                 <CheckBox Content="Normal" />
                 <CheckBox Content="Checked" IsChecked="True" />

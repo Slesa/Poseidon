@@ -20,6 +20,7 @@
                 <Setter Property="FontSize" Value="42" />
                 <Setter Property="Foreground" Value="White" />
                 <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
             </Style>
             <Style TargetType="{x:Type ContentControl}">
                 <Setter Property="Width" Value="50" />
