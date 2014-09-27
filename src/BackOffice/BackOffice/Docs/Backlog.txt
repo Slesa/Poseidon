@@ -7,23 +7,32 @@
 
 Todo:
 --------------------------------------
-[Tools]	Use latest FAKE version
+[Task]	Add OnFocusSelectAll behaviour
+[Task]	How to show dialogs in PRISM?
+[Task]	Revisit Prism navigation journal
+[Task]	Add splash screen and connect to db
+[Task]	Add user login dialog
+[Tools]	Try out StyleCop
 [Tools]	Add clickonce setup according to new features of latest FAKE
-[Tools]	Review latest WiX setup.exe
-[Style]	Review statusbar fading - render transform?
 [Style]	Find according colours
 [Style]	Find according fonts, define font sizes
 [Style]	Style buttons with normal, disabled, mouse over, pressed
-[Task]	Remove module references. Use loading per directory
+[Style]	Style scrollbars
+[Mods]	Consider yahoo currency converter
+[Mods]	Consider weather forecast module
 
 
 In progress:
 --------------------------------------
-[Tools]	Use git flow
-[Tools]	Use Paket
+[Style]	Review statusbar fading - render transform?
 
 
 
 V 0.1
 --------------------------------------
+[Tools]	Use git flow
+[Tools]	Use latest FAKE version
+[Tools]	Review latest WiX setup.exe
+[Tools]	Use Paket
+[Task]	Remove module references. Use loading per directory
 

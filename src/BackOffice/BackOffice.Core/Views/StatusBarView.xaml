@@ -8,9 +8,9 @@
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             d:DesignHeight="30"
+             Height="30"
              d:DesignWidth="300"
-             mc:Ignorable="d" RenderTransformOrigin="0.5,0.5">
+             mc:Ignorable="d">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -22,16 +22,7 @@
             <core:StatusBarViewModelLocator x:Key="StatusBarViewModel" />
 
         </ResourceDictionary>
-
     </UserControl.Resources>
-	<UserControl.RenderTransform>
-		<TransformGroup>
-			<ScaleTransform/>
-			<SkewTransform/>
-			<RotateTransform/>
-			<TranslateTransform/>
-		</TransformGroup>
-	</UserControl.RenderTransform>
 
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource StatusBarViewModel}" />
@@ -50,13 +41,21 @@
                 		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="userControl">
                 			<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Collapsed}"/>
                 		</ObjectAnimationUsingKeyFrames>
-                		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="userControl">
-                			<EasingDoubleKeyFrame KeyTime="0" Value="-60"/>
+                		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="userControl">
                 			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
                 		</DoubleAnimationUsingKeyFrames>
                 	</Storyboard>
                 </VisualState>
-                <VisualState x:Name="HasDataState"/>
+                <VisualState x:Name="HasDataState">
+                	<Storyboard>
+                		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="userControl">
+                			<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                		</ObjectAnimationUsingKeyFrames>
+                		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="userControl">
+                			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="30"/>
+                		</DoubleAnimationUsingKeyFrames>
+                	</Storyboard>
+                </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
