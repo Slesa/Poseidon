@@ -18,6 +18,7 @@
     <StackPanel Background="{StaticResource Brush.Background}">
          <controls:ButtonsView />   
          <controls:CheckBoxView />
+         <controls:TextBoxView />
     </StackPanel>
 
 </UserControl>

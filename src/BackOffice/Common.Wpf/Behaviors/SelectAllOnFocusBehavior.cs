@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Interactivity;
 
 namespace Poseidon.Common.Wpf.Behaviors
@@ -9,18 +9,41 @@ namespace Poseidon.Common.Wpf.Behaviors
         protected override void OnAttached()
         {
             base.OnAttached();
-            AssociatedObject.GotFocus += OnFocus;
+
+            AssociatedObject.MouseDoubleClick += OnMouseSelection;
+            AssociatedObject.GotKeyboardFocus += OnKeyboardFocusSelectText;
+            AssociatedObject.PreviewMouseDown += IgnoreMouseDown;
         }
 
         protected override void OnDetaching()
         {
-            AssociatedObject.GotFocus -= OnFocus;
             base.OnDetaching();
+
+            AssociatedObject.MouseDoubleClick -= OnMouseSelection;
+            AssociatedObject.GotKeyboardFocus -= OnKeyboardFocusSelectText;
+            AssociatedObject.PreviewMouseDown -= IgnoreMouseDown;
         }
 
-        void OnFocus(object sender, RoutedEventArgs e)
+        private void OnKeyboardFocusSelectText(object sender, KeyboardFocusChangedEventArgs e)
         {
             AssociatedObject.SelectAll();
         }
+
+        private void OnMouseSelection(object sender, MouseButtonEventArgs e)
+        {
+            AssociatedObject.SelectAll();
+        }
+
+        private void IgnoreMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var textbox = sender as TextBox;
+            if (textbox == null) return;
+
+            if (textbox.IsKeyboardFocusWithin) return;
+
+            e.Handled = true;
+            textbox.Focus();
+        }
+
     }
 }
