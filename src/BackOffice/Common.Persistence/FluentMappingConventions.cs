@@ -16,11 +16,11 @@ namespace Poseidon.Common.Persistence
         }
     }
 
-    static class StringExtensions
+    internal static class StringExtensions
     {
         public static string Escape(this string instance)
         {
-            return String.Format("`{0}`", instance);
+            return string.Format("`{0}`", instance);
         }
     }
 }

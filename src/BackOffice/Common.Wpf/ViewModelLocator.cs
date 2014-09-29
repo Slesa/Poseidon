@@ -7,8 +7,8 @@ namespace Poseidon.Common.Wpf
 {
     public class ViewModelLocator<TViewModel> where TViewModel : class
     {
-        readonly Lazy<IUnityContainer> _container;
-        readonly bool _inDesignTime = System.ComponentModel.DesignerProperties.GetIsInDesignMode(new DependencyObject());
+        private readonly Lazy<IUnityContainer> _container;
+        private readonly bool _inDesignTime = System.ComponentModel.DesignerProperties.GetIsInDesignMode(new DependencyObject());
 
         public ViewModelLocator()
         {

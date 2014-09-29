@@ -4,7 +4,7 @@ namespace Poseidon.Domain.Common
 {
     public class DomainEntity : IEquatable<DomainEntity>
     {
-        int _id;
+        private int _id;
 
         protected DomainEntity()
         {
@@ -13,6 +13,16 @@ namespace Poseidon.Domain.Common
         protected DomainEntity(int id)
         {
             _id = id;
+        }
+
+        public static bool operator ==(DomainEntity left, DomainEntity right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(DomainEntity left, DomainEntity right)
+        {
+            return !Equals(left, right);
         }
 
         public virtual int Id
@@ -38,16 +48,6 @@ namespace Poseidon.Domain.Common
         public override int GetHashCode()
         {
             return Id.Equals(default(int)) ? base.GetHashCode() : Id.GetHashCode();
-        }
-
-        public static bool operator ==(DomainEntity left, DomainEntity right)
-        {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(DomainEntity left, DomainEntity right)
-        {
-            return !Equals(left, right);
         }
     }
 }

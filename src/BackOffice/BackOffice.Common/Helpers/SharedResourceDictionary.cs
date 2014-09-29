@@ -9,17 +9,17 @@ namespace Poseidon.BackOffice.Common.Helpers
         ///// <summary>
         ///// Internal cache of loaded dictionaries 
         ///// </summary>
-        //public static Dictionary<Uri, ResourceDictionary> _sharedDictionaries = new Dictionary<Uri, ResourceDictionary>();
+        // public static Dictionary<Uri, ResourceDictionary> _sharedDictionaries = new Dictionary<Uri, ResourceDictionary>();
 
         ///// <summary>
         ///// Local member of the source uri
         ///// </summary>
-        //private Uri _sourceUri;
+        // private Uri _sourceUri;
 
         ///// <summary>
         ///// Gets or sets the uniform resource identifier (URI) to load resources from.
         ///// </summary>
-        //public new Uri Source
+        // public new Uri Source
         //{
         //    get { return _sourceUri; }
         //    set
@@ -42,6 +42,5 @@ namespace Poseidon.BackOffice.Common.Helpers
         //        }
         //    }
         //}
-         
     }
 }

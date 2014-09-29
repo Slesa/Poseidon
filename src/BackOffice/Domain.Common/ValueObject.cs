@@ -6,6 +6,16 @@ namespace Poseidon.Domain.Common
 {
     public abstract class ValueObject<TValue> : IEquatable<TValue> where TValue : ValueObject<TValue>
     {
+        public static bool operator ==(ValueObject<TValue> left, ValueObject<TValue> right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(ValueObject<TValue> left, ValueObject<TValue> right)
+        {
+            return !Equals(left, right);
+        }
+
         public bool Equals(TValue other)
         {
             if (other == null)
@@ -54,7 +64,7 @@ namespace Poseidon.Domain.Common
             return hashcode;
         }
 
-        IEnumerable<FieldInfo> GetFieldsFromTypeHierarchy()
+        private IEnumerable<FieldInfo> GetFieldsFromTypeHierarchy()
         {
             var t = GetType();
             var fields = new List<FieldInfo>();
@@ -64,16 +74,6 @@ namespace Poseidon.Domain.Common
                 t = t.BaseType;
             }
             return fields;
-        }
-
-        public static bool operator ==(ValueObject<TValue> left, ValueObject<TValue> right)
-        {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(ValueObject<TValue> left, ValueObject<TValue> right)
-        {
-            return !Equals(left, right);
         }
     }
 }

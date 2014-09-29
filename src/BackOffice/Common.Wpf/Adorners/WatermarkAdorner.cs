@@ -59,9 +59,9 @@ namespace Poseidon.Common.Wpf.Adorners
         /// <summary>
         /// Gets the control that is being adorned
         /// </summary>
-        Control Control
+        private Control Control
         {
-            get { return (Control)this.AdornedElement; }
+            get { return (Control)AdornedElement; }
         }
 
         /// <summary>

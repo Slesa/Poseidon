@@ -6,7 +6,7 @@ namespace Poseidon.Common.Persistence
 {
     public class DbConversation : IDbConversation
     {
-        readonly ISession _session;
+        private readonly ISession _session;
 
         public DbConversation(IHibernateSessionFactory sessionFactory)
         {

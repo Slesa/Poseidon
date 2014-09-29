@@ -7,7 +7,7 @@ namespace Poseidon.BackOffice.Common.Controls
     public class ModuleButton : Button
     {
         public static readonly DependencyProperty TitleFontSizeProperty =
-            DependencyProperty.Register("TitleFontSize", typeof (double), typeof (ModuleButton), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("TitleFontSize", typeof(double), typeof(ModuleButton), new PropertyMetadata(default(double)));
 
         public double TitleFontSize
         {
@@ -16,7 +16,7 @@ namespace Poseidon.BackOffice.Common.Controls
         }
 
         public static readonly DependencyProperty TitleFontWeightProperty =
-            DependencyProperty.Register("TitleFontWeight", typeof (FontWeight), typeof (ModuleButton), new PropertyMetadata(default(FontWeight)));
+            DependencyProperty.Register("TitleFontWeight", typeof(FontWeight), typeof(ModuleButton), new PropertyMetadata(default(FontWeight)));
 
         public FontWeight TitleFontWeight
         {
@@ -34,7 +34,7 @@ namespace Poseidon.BackOffice.Common.Controls
         }
 
         public static readonly DependencyProperty IconSizeProperty =
-            DependencyProperty.Register("IconSize", typeof (double), typeof (ModuleButton), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("IconSize", typeof(double), typeof(ModuleButton), new PropertyMetadata(default(double)));
 
         public double IconSize
         {
@@ -43,7 +43,7 @@ namespace Poseidon.BackOffice.Common.Controls
         }
 
         public static readonly DependencyProperty DescriptionProperty =
-            DependencyProperty.Register("Description", typeof (string), typeof (ModuleButton), new PropertyMetadata(default(string)));
+            DependencyProperty.Register("Description", typeof(string), typeof(ModuleButton), new PropertyMetadata(default(string)));
 
         public string Description
         {

@@ -4,7 +4,7 @@ namespace Common.Crypto
 {
     public class PasswordGenerator
     {
-        readonly RNGCryptoServiceProvider _provider = new RNGCryptoServiceProvider();
+        private readonly RNGCryptoServiceProvider _provider = new RNGCryptoServiceProvider();
 
         public string Salt
         {
@@ -18,7 +18,7 @@ namespace Common.Crypto
 
         public string CreateHash(string salt, string password)
         {
-            var binary = System.Text.Encoding.UTF32.GetBytes(salt+password);
+            var binary = System.Text.Encoding.UTF32.GetBytes(salt + password);
 
             var sha = SHA256.Create();
             var hash = sha.ComputeHash(binary);

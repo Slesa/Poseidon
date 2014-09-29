@@ -17,7 +17,7 @@ namespace Poseidon.Common.Wpf.Behaviors
                 typeof (SelectedItemsBehavior),
                 new PropertyMetadata(null, OnSelectionsPropertyChanged));
 
-        bool _updating;
+        private bool _updating;
         WeakEventHandler<SelectedItemsBehavior, object, NotifyCollectionChangedEventArgs> _currentWeakHandler;
 
         public IList Selections
@@ -39,7 +39,7 @@ namespace Poseidon.Common.Wpf.Behaviors
             base.OnDetaching();
         }
 
-        static void OnSelectionsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnSelectionsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var behavior = d as SelectedItemsBehavior;
             if (behavior == null) return;
@@ -65,13 +65,12 @@ namespace Poseidon.Common.Wpf.Behaviors
             behavior.UpdateSelectedItems();
         }
 
-        void OnSelectedItemsChanged(object sender, SelectionChangedEventArgs e)
+        private void OnSelectedItemsChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateSelections(e);
         }
 
-
-        void UpdateSelections(SelectionChangedEventArgs e)
+        private void UpdateSelections(SelectionChangedEventArgs e)
         {
             ExecuteIfNotUpdating(() =>
                 {
@@ -89,12 +88,12 @@ namespace Poseidon.Common.Wpf.Behaviors
                 });
         }
 
-        void OnSelectionsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void OnSelectionsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             UpdateSelectedItems(e);
         }
 
-        void UpdateSelectedItems()
+        private void UpdateSelectedItems()
         {
             ExecuteIfNotUpdating(() =>
                 {
@@ -109,7 +108,7 @@ namespace Poseidon.Common.Wpf.Behaviors
                 });
         }
 
-        void UpdateSelectedItems(NotifyCollectionChangedEventArgs e)
+        private void UpdateSelectedItems(NotifyCollectionChangedEventArgs e)
         {
             ExecuteIfNotUpdating(() =>
                 {

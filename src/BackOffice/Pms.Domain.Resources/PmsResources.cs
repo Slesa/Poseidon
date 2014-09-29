@@ -4,7 +4,7 @@
     {
         public static readonly string PmsIcon = @"/Poseidon.Pms.Domain.Resources;component/Pms.png";
 
-        //public static readonly string CurrencyIcon = @"/Poseidon.Pms.Domain.Resources;component/Currency.png";
+        // public static readonly string CurrencyIcon = @"/Poseidon.Pms.Domain.Resources;component/Currency.png";
         public static readonly string DiscountIcon = @"/Poseidon.Pms.Domain.Resources;component/Discount.png";
         public static readonly string PayformIcon = @"/Poseidon.Pms.Domain.Resources;component/Payform.png";
         public static readonly string SalesFamilyGroupIcon = @"/Poseidon.Pms.Domain.Resources;component/SalesFamilyGroup.png";

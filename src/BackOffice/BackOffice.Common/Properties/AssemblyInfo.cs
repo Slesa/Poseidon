@@ -15,10 +15,10 @@ using System.Windows;
 [assembly: Guid("5368e7a2-0129-4603-bb47-3198af5a35c2")]
 
 [assembly: ThemeInfo(
-    ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located
-    //(used if a resource is not found in the page, 
+    ResourceDictionaryLocation.None, // where theme specific resource dictionaries are located
+    // (used if a resource is not found in the page, 
     // or application resource dictionaries)
-    ResourceDictionaryLocation.SourceAssembly //where the generic resource dictionary is located
-    //(used if a resource is not found in the page, 
+    ResourceDictionaryLocation.SourceAssembly // where the generic resource dictionary is located
+    // (used if a resource is not found in the page, 
     // app, or any theme specific resource dictionaries)
 )]

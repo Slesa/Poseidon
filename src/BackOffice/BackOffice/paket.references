@@ -10,3 +10,4 @@ Prism.UnityExtensions
 System.Windows.Interactivity.WPF
 Unity
 UnityAutoRegistration
+StyleCop.MSBuild

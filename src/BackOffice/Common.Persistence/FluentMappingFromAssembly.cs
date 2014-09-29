@@ -5,7 +5,7 @@ namespace Poseidon.Common.Persistence
 {
     public class FluentMappingFromAssembly
     {
-        Assembly _assembly;
+        private Assembly _assembly;
 
         public FluentMappingFromAssembly WithAssembly(string assemblyName)
         {

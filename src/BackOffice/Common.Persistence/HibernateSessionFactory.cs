@@ -10,10 +10,10 @@ namespace Poseidon.Common.Persistence
 {
     public class HibernateSessionFactory : IHibernateSessionFactory
     {
-        static readonly object InitializationSynchronization = new object();
-        ISessionFactory _sessionFactory;
-        readonly IPersistenceConfiguration _persistenceConfiguration;
-        readonly IHibernatePersistenceModel _persistenceModel;
+        private static readonly object InitializationSynchronization = new object();
+        private readonly IPersistenceConfiguration _persistenceConfiguration;
+        private readonly IHibernatePersistenceModel _persistenceModel;
+        private ISessionFactory _sessionFactory;
 
         public HibernateSessionFactory(IPersistenceConfiguration persistenceConfiguration, IHibernatePersistenceModel persistenceModel)
         {
@@ -56,8 +56,7 @@ namespace Poseidon.Common.Persistence
             return session;
         }
 
-
-        ISessionFactory CreateSessionFactory()
+        private ISessionFactory CreateSessionFactory()
         {
             var configuration = Fluently.Configure()
                 .Database(_persistenceConfiguration.GetConfiguration)
@@ -74,7 +73,7 @@ namespace Poseidon.Common.Persistence
         }
 
         [Conditional("DEBUG")]
-        static void CreateDatabaseWhenDebug(FluentConfiguration configuration)
+        private static void CreateDatabaseWhenDebug(FluentConfiguration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             configuration.ExposeConfiguration(config => new SchemaUpdate(config).Execute(false, true));

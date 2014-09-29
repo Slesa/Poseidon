@@ -17,7 +17,7 @@ namespace Poseidon.Common.Persistence
 
         public void AddMappings(MappingConfiguration configuration)
         {
-            if (MappingContributors!=null) MappingContributors.Each(x => x.Apply(configuration));
+            if (MappingContributors != null) MappingContributors.Each(x => x.Apply(configuration));
         }
     }
 }

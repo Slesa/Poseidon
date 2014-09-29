@@ -8,7 +8,7 @@ namespace Poseidon.Common.Wpf.Behaviors
     public class MouseDoubleClickBehavior : Behavior<Control>
     {
         public static readonly DependencyProperty CommandProperty =
-            DependencyProperty.Register("Command", typeof (ICommand), typeof (MouseDoubleClickBehavior), new PropertyMetadata(default(ICommand)));
+            DependencyProperty.Register("Command", typeof(ICommand), typeof(MouseDoubleClickBehavior), new PropertyMetadata(default(ICommand)));
 
         public ICommand Command
         {
@@ -17,7 +17,7 @@ namespace Poseidon.Common.Wpf.Behaviors
         }
 
         public static readonly DependencyProperty CommandParameterProperty =
-            DependencyProperty.Register("CommandParameter", typeof (object), typeof (MouseDoubleClickBehavior), new PropertyMetadata(default(object)));
+            DependencyProperty.Register("CommandParameter", typeof(object), typeof(MouseDoubleClickBehavior), new PropertyMetadata(default(object)));
 
         public object CommandParameter
         {
@@ -37,7 +37,7 @@ namespace Poseidon.Common.Wpf.Behaviors
             base.OnDetaching();
         }
 
-        void OnMouseDoubleClick(object sender, RoutedEventArgs e)
+        private void OnMouseDoubleClick(object sender, RoutedEventArgs e)
         {
             if (Command == null) return;
             Command.Execute(CommandParameter);

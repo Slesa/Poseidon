@@ -7,7 +7,7 @@ namespace Poseidon.BackOffice.Common.Helpers
     {
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.RegisterAttached("Password",
-                                                typeof (string), typeof (PasswordHelper),
+                                                typeof(string), typeof(PasswordHelper),
                                                 new FrameworkPropertyMetadata(string.Empty, OnPasswordPropertyChanged));
 
         public static string GetPassword(DependencyObject dp)
@@ -20,7 +20,7 @@ namespace Poseidon.BackOffice.Common.Helpers
             dp.SetValue(PasswordProperty, value);
         }
 
-        static void OnPasswordPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        private static void OnPasswordPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             var passwordBox = sender as PasswordBox;
             if (passwordBox == null) return;
@@ -37,7 +37,7 @@ namespace Poseidon.BackOffice.Common.Helpers
 
         public static readonly DependencyProperty AttachProperty =
             DependencyProperty.RegisterAttached("Attach",
-                                                typeof (bool), typeof (PasswordHelper),
+                                                typeof(bool), typeof(PasswordHelper),
                                                 new PropertyMetadata(false, Attach));
 
         public static void SetAttach(DependencyObject dp, bool value)
@@ -47,43 +47,41 @@ namespace Poseidon.BackOffice.Common.Helpers
 
         public static bool GetAttach(DependencyObject dp)
         {
-            return (bool) dp.GetValue(AttachProperty);
+            return (bool)dp.GetValue(AttachProperty);
         }
 
-        static void Attach(DependencyObject sender,
-                           DependencyPropertyChangedEventArgs e)
+        private static void Attach(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             var passwordBox = sender as PasswordBox;
             if (passwordBox == null) return;
 
-            if ((bool) e.OldValue)
+            if ((bool)e.OldValue)
             {
                 passwordBox.PasswordChanged -= PasswordChanged;
             }
 
-            if ((bool) e.NewValue)
+            if ((bool)e.NewValue)
             {
                 passwordBox.PasswordChanged += PasswordChanged;
             }
         }
 
 
-        static readonly DependencyProperty IsUpdatingProperty =
-            DependencyProperty.RegisterAttached("IsUpdating", typeof (bool),
-                                                typeof (PasswordHelper));
+        private static readonly DependencyProperty IsUpdatingProperty =
+            DependencyProperty.RegisterAttached("IsUpdating", typeof(bool), typeof(PasswordHelper));
 
-        static bool GetIsUpdating(DependencyObject dp)
+        private static bool GetIsUpdating(DependencyObject dp)
         {
             return (bool) dp.GetValue(IsUpdatingProperty);
         }
 
-        static void SetIsUpdating(DependencyObject dp, bool value)
+        private static void SetIsUpdating(DependencyObject dp, bool value)
         {
             dp.SetValue(IsUpdatingProperty, value);
         }
 
 
-        static void PasswordChanged(object sender, RoutedEventArgs e)
+        private static void PasswordChanged(object sender, RoutedEventArgs e)
         {
             var passwordBox = sender as PasswordBox;
             SetIsUpdating(passwordBox, true);

@@ -7,3 +7,4 @@ Prism.PubSubEvents
 Prism.UnityExtensions
 System.Windows.Interactivity.WPF
 Unity
+StyleCop.MSBuild

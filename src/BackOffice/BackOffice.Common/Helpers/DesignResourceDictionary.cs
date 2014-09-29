@@ -7,6 +7,5 @@ namespace Poseidon.BackOffice.Common.Helpers
         : ResourceDictionary
 #endif
     {
-         
     }
 }

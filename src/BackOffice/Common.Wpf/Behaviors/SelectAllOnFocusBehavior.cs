@@ -18,7 +18,7 @@ namespace Poseidon.Common.Wpf.Behaviors
             base.OnDetaching();
         }
 
-        void OnFocus(object sender, RoutedEventArgs e)
+        private void OnFocus(object sender, RoutedEventArgs e)
         {
             AssociatedObject.SelectAll();
         }

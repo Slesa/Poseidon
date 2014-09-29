@@ -54,7 +54,7 @@ namespace Poseidon.Common.Wpf.Services
         /// </summary>
         /// <param name="d"><see cref="DependencyObject"/> that fired the event</param>
         /// <param name="e">A <see cref="DependencyPropertyChangedEventArgs"/> that contains the event data.</param>
-        static void OnWatermarkChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnWatermarkChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (Control)d;
             control.Loaded += Control_Loaded;
@@ -84,7 +84,7 @@ namespace Poseidon.Common.Wpf.Services
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">A <see cref="RoutedEventArgs"/> that contains the event data.</param>
-        static void Control_GotKeyboardFocus(object sender, RoutedEventArgs e)
+        private static void Control_GotKeyboardFocus(object sender, RoutedEventArgs e)
         {
             var c = (Control)sender;
             if (ShouldShowWatermark(c)) RemoveWatermark(c);
@@ -95,7 +95,7 @@ namespace Poseidon.Common.Wpf.Services
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">A <see cref="RoutedEventArgs"/> that contains the event data.</param>
-        static void Control_Loaded(object sender, RoutedEventArgs e)
+        private static void Control_Loaded(object sender, RoutedEventArgs e)
         {
             var control = (Control)sender;
             if (ShouldShowWatermark(control)) ShowWatermark(control);
@@ -106,7 +106,7 @@ namespace Poseidon.Common.Wpf.Services
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">A <see cref="EventArgs"/> that contains the event data.</param>
-        static void ItemsSourceChanged(object sender, EventArgs e)
+        private static void ItemsSourceChanged(object sender, EventArgs e)
         {
             var c = (ItemsControl)sender;
             if (c.ItemsSource == null || ShouldShowWatermark(c))
@@ -124,7 +124,7 @@ namespace Poseidon.Common.Wpf.Services
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">A <see cref="ItemsChangedEventArgs"/> that contains the event data.</param>
-        static void ItemsChanged(object sender, ItemsChangedEventArgs e)
+        private static void ItemsChanged(object sender, ItemsChangedEventArgs e)
         {
             ItemsControl control;
             if (itemsControls.TryGetValue(sender, out control))
@@ -144,7 +144,7 @@ namespace Poseidon.Common.Wpf.Services
         /// Show the watermark on the specified control
         /// </summary>
         /// <param name="control">Control to show the watermark on</param>
-        static void ShowWatermark(Control control)
+        private static void ShowWatermark(Control control)
         {
             var layer = AdornerLayer.GetAdornerLayer(control);
 
@@ -159,7 +159,7 @@ namespace Poseidon.Common.Wpf.Services
         /// Remove the watermark from the specified element
         /// </summary>
         /// <param name="control">Element to remove the watermark from</param>
-        static void RemoveWatermark(UIElement control)
+        private static void RemoveWatermark(UIElement control)
         {
             var layer = AdornerLayer.GetAdornerLayer(control);
 
@@ -188,7 +188,7 @@ namespace Poseidon.Common.Wpf.Services
         /// </summary>
         /// <param name="c"><see cref="Control"/> to test</param>
         /// <returns>true if the watermark should be shown; false otherwise</returns>
-        static bool ShouldShowWatermark(Control c)
+        private static bool ShouldShowWatermark(Control c)
         {
             if (c is ComboBox)
             {

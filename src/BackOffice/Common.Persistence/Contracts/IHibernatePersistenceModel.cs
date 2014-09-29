@@ -1,5 +1,4 @@
-﻿
-using FluentNHibernate.Cfg;
+﻿using FluentNHibernate.Cfg;
 
 namespace Poseidon.Common.Persistence.Contracts
 {

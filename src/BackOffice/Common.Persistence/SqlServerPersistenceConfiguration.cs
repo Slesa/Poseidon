@@ -5,7 +5,7 @@ namespace Poseidon.Common.Persistence
 {
     public class SqlServerPersistenceConfiguration : IPersistenceConfiguration
     {
-        readonly string _connectionString;
+        private readonly string _connectionString;
         public bool ShowSql { get; set; }
 
         public SqlServerPersistenceConfiguration(string connectionString)
@@ -18,7 +18,7 @@ namespace Poseidon.Common.Persistence
             var configuration = MsSqlConfiguration
                 .MsSql2008
                 .ConnectionString(c => c.Is(_connectionString))
-                //.ProxyFactoryFactory(typeof(ProxyFactoryFactory).AssemblyQualifiedName)
+                // .ProxyFactoryFactory(typeof(ProxyFactoryFactory).AssemblyQualifiedName)
                 .AdoNetBatchSize(10)
                 .UseReflectionOptimizer()
                 .UseOuterJoin();
