@@ -1,4 +1,7 @@
-﻿YouTack:
+﻿CI Server:
+https://ci.appveyor.com/projects
+
+YouTack:
 http://slesa.myjetbrains.com/youtrack/rest/agile/Poseidon+Board-0/sprint/Version+0.1
 
 Paket:
