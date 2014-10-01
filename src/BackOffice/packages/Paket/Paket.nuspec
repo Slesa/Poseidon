@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Paket</id>
-    <version>0.4.16</version>
+    <version>0.4.19</version>
     <authors>Paket team</authors>
     <owners>Paket team</owners>
     <licenseUrl>http://fsprojects.github.io/Paket/license.html</licenseUrl>
@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A package dependency manager for .NET with support for NuGet packages and GitHub files.</description>
     <summary>A package dependency manager for .NET with support for NuGet packages and GitHub files.</summary>
-    <releaseNotes>paket convert-from-nuget adds .paket folder to the sln - https://github.com/fsprojects/Paket/issues/206</releaseNotes>
+    <releaseNotes>Content files like `_._`, `*.transform` and `*.pp` are ignored - https://github.com/fsprojects/Paket/issues/207</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>nuget, bundler, F#</tags>
   </metadata>
