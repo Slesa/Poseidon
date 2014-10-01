@@ -34,9 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -49,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\TextBoxView.xaml.cs">
+      <DependentUpon>TextBoxView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CheckBoxView.xaml.cs">
       <DependentUpon>CheckBoxView.xaml</DependentUpon>
     </Compile>
@@ -64,6 +73,10 @@
     <Page Include="Controls\ButtonsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TextBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\CheckBoxView.xaml">
       <SubType>Designer</SubType>
@@ -122,6 +135,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,6 +153,10 @@
     <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
       <Project>{f2f299af-2b1a-43a2-ae10-6b23af9721fd}</Project>
       <Name>BackOffice.Theme</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Wpf\Common.Wpf.csproj">
+      <Project>{eab8e2bf-b1a4-400d-9db0-b90ea8edf860}</Project>
+      <Name>Common.Wpf</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
