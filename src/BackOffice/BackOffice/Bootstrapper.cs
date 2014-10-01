@@ -6,10 +6,12 @@ using System.Reflection;
 using System.Windows;
 using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.ViewModels;
 using Poseidon.BackOffice.Views;
 using Poseidon.Common.Persistence;
@@ -34,8 +36,10 @@ namespace Poseidon.BackOffice
             var logFile = new FileInfo("Poseidon.BackOffice.log4net.config");
             log4net.Config.XmlConfigurator.Configure(logFile);
 
+            var eventAggregator = Container.Resolve<IEventAggregator>();
             Application.Current.MainWindow = (Window)Shell;
             Application.Current.MainWindow.Show();
+            eventAggregator.GetEvent<ApplicationReadEvent>().Publish(0);
         }
 
         protected override void ConfigureContainer()
