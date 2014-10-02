@@ -3,7 +3,7 @@ using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace Poseidon.BackOffice.Common
 {
-    public class ApplicationReadEvent : PubSubEvent<int> {}
+    public class ApplicationReadyEvent : PubSubEvent<int> {}
 
     public class StatusBarClearEvent : PubSubEvent<int>  { }
     public class StatusBarMessageEvent : PubSubEvent<string> { }

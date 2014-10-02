@@ -39,7 +39,7 @@ namespace Poseidon.BackOffice
             var eventAggregator = Container.Resolve<IEventAggregator>();
             Application.Current.MainWindow = (Window)Shell;
             Application.Current.MainWindow.Show();
-            eventAggregator.GetEvent<ApplicationReadEvent>().Publish(0);
+            eventAggregator.GetEvent<ApplicationReadyEvent>().Publish(0);
         }
 
         protected override void ConfigureContainer()

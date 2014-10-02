@@ -7,6 +7,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:regions="http://www.codeplex.com/CompositeWPF"
         xmlns:viewModels="clr-namespace:Poseidon.BackOffice.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:prism="http://www.codeplex.com/prism"
         Title="Poseidon Backoffice"
         MinWidth="800"
         MinHeight="600"
@@ -44,4 +46,9 @@
         <ContentControl x:Name="Modules" regions:RegionManager.RegionName="{x:Static common:Regions.TagModulesRegion}" />
     </DockPanel>
 
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding LoginUserRequest, Mode=OneWay}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True"/>
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
 </Window>

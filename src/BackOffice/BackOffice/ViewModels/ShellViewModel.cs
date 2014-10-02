@@ -1,6 +1,11 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
+using Microsoft.Practices.Prism.PubSubEvents;
+using Microsoft.Practices.ServiceLocation;
+using Poseidon.BackOffice.Common;
 
 namespace Poseidon.BackOffice.ViewModels
 {
@@ -8,7 +13,17 @@ namespace Poseidon.BackOffice.ViewModels
     {
         public ShellViewModel()
         {
+
+            LoginUserRequest = new InteractionRequest<INotification>();
+
             OnQuitCommand = new DelegateCommand(OnQuit);
+            LoginUserCommand = new DelegateCommand(RaiseLoginUserRequest, CanRaiseLoginUserRequest);
+
+            if (!DesignerProperties.GetIsInDesignMode(new DependencyObject()))
+            {
+                var eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
+                eventAggregator.GetEvent<ApplicationReadyEvent>().Subscribe(_ => RaiseLoginUserRequest());
+            }
         }
 
         #region Commands
@@ -20,6 +35,29 @@ namespace Poseidon.BackOffice.ViewModels
             Application.Current.Shutdown();
         }
 
+        public ICommand LoginUserCommand { get; private set; }
+
+        void RaiseLoginUserRequest()
+        {
+            LoginUserRequest.Raise(new Notification
+            {
+                Title = "Login", Content = "Username? Password?"
+            });
+        }
+
+        bool CanRaiseLoginUserRequest()
+        {
+            return true;
+        }
+
+
         #endregion
+
+        #region Interaction
+
+        public InteractionRequest<INotification> LoginUserRequest { get; private set; }
+
+        #endregion
+
     }
 }
