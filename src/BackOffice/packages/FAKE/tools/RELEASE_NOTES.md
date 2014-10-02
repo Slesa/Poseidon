@@ -1,3 +1,26 @@
+#### 3.5.6 - 29.09.2014
+* Roundhouse Cleanup - https://github.com/fsharp/FAKE/pull/550
+
+#### 3.5.5 - 25.09.2014
+* If site exists then the site will be modified with the given parameters - https://github.com/fsharp/FAKE/pull/548
+
+#### 3.5.4 - 21.09.2014
+* Messages in FSC task to stderr stream can break the build - https://github.com/fsharp/FAKE/pull/546
+
+#### 3.5.3 - 21.09.2014
+* Support for MSpec --xml parameter - https://github.com/fsharp/FAKE/pull/545
+
+#### 3.5.2 - 20.09.2014
+* Make GetPackageVersion work with Paket
+
+#### 3.5.1 - 19.09.2014
+* Update FSharp.Compiler.Service to 0.0.62
+
+#### 3.5.0 - 19.09.2014
+* Added new SignToolHelper - https://github.com/fsharp/FAKE/pull/535
+* Look first in default path for a tool - https://github.com/fsharp/FAKE/pull/542
+* Add support for MSBuild Distributed Loggers - https://github.com/fsharp/FAKE/pull/536
+
 #### 3.4.3 - 09.09.2014
 * Try to support ß in authors
 
