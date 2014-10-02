@@ -7362,6 +7362,11 @@ Partial validation for folder name, based on http://msdn.microsoft.com/en-us/lib
  There is also a tutorial about [nuget package restore](../nuget.html) available.
 </summary>
 </member>
+<member name="P:Fake.RoundhouseHelper.RoundhouseParams.SchemaName">
+<summary>
+  The schema where RH stores it&apos;s tables
+</summary>
+</member>
 <member name="P:Fake.RoundhouseHelper.RoundhouseParams.TimeOut">
 <summary>
  A timeout for the runner.
