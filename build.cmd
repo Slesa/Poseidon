@@ -7,10 +7,12 @@ SET TARGET="Default"
 
 IF NOT [%1]==[] (set TARGET="%1")
   
-"tools\Fake\Fake.exe" build.fsx %TARGET%
+REM "tools\Fake\Fake.exe" build.fsx %TARGET%
+"src\BackOffice\packages\Fake\tools\Fake.exe" build.fsx %TARGET%
 
 rem Bail if we're running a TeamCity build.
 if defined TEAMCITY_PROJECT_NAME goto Quit
+if defined APPVEYOR goto Quit
 
 rem Loop the build script.
 set CHOICE=nothing

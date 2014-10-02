@@ -2343,7 +2343,7 @@
 </member>
 <member name="M:Fake.FileSystem.findToolInSubPath(System.String,System.String)">
 <summary>
- Looks for a tool in all subfolders - returns the tool file name.
+ Looks for a tool first in its default path, if not found in all subfolders of the root folder - returns the tool file name.
 </summary>
 </member>
 <member name="M:Fake.FileSystem.op_BangPlus(System.String)">
@@ -4286,10 +4286,25 @@ Partial validation for folder name, based on http://msdn.microsoft.com/en-us/lib
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="T:Fake.MSBuildHelper.MSBuildParams">
 <summary>
  A type for MSBuild task parameters
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -4503,7 +4518,7 @@ Partial validation for folder name, based on http://msdn.microsoft.com/en-us/lib
 <member name="">
 
 </member>
-<member name="M:Fake.MSBuildHelper.getAllParameters``1(``0,``0,``0,``0,``0,``0,Microsoft.FSharp.Collections.FSharpList{``0},Microsoft.FSharp.Collections.FSharpList{``0})">
+<member name="M:Fake.MSBuildHelper.getAllParameters``1(``0,``0,``0,``0,``0,``0,Microsoft.FSharp.Collections.FSharpList{``0},Microsoft.FSharp.Collections.FSharpList{``0},Microsoft.FSharp.Collections.FSharpList{``0})">
 <summary>
  [omit]
 </summary>
@@ -4747,6 +4762,11 @@ Partial validation for folder name, based on http://msdn.microsoft.com/en-us/lib
  Working directory (optional)
 </summary>
 </member>
+<member name="P:Fake.MSpecHelper.MSpecParams.XmlOutputPath">
+<summary>
+ Output file path for xml reports (optional).
+</summary>
+</member>
 <member name="P:Fake.MSpecHelper.MSpecParams.HtmlOutputDir">
 <summary>
  Output directory for html reports (optional).
@@ -4774,6 +4794,10 @@ Partial validation for folder name, based on http://msdn.microsoft.com/en-us/lib
 
      !! (testDir @@ &quot;Test.*.dll&quot;) 
        |&gt; MSpec (fun p -&gt; {p with ExcludeTags = [&quot;HTTP&quot;]; HtmlOutputDir = reportDir})
+
+ ## Hint
+ 
+ XmlOutputPath expects a full file path whereas the HtmlOutputDir expects a directory name
 </summary>
 </member>
 <member name="M:Fake.MSpecHelper.buildMSpecArgs(Fake.MSpecHelper.MSpecParams,System.Collections.Generic.IEnumerable{System.String})">
@@ -6044,9 +6068,6 @@ Partial validation for folder name, based on http://msdn.microsoft.com/en-us/lib
 <summary>
  Gets the version no. for a given package in the deployments folder
 </summary>
-</member>
-<member name="">
-
 </member>
 <member name="">
 
@@ -7537,6 +7558,24 @@ Partial validation for folder name, based on http://msdn.microsoft.com/en-us/lib
         WarnOnOneTimeScriptChanges = true })
 
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="P:Fake.RoundhouseHelper.RoundhouseDefaults">
 <summary>

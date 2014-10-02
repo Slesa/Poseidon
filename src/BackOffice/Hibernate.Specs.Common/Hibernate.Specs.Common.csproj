@@ -283,30 +283,4 @@
       </ItemGroup>
     </When>
   </Choose>
-  <ItemGroup>
-    <Content Include="net20\x64\SQLite.Interop.dll">
-      <Paket>True</Paket>
-    </Content>
-    <Content Include="net20\x86\SQLite.Interop.dll">
-      <Paket>True</Paket>
-    </Content>
-    <Content Include="net40\x64\SQLite.Interop.dll">
-      <Paket>True</Paket>
-    </Content>
-    <Content Include="net40\x86\SQLite.Interop.dll">
-      <Paket>True</Paket>
-    </Content>
-    <Content Include="net45\x64\SQLite.Interop.dll">
-      <Paket>True</Paket>
-    </Content>
-    <Content Include="net45\x86\SQLite.Interop.dll">
-      <Paket>True</Paket>
-    </Content>
-    <Content Include="net451\x64\SQLite.Interop.dll">
-      <Paket>True</Paket>
-    </Content>
-    <Content Include="net451\x86\SQLite.Interop.dll">
-      <Paket>True</Paket>
-    </Content>
-  </ItemGroup>
 </Project>

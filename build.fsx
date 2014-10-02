@@ -97,7 +97,7 @@ Target "Default" DoNothing
 "Clean"
   ==> "SetAssemblyInfo"
   ==> "BuildApp" <=> "BuildTest"
-//  ==> "Test"
+  ==> "Test"
   ==> "Deploy"
   ==> "Default"
 
