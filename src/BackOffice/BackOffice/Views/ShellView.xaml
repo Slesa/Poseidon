@@ -9,6 +9,7 @@
         xmlns:viewModels="clr-namespace:Poseidon.BackOffice.ViewModels"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:prism="http://www.codeplex.com/prism"
+        xmlns:views="clr-namespace:Poseidon.BackOffice.Core.Views;assembly=Poseidon.BackOffice.Core"
         Title="Poseidon Backoffice"
         MinWidth="800"
         MinHeight="600"
@@ -48,7 +49,11 @@
 
     <i:Interaction.Triggers>
         <prism:InteractionRequestTrigger SourceObject="{Binding LoginUserRequest, Mode=OneWay}">
-            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True"/>
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+                <prism:PopupWindowAction.WindowContent>
+                    <views:LoginView />
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
         </prism:InteractionRequestTrigger>
     </i:Interaction.Triggers>
 </Window>

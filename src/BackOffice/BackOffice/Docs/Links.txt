@@ -12,3 +12,9 @@ https://github.com/elw00d/consoleframework
 
 StyleCop:
 http://stylecop.codeplex.com/
+
+
+
+Prism, InteractionTrigger, open child window:
+http://sysmagazine.com/posts/152003/
+http://briannoyesblogwp.azurewebsites.net/2010/11/15/prompting-the-user-from-a-view-modelprism-4-gems/

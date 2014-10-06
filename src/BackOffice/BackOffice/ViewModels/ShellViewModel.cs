@@ -7,6 +7,7 @@ using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.ServiceLocation;
 using Poseidon.BackOffice.Common;
 
+
 namespace Poseidon.BackOffice.ViewModels
 {
     public class ShellViewModel
@@ -41,8 +42,14 @@ namespace Poseidon.BackOffice.ViewModels
         {
             LoginUserRequest.Raise(new Notification
             {
-                Title = "Login", Content = "Username? Password?"
-            });
+                Title = "Enter credentials..."
+            }, LoginNotification);
+        }
+
+        void LoginNotification(INotification obj)
+        {
+            
+            var i = obj;
         }
 
         bool CanRaiseLoginUserRequest()
