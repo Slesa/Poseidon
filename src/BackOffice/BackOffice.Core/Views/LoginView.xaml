@@ -127,6 +127,7 @@
             <Label Grid.Row="2" Grid.Column="1" Content="_Password:"  Style="{DynamicResource Style.Dialog.Label}" />
             <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource Style.Dialog.TextBox}"/>
             
+            <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding ErrorText}"/>
         </Grid>
         
     </DockPanel>
