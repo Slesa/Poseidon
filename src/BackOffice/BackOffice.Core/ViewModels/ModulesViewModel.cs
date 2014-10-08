@@ -17,7 +17,7 @@ namespace Poseidon.BackOffice.Core.ViewModels
         {
             var modules = container.ResolveAll<IOfficeModule>().ToArray();
             Modules = modules.Where(x=>x.ParentType==null).OrderBy(x=>x.Priority).Select(x => new OfficeModuleViewModel(x, modules, regionManager));
-            eventAggregator.GetEvent<StatusBarMessageEvent>().Publish("Ready");
+            eventAggregator.GetEvent<StatusBarMessageEvent>().Publish(string.Format("{0} modules loaded", Modules.Count()));
         }
 
         IEnumerable<ModuleViewModel> Modules { get; set; }

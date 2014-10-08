@@ -10,7 +10,6 @@ nuget Prism.Interactivity 5.0.0
 nuget Prism.Mvvm 1.0.0
 nuget Prism.PubSubEvents 1.0.0
 nuget Prism.UnityExtensions 5.0.1
-nuget System.Windows.Interactivity.WPF >= 2.0.20525
 nuget Unity >= 3.5.1404.0
 nuget UnityAutoRegistration >= 1.0.0.2
 nuget Machine.Fakes >= 2.4.0
