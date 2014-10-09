@@ -1,3 +1,10 @@
+#### 3.5.8 - 06.10.2014
+* FAKE got a new logo - https://github.com/fsharp/FAKE/pull/553
+* NuGetPack allows to manipulate nuspec files - https://github.com/fsharp/FAKE/pull/554
+
+#### 3.5.7 - 01.10.2014
+* Added missing schemaName parameter for roundhouse helper - https://github.com/fsharp/FAKE/pull/551
+
 #### 3.5.6 - 29.09.2014
 * Roundhouse Cleanup - https://github.com/fsharp/FAKE/pull/550
 
