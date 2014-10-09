@@ -1,0 +1,2 @@
+﻿Implementation of:
+http://social.technet.microsoft.com/wiki/contents/articles/25726.wpf-implementing-custom-authentication-and-authorization.aspx
