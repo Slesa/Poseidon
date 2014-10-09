@@ -81,7 +81,7 @@ Target "Deploy" (fun _ ->
 
 Target "Test" (fun _ ->
 
-  let mspecTool = findToolInSubPath "mspec-x86-clr4.exe" @".\src\BackOffice\packages"
+  let mspecTool = findToolInSubPath "mspec-x86-clr4.exe" @"./src/BackOffice/packages"
   trace mspecTool
 
   !! (testDir @@ "*.Specs.dll")
