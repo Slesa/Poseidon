@@ -1,9 +1,49 @@
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+version: 0.0.1.{build}
+
+branches:
+    only:
+    - feature/25_AppVeyor
+#    - master
+
+skip-tags: true
+
+skip-commits:
+    message: /Created.*\.(png|jpg|jpeg|bmp|gif)/       # Regex for matching commit message
+
+
+#---------------------------------#
+#    environment configuration    #
+#---------------------------------#
+
 init:
   - git config --global core.autocrlf input
+
+
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+
 build_script:
   - cmd: build.cmd 
+
 test: off
-version: 0.0.1.{build}
+
 artifacts:
   - path: bin\deploy
     name: deploy
+
+  
+#---------------------------------#
+#         notifications           #
+#---------------------------------#
+  # Slack
+#  - provider: Slack
+#    auth_token:
+#      secure: kBl9BlxvRMr9liHmnBs14A==
+#    channel: development
+#    template: "{message}, {commitId}, ..."
+
