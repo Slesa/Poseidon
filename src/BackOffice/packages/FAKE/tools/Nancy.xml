@@ -335,79 +335,101 @@
             Gets app domain types.
             </summary>
         </member>
-        <member name="T:Nancy.Bootstrapper.ApplicationRegistrations">
-            <summary>
-            Helper class for providing application registrations
-            </summary>
-        </member>
         <member name="T:Nancy.Bootstrapper.IApplicationRegistrations">
             <summary>
             Provides a hook to perform registrations during application startup.
             </summary>
         </member>
-        <member name="P:Nancy.Bootstrapper.IApplicationRegistrations.TypeRegistrations">
+        <member name="T:Nancy.Bootstrapper.IRegistrations">
+            <summary>
+            Provides a hook to perform registrations during application startup.
+            </summary>
+        </member>
+        <member name="P:Nancy.Bootstrapper.IRegistrations.TypeRegistrations">
             <summary>
             Gets the type registrations to register for this startup task
             </summary>
         </member>
-        <member name="P:Nancy.Bootstrapper.IApplicationRegistrations.CollectionTypeRegistrations">
+        <member name="P:Nancy.Bootstrapper.IRegistrations.CollectionTypeRegistrations">
             <summary>
             Gets the collection registrations to register for this startup task
             </summary>
         </member>
-        <member name="P:Nancy.Bootstrapper.IApplicationRegistrations.InstanceRegistrations">
+        <member name="P:Nancy.Bootstrapper.IRegistrations.InstanceRegistrations">
             <summary>
             Gets the instance registrations to register for this startup task
             </summary>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.Register``1">
+        <member name="T:Nancy.Bootstrapper.IRequestStartup">
+            <summary>
+            Provides a hook to execute code during request startup.
+            </summary>
+        </member>
+        <member name="M:Nancy.Bootstrapper.IRequestStartup.Initialize(Nancy.Bootstrapper.IPipelines,Nancy.NancyContext)">
+            <summary>
+            Perform any initialisation tasks
+            </summary>
+            <param name="pipelines">Application pipelines</param>
+            <param name="context">The current context</param>
+        </member>
+        <member name="T:Nancy.Bootstrapper.Registrations">
+            <summary>
+            Helper class for providing application registrations
+            </summary>
+        </member>
+        <member name="M:Nancy.Bootstrapper.Registrations.Register``1(Nancy.Bootstrapper.Lifetime)">
             <summary>
             Scans for the implementation of <typeparamref name="TRegistration"/> and registers it.
             </summary>
+            <param name="lifetime">Lifetime of the registration, defaults to singleton</param>
             <typeparam name="TRegistration">The <see cref="T:System.Type"/> to scan for and register as.</typeparam>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.RegisterAll``1">
+        <member name="M:Nancy.Bootstrapper.Registrations.RegisterAll``1(Nancy.Bootstrapper.Lifetime)">
             <summary>
             
             </summary>
+            <param name="lifetime">Lifetime of the registration, defaults to singleton</param>
             <typeparam name="TRegistration"></typeparam>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.Register``1(System.Collections.Generic.IEnumerable{System.Type})">
+        <member name="M:Nancy.Bootstrapper.Registrations.Register``1(System.Collections.Generic.IEnumerable{System.Type},Nancy.Bootstrapper.Lifetime)">
             <summary>
             Registers the types provided by the <paramref name="defaultImplementations"/> parameters
             as <typeparamref name="TRegistration"/>.
             </summary>
             <typeparam name="TRegistration">The <see cref="T:System.Type"/> to register as.</typeparam>
             <param name="defaultImplementations">The types to register.</param>
+            <param name="lifetime">Lifetime of the registration, defaults to singleton</param>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.Register``1(System.Type)">
+        <member name="M:Nancy.Bootstrapper.Registrations.Register``1(System.Type,Nancy.Bootstrapper.Lifetime)">
             <summary>
             Registers the type provided by the <paramref name="implementation"/> parameter
             as <typeparamref name="TRegistration"/>.
             </summary>
+            <param name="lifetime">Lifetime of the registration, defaults to singleton</param>
             <typeparam name="TRegistration">The <see cref="T:System.Type"/> to register as.</typeparam>
             <param name="implementation">The <see cref="T:System.Type"/> to register as <typeparamref name="TRegistration"/>.</param>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.Register``1(``0)">
+        <member name="M:Nancy.Bootstrapper.Registrations.Register``1(``0)">
             <summary>
             Registers an instance as <typeparamref name="TRegistration"/>.
             </summary>
             <typeparam name="TRegistration">The <see cref="T:System.Type"/> to register as.</typeparam>
             <param name="instance">The instance to register.</param>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.RegisterWithDefault``1(System.Type)">
+        <member name="M:Nancy.Bootstrapper.Registrations.RegisterWithDefault``1(System.Type,Nancy.Bootstrapper.Lifetime)">
             <summary>
             Scans for a <see cref="T:System.Type"/> that implements <typeparamref name="TRegistration"/>. If found, then it
             will be used for the registration, else it will use <paramref name="defaultImplementation"/>.
             </summary>
+            <param name="lifetime">Lifetime of the registration, defaults to singleton</param>
             <typeparam name="TRegistration">The <see cref="T:System.Type"/> to register as.</typeparam>
             <param name="defaultImplementation">The implementation of <typeparamref name="TRegistration"/> that will be use if no other implementation can be found.</param>
             <remarks>
-            When scanning, it will exclude the assembly that the <see cref="T:Nancy.Bootstrapper.ApplicationRegistrations"/> instance is defined in and it will also ignore
+            When scanning, it will exclude the assembly that the <see cref="T:Nancy.Bootstrapper.Registrations"/> instance is defined in and it will also ignore
             the type specified by <paramref name="defaultImplementation"/>.
             </remarks>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.RegisterWithDefault``1(System.Func{``0})">
+        <member name="M:Nancy.Bootstrapper.Registrations.RegisterWithDefault``1(System.Func{``0})">
             <summary>
             Scans for an implementation of <typeparamref name="TRegistration"/> and registers it if found. If no implementation could
             be found, it will retrieve an instance of <typeparamref name="TRegistration"/> using the provided <paramref name="defaultImplementationFactory"/>,
@@ -415,43 +437,45 @@
             </summary>
             <typeparam name="TRegistration">The <see cref="T:System.Type"/> to register as.</typeparam>
             <param name="defaultImplementationFactory">Factory that provides an instance of <typeparamref name="TRegistration"/>.</param>
-            <remarks>When scanning, it will exclude the assembly that the <see cref="T:Nancy.Bootstrapper.ApplicationRegistrations"/> instance is defined in</remarks>
+            <remarks>When scanning, it will exclude the assembly that the <see cref="T:Nancy.Bootstrapper.Registrations"/> instance is defined in</remarks>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.RegisterWithDefault``1(System.Collections.Generic.IEnumerable{System.Type})">
+        <member name="M:Nancy.Bootstrapper.Registrations.RegisterWithDefault``1(System.Collections.Generic.IEnumerable{System.Type},Nancy.Bootstrapper.Lifetime)">
             <summary>
             Scans for all implementations of <typeparamref name="TRegistration"/>. If no implementations could be found, then it
             will register the types specified by <paramref name="defaultImplementations"/>.
             </summary>
+            <param name="lifetime">Lifetime of the registration, defaults to singleton</param>
             <typeparam name="TRegistration">The <see cref="T:System.Type"/> to register as.</typeparam>
             <param name="defaultImplementations">The types to register if non could be located while scanning.</param>
             <remarks>
-            When scanning, it will exclude the assembly that the <see cref="T:Nancy.Bootstrapper.ApplicationRegistrations"/> instance is defined in and it will also ignore
+            When scanning, it will exclude the assembly that the <see cref="T:Nancy.Bootstrapper.Registrations"/> instance is defined in and it will also ignore
             the types specified by <paramref name="defaultImplementations"/>.
             </remarks>
         </member>
-        <member name="M:Nancy.Bootstrapper.ApplicationRegistrations.RegisterWithUserThenDefault``1(System.Collections.Generic.IEnumerable{System.Type})">
+        <member name="M:Nancy.Bootstrapper.Registrations.RegisterWithUserThenDefault``1(System.Collections.Generic.IEnumerable{System.Type},Nancy.Bootstrapper.Lifetime)">
             <summary>
             Scans for all implementations of <typeparamref name="TRegistration"/> and registers them, followed by the
             types defined by the <paramref name="defaultImplementations"/> parameter.
             </summary>
             <typeparam name="TRegistration">The <see cref="T:System.Type"/> to register as.</typeparam>
             <param name="defaultImplementations">The types to register last.</param>
+            <param name="lifetime">Lifetime of the registration, defaults to singleton</param>
             <remarks>
-            When scanning, it will exclude the assembly that the <see cref="T:Nancy.Bootstrapper.ApplicationRegistrations"/> instance is defined in and it will also ignore
+            When scanning, it will exclude the assembly that the <see cref="T:Nancy.Bootstrapper.Registrations"/> instance is defined in and it will also ignore
             the types specified by <paramref name="defaultImplementations"/>.
             </remarks>
         </member>
-        <member name="P:Nancy.Bootstrapper.ApplicationRegistrations.CollectionTypeRegistrations">
+        <member name="P:Nancy.Bootstrapper.Registrations.CollectionTypeRegistrations">
             <summary>
             Gets the collection registrations to register for this startup task
             </summary>
         </member>
-        <member name="P:Nancy.Bootstrapper.ApplicationRegistrations.InstanceRegistrations">
+        <member name="P:Nancy.Bootstrapper.Registrations.InstanceRegistrations">
             <summary>
             Gets the instance registrations to register for this startup task
             </summary>
         </member>
-        <member name="P:Nancy.Bootstrapper.ApplicationRegistrations.TypeRegistrations">
+        <member name="P:Nancy.Bootstrapper.Registrations.TypeRegistrations">
             <summary>
             Gets the type registrations to register for this startup task
             </summary>
@@ -504,12 +528,17 @@
             <exception cref="T:System.ArgumentException">One or more of the implementation types is not assignable from the registration type.</exception>
             <exception cref="T:System.InvalidOperationException">The <see cref="P:Nancy.Bootstrapper.ContainerRegistration.RegistrationType"/> property must be assigned before the method is invoked.</exception>
         </member>
+        <member name="P:Nancy.Bootstrapper.ContainerRegistration.Lifetime">
+            <summary>
+            Gets the lifetime of the registration
+            </summary>
+        </member>
         <member name="P:Nancy.Bootstrapper.ContainerRegistration.RegistrationType">
             <summary>
             Registration type i.e. IMyInterface
             </summary>
         </member>
-        <member name="M:Nancy.Bootstrapper.CollectionTypeRegistration.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})">
+        <member name="M:Nancy.Bootstrapper.CollectionTypeRegistration.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type},Nancy.Bootstrapper.Lifetime)">
             <summary>
             Represents a type to be registered multiple times into the
             container to later be resolved using an IEnumerable{RegistrationType}
@@ -517,6 +546,7 @@
             </summary>
             <param name="registrationType">Registration type i.e. IMyInterface</param>
             <param name="implementationTypes">Collection of implementation type i.e. MyClassThatImplementsIMyInterface</param>
+            <param name="lifetime">Lifetime to register the type as</param>
         </member>
         <member name="P:Nancy.Bootstrapper.CollectionTypeRegistration.ImplementationTypes">
             <summary>
@@ -611,6 +641,30 @@
             Implementation object instance i.e. instance of MyClassThatImplementsIMyInterface
             </summary>
         </member>
+        <member name="T:Nancy.Bootstrapper.Lifetime">
+            <summary>
+            Represents the lifetime of a container registration
+            </summary>
+        </member>
+        <member name="F:Nancy.Bootstrapper.Lifetime.Transient">
+            <summary>
+            Transient lifetime - each request to the container for
+            the type will result in a new version being returned.
+            </summary>
+        </member>
+        <member name="F:Nancy.Bootstrapper.Lifetime.Singleton">
+            <summary>
+            Singleton - each request to the container for the type
+            will result in the same instance being returned.
+            </summary>
+        </member>
+        <member name="F:Nancy.Bootstrapper.Lifetime.PerRequest">
+            <summary>
+            PerRequest - within the context of each request each request
+            for the type will result in the same instance being returned. 
+            Different requests will have different versions.
+            </summary>
+        </member>
         <member name="T:Nancy.Bootstrapper.MultipleRootPathProvidersLocatedException">
             <summary>
             Exception raised when the <see cref="T:Nancy.Bootstrapper.NancyBootstrapperBase`1"/> discovers more than one
@@ -680,7 +734,7 @@
             <summary>
             Configuration class for Nancy's internals.
             Contains implementation types/configuration for Nancy that usually
-            remain do not require overriding in "general use".
+            do not require overriding in "general use".
             </summary>
         </member>
         <member name="M:Nancy.Bootstrapper.NancyInternalConfiguration.WithOverrides(System.Action{Nancy.Bootstrapper.NancyInternalConfiguration})">
@@ -1209,6 +1263,55 @@
             <param name="context">The <see cref="T:Nancy.NancyContext"/> instance that should be used by the response formatter.</param>
             <returns>An <see cref="T:Nancy.IResponseFormatter"/> instance.</returns>
         </member>
+        <member name="T:Nancy.DefaultRootPathProvider">
+            <summary>
+            Default implementation of <see cref="T:Nancy.IRootPathProvider"/>.
+            </summary>
+        </member>
+        <member name="T:Nancy.IRootPathProvider">
+            <summary>
+            Defines the functionality to retrieve the root folder path of the current Nancy application.
+            </summary>
+        </member>
+        <member name="T:Nancy.IHideObjectMembers">
+            <summary>
+            Helper interface used to hide the base <see cref="T:System.Object"/>  members from the fluent API to make it much cleaner 
+            in Visual Studio intellisense.
+            </summary>
+            <remarks>Created by Daniel Cazzulino http://www.clariusconsulting.net/blogs/kzu/archive/2008/03/10/58301.aspx</remarks>
+        </member>
+        <member name="M:Nancy.IHideObjectMembers.Equals(System.Object)">
+            <summary>
+            Hides the <see cref="M:Nancy.IHideObjectMembers.Equals(System.Object)"/> method.
+            </summary>
+        </member>
+        <member name="M:Nancy.IHideObjectMembers.GetHashCode">
+            <summary>
+            Hides the <see cref="M:Nancy.IHideObjectMembers.GetHashCode"/> method.
+            </summary>
+        </member>
+        <member name="M:Nancy.IHideObjectMembers.GetType">
+            <summary>
+            Hides the <see cref="M:Nancy.IHideObjectMembers.GetType"/> method.
+            </summary>
+        </member>
+        <member name="M:Nancy.IHideObjectMembers.ToString">
+            <summary>
+            Hides the <see cref="M:Nancy.IHideObjectMembers.ToString"/> method.
+            </summary>
+        </member>
+        <member name="M:Nancy.IRootPathProvider.GetRootPath">
+            <summary>
+            Returns the root folder path of the current Nancy application.
+            </summary>
+            <returns>A <see cref="T:System.String"/> containing the path of the root folder.</returns>
+        </member>
+        <member name="M:Nancy.DefaultRootPathProvider.GetRootPath">
+            <summary>
+            Returns the root folder path of the current Nancy application.
+            </summary>
+            <returns>A <see cref="T:System.String"/> containing the path of the root folder.</returns>
+        </member>
         <member name="T:Nancy.DefaultStaticContentProvider">
             <summary>
             The default static content provider that uses <see cref="!:Nancy.Conventions.StaticContentConventions"/>
@@ -1241,6 +1344,67 @@
             </summary>
             <param name="context">Current context</param>
             <returns>Response if serving content, null otherwise</returns>
+        </member>
+        <member name="T:Nancy.Diagnostics.DefaultRequestTraceFactory">
+            <summary>
+            Default implementation of the <see cref="T:Nancy.Diagnostics.IRequestTraceFactory"/> interface.
+            </summary>
+        </member>
+        <member name="T:Nancy.Diagnostics.IRequestTraceFactory">
+            <summary>
+            Defines the functionality for creating an <see cref="T:Nancy.Diagnostics.IRequestTrace"/> instance.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.IRequestTraceFactory.Create(Nancy.Request)">
+            <summary>
+            Creates an <see cref="T:Nancy.Diagnostics.IRequestTrace"/> instance.
+            </summary>
+            <param name="request">A <see cref="T:Nancy.Request"/> instance.</param>
+            <returns>An <see cref="T:Nancy.Diagnostics.IRequestTrace"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultRequestTraceFactory.Create(Nancy.Request)">
+            <summary>
+            Creates an <see cref="T:Nancy.Diagnostics.IRequestTrace"/> instance.
+            </summary>
+            <param name="request">A <see cref="T:Nancy.Request"/> instance.</param>
+            <returns>An <see cref="T:Nancy.Diagnostics.IRequestTrace"/> instance.</returns>
+        </member>
+        <member name="T:Nancy.Diagnostics.DefaultTraceLog">
+            <summary>
+            Default implementation of the <see cref="T:Nancy.Diagnostics.ITraceLog"/> interface.
+            </summary>
+        </member>
+        <member name="T:Nancy.Diagnostics.ITraceLog">
+            <summary>
+            Provides request trace logging.
+            Uses a delegate to write to the log, rather than creating strings regardless
+            of whether the log is enabled or not.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.ITraceLog.WriteLog(System.Action{System.Text.StringBuilder})">
+            <summary>
+            Write to the log
+            </summary>
+            <param name="logDelegate">Log writing delegate</param>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultTraceLog.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Nancy.Diagnostics.DefaultTraceLog"/> class.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultTraceLog.WriteLog(System.Action{System.Text.StringBuilder})">
+            <summary>
+            Write to the log
+            </summary>
+            <param name="logDelegate">Log writing delegate</param>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultTraceLog.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>
+            A string that represents the current object.
+            </returns>
         </member>
         <member name="T:Nancy.Diagnostics.DiagnosticsConfiguration">
             <summary>
@@ -1276,7 +1440,7 @@
         <member name="P:Nancy.Diagnostics.DiagnosticsConfiguration.Password">
             <summary>
             Gets or sets password for accessing the diagnostics screen.
-            This shoudl be secure :-)
+            This should be secure :-)
             </summary>
         </member>
         <member name="P:Nancy.Diagnostics.DiagnosticsConfiguration.Path">
@@ -1340,24 +1504,140 @@
             Clear the collection
             </summary>
         </member>
+        <member name="T:Nancy.Diagnostics.DisabledDiagnostics">
+            <summary>
+            Implementation of the <see cref="T:Nancy.Diagnostics.IDiagnostics"/> interface that does nothing.
+            </summary>
+        </member>
         <member name="M:Nancy.Diagnostics.IDiagnostics.Initialize(Nancy.Bootstrapper.IPipelines)">
             <summary>
             Initialise diagnostics
             </summary>
             <param name="pipelines">Application pipelines</param>
         </member>
-        <member name="T:Nancy.Diagnostics.ITraceLog">
+        <member name="M:Nancy.Diagnostics.DisabledDiagnostics.Initialize(Nancy.Bootstrapper.IPipelines)">
             <summary>
-            Provides request trace logging.
-            Uses a delegate to write to the log, rather than creating strings regardless
-            of whether the log is enabled or not.
+            Initialise diagnostics
+            </summary>
+            <param name="pipelines">Application pipelines</param>
+        </member>
+        <member name="T:Nancy.Diagnostics.IRequestTrace">
+            <summary>
+            Defines the functionality for tracing a request.
             </summary>
         </member>
-        <member name="M:Nancy.Diagnostics.ITraceLog.WriteLog(System.Action{System.Text.StringBuilder})">
+        <member name="P:Nancy.Diagnostics.IRequestTrace.Items">
+            <summary>
+            Gets or sets the generic item store.
+            </summary>
+            <value>An <see cref="T:System.Collections.Generic.IDictionary`2"/> instance containing the items.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.IRequestTrace.RequestData">
+            <summary>
+            Gets or sets the information about the request.
+            </summary>
+            <value>An <see cref="P:Nancy.Diagnostics.IRequestTrace.RequestData"/> instance.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.IRequestTrace.ResponseData">
+            <summary>
+            Gets or sets the information about the response.
+            </summary>
+            <value>An <see cref="P:Nancy.Diagnostics.IRequestTrace.ResponseData"/> instance.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.IRequestTrace.TraceLog">
+            <summary>
+            Gets the trace log.
+            </summary>
+            <value>A <see cref="T:Nancy.Diagnostics.ITraceLog"/> instance.</value>
+        </member>
+        <member name="T:Nancy.Diagnostics.NullLog">
+            <summary>
+            Implementation of <see cref="T:Nancy.Diagnostics.ITraceLog"/> that does not log anything.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.NullLog.WriteLog(System.Action{System.Text.StringBuilder})">
             <summary>
             Write to the log
             </summary>
             <param name="logDelegate">Log writing delegate</param>
+        </member>
+        <member name="M:Nancy.Diagnostics.NullLog.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>
+            A string that represents the current object.
+            </returns>
+        </member>
+        <member name="T:Nancy.Diagnostics.RequestData">
+            <summary>
+            Stores request trace information about the request.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.RequestData.op_Implicit(Nancy.Request)~Nancy.Diagnostics.RequestData">
+            <summary>
+            Implicitly casts a <see cref="T:Nancy.Request"/> instance into a <see cref="T:Nancy.Diagnostics.RequestData"/> instance.
+            </summary>
+            <param name="request">A <see cref="T:Nancy.Request"/> instance.</param>
+            <returns>A <see cref="T:Nancy.Diagnostics.RequestData"/> instance.</returns>
+        </member>
+        <member name="P:Nancy.Diagnostics.RequestData.ContentType">
+            <summary>
+            Gets or sets the content type of the request.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the content type.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.RequestData.Headers">
+            <summary>
+            Gets or sets the headers of the request.
+            </summary>
+            <value>A <see cref="T:Nancy.RequestHeaders"/> instance containing the headers.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.RequestData.Method">
+            <summary>
+            Gets the HTTP verb of the request.
+            </summary>
+            <value>A <see cref="T:System.String"/> containg the HTTP verb.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.RequestData.Url">
+            <summary>
+            Gets or sets the <see cref="P:Nancy.Diagnostics.RequestData.Url"/> that was requested.
+            </summary>
+        </member>
+        <member name="T:Nancy.Diagnostics.ResponseData">
+            <summary>
+            Stores request trace information about the response.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.ResponseData.op_Implicit(Nancy.Response)~Nancy.Diagnostics.ResponseData">
+            <summary>
+            Implicitly casts a <see cref="T:Nancy.Response"/> instance into a <see cref="T:Nancy.Diagnostics.ResponseData"/> instance.
+            </summary>
+            <param name="response">A <see cref="T:Nancy.Response"/> instance.</param>
+            <returns>A <see cref="T:Nancy.Diagnostics.ResponseData"/> instance.</returns>
+        </member>
+        <member name="P:Nancy.Diagnostics.ResponseData.ContentType">
+            <summary>
+            Gets or sets the contetn type of the response.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the content type.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.ResponseData.Headers">
+            <summary>
+            Gets or sets the headers of the response.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IDictionary`2"/> instance containing the headers.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.ResponseData.StatusCode">
+            <summary>
+            Gets or sets the <see cref="T:Nancy.HttpStatusCode"/> of the response.
+            </summary>
+        </member>
+        <member name="P:Nancy.Diagnostics.ResponseData.Type">
+            <summary>
+            Gets or sets the <see cref="P:Nancy.Diagnostics.ResponseData.Type"/> of the response.
+            </summary>
+            <value>A <see cref="P:Nancy.Diagnostics.ResponseData.Type"/> instance.</value>
         </member>
         <member name="T:Nancy.DisabledStaticContentProvider">
             <summary>
@@ -1414,6 +1694,19 @@
             <param name="name">The name of the property.</param>
             <param name="errorMessage">The validation error message.</param>
             <returns>A reference to the <see cref="P:Nancy.Validation.ModelValidationResult.Errors"/> property.</returns>
+        </member>
+        <member name="T:Nancy.Extensions.RequestStreamExtensions">
+            <summary>
+            Extensions for RequestStream.
+            </summary>
+        </member>
+        <member name="M:Nancy.Extensions.RequestStreamExtensions.AsString(Nancy.IO.RequestStream,System.Text.Encoding)">
+            <summary>
+            Gets the request body as a string.
+            </summary>
+            <param name="stream">The request body stream.</param>
+            <param name="encoding">The encoding to use, <see cref="P:System.Text.Encoding.UTF8"/> by default.</param>
+            <returns>The request body as a <see cref="T:System.String"/>.</returns>
         </member>
         <member name="T:Nancy.Extensions.StreamExtensions">
             <summary>
@@ -1483,6 +1776,78 @@
             Boolean is not considered numeric.
             </remarks>
         </member>
+        <member name="T:Nancy.Diagnostics.DefaultRequestTracing">
+            <summary>
+            Default implementation of the <see cref="T:Nancy.Diagnostics.IRequestTracing"/> interface.
+            </summary>
+        </member>
+        <member name="T:Nancy.Diagnostics.IRequestTracing">
+            <summary>
+            Defines the functionality for request tracing.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.IRequestTracing.AddRequestDiagnosticToSession(System.Guid,Nancy.NancyContext)">
+            <summary>
+            Adds the <see cref="T:Nancy.Diagnostics.IRequestTrace"/>, of the provided, <see cref="T:Nancy.NancyContext"/> to the trace log.
+            </summary>
+            <param name="sessionId">The identifier of the trace.</param>
+            <param name="context">A <see cref="T:Nancy.NancyContext"/> instance.</param>
+        </member>
+        <member name="M:Nancy.Diagnostics.IRequestTracing.Clear">
+            <summary>
+            Clears the trace log.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.IRequestTracing.CreateSession">
+            <summary>
+            Creates a new trace session.
+            </summary>
+            <returns>A <see cref="T:System.Guid"/> which represents the identifier of the new trace session.</returns>
+        </member>
+        <member name="M:Nancy.Diagnostics.IRequestTracing.GetSessions">
+            <summary>
+            Gets all the available <see cref="T:Nancy.Diagnostics.RequestTraceSession"/> instances.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nancy.Diagnostics.IRequestTracing.IsValidSessionId(System.Guid)">
+            <summary>
+            Checkes if the provided <paramref name="sessionId"/> is valid or not.
+            </summary>
+            <param name="sessionId">A <see cref="T:System.Guid"/> representing the session to check.</param>
+            <returns><see langword="true"/> if the session is valid, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultRequestTracing.AddRequestDiagnosticToSession(System.Guid,Nancy.NancyContext)">
+            <summary>
+            Adds the <see cref="T:Nancy.Diagnostics.IRequestTrace"/>, of the provided, <see cref="T:Nancy.NancyContext"/> to the trace log.
+            </summary>
+            <param name="sessionId">The identifier of the trace.</param>
+            <param name="context">A <see cref="T:Nancy.NancyContext"/> instance.</param>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultRequestTracing.Clear">
+            <summary>
+            Clears the trace log.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultRequestTracing.CreateSession">
+            <summary>
+            Creates a new trace session.
+            </summary>
+            <returns>A <see cref="T:System.Guid"/> which represents the identifier of the new trace session.</returns>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultRequestTracing.GetSessions">
+            <summary>
+            Gets all the available <see cref="T:Nancy.Diagnostics.RequestTraceSession"/> instances.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nancy.Diagnostics.DefaultRequestTracing.IsValidSessionId(System.Guid)">
+            <summary>
+            Checkes if the provided <paramref name="sessionId"/> is valid or not.
+            </summary>
+            <param name="sessionId">A <see cref="T:System.Guid"/> representing the session to check.</param>
+            <returns><see langword="true"/> if the session is valid, otherwise <see langword="false"/>.</returns>
+        </member>
         <member name="T:Nancy.NancyModule">
             <summary>
             Basic class containing the functionality for defining routes and actions in Nancy. 
@@ -1496,100 +1861,78 @@
         </member>
         <member name="P:Nancy.INancyModule.After">
             <summary><para>
-             The post-request hook
-             </para><para>
-             The post-request hook is called after the response is created by the route execution.
-             It can be used to rewrite the response or add/remove items from the context.
-             </para></summary>
+            The post-request hook
+            </para><para>
+            The post-request hook is called after the response is created by the route execution.
+            It can be used to rewrite the response or add/remove items from the context.
+            </para></summary>
         </member>
         <member name="P:Nancy.INancyModule.Before">
             <summary><para>
-             The pre-request hook
-             </para><para>
-             The PreRequest hook is called prior to executing a route. If any item in the
-             pre-request pipeline returns a response then the route is not executed and the
-             response is returned.
-             </para></summary>
+            The pre-request hook
+            </para><para>
+            The PreRequest hook is called prior to executing a route. If any item in the
+            pre-request pipeline returns a response then the route is not executed and the
+            response is returned.
+            </para></summary>
         </member>
         <member name="P:Nancy.INancyModule.OnError">
             <summary><para>
-             The error hook
-             </para><para>
-             The error hook is called if an exception is thrown at any time during executing
-             the PreRequest hook, a route and the PostRequest hook. It can be used to set
-             the response and/or finish any ongoing tasks (close database session, etc).
-             </para></summary>
+            The error hook
+            </para><para>
+            The error hook is called if an exception is thrown at any time during executing
+            the PreRequest hook, a route and the PostRequest hook. It can be used to set
+            the response and/or finish any ongoing tasks (close database session, etc).
+            </para></summary>
         </member>
         <member name="P:Nancy.INancyModule.Context">
             <summary>
-             Gets or sets the current Nancy context
-             </summary><value>A <see cref="T:Nancy.NancyContext" /> instance.</value>
+            Gets or sets the current Nancy context
+            </summary><value>A <see cref="T:Nancy.NancyContext" /> instance.</value>
         </member>
         <member name="P:Nancy.INancyModule.Response">
             <summary>
-             An extension point for adding support for formatting response contents.
-             </summary><value>This property will always return <see langword="null" /> because it acts as an extension point.</value><remarks>Extension methods to this property should always return <see cref="P:Nancy.NancyModuleBase.Response" /> or one of the types that can implicitly be types into a <see cref="P:Nancy.NancyModuleBase.Response" />.</remarks>
+            An extension point for adding support for formatting response contents.
+            </summary><value>This property will always return <see langword="null" /> because it acts as an extension point.</value><remarks>Extension methods to this property should always return <see cref="P:Nancy.NancyModuleBase.Response" /> or one of the types that can implicitly be types into a <see cref="P:Nancy.NancyModuleBase.Response" />.</remarks>
         </member>
         <member name="P:Nancy.INancyModule.ModelBinderLocator">
             <summary>
-             Gets or sets the model binder locator
-             </summary>
+            Gets or sets the model binder locator
+            </summary>
         </member>
         <member name="P:Nancy.INancyModule.ModelValidationResult">
             <summary>
-             Gets or sets the model validation result
-             </summary>
+            Gets or sets the model validation result
+            </summary>
         </member>
         <member name="P:Nancy.INancyModule.ValidatorLocator">
             <summary>
-             Gets or sets the validator locator.
-             </summary>
+            Gets or sets the validator locator.
+            </summary>
         </member>
         <member name="P:Nancy.INancyModule.Request">
             <summary>
-             Gets or sets an <see cref="P:Nancy.NancyModuleBase.Request" /> instance that represents the current request.
-             </summary><value>An <see cref="P:Nancy.NancyModuleBase.Request" /> instance.</value>
+            Gets or sets an <see cref="P:Nancy.INancyModule.Request"/> instance that represents the current request.
+            </summary><value>An <see cref="P:Nancy.INancyModule.Request"/> instance.</value>
         </member>
         <member name="P:Nancy.INancyModule.ViewFactory">
             <summary>
-             The extension point for accessing the view engines in Nancy.
-             </summary><value>An <see cref="T:Nancy.ViewEngines.IViewFactory" /> instance.</value><remarks>This is automatically set by Nancy at runtime.</remarks>
+            The extension point for accessing the view engines in Nancy.
+            </summary><value>An <see cref="T:Nancy.ViewEngines.IViewFactory" /> instance.</value><remarks>This is automatically set by Nancy at runtime.</remarks>
         </member>
         <member name="P:Nancy.INancyModule.ModulePath">
             <summary>
-             Get the root path of the routes in the current module.
-             </summary><value>A <see cref="T:System.String" /> containing the root path of the module or <see langword="null" /> if no root path should be used.</value><remarks>All routes will be relative to this root path.</remarks>
+            Get the root path of the routes in the current module.
+            </summary><value>A <see cref="T:System.String" /> containing the root path of the module or <see langword="null" /> if no root path should be used.</value><remarks>All routes will be relative to this root path.</remarks>
         </member>
         <member name="P:Nancy.INancyModule.Routes">
             <summary>
-             Gets all declared routes by the module.
-             </summary><value>A <see cref="T:System.Collections.Generic.IEnumerable`1" /> instance, containing all <see cref="T:Nancy.Routing.Route" /> instances declared by the module.</value>
+            Gets all declared routes by the module.
+            </summary><value>A <see cref="T:System.Collections.Generic.IEnumerable`1" /> instance, containing all <see cref="T:Nancy.Routing.Route" /> instances declared by the module.</value>
         </member>
-        <member name="T:Nancy.IHideObjectMembers">
+        <member name="P:Nancy.INancyModule.Text">
             <summary>
-            Helper interface used to hide the base <see cref="T:System.Object"/>  members from the fluent API to make it much cleaner 
-            in Visual Studio intellisense.
-            </summary>
-            <remarks>Created by Daniel Cazzulino http://www.clariusconsulting.net/blogs/kzu/archive/2008/03/10/58301.aspx</remarks>
-        </member>
-        <member name="M:Nancy.IHideObjectMembers.Equals(System.Object)">
-            <summary>
-            Hides the <see cref="M:Nancy.IHideObjectMembers.Equals(System.Object)"/> method.
-            </summary>
-        </member>
-        <member name="M:Nancy.IHideObjectMembers.GetHashCode">
-            <summary>
-            Hides the <see cref="M:Nancy.IHideObjectMembers.GetHashCode"/> method.
-            </summary>
-        </member>
-        <member name="M:Nancy.IHideObjectMembers.GetType">
-            <summary>
-            Hides the <see cref="M:Nancy.IHideObjectMembers.GetType"/> method.
-            </summary>
-        </member>
-        <member name="M:Nancy.IHideObjectMembers.ToString">
-            <summary>
-            Hides the <see cref="M:Nancy.IHideObjectMembers.ToString"/> method.
+            Gets or sets the dynamic object used to locate text resources.
             </summary>
         </member>
         <member name="M:Nancy.NancyModule.#ctor">
@@ -1774,6 +2117,38 @@
             </summary>
             <value>A delegate that is used to invoke the route.</value>
         </member>
+        <member name="P:Nancy.NancyModule.RouteBuilder.Item(System.String,System.Boolean)">
+            <summary>
+            Defines an async route for the specified <paramref name="path"/>
+            </summary>
+        </member>
+        <member name="P:Nancy.NancyModule.RouteBuilder.Item(System.String,System.Func{Nancy.NancyContext,System.Boolean},System.Boolean)">
+            <summary>
+            Defines an async route for the specified <paramref name="path"/> and <paramref name="condition"/>.
+            </summary>
+        </member>
+        <member name="P:Nancy.NancyModule.RouteBuilder.Item(System.String,System.String)">
+            <summary>
+            Defines a Nancy route for the specified <paramref name="path"/> and <paramref name="name"/>
+            </summary>
+            <value>A delegate that is used to invoke the route.</value>
+        </member>
+        <member name="P:Nancy.NancyModule.RouteBuilder.Item(System.String,System.String,System.Func{Nancy.NancyContext,System.Boolean})">
+            <summary>
+            Defines a Nancy route for the specified <paramref name="path"/>, <paramref name="condition"/> and <paramref name="name"/>
+            </summary>
+            <value>A delegate that is used to invoke the route.</value>
+        </member>
+        <member name="P:Nancy.NancyModule.RouteBuilder.Item(System.String,System.String,System.Boolean)">
+            <summary>
+            Defines an async route for the specified <paramref name="path"/> and <paramref name="name"/>
+            </summary>
+        </member>
+        <member name="P:Nancy.NancyModule.RouteBuilder.Item(System.String,System.String,System.Func{Nancy.NancyContext,System.Boolean},System.Boolean)">
+            <summary>
+            Defines an async route for the specified <paramref name="path"/>, <paramref name="condition"/> and <paramref name="name"/>
+            </summary>
+        </member>
         <member name="T:Nancy.NancyModule.ViewRenderer">
             <summary>
             Helper class for rendering a view from a route handler.
@@ -1871,11 +2246,54 @@
             Wires up the diagnostics support at application startup.
             </summary>
         </member>
+        <member name="M:Nancy.Diagnostics.DefaultDiagnostics.#ctor(Nancy.Diagnostics.DiagnosticsConfiguration,System.Collections.Generic.IEnumerable{Nancy.Diagnostics.IDiagnosticsProvider},Nancy.IRootPathProvider,Nancy.Diagnostics.IRequestTracing,Nancy.Bootstrapper.NancyInternalConfiguration,Nancy.ModelBinding.IModelBinderLocator,System.Collections.Generic.IEnumerable{Nancy.Responses.Negotiation.IResponseProcessor},System.Collections.Generic.IEnumerable{Nancy.Routing.Constraints.IRouteSegmentConstraint},Nancy.Culture.ICultureService,Nancy.Diagnostics.IRequestTraceFactory,System.Collections.Generic.IEnumerable{Nancy.Routing.IRouteMetadataProvider},Nancy.Localization.ITextResource)">
+            <summary>
+            Creates a new instance of the <see cref="T:Nancy.Diagnostics.DefaultDiagnostics"/> class.
+            </summary>
+            <param name="diagnosticsConfiguration"></param>
+            <param name="diagnosticProviders"></param>
+            <param name="rootPathProvider"></param>
+            <param name="requestTracing"></param>
+            <param name="configuration"></param>
+            <param name="modelBinderLocator"></param>
+            <param name="responseProcessors"></param>
+            <param name="routeSegmentConstraints"></param>
+            <param name="cultureService"></param>
+            <param name="requestTraceFactory"></param>
+            <param name="routeMetadataProviders"></param>
+            <param name="textResource"></param>
+        </member>
         <member name="M:Nancy.Diagnostics.DefaultDiagnostics.Initialize(Nancy.Bootstrapper.IPipelines)">
             <summary>
             Initialise diagnostics
             </summary>
             <param name="pipelines">Application pipelines</param>
+        </member>
+        <member name="T:Nancy.Diagnostics.DiagnosticsViewRenderer">
+            <summary>
+            Renders diagnostics views from embedded resources.
+            </summary>
+        </member>
+        <member name="M:Nancy.Diagnostics.DiagnosticsViewRenderer.#ctor(Nancy.NancyContext)">
+            <summary>
+            Creates a new instance of the <see cref="T:Nancy.Diagnostics.DiagnosticsViewRenderer"/> class.
+            </summary>
+            <param name="context">A <see cref="T:Nancy.NancyContext"/> instance.</param>
+        </member>
+        <member name="P:Nancy.Diagnostics.DiagnosticsViewRenderer.Item(System.String)">
+            <summary>
+            Renders the diagnostics view with the provided <paramref name="name"/>.
+            </summary>
+            <param name="name">The name of the view to render.</param>
+            <returns>A <see cref="T:Nancy.Response"/> of the rendered view.</returns>
+        </member>
+        <member name="P:Nancy.Diagnostics.DiagnosticsViewRenderer.Item(System.String,System.Object)">
+            <summary>
+            Renders the diagnostics view with the provided <paramref name="name"/> and <paramref name="model"/>.
+            </summary>
+            <param name="name">The name of the view to render.</param>
+            <param name="model">The model that should be passed to the view engine during rendering.</param>
+            <returns>A <see cref="T:Nancy.Response"/> of the rendered view.</returns>
         </member>
         <member name="T:Nancy.ViewEngines.IViewResolver">
             <summary>
@@ -1904,6 +2322,13 @@
             <summary>
             Used to return string values
             </summary>
+        </member>
+        <member name="P:Nancy.Localization.ITextResource.Item(System.String,Nancy.NancyContext)">
+            <summary>
+            Gets a translation based on the provided key.
+            </summary>
+            <param name="key">The key to look up the translation for.</param>
+            <param name="context">The current <see cref="T:Nancy.NancyContext"/> instance.</param>
         </member>
         <member name="T:Nancy.Helpers.CacheHelpers">
             <summary>
@@ -1939,6 +2364,18 @@
             <param name="binder">GetMemberBinder with dynamic text key</param>
             <param name="result">Text item</param>
             <returns>Returns a value or a non existing value from the <see cref="T:Nancy.Localization.ITextResource"/> implementation</returns>
+        </member>
+        <member name="P:Nancy.Localization.TextResourceFinder.Resource">
+            <summary>
+            Gets the <see cref="T:Nancy.Localization.ITextResource"/> that is being used to locate texts.
+            </summary>
+            <value>An <see cref="T:Nancy.Localization.ITextResource"/> instance.</value>
+        </member>
+        <member name="P:Nancy.Localization.TextResourceFinder.Item(System.String)">
+            <summary>
+            Gets a translation based on the provided key.
+            </summary>
+            <param name="key">The key to look up the translation for.</param>
         </member>
         <member name="T:Nancy.ModelBinding.BindingConfig">
             <summary>
@@ -2266,6 +2703,135 @@
             <param name="statusCode">The status code that should be used.</param>
             <returns>Updated negotiator object</returns>
         </member>
+        <member name="T:Nancy.Owin.DelegateExtensions">
+            <summary>
+            OWIN extensions for the delegate-based approach.
+            </summary>
+        </member>
+        <member name="M:Nancy.Owin.DelegateExtensions.UseNancy(System.Action{System.Func{System.Func{System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.Tasks.Task},System.Func{System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.Tasks.Task}}},System.Action{Nancy.Owin.NancyOptions})">
+            <summary>
+            Adds Nancy to the OWIN pipeline.
+            </summary>
+            <param name="builder">The application builder delegate.</param>
+            <param name="action">A configuration builder action.</param>
+            <returns>The application builder delegate.</returns>
+        </member>
+        <member name="M:Nancy.Owin.DelegateExtensions.UseNancy(System.Action{System.Func{System.Func{System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.Tasks.Task},System.Func{System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.Tasks.Task}}},Nancy.Owin.NancyOptions)">
+            <summary>
+            Adds Nancy to the OWIN pipeline.
+            </summary>
+            <param name="builder">The application builder delegate.</param>
+            <param name="options">The Nancy options.</param>
+            <returns>The application builder delegate.</returns>
+        </member>
+        <member name="T:Nancy.Owin.NancyContextExtensions">
+            <summary>
+            OWIN extensions for the NancyContext.
+            </summary>
+        </member>
+        <member name="M:Nancy.Owin.NancyContextExtensions.GetOwinEnvironment(Nancy.NancyContext)">
+            <summary>
+            Gets the OWIN environment dictionary.
+            </summary>
+            <param name="context">The Nancy context.</param>
+            <returns>The OWIN environment dictionary.</returns>
+        </member>
+        <member name="T:Nancy.Owin.NancyOptions">
+            <summary>
+            Options for hosting Nancy with OWIN.
+            </summary>
+        </member>
+        <member name="P:Nancy.Owin.NancyOptions.Bootstrapper">
+            <summary>
+            Gets or sets the bootstrapper. If none is set, NancyBootstrapperLocator.Bootstrapper is used.
+            </summary>
+        </member>
+        <member name="P:Nancy.Owin.NancyOptions.PerformPassThrough">
+            <summary>
+            Gets or sets the delegate that determines if NancyMiddleware performs pass through.
+            </summary>
+        </member>
+        <member name="P:Nancy.Owin.NancyOptions.EnableClientCertificates">
+            <summary>
+            Gets or sets a value indicating whether to request a client certificate or not.
+            Defaults to false.
+            </summary>
+        </member>
+        <member name="T:Nancy.Owin.NancyOptionsExtensions">
+            <summary>
+            Extensions for the NancyOptions class.
+            </summary>
+        </member>
+        <member name="M:Nancy.Owin.NancyOptionsExtensions.PassThroughWhenStatusCodesAre(Nancy.Owin.NancyOptions,Nancy.HttpStatusCode[])">
+            <summary>
+            Tells the NancyMiddleware to pass through when 
+            response has one of the given status codes.
+            </summary>
+            <param name="nancyOptions">The Nancy options.</param>
+            <param name="httpStatusCode">The HTTP status code.</param>
+        </member>
+        <member name="T:Nancy.Owin.NancyMiddleware">
+            <summary>
+            Nancy middleware for OWIN.
+            </summary>
+        </member>
+        <member name="F:Nancy.Owin.NancyMiddleware.RequestEnvironmentKey">
+            <summary>
+            The request environment key
+            </summary>
+        </member>
+        <member name="M:Nancy.Owin.NancyMiddleware.UseNancy(System.Action{Nancy.Owin.NancyOptions})">
+            <summary>
+            Use Nancy in an OWIN pipeline
+            </summary>
+            <param name="configuration">A delegate to configure the <see cref="T:Nancy.Owin.NancyOptions"/>.</param>
+            <returns>An OWIN middleware delegate.</returns>
+        </member>
+        <member name="M:Nancy.Owin.NancyMiddleware.UseNancy(Nancy.Owin.NancyOptions)">
+            <summary>
+            Use Nancy in an OWIN pipeline
+            </summary>
+            <param name="options">An <see cref="T:Nancy.Owin.NancyOptions"/> to configure the Nancy middleware</param>
+            <returns>An OWIN middleware delegate.</returns>
+        </member>
+        <member name="M:Nancy.Owin.NancyMiddleware.RequestComplete(System.Collections.Generic.IDictionary{System.String,System.Object},System.Func{Nancy.NancyContext,System.Boolean},System.Func{System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.Tasks.Task},System.Threading.Tasks.TaskCompletionSource{System.Int32})">
+            <summary>
+            Gets a delegate to handle converting a nancy response
+            to the format required by OWIN and signals that the we are
+            now complete.
+            </summary>
+            <param name="environment">OWIN environment.</param>
+            <param name="next">The next stage in the OWIN pipeline.</param>
+            <param name="tcs">The task completion source to signal.</param>
+            <param name="performPassThrough">A predicate that will allow the caller to determine if the request passes through to the 
+            next stage in the owin pipeline.</param>
+            <returns>Delegate</returns>
+        </member>
+        <member name="M:Nancy.Owin.NancyMiddleware.RequestErrored(System.Threading.Tasks.TaskCompletionSource{System.Int32})">
+            <summary>
+            Gets a delegate to handle request errors
+            </summary>
+            <param name="tcs">Completion source to signal</param>
+            <returns>Delegate</returns>
+        </member>
+        <member name="M:Nancy.Owin.NancyMiddleware.CreateUrl(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates the Nancy URL
+            </summary>
+            <param name="owinRequestHost">OWIN Hostname</param>
+            <param name="owinRequestScheme">OWIN Scheme</param>
+            <param name="owinRequestPathBase">OWIN Base path</param>
+            <param name="owinRequestPath">OWIN Path</param>
+            <param name="owinRequestQueryString">OWIN Querystring</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nancy.Owin.NancyMiddleware.StoreEnvironment(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets a delegate to store the OWIN environment into the NancyContext
+            </summary>
+            <param name="environment">OWIN Environment</param>
+            <returns>Delegate</returns>
+        </member>
         <member name="T:Nancy.Response">
             <summary>
             Encapsulates HTTP-response information from an Nancy operation.
@@ -2280,6 +2846,14 @@
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Response"/> class.
             </summary>
+        </member>
+        <member name="M:Nancy.Response.PreExecute(Nancy.NancyContext)">
+            <summary>
+            Executes at the end of the nancy execution pipeline and before control is passed back to the hosting.
+            Can be used to pre-render/validate views while still inside the main pipeline/error handling.
+            </summary>
+            <param name="context">Nancy context</param>
+            <returns>Task for completion/erroring</returns>
         </member>
         <member name="M:Nancy.Response.AddCookie(System.String,System.String)">
             <summary>
@@ -2452,13 +3026,13 @@
             <summary>
             Enable JSONP support in the application
             </summary>
-            <param name="pipeline">Application Pipeline to Hook into</param>
+            <param name="pipelines">Application Pipeline to Hook into</param>
         </member>
         <member name="M:Nancy.Jsonp.Disable(Nancy.Bootstrapper.IPipelines)">
             <summary>
             Disable JSONP support in the application
             </summary>
-            <param name="pipeline">Application Pipeline to Hook into</param>
+            <param name="pipelines">Application Pipeline to Hook into</param>
         </member>
         <member name="M:Nancy.Jsonp.PrepareJsonp(Nancy.NancyContext)">
             <summary>
@@ -2490,6 +3064,14 @@
             </summary>
             <param name="innerException"></param>
         </member>
+        <member name="T:Nancy.Responses.MaterialisingResponse">
+            <summary>
+            Takes an existing response and materialises the body.
+            Can be used as a wrapper to force execution of the deferred body for
+            error checking etc.
+            Copies the existing response into memory, so use with caution.
+            </summary>
+        </member>
         <member name="T:Nancy.Responses.NegotiatedResponse">
             <summary>
             Response that indicates that the response format should be negotiated between the client and the server.
@@ -2506,6 +3088,148 @@
             <summary>
             Gets or sets the value that should be negotiated.
             </summary>
+        </member>
+        <member name="T:Nancy.Responses.Negotiation.DefaultResponseNegotiator">
+            <summary>
+            The default implementation for a response negotiator.
+            </summary>
+        </member>
+        <member name="T:Nancy.Responses.Negotiation.IResponseNegotiator">
+            <summary>
+            Creates a response from a given result and context.
+            </summary>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.IResponseNegotiator.NegotiateResponse(System.Object,Nancy.NancyContext)">
+            <summary>
+            Negotiates the response based on the given result and context.
+            </summary>
+            <param name="routeResult">The route result.</param>
+            <param name="context">The context.</param>
+            <returns>A <see cref="T:Nancy.Response"/>.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.#ctor(System.Collections.Generic.IEnumerable{Nancy.Responses.Negotiation.IResponseProcessor},Nancy.Conventions.AcceptHeaderCoercionConventions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Responses.Negotiation.DefaultResponseNegotiator"/> class.
+            </summary>
+            <param name="processors">The response processors.</param>
+            <param name="coercionConventions">The Accept header coercion conventions.</param>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.NegotiateResponse(System.Object,Nancy.NancyContext)">
+            <summary>
+            Negotiates the response based on the given result and context.
+            </summary>
+            <param name="routeResult">The route result.</param>
+            <param name="context">The context.</param>
+            <returns>A <see cref="T:Nancy.Response"/>.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.TryCastResultToResponse(System.Object,Nancy.Response@)">
+            <summary>
+            Tries to cast the dynamic result to a <see cref="T:Nancy.Response"/>.
+            </summary>
+            <param name="routeResult">The result.</param>
+            <param name="response">The response.</param>
+            <returns><c>true</c> if the result is a <see cref="T:Nancy.Response"/>, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.GetNegotiationContext(System.Object,Nancy.NancyContext)">
+            <summary>
+            Gets a <see cref="T:Nancy.Responses.Negotiation.NegotiationContext"/> based on the given result and context.
+            </summary>
+            <param name="routeResult">The route result.</param>
+            <param name="context">The context.</param>
+            <returns>A <see cref="T:Nancy.Responses.Negotiation.NegotiationContext"/>.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.GetCoercedAcceptHeaders(Nancy.NancyContext)">
+            <summary>
+            Gets the coerced accept headers based on the <see cref="T:Nancy.Conventions.AcceptHeaderCoercionConventions"/>.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>IEnumerable{Tuple{System.String, System.Decimal}}.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.GetCompatibleProcessorsByHeader(System.String,System.Object,Nancy.NancyContext)">
+            <summary>
+            Gets compatible response processors by header.
+            </summary>
+            <param name="acceptHeader">The accept header.</param>
+            <param name="model">The model.</param>
+            <param name="context">The context.</param>
+            <returns>IEnumerable{Tuple{IResponseProcessor, ProcessorMatch}}.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.CreateResponse(System.Collections.Generic.IList{Nancy.Responses.Negotiation.DefaultResponseNegotiator.CompatibleHeader},Nancy.Responses.Negotiation.NegotiationContext,Nancy.NancyContext)">
+            <summary>
+            Creates a response from the compatible headers.
+            </summary>
+            <param name="compatibleHeaders">The compatible headers.</param>
+            <param name="negotiationContext">The negotiation context.</param>
+            <param name="context">The context.</param>
+            <returns>A <see cref="T:Nancy.Response"/>.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.NegotiateResponse(System.Collections.Generic.IEnumerable{Nancy.Responses.Negotiation.DefaultResponseNegotiator.CompatibleHeader},Nancy.Responses.Negotiation.NegotiationContext,Nancy.NancyContext)">
+            <summary>
+            Prioritizes the response processors and tries to negotiate a response.
+            </summary>
+            <param name="compatibleHeaders">The compatible headers.</param>
+            <param name="negotiationContext">The negotiation context.</param>
+            <param name="context">The context.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.AddLinkHeader(System.Collections.Generic.IEnumerable{Nancy.Responses.Negotiation.DefaultResponseNegotiator.CompatibleHeader},Nancy.Response,Nancy.Url)">
+            <summary>
+            Adds a link header to the <see cref="T:Nancy.Response"/>.
+            </summary>
+            <param name="compatibleHeaders">The compatible headers.</param>
+            <param name="response">The response.</param>
+            <param name="requestUrl">The request URL.</param>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.GetLinkProcessors(System.Collections.Generic.IEnumerable{Nancy.Responses.Negotiation.DefaultResponseNegotiator.CompatibleHeader},System.String)">
+            <summary>
+            Gets the link processors based on the compatible headers and content-type.
+            </summary>
+            <param name="compatibleHeaders">The compatible headers.</param>
+            <param name="contentType">The content-type of the response.</param>
+            <returns>Dictionary{System.String, MediaRange}.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.CreateLinkHeader(Nancy.Url,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Nancy.Responses.Negotiation.MediaRange}})">
+            <summary>
+            Creates the link header with the different media ranges.
+            </summary>
+            <param name="requestUrl">The request URL.</param>
+            <param name="linkProcessors">The link processors.</param>
+            <returns>The link header.</returns>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.AddContentTypeHeader(Nancy.Responses.Negotiation.NegotiationContext,Nancy.Response)">
+            <summary>
+            Adds the content type header from the <see cref="T:Nancy.Responses.Negotiation.NegotiationContext"/> to the <see cref="T:Nancy.Response"/>.
+            </summary>
+            <param name="negotiationContext">The negotiation context.</param>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.AddNegotiatedHeaders(Nancy.Responses.Negotiation.NegotiationContext,Nancy.Response)">
+            <summary>
+            Adds the negotiated headers from the <see cref="T:Nancy.Responses.Negotiation.NegotiationContext"/> to the <see cref="T:Nancy.Response"/>.
+            </summary>
+            <param name="negotiationContext">The negotiation context.</param>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.SetStatusCode(Nancy.Responses.Negotiation.NegotiationContext,Nancy.Response)">
+            <summary>
+            Sets the status code from the <see cref="T:Nancy.Responses.Negotiation.NegotiationContext"/> on the <see cref="T:Nancy.Response"/>.
+            </summary>
+            <param name="negotiationContext">The negotiation context.</param>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.SetReasonPhrase(Nancy.Responses.Negotiation.NegotiationContext,Nancy.Response)">
+            <summary>
+            Sets the reason phrase from the <see cref="T:Nancy.Responses.Negotiation.NegotiationContext"/> on the <see cref="T:Nancy.Response"/>.
+            </summary>
+            <param name="negotiationContext">The negotiation context.</param>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.DefaultResponseNegotiator.AddCookies(Nancy.Responses.Negotiation.NegotiationContext,Nancy.Response)">
+            <summary>
+            Adds the cookies from the <see cref="T:Nancy.Responses.Negotiation.NegotiationContext"/> to the <see cref="T:Nancy.Response"/>.
+            </summary>
+            <param name="negotiationContext">The negotiation context.</param>
+            <param name="response">The response.</param>
         </member>
         <member name="T:Nancy.Responses.Negotiation.IResponseProcessor">
             <summary>
@@ -2544,7 +3268,7 @@
         <member name="M:Nancy.Responses.Negotiation.JsonProcessor.#ctor(System.Collections.Generic.IEnumerable{Nancy.ISerializer})">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Responses.Negotiation.JsonProcessor"/> class,
-            with the provided <see cref="!:serializers"/>.
+            with the provided <paramref name="serializers"/>.
             </summary>
             <param name="serializers">The serializes that the processor will use to process the request.</param>
         </member>
@@ -2602,6 +3326,12 @@
             <summary>
             Represents a media range from an accept header
             </summary>
+        </member>
+        <member name="M:Nancy.Responses.Negotiation.MediaRange.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Responses.Negotiation.MediaRange"/> class from a string representation of a media range
+            </summary>
+            <param name="contentType">the content type</param>
         </member>
         <member name="M:Nancy.Responses.Negotiation.MediaRange.#ctor">
             <summary>
@@ -3266,6 +3996,13 @@
             False by default.
             </summary>
         </member>
+        <member name="P:Nancy.Responses.DefaultJsonSerializer.ISO8601DateFormat">
+            <summary>
+            Set to true to use the ISO8601 format for datetimes in produced JSON.
+            Set to false to use the WCF \/Date()\/ format in the the produced JSON.
+            True by default.
+            </summary>
+        </member>
         <member name="M:Nancy.Responses.DefaultXmlSerializer.CanSerialize(System.String)">
             <summary>
             Whether the serializer can serialize the content type
@@ -3521,6 +4258,12 @@
             <param name="context">The context of the route that is being invoked.</param>
             <returns>A <see cref="T:Nancy.Response"/> intance that represents the result of the invoked route.</returns>
         </member>
+        <member name="M:Nancy.Routing.DefaultRouteInvoker.#ctor(Nancy.Responses.Negotiation.IResponseNegotiator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Routing.DefaultRouteInvoker"/> class.
+            </summary>
+            <param name="negotiator">The response negotiator.</param>
+        </member>
         <member name="M:Nancy.Routing.DefaultRouteInvoker.Invoke(Nancy.Routing.Route,System.Threading.CancellationToken,Nancy.DynamicDictionary,Nancy.NancyContext)">
             <summary>
             Invokes the specified <paramref name="route"/> with the provided <paramref name="parameters"/>.
@@ -3554,6 +4297,27 @@
             </summary>
             <param name="path">The path that the segments should be extracted from.</param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/>, containing the extracted segments.</returns>
+        </member>
+        <member name="T:Nancy.Routing.IRouteMetadataProvider">
+            <summary>
+            Defines the functionality for retrieving metadata for routes.
+            </summary>
+        </member>
+        <member name="M:Nancy.Routing.IRouteMetadataProvider.GetMetadataType(Nancy.INancyModule,Nancy.Routing.RouteDescription)">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the metadata that is created by the provider.
+            </summary>
+            <param name="module">The <see cref="T:Nancy.INancyModule"/> instance that the route is declared in.</param>
+            <param name="routeDescription">A <see cref="T:Nancy.Routing.RouteDescription"/> for the route.</param>
+            <returns>A <see cref="T:System.Type"/> instance, or <see langword="null"/> if nothing is found.</returns>
+        </member>
+        <member name="M:Nancy.Routing.IRouteMetadataProvider.GetMetadata(Nancy.INancyModule,Nancy.Routing.RouteDescription)">
+            <summary>
+            Gets the metadata for the provided route.
+            </summary>
+            <param name="module">The <see cref="T:Nancy.INancyModule"/> instance that the route is declared in.</param>
+            <param name="routeDescription">A <see cref="T:Nancy.Routing.RouteDescription"/> for the route.</param>
+            <returns>An object representing the metadata for the given route, or <see langword="null"/> if nothing is found.</returns>
         </member>
         <member name="T:Nancy.Routing.ParameterSegmentInformation">
             <summary>
@@ -3637,6 +4401,16 @@
             <param name="description"></param>
             <param name="action">The action that should take place when the route is invoked.</param>
         </member>
+        <member name="M:Nancy.Routing.Route.#ctor(System.String,System.String,System.String,System.Func{Nancy.NancyContext,System.Boolean},System.Func{System.Object,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Object}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Routing.Route"/> type, with the specified definition.
+            </summary>
+            <param name="name">Route name</param>
+            <param name="method">The HTTP method that the route is declared for.</param>
+            <param name="path">The path that the route is declared for.</param>
+            <param name="condition">A condition that needs to be satisfied inorder for the route to be eligiable for invocation.</param>
+            <param name="action">The action that should take place when the route is invoked.</param>
+        </member>
         <member name="M:Nancy.Routing.Route.#ctor(System.String,System.String,System.Func{Nancy.NancyContext,System.Boolean},System.Func{System.Object,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Object}})">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Routing.Route"/> type, with the specified definition.
@@ -3672,6 +4446,17 @@
             <param name="syncFunc">The action that should take place when the route is invoked.</param>
             <returns>A Route instance</returns>
         </member>
+        <member name="M:Nancy.Routing.Route.FromSync(System.String,System.String,System.String,System.Func{Nancy.NancyContext,System.Boolean},System.Func{System.Object,System.Object})">
+            <summary>
+            Creates a route from a sync delegate signature
+            </summary>
+            <param name="name">Route name</param>
+            <param name="method">The HTTP method that the route is declared for.</param>
+            <param name="path">The path that the route is declared for.</param>
+            <param name="condition">A condition that needs to be satisfied inorder for the route to be eligiable for invocation.</param>
+            <param name="syncFunc">The action that should take place when the route is invoked.</param>
+            <returns>A Route instance</returns>
+        </member>
         <member name="M:Nancy.Routing.Route.Wrap(System.Func{System.Object,System.Object})">
             <summary>
             Wraps a sync delegate in a delegate that returns a task
@@ -3690,6 +4475,80 @@
             Gets the description of the route.
             </summary>
             <value>A <see cref="T:Nancy.Routing.RouteDescription"/> instance.</value>
+        </member>
+        <member name="T:Nancy.Routing.RouteCacheExtensions">
+            <summary>
+            Contains extensions for the <see cref="T:Nancy.Routing.IRouteCache"/> type.
+            </summary>
+        </member>
+        <member name="M:Nancy.Routing.RouteCacheExtensions.RetrieveMetadata``1(System.Collections.Generic.IDictionary{System.Type,System.Collections.Generic.List{System.Tuple{System.Int32,Nancy.Routing.RouteDescription}}})">
+            <summary>
+            Retrieves metadata for all declared routes.
+            </summary>
+            <typeparam name="TMetadata">The type of the metadata to retrieve.</typeparam>
+            <param name="cache">The <see cref="T:Nancy.Routing.IRouteCache"/> to retrieve the metadata.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing instances of the <typeparamref name="TMetadata"/> type.</returns>
+        </member>
+        <member name="T:Nancy.Routing.RouteMetadata">
+            <summary>
+            Stores metadata created by <see cref="T:Nancy.Routing.IRouteMetadataProvider"/> instances.
+            </summary>
+        </member>
+        <member name="M:Nancy.Routing.RouteMetadata.#ctor(System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Creates a new instance of the <see cref="T:Nancy.Routing.RouteMetadata"/> class.
+            </summary>
+            <param name="metadata">An <see cref="T:System.Collections.Generic.IDictionary`2"/> containing the metadata, organised by the type that it is stored in.</param>
+        </member>
+        <member name="M:Nancy.Routing.RouteMetadata.Has``1">
+            <summary>
+            Gets a boolean that indicates if the specific type of metadata is stored.
+            </summary>
+            <typeparam name="TMetadata">The type of the metadata to check for.</typeparam>
+            <returns><see langword="true"/> if metadata, of the requested type is stored, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Routing.RouteMetadata.Retrieve``1">
+            <summary>
+            Retrieves metadata of the provided type.
+            </summary>
+            <typeparam name="TMetadata">The type of the metadata to retrieve.</typeparam>
+            <returns>The metadata instance if available, otherwise <see langword="null"/>.</returns>
+        </member>
+        <member name="P:Nancy.Routing.RouteMetadata.Raw">
+            <summary>
+            Gets the raw metadata <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+            <value>An <see cref="T:System.Collections.Generic.IDictionary`2"/> instance.</value>
+        </member>
+        <member name="T:Nancy.Routing.RouteMetadataProvider`1">
+            <summary>
+            Defines the functionality for retrieving metadata for routes.
+            </summary>
+            <typeparam name="TMetadata">The metadata type.</typeparam>
+        </member>
+        <member name="M:Nancy.Routing.RouteMetadataProvider`1.GetMetadataType(Nancy.INancyModule,Nancy.Routing.RouteDescription)">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the metadata that is created by the provider.
+            </summary>
+            <param name="module">The <see cref="T:Nancy.INancyModule"/> instance that the route is declared in.</param>
+            <param name="routeDescription">A <see cref="T:Nancy.Routing.RouteDescription"/> for the route.</param>
+            <returns>A <see cref="T:System.Type"/> instance, or null if none are found.</returns>
+        </member>
+        <member name="M:Nancy.Routing.RouteMetadataProvider`1.GetMetadata(Nancy.INancyModule,Nancy.Routing.RouteDescription)">
+            <summary>
+            Gets the metadata for the provided route.
+            </summary>
+            <param name="module">The <see cref="T:Nancy.INancyModule"/> instance that the route is declared in.</param>
+            <param name="routeDescription">A <see cref="T:Nancy.Routing.RouteDescription"/> for the route.</param>
+            <returns>An instance of <typeparamref name="TMetadata"/>.</returns>
+        </member>
+        <member name="M:Nancy.Routing.RouteMetadataProvider`1.GetRouteMetadata(Nancy.INancyModule,Nancy.Routing.RouteDescription)">
+            <summary>
+            Gets the metadata for the provided route.
+            </summary>
+            <param name="module">The <see cref="T:Nancy.INancyModule"/> instance that the route is declared in.</param>
+            <param name="routeDescription">A <see cref="T:Nancy.Routing.RouteDescription"/> for the route.</param>
+            <returns>An instance of <typeparamref name="TMetadata"/>.</returns>
         </member>
         <member name="T:Nancy.Routing.Trie.IRouteResolverTrie">
             <summary>
@@ -4054,7 +4913,15 @@
             Score for this node
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:Nancy.Routing.Trie.Nodes.GreedyRegExCaptureNode" -->
+        <member name="T:Nancy.Routing.Trie.Nodes.GreedyRegExCaptureNode">
+            <summary>
+            A greedy regular expression capture node e.g. ^(?&lt;id>\d{0,100})$
+            For use on an entire route path, regular expression must be surrounded by ^( )$
+            e.g. @"^(?:(?&lt;id>videos/\d{1,10})(?:/{0,1}(?&lt;slug>.*)))$"
+            This will match for a Url like /videos/123/some-random-slug 
+            and capture 'videos/123' and 'some-random-slug'
+            </summary>
+        </member>
         <member name="M:Nancy.Routing.Trie.Nodes.GreedyRegExCaptureNode.GetMatches(System.String[],System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},Nancy.NancyContext)">
             <summary>
             Gets all matches for a given requested route
@@ -4160,7 +5027,11 @@
             Score for this node
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:Nancy.Routing.Trie.Nodes.RegExNode" -->
+        <member name="T:Nancy.Routing.Trie.Nodes.RegExNode">
+            <summary>
+            A regular expression capture node e.g. (?&lt;foo>\d{2,4})
+            </summary>
+        </member>
         <member name="M:Nancy.Routing.Trie.Nodes.RegExNode.Match(System.String)">
             <summary>
             Matches the segment for a requested route
@@ -4269,6 +5140,51 @@
             <param name="parent">Parent node</param>
             <param name="segment">Segment</param>
             <returns>TrieNode instance</returns>
+        </member>
+        <member name="T:Nancy.Session.CookieBasedSessionsConfiguration">
+            <summary>
+            Configuration options for cookie based sessions
+            </summary>
+        </member>
+        <member name="M:Nancy.Session.CookieBasedSessionsConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Session.CookieBasedSessionsConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="M:Nancy.Session.CookieBasedSessionsConfiguration.#ctor(Nancy.Cryptography.CryptographyConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Session.CookieBasedSessionsConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="P:Nancy.Session.CookieBasedSessionsConfiguration.CryptographyConfiguration">
+            <summary>
+            Gets or sets the cryptography configuration
+            </summary>
+        </member>
+        <member name="P:Nancy.Session.CookieBasedSessionsConfiguration.Serializer">
+            <summary>
+            Formatter for de/serializing the session objects
+            </summary>
+        </member>
+        <member name="P:Nancy.Session.CookieBasedSessionsConfiguration.CookieName">
+            <summary>
+            Cookie name for storing session information
+            </summary>
+        </member>
+        <member name="P:Nancy.Session.CookieBasedSessionsConfiguration.Domain">
+            <summary>
+            Gets or sets the domain of the session cookie
+            </summary>
+        </member>
+        <member name="P:Nancy.Session.CookieBasedSessionsConfiguration.Path">
+            <summary>
+            Gets or sets the path of the session cookie
+            </summary>
+        </member>
+        <member name="P:Nancy.Session.CookieBasedSessionsConfiguration.IsValid">
+            <summary>
+            Gets a value indicating whether the configuration is valid or not.
+            </summary>
         </member>
         <member name="T:Nancy.StaticContent">
             <summary>
@@ -4511,11 +5427,48 @@
             </summary>
             <returns>NancyContext instance</returns>
         </member>
+        <member name="M:Nancy.DefaultNancyContextFactory.#ctor(Nancy.Culture.ICultureService,Nancy.Diagnostics.IRequestTraceFactory,Nancy.Localization.ITextResource)">
+            <summary>
+            Creates a new instance of the <see cref="T:Nancy.DefaultNancyContextFactory"/> class.
+            </summary>
+            <param name="cultureService">An <see cref="T:Nancy.Culture.ICultureService"/> instance.</param>
+            <param name="requestTraceFactory">An <see cref="T:Nancy.Diagnostics.IRequestTraceFactory"/> instance.</param>
+            <param name="textResource">An <see cref="T:Nancy.Localization.ITextResource"/> instance.</param>
+        </member>
         <member name="M:Nancy.DefaultNancyContextFactory.Create(Nancy.Request)">
             <summary>
-            Create a new NancyContext
+            Create a new <see cref="T:Nancy.NancyContext"/> instance.
             </summary>
-            <returns>NancyContext instance</returns>
+            <returns>A <see cref="T:Nancy.NancyContext"/> instance.</returns>
+        </member>
+        <member name="T:Nancy.Diagnostics.DefaultRequestTrace">
+            <summary>
+            The default implementation of the <see cref="T:Nancy.Diagnostics.IRequestTrace"/> interface.
+            </summary>
+        </member>
+        <member name="P:Nancy.Diagnostics.DefaultRequestTrace.Items">
+            <summary>
+            Gets the generic item store.
+            </summary>
+            <value>An <see cref="T:System.Collections.Generic.IDictionary`2"/> instance containing the items.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.DefaultRequestTrace.RequestData">
+            <summary>
+            Gets or sets the information about the request.
+            </summary>
+            <value>An <see cref="P:Nancy.Diagnostics.DefaultRequestTrace.RequestData"/> instance.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.DefaultRequestTrace.ResponseData">
+            <summary>
+            Gets or sets the information about the response.
+            </summary>
+            <value>An <see cref="P:Nancy.Diagnostics.DefaultRequestTrace.ResponseData"/> instance.</value>
+        </member>
+        <member name="P:Nancy.Diagnostics.DefaultRequestTrace.TraceLog">
+            <summary>
+            Gets or sets the trace log.
+            </summary>
+            <value>A <see cref="T:Nancy.Diagnostics.ITraceLog"/> instance.</value>
         </member>
         <member name="M:Nancy.DynamicDictionaryValue.#ctor(System.Object)">
             <summary>
@@ -4965,6 +5918,12 @@
             prior to calling GetEngine.
             </summary>
         </member>
+        <member name="F:Nancy.Bootstrapper.NancyBootstrapperBase`1.disposing">
+            <summary>
+            Stores whether the bootstrapper is in the process of 
+            being disposed.
+            </summary>
+        </member>
         <member name="F:Nancy.Bootstrapper.NancyBootstrapperBase`1.rootPathProvider">
             <summary>
             Stores the <see cref="T:Nancy.IRootPathProvider"/> used by Nancy
@@ -5007,11 +5966,19 @@
             </summary>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IApplicationStartup"/> instances.</returns>
         </member>
-        <member name="M:Nancy.Bootstrapper.NancyBootstrapperBase`1.GetApplicationRegistrationTasks">
+        <member name="M:Nancy.Bootstrapper.NancyBootstrapperBase`1.RegisterAndGetRequestStartupTasks(`0,System.Type[])">
+            <summary>
+            Registers and resolves all request startup tasks
+            </summary>
+            <param name="container">Container to use</param>
+            <param name="requestStartupTypes">Types to register</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IRequestStartup"/> instances.</returns>
+        </member>
+        <member name="M:Nancy.Bootstrapper.NancyBootstrapperBase`1.GetRegistrationTasks">
             <summary>
             Gets all registered application registration tasks
             </summary>
-            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IApplicationRegistrations"/> instances.</returns>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IRegistrations"/> instances.</returns>
         </member>
         <member name="M:Nancy.Bootstrapper.NancyBootstrapperBase`1.GetAllModules(Nancy.NancyContext)">
             <summary>
@@ -5166,11 +6133,22 @@
             </summary>
             <returns>Collection of CollectionTypeRegistration types</returns>
         </member>
+        <member name="M:Nancy.Bootstrapper.NancyBootstrapperBase`1.RegisterRegistrationTasks(System.Collections.Generic.IEnumerable{Nancy.Bootstrapper.IRegistrations})">
+            <summary>
+            Takes the registration tasks and calls the relevant methods to register them
+            </summary>
+            <param name="registrationTasks">Registration tasks</param>
+        </member>
         <member name="P:Nancy.Bootstrapper.NancyBootstrapperBase`1.ApplicationPipelines">
             <summary>
             Application pipelines.
             Pipelines are "cloned" per request so they can be modified
             at the request level.
+            </summary>
+        </member>
+        <member name="P:Nancy.Bootstrapper.NancyBootstrapperBase`1.RequestStartupTaskTypeCache">
+            <summary>
+            Cache of request startup task types
             </summary>
         </member>
         <member name="P:Nancy.Bootstrapper.NancyBootstrapperBase`1.ApplicationContainer">
@@ -5218,9 +6196,14 @@
             Gets all application startup tasks
             </summary>
         </member>
-        <member name="P:Nancy.Bootstrapper.NancyBootstrapperBase`1.ApplicationRegistrationTasks">
+        <member name="P:Nancy.Bootstrapper.NancyBootstrapperBase`1.RequestStartupTasks">
             <summary>
-            Gets all application registration tasks
+            Gets all request startup tasks
+            </summary>
+        </member>
+        <member name="P:Nancy.Bootstrapper.NancyBootstrapperBase`1.RegistrationTasks">
+            <summary>
+            Gets all registration tasks
             </summary>
         </member>
         <member name="P:Nancy.Bootstrapper.NancyBootstrapperBase`1.RootPathProvider">
@@ -5256,7 +6239,7 @@
             it will use the default nancy one that uses TinyIoC.
             </summary>
         </member>
-        <member name="F:Nancy.Bootstrapper.NancyBootstrapperLocator.Bootstrapper">
+        <member name="P:Nancy.Bootstrapper.NancyBootstrapperLocator.Bootstrapper">
             <summary>
             Gets the located bootstrapper
             </summary>
@@ -5266,12 +6249,13 @@
             Represents a type to be registered into the container
             </summary>
         </member>
-        <member name="M:Nancy.Bootstrapper.TypeRegistration.#ctor(System.Type,System.Type)">
+        <member name="M:Nancy.Bootstrapper.TypeRegistration.#ctor(System.Type,System.Type,Nancy.Bootstrapper.Lifetime)">
             <summary>
             Represents a type to be registered into the container
             </summary>
             <param name="registrationType">Registration type i.e. IMyInterface</param>
             <param name="implementationType">Implementation type i.e. MyClassThatImplementsIMyInterface</param>
+            <param name="lifetime">Lifetime to register the type as</param>
         </member>
         <member name="P:Nancy.Bootstrapper.TypeRegistration.ImplementationType">
             <summary>
@@ -5417,6 +6401,12 @@
             <param name="context">The <see cref="T:Nancy.NancyContext"/> used by the request.</param>
             <returns>An <see cref="T:Nancy.Bootstrapper.IPipelines"/> instance.</returns>
         </member>
+        <member name="M:Nancy.Bootstrapper.NancyBootstrapperWithRequestContainerBase`1.RegisterRegistrationTasks(System.Collections.Generic.IEnumerable{Nancy.Bootstrapper.IRegistrations})">
+            <summary>
+            Takes the registration tasks and calls the relevant methods to register them
+            </summary>
+            <param name="registrationTasks">Registration tasks</param>
+        </member>
         <member name="M:Nancy.Bootstrapper.NancyBootstrapperWithRequestContainerBase`1.GetConfiguredRequestContainer(Nancy.NancyContext)">
             <summary>
             Gets the per-request container
@@ -5465,6 +6455,16 @@
             <param name="container">Container to use</param>
             <param name="moduleType">Type of the module</param>
             <returns>NancyModule instance</returns>
+        </member>
+        <member name="P:Nancy.Bootstrapper.NancyBootstrapperWithRequestContainerBase`1.RequestScopedTypes">
+            <summary>
+            Stores the per-request type registations
+            </summary>
+        </member>
+        <member name="P:Nancy.Bootstrapper.NancyBootstrapperWithRequestContainerBase`1.RequestScopedCollectionTypes">
+            <summary>
+            Stores the per-request collection registations
+            </summary>
         </member>
         <member name="P:Nancy.Bootstrapper.NancyBootstrapperWithRequestContainerBase`1.ContextKey">
             <summary>
@@ -5550,11 +6550,17 @@
             </summary>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IApplicationStartup"/> instances. </returns>
         </member>
-        <member name="M:Nancy.DefaultNancyBootstrapper.GetApplicationRegistrationTasks">
+        <member name="M:Nancy.DefaultNancyBootstrapper.RegisterAndGetRequestStartupTasks(Nancy.TinyIoc.TinyIoCContainer,System.Type[])">
+            <summary>
+            Gets all registered request startup tasks
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IRequestStartup"/> instances.</returns>
+        </member>
+        <member name="M:Nancy.DefaultNancyBootstrapper.GetRegistrationTasks">
             <summary>
             Gets all registered application registration tasks
             </summary>
-            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IApplicationRegistrations"/> instances.</returns>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IRegistrations"/> instances.</returns>
         </member>
         <member name="M:Nancy.DefaultNancyBootstrapper.GetAllModules(Nancy.TinyIoc.TinyIoCContainer)">
             <summary>
@@ -5621,6 +6627,38 @@
             <param name="context">Nancy context</param>
             <returns>Exception details</returns>
         </member>
+        <member name="M:Nancy.Extensions.ContextExtensions.GetException(Nancy.NancyContext)">
+            <summary>
+            Get a thrown exception from the context.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>The thrown exception or <c>null</c> if not exception has been thrown.</returns>
+        </member>
+        <member name="M:Nancy.Extensions.ContextExtensions.GetException``1(Nancy.NancyContext)">
+            <summary>
+            Get a thrown exception of the given type from the context.
+            </summary>
+            <typeparam name="T">The type of exception to get.</typeparam>
+            <param name="context">The context.</param>
+            <returns>The thrown exception or <c>null</c> if not exception has been thrown.</returns>
+        </member>
+        <member name="M:Nancy.Extensions.ContextExtensions.TryGetException(Nancy.NancyContext,System.Exception@)">
+            <summary>
+            Tries to get a thrown exception from the context.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="exception">The thrown exception.</param>
+            <returns><c>true</c> if an exception has been thrown during the request, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Nancy.Extensions.ContextExtensions.TryGetException``1(Nancy.NancyContext,``0@)">
+            <summary>
+            Tries to get a thrown exception of the given type from the context.
+            </summary>
+            <typeparam name="T">The type of exception to get.</typeparam>
+            <param name="context">The context.</param>
+            <param name="exception">The thrown exception.</param>
+            <returns><c>true</c> if an exception of the given type has been thrown during the request, <c>false</c> otherwise.</returns>
+        </member>
         <member name="M:Nancy.Extensions.ContextExtensions.WriteTraceLog(Nancy.NancyContext,System.Action{System.Text.StringBuilder})">
             <summary>
             Shortcut extension method for writing trace information
@@ -5651,7 +6689,7 @@
             <summary>   
             Extracts the friendly name of a Nancy module given its type.
             </summary>
-            <param name="name">The type name taken from GetType().Name.</param>
+            <param name="module">The module instance</param>
             <returns>A string containing the name of the parameter.</returns>
             <exception cref="T:System.FormatException"></exception>
         </member>
@@ -5684,6 +6722,13 @@
             </summary>
             <param name="request">The request made by client</param>
             <returns><see langword="true" /> if the request was done using ajax, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Extensions.RequestExtensions.IsLocal(Nancy.Request)">
+            <summary>
+            Gets a value indicating whether the request is local.
+            </summary>
+            <param name="request">The request made by client</param>
+            <returns><see langword="true" /> if the request is local, otherwise <see langword="false"/>.</returns>
         </member>
         <member name="T:Nancy.Extensions.StringExtensions">
             <summary>
@@ -5782,7 +6827,7 @@
         </member>
         <member name="P:Nancy.RequestHeaders.Authorization">
             <summary>
-            Acceptable languages for response.
+            Authorization header value for request.
             </summary>
             <value>A <see cref="T:System.String"/> containing the header value if it is available; otherwise <see cref="F:System.String.Empty"/>.</value>
         </member>
@@ -5914,7 +6959,7 @@
             Csrf protection methods
             </summary>
         </member>
-        <member name="M:Nancy.Security.Csrf.Enable(Nancy.Bootstrapper.IPipelines)">
+        <member name="M:Nancy.Security.Csrf.Enable(Nancy.Bootstrapper.IPipelines,Nancy.Cryptography.CryptographyConfiguration)">
             <summary>
             Enables Csrf token generation.
             This is disabled by default.
@@ -5927,7 +6972,7 @@
             </summary>
             <param name="pipelines">Application pipelines</param>
         </member>
-        <member name="M:Nancy.Security.Csrf.CreateNewCsrfToken(Nancy.INancyModule)">
+        <member name="M:Nancy.Security.Csrf.CreateNewCsrfToken(Nancy.INancyModule,Nancy.Cryptography.CryptographyConfiguration)">
             <summary>
             Creates a new csrf token for this response with an optional salt.
             Only necessary if a particular route requires a new token for each request.
@@ -6312,13 +7357,20 @@
         </member>
         <member name="T:Nancy.Url">
             <summary>
-            Represents a full Url of the form scheme://hostname:port/basepath/path?query#fragment
+            Represents a full Url of the form scheme://hostname:port/basepath/path?query
             </summary>
+            <remarks>Since this is for  internal use, and fragments are not passed to the server, fragments are not supported.</remarks>
         </member>
         <member name="M:Nancy.Url.#ctor">
             <summary>
-            Represents a URL made up of component parts
+            Creates an instance of the <see cref="T:Nancy.Url"/> class
             </summary>
+        </member>
+        <member name="M:Nancy.Url.#ctor(System.String)">
+            <summary>
+            Creates an instance of the <see cref="T:Nancy.Url"/> class
+            </summary>
+            <param name="url">A <see cref="T:System.String"/> containing a URL.</param>
         </member>
         <member name="M:Nancy.Url.System#ICloneable#Clone">
             <summary>
@@ -6390,11 +7442,6 @@
         <member name="P:Nancy.Url.Query">
             <summary>
             Gets the querystring data of the requested resource.
-            </summary>
-        </member>
-        <member name="P:Nancy.Url.Fragment">
-            <summary>
-            Gets the fragment of the request
             </summary>
         </member>
         <member name="P:Nancy.Url.SiteBase">
@@ -7358,7 +8405,7 @@
             Gets or sets the value stream.
             </summary>
             <value>A <see cref="T:System.IO.Stream"/> containing the contents of the file.</value>
-            <remarks>This is a <see cref="!:HttpMultiparSubStream"/> instance that sits ontop of the request stream.</remarks>
+            <remarks>This is a <see cref="T:Nancy.HttpMultipartSubStream"/> instance that sits ontop of the request stream.</remarks>
         </member>
         <member name="T:Nancy.HttpMultipart">
             <summary>
@@ -8209,8 +9256,7 @@
             property name and the original exception, which caused the problem
             </summary>
             <param name="boundType">the model type to bind to</param>
-            <param name="propertyName">the property name, which failed to bind</param>
-            <param name="innerException">the original exception, thrown while binding the property</param>
+            <param name="propertyBindingExceptions">the original exceptions, thrown while binding the property</param>
         </member>
         <member name="P:Nancy.ModelBinding.ModelBindingException.PropertyBindingExceptions">
             <summary>
@@ -8573,6 +9619,11 @@
             Context of content negotiation (if relevent)
             </summary>
         </member>
+        <member name="P:Nancy.NancyContext.Text">
+            <summary>
+            Gets or sets the dynamic object used to locate text resources.
+            </summary>
+        </member>
         <member name="M:Nancy.AfterPipeline.Wrap(Nancy.PipelineItem{System.Action{Nancy.NancyContext}})">
             <summary>
             Wraps a sync delegate into it's async form
@@ -8791,7 +9842,7 @@
         <member name="M:Nancy.Responses.GenericFileResponse.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Responses.GenericFileResponse"/> for the file specified
-            by the <param name="filePath"/> parameter.
+            by the <paramref name="filePath"/> parameter.
             </summary>
             <param name="filePath">The name of the file, including path relative to the root of the application, that should be returned.</param>
             <remarks>The <see cref="M:Nancy.MimeTypes.GetMimeType(System.String)"/> method will be used to determine the mimetype of the file and will be used as the content-type of the response. If no match if found the content-type will be set to application/octet-stream.</remarks>
@@ -8799,7 +9850,7 @@
         <member name="M:Nancy.Responses.GenericFileResponse.#ctor(System.String,Nancy.NancyContext)">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Responses.GenericFileResponse"/> for the file specified
-            by the <param name="filePath"/> parameter.
+            by the <paramref name="filePath"/> parameter.
             </summary>
             <param name="filePath">The name of the file, including path relative to the root of the application, that should be returned.</param>
             <remarks>The <see cref="M:Nancy.MimeTypes.GetMimeType(System.String)"/> method will be used to determine the mimetype of the file and will be used as the content-type of the response. If no match if found the content-type will be set to application/octet-stream.</remarks>
@@ -8808,7 +9859,7 @@
         <member name="M:Nancy.Responses.GenericFileResponse.#ctor(System.String,System.String,Nancy.NancyContext)">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Responses.GenericFileResponse"/> for the file specified
-            by the <param name="filePath"/> parameter and the content-type specified by the <param name="contentType"/> parameter.
+            by the <paramref name="filePath"/> parameter and the content-type specified by the <paramref name="contentType"/> parameter.
             </summary>
             <param name="filePath">The name of the file, including path relative to the root of the application, that should be returned.</param>
             <param name="contentType">The content-type of the response.</param>
@@ -8968,17 +10019,6 @@
             <param name="context">The <see cref="T:Nancy.NancyContext"/> instance for the current request.</param>
             <returns>An <see cref="T:Nancy.Routing.IRoutePatternMatchResult"/> instance, containing the outcome of the match.</returns>
         </member>
-        <member name="T:Nancy.IRootPathProvider">
-            <summary>
-            Defines the functionality to retrieve the root folder path of the current Nancy application.
-            </summary>
-        </member>
-        <member name="M:Nancy.IRootPathProvider.GetRootPath">
-            <summary>
-            Returns the root folder path of the current Nancy application.
-            </summary>
-            <returns>A <see cref="T:System.String"/> containing the path of the root folder.</returns>
-        </member>
         <member name="T:Nancy.Routing.IRouteCache">
             <summary>
             Contains a cache of all routes registered in the system
@@ -8995,13 +10035,16 @@
             Caches information about all the available routes that was discovered by the bootstrapper.
             </summary>
         </member>
-        <member name="M:Nancy.Routing.RouteCache.#ctor(Nancy.INancyModuleCatalog,Nancy.INancyContextFactory,Nancy.Routing.IRouteSegmentExtractor,Nancy.Routing.IRouteDescriptionProvider,Nancy.Culture.ICultureService)">
+        <member name="M:Nancy.Routing.RouteCache.#ctor(Nancy.INancyModuleCatalog,Nancy.INancyContextFactory,Nancy.Routing.IRouteSegmentExtractor,Nancy.Routing.IRouteDescriptionProvider,Nancy.Culture.ICultureService,System.Collections.Generic.IEnumerable{Nancy.Routing.IRouteMetadataProvider})">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Routing.RouteCache"/> class.
             </summary>
             <param name="moduleCatalog">The <see cref="T:Nancy.INancyModuleCatalog"/> that should be used by the cache.</param>
             <param name="contextFactory">The <see cref="T:Nancy.INancyContextFactory"/> that should be used to create a context instance.</param>
             <param name="routeSegmentExtractor"> </param>
+            <param name="cultureService"></param>
+            <param name="routeMetadataProviders"></param>
+            <param name="routeDescriptionProvider"></param>
         </member>
         <member name="M:Nancy.Routing.RouteCache.IsEmpty">
             <summary>
@@ -9053,13 +10096,19 @@
             Represents the various parts of a route lambda.
             </summary>
         </member>
-        <member name="M:Nancy.Routing.RouteDescription.#ctor(System.String,System.String,System.Func{Nancy.NancyContext,System.Boolean})">
+        <member name="M:Nancy.Routing.RouteDescription.#ctor(System.String,System.String,System.String,System.Func{Nancy.NancyContext,System.Boolean})">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Routing.RouteDescription"/> class.
             </summary>
+            <param name="name">Route name</param>
             <param name="method">The request method of the route.</param>
             <param name="path">The path that the route will be invoked for.</param>
             <param name="condition">The condition that has to be fulfilled for the route to be a valid match.</param>
+        </member>
+        <member name="P:Nancy.Routing.RouteDescription.Name">
+            <summary>
+            The name of the route
+            </summary>
         </member>
         <member name="P:Nancy.Routing.RouteDescription.Condition">
             <summary>
@@ -9072,6 +10121,12 @@
             The description of what the route is for.
             </summary>
             <value>A <see cref="T:System.String"/> containing the description of the route.</value>
+        </member>
+        <member name="P:Nancy.Routing.RouteDescription.Metadata">
+            <summary>
+            Gets or sets the metadata information for a route.
+            </summary>
+            <value>A <see cref="T:Nancy.Routing.RouteMetadata"/> instance.</value>
         </member>
         <member name="P:Nancy.Routing.RouteDescription.Method">
             <summary>
@@ -9246,6 +10301,27 @@
             <param name="test">Test that must return true for the request to continue</param>
             <returns>Hook that returns a response with a specific HttpStatusCode if the test fails, null otherwise</returns>
         </member>
+        <member name="M:Nancy.Security.SecurityHooks.RequiresHttps(System.Boolean)">
+            <summary>
+            Creates a hook to be used in a pipeline before a route handler to ensure that
+            the resource is served over HTTPS
+            </summary>
+            <param name="redirect"><see langword="true"/> if the user should be redirected to HTTPS (no port number) if the incoming request was made using HTTP, otherwise <see langword="false"/> if <see cref="F:Nancy.HttpStatusCode.Forbidden"/> should be returned.</param>
+            <returns>Hook that returns a RedirectResponse with the Url scheme set to HTTPS, 
+            or a Response with a Forbidden HTTP status code if <c>redirect</c> is false or the method is not GET,
+            null otherwise</returns>
+        </member>
+        <member name="M:Nancy.Security.SecurityHooks.RequiresHttps(System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Creates a hook to be used in a pipeline before a route handler to ensure that
+            the resource is served over HTTPS
+            </summary>
+            <param name="redirect"><see langword="true"/> if the user should be redirected to HTTPS (no port number) if the incoming request was made using HTTP, otherwise <see langword="false"/> if <see cref="F:Nancy.HttpStatusCode.Forbidden"/> should be returned.</param>
+            <param name="httpsPort">The HTTPS port number to use</param>
+            <returns>Hook that returns a <see cref="T:Nancy.Responses.RedirectResponse"/> with the Url scheme set to HTTPS, 
+            or a <see cref="T:Nancy.Response"/> with a <see cref="F:Nancy.HttpStatusCode.Forbidden"/> status code if <c>redirect</c> is false or the method is not GET,
+            null otherwise</returns>
+        </member>
         <member name="T:Nancy.Security.UserIdentityExtensions">
             <summary>
             Extension methods for working with IUserIdentity.
@@ -9307,26 +10383,6 @@
             </summary>
             <param name="newSerializer">Serializer to use</param>
         </member>
-        <member name="F:Nancy.Session.CookieBasedSessions.encryptionProvider">
-            <summary>
-            Encryption provider
-            </summary>
-        </member>
-        <member name="F:Nancy.Session.CookieBasedSessions.hmacProvider">
-            <summary>
-            Provider for generating hmacs
-            </summary>
-        </member>
-        <member name="F:Nancy.Session.CookieBasedSessions.serializer">
-            <summary>
-            Formatter for de/serializing the session objects
-            </summary>
-        </member>
-        <member name="F:Nancy.Session.CookieBasedSessions.cookieName">
-            <summary>
-            Cookie name for storing session information
-            </summary>
-        </member>
         <member name="M:Nancy.Session.CookieBasedSessions.#ctor(Nancy.Cryptography.IEncryptionProvider,Nancy.Cryptography.IHmacProvider,Nancy.IObjectSerializer)">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.Session.CookieBasedSessions"/> class.
@@ -9335,11 +10391,19 @@
             <param name="hmacProvider">The hmac provider</param>
             <param name="objectSerializer">Session object serializer to use</param>
         </member>
-        <member name="M:Nancy.Session.CookieBasedSessions.GetCookieName">
+        <member name="M:Nancy.Session.CookieBasedSessions.#ctor(Nancy.Session.CookieBasedSessionsConfiguration)">
             <summary>
-            Gets the cookie name that the session is stored in
+            Initializes a new instance of the <see cref="T:Nancy.Session.CookieBasedSessions"/> class.
             </summary>
-            <returns>Cookie name</returns>
+            <param name="configuration">Cookie based sessions configuration.</param>
+        </member>
+        <member name="M:Nancy.Session.CookieBasedSessions.Enable(Nancy.Bootstrapper.IPipelines,Nancy.Session.CookieBasedSessionsConfiguration)">
+            <summary>
+            Initialise and add cookie based session hooks to the application pipeine
+            </summary>
+            <param name="pipelines">Application pipelines</param>
+            <param name="configuration">Cookie based sessions configuration.</param>
+            <returns>Formatter selector for choosing a non-default serializer</returns>
         </member>
         <member name="M:Nancy.Session.CookieBasedSessions.Enable(Nancy.Bootstrapper.IPipelines,Nancy.Cryptography.CryptographyConfiguration)">
             <summary>
@@ -9390,6 +10454,12 @@
             <param name="context">Nancy context</param>
             <param name="sessionStore">Session store</param>
             <returns>Always returns null</returns>
+        </member>
+        <member name="P:Nancy.Session.CookieBasedSessions.CookieName">
+            <summary>
+            Gets the cookie name that the session is stored in
+            </summary>
+            <value>Cookie name</value>
         </member>
         <member name="T:Nancy.Cryptography.RijndaelEncryptionProvider">
             <summary>
@@ -10636,6 +11706,17 @@
             <returns>MultiRegisterOptions</returns>
             <exception cref="!:TinyIoCInstantiationTypeException"></exception>
         </member>
+        <member name="M:Nancy.TinyIoc.TinyIoCContainer.MultiRegisterOptions.ToCustomLifetimeManager(Nancy.TinyIoc.TinyIoCContainer.MultiRegisterOptions,Nancy.TinyIoc.TinyIoCContainer.ITinyIoCObjectLifetimeProvider,System.String)">
+            <summary>
+            Switches to a custom lifetime manager factory if possible.
+            
+            Usually used for RegisterOptions "To*" extension methods such as the ASP.Net per-request one.
+            </summary>
+            <param name="instance">MultiRegisterOptions instance</param>
+            <param name="lifetimeProvider">Custom lifetime manager</param>
+            <param name="errorString">Error string to display if switch fails</param>
+            <returns>MultiRegisterOptions</returns>
+        </member>
         <member name="T:Nancy.TinyIoc.TinyIoCContainer.ITinyIoCObjectLifetimeProvider">
             <summary>
             Provides custom lifetime management for ASP.Net per-request lifetimes etc.
@@ -10875,7 +11956,7 @@
             Gets the route, and the corresponding parameter dictionary from the URL
             </summary>
             <param name="context">Current context</param>
-            <returns>Tuple - Item1 being the Route, Item2 being the parameters dictionary, Item3 being the prereq, Item4 being the postreq, Item5 being the error handler</returns>
+            <returns>A <see cref="T:Nancy.Routing.ResolveResult"/> containing the resolved route information.</returns>
         </member>
         <member name="T:Nancy.Routing.NotFoundRoute">
             <summary>
@@ -11024,6 +12105,12 @@
             <returns><see langword="true"/> if <paramref name="item"/> was successfully removed from the <see cref="T:Nancy.DynamicDictionary"/>; otherwise, <see langword="false"/>.</returns>
             <param name="item">The object to remove from the <see cref="T:Nancy.DynamicDictionary"/>.</param>
         </member>
+        <member name="M:Nancy.DynamicDictionary.ToDictionary">
+            <summary>
+            Gets a typed Dictionary of <see cref="T:Dictionary{String, Object}"/> from <see cref="T:Nancy.DynamicDictionary"/>
+            </summary>
+            <returns>Gets a typed Dictionary of <see cref="T:Dictionary{String, Object}"/> from <see cref="T:Nancy.DynamicDictionary"/></returns>
+        </member>
         <member name="P:Nancy.DynamicDictionary.Empty">
             <summary>
             Returns an empty dynamic dictionary.
@@ -11081,7 +12168,7 @@
             Gets the route, and the corresponding parameter dictionary from the URL
             </summary>
             <param name="context">Current context</param>
-            <returns>Tuple - Item1 being the Route, Item2 being the parameters dictionary, Item3 being the prereq, Item4 being the postreq, Item5 being the error handler</returns>
+            <returns>A <see cref="T:Nancy.Routing.ResolveResult"/> containing the resolved route information.</returns>
         </member>
         <member name="T:Nancy.ViewEngines.AmbiguousViewsException">
             <summary>
@@ -11490,6 +12577,11 @@
             A super-simple view engine
             </summary>
         </member>
+        <member name="F:Nancy.ViewEngines.SuperSimpleViewEngine.SuperSimpleViewEngine.ViewBagSubstitutionsRegEx">
+            <summary>
+            Compiled Regex for viewbag substitutions
+            </summary>
+        </member>
         <member name="F:Nancy.ViewEngines.SuperSimpleViewEngine.SuperSimpleViewEngine.SingleSubstitutionsRegEx">
             <summary>
             Compiled Regex for single substitutions
@@ -11649,6 +12741,15 @@
             </summary>
             <param name="substitutionObject">The substitution object.</param>
             <returns>Bool value of the whether the ICollection has items, or false if unable to cast.</returns>
+        </member>
+        <member name="M:Nancy.ViewEngines.SuperSimpleViewEngine.SuperSimpleViewEngine.PerformViewBagSubstitutions(System.String,System.Object,Nancy.ViewEngines.SuperSimpleViewEngine.IViewEngineHost)">
+            <summary>
+            Performs single @ViewBag.PropertyName substitutions.
+            </summary>
+            <param name="template">The template.</param>
+            <param name="model">This parameter is not used, the model is based on the "host.Context.ViewBag".</param>
+            <param name="host">View engine host</param>
+            <returns>Template with @ViewBag.PropertyName blocks expanded.</returns>
         </member>
         <member name="M:Nancy.ViewEngines.SuperSimpleViewEngine.SuperSimpleViewEngine.PerformSingleSubstitutions(System.String,System.Object,Nancy.ViewEngines.SuperSimpleViewEngine.IViewEngineHost)">
             <summary>
@@ -11820,7 +12921,7 @@
         <member name="M:Nancy.ViewEngines.ViewEngineApplicationStartup.#ctor(System.Collections.Generic.IEnumerable{Nancy.ViewEngines.IViewEngine},Nancy.ViewEngines.IViewCache,Nancy.ViewEngines.IViewLocator)">
             <summary>
             Initializes a new instance of the <see cref="T:Nancy.ViewEngines.ViewEngineApplicationStartup"/> class, with the
-            provided <paramref name="viewEngines"/>, <paramref name="viewLocationCache"/> and <paramref name="viewCache"/>.
+            provided <paramref name="viewEngines"/>, <paramref name="viewCache"/> and <paramref name="viewLocator"/>.
             </summary>
             <param name="viewEngines">The available view engines.</param>
             <param name="viewCache">The view cache.</param>
@@ -11886,7 +12987,7 @@
         </member>
         <member name="M:Nancy.ViewEngines.ViewNotFoundException.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="!:ViewNotFoundExcepton"/>
+            Initializes a new instance of the <see cref="T:Nancy.ViewEngines.ViewNotFoundException"/>
             </summary>
             <param name="msg">A message describing the problem</param>
         </member>

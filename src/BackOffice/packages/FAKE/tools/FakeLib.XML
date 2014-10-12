@@ -967,7 +967,7 @@
  The current build server
 </summary>
 </member>
-<member name="P:Fake.BuildServerHelper.appVeyorBuildNumber">
+<member name="P:Fake.BuildServerHelper.appVeyorBuildVersion">
 <summary>
  AppVeyor build number
  [omit]
@@ -2182,6 +2182,40 @@
   - `files` - The original file names as a sequence.
 </summary>
 </member>
+<member name="M:Fake.FileHelper.CopyWithSubfoldersTo(System.String,System.Collections.Generic.IEnumerable{Fake.FileSystem.FileIncludes})">
+<summary>
+ Copies several file groups, each represented by a FileIncludes object,
+ to the target folder preserving the folder structure
+ starting from the BaseDirectory of each FileIncludes.
+ ## Parameters
+
+  - `target` - The target directory.
+  - `files` - A sequence of file groups.
+</summary>
+</member>
+<member name="M:Fake.FileHelper.CopyFileWithSubfolder(System.String,System.String,System.String)">
+<summary>
+ Copies a single file to the target folder preserving the folder structure
+ starting from the specified base folder.
+ ## Parameters
+
+  - `baseDir` - The base directory.
+  - `target` - The target directory.
+  - `fileName` - The file name.
+</summary>
+</member>
+<member name="M:Fake.FileHelper.CopyFileIntoSubFolder(System.String,System.String)">
+<summary>
+ Copies a single file to a relative subfolder of the target.
+ ## Parameters
+
+  - `target` - The target directory
+  - `fileName` - The fileName
+</summary>
+</member>
+<member name="">
+
+</member>
 <member name="M:Fake.FileHelper.CopyFile(System.String,System.String)">
 <summary>
  Copies a single file to the target and overwrites the existing file.
@@ -2189,15 +2223,6 @@
  
   - `target` - The target directory or file.
   - `fileName` - The FileName.
-</summary>
-</member>
-<member name="M:Fake.FileHelper.CopyFileIntoSubFolder(System.String,System.String)">
-<summary>
- Copies a single file to a relative subfolder of the target.
- ## Parameters
- 
-  - `target` - The target directory
-  - `fileName` - The fileName
 </summary>
 </member>
 <member name="M:Fake.FileHelper.|FileInfoNameSections|(System.IO.FileInfo)">

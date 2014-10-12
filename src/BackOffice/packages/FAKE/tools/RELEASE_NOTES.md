@@ -1,3 +1,9 @@
+#### 3.5.11 - 11.10.2014
+* Use AppVeyor's build version instead of the build number - https://github.com/fsharp/FAKE/pull/560
+
+#### 3.5.9 - 10.10.2014
+* New recursive copy functions - https://github.com/fsharp/FAKE/pull/559
+
 #### 3.5.8 - 06.10.2014
 * FAKE got a new logo - https://github.com/fsharp/FAKE/pull/553
 * NuGetPack allows to manipulate nuspec files - https://github.com/fsharp/FAKE/pull/554
