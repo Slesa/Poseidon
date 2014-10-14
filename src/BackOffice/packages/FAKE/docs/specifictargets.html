@@ -104,8 +104,10 @@
 <p>Now we have the following options:</p>
 
 <ul>
-<li>Fake.exe "target=Build" --> starts only the <em>Build</em> target (and runs the dependency <em>Clean</em>)</li>
-<li>Fake.exe Build --> starts only the <em>Build</em> target (and runs the dependency <em>Clean</em>)</li>
+<li>Fake.exe "target=Build" --> starts the <em>Build</em> target and runs the dependency <em>Clean</em></li>
+<li>Fake.exe Build --> starts the <em>Build</em> target and runs the dependency <em>Clean</em></li>
+<li>Fake.exe Build --single-target --> starts only the <em>Build</em> target and runs no dependencies</li>
+<li>Fake.exe Build -st --> starts only the <em>Build</em> target and runs no dependencies</li>
 <li>Fake.exe --> starts the Deploy target (and runs the dependencies <em>Clean</em> and <em>Build</em>)</li>
 </ul>
 

@@ -6,7 +6,8 @@ cls
 SET TARGET="Default"
 
 IF NOT [%1]==[] (set TARGET="%1")
-  
+
+REM SET APPVEYOR_BUILD_NUMBER="1.2.3.4"
 REM "tools\Fake\Fake.exe" build.fsx %TARGET%
 "src\BackOffice\packages\Fake\tools\Fake.exe" build.fsx %TARGET%
 

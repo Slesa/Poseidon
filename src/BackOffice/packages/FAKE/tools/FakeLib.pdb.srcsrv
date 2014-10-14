@@ -2,7 +2,7 @@ SRCSRV: ini ------------------------------------------------
 VERSION=2
 SRCSRV: variables ------------------------------------------
 SRCSRVVERCTRL=https
-SRCSRVTRG=https://raw.github.com/fsharp/FAKE/f24a01d478c53b33140cd0dfb04a31a919118b76/%var2%
+SRCSRVTRG=https://raw.github.com/fsharp/FAKE/da444c897c8ff016e0ba1fb23f21f8eff08c836e/%var2%
 SRCSRV: source files ---------------------------------------
 D:\code\fake\src\app\FakeLib\CSharpHelper.fs*src/app/FakeLib/CSharpHelper.fs
 D:\code\fake\src\app\FakeLib\EnvironmentHelper.fs*src/app/FakeLib/EnvironmentHelper.fs
