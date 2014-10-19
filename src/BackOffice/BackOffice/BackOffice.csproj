@@ -176,13 +176,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Links.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Docs\Backlog.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Docs\Links.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

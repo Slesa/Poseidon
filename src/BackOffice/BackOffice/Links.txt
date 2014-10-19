@@ -1,2 +1,0 @@
-﻿Password salting:
-https://crackstation.net/hashing-security.htm

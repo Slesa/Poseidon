@@ -1,0 +1,20 @@
+CI Server:
+https://ci.appveyor.com/projects
+
+YouTack:
+http://slesa.myjetbrains.com/youtrack/rest/agile/Poseidon+Board-0/sprint/Version+0.1
+
+Paket:
+http://fsprojects.github.io/Paket/
+
+Console Framework:
+https://github.com/elw00d/consoleframework
+
+
+Use F#
+http://fsharp.org/use/windows/
+
+
+Password salting:
+https://crackstation.net/hashing-security.htm
+
