@@ -48,6 +48,7 @@ let currentVersion =
   if not isLocalBuild then buildVersion else
   "0.0.0.1"
 
+trace currentVersion
 
 Target "SetAssemblyInfo" (fun _ ->
 
@@ -96,9 +97,9 @@ Target "Default" DoNothing
 // Dependencies
 "Clean"
   ==> "SetAssemblyInfo"
-  ==> "BuildApp" <=> "BuildTest"
-  ==> "Test"
-  ==> "Deploy"
+//  ==> "BuildApp" <=> "BuildTest"
+//  ==> "Test"
+//  ==> "Deploy"
   ==> "Default"
 
 if not isLocalBuild then
