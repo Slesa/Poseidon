@@ -1,0 +1,4 @@
+C:\work\Poseidon\src\BackOffice\Domain.Common\bin\Debug\Poseidon.Domain.Common.dll
+C:\work\Poseidon\src\BackOffice\Domain.Common\bin\Debug\Poseidon.Domain.Common.pdb
+C:\work\Poseidon\src\BackOffice\Domain.Common\obj\Debug\Poseidon.Domain.Common.dll
+C:\work\Poseidon\src\BackOffice\Domain.Common\obj\Debug\Poseidon.Domain.Common.pdb

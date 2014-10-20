@@ -1,0 +1,7 @@
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Resources\bin\Debug\Poseidon.Pms.Domain.Resources.dll
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Resources\bin\Debug\Poseidon.Pms.Domain.Resources.pdb
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Resources\obj\Debug\PmsResources.baml
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Resources\obj\Debug\Poseidon.Pms.Domain.Resources_MarkupCompile.cache
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Resources\obj\Debug\Poseidon.Pms.Domain.Resources.g.resources
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Resources\obj\Debug\Poseidon.Pms.Domain.Resources.dll
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Resources\obj\Debug\Poseidon.Pms.Domain.Resources.pdb

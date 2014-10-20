@@ -1,0 +1,4 @@
+C:\work\Poseidon\src\BackOffice\Common.Crypto\bin\Debug\Common.Crypto.dll
+C:\work\Poseidon\src\BackOffice\Common.Crypto\bin\Debug\Common.Crypto.pdb
+C:\work\Poseidon\src\BackOffice\Common.Crypto\obj\Debug\Common.Crypto.dll
+C:\work\Poseidon\src\BackOffice\Common.Crypto\obj\Debug\Common.Crypto.pdb

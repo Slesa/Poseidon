@@ -1,0 +1,9 @@
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\bin\Debug\Poseidon.Pms.Domain.Model.dll
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\bin\Debug\Poseidon.Pms.Domain.Model.pdb
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\bin\Debug\Poseidon.Domain.Common.dll
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\bin\Debug\Poseidon.Ums.Domain.Model.dll
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\bin\Debug\Poseidon.Domain.Common.pdb
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\bin\Debug\Poseidon.Ums.Domain.Model.pdb
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\obj\Debug\Poseidon.Pms.Domain.Model.dll
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\obj\Debug\Poseidon.Pms.Domain.Model.pdb
+C:\work\Poseidon\src\BackOffice\Pms.Domain.Model\obj\Debug\Pms.Domain.Model.csprojResolveAssemblyReference.cache

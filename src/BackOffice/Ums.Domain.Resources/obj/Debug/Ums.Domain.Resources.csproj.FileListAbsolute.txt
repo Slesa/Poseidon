@@ -1,0 +1,8 @@
+C:\work\Poseidon\src\BackOffice\Ums.Domain.Resources\bin\Debug\Poseidon.Ums.Domain.Resources.dll
+C:\work\Poseidon\src\BackOffice\Ums.Domain.Resources\bin\Debug\Poseidon.Ums.Domain.Resources.pdb
+C:\work\Poseidon\src\BackOffice\Ums.Domain.Resources\obj\Debug\Poseidon.Ums.Domain.Resources.dll
+C:\work\Poseidon\src\BackOffice\Ums.Domain.Resources\obj\Debug\Poseidon.Ums.Domain.Resources.pdb
+c:\work\Poseidon\src\BackOffice\Ums.Domain.Resources\obj\Debug\Poseidon.Ums.Domain.Resources.g.resources
+C:\work\Poseidon\src\BackOffice\Ums.Domain.Resources\obj\Debug\UmsResources.baml
+C:\work\Poseidon\src\BackOffice\Ums.Domain.Resources\obj\Debug\Poseidon.Ums.Domain.Resources_MarkupCompile.cache
+C:\work\Poseidon\src\BackOffice\Ums.Domain.Resources\obj\Debug\Ums.Domain.Resources.csprojResolveAssemblyReference.cache
