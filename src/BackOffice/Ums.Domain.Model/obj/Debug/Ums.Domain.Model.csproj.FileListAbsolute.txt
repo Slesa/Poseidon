@@ -1,7 +1,0 @@
-C:\work\Poseidon\src\BackOffice\Ums.Domain.Model\bin\Debug\Poseidon.Ums.Domain.Model.dll
-C:\work\Poseidon\src\BackOffice\Ums.Domain.Model\bin\Debug\Poseidon.Ums.Domain.Model.pdb
-C:\work\Poseidon\src\BackOffice\Ums.Domain.Model\bin\Debug\Poseidon.Domain.Common.dll
-C:\work\Poseidon\src\BackOffice\Ums.Domain.Model\bin\Debug\Poseidon.Domain.Common.pdb
-C:\work\Poseidon\src\BackOffice\Ums.Domain.Model\obj\Debug\Poseidon.Ums.Domain.Model.dll
-C:\work\Poseidon\src\BackOffice\Ums.Domain.Model\obj\Debug\Poseidon.Ums.Domain.Model.pdb
-C:\work\Poseidon\src\BackOffice\Ums.Domain.Model\obj\Debug\Ums.Domain.Model.csprojResolveAssemblyReference.cache
