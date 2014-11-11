@@ -35,7 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\VersionInfo.cs">
+    <Compile Include="..\..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,7 +78,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
         <Reference Include="FluentNHibernate">
-          <HintPath>..\packages\FluentNHibernate\lib\net35\FluentNHibernate.dll</HintPath>
+          <HintPath>..\..\packages\FluentNHibernate\lib\net35\FluentNHibernate.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -87,7 +87,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="FluentNHibernate">
-          <HintPath>..\packages\FluentNHibernate\lib\net35\FluentNHibernate.dll</HintPath>
+          <HintPath>..\..\packages\FluentNHibernate\lib\net35\FluentNHibernate.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -98,7 +98,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
         <Reference Include="Iesi.Collections">
-          <HintPath>..\packages\Iesi.Collections\lib\Net35\Iesi.Collections.dll</HintPath>
+          <HintPath>..\..\packages\Iesi.Collections\lib\Net35\Iesi.Collections.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -107,7 +107,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="Iesi.Collections">
-          <HintPath>..\packages\Iesi.Collections\lib\Net35\Iesi.Collections.dll</HintPath>
+          <HintPath>..\..\packages\Iesi.Collections\lib\Net35\Iesi.Collections.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -118,7 +118,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v2.0'">
       <ItemGroup>
         <Reference Include="Machine.Specifications">
-          <HintPath>..\packages\Machine.Specifications\lib\net20\Machine.Specifications.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net20\Machine.Specifications.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -127,7 +127,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
       <ItemGroup>
         <Reference Include="Machine.Specifications">
-          <HintPath>..\packages\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -136,7 +136,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <ItemGroup>
         <Reference Include="Machine.Specifications">
-          <HintPath>..\packages\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -145,7 +145,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="Machine.Specifications">
-          <HintPath>..\packages\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -156,7 +156,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v2.0'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.TDNetRunner">
-          <HintPath>..\packages\Machine.Specifications\lib\net20\Machine.Specifications.TDNetRunner.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net20\Machine.Specifications.TDNetRunner.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -165,7 +165,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.TDNetRunner">
-          <HintPath>..\packages\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -174,7 +174,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.TDNetRunner">
-          <HintPath>..\packages\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -183,7 +183,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.TDNetRunner">
-          <HintPath>..\packages\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -194,7 +194,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.Clr4">
-          <HintPath>..\packages\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -203,7 +203,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.Clr4">
-          <HintPath>..\packages\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -212,7 +212,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.Clr4">
-          <HintPath>..\packages\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -223,7 +223,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v2.0'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.Should">
-          <HintPath>..\packages\Machine.Specifications.Should\lib\net20\Machine.Specifications.Should.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications.Should\lib\net20\Machine.Specifications.Should.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -232,7 +232,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.Should">
-          <HintPath>..\packages\Machine.Specifications.Should\lib\net40\Machine.Specifications.Should.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications.Should\lib\net40\Machine.Specifications.Should.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -241,7 +241,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.Should">
-          <HintPath>..\packages\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -250,7 +250,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="Machine.Specifications.Should">
-          <HintPath>..\packages\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+          <HintPath>..\..\packages\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -261,7 +261,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
         <Reference Include="NHibernate">
-          <HintPath>..\packages\NHibernate\lib\Net35\NHibernate.dll</HintPath>
+          <HintPath>..\..\packages\NHibernate\lib\Net35\NHibernate.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -270,7 +270,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="NHibernate">
-          <HintPath>..\packages\NHibernate\lib\Net35\NHibernate.dll</HintPath>
+          <HintPath>..\..\packages\NHibernate\lib\Net35\NHibernate.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
