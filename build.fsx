@@ -41,9 +41,6 @@ let description = "A Backoffice, some Frontoffices, and probably a few tools sha
 let authors = [ "J. Preiss" ]
 let mail = "joerg.preiss@slesa.de"
 
-// File system information 
-let solutionFile  = "Poseidon.sln"
-
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
 let gitOwner = "Slesa" 
@@ -143,7 +140,7 @@ Target "Clean" (fun _ ->
 
 Target "Build" (fun _ ->
 
-  let appReferences = !! @"src\BackOffice\BackOffice.sln"
+  let appReferences = !! @"src\BackOffice.sln"
 
   MSBuildRelease buildDir "Build" appReferences
     |> Log "AppBuild-Output: "
@@ -164,7 +161,7 @@ Target "BuildTests" (fun _ ->
 
 Target "RunTests" (fun _ ->
 
-  let mspecTool = findToolInSubPath "mspec-x86-clr4.exe" @".\src\BackOffice\packages"
+  let mspecTool = findToolInSubPath "mspec-x86-clr4.exe" @".\src\packages"
   trace mspecTool
 
   !! (testDir @@ "*.Specs.dll")
