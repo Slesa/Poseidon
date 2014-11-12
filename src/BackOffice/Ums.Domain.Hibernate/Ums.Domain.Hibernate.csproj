@@ -35,7 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\VersionInfo.cs">
+    <Compile Include="..\..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Maps\TokenMap.cs" />
@@ -78,7 +78,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
         <Reference Include="FluentNHibernate">
-          <HintPath>..\packages\FluentNHibernate\lib\net35\FluentNHibernate.dll</HintPath>
+          <HintPath>..\..\packages\FluentNHibernate\lib\net35\FluentNHibernate.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -87,7 +87,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="FluentNHibernate">
-          <HintPath>..\packages\FluentNHibernate\lib\net35\FluentNHibernate.dll</HintPath>
+          <HintPath>..\..\packages\FluentNHibernate\lib\net35\FluentNHibernate.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -98,7 +98,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
         <Reference Include="Iesi.Collections">
-          <HintPath>..\packages\Iesi.Collections\lib\Net35\Iesi.Collections.dll</HintPath>
+          <HintPath>..\..\packages\Iesi.Collections\lib\Net35\Iesi.Collections.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -107,7 +107,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="Iesi.Collections">
-          <HintPath>..\packages\Iesi.Collections\lib\Net35\Iesi.Collections.dll</HintPath>
+          <HintPath>..\..\packages\Iesi.Collections\lib\Net35\Iesi.Collections.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -118,7 +118,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
         <Reference Include="NHibernate">
-          <HintPath>..\packages\NHibernate\lib\Net35\NHibernate.dll</HintPath>
+          <HintPath>..\..\packages\NHibernate\lib\Net35\NHibernate.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -127,7 +127,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
       <ItemGroup>
         <Reference Include="NHibernate">
-          <HintPath>..\packages\NHibernate\lib\Net35\NHibernate.dll</HintPath>
+          <HintPath>..\..\packages\NHibernate\lib\Net35\NHibernate.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

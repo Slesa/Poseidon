@@ -1,14 +1,23 @@
 @echo off
-
-:Build
 cls
 
-SET TARGET="Default"
+.paket\paket.bootstrapper.exe
+if errorlevel 1 (
+  exit /b %errorlevel%
+)
 
-IF NOT [%1]==[] (set TARGET="%1")
-  
-REM "tools\Fake\Fake.exe" build.fsx %TARGET%
-"src\BackOffice\packages\Fake\tools\Fake.exe" build.fsx %TARGET%
+.paket\paket.exe restore
+if errorlevel 1 (
+  exit /b %errorlevel%
+)
+
+IF NOT EXIST build.fsx (
+  .paket\paket.exe update
+  packages\FAKE\tools\FAKE.exe init.fsx
+)
+
+:Build
+packages\FAKE\tools\FAKE.exe build.fsx %*
 
 rem Bail if we're running a TeamCity build.
 if defined TEAMCITY_PROJECT_NAME goto Quit
