@@ -19,7 +19,7 @@ namespace Ordering.Client
 
                 if (text.ToLower().Equals("quit"))
                 {
-                    Bus.Send("Ordering.Server", new QuitMessage());
+                    Bus.Send("Ordering.Server", new QuitMessage {Id = Guid.NewGuid()});
                     Environment.Exit(42);
                 }
                 var id = Guid.NewGuid();
