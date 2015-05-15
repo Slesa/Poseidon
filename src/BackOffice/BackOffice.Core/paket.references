@@ -1,4 +1,5 @@
 CommonServiceLocator
+Expression.Blend.SDK
 Prism
 Prism.Composition
 Prism.Interactivity
@@ -6,3 +7,4 @@ Prism.Mvvm
 Prism.PubSubEvents
 Prism.UnityExtensions
 Unity
+WpfLocalizeExtension

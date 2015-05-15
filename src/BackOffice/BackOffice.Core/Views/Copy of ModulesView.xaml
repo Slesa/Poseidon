@@ -6,7 +6,6 @@
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
              xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              xmlns:pe="clr-namespace:Poseidon.Common.Wpf.Extensions;assembly=Poseidon.Common.Wpf"
              mc:Ignorable="d" 

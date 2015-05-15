@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Machine.Fakes.RhinoMocks</id>
-    <version>2.4.0</version>
+    <version>2.6.0</version>
     <authors>The machine project</authors>
     <owners>The machine project</owners>
     <licenseUrl>https://github.com/machine/machine.fakes/raw/master/License.txt</licenseUrl>
@@ -15,7 +15,7 @@
     <language>en-US</language>
     <tags>tdd bdd testing unittest fakes mocks mspec mfakes</tags>
     <dependencies>
-      <dependency id="Machine.Fakes" version="[2.4]" />
+      <dependency id="Machine.Fakes" version="[2.6]" />
       <dependency id="RhinoMocks" version="3.6.1" />
     </dependencies>
   </metadata>

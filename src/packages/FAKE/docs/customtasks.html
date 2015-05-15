@@ -46,7 +46,21 @@ This tutorial shows how to create a (very simple) custom task in C#.</p>
 
 <p>Open Visual Studio and create a new C# class library called my MyCustomTask and create a class called RandomNumberTask:</p>
 
-<table class="pre"><tr><td><pre lang="csharp"><span class="k">using</span> System;
+<table class="pre"><tr><td class="lines"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+</td>
+<td class="snippet"><pre lang="csharp"><span class="k">using</span> System;
 
 <span class="k">namespace</span> MyCustomTask
 {
@@ -58,7 +72,8 @@ This tutorial shows how to create a (very simple) custom task in C#.</p>
             <span class="k">return</span> random.Next(min, max);
         }
     }
-}</pre></td></tr></table>
+}
+</pre></td></tr></table>
 
 <h2>Using the custom task</h2>
 
@@ -83,11 +98,11 @@ This tutorial shows how to create a (very simple) custom task in C#.</p>
 </td>
 <td class="snippet"><pre class="fssnip">
 <span class="c">// include Fake libs</span>
-<span class="prep">#I</span> <span class="s">@&quot;</span><span class="s">tools</span><span class="s">\</span><span class="s">FAKE</span><span class="s">&quot;</span>
-<span class="prep">#r</span> <span class="s">&quot;</span><span class="s">FakeLib</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">@&quot;tools\FAKE&quot;</span>
+<span class="prep">#r</span> <span class="s">&quot;FakeLib.dll&quot;</span>
 
 <span class="c">// include CustomTask</span>
-<span class="prep">#r</span> <span class="s">&quot;</span><span class="s">MyCustomTask</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>
+<span class="prep">#r</span> <span class="s">&quot;MyCustomTask.dll&quot;</span>
 <span class="k">open</span> <span class="i">Fake</span> 
 
 <span class="c">// open CustomNamespace</span>
@@ -95,7 +110,8 @@ This tutorial shows how to create a (very simple) custom task in C#.</p>
 
 <span class="c">// use custom functionality</span>
 <span class="i">RandomNumberTask</span><span class="o">.</span><span class="i">RandomNumber</span>(<span class="n">2</span>,<span class="n">13</span>)
-  <span class="o">|&gt;</span> <span class="i">tracefn</span> <span class="s">&quot;</span><span class="s">RandomNumber</span><span class="s">:</span><span class="s"> </span><span class="s">%</span><span class="s">d</span><span class="s">&quot;</span></pre>
+  <span class="o">|&gt;</span> <span class="i">tracefn</span> <span class="s">&quot;RandomNumber: %d&quot;</span>
+</pre>
 </td>
 </tr>
 </table>
@@ -114,7 +130,7 @@ This tutorial shows how to create a (very simple) custom task in C#.</p>
               <li class="divider"></li>              
             <li><a href="https://nuget.org/packages/Fake">Get FAKE via NuGet</a></li>
               <li><a href="https://github.com/fsharp/FAKE">Source Code on GitHub</a></li>              
-              <li><a href="https://github.com/fsharp/FAKE/blob/master/License.txt">License (MS-PL)</a></li>            
+              <li><a href="https://github.com/fsharp/FAKE/blob/master/License.txt">License (Apache 2)</a></li>            
               <li><a href="RELEASE_NOTES.html">Release Notes</a></li>
               <li><a href="contributing.html">Contributing to FAKE</a></li>
               <li><a href="users.html">Who is using FAKE?</a></li>
@@ -128,12 +144,17 @@ This tutorial shows how to create a (very simple) custom task in C#.</p>
               <li><a href="create-nuget-package.html">Create NuGet packages</a></li>
               <li><a href="specifictargets.html">Running specific targets</a></li>
               <li><a href="commandline.html">Running FAKE from command line</a></li>
+              <li><a href="parallel-build.html">Running targets in parallel</a></li>
               <li><a href="fsc.html">Using the F# compiler from FAKE</a></li>
               <li><a href="customtasks.html">Creating custom tasks</a></li>
               <li><a href="teamcity.html">TeamCity integration</a></li>
               <li><a href="canopy.html">Running canopy tests</a></li>
               <li><a href="octopusdeploy.html">Octopus Deploy</a></li>
               <li><a href="typescript.html">TypeScript support</a></li>
+              <li><a href="azurewebjobs.html">Azure WebJobs support</a></li>
+              <li><a href="azurecloudservices.html">Azure Cloud Services support</a></li>
+              <li><a href="androidpublisher.html">Android publisher</a></li>
+              <li><a href="watch.html">File Watcher</a></li>
               <li class="divider"></li>
               <li><a href="deploy.html">Fake.Deploy</a></li>
               <li class="nav-header">Reference</li>

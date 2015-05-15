@@ -61,16 +61,17 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="i">Target</span> <span class="s">&quot;</span><span class="s">FxCop</span><span class="s">&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span>  
-    <span class="o">!!</span> (<span class="i">buildDir</span> <span class="o">+</span> <span class="s">@&quot;</span><span class="s">\</span><span class="s">*</span><span class="s">*</span><span class="s">\</span><span class="s">*</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>) 
-    <span class="o">++</span> (<span class="i">buildDir</span> <span class="o">+</span> <span class="s">@&quot;</span><span class="s">\</span><span class="s">*</span><span class="s">*</span><span class="s">\</span><span class="s">*</span><span class="s">.</span><span class="s">exe</span><span class="s">&quot;</span>) 
+<span class="i">Target</span> <span class="s">&quot;FxCop&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span>  
+    <span class="o">!!</span> (<span class="i">buildDir</span> <span class="o">+</span> <span class="s">@&quot;\**\*.dll&quot;</span>) 
+    <span class="o">++</span> (<span class="i">buildDir</span> <span class="o">+</span> <span class="s">@&quot;\**\*.exe&quot;</span>) 
     <span class="o">|&gt;</span> <span class="i">FxCop</span> 
         (<span class="k">fun</span> <span class="i">p</span> <span class="k">-&gt;</span> 
             {<span class="i">p</span> <span class="k">with</span> 
               <span class="c">// override default parameters</span>
-              <span class="i">ReportFileName</span> <span class="o">=</span> <span class="i">testDir</span> <span class="o">+</span> <span class="s">&quot;</span><span class="s">FXCopResults</span><span class="s">.</span><span class="s">xml</span><span class="s">&quot;</span>
-              <span class="i">ToolPath</span> <span class="o">=</span> <span class="s">&quot;</span><span class="s">FxCopCmd</span><span class="s">.</span><span class="s">exe</span><span class="s">&quot;</span>})
-)</pre>
+              <span class="i">ReportFileName</span> <span class="o">=</span> <span class="i">testDir</span> <span class="o">+</span> <span class="s">&quot;FXCopResults.xml&quot;</span>
+              <span class="i">ToolPath</span> <span class="o">=</span> <span class="s">&quot;FxCopCmd.exe&quot;</span>})
+)
+</pre>
 </td>
 </tr>
 </table>
@@ -88,13 +89,14 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="s">&quot;</span><span class="s">Clean</span><span class="s">&quot;</span>
-  <span class="o">==&gt;</span> <span class="s">&quot;</span><span class="s">BuildApp</span><span class="s">&quot;</span>
-  <span class="o">==&gt;</span> <span class="s">&quot;</span><span class="s">FxCop</span><span class="s">&quot;</span>
-  <span class="o">==&gt;</span> <span class="s">&quot;</span><span class="s">BuildTest</span><span class="s">&quot;</span>
-  <span class="o">==&gt;</span> <span class="s">&quot;</span><span class="s">Test</span><span class="s">&quot;</span>
-  <span class="o">==&gt;</span> <span class="s">&quot;</span><span class="s">Deploy</span><span class="s">&quot;</span>
-  <span class="o">==&gt;</span> <span class="s">&quot;</span><span class="s">Default</span><span class="s">&quot;</span></pre>
+<span class="s">&quot;Clean&quot;</span>
+  <span class="o">==&gt;</span> <span class="s">&quot;BuildApp&quot;</span>
+  <span class="o">==&gt;</span> <span class="s">&quot;FxCop&quot;</span>
+  <span class="o">==&gt;</span> <span class="s">&quot;BuildTest&quot;</span>
+  <span class="o">==&gt;</span> <span class="s">&quot;Test&quot;</span>
+  <span class="o">==&gt;</span> <span class="s">&quot;Deploy&quot;</span>
+  <span class="o">==&gt;</span> <span class="s">&quot;Default&quot;</span>
+</pre>
 </td>
 </tr>
 </table>
@@ -122,17 +124,18 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="i">Target</span> <span class="s">&quot;</span><span class="s">FxCop</span><span class="s">&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span>  
-    <span class="o">!!</span> (<span class="i">buildDir</span> <span class="o">+</span> <span class="s">@&quot;</span><span class="s">\</span><span class="s">*</span><span class="s">*</span><span class="s">\</span><span class="s">*</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>) 
-    <span class="o">++</span> (<span class="i">buildDir</span> <span class="o">+</span> <span class="s">@&quot;</span><span class="s">\</span><span class="s">*</span><span class="s">*</span><span class="s">\</span><span class="s">*</span><span class="s">.</span><span class="s">exe</span><span class="s">&quot;</span>) 
+<span class="i">Target</span> <span class="s">&quot;FxCop&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span>  
+    <span class="o">!!</span> (<span class="i">buildDir</span> <span class="o">+</span> <span class="s">@&quot;\**\*.dll&quot;</span>) 
+    <span class="o">++</span> (<span class="i">buildDir</span> <span class="o">+</span> <span class="s">@&quot;\**\*.exe&quot;</span>) 
     <span class="o">|&gt;</span> <span class="i">FxCop</span> 
         (<span class="k">fun</span> <span class="i">p</span> <span class="k">-&gt;</span> 
             {<span class="i">p</span> <span class="k">with</span> 
               <span class="c">// override default parameters</span>
-              <span class="i">ReportFileName</span> <span class="o">=</span> <span class="i">testDir</span> <span class="o">+</span> <span class="s">&quot;</span><span class="s">FXCopResults</span><span class="s">.</span><span class="s">xml</span><span class="s">&quot;</span>
+              <span class="i">ReportFileName</span> <span class="o">=</span> <span class="i">testDir</span> <span class="o">+</span> <span class="s">&quot;FXCopResults.xml&quot;</span>
               <span class="i">FailOnError</span> <span class="o">=</span> <span class="i">FxCopErrorLevel</span><span class="o">.</span><span class="i">CriticalWarning</span>
-              <span class="i">ToolPath</span> <span class="o">=</span> <span class="s">&quot;</span><span class="s">FxCopCmd</span><span class="s">.</span><span class="s">exe</span><span class="s">&quot;</span>})
-)</pre>
+              <span class="i">ToolPath</span> <span class="o">=</span> <span class="s">&quot;FxCopCmd.exe&quot;</span>})
+)
+</pre>
 </td>
 </tr>
 </table>
@@ -164,7 +167,7 @@
               <li class="divider"></li>              
             <li><a href="https://nuget.org/packages/Fake">Get FAKE via NuGet</a></li>
               <li><a href="https://github.com/fsharp/FAKE">Source Code on GitHub</a></li>              
-              <li><a href="https://github.com/fsharp/FAKE/blob/master/License.txt">License (MS-PL)</a></li>            
+              <li><a href="https://github.com/fsharp/FAKE/blob/master/License.txt">License (Apache 2)</a></li>            
               <li><a href="RELEASE_NOTES.html">Release Notes</a></li>
               <li><a href="contributing.html">Contributing to FAKE</a></li>
               <li><a href="users.html">Who is using FAKE?</a></li>
@@ -178,12 +181,17 @@
               <li><a href="create-nuget-package.html">Create NuGet packages</a></li>
               <li><a href="specifictargets.html">Running specific targets</a></li>
               <li><a href="commandline.html">Running FAKE from command line</a></li>
+              <li><a href="parallel-build.html">Running targets in parallel</a></li>
               <li><a href="fsc.html">Using the F# compiler from FAKE</a></li>
               <li><a href="customtasks.html">Creating custom tasks</a></li>
               <li><a href="teamcity.html">TeamCity integration</a></li>
               <li><a href="canopy.html">Running canopy tests</a></li>
               <li><a href="octopusdeploy.html">Octopus Deploy</a></li>
               <li><a href="typescript.html">TypeScript support</a></li>
+              <li><a href="azurewebjobs.html">Azure WebJobs support</a></li>
+              <li><a href="azurecloudservices.html">Azure Cloud Services support</a></li>
+              <li><a href="androidpublisher.html">Android publisher</a></li>
+              <li><a href="watch.html">File Watcher</a></li>
               <li class="divider"></li>
               <li><a href="deploy.html">Fake.Deploy</a></li>
               <li class="nav-header">Reference</li>

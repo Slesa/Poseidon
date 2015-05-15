@@ -60,6 +60,7 @@
                                 Mode=OneWay}" />
     </Border>
 
+    <!-- @@@
     <i:Interaction.Triggers>
         <ei:DataTrigger Binding="{Binding Message, Converter={StaticResource StringEmptyToFalseConverter}}" Value="False">
             <ei:GoToStateAction StateName="NoDataState" TargetObject="{Binding ElementName=border}" />
@@ -68,6 +69,7 @@
             <ei:GoToStateAction StateName="HasDataState" TargetObject="{Binding ElementName=border}" />
         </ei:DataTrigger>
     </i:Interaction.Triggers>
+    -->
 
 
 </UserControl>

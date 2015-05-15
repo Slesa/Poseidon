@@ -6,6 +6,10 @@
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:w="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Core"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="500"
              Style="{DynamicResource Style.Dialog.Container}">
@@ -121,10 +125,10 @@
             
             <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding Image}" />
 
-            <Label Grid.Column="1" Grid.Row="1" Content="_User:" Style="{DynamicResource Style.Dialog.Label}" />
+            <Label Grid.Column="1" Grid.Row="1" Content="{lex:Loc CoreModuleUser}" Style="{DynamicResource Style.Dialog.Label}" />
             <TextBox  Grid.Column="2" Grid.Row="1" Text="{Binding User, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource Style.Dialog.TextBox}" />
             
-            <Label Grid.Row="2" Grid.Column="1" Content="_Password:"  Style="{DynamicResource Style.Dialog.Label}" />
+            <Label Grid.Row="2" Grid.Column="1" Content="{lex:Loc CoreModulePassword}"  Style="{DynamicResource Style.Dialog.Label}" />
             <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource Style.Dialog.TextBox}"/>
             
             <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding ErrorText}"/>

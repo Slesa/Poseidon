@@ -22,3 +22,5 @@ nuget Iesi.Collections 3.2.0.4000
 nuget Inflector 1.0.0.0
 nuget NHibernate 3.3.1.4000
 nuget System.Data.SQLite.Core >= 1.0.93.0
+nuget WpfLocalizeExtension >= 2.0
+nuget Expression.Blend.SDK

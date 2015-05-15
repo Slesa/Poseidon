@@ -2906,9 +2906,9 @@
  (Originally from C:\GitHub\fsharp\FSharp.Compiler.Service\src\fsharp\FSComp.txt:801)
 </summary>
 </member>
-<member name="M:FSComp.SR.tastopsMaxArrayFour">
+<member name="M:FSComp.SR.tastopsMaxArrayThirtyTwo">
 <summary>
- F# supports a maximum array rank of 4
+ F# supports a maximum array rank of 32
  (Originally from C:\GitHub\fsharp\FSharp.Compiler.Service\src\fsharp\FSComp.txt:1288)
 </summary>
 </member>
@@ -9703,8 +9703,10 @@ Build a new array that contains the elements of the first array followed by the 
  Helpers used by generated parsers.
 </summary>
 </member>
-<member name="">
-
+<member name="T:Microsoft.FSharp.Compiler.ErrorInfo">
+<summary>
+ Renamed to FSharpErrorInfo
+</summary>
 </member>
 <member name="">
 
@@ -9768,6 +9770,14 @@ Build a new array that contains the elements of the first array followed by the 
 </member>
 <member name="">
 
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Severity">
+<summary>
+ Renamed to FSharpErrorSeverity
+</summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Tainted`1.TypeProviderDesignation">
 <summary>
@@ -13554,6 +13564,18 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILList`1">
 <summary>
  The type used to store relatively small lists in the Abstract IL data structures, i.e. for ILTypes, ILGenericArgs, ILParameters and ILLocals.
@@ -13644,7 +13666,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.isILObjectTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.isILObjectTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
 <summary>
  Discriminating different important built-in types
 </summary>
@@ -14361,6 +14383,9 @@ Build a new array that contains the elements of the first array followed by the 
  memoizes and interns the splitting of the namespace portion of
  the type name. 
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -17843,6 +17868,51 @@ Emit comparison instructions
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="M:Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.Shim.IFileSystem.GetFullPathShim(System.String)">
 <summary>
  Take in a filename with an absolute path, and return the same filename
@@ -18346,6 +18416,9 @@ Emit comparison instructions
 
 </member>
 <member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.List">
+
+</member>
+<member name="">
 
 </member>
 <member name="">
@@ -22485,7 +22558,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="P:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyContents.ILScopeRef">
+<member name="P:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyData.ILScopeRef">
 <summary>
  The identity of the module
 </summary>
@@ -22493,7 +22566,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyContents.TryGetRawILModule">
+<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyData.TryGetRawILModule">
 <summary>
   The raw IL module definition in the assembly, if any. This is not present for cross-project references
  in the language service
@@ -22505,51 +22578,36 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyContents.GetRawTypeForwarders">
+<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyData.GetRawTypeForwarders">
 <summary>
   The table of type forwarders in the assembly
 </summary>
 </member>
-<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyContents.GetRawFSharpSignatureData(Microsoft.FSharp.Compiler.Range.range,System.String,System.String)">
+<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyData.GetRawFSharpSignatureData(Microsoft.FSharp.Compiler.Range.range,System.String,System.String)">
 <summary>
   The raw F# signature data in the assembly, if any
 </summary>
 </member>
-<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyContents.GetRawFSharpOptimizationData(Microsoft.FSharp.Compiler.Range.range,System.String,System.String)">
+<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyData.GetRawFSharpOptimizationData(Microsoft.FSharp.Compiler.Range.range,System.String,System.String)">
 <summary>
   The raw F# optimization data in the assembly, if any
 </summary>
 </member>
-<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyContents.GetInternalsVisibleToAttributes(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals)">
+<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyData.GetInternalsVisibleToAttributes(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals)">
 <summary>
   The raw list InternalsVisibleToAttribute attributes in the assembly
 </summary>
 </member>
-<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyContents.GetAutoOpenAttributes(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals)">
+<member name="M:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyData.GetAutoOpenAttributes(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals)">
 <summary>
   The raw list AutoOpenAttribute attributes in the assembly
 </summary>
 </member>
-<member name="T:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyContents">
+<member name="T:Microsoft.FSharp.Compiler.Build.IRawFSharpAssemblyData">
 <summary>
  Represents a reference to an F# assembly. May be backed by a real assembly on disk (read by Abstract IL), or a cross-project
  reference in FSharp.Compiler.Service.
 </summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="">
 
@@ -23467,15 +23525,6 @@ Emit comparison instructions
 <summary>
  Memoization table to help minimize the number of ILSourceDocument objects we create
 </summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="">
 
@@ -26681,6 +26730,9 @@ Emit comparison instructions
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.GetFrameworkTcImports(Microsoft.FSharp.Compiler.Build.TcConfig)">
 <summary>
  Lookup the global static cache for building the FrameworkTcImports
@@ -26913,6 +26965,24 @@ Emit comparison instructions
 
  Join up getters and setters which are not associated in the F# data structure 
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:Microsoft.FSharp.Compiler.Infos.AccessorDomain.AccessibleFromSomewhere">
 <summary>
@@ -27157,6 +27227,9 @@ Emit comparison instructions
 <summary>
  Indicates if this property is an indexer property, i.e. a property with arguments.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Infos.PropInfo.IsFSharpEventProperty">
 <summary>
@@ -27603,6 +27676,11 @@ Emit comparison instructions
 <member name="P:Microsoft.FSharp.Compiler.Infos.MethInfo.IsFSharpStyleExtensionMember">
 <summary>
  Indicates if this is an F# extension member. 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Infos.MethInfo.IsFSharpExplicitInterfaceImplementation">
+<summary>
+ Check if this method is an explicit implementation of an interface member
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Infos.MethInfo.IsFSharpEventPropertyMethod">
@@ -28295,6 +28373,15 @@ Emit comparison instructions
  Build an expression node that is a call to a .NET method. 
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="M:Microsoft.FSharp.Compiler.Infos.PropInfosEquivByNameAndSig(Microsoft.FSharp.Compiler.Tastops.Erasure,Microsoft.FSharp.Compiler.Env.TcGlobals,Microsoft.FSharp.Compiler.Import.ImportMap,Microsoft.FSharp.Compiler.Range.range,Microsoft.FSharp.Compiler.Infos.PropInfo,Microsoft.FSharp.Compiler.Infos.PropInfo)">
 <summary>
  Used to hide/filter members from super classes based on signature 
@@ -28422,6 +28509,11 @@ Emit comparison instructions
 <member name="M:Microsoft.FSharp.Compiler.Infos.GetCompiledReturnTyOfProvidedMethodInfo(Microsoft.FSharp.Compiler.Import.ImportMap,Microsoft.FSharp.Compiler.Range.range,Microsoft.FSharp.Compiler.Tainted{Microsoft.FSharp.Compiler.ExtensionTyping.ProvidedMethodBase})">
 <summary>
  Get the return type of a provided method, where &apos;void&apos; is returned as &apos;None&apos;
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Infos.ValRef.IsFSharpExplicitInterfaceImplementation(Microsoft.FSharp.Compiler.Tast.ValRef,Microsoft.FSharp.Compiler.Env.TcGlobals)">
+<summary>
+ Check if an F#-declared member value is an  explicit interface member implementation
 </summary>
 </member>
 <member name="M:Microsoft.FSharp.Compiler.Infos.ValRef.get_IsDefiniteFSharpOverrideMember(Microsoft.FSharp.Compiler.Tast.ValRef)">
@@ -28715,6 +28807,24 @@ Emit comparison instructions
  provided attributes.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Microsoft.FSharp.Compiler.Infos.AttributeChecking">
 <summary>
  Check custom attributes. This is particularly messy because custom attributes come in in three different
@@ -28746,6 +28856,12 @@ Emit comparison instructions
  and &apos;ad&apos; to determine accessibility of SomeMethod.
  I.e when calling x.Public() and x.Protected() -in both cases first check should succeed and second - should fail in the latter one. 
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -29040,26 +29156,6 @@ Emit comparison instructions
  Represents an F# Interactive evaluation session.
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiValue.ReflectionValue">
-<summary>
- The value, as an object
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiValue.ReflectionType">
-<summary>
- The type of the value, from the point of view of the .NET type system
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiValue.FSharpType">
-<summary>
- The type of the value, from the point of view of the F# type system
-</summary>
-</member>
-<member name="T:Microsoft.FSharp.Compiler.Interactive.Shell.FsiValue">
-<summary>
- Represents an evaluated F# value
-</summary>
-</member>
 <member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiEvaluationSessionHostConfig.UseFsiAuxLib">
 <summary>
  Implicitly reference FSharp.Compiler.Interactive.Settings.dll
@@ -29118,6 +29214,11 @@ Emit comparison instructions
  <para>�</para>
 </summary>
 </member>
+<member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiEvaluationSessionHostConfig.OnEvaluation">
+<summary>
+ Hook for listening for evaluation bindings
+</summary>
+</member>
 <member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiEvaluationSessionHostConfig.FormatProvider">
 <summary>
  Called by the evaluation session to ask the host for parameters to format text for output
@@ -29164,6 +29265,41 @@ Emit comparison instructions
 </member>
 <member name="">
 
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiValue.ReflectionValue">
+<summary>
+ The value, as an object
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiValue.ReflectionType">
+<summary>
+ The type of the value, from the point of view of the .NET type system
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.FsiValue.FSharpType">
+<summary>
+ The type of the value, from the point of view of the F# type system
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Interactive.Shell.FsiValue">
+<summary>
+ Represents an evaluated F# value
+</summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Interactive.Shell.Settings.InteractiveSettings.ShowProperties(System.Boolean)">
  <summary>When set to 'false', disables the display of properties of evaluated objects in the output of the interactive session.</summary>
@@ -30850,10 +30986,34 @@ Emit comparison instructions
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Microsoft.FSharp.Compiler.Nameres.ITypecheckResultsSink">
 <summary>
  An abstract type for reporting the results of name resolution and type checking
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Nameres.TcResolutions.CapturedNameResolutions">
 <summary>
@@ -30874,12 +31034,6 @@ Emit comparison instructions
  Name resolution environments for every interesting region in the file. These regions may
  overlap, in which case the smallest region applicable should be used.
 </summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="">
 
@@ -31313,8 +31467,10 @@ Emit comparison instructions
  Temporarily redirect reporting of name resolution and type checking results
 </summary>
 </member>
-<member name="">
-
+<member name="M:Microsoft.FSharp.Compiler.Nameres.ItemsAreEffectivelyEqual(Microsoft.FSharp.Compiler.Env.TcGlobals,Microsoft.FSharp.Compiler.Nameres.Item,Microsoft.FSharp.Compiler.Nameres.Item)">
+<summary>
+ Check for equality, up to signature matching
+</summary>
 </member>
 <member name="M:Microsoft.FSharp.Compiler.Nameres.LookupTypeNameInEnvNoArity(Microsoft.FSharp.Compiler.Nameres.FullyQualifiedFlag,System.String,Microsoft.FSharp.Compiler.Nameres.NameResolutionEnv)">
 <summary>
@@ -31414,6 +31570,12 @@ Emit comparison instructions
  If the output text is different without showing constraints and/or imperative type variable 
  annotations and/or fully qualifying paths then don&apos;t show them! 
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -31758,6 +31920,12 @@ Emit comparison instructions
 <summary>
  Layout &apos;[&lt;attribs&gt;]&apos; above another block 
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="M:Microsoft.FSharp.Compiler.NicePrint.PrintTypes.layoutAttrib(Microsoft.FSharp.Compiler.Tastops.DisplayEnv,Microsoft.FSharp.Compiler.Tast.Attrib)">
 <summary>
@@ -35137,6 +35305,21 @@ Emit comparison instructions
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Microsoft.FSharp.Compiler.QuotationTranslator">
 
 </member>
@@ -35458,11 +35641,6 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleCheckFileResults.GetDeclarationsAlternate(System.Int32,System.Int32,Microsoft.FSharp.Collections.FSharpList{System.String},System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.String,System.String},System.String}})">
-<summary>
- Get the declarations at the given code location.
-</summary>
-</member>
 <member name="">
 
 </member>
@@ -35473,6 +35651,11 @@ Emit comparison instructions
 </member>
 <member name="">
 
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleCheckFileResults.GetDeclarationListInfo(System.Int32,System.Int32,Microsoft.FSharp.Collections.FSharpList{System.String},System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.String,System.String},System.String}})">
+<summary>
+ Get the declarations at the given code location.
+</summary>
 </member>
 <member name="">
 
@@ -35499,378 +35682,77 @@ Emit comparison instructions
  it formats the XML content for you (apart from ones read from XML doc files using xmlCommentRetriever)
 </summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileAnswer">
 <summary>
- The result of calling TypeCheckResult including the possibility of abort and background compiler not caught up.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.ProjectContext">
-<summary>
- Get the resolution of the ProjectOptions 
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.PartialAssemblySignature">
-<summary>
- Get a view of the contents of the assembly up to and including the file just checked
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.HasFullTypeCheckInfo">
-<summary>
- Indicates whether type checking successfully occured with some results returned. If false, indicates that 
- an unrecoverable error in earlier checking/parsing/resolution steps.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.Errors">
-<summary>
- The errors returned by parsing a source file.
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetUsesOfSymbolInFile(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol)">
-<summary>
- Get the textual usages that resolved to the given symbol throughout the file
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetToolTipTextAlternate(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.Int32)">
- <summary>Compute a formatted tooltip for the given location</summary>
-
- <param name="line">The line number where the information is being requested.</param>
- <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
- <param name="lineText">The text of the line where the information is being requested.</param>
- <param name="names">The identifiers at the location where the information is being requested.</param>
- <param name="tokenTag">Used to discriminate between 'identifiers', 'strings' and others. For strings, an attempt is made to give a tooltip for a #r "..." location.</param>
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetSymbolUseAtLocation(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String})">
- <summary>Resolve the names at the given location to a use of symbol.</summary>
-
- <param name="line">The line number where the information is being requested.</param>
- <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
- <param name="lineText">The text of the line where the information is being requested.</param>
- <param name="names">The identifiers at the location where the information is being requested.</param>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetMethodsAlternate(System.Int32,System.Int32,System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.String}})">
- <summary>Compute a set of method overloads to show in a dialog relevant to the given code location.</summary>
-
- <param name="line">The line number where the information is being requested.</param>
- <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
- <param name="lineText">The text of the line where the information is being requested.</param>
- <param name="names">The identifiers at the location where the information is being requested.</param>
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetF1KeywordAlternate(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String})">
- <summary>Compute the Visual Studio F1-help key identifier for the given location, based on name resolution results</summary>
-
- <param name="line">The line number where the information is being requested.</param>
- <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
- <param name="lineText">The text of the line where the information is being requested.</param>
- <param name="names">The identifiers at the location where the information is being requested.</param>
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetExtraColorizationsAlternate">
- <summary>Get any extra colorization info that is available after the typecheck</summary>
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetDeclarationsAlternate(Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults},System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.Object,Microsoft.FSharp.Compiler.Range.range},System.Boolean}})">
- <summary>Get the items for a declaration list</summary>
-
- <param name="ParsedFileResultsOpt">
-    If this is present, it is used to filter declarations based on location in the
-    parse tree, specifically at 'open' declarations, 'inherit' of class or interface
-    'record field' locations and r.h.s. of 'range' operator a..b
- </param>
- <param name="line">The line number where the completion is happening</param>
- <param name="colAtEndOfNamesAndResidue">The column number (1-based) at the end of the 'names' text </param>
- <param name="qualifyingNames">The long identifier to the left of the '.'</param>
- <param name="partialName">The residue of a partial long identifier to the right of the '.'</param>
- <param name="lineStr">The residue of a partial long identifier to the right of the '.'</param>
- <param name="lineText">
-    The text of the line where the completion is happening. This is only used to make a couple
-    of adhoc corrections to completion accuracy (e.g. checking for "..")
- </param>
- <param name="hasTextChangedSinceLastTypecheck">
-    If text has been used from a captured name resolution from the typecheck, then 
-    callback to the client to check if the text has changed. If it has, then give up
-    and assume that we're going to repeat the operation later on.
- </param>
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetDeclarationSymbols(Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults},System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.Object,Microsoft.FSharp.Compiler.Range.range},System.Boolean}})">
- <summary>Get the items for a declaration list in FSharpSymbol format</summary>
-
- <param name="ParsedFileResultsOpt">
-    If this is present, it is used to filter declarations based on location in the
-    parse tree, specifically at 'open' declarations, 'inherit' of class or interface
-    'record field' locations and r.h.s. of 'range' operator a..b
- </param>
- <param name="line">The line number where the completion is happening</param>
- <param name="colAtEndOfNamesAndResidue">The column number (1-based) at the end of the 'names' text </param>
- <param name="qualifyingNames">The long identifier to the left of the '.'</param>
- <param name="partialName">The residue of a partial long identifier to the right of the '.'</param>
- <param name="lineStr">The residue of a partial long identifier to the right of the '.'</param>
- <param name="lineText">
-    The text of the line where the completion is happening. This is only used to make a couple
-    of adhoc corrections to completion accuracy (e.g. checking for "..")
- </param>
- <param name="hasTextChangedSinceLastTypecheck">
-    If text has been used from a captured name resolution from the typecheck, then 
-    callback to the client to check if the text has changed. If it has, then give up
-    and assume that we're going to repeat the operation later on.
- </param>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetDeclarationLocationAlternate(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.Boolean)">
- <summary>Resolve the names at the given location to the declaration location of the corresponding construct.</summary>
-
- <param name="line">The line number where the information is being requested.</param>
- <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
- <param name="lineText">The text of the line where the information is being requested.</param>
- <param name="names">The identifiers at the location where the information is being requested.</param>
- <param name="preferSignature">If false, then make an attempt to go to the implementation (rather than the signature if present).</param>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults.GetAllUsesOfAllSymbolsInFile">
-<summary>
- Get all textual usages of all symbols throughout the file
+ Renamed to FSharpCheckFileAnswer
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.CheckFileResults">
 <summary>
- A handle to the results of CheckFileInProject.
+ Renamed to FSharpCheckFileResults
 </summary>
 </member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CheckProjectResults.ProjectContext">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions">
 <summary>
- Get the resolution of the ProjectOptions 
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CheckProjectResults.HasCriticalErrors">
-<summary>
- Indicates if critical errors existed in the project options
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CheckProjectResults.Errors">
-<summary>
- The errors returned by processing the project
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CheckProjectResults.AssemblySignature">
-<summary>
- Get a view of the overall contents of the assembly. Only valid to use if HasCriticalErrors is false.
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckProjectResults.GetUsesOfSymbol(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol)">
-<summary>
- Get the textual usages that resolved to the given symbol throughout the project
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CheckProjectResults.GetAllUsesOfAllSymbols">
-<summary>
- Get all textual usages of all symbols throughout the project
+ Renamed to FSharpProjectOptions
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.CheckProjectResults">
 <summary>
- A handle to the results of CheckFileInProject.
+ Renamed to FSharpCheckProjectResults
 </summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.Declaration.Name">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ColorState">
 <summary>
- Get the display name for the declaration.
+ Renamed to FSharpTokenizerColorState
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.Declaration.Glyph">
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DataTipText">
 <summary>
- Get the glyph integer for the declaration as used by Visual Studio.
+ Renamed to FSharpToolTipText
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.Declaration.DescriptionTextAsync">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Declaration">
 <summary>
- Get the description text, asynchronously.  Never returns &quot;Loading...&quot;.
+ Renamed to FSharpDeclarationListItem
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.Declaration.DescriptionText">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DeclarationGroup">
 <summary>
- Get the description text for the declaration. Commputing this property may require using compiler
- resources and may trigger execution of a type provider method to retrieve documentation.
-
- May return &quot;Loading...&quot; if timeout occurs
+ Renamed to FSharpDeclarationListInfo
 </summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DeclarationItem">
 <summary>
- Represents an item to be displayed in the navigation bar
+ Renamed to FSharpNavigationDeclarationItem
 </summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DeclarationItemKind">
+<summary>
+ Renamed to FSharpNavigationDeclarationItemKind
+</summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DeclarationSet">
 <summary>
- Represents a set of declarations returned by GetDeclarations.
+ Renamed to FSharpDeclarationListInfo
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAccessibility.IsPublic">
@@ -35931,7 +35813,7 @@ Emit comparison instructions
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpActivePatternCase">
 <summary>
- Represents a single case within an active pattern
+ A subtype of FSharpSymbol that represents a single case within an active pattern
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpActivePatternGroup.OverallType">
@@ -35947,6 +35829,11 @@ Emit comparison instructions
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpActivePatternGroup.IsTotal">
 <summary>
  Indicate this is a total active pattern
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpActivePatternGroup.EnclosingEntity">
+<summary>
+ Try to get the enclosing entity of the active pattern
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpActivePatternGroup">
@@ -35990,6 +35877,19 @@ Emit comparison instructions
  Represents an assembly as seen by the F# language
 </summary>
 </member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAssemblyContents.ImplementationFiles">
+<summary>
+ The contents of the implementation files in the assembly
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAssemblyContents">
+<summary>
+ Represents the definitional contents of an assembly, as seen by the F# language
+</summary>
+</member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAssemblySignature.Entities">
 <summary>
  The (non-nested) module and type definitions in this signature
@@ -36023,8 +35923,589 @@ Emit comparison instructions
  The type of the attribute
 </summary>
 </member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAttribute.Format(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDisplayContext)">
+<summary>
+ Format the attribute using the rules of the given display context
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAttribute">
+<summary>
+ Represents a custom attribute attached to F# source code or a compiler .NET component
+</summary>
+</member>
 <member name="">
 
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileAnswer">
+<summary>
+ The result of calling TypeCheckResult including the possibility of abort and background compiler not caught up.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.ProjectContext">
+<summary>
+ Get the resolution of the ProjectOptions 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.PartialAssemblySignature">
+<summary>
+ Get a view of the contents of the assembly up to and including the file just checked
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.HasFullTypeCheckInfo">
+<summary>
+ Indicates whether type checking successfully occured with some results returned. If false, indicates that 
+ an unrecoverable error in earlier checking/parsing/resolution steps.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.Errors">
+<summary>
+ The errors returned by parsing a source file.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetUsesOfSymbolInFile(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol)">
+<summary>
+ Get the textual usages that resolved to the given symbol throughout the file
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetToolTipTextAlternate(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.Int32)">
+ <summary>Compute a formatted tooltip for the given location</summary>
+
+ <param name="line">The line number where the information is being requested.</param>
+ <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
+ <param name="lineText">The text of the line where the information is being requested.</param>
+ <param name="names">The identifiers at the location where the information is being requested.</param>
+ <param name="tokenTag">Used to discriminate between 'identifiers', 'strings' and others. For strings, an attempt is made to give a tooltip for a #r "..." location.</param>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetSymbolUseAtLocation(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String})">
+ <summary>Resolve the names at the given location to a use of symbol.</summary>
+
+ <param name="line">The line number where the information is being requested.</param>
+ <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
+ <param name="lineText">The text of the line where the information is being requested.</param>
+ <param name="names">The identifiers at the location where the information is being requested.</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetMethodsAsSymbols(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String})">
+ <summary>Compute a set of method overloads to show in a dialog relevant to the given code location.  The resulting method overloads are returned as symbols.</summary>
+ <param name="line">The line number where the information is being requested.</param>
+ <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
+ <param name="lineText">The text of the line where the information is being requested.</param>
+ <param name="names">The identifiers at the location where the information is being requested.</param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetMethodsAlternate(System.Int32,System.Int32,System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.String}})">
+ <summary>Compute a set of method overloads to show in a dialog relevant to the given code location.</summary>
+
+ <param name="line">The line number where the information is being requested.</param>
+ <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
+ <param name="lineText">The text of the line where the information is being requested.</param>
+ <param name="names">The identifiers at the location where the information is being requested.</param>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetFormatSpecifierLocations">
+ <summary>Get the locations of format specifiers</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetF1KeywordAlternate(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String})">
+ <summary>Compute the Visual Studio F1-help key identifier for the given location, based on name resolution results</summary>
+
+ <param name="line">The line number where the information is being requested.</param>
+ <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
+ <param name="lineText">The text of the line where the information is being requested.</param>
+ <param name="names">The identifiers at the location where the information is being requested.</param>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetExtraColorizationsAlternate">
+ <summary>Get any extra colorization info that is available after the typecheck</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetDeclarationLocationAlternate(System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+ <summary>Resolve the names at the given location to the declaration location of the corresponding construct.</summary>
+
+ <param name="line">The line number where the information is being requested.</param>
+ <param name="colAtEndOfNames">The column number at the end of the identifiers where the information is being requested.</param>
+ <param name="lineText">The text of the line where the information is being requested.</param>
+ <param name="names">The identifiers at the location where the information is being requested.</param>
+ <param name="preferFlag">If not given, then get the location of the symbol. If false, then prefer the location of the corresponding symbol in the implementation of the file (rather than the signature if present). If true, prefer the location of the corresponding symbol in the signature of the file (rather than the implementation).</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetDeclarationListSymbols(Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults},System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.Object,Microsoft.FSharp.Compiler.Range.range},System.Boolean}})">
+ <summary>Get the items for a declaration list in FSharpSymbol format</summary>
+
+ <param name="ParsedFileResultsOpt">
+    If this is present, it is used to filter declarations based on location in the
+    parse tree, specifically at 'open' declarations, 'inherit' of class or interface
+    'record field' locations and r.h.s. of 'range' operator a..b
+ </param>
+ <param name="line">The line number where the completion is happening</param>
+ <param name="colAtEndOfNamesAndResidue">The column number (1-based) at the end of the 'names' text </param>
+ <param name="qualifyingNames">The long identifier to the left of the '.'</param>
+ <param name="partialName">The residue of a partial long identifier to the right of the '.'</param>
+ <param name="lineStr">The residue of a partial long identifier to the right of the '.'</param>
+ <param name="lineText">
+    The text of the line where the completion is happening. This is only used to make a couple
+    of adhoc corrections to completion accuracy (e.g. checking for "..")
+ </param>
+ <param name="hasTextChangedSinceLastTypecheck">
+    If text has been used from a captured name resolution from the typecheck, then 
+    callback to the client to check if the text has changed. If it has, then give up
+    and assume that we're going to repeat the operation later on.
+ </param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetDeclarationListInfo(Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults},System.Int32,System.Int32,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.Object,Microsoft.FSharp.Compiler.Range.range},System.Boolean}})">
+ <summary>Get the items for a declaration list</summary>
+
+ <param name="ParsedFileResultsOpt">
+    If this is present, it is used to filter declarations based on location in the
+    parse tree, specifically at 'open' declarations, 'inherit' of class or interface
+    'record field' locations and r.h.s. of 'range' operator a..b
+ </param>
+ <param name="line">The line number where the completion is happening</param>
+ <param name="colAtEndOfNamesAndResidue">The column number (1-based) at the end of the 'names' text </param>
+ <param name="qualifyingNames">The long identifier to the left of the '.'</param>
+ <param name="partialName">The residue of a partial long identifier to the right of the '.'</param>
+ <param name="lineStr">The residue of a partial long identifier to the right of the '.'</param>
+ <param name="lineText">
+    The text of the line where the completion is happening. This is only used to make a couple
+    of adhoc corrections to completion accuracy (e.g. checking for "..")
+ </param>
+ <param name="hasTextChangedSinceLastTypecheck">
+    If text has been used from a captured name resolution from the typecheck, then 
+    callback to the client to check if the text has changed. If it has, then give up
+    and assume that we're going to repeat the operation later on.
+ </param>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults.GetAllUsesOfAllSymbolsInFile">
+<summary>
+ Get all textual usages of all symbols throughout the file
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckFileResults">
+<summary>
+ A handle to the results of CheckFileInProject.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckProjectResults.ProjectContext">
+<summary>
+ Get the resolution of the ProjectOptions 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckProjectResults.HasCriticalErrors">
+<summary>
+ Indicates if critical errors existed in the project options
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckProjectResults.Errors">
+<summary>
+ The errors returned by processing the project
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckProjectResults.AssemblySignature">
+<summary>
+ Get a view of the overall signature of the assembly. Only valid to use if HasCriticalErrors is false.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckProjectResults.AssemblyContents">
+<summary>
+ Get a view of the overall contents of the assembly. Only valid to use if HasCriticalErrors is false.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckProjectResults.GetUsesOfSymbol(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol)">
+<summary>
+ Get the textual usages that resolved to the given symbol throughout the project
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckProjectResults.GetAllUsesOfAllSymbols">
+<summary>
+ Get all textual usages of all symbols throughout the project
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpCheckProjectResults">
+<summary>
+ A handle to the results of CheckFileInProject.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.ProjectChecked">
+<summary>
+ Notify the host that a project has been fully checked in the background (using file contents provided by the file system API)
+
+ The event may be raised on a background thread.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.GlobalForegroundTypeCheckCountStatistic">
+<summary>
+ Report a statistic for testability
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.GlobalForegroundParseCountStatistic">
+<summary>
+ Report a statistic for testability
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.FileParsed">
+<summary>
+ Raised after a parse of a file in the background analysis.
+
+ The event will be raised on a background thread.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.FileChecked">
+<summary>
+ Raised after a check of a file in the background analysis.
+
+ The event will be raised on a background thread.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.CurrentQueueLength">
+<summary>
+ Current queue length of the service, for debug purposes. 
+ In addition, a single async operation or a step of a background build 
+ may be in progress - such an operation is not counted in the queue length.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.BeforeBackgroundFileCheck">
+<summary>
+ Notify the host that the logical type checking context for a file has now been updated internally
+ and that the file has become eligible to be re-typechecked for errors.
+
+ The event will be raised on a background thread.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.WaitForBackgroundCompile">
+<summary>
+ Block until the background compile finishes.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.TryGetRecentTypeCheckResultsForFile(System.String,Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions,Microsoft.FSharp.Core.FSharpOption{System.String})">
+ <summary>
+ Try to get type check results for a file. This looks up the results of recent type checks of the
+ same file, regardless of contents. The version tag specified in the original check of the file is returned.
+ If the source of the file has changed the results returned by this function may be out of date, though may
+ still be usable for generating intellsense menus and information.
+ </summary>
+ <param name="filename">The filename for the file.</param>
+ <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
+ <param name="source">Optionally, specify source that must match the previous parse precisely.</param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.StopBackgroundCompile">
+<summary>
+ Stop the background compile.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.StartBackgroundCompile(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions)">
+<summary>
+ Begin background parsing the given project.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.ParseFileInProject(System.String,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions)">
+ <summary>
+ <para>Parse a source code file, returning a handle that can be used for obtaining navigation bar information
+ To get the full information, call 'CheckFileInProject' method on the result</para>
+ <para>All files except the one being checked are read from the FileSystem API</para>
+ </summary>
+
+ <param name="filename">The filename for the file.</param>
+ <param name="source">The full source for the file.</param>
+ <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.ParseAndCheckProject(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions)">
+ <summary>
+ <para>Parse and typecheck all files in a project.</para>
+ <para>All files are read from the FileSystem API</para>
+ </summary>
+
+ <param name="options">The options for the project or script.</param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.ParseAndCheckFileInProject(System.String,System.Int32,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.IsResultObsolete},Microsoft.FSharp.Core.FSharpOption{System.Object})">
+ <summary>
+ <para>
+   Parse and check a source code file, returning a handle to the results 
+ </para>
+ <para>
+    Note: all files except the one being checked are read from the FileSystem API
+ </para>
+ <para>
+   Return FSharpCheckFileAnswer.Aborted if a parse tree was not available or if the check
+ </para>
+ </summary>
+
+ <param name="filename">The name of the file in the project whose source is being checked.</param>
+ <param name="fileversion">An integer that can be used to indicate the version of the file. This will be returned by TryGetRecentTypeCheckResultsForFile when looking up the file.</param>
+ <param name="source">The full source for the file.</param>
+ <param name="options">The options for the project or script.</param>
+ <param name="isResultObsolete">
+     A callback to check if a requested result is already obsolete, e.g. because of changed 
+ </param>
+ <param name="textSnapshotInfo">
+     An item passed back to 'hasTextChangedSinceLastTypecheck' to help determine if 
+     an approximate intellisense resolution is inaccurate because a range of text has changed. This 
+     can be used to marginally increase accuracy of intellisense results in some situations.
+ </param>
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.NotifyProjectCleaned(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions)">
+<summary>
+ This function is called when a project has been cleaned/rebuilt, and thus any live type providers should be refreshed.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.MatchBracesAlternate(System.String,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions)">
+ <summary>
+   Parse a source code file, returning information about brace matching in the file.
+   Return an enumeration of the matching parethetical tokens in the file.
+ </summary>
+
+ <param name="filename">The filename for the file, used to help caching of results.</param>
+ <param name="source">The full source for the file.</param>
+ <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.InvalidateConfiguration(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions)">
+<summary>
+ This function is called when the configuration is known to have changed for reasons not encoded in the ProjectOptions.
+ For example, dependent references may have been deleted or created.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.InvalidateAll">
+<summary>
+ This function is called when the entire environment is known to have changed for reasons not encoded in the ProjectOptions of any project/compilation.
+ For example, the type provider approvals file may have changed.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.GetProjectOptionsFromScript(System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.DateTime},Microsoft.FSharp.Core.FSharpOption{System.String[]},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+ <summary>
+ <para>For a given script file, get the FSharpProjectOptions implied by the #load closure.</para>
+ <para>All files are read from the FileSystem API, except the file being checked.</para>
+ </summary>
+
+ <param name="filename">Used to differentiate between scripts, to consider each script a separate project.
+ Also used in formatted error messages.</param>
+
+ <param name="loadedTimeStamp">Indicates when the script was loaded into the editing environment,
+ so that an 'unload' and 'reload' action will cause the script to be considered as a new project,
+ so that references are re-resolved.</param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.GetProjectOptionsFromCommandLineArgs(System.String,System.String[],Microsoft.FSharp.Core.FSharpOption{System.DateTime})">
+ <summary>
+ <para>Get the FSharpProjectOptions implied by a set of command line arguments.</para>
+ </summary>
+
+ <param name="projectFileName">Used to differentiate between projects and for the base directory of the project.</param>
+ <param name="argv">The command line arguments for the project build.</param>
+ <param name="loadedTimeStamp">Indicates when the script was loaded into the editing environment,
+ so that an 'unload' and 'reload' action will cause the script to be considered as a new project,
+ so that references are re-resolved.</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.GetBackgroundParseResultsForFileInProject(System.String,Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions)">
+ <summary>
+ <para>Like ParseFileInProject, but uses results from the background builder.</para>
+ <para>All files are read from the FileSystem API, including the file being checked.</para>
+ </summary>
+
+ <param name="filename">The filename for the file.</param>
+ <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.GetBackgroundCheckResultsForFileInProject(System.String,Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions)">
+ <summary>
+ <para>Like ParseFileInProject, but uses the existing results from the background builder.</para>
+ <para>All files are read from the FileSystem API, including the file being checked.</para>
+ </summary>
+
+ <param name="filename">The filename for the file.</param>
+ <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.Create">
+<summary>
+ Create an instance of an FSharpChecker.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.Create(Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+ <summary>
+ Create an instance of an FSharpChecker.  
+ </summary>
+
+ <param name="projectCacheSize">The optional size of the project checking cache.</param>
+ <param name="keepAssemblyContents">Keep the checked contents of projects.</param>
+ <param name="keepAllBackgroundResolutions">If false, do not keep full intermediate checking results from background checking suitable for returning from GetBackgroundCheckResultsForFileInProject. This reduces memory usage.</param>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.ClearLanguageServiceRootCachesAndCollectAndFinalizeAllTransients">
+<summary>
+ Flush all caches and garbage collect
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.CheckFileInProjectIfReady(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults,System.String,System.Int32,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.IsResultObsolete},Microsoft.FSharp.Core.FSharpOption{System.Object})">
+ <summary>
+ <para>Check a source code file, returning a handle to the results of the parse including
+ the reconstructed types in the file.</para>
+
+ <para>All files except the one being checked are read from the FileSystem API</para>
+ <para>Note: returns NoAntecedent if the background builder is not yet done prepring the type check context for the 
+ file (e.g. loading references and parsing/checking files in the project that this file depends upon). 
+ In this case, the caller can either retry, or wait for FileTypeCheckStateIsDirty to be raised for this file.
+ </para>
+ </summary>
+
+ <param name="parsed">The results of ParseFileInProject for this file.</param>
+ <param name="filename">The name of the file in the project whose source is being checked.</param>
+ <param name="fileversion">An integer that can be used to indicate the version of the file. This will be returned by TryGetRecentTypeCheckResultsForFile when looking up the file.</param>
+ <param name="source">The full source for the file.</param>
+ <param name="options">The options for the project or script.</param>
+ <param name="isResultObsolete">
+     A callback to check if a requested result is already obsolete, e.g. because of changed 
+ </param>
+ <param name="textSnapshotInfo">
+     An item passed back to 'hasTextChangedSinceLastTypecheck' to help determine if 
+     an approximate intellisense resolution is inaccurate because a range of text has changed. This 
+     can be used to marginally increase accuracy of intellisense results in some situations.
+ </param>
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker.CheckFileInProject(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults,System.String,System.Int32,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.IsResultObsolete},Microsoft.FSharp.Core.FSharpOption{System.Object})">
+ <summary>
+ <para>
+   Check a source code file, returning a handle to the results
+ </para>
+ <para>
+    Note: all files except the one being checked are read from the FileSystem API
+ </para>
+ <para>
+   Return FSharpCheckFileAnswer.Aborted if a parse tree was not available or if the check
+ </para>
+ </summary>
+
+ <param name="parsed">The results of ParseFileInProject for this file.</param>
+ <param name="filename">The name of the file in the project whose source is being checked.</param>
+ <param name="fileversion">An integer that can be used to indicate the version of the file. This will be returned by TryGetRecentTypeCheckResultsForFile when looking up the file.</param>
+ <param name="source">The full source for the file.</param>
+ <param name="options">The options for the project or script.</param>
+ <param name="isResultObsolete">
+     A callback to check if a requested result is already obsolete, e.g. because of changed 
+ </param>
+ <param name="textSnapshotInfo">
+     An item passed back to 'hasTextChangedSinceLastTypecheck' to help determine if 
+     an approximate intellisense resolution is inaccurate because a range of text has changed. This 
+     can be used to marginally increase accuracy of intellisense results in some situations.
+ </param>
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker">
+<summary>
+ Used to parse and check F# source code.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDeclaration">
+<summary>
+ Renamed to FSharpDeclarationListItem
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDeclarationListInfo">
+<summary>
+ Represents a set of declarations in F# source code, with information attached ready for display by an editor.
+ Returned by GetDeclarations.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDeclarationListItem.Name">
+<summary>
+ Get the display name for the declaration.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDeclarationListItem.Glyph">
+<summary>
+ Get the glyph integer for the declaration as used by Visual Studio.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDeclarationListItem.DescriptionTextAsync">
+<summary>
+ Get the description text, asynchronously.  Never returns &quot;Loading...&quot;.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDeclarationListItem.DescriptionText">
+<summary>
+ Get the description text for the declaration. Commputing this property may require using compiler
+ resources and may trigger execution of a type provider method to retrieve documentation.
+
+ May return &quot;Loading...&quot; if timeout occurs
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDeclarationListItem">
+<summary>
+ Represents a declaration in F# source code, with information attached ready for display by an editor.
+ Returned by GetDeclarations.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDeclarationSet">
+<summary>
+ Renamed to FSharpDeclarationListInfo
+</summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDelegateSignature.DelegateReturnType">
 <summary>
@@ -36036,8 +36517,10 @@ Emit comparison instructions
  Get the argument types of the delegate signature
 </summary>
 </member>
-<member name="">
-
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpDelegateSignature">
+<summary>
+ Represents a delegate signature in an F# symbol
+</summary>
 </member>
 <member name="">
 
@@ -36310,9 +36793,36 @@ Emit comparison instructions
  Get the type abbreviated by an F# type abbreviation
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpEntity">
 <summary>
- Represents a type definition or module as seen by the F# language
+ A subtype of FSharpSymbol that represents a type definition or module as seen by the F# language
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr.Type">
+<summary>
+ The type of the expression
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr.Range">
+<summary>
+ The range of the expression
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr.ImmediateSubExpressions">
+<summary>
+ The immediate sub-expressions of the expression.  
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr">
+<summary>
+ Represents a checked and reduced expression, as seen by the F# language.  The active patterns 
+ in &apos;FSharp.Compiler.SourceCodeServices&apos; can be used to analyze information about the expression.
+
+ Pattern matching is reduced to decision trees and conditional tests. Some other
+ constructs may be represented in reduced form.
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpField.XmlDocSig">
@@ -36403,6 +36913,54 @@ Emit comparison instructions
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpField">
+<summary>
+ A subtype of FSharpSymbol that represents a record or union case field as seen by the F# language
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpFindDeclFailureReason.ProvidedMember">
+<summary>
+ Trying to find declaration of ProvidedMember without TypeProviderDefinitionLocationAttribute
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpFindDeclFailureReason.ProvidedType">
+<summary>
+ Trying to find declaration of ProvidedType without TypeProviderDefinitionLocationAttribute
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpFindDeclFailureReason.NoSourceCode">
+<summary>
+ Source code file is not available
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpFindDeclFailureReason.Unknown">
+<summary>
+ Generic reason: no particular information about error
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpFindDeclFailureReason">
+<summary>
+ Represents the reason why the GetDeclarationLocation operation failed.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpFindDeclResult.DeclFound">
+<summary>
+ Indicates a declaration location was found
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpFindDeclResult.DeclNotFound">
+<summary>
+ Indicates a declaration location was not found, with an additional reason
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpFindDeclResult">
+<summary>
+ Represents the result of the GetDeclarationLocation operation.
+</summary>
+</member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpGenericParameter.XmlDoc">
 <summary>
  Get the in-memory XML documentation for the type parameter, used when code is checked in-memory
@@ -36445,6 +37003,11 @@ Emit comparison instructions
 </member>
 <member name="">
 
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpGenericParameter">
+<summary>
+ A subtype of FSharpSymbol that represents a generic parameter for an FSharpSymbol
+</summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpGenericParameterConstraint.SimpleChoices">
 <summary>
@@ -36606,6 +37169,46 @@ Emit comparison instructions
  Represents further information about a member constraint on a generic type parameter
 </summary>
 </member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpImplementationFileContents.IsScript">
+<summary>
+ Indicates if the implementation file is a script
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpImplementationFileContents.HasExplicitEntryPoint">
+<summary>
+ Indicates if the implementation file has an explicit entry point
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpImplementationFileContents.Declarations">
+<summary>
+ Get the declarations that make up this implementation file
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpImplementationFileContents">
+<summary>
+ Represents the definitional contents of a single file or fragment in an assembly, as seen by the F# language
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpImplementationFileDeclaration.InitAction">
+<summary>
+ Represents the declaration of a static initialization action
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpImplementationFileDeclaration.MemberOrFunctionOrValue">
+<summary>
+ Represents the declaration of a member, function or value, including the parameters and body of the member
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpImplementationFileDeclaration.Entity">
+<summary>
+ Represents the declaration of a type
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpImplementationFileDeclaration">
+<summary>
+ Represents a declaration in an implementation file, as seen by the F# language
+</summary>
+</member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpInlineAnnotation.NeverInline">
 <summary>
  Indictes the value is never inlined 
@@ -36629,17 +37232,44 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.XmlDocSig">
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpLineTokenizer.ScanToken(System.Int64)">
+<summary>
+ Scan one token from the line
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpLineTokenizer">
+<summary>
+ Object to tokenize a line of F# source code, starting with the given lexState.  The lexState should be 0 for
+ the first line of text. Returns an array of ranges of the text and two enumerations categorizing the
+ tokens and characters covered by that range, i.e. FSharpTokenColorKind and FSharpTokenCharKind.  The enumerations
+ are somewhat adhoc but useful enough to give good colorization options to the user in an IDE.
+
+ A new lexState is also returned.  An IDE-plugin should in general cache the lexState 
+ values for each line of the edited code.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue">
+<summary>
+ Renamed to FSharpMemberOrFunctionOrValue
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.XmlDocSig">
 <summary>
  XML documentation signature for the value, used for .xml file lookup for compiled code
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.XmlDoc">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.XmlDoc">
 <summary>
  Get the in-memory XML documentation for the value, used when code is checked in-memory
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.SetterMethod">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.SetterMethod">
 <summary>
  Get an associated setter method of the property
 </summary>
@@ -36647,178 +37277,192 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.LogicalName">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.LogicalName">
 <summary>
  Get the logical name of the member
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.LogicalEnclosingEntity">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.LogicalEnclosingEntity">
 <summary>
  Get the logical enclosing entity, which for an extension member is type being extended
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsUnresolved">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsUnresolved">
 <summary>
- Indicates if the member or value is in an unresolved assembly 
+ Indicates if the member, function or value is in an unresolved assembly 
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsTypeFunction">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsTypeFunction">
 <summary>
  Indicates if this is an F# type function
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsSetterMethod">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsSetterMethod">
 <summary>
  Indicates if this is a setter method for a property, or a use of a property in setter mode
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsPropertySetterMethod">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsPropertySetterMethod">
 <summary>
  Indicates if this is a setter method for a property, or a use of a property in setter mode
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsPropertyGetterMethod">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsPropertyGetterMethod">
 <summary>
  Indicates if this is a getter method for a property, or a use of a property in getter mode
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsProperty">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsProperty">
 <summary>
  Indicates if this is a property member
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsOverrideOrExplicitMember">
-<summary>
- Indicates if this is an &apos;override&apos; or explicit member (declared via &apos;default&apos; keyword)?
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsMutable">
-<summary>
- Indicates if this is a mutable value
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsModuleValueOrMember">
-<summary>
- Indicates if this is a module or member value
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsMember">
-<summary>
- Indicates if this is a member, including extension members?
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsInstanceMember">
-<summary>
- Indicates if this is an instance member, when seen from F#?
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsImplicitConstructor">
-<summary>
- Indicates if this is an implicit constructor?
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsGetterMethod">
-<summary>
- Indicates if this is a getter method for a property, or a use of a property in getter mode
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsExtensionMember">
-<summary>
- Indicates if this is an extension member?
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsEventRemoveMethod">
-<summary>
- Indicates if this is a remove method for an event
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsEventAddMethod">
-<summary>
- Indicates if this is an add method for an event
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsEvent">
-<summary>
- Indicates if this is an event member
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsDispatchSlot">
-<summary>
- Indicates if this is an abstract member?
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsCompilerGenerated">
-<summary>
- Indicates if this is a compiler generated value
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.IsActivePattern">
-<summary>
- Indicates if this value or member is an F# active pattern
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.InlineAnnotation">
-<summary>
- Get a result indicating if this is a must-inline value
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.HasSetterMethod">
-<summary>
- Indicates if this is a property then there exists an associated setter method
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.HasGetterMethod">
-<summary>
- Indicates if this is a property then there exists an associated getter method
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.GetterMethod">
-<summary>
- Get an associated getter method of the property
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.GenericParameters">
-<summary>
- Get the typars of the member or value
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.FullType">
-<summary>
- Get the full type of the member or value when used as a first class value
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.EnclosingEntity">
-<summary>
- Get the enclosing entity for the definition
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.DisplayName">
-<summary>
- Get the name as presented in F# error messages and documentation
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.DeclarationLocation">
-<summary>
- Get the declaration location of the member or value
 </summary>
 </member>
 <member name="">
 
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.CompiledName">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsOverrideOrExplicitInterfaceImplementation">
+<summary>
+ Indicates if this is an &apos;override&apos;, &apos;default&apos; or an explicit implementation of an interface member
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsMutable">
+<summary>
+ Indicates if this is a mutable value
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsModuleValueOrMember">
+<summary>
+ Indicates if this is a module or member value
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsMember">
+<summary>
+ Indicates if this is a member, including extension members?
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsInstanceMember">
+<summary>
+ Indicates if this is an instance member, when seen from F#?
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsImplicitConstructor">
+<summary>
+ Indicates if this is an implicit constructor?
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsGetterMethod">
+<summary>
+ Indicates if this is a getter method for a property, or a use of a property in getter mode
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsExtensionMember">
+<summary>
+ Indicates if this is an extension member?
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsExplicitInterfaceImplementation">
+<summary>
+ Indicates if this is an explicit implementation of an interface member
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsEventRemoveMethod">
+<summary>
+ Indicates if this is a remove method for an event
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsEventAddMethod">
+<summary>
+ Indicates if this is an add method for an event
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsEvent">
+<summary>
+ Indicates if this is an event member
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsDispatchSlot">
+<summary>
+ Indicates if this is an abstract member?
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsCompilerGenerated">
+<summary>
+ Indicates if this is a compiler generated value
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.IsActivePattern">
+<summary>
+ Indicates if this value or member is an F# active pattern
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.InlineAnnotation">
+<summary>
+ Get a result indicating if this is a must-inline value
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.HasSetterMethod">
+<summary>
+ Indicates if this is a property then there exists an associated setter method
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.HasGetterMethod">
+<summary>
+ Indicates if this is a property then there exists an associated getter method
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.GetterMethod">
+<summary>
+ Get an associated getter method of the property
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.GenericParameters">
+<summary>
+ Get the typars of the member, function or value
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.FullType">
+<summary>
+ Get the full type of the member, function or value when used as a first class value
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.EnclosingEntity">
+<summary>
+ Get the enclosing entity for the definition
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.DisplayName">
+<summary>
+ Get the name as presented in F# error messages and documentation
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.DeclarationLocation">
+<summary>
+ Get the declaration location of the member, function or value
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.CompiledName">
 <summary>
  Get the member name in compiled code
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.Attributes">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.Attributes">
 <summary>
  Custom attributes attached to the value. These contain references to other values (i.e. constructors in types). Mutable to fixup  
  these value references after copying a colelction of values. 
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberFunctionOrValue.Accessibility">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.Accessibility">
 <summary>
- How visible is this? 
+ Get the accessibility information for the member, function or value
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue.Overloads(System.Boolean)">
+<summary>
+ Gets the overloads for the current method
+ matchParameterNumber indicates whether to filter the overloads to match the number of parameters in the current symbol
 </summary>
 </member>
 <member name="">
@@ -36826,6 +37470,216 @@ Emit comparison instructions
 </member>
 <member name="">
 
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrFunctionOrValue">
+<summary>
+ A subtype of F# symbol that represents an F# method, property, event, function or value, including extension members.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMemberOrVal">
+<summary>
+ Renamed to FSharpMemberOrFunctionOrValue
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroup.Methods">
+<summary>
+ The methods (or other items) in the group
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroup.MethodName">
+<summary>
+ The shared name of the methods (or other items) in the group
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroup">
+<summary>
+ Represents a group of methods (or other items) returned by GetMethods.  
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItem.TypeText">
+<summary>
+ The formatted type text for the method (or other item)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItem.Parameters">
+<summary>
+ The parameters of the method in the overload set
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItem.IsStaticArguments">
+<summary>
+ Indicates that this not really a method, but actually a static arguments list, like TP&lt;42,&quot;foo&quot;&gt;
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItem.Description">
+<summary>
+ The formatted description text for the method (or other item)
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItem">
+<summary>
+ Represents one method (or other item) in a method group. The item may represent either a method or 
+ a single, non-overloaded item such as union case or a named function value.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItemParameter.ParameterName">
+<summary>
+ The name of the parameter.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItemParameter.Display">
+<summary>
+ The text to display for the parameter including its name, its type and visual indicators of other
+ information such as whether it is optional.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItemParameter.Description">
+<summary>
+ The descriptive help text to display for the parameter.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItemParameter.CanonicalTypeTextForSorting">
+<summary>
+ A key that can be used for sorting the parameters, used to help sort overloads.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpMethodGroupItemParameter">
+<summary>
+ Represents one parameter for one method (or other item) in a group. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpNavigationDeclarationItem">
+<summary>
+ Represents an item to be displayed in the navigation bar
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpNavigationDeclarationItemKind">
+<summary>
+ Indicates a kind of item to show in an F# navigation bar
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpNavigationItems">
+<summary>
+ Represents result of &apos;GetNavigationItems&apos; operation - this contains
+ all the members and currently selected indices. First level correspond to
+ types &amp; modules and second level are methods etc.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpNavigationTopLevelDeclaration">
+<summary>
+ Represents top-level declarations (that should be in the type drop-down)
+ with nested declarations (that can be shown in the member drop-down)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpObjectExprOverride.GenericParameters">
+<summary>
+ The generic parameters of the method
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpObjectExprOverride.CurriedParameterGroups">
+<summary>
+ The parameters of the method
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpObjectExprOverride.Body">
+<summary>
+ The expression that forms the body of the method
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpObjectExprOverride">
+<summary>
+ Represents a checked method in an object expression, as seen by the F# language.  
+</summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParameter.Type">
 <summary>
@@ -36864,12 +37718,136 @@ Emit comparison instructions
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParameter">
 <summary>
- Represents a parameter 
+ A subtype of FSharpSymbol that represents a parameter 
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults.ParseHadErrors">
+<summary>
+ Indicates if any errors occured during the parse
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults.FileName">
+<summary>
+ Name of the file for which this information were created
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults.Errors">
+<summary>
+ Get the errors and warnings for the parse
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults.DependencyFiles">
+<summary>
+ When these files change then the build is invalid
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults.ValidateBreakpointLocation(Microsoft.FSharp.Compiler.Range.pos)">
+<summary>
+ Return the inner-most range associated with a possible breakpoint location
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults.GetNavigationItems">
+<summary>
+ Get declared items and the selected item at the specified location
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults.FindNoteworthyParamInfoLocations(Microsoft.FSharp.Compiler.Range.pos)">
+<summary>
+ Notable parse info for ParameterInfo at a given location
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpParseFileResults">
+<summary>
+ Represents the results of parsing an F# file
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectContext.AccessibilityRights">
+<summary>
+ Get the accessibility rights for this project context w.r.t. InternalsVisibleTo attributes granting access to other assemblies
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectContext.GetReferencedAssemblies">
+<summary>
+ Get the resolution and full contents of the assemblies referenced by the project options
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectContext">
+<summary>
+ Represents the checking context implied by the ProjectOptions 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.UnresolvedReferences">
+<summary>
+ Unused in this API and should be &apos;None&apos;
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.LoadTime">
+<summary>
+ Timestamp of project/script load, used to differentiate between different instances of a project load.
+ This ensures that a complete reload of the project or script type checking
+ context occurs on project or script unload/reload.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.UseScriptResolutionRules">
+<summary>
+ When true, use the reference resolution rules for scripts rather than the rules for compiler.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.IsIncompleteTypeCheckEnvironment">
+<summary>
+ When true, the typechecking environment is known a priori to be incomplete, for
+ example when a .fs file is opened outside of a project. In this case, the number of error 
+ messages reported is reduced.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.ReferencedProjects">
+<summary>
+ The command line arguments for the other projects referenced by this project, indexed by the
+ exact text used in the &quot;-r:&quot; reference in FSharpProjectOptions.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.OtherOptions">
+<summary>
+ Additional command line argument options for the project. These can include additional files and references.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.ProjectFileNames">
+<summary>
+ The files in the project
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions">
+ <summary>A set of information describing a project or script build configuration.</summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpRecordField">
 <summary>
- Represents a record or union case field as seen by the F# language
+ Renamed to FSharpField
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSourceTokenizer">
+<summary>
+ Tokenizer for a source file. Holds some expensive-to-compute resources at the scope of the file.
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpStaticParameter.Name">
@@ -36900,15 +37878,22 @@ Emit comparison instructions
  Get the declaration location of the static parameter 
 </summary>
 </member>
-<member name="">
-
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpStaticParameter">
+<summary>
+ A subtype of FSharpSymbol that represents a static parameter to an F# type provider
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol.SignatureLocation">
+<summary>
+ Get the signature location for the symbol if it was declared in an implementation
+</summary>
 </member>
 <member name="">
 
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol.ImplementationLocation">
 <summary>
- Get the implementation location for the symbol of it wsa declared in a signature that has an implementation
+ Get the implementation location for the symbol if it was declared in a signature that has an implementation
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol.FullName">
@@ -36932,8 +37917,21 @@ Emit comparison instructions
  Get the assembly declaring this symbol
 </summary>
 </member>
-<member name="">
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol.IsEffectivelySameAs(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol)">
+<summary>
+ Return true if two symbols are effectively the same when referred to in F# source code text.  
+ This sees through signatures (a symbol in a signature will be considered effectively the same as 
+ the matching symbol in an implementation).  In addition, other equivalances are applied
+ when the same F# source text implies the same declaration name - for example, constructors 
+ are considered to be effectively the same symbol as the corresponding type definition.
 
+ This is the relation used by GetUsesOfSymbol and GetUsesOfSymbolInFile.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol.IsAccessible(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAccessibilityRights)">
+<summary>
+ Computes if the symbol is accessible for the given accessibilty rights
+</summary>
 </member>
 <member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol.Create(Microsoft.FSharp.Compiler.Env.TcGlobals,Microsoft.FSharp.Compiler.Tast.CcuThunk,Microsoft.FSharp.Compiler.Build.TcImports,Microsoft.FSharp.Compiler.Nameres.Item)">
 <summary>
@@ -36942,7 +37940,11 @@ Emit comparison instructions
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbol">
 <summary>
- Represents a symbol 
+ Represents a symbol in checked F# source code or a compiled .NET component. 
+
+ The subtype of the symbol may reveal further information and can be one of FSharpEntity, FSharpUnionCase
+ FSharpField, FSharpGenericParameter, FSharpStaticParameter, FSharpMemberOrFunctionOrValue, FSharpParameter,
+ or FSharpActivePatternCase.
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbolUse.Symbol">
@@ -37004,6 +38006,256 @@ Emit comparison instructions
 </member>
 <member name="">
 
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpSymbolUse">
+<summary>
+ Represents the use of an F# symbol from F# source code
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenCharKind">
+<summary>
+ Gives an indication of the class to assign to the characters of the token an IDE
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenColorKind">
+<summary>
+ Gives an indicattion of the color class to assign to the token an IDE
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.FullMatchedLength">
+<summary>
+ The full length consumed by this match, including delayed tokens (which can be ignored in naive lexers)
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.TokenName">
+<summary>
+ Provides additional information about the token
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.Tag">
+<summary>
+ The tag is an integer identifier for the token
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.FSharpTokenTriggerClass">
+<summary>
+ Actions taken when the token is typed
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.CharClass">
+<summary>
+ Gives an indication of the class to assign to the token an IDE
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.RightColumn">
+<summary>
+ Right column of the token.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.LeftColumn">
+<summary>
+ Left column of the token.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo">
+<summary>
+ Information about a particular token from the tokenizer
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenTriggerClass">
+<summary>
+ Gives an indication of what should happen when the token is typed in an IDE
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenizerColorState">
+<summary>
+ Represents stable information for the state of the laxing engine at the end of a line
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenizerLexState">
+<summary>
+ Represents encode, internal information for the state of the laxing engine at the end of a line
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpToolTipElement.CompositionError">
+<summary>
+ An error occurred formatting this element
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpToolTipElement.Group">
+<summary>
+ For example, a method overload group.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpToolTipElement.Single">
+<summary>
+ A single type, method, etc with comment.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpToolTipElement">
+<summary>
+ A single tool tip display element
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpToolTipText.FSharpToolTipText">
+<summary>
+ A list of data tip elements to display.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpToolTipText">
+<summary>
+ Information for building a tool tip box.
+</summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpType.TypeDefinition">
 <summary>
@@ -37083,6 +38335,9 @@ Emit comparison instructions
  Format the type using the rules of the given display context
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpType.#ctor(Microsoft.FSharp.Compiler.Env.TcGlobals,Microsoft.FSharp.Compiler.Tast.CcuThunk,Microsoft.FSharp.Compiler.Build.TcImports,Microsoft.FSharp.Compiler.Tast.TType)">
 <summary>
  Internal use only. Create a ground type.
@@ -37141,49 +38396,42 @@ Emit comparison instructions
   Indicates if the declared visibility of the union constructor, not taking signatures into account 
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpUnionCase">
 <summary>
- Represents a union case as seen by the F# language
+ A subtype of FSharpSymbol that represents a union case as seen by the F# language
 </summary>
 </member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclFailureReason.ProvidedMember">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpXmlDoc.XmlDocFileSignature">
 <summary>
- Trying to find declaration of ProvidedMember without TypeProviderDefinitionLocationAttribute
+ Indicates that the text for the documentation can be found in a .xml documentation file, using the given signature key
 </summary>
 </member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclFailureReason.ProvidedType">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpXmlDoc.Text">
 <summary>
- Trying to find declaration of ProvidedType without TypeProviderDefinitionLocationAttribute
+ The text for documentation 
 </summary>
 </member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclFailureReason.NoSourceCode">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpXmlDoc.None">
 <summary>
- Source code file is not available
+ No documentation is available
 </summary>
 </member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclFailureReason.Unknown">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpXmlDoc">
 <summary>
- Generic reason: no particular information about error
+ Describe a comment as either a block of text or a file+signature reference into an intellidoc file.
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclFailureReason">
 <summary>
- Represents the reason why the GetDeclarationLocation operation failed.
-</summary>
-</member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclResult.DeclFound">
-<summary>
- Indicates a declaration location was found
-</summary>
-</member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclResult.DeclNotFound">
-<summary>
- Indicates a declaration location was not found, with an additional reason
+ Renamed to FSharpFindDeclFailureReason
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclResult">
 <summary>
- Represents the result of the GetDeclarationLocation operation.
+ Renamed to FSharpFindDeclResult
 </summary>
 </member>
 <member name="">
@@ -37220,292 +38468,10 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.ProjectChecked">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker">
 <summary>
- Notify the host that a project has been fully checked in the background (using file contents provided by the file system API)
-
- The event may be raised on a background thread.
+ Renamed to FSharpChecker
 </summary>
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GlobalForegroundTypeCheckCountStatistic">
-<summary>
- Report a statistic for testability
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GlobalForegroundParseCountStatistic">
-<summary>
- Report a statistic for testability
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.FileParsed">
-<summary>
- Raised after a parse of a file in the background analysis.
-
- The event will be raised on a background thread.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.FileChecked">
-<summary>
- Raised after a check of a file in the background analysis.
-
- The event will be raised on a background thread.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.CurrentQueueLength">
-<summary>
- Current queue length of the service, for debug purposes. 
- In addition, a single async operation or a step of a background build 
- may be in progress - such an operation is not counted in the queue length.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.BeforeBackgroundFileCheck">
-<summary>
- Notify the host that the logical type checking context for a file has now been updated internally
- and that the file has become eligible to be re-typechecked for errors.
-
- The event will be raised on a background thread.
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.WaitForBackgroundCompile">
-<summary>
- Block until the background compile finishes.
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.TryGetRecentTypeCheckResultsForFile(System.String,Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions,Microsoft.FSharp.Core.FSharpOption{System.String})">
- <summary>
- Try to get type check results for a file. This looks up the results of recent type checks of the
- same file, regardless of contents. The version tag specified in the original check of the file is returned.
- If the source of the file has changed the results returned by this function may be out of date, though may
- still be usable for generating intellsense menus and information.
- </summary>
- <param name="filename">The filename for the file.</param>
- <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
- <param name="source">Optionally, specify source that must match the previous parse precisely.</param>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.StopBackgroundCompile">
-<summary>
- Stop the background compile.
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.StartBackgroundCompile(Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions)">
-<summary>
- Begin background parsing the given project.
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.ParseFileInProject(System.String,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions)">
- <summary>
- <para>Parse a source code file, returning a handle that can be used for obtaining navigation bar information
- To get the full information, call 'CheckFileInProject' method on the result</para>
- <para>All files except the one being checked are read from the FileSystem API</para>
- </summary>
-
- <param name="filename">The filename for the file.</param>
- <param name="source">The full source for the file.</param>
- <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.ParseAndCheckProject(Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions)">
- <summary>
- <para>Parse and typecheck all files in a project.</para>
- <para>All files are read from the FileSystem API</para>
- </summary>
-
- <param name="options">The options for the project or script.</param>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.ParseAndCheckFileInProject(System.String,System.Int32,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.IsResultObsolete},Microsoft.FSharp.Core.FSharpOption{System.Object})">
- <summary>
- <para>
-   Parse and check a source code file, returning a handle to the results 
- </para>
- <para>
-    Note: all files except the one being checked are read from the FileSystem API
- </para>
- <para>
-   Return CheckFileAnswer.Aborted if a parse tree was not available or if the check
- </para>
- </summary>
-
- <param name="filename">The name of the file in the project whose source is being checked.</param>
- <param name="fileversion">An integer that can be used to indicate the version of the file. This will be returned by TryGetRecentTypeCheckResultsForFile when looking up the file.</param>
- <param name="source">The full source for the file.</param>
- <param name="options">The options for the project or script.</param>
- <param name="isResultObsolete">
-     A callback to check if a requested result is already obsolete, e.g. because of changed 
- </param>
- <param name="textSnapshotInfo">
-     An item passed back to 'hasTextChangedSinceLastTypecheck' to help determine if 
-     an approximate intellisense resolution is inaccurate because a range of text has changed. This 
-     can be used to marginally increase accuracy of intellisense results in some situations.
- </param>
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.NotifyProjectCleaned(Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions)">
-<summary>
- This function is called when a project has been cleaned/rebuilt, and thus any live type providers should be refreshed.
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.MatchBracesAlternate(System.String,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions)">
- <summary>
-   Parse a source code file, returning information about brace matching in the file.
-   Return an enumeration of the matching parethetical tokens in the file.
- </summary>
-
- <param name="filename">The filename for the file, used to help caching of results.</param>
- <param name="source">The full source for the file.</param>
- <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.InvalidateConfiguration(Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions)">
-<summary>
- This function is called when the configuration is known to have changed for reasons not encoded in the ProjectOptions.
- For example, dependent references may have been deleted or created.
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.InvalidateAll">
-<summary>
- This function is called when the entire environment is known to have changed for reasons not encoded in the ProjectOptions of any project/compilation.
- For example, the type provider approvals file may have changed.
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GetProjectOptionsFromScript(System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.DateTime},Microsoft.FSharp.Core.FSharpOption{System.String[]},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
- <summary>
- <para>For a given script file, get the ProjectOptions implied by the #load closure.</para>
- <para>All files are read from the FileSystem API, except the file being checked.</para>
- </summary>
-
- <param name="filename">Used to differentiate between scripts, to consider each script a separate project.
- Also used in formatted error messages.</param>
-
- <param name="loadedTimeStamp">Indicates when the script was loaded into the editing environment,
- so that an 'unload' and 'reload' action will cause the script to be considered as a new project,
- so that references are re-resolved.</param>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GetProjectOptionsFromCommandLineArgs(System.String,System.String[],Microsoft.FSharp.Core.FSharpOption{System.DateTime})">
- <summary>
- <para>Get the ProjectOptions implied by a set of command line arguments.</para>
- </summary>
-
- <param name="projectFileName">Used to differentiate between projects and for the base directory of the project.</param>
- <param name="argv">The command line arguments for the project build.</param>
- <param name="loadedTimeStamp">Indicates when the script was loaded into the editing environment,
- so that an 'unload' and 'reload' action will cause the script to be considered as a new project,
- so that references are re-resolved.</param>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GetBackgroundParseResultsForFileInProject(System.String,Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions)">
- <summary>
- <para>Like ParseFileInProject, but uses results from the background builder.</para>
- <para>All files are read from the FileSystem API, including the file being checked.</para>
- </summary>
-
- <param name="filename">The filename for the file.</param>
- <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GetBackgroundCheckResultsForFileInProject(System.String,Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions)">
- <summary>
- <para>Like ParseFileInProject, but uses the existing results from the background builder.</para>
- <para>All files are read from the FileSystem API, including the file being checked.</para>
- </summary>
-
- <param name="filename">The filename for the file.</param>
- <param name="options">The options for the project or script, used to determine active --define conditionals and other options relevant to parsing.</param>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.Create">
-<summary>
- Create an instance of an InteractiveChecker.
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.Create(Microsoft.FSharp.Core.FSharpOption{System.Int32})">
-<summary>
- Create an instance of an InteractiveChecker.  
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.ClearLanguageServiceRootCachesAndCollectAndFinalizeAllTransients">
-<summary>
- Flush all caches and garbage collect
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.CheckFileInProjectIfReady(Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults,System.String,System.Int32,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.IsResultObsolete},Microsoft.FSharp.Core.FSharpOption{System.Object})">
- <summary>
- <para>Check a source code file, returning a handle to the results of the parse including
- the reconstructed types in the file.</para>
-
- <para>All files except the one being checked are read from the FileSystem API</para>
- <para>Note: returns NoAntecedent if the background builder is not yet done prepring the type check context for the 
- file (e.g. loading references and parsing/checking files in the project that this file depends upon). 
- In this case, the caller can either retry, or wait for FileTypeCheckStateIsDirty to be raised for this file.
- </para>
- </summary>
-
- <param name="parsed">The results of ParseFileInProject for this file.</param>
- <param name="filename">The name of the file in the project whose source is being checked.</param>
- <param name="fileversion">An integer that can be used to indicate the version of the file. This will be returned by TryGetRecentTypeCheckResultsForFile when looking up the file.</param>
- <param name="source">The full source for the file.</param>
- <param name="options">The options for the project or script.</param>
- <param name="isResultObsolete">
-     A callback to check if a requested result is already obsolete, e.g. because of changed 
- </param>
- <param name="textSnapshotInfo">
-     An item passed back to 'hasTextChangedSinceLastTypecheck' to help determine if 
-     an approximate intellisense resolution is inaccurate because a range of text has changed. This 
-     can be used to marginally increase accuracy of intellisense results in some situations.
- </param>
-
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.CheckFileInProject(Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults,System.String,System.Int32,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.IsResultObsolete},Microsoft.FSharp.Core.FSharpOption{System.Object})">
- <summary>
- <para>
-   Check a source code file, returning a handle to the results
- </para>
- <para>
-    Note: all files except the one being checked are read from the FileSystem API
- </para>
- <para>
-   Return CheckFileAnswer.Aborted if a parse tree was not available or if the check
- </para>
- </summary>
-
- <param name="parsed">The results of ParseFileInProject for this file.</param>
- <param name="filename">The name of the file in the project whose source is being checked.</param>
- <param name="fileversion">An integer that can be used to indicate the version of the file. This will be returned by TryGetRecentTypeCheckResultsForFile when looking up the file.</param>
- <param name="source">The full source for the file.</param>
- <param name="options">The options for the project or script.</param>
- <param name="isResultObsolete">
-     A callback to check if a requested result is already obsolete, e.g. because of changed 
- </param>
- <param name="textSnapshotInfo">
-     An item passed back to 'hasTextChangedSinceLastTypecheck' to help determine if 
-     an approximate intellisense resolution is inaccurate because a range of text has changed. This 
-     can be used to marginally increase accuracy of intellisense results in some situations.
- </param>
-
-</member>
-<member name="">
-
 </member>
 <member name="">
 
@@ -37519,266 +38485,66 @@ Emit comparison instructions
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.LexState">
 <summary>
- Represents encoded information for the end-of-line continutation of lexing
+ Renamed to FSharpTokenizerLexState
 </summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.LineTokenizer.ScanToken(System.Int64)">
-<summary>
- Scan one token from the line
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.LineTokenizer">
 <summary>
- Object to tokenize a line of F# source code, starting with the given lexState.  The lexState should be 0 for
- the first line of text. Returns an array of ranges of the text and two enumerations categorizing the
- tokens and characters covered by that range, i.e. TokenColorKind and TokenCharKind.  The enumerations
- are somewhat adhoc but useful enough to give good colorization options to the user in an IDE.
-
- A new lexState is also returned.  An IDE-plugin should in general cache the lexState 
- values for each line of the edited code.
+ Renamed to FSharpLineTokenizer
 </summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroup.Methods">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Method">
 <summary>
- The methods (or other items) in the group
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroup.MethodName">
-<summary>
- The shared name of the methods (or other items) in the group
+ Renamed to FSharpMethodGroupItem
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroup">
 <summary>
- Represents a group of methods (or other items) returned by GetMethods.  
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItem.TypeText">
-<summary>
- The formatted type text for the method (or other item)
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItem.Parameters">
-<summary>
- The parameters of the method in the overload set
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItem.IsStaticArguments">
-<summary>
- Indicates that this not really a method, but actually a static arguments list, like TP&lt;42,&quot;foo&quot;&gt;
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItem.Description">
-<summary>
- The formatted description text for the method (or other item)
+ Renamed to FSharpMethodGroup
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItem">
 <summary>
- Represents one method (or other item) in a method group. The item may represent either a method or 
- a single, non-overloaded item such as union case or a named function value.
+ Renamed to FSharpMethodGroupItem
 </summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItemParameter.ParameterName">
-<summary>
- The name of the parameter.
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItemParameter.Display">
-<summary>
- The text to display for the parameter including its name, its type and visual indicators of other
- information such as whether it is optional.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItemParameter.Description">
-<summary>
- The descriptive help text to display for the parameter.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItemParameter.CanonicalTypeTextForSorting">
-<summary>
- A key that can be used for sorting the parameters, used to help sort overloads.
-</summary>
-</member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.MethodGroupItemParameter">
-<summary>
- Represents one parameter for one method (or other item) in a group. 
-</summary>
-</member>
-<member name="">
-
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.NavigationItems">
 <summary>
- Represents result of &apos;GetNavigationItems&apos; operation - this contains
- all the members and currently selected indices. First level correspond to
- types &amp; modules and second level are methods etc.
+ Renamed to FSharpNavigationItems
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.NoteworthyParamInfoLocations">
+<summary>
+ Renamed to FSharpNoteworthyParamInfoLocations
 </summary>
 </member>
 <member name="">
 
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults.ParseHadErrors">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.NotifyFileTypeCheckStateIsDirty">
 <summary>
- Indicates if any errors occured during the parse
+ Obsolete and replaced
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults.FileName">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Param">
 <summary>
- Name of the file for which this information were created
+ Renamed to FSharpMethodGroupItemParameter
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults.Errors">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults">
 <summary>
- Get the errors and warnings for the parse
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults.DependencyFiles">
-<summary>
- When these files change then the build is invalid
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults.ValidateBreakpointLocation(Microsoft.FSharp.Compiler.Range.pos)">
-<summary>
- Return the inner-most range associated with a possible breakpoint location
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults.GetNavigationItems">
-<summary>
- Get declared items and the selected item at the specified location
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.ParseFileResults.FindNoteworthyParamInfoLocations(Microsoft.FSharp.Compiler.Range.pos)">
-<summary>
- Notable parse info for ParameterInfo at a given location
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectContext.AccessibilityRights">
-<summary>
- Get the accessibility rights for this project context w.r.t. InternalsVisibleTo attributes granting access to other assemblies
-</summary>
-</member>
-<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectContext.GetReferencedAssemblies">
-<summary>
- Get the resolution and full contents of the assemblies referenced by the project options
+ Renamed to FSharpParseFileResults
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectContext">
 <summary>
- Represents the checking context implied by the ProjectOptions 
+ Renamed to FSharpProjectContext
 </summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions.UnresolvedReferences">
-<summary>
- Unused in this API and should be &apos;None&apos;
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions.LoadTime">
-<summary>
- Timestamp of project/script load, used to differentiate between different instances of a project load.
- This ensures that a complete reload of the project or script type checking
- context occurs on project or script unload/reload.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions.UseScriptResolutionRules">
-<summary>
- When true, use the reference resolution rules for scripts rather than the rules for compiler.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions.IsIncompleteTypeCheckEnvironment">
-<summary>
- When true, the typechecking environment is known a priori to be incomplete, for
- example when a .fs file is opened outside of a project. In this case, the number of error 
- messages reported is reduced.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions.ReferencedProjects">
-<summary>
- The command line arguments for the other projects referenced by this project, indexed by the
- exact text used in the &quot;-r:&quot; reference in ProjectOptions.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions.ProjectOptions">
-<summary>
- The command line argument options for the project
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions.ProjectFileNames">
-<summary>
- The files in the project
-</summary>
-</member>
-<member name="">
-
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ProjectOptions">
- <summary>A set of information describing a project or script build configuration.</summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
+<summary>
+ Renamed to FSharpProjectOptions
+</summary>
 </member>
 <member name="">
 
@@ -37794,227 +38560,65 @@ Emit comparison instructions
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.SourceTokenizer">
 <summary>
- Tokenizer for a source file. Holds some expensive-to-compute resources at the scope of the file.
+ Renamed to FSharpSourceTokenizer
 </summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.FullMatchedLength">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TokenCharKind">
 <summary>
- The full length consumed by this match, including delayed tokens (which can be ignored in naive lexers)
+ Renamed to FSharpTokenCharKind
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.TokenName">
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TokenColorKind">
 <summary>
- Provides additional information about the token
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.Tag">
-<summary>
- The tag is an integer identifier for the token
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.TriggerClass">
-<summary>
- Actions taken when the token is typed
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.RightColumn">
-<summary>
- Right column of the token.
-</summary>
-</member>
-<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.LeftColumn">
-<summary>
- Left column of the token.
+ Renamed to FSharpTokenColorKind
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation">
 <summary>
- Information about a particular token from the tokenizer
+ Renamed to FSharpTokenInfo
 </summary>
-</member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ToolTipElement.ToolTipElementCompositionError">
-<summary>
- An error occurred formatting this element
-</summary>
-</member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ToolTipElement.ToolTipElementGroup">
-<summary>
- For example, a method overload group.
-</summary>
-</member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ToolTipElement.ToolTipElement">
-<summary>
- A single type, method, etc with comment.
-</summary>
-</member>
-<member name="">
-
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ToolTipElement">
 <summary>
- A single tool tip display element
-</summary>
-</member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ToolTipText.ToolTipText">
-<summary>
- A list of data tip elements to display.
+ Renamed to FSharpToolTipElement
 </summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ToolTipText">
 <summary>
- Information for building a tool tip box.
+ Renamed to FSharpToolTipText
 </summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TopLevelDeclaration">
 <summary>
- Represents top-level declarations (that should be in the type drop-down)
- with nested declarations (that can be shown in the member drop-down)
+ Renamed to FSharpNavigationTopLevelDeclaration
 </summary>
 </member>
-<member name="">
-
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TriggerClass">
+<summary>
+ Renamed to FSharpTokenTriggerClass
+</summary>
 </member>
-<member name="">
-
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckAnswer">
+<summary>
+ Renamed to FSharpCheckFileAnswer
+</summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults">
+<summary>
+ Renamed to FSharpCheckFileResults
+</summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.UnresolvedReferencesSet">
  <summary>Unused in this API</summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfo">
+<summary>
+ Renamed to FSharpParseFileResults
+</summary>
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.XmlComment">
 <summary>
- Describe a comment as either a block of text or a file+signature reference into an intellidoc file.
+ Renamed to FSharpXmlDoc
 </summary>
 </member>
 <member name="">
@@ -38139,7 +38743,232 @@ Emit comparison instructions
 
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal">
-
+<summary>
+ A range of utility functions to assist with traversing an AST
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|TraitCall|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions for an unresolved call to a trait 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|ObjectExpr|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches object expressions, returning the base type, the base call, the overrides and the interface implementations
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|ILFieldSet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which set a field in a .NET type
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|ILFieldGet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which fetch a field from a .NET type
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|ILAsm|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are IL assembly code
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|NewDelegate|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which create an instance of a delegate type
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|TryWith|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches try/with expressions
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|TryFinally|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches try/finally expressions
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|WhileLoop|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches while loops 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|FastIntegerForLoop|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches fast-integer loops (up or down)
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Sequential|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches sequential expressions 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|AddressOf|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which take the address of a location
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Const|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches constant expressions, including signed and unsigned integers, strings, characters, booleans, arrays
+ of bytes and arrays of unit16.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|DefaultValue|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches default-value expressions, including null expressions
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|ValueSet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which set the contents of a mutable variable
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|AddressSet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which set the contents of an address
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|TypeTest|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which test the runtime type of a value
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|NewArray|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches array expressions 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Coerce|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which coerce the type of a value
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|TupleGet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which get a value from a tuple
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|NewTuple|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches tuple expressions 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|UnionCaseTest|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which test if an expression corresponds to a particular union case
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|UnionCaseTag|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which gets the tag for a union case
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|UnionCaseSet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which set a field from a union case (only used in FSharp.Core itself)
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|UnionCaseGet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which get a field from a union case
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|NewUnionCase|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which create an object corresponding to a union case
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|FSharpFieldSet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which set a field in a record or class
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|FSharpFieldGet|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which get a field from a record or class
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|NewRecord|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches record expressions 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|LetRec|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are let-rec definitions
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Quote|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are quotation literals
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|BaseValue|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are uses of the &apos;base&apos; value
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|ThisValue|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are uses of the &apos;this&apos; value
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|NewObject|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are calls to object constructors 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Call|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are calls to members or module-defined functions. When calling curried functions and members the
+ arguments are collapsed to a single collection of arguments, as done in the compiled version of these.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Let|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are let definitions
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|IfThenElse|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are conditionals
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Lambda|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are lambda abstractions
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|DecisionTreeSuccess|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Special expressions at the end of a conditional decision structure in the decision expression node of a DecisionTree .
+ The given expressions are passed as values to the decision tree target.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|DecisionTree|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions with a decision expression, each branch of which ends in DecisionTreeSuccess pasing control and values to one of the targets.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|TypeLambda|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are type abstractions
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Application|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are the application of function values 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns.|Value|_|(Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr)">
+<summary>
+ Matches expressions which are uses of values 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns">
+<summary>
+ A collection of active patterns to analyze expressions
+</summary>
 </member>
 <member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CompilerEnvironment.IsCheckerSupportedSubcategory(System.String)">
 <summary>
@@ -38172,6 +39001,21 @@ Emit comparison instructions
 <summary>
  Information about the debugging environment
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Impl">
+
 </member>
 <member name="">
 
@@ -38431,6 +39275,42 @@ Emit comparison instructions
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Obsoletes">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.PrettyNaming">
 <summary>
  A set of helpers related to naming of identifiers
@@ -38514,12 +39394,6 @@ Emit comparison instructions
 
 </member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TestExpose">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TestHooks">
 
 </member>
 <member name="">
@@ -39940,6 +40814,12 @@ Emit comparison instructions
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="P:Microsoft.FSharp.Compiler.Tast.ValRef.nlr">
 <summary>
  Indicates a reference to something bound in another CCU 
@@ -39949,6 +40829,9 @@ Emit comparison instructions
 <summary>
  Indicates a reference to something bound in this CCU 
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -40222,6 +41105,11 @@ Emit comparison instructions
  module, namespace or type may have two distinct Entity objects that have distinct stamps.
 </summary>
 </member>
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityRef.SigRange">
+<summary>
+ The signature definition location of the namespace, module or type
+</summary>
+</member>
 <member name="">
 
 </member>
@@ -40409,7 +41297,7 @@ Emit comparison instructions
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Tast.EntityRef.ImplRange">
 <summary>
- The name of the namespace, module or type, possibly with mangling, e.g. List`1, List or FailureException 
+ The implementation definition location of the namespace, module or type
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Tast.EntityRef.ImmediateInterfacesOfFSharpTycon">
@@ -40773,6 +41661,15 @@ Emit comparison instructions
 <member name="">
 
 </member>
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_other_range">
+<summary>
+ If the flag is true, this is the implementation range for an item in a signature, otherwise it is 
+ the signature range for an item in an implementation
+</summary>
+</member>
+<member name="">
+
+</member>
 <member name="">
 
 </member>
@@ -40857,6 +41754,12 @@ Get the signature for the value&apos;s XML documentation
 <member name="P:Microsoft.FSharp.Compiler.Tast.Val.Stamp">
 <summary>
  A unique stamp within the context of this invocation of the compiler process 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Tast.Val.SigRange">
+<summary>
+ Range of the definition (signature) of the value, used by Visual Studio 
+ Updated by mutation when the implementation is matched against the signature. 
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Tast.Val.ReflectedDefinition">
@@ -41632,7 +42535,7 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ModuleOrNamespaceType.entities@1367">
+<member name="F:Microsoft.FSharp.Compiler.Tast.ModuleOrNamespaceType.entities@1391">
 <summary>
  Mutation used during compilation of FSharp.Core.dll
 </summary>
@@ -41789,9 +42692,10 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_impl_range">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_other_range">
 <summary>
- Location of the implementation
+ If the flag is true, this is the implementation range for an item in a signature, otherwise it is 
+ the signature range for an item in an implementation
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_id">
@@ -41905,6 +42809,9 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="T:Microsoft.FSharp.Compiler.Tast.RecdField">
 <summary>
  This may represent a &quot;field&quot; in either a struct, class, record or union
@@ -41921,9 +42828,10 @@ Get the signature for the value&apos;s XML documentation
   Indicates the declared visibility of the union constructor, not taking signatures into account 
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.ImplRangeOpt">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.OtherRangeOpt">
 <summary>
- Location of the implementation
+ If the flag is true, this is the implementation range for an item in a signature, otherwise it is 
+ the signature range for an item in an implementation
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.Id">
@@ -41955,6 +42863,9 @@ Get the signature for the value&apos;s XML documentation
 <summary>
  Data carried by the case. 
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -42388,9 +43299,10 @@ Get the signature for the value&apos;s XML documentation
  The declared accessibility of the representation, not taking signatures into account 
 </summary>
 </member>
-<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_impl_range">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_other_range">
 <summary>
- The declaration location for the item in its implementation
+ If the flag is true, this is the implementation range for an item in a signature, otherwise it is 
+ the signature range for an item in an implementation
 </summary>
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_range">
@@ -42513,6 +43425,9 @@ Get the signature for the value&apos;s XML documentation
  Note that because of signatures, there are situations where in a single compilation the &quot;same&quot; 
  module, namespace or type may have two distinct Entity objects that have distinct stamps.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="P:Microsoft.FSharp.Compiler.Tast.Entity.Range">
 <summary>

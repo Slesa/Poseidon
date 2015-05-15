@@ -128,35 +128,45 @@
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="prep">#r</span> <span class="s">&quot;</span><span class="s">FAKE</span><span class="s">/</span><span class="s">tools</span><span class="s">/</span><span class="s">FakeLib</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>
+<span class="prep">#r</span> <span class="s">&quot;FAKE/tools/FakeLib.dll&quot;</span>
 <span class="k">open</span> <span class="i">Fake</span> 
 
-<span class="i">Target</span> <span class="s">&quot;</span><span class="s">Clean</span><span class="s">&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span>  <span class="i">trace</span> <span class="s">&quot;</span><span class="s"> </span><span class="s">-</span><span class="s">-</span><span class="s">-</span><span class="s"> </span><span class="s">Cleaning</span><span class="s"> </span><span class="s">stuff</span><span class="s"> </span><span class="s">-</span><span class="s">-</span><span class="s">-</span><span class="s"> </span><span class="s">&quot;</span>)
+<span class="i">Target</span> <span class="s">&quot;Clean&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span>  <span class="i">trace</span> <span class="s">&quot; --- Cleaning stuff --- &quot;</span>)
 
-<span class="i">Target</span> <span class="s">&quot;</span><span class="s">Build</span><span class="s">&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span>  <span class="i">trace</span> <span class="s">&quot;</span><span class="s"> </span><span class="s">-</span><span class="s">-</span><span class="s">-</span><span class="s"> </span><span class="s">Building</span><span class="s"> </span><span class="s">the</span><span class="s"> </span><span class="s">app</span><span class="s"> </span><span class="s">-</span><span class="s">-</span><span class="s">-</span><span class="s"> </span><span class="s">&quot;</span>)
+<span class="i">Target</span> <span class="s">&quot;Build&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span>  <span class="i">trace</span> <span class="s">&quot; --- Building the app --- &quot;</span>)
 
-<span class="i">Target</span> <span class="s">&quot;</span><span class="s">Deploy</span><span class="s">&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span> <span class="i">trace</span> <span class="s">&quot;</span><span class="s"> </span><span class="s">-</span><span class="s">-</span><span class="s">-</span><span class="s"> </span><span class="s">Deploying</span><span class="s"> </span><span class="s">app</span><span class="s"> </span><span class="s">-</span><span class="s">-</span><span class="s">-</span><span class="s"> </span><span class="s">&quot;</span>)
+<span class="i">Target</span> <span class="s">&quot;Deploy&quot;</span> (<span class="k">fun</span> () <span class="k">-&gt;</span> <span class="i">trace</span> <span class="s">&quot; --- Deploying app --- &quot;</span>)
 
 
-<span class="s">&quot;</span><span class="s">Clean</span><span class="s">&quot;</span>
-  <span class="o">==&gt;</span> <span class="s">&quot;</span><span class="s">Build</span><span class="s">&quot;</span>
-  <span class="o">==&gt;</span> <span class="s">&quot;</span><span class="s">Deploy</span><span class="s">&quot;</span>
+<span class="s">&quot;Clean&quot;</span>
+  <span class="o">==&gt;</span> <span class="s">&quot;Build&quot;</span>
+  <span class="o">==&gt;</span> <span class="s">&quot;Deploy&quot;</span>
 
-<span class="i">RunTargetOrDefault</span> <span class="s">&quot;</span><span class="s">Deploy</span><span class="s">&quot;</span></pre>
+<span class="i">RunTargetOrDefault</span> <span class="s">&quot;Deploy&quot;</span>
+</pre>
 </td>
 </tr>
 </table>
 
 <p>If you are on windows then create this small redirect script:</p>
 
-<table class="pre"><tr><td><pre lang="batchfile">@echo off
-&quot;tools\Fake.exe&quot; &quot;%1&quot;
-exit /b %errorlevel%</pre></td></tr></table>
+<table class="pre"><tr><td class="lines"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</td>
+<td class="snippet"><pre lang="batchfile">@echo off
+"tools\Fake.exe" "%1"
+exit /b %errorlevel%
+</pre></td></tr></table>
 
 <p>On mono you can use:</p>
 
-<table class="pre"><tr><td><pre lang="batchfile">#!/bin/bash
-mono ./tools/FAKE.exe &quot;$@&quot;</pre></td></tr></table>
+<table class="pre"><tr><td class="lines"><span class="l">1: </span>
+<span class="l">2: </span>
+</td>
+<td class="snippet"><pre lang="batchfile">#!/bin/bash
+mono ./tools/FAKE.exe "$@"
+</pre></td></tr></table>
 
 <p>Now you can run FAKE targets easily from the command line:</p>
 
@@ -174,7 +184,7 @@ mono ./tools/FAKE.exe &quot;$@&quot;</pre></td></tr></table>
               <li class="divider"></li>              
             <li><a href="https://nuget.org/packages/Fake">Get FAKE via NuGet</a></li>
               <li><a href="https://github.com/fsharp/FAKE">Source Code on GitHub</a></li>              
-              <li><a href="https://github.com/fsharp/FAKE/blob/master/License.txt">License (MS-PL)</a></li>            
+              <li><a href="https://github.com/fsharp/FAKE/blob/master/License.txt">License (Apache 2)</a></li>            
               <li><a href="RELEASE_NOTES.html">Release Notes</a></li>
               <li><a href="contributing.html">Contributing to FAKE</a></li>
               <li><a href="users.html">Who is using FAKE?</a></li>
@@ -188,12 +198,17 @@ mono ./tools/FAKE.exe &quot;$@&quot;</pre></td></tr></table>
               <li><a href="create-nuget-package.html">Create NuGet packages</a></li>
               <li><a href="specifictargets.html">Running specific targets</a></li>
               <li><a href="commandline.html">Running FAKE from command line</a></li>
+              <li><a href="parallel-build.html">Running targets in parallel</a></li>
               <li><a href="fsc.html">Using the F# compiler from FAKE</a></li>
               <li><a href="customtasks.html">Creating custom tasks</a></li>
               <li><a href="teamcity.html">TeamCity integration</a></li>
               <li><a href="canopy.html">Running canopy tests</a></li>
               <li><a href="octopusdeploy.html">Octopus Deploy</a></li>
               <li><a href="typescript.html">TypeScript support</a></li>
+              <li><a href="azurewebjobs.html">Azure WebJobs support</a></li>
+              <li><a href="azurecloudservices.html">Azure Cloud Services support</a></li>
+              <li><a href="androidpublisher.html">Android publisher</a></li>
+              <li><a href="watch.html">File Watcher</a></li>
               <li class="divider"></li>
               <li><a href="deploy.html">Fake.Deploy</a></li>
               <li class="nav-header">Reference</li>

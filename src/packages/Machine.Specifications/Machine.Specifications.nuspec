@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata>
     <id>Machine.Specifications</id>
-    <version>0.8.3</version>
+    <version>0.9.1</version>
     <title>Machine.Specifications</title>
     <authors>Aaron Jensen, Alexander Groß, Daniel Marbach, et al.</authors>
     <owners>Alexander Groß, Daniel Marbach</owners>

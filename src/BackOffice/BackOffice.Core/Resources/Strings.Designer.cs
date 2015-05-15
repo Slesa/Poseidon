@@ -86,5 +86,23 @@ namespace Poseidon.BackOffice.Core.Resources {
                 return ResourceManager.GetString("CoreModule_Tooltip", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Password:.
+        /// </summary>
+        internal static string CoreModulePassword {
+            get {
+                return ResourceManager.GetString("CoreModulePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _User:.
+        /// </summary>
+        internal static string CoreModuleUser {
+            get {
+                return ResourceManager.GetString("CoreModuleUser", resourceCulture);
+            }
+        }
     }
 }

@@ -140,6 +140,43 @@
  Argument parsing result holder.
 </summary>
 </member>
+<member name="F:Nessos.UnionArgParser.CliPrefix.Empty">
+<summary>
+ No CLI prefix
+</summary>
+</member>
+<member name="F:Nessos.UnionArgParser.CliPrefix.Dash">
+<summary>
+ Single Dash prefix
+</summary>
+</member>
+<member name="F:Nessos.UnionArgParser.CliPrefix.DoubleDash">
+<summary>
+ Double Dash prefix
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.UnionArgParser.CliPrefix">
+<summary>
+ CLI prefix enumeration
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.UnionArgParser.CliPrefixAttribute">
+<summary>
+ Specifies a custom prefix for auto generated CLI names.
+</summary>
+</member>
 <member name="">
 
 </member>
@@ -336,6 +373,9 @@
 <member name="M:Nessos.UnionArgParser.UnionArgParser`1.Usage(Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Returns the usage string.</summary>
  <param name="message">The message to be displayed on top of the usage string.</param>
+</member>
+<member name="M:Nessos.UnionArgParser.UnionArgParser`1.PrintCommandLineSyntax">
+ <summary>Prints command line syntax. Useful for generating documentation.</summary>
 </member>
 <member name="M:Nessos.UnionArgParser.UnionArgParser`1.PrintCommandLineFlat(Microsoft.FSharp.Collections.FSharpList{`0})">
  <summary>Prints parameters in command line format. Useful for argument string generation.</summary>
@@ -579,6 +619,9 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="M:Nessos.UnionArgParser.ArgInfo.buildResult``1(Nessos.UnionArgParser.ArgInfo.ArgInfo,Nessos.UnionArgParser.ParseSource,System.String,System.Object[])">
 <summary>
  construct a parse result from untyped collection of parsed arguments
@@ -738,6 +781,12 @@
  <param name="argInfo"></param>
  <param name="printComments"></param>
  <param name="args"></param>
+</member>
+<member name="M:Nessos.UnionArgParser.UnParsers.printCommandLineSyntax(Microsoft.FSharp.Collections.FSharpList{Nessos.UnionArgParser.ArgInfo.ArgInfo})">
+ <summary>
+     print the command line syntax
+ </summary>
+ <param name="argInfo"></param>
 </member>
 <member name="M:Nessos.UnionArgParser.UnParsers.printCommandLineArgs``1(Microsoft.FSharp.Collections.FSharpList{Nessos.UnionArgParser.ArgInfo.ArgInfo},Microsoft.FSharp.Collections.FSharpList{``0})">
  <summary>

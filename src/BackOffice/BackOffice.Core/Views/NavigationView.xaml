@@ -92,11 +92,13 @@
         </Grid>
     </ContentControl>
 
+    <!-- @@@
     <i:Interaction.Triggers>
         <ei:KeyTrigger Key="F" Modifiers="Control">
             <actions:SetFocusAction Target="{Binding ElementName=Search}" />
         </ei:KeyTrigger>
 
     </i:Interaction.Triggers>
+    -->
 
 </UserControl>

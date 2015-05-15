@@ -1,6 +1,7 @@
 CommonServiceLocator
 FAKE
 log4net
+Expression.Blend.SDK
 Prism
 Prism.Composition
 Prism.Interactivity
@@ -9,3 +10,4 @@ Prism.PubSubEvents
 Prism.UnityExtensions
 Unity
 UnityAutoRegistration
+WpfLocalizeExtension

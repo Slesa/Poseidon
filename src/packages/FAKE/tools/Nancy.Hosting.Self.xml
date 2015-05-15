@@ -4,6 +4,20 @@
         <name>Nancy.Hosting.Self</name>
     </assembly>
     <members>
+        <member name="T:Nancy.Hosting.Self.IgnoredHeaders">
+            <summary>
+                A helper class that checks for a header against a list of headers that should be ignored
+                when populating the headers of an <see cref="T:System.Net.HttpListenerResponse"/> object.
+            </summary>
+        </member>
+        <member name="M:Nancy.Hosting.Self.IgnoredHeaders.IsIgnored(System.String)">
+            <summary>
+                Determines if a header is ignored when populating the headers of an
+                <see cref="T:System.Net.HttpListenerResponse"/> object.
+            </summary>
+            <param name="headerName">The name of the header.</param>
+            <returns><c>true</c> if the header is ignored; otherwise, <c>false</c>.</returns>
+        </member>
         <member name="T:Nancy.Hosting.Self.UrlReservations">
             <summary>
             Configuration for automatic url reservation creation
@@ -33,7 +47,7 @@
             </summary>
             <param name="file">File to execute</param>
             <param name="args">Arguments to pass to the executable</param>
-            <returns>True if sucessful, false otherwise</returns>
+            <returns>True if successful, false otherwise</returns>
         </member>
         <member name="T:Nancy.Hosting.Self.HostConfiguration">
             <summary>
@@ -78,6 +92,14 @@
             Defaults to false.
             </summary>
         </member>
+        <member name="P:Nancy.Hosting.Self.HostConfiguration.AllowAuthorityFallback">
+            <summary>
+            Gets or sets a property determining if base uri matching can fall back to just
+            using Authority (Schema + Host + Port) as base uri if it cannot match anything in
+            the known list. This should only be set to True if you have issues with port forwarding
+            (e.g. on Azure).
+            </summary>
+        </member>
         <member name="T:Nancy.Hosting.Self.NancyHost">
             <summary>
             Allows to host Nancy server inside any application - console or windows service.
@@ -91,14 +113,14 @@
         </member>
         <member name="M:Nancy.Hosting.Self.NancyHost.#ctor(System.Uri[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specfied <paramref name="baseUris"/>.
+            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specified <paramref name="baseUris"/>.
             Uses the default configuration
             </summary>
             <param name="baseUris">The <see cref="T:System.Uri"/>s that the host will listen to.</param>
         </member>
         <member name="M:Nancy.Hosting.Self.NancyHost.#ctor(Nancy.Hosting.Self.HostConfiguration,System.Uri[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specfied <paramref name="baseUris"/>.
+            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specified <paramref name="baseUris"/>.
             Uses the specified configuration.
             </summary>
             <param name="baseUris">The <see cref="T:System.Uri"/>s that the host will listen to.</param>
@@ -106,7 +128,7 @@
         </member>
         <member name="M:Nancy.Hosting.Self.NancyHost.#ctor(Nancy.Bootstrapper.INancyBootstrapper,System.Uri[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specfied <paramref name="baseUris"/>, using
+            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specified <paramref name="baseUris"/>, using
             the provided <paramref name="bootstrapper"/>.
             Uses the default configuration
             </summary>
@@ -115,7 +137,7 @@
         </member>
         <member name="M:Nancy.Hosting.Self.NancyHost.#ctor(Nancy.Bootstrapper.INancyBootstrapper,Nancy.Hosting.Self.HostConfiguration,System.Uri[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specfied <paramref name="baseUris"/>, using
+            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specified <paramref name="baseUris"/>, using
             the provided <paramref name="bootstrapper"/>.
             Uses the specified configuration.
             </summary>
@@ -125,7 +147,7 @@
         </member>
         <member name="M:Nancy.Hosting.Self.NancyHost.#ctor(System.Uri,Nancy.Bootstrapper.INancyBootstrapper)">
             <summary>
-            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specfied <paramref name="baseUri"/>, using
+            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specified <paramref name="baseUri"/>, using
             the provided <paramref name="bootstrapper"/>.
             Uses the default configuration
             </summary>
@@ -134,7 +156,7 @@
         </member>
         <member name="M:Nancy.Hosting.Self.NancyHost.#ctor(System.Uri,Nancy.Bootstrapper.INancyBootstrapper,Nancy.Hosting.Self.HostConfiguration)">
             <summary>
-            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specfied <paramref name="baseUri"/>, using
+            Initializes a new instance of the <see cref="T:Nancy.Hosting.Self.NancyHost"/> class for the specified <paramref name="baseUri"/>, using
             the provided <paramref name="bootstrapper"/>.
             Uses the specified configuration.
             </summary>
