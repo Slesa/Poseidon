@@ -10,5 +10,8 @@
     <Image x:Key="Images.Ok" Source="Images/ok.png" x:Shared="false" />
     <Image x:Key="Images.Cancel" Source="Images/cancel.png" x:Shared="false" />
     <Image x:Key="Images.Help" Source="Images/help.png" x:Shared="false" />
+    <Image x:Key="Images.Settings" Source="Images/settings.png" x:Shared="false" />
+    <Image x:Key="Images.Logout" Source="Images/logout.png" x:Shared="false" />
+    <Image x:Key="Images.Quit" Source="Images/quit.png" x:Shared="false" />
 
 </ResourceDictionary>

@@ -44,6 +44,9 @@
                     <ContentControl Content="{StaticResource Images.Ok}" />
                     <ContentControl Content="{StaticResource Images.Cancel}" />
                     <ContentControl Content="{StaticResource Images.Help}" />
+                    <ContentControl Content="{StaticResource Images.Quit}" />
+                    <ContentControl Content="{StaticResource Images.Logout}" />
+                    <ContentControl Content="{StaticResource Images.Settings}" />
                 </WrapPanel>
             </StackPanel>
 
