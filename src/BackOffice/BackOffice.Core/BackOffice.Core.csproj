@@ -111,6 +111,7 @@
     <EmbeddedResource Include="Resources\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
@@ -185,7 +186,7 @@
   <ItemGroup>
     <Resource Include="DesignTime\Resources\Token.png" />
     <Resource Include="DesignTime\Resources\Ums.png" />
-    <Resource Include="DesignTime\Resources\User.png" />
+    <Resource Include="Resources\User.png" />
     <Resource Include="DesignTime\Resources\UserRole.png" />
   </ItemGroup>
   <ItemGroup>

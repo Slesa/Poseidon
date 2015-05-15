@@ -18,7 +18,7 @@ NUGET
       Machine.Specifications (>= 0)
     NHibernate (3.3.1.4000)
       Iesi.Collections (>= 3.2.0.4000)
-    Paket (1.4.13)
+    Paket (1.4.14)
     Prism (5.0.0)
       Prism.Composition (>= 5.0)
       Prism.Interactivity (>= 5.0)

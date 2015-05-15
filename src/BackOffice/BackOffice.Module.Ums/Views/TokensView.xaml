@@ -6,7 +6,10 @@
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
              xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
-             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -45,8 +48,8 @@
 
         <DockPanel>
             <Controls:ModuleInfoArea
-                Content="{x:Static res:Strings.TokenModule}"
-                Description="{x:Static res:Strings.TokenModule_Description}"
+                Content="{lex:Loc TokenModule}"
+                Description="{lex:Loc TokenModule_Description}"
                 DockPanel.Dock="Top"
                 MaxWidth="200"
                 IconFile="{StaticResource Image.User}"
@@ -57,8 +60,8 @@
         <ListView Grid.Column="1" ItemsSource="{Binding Tokens}" ItemTemplate="{StaticResource ItemTemplate.Token}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="{x:Static res:Strings.Heading_Data}" DisplayMemberBinding="{Binding Data}" />
-                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_TokenType}" DisplayMemberBinding="{Binding TokenType.Name}" />
+                    <GridViewColumn Header="{lex:Loc Heading_Data}" DisplayMemberBinding="{Binding Data}" />
+                    <GridViewColumn Width="Auto" Header="{lex:Loc Heading_TokenType}" DisplayMemberBinding="{Binding TokenType.Name}" />
                 </GridView>
             </ListView.View>
         </ListView>

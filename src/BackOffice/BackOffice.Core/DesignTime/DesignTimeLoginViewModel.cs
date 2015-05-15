@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Poseidon.BackOffice.Core.DesignTime
+﻿namespace Poseidon.BackOffice.Core.DesignTime
 {
     public class DesignTimeLoginViewModel
     {
@@ -8,12 +6,9 @@ namespace Poseidon.BackOffice.Core.DesignTime
         {
             User = "A user";
             Password = "A password";
-            Image = new Uri("pack://application:,,,/Poseidon.BackOffice.Core;component/DesignTime/Resources/User.png");
-
         }
 
         public string User { get; set; }
         public string Password { get; set; }
-        public Uri Image { get; set; }
     }
 }

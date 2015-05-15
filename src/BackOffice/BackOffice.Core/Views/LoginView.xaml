@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
-             xmlns:w="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
              lex:LocalizeDictionary.DesignCulture="en"
              lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Core"
              lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="500"
-             Style="{DynamicResource Style.Dialog.Container}">
+             MinWidth="640">
+             <!--Style="{DynamicResource Style.Dialog.Container}"-->
     
     <UserControl.Resources>
 
@@ -104,9 +104,10 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Content="..." Style="{DynamicResource Style.Dialog.Button}" />
-            <Button Grid.Column="2" Content="Login" Style="{DynamicResource Style.Dialog.Button}" Command="{Binding LoginCommand}" />
-            <Button Grid.Column="3" Content="Cancel" Style="{DynamicResource Style.Dialog.Button}" Command="{Binding CancelCommand}" />
+            <!--Style="{DynamicResource Style.Dialog.Button}"-->
+            <Button Grid.Column="0" Content="..."  />
+            <Button Grid.Column="2" Content="Login" Command="{Binding LoginCommand}" />
+            <Button Grid.Column="3" Content="Cancel" Command="{Binding CancelCommand}" />
         </Grid>        
     
         <Grid>
@@ -123,15 +124,22 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
-            <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding Image}" />
+            <!--HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"-->
+            <TextBlock Grid.ColumnSpan="3" Grid.Row="0" Text="{lex:Loc CoreModule_CredentialsTitle}"  />
+            
+            <Image Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Source="../Resources/User.png" />
 
-            <Label Grid.Column="1" Grid.Row="1" Content="{lex:Loc CoreModuleUser}" Style="{DynamicResource Style.Dialog.Label}" />
-            <TextBox  Grid.Column="2" Grid.Row="1" Text="{Binding User, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource Style.Dialog.TextBox}" />
-            
-            <Label Grid.Row="2" Grid.Column="1" Content="{lex:Loc CoreModulePassword}"  Style="{DynamicResource Style.Dialog.Label}" />
-            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource Style.Dialog.TextBox}"/>
-            
-            <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding ErrorText}"/>
+            <!--Style="{DynamicResource Style.Dialog.Label}"-->
+            <Label Grid.Column="1" Grid.Row="1" Content="{lex:Loc CoreModule_User}"  />
+            <!--Style="{DynamicResource Style.Dialog.TextBox}"-->
+            <TextBox  Grid.Column="2" Grid.Row="1" Text="{Binding User, UpdateSourceTrigger=PropertyChanged}" MinWidth="60" />
+
+            <!--Style="{DynamicResource Style.Dialog.Label}"-->
+            <Label Grid.Column="1" Grid.Row="2" Content="{lex:Loc CoreModule_Password}"   />
+            <!--Style="{DynamicResource Style.Dialog.TextBox}"-->
+            <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding ErrorText}"/>
         </Grid>
         
     </DockPanel>

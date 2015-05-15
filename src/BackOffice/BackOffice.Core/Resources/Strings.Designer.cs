@@ -61,11 +61,38 @@ namespace Poseidon.BackOffice.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User not found or password does not match.
+        /// </summary>
+        internal static string CoreModule_AccessDenied {
+            get {
+                return ResourceManager.GetString("CoreModule_AccessDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter credentials....
+        /// </summary>
+        internal static string CoreModule_CredentialsTitle {
+            get {
+                return ResourceManager.GetString("CoreModule_CredentialsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go directly to the start page.
         /// </summary>
         internal static string CoreModule_Description {
             get {
                 return ResourceManager.GetString("CoreModule_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Password:.
+        /// </summary>
+        internal static string CoreModule_Password {
+            get {
+                return ResourceManager.GetString("CoreModule_Password", resourceCulture);
             }
         }
         
@@ -88,20 +115,11 @@ namespace Poseidon.BackOffice.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Password:.
-        /// </summary>
-        internal static string CoreModulePassword {
-            get {
-                return ResourceManager.GetString("CoreModulePassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to _User:.
         /// </summary>
-        internal static string CoreModuleUser {
+        internal static string CoreModule_User {
             get {
-                return ResourceManager.GetString("CoreModuleUser", resourceCulture);
+                return ResourceManager.GetString("CoreModule_User", resourceCulture);
             }
         }
     }

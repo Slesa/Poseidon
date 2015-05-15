@@ -5,11 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
-             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
              xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
              xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -49,14 +52,14 @@
         <DockPanel>
 
             <StackPanel DockPanel.Dock="Bottom" Style="{DynamicResource Style.ModuleInfo.Commands}">
-                <Button ToolTip="{x:Static res:Strings.UserModule_AddUser}" Command="{Binding AddNewUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
-                <Button ToolTip="{x:Static res:Strings.UserModule_EditUser}" Command="{Binding EditUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
-                <Button ToolTip="{x:Static res:Strings.UserModule_RemoveUser}" Command="{Binding RemoveUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
+                <Button ToolTip="{lex:Loc UserModule_AddUser}" Command="{Binding AddNewUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
+                <Button ToolTip="{lex:Loc UserModule_EditUser}" Command="{Binding EditUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
+                <Button ToolTip="{lex:Loc UserModule_RemoveUser}" Command="{Binding RemoveUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
             </StackPanel>
 
             <Controls:ModuleInfoArea
-                Content="{x:Static res:Strings.UserModule}"
-                Description="{x:Static res:Strings.UserModule_Description}"
+                Content="{lex:Loc UserModule}"
+                Description="{lex:Loc UserModule_Description}"
                 DockPanel.Dock="Top"
                 IconFile="{StaticResource Image.User}"/>
             
@@ -69,14 +72,15 @@
             </i:Interaction.Behaviors>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_UserRole}" DisplayMemberBinding="{Binding UserRole.Name}" />
+                    <GridViewColumn Header="{lex:Loc Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Width="Auto" Header="{lex:Loc Heading_UserRole}" DisplayMemberBinding="{Binding UserRole.Name}" />
                 </GridView>
             </ListView.View>
         </ListView>
 
     </Grid>
 
+<!-- @@@
     <i:Interaction.Triggers>
         <ei:KeyTrigger Key="Insert">
             <i:InvokeCommandAction Command="{Binding AddNewUserCommand}" />
@@ -88,5 +92,5 @@
             <i:InvokeCommandAction Command="{Binding RemoveUserCommand}" />
         </ei:KeyTrigger>
     </i:Interaction.Triggers>
-
+-->
 </UserControl>

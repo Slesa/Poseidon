@@ -7,6 +7,7 @@ using Microsoft.Practices.Prism.Regions;
 using Poseidon.BackOffice.Common;
 using Poseidon.BackOffice.Common.ViewModels;
 using Poseidon.BackOffice.Core.Resources;
+using WPFLocalizeExtension.Extensions;
 
 namespace Poseidon.BackOffice.Core.ViewModels
 {
@@ -62,9 +63,9 @@ namespace Poseidon.BackOffice.Core.ViewModels
         {
             return new OfficeModule
                 {
-                    Title = Strings.CoreModule_Title,
-                    Description = Strings.CoreModule_Description,
-                    ToolTip = Strings.CoreModule_Tooltip,
+                    Title = LocExtension.GetLocalizedValue<string>("CoreModule_Title"),
+                    Description = LocExtension.GetLocalizedValue<string>("CoreModule_Description"),
+                    ToolTip = LocExtension.GetLocalizedValue<string>("CoreModule_Tooltip"),
                     TargetUri = new Uri(CoreViews.ModulesView, UriKind.Relative),
                 };
         }

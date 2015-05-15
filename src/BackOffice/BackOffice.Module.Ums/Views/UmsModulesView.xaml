@@ -6,9 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
     xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
     xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
     d:DesignHeight="300"
     d:DesignWidth="300"
     mc:Ignorable="d">
@@ -85,8 +88,8 @@
 
         <DockPanel>
             <Controls:ModuleInfoArea 
-                Content="{x:Static res:Strings.UmsOfficeModule}"
-                Description="{x:Static res:Strings.UmsOfficeModule_Description}"
+                Content="{lex:Loc UmsOfficeModule}"
+                Description="{lex:Loc UmsOfficeModule_Description}"
                 DockPanel.Dock="Top"
                     FontSize="12"
                 IconFile="{StaticResource Image.UmsModule}"

@@ -48,7 +48,6 @@ namespace Poseidon.BackOffice.ViewModels
 
         void LoginNotification(INotification obj)
         {
-            
             var i = obj;
         }
 

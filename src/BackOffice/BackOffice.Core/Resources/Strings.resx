@@ -117,19 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CoreModulePassword" xml:space="preserve">
-    <value>_Password:</value>
+  <data name="CoreModule_AccessDenied" xml:space="preserve">
+    <value>User not found or password does not match</value>
   </data>
-  <data name="CoreModuleUser" xml:space="preserve">
-    <value>_User:</value>
+  <data name="CoreModule_CredentialsTitle" xml:space="preserve">
+    <value>Enter credentials...</value>
   </data>
   <data name="CoreModule_Description" xml:space="preserve">
     <value>Go directly to the start page</value>
+  </data>
+  <data name="CoreModule_Password" xml:space="preserve">
+    <value>_Password:</value>
   </data>
   <data name="CoreModule_Title" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="CoreModule_Tooltip" xml:space="preserve">
     <value>This is the start page of the application</value>
+  </data>
+  <data name="CoreModule_User" xml:space="preserve">
+    <value>_User:</value>
   </data>
 </root>
