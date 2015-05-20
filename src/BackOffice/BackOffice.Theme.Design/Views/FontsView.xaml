@@ -16,21 +16,21 @@
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Fonts.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style TargetType="{x:Type TextBlock}">
+            <!--<Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontSize" Value="42" />
                 <Setter Property="Foreground" Value="White" />
                 <Setter Property="FontWeight" Value="Bold" />
                 <Setter Property="HorizontalAlignment" Value="Center" />
-            </Style>
-            <Style TargetType="{x:Type TextBox}">
+            </Style>-->
+            <!--<Style TargetType="{x:Type TextBox}">
                 <Setter Property="Margin" Value="10" />
-                <!--<Setter Property="Width" Value="100" />-->
+                --><!--<Setter Property="Width" Value="100" />--><!--
                 <Setter Property="Height" Value="50" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TextBox}">
                             <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                                <!--<Rectangle Fill="{TemplateBinding Background}" />-->
+                                --><!--<Rectangle Fill="{TemplateBinding Background}" />--><!--
                                 <TextBlock HorizontalAlignment="Center"
                                            VerticalAlignment="Center"
                                            FontFamily="{StaticResource Font.Title}"
@@ -43,101 +43,99 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-            </Style>
+            </Style>-->
 
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <ScrollViewer Background="{StaticResource Brush.Background}"><StackPanel>
-
+    <ScrollViewer Background="{StaticResource Brush.Background}">
         <StackPanel>
-            <TextBlock Text="Title" />
-            <WrapPanel Orientation="Horizontal">
-                <TextBox FontFamily="{StaticResource Font.Title}" 
-                         FontSize="{StaticResource FontSize.Title}" 
-                         Text="Normal" />
-                <TextBox FontFamily="{StaticResource Font.Title}"
-                         FontSize="{StaticResource FontSize.Title}"
-                         FontWeight="Bold"
-                         Text="Bold" />
-                <TextBox FontFamily="{StaticResource Font.Title}"
-                         FontSize="{StaticResource FontSize.Title}"
-                         FontStyle="Italic"
-                         Text="Italic" />
-                <TextBox FontFamily="{StaticResource Font.Title}"
-                         FontSize="{StaticResource FontSize.Title}"
-                         FontStyle="Italic"
-                         FontWeight="Bold"
-                         Text="BoldItalic" />
-            </WrapPanel>
-        </StackPanel>
 
-        <StackPanel>
-            <TextBlock Text="Normal" />
-            <WrapPanel Orientation="Horizontal">
-                <TextBox FontFamily="{StaticResource Font.Normal}" 
-                         FontSize="{StaticResource FontSize.Normal}"
-                         Text="Normal" />
-                <TextBox FontFamily="{StaticResource Font.Normal}"
-                         FontSize="{StaticResource FontSize.Normal}"
-                         FontWeight="Bold"
-                         Text="Bold" />
-                <TextBox FontFamily="{StaticResource Font.Normal}"
-                         FontSize="{StaticResource FontSize.Normal}"
-                         FontStyle="Italic"
-                         Text="Italic" />
-                <TextBox FontFamily="{StaticResource Font.Normal}"
-                         FontSize="{StaticResource FontSize.Normal}"
-                         FontStyle="Italic"
-                         FontWeight="Bold"
-                         Text="BoldItalic" />
-            </WrapPanel>
-        </StackPanel>
+            <HeaderedContentControl Header="Title">
+                <StackPanel>
+                    <TextBox FontFamily="{StaticResource Font.Title}"
+                             FontSize="{StaticResource FontSize.Title}"
+                             Text="Normal" />
+                    <TextBox FontFamily="{StaticResource Font.Title}"
+                             FontSize="{StaticResource FontSize.Title}"
+                             FontWeight="Bold"
+                             Text="Bold" />
+                    <TextBox FontFamily="{StaticResource Font.Title}"
+                             FontSize="{StaticResource FontSize.Title}"
+                             FontStyle="Italic"
+                             Text="Italic" />
+                    <TextBox FontFamily="{StaticResource Font.Title}"
+                             FontSize="{StaticResource FontSize.Title}"
+                             FontStyle="Italic"
+                             FontWeight="Bold"
+                             Text="BoldItalic" />
+                </StackPanel>
+            </HeaderedContentControl>
 
-        <StackPanel>
-            <TextBlock Text="Hint" />
-            <WrapPanel Orientation="Horizontal">
-                <TextBox FontFamily="{StaticResource Font.Hint}" 
-                         FontSize="{StaticResource FontSize.Hint}"
-                         Text="Normal" />
-                <TextBox FontFamily="{StaticResource Font.Hint}"
-                         FontSize="{StaticResource FontSize.Hint}"
-                         FontWeight="Bold"
-                         Text="Bold" />
-                <TextBox FontFamily="{StaticResource Font.Hint}"
-                         FontSize="{StaticResource FontSize.Hint}"
-                         FontStyle="Italic"
-                         Text="Italic" />
-                <TextBox FontFamily="{StaticResource Font.Hint}"
-                         FontSize="{StaticResource FontSize.Hint}"
-                         FontStyle="Italic"
-                         FontWeight="Bold"
-                         Text="BoldItalic" />
-            </WrapPanel>
-        </StackPanel>
+            <HeaderedContentControl Header="Normal">
+                <StackPanel>
+                    <TextBox FontFamily="{StaticResource Font.Normal}"
+                             FontSize="{StaticResource FontSize.Normal}"
+                             Text="Normal" />
+                    <TextBox FontFamily="{StaticResource Font.Normal}"
+                             FontSize="{StaticResource FontSize.Normal}"
+                             FontWeight="Bold"
+                             Text="Bold" />
+                    <TextBox FontFamily="{StaticResource Font.Normal}"
+                             FontSize="{StaticResource FontSize.Normal}"
+                             FontStyle="Italic"
+                             Text="Italic" />
+                    <TextBox FontFamily="{StaticResource Font.Normal}"
+                             FontSize="{StaticResource FontSize.Normal}"
+                             FontStyle="Italic"
+                             FontWeight="Bold"
+                             Text="BoldItalic" />
+                </StackPanel>
+            </HeaderedContentControl>
 
-        <StackPanel>
-            <TextBlock Text="Tooltip" />
-            <WrapPanel Orientation="Horizontal">
-                <TextBox FontFamily="{StaticResource Font.Tooltip}" 
-                         FontSize="{StaticResource FontSize.Tooltip}"
-                         Text="Normal" />
-                <TextBox FontFamily="{StaticResource Font.Tooltip}"
-                         FontSize="{StaticResource FontSize.Tooltip}"
-                         FontWeight="Bold"
-                         Text="Bold" />
-                <TextBox FontFamily="{StaticResource Font.Tooltip}"
-                         FontSize="{StaticResource FontSize.Tooltip}"
-                         FontStyle="Italic"
-                         Text="Italic" />
-                <TextBox FontFamily="{StaticResource Font.Tooltip}"
-                         FontSize="{StaticResource FontSize.Tooltip}"
-                         FontStyle="Italic"
-                         FontWeight="Bold"
-                         Text="BoldItalic" />
-            </WrapPanel>
-        </StackPanel>
+            <HeaderedContentControl Header="Hint">
+                <StackPanel>
+                    <TextBox FontFamily="{StaticResource Font.Hint}"
+                             FontSize="{StaticResource FontSize.Hint}"
+                             Text="Normal" />
+                    <TextBox FontFamily="{StaticResource Font.Hint}"
+                             FontSize="{StaticResource FontSize.Hint}"
+                             FontWeight="Bold"
+                             Text="Bold" />
+                    <TextBox FontFamily="{StaticResource Font.Hint}"
+                             FontSize="{StaticResource FontSize.Hint}"
+                             FontStyle="Italic"
+                             Text="Italic" />
+                    <TextBox FontFamily="{StaticResource Font.Hint}"
+                             FontSize="{StaticResource FontSize.Hint}"
+                             FontStyle="Italic"
+                             FontWeight="Bold"
+                             Text="BoldItalic" />
+                </StackPanel>
+            </HeaderedContentControl>
 
-    </StackPanel></ScrollViewer>
+            <HeaderedContentControl Header="Tooltip">
+                <StackPanel>
+                    <TextBox FontFamily="{StaticResource Font.Tooltip}"
+                             FontSize="{StaticResource FontSize.Tooltip}"
+                             Text="Normal" />
+                    <TextBox FontFamily="{StaticResource Font.Tooltip}"
+                             FontSize="{StaticResource FontSize.Tooltip}"
+                             FontWeight="Bold"
+                             Text="Bold" />
+                    <TextBox FontFamily="{StaticResource Font.Tooltip}"
+                             FontSize="{StaticResource FontSize.Tooltip}"
+                             FontStyle="Italic"
+                             Text="Italic" />
+                    <TextBox FontFamily="{StaticResource Font.Tooltip}"
+                             FontSize="{StaticResource FontSize.Tooltip}"
+                             FontStyle="Italic"
+                             FontWeight="Bold"
+                             Text="BoldItalic" />
+                </StackPanel>
+            </HeaderedContentControl>
+
+        </StackPanel>
+    </ScrollViewer>
 
 </UserControl>

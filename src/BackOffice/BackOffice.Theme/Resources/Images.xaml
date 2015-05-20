@@ -1,17 +1,43 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- Toolbar -->
     <Image x:Key="Images.Back" Source="Images/back.png" x:Shared="false" />
     <Image x:Key="Images.Forward" Source="Images/forward.png" x:Shared="false" />
     <Image x:Key="Images.Home" Source="Images/home.png" x:Shared="false" />
-    <Image x:Key="Images.Add" Source="Images/add.png" x:Shared="false" />
-    <Image x:Key="Images.Edit" Source="Images/edit.png" x:Shared="false" />
-    <Image x:Key="Images.Remove" Source="Images/remove.png" x:Shared="false" />
-    <Image x:Key="Images.Ok" Source="Images/ok.png" x:Shared="false" />
-    <Image x:Key="Images.Cancel" Source="Images/cancel.png" x:Shared="false" />
-    <Image x:Key="Images.Help" Source="Images/help.png" x:Shared="false" />
     <Image x:Key="Images.Settings" Source="Images/settings.png" x:Shared="false" />
     <Image x:Key="Images.Logout" Source="Images/logout.png" x:Shared="false" />
     <Image x:Key="Images.Quit" Source="Images/quit.png" x:Shared="false" />
+
+    <!-- Dialog -->
+    <Image x:Key="Images.Ok" Source="Images/ok.png" x:Shared="false" />
+    <Image x:Key="Images.Cancel" Source="Images/cancel.png" x:Shared="false" />
+    <Image x:Key="Images.Help" Source="Images/help.png" x:Shared="false" />
+    <Image x:Key="Images.Information" Source="Images/information.png" x:Shared="false" />
+    <Image x:Key="Images.Warning" Source="Images/warning.png" x:Shared="false" />
+    <Image x:Key="Images.Error" Source="Images/error.png" x:Shared="false" />
+
+    <!-- List -->
+    <Image x:Key="Images.Add" Source="Images/add.png" x:Shared="false" />
+    <Image x:Key="Images.Edit" Source="Images/edit.png" x:Shared="false" />
+    <Image x:Key="Images.Remove" Source="Images/remove.png" x:Shared="false" />
+    
+    <!-- Countries -->
+    <Image x:Key="Images.Flag.Gr" Source="Images/flag_gr.png" x:Shared="false" />
+    <Image x:Key="Images.Flag.Fr" Source="Images/flag_fr.png" x:Shared="false" />
+    <Image x:Key="Images.Flag.Uk" Source="Images/flag_uk.png" x:Shared="false" />
+    <Image x:Key="Images.Flag.Us" Source="Images/flag_us.png" x:Shared="false" />
+    
+    <!-- Unused -->
+    <Image x:Key="Images.Up" Source="Images/up.png" x:Shared="false" />
+    <Image x:Key="Images.Down" Source="Images/down.png" x:Shared="false" />
+    <Image x:Key="Images.First" Source="Images/first.png" x:Shared="false" />
+    <Image x:Key="Images.Previous" Source="Images/previous.png" x:Shared="false" />
+    <Image x:Key="Images.Next" Source="Images/next.png" x:Shared="false" />
+    <Image x:Key="Images.Last" Source="Images/last.png" x:Shared="false" />
+    <Image x:Key="Images.Print" Source="Images/print.png" x:Shared="false" />
+    <Image x:Key="Images.Save" Source="Images/save.png" x:Shared="false" />
+    <Image x:Key="Images.Copy" Source="Images/copy.png" x:Shared="false" />
+    <Image x:Key="Images.Cut" Source="Images/cut.png" x:Shared="false" />
 
 </ResourceDictionary>

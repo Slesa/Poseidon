@@ -1,0 +1,46 @@
+Toolbar
+----------------------------------------------
+back			= ArrowLeft
+forward			= ArrowRight
+home			= House
+settings		= CogWheel
+logout			= Lock
+quit			= DoorOpen
+
+List
+----------------------------------------------
+add				= Plus
+remote			= Minus
+edit			= Eye
+
+
+Dialog
+----------------------------------------------
+ok				= Checkmark
+cancel			= DeleteCross
+help			= Questionmark
+information		= InfoButton
+warning			= WarningTriangle
+error			= StopSign
+
+Countries
+----------------------------------------------
+flag_gr			= FlagGermany
+flag_us			= FlagUS
+flag_uk			= FlagUK
+flag_fr			= FlagFrench
+
+Unused
+----------------------------------------------
+up				= ArrowUp
+down			= ArrowDown
+first			= ButtonArrowAStart
+last			= ButtonArrowAEnd
+previous		= ButtonArrowALeft
+next			= ButtonArrowARight
+print			= Printer
+copy 			= DocumentClipboard
+cut 			= Scissors
+save			= DisketteBlue
+
+

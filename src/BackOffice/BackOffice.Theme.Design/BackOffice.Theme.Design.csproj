@@ -62,6 +62,9 @@
     <Compile Include="Views\BrushesView.xaml.cs">
       <DependentUpon>BrushesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ButtonsView.xaml.cs">
+      <DependentUpon>ButtonsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ImagesView.xaml.cs">
       <DependentUpon>ImagesView.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
     <Page Include="Views\BrushesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ButtonsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DesignMainView.xaml">
       <SubType>Designer</SubType>

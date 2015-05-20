@@ -16,12 +16,12 @@
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Images.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style TargetType="{x:Type TextBlock}">
+            <!--<Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontSize" Value="42" />
                 <Setter Property="Foreground" Value="White" />
                 <Setter Property="FontWeight" Value="Bold" />
                 <Setter Property="HorizontalAlignment" Value="Center" />
-            </Style>
+            </Style>-->
             <Style TargetType="{x:Type ContentControl}">
                 <Setter Property="Width" Value="50" />
                 <Setter Property="Height" Value="50" />
@@ -32,23 +32,59 @@
     <ScrollViewer Background="{StaticResource Brush.Background}">
         <StackPanel>
 
-            <StackPanel>
-                <TextBlock Text="Icons" />
-                <WrapPanel Orientation="Horizontal">
+            <HeaderedContentControl Header="ToolBar">
+                <StackPanel Orientation="Horizontal">
                     <ContentControl Content="{StaticResource Images.Back}" />
                     <ContentControl Content="{StaticResource Images.Forward}" />
                     <ContentControl Content="{StaticResource Images.Home}" />
-                    <ContentControl Content="{StaticResource Images.Add}" />
-                    <ContentControl Content="{StaticResource Images.Edit}" />
-                    <ContentControl Content="{StaticResource Images.Remove}" />
+                    <ContentControl Content="{StaticResource Images.Settings}" />
+                    <ContentControl Content="{StaticResource Images.Logout}" />
+                    <ContentControl Content="{StaticResource Images.Quit}" />
+                </StackPanel>
+            </HeaderedContentControl>
+
+            <HeaderedContentControl Header="Dialog">
+                <StackPanel Orientation="Horizontal">
                     <ContentControl Content="{StaticResource Images.Ok}" />
                     <ContentControl Content="{StaticResource Images.Cancel}" />
                     <ContentControl Content="{StaticResource Images.Help}" />
-                    <ContentControl Content="{StaticResource Images.Quit}" />
-                    <ContentControl Content="{StaticResource Images.Logout}" />
-                    <ContentControl Content="{StaticResource Images.Settings}" />
-                </WrapPanel>
-            </StackPanel>
+                    <ContentControl Content="{StaticResource Images.Information}" />
+                    <ContentControl Content="{StaticResource Images.Warning}" />
+                    <ContentControl Content="{StaticResource Images.Error}" />
+                </StackPanel>
+            </HeaderedContentControl>
+
+            <HeaderedContentControl Header="List">
+                <StackPanel Orientation="Horizontal">
+                    <ContentControl Content="{StaticResource Images.Add}" />
+                    <ContentControl Content="{StaticResource Images.Edit}" />
+                    <ContentControl Content="{StaticResource Images.Remove}" />
+                </StackPanel>
+            </HeaderedContentControl>
+
+            <HeaderedContentControl Header="Countries">
+                <StackPanel Orientation="Horizontal">
+                    <ContentControl Content="{StaticResource Images.Flag.Gr}" />
+                    <ContentControl Content="{StaticResource Images.Flag.Fr}" />
+                    <ContentControl Content="{StaticResource Images.Flag.Uk}" />
+                    <ContentControl Content="{StaticResource Images.Flag.Us}" />
+                </StackPanel>
+            </HeaderedContentControl>
+
+            <HeaderedContentControl Header="Unused">
+                <StackPanel Orientation="Horizontal">
+                    <ContentControl Content="{StaticResource Images.Up}" />
+                    <ContentControl Content="{StaticResource Images.Down}" />
+                    <ContentControl Content="{StaticResource Images.First}" />
+                    <ContentControl Content="{StaticResource Images.Previous}" />
+                    <ContentControl Content="{StaticResource Images.Next}" />
+                    <ContentControl Content="{StaticResource Images.Last}" />
+                    <ContentControl Content="{StaticResource Images.Print}" />
+                    <ContentControl Content="{StaticResource Images.Save}" />
+                    <ContentControl Content="{StaticResource Images.Copy}" />
+                    <ContentControl Content="{StaticResource Images.Cut}" />
+                </StackPanel>
+            </HeaderedContentControl>
 
         </StackPanel>
     </ScrollViewer>

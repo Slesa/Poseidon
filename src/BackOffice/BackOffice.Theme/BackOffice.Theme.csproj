@@ -162,6 +162,33 @@
   <ItemGroup>
     <Resource Include="Resources\Images\quit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\flag_fr.png" />
+    <Resource Include="Resources\Images\flag_gr.png" />
+    <Resource Include="Resources\Images\flag_uk.png" />
+    <Resource Include="Resources\Images\flag_us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\down.png" />
+    <Resource Include="Resources\Images\first.png" />
+    <Resource Include="Resources\Images\last.png" />
+    <Resource Include="Resources\Images\next.png" />
+    <Resource Include="Resources\Images\previous.png" />
+    <Resource Include="Resources\Images\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\error.png" />
+    <Resource Include="Resources\Images\information.png" />
+    <Resource Include="Resources\Images\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cut.png" />
+    <Resource Include="Resources\Images\print.png" />
+    <Resource Include="Resources\Images\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\copy.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

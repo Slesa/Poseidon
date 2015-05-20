@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local-project language="dotnet" associate="file:/D:/work/Structure101.repo/Poseidon" version="4.1.5613" xml-version="3" flavor="dotNet">
+  <property name="show-as-module" value="false" />
+  <property name="relative-to" value="const(THIS_FILE)" />
+  <property name="action-set-mod" value="1" />
+  <property name="detail-mode" value="true" />
+  <property name="publish-architecture-artifacts" value="true" />
+  <property name="hide-externals" value="true" />
+  <assemblyList>
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/Centigrade.LiveStyleGuide.Bridge.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/Centigrade.LiveStyleGuide.CaptureControl.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/Centigrade.LiveStyleGuide.Collector.Binary.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/Centigrade.LiveStyleGuide.Collector.Common.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/Centigrade.LiveStyleGuide.Collector.Xaml.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/Centigrade.LiveStyleGuide.Theme.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/Centigrade.LiveStyleGuide.XamlBoard.Extension.Contracts.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/Centigrade.LiveStyleGuide.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/XamlBoard.WPF.dll" />
+    <assembly kind="lib" path="../../../../LiveStyleGuide/03-Production/LiveStyleGuide/XamlBoard.App.WPF/bin/Debug/XamlBoard.exe" />
+  </assemblyList>
+  <restructuring>
+    <set version="3" name="Model 1" hiview="Codemap" active="false" todo="false" list="0" slicer="2">
+      <namemap applyMappings="true">
+        <map from="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties.Settings" to="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Settings" />
+        <map from="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties.Resources" to="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Resources" />
+        <map from="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Handler.FallbackExportImageHandler" to="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.FallbackExportImageHandler" />
+        <map from="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Views.InspectionView" to="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.InspectionView" />
+        <map from="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Views.InspectionView/" to="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.InspectionView/" />
+        <map from="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Helpers.MetadataCollector" to="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.MetadataCollector" />
+      </namemap>
+      <action type="flatten-v2" active="true" last-applied="false" description="Flatten Centigrade.LiveStyleGuide.Collector.Xaml.WPF">
+        <composite-set>
+          <action type="move" active="true" last-applied="true" description="Move Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Handler.FallbackExportImageHandler to Centigrade.LiveStyleGuide.Collector.Xaml.WPF">
+            <params>
+              <source-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Handler.FallbackExportImageHandler" type="class" path="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Handler.FallbackExportImageHandler">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+                <node name="Handler" type="namespace" />
+                <node name="FallbackExportImageHandler" type="class" />
+              </source-fqn>
+              <to-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF" type="namespace">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+              </to-fqn>
+            </params>
+          </action>
+          <action type="move" active="true" last-applied="true" description="Move Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties.Resources to Centigrade.LiveStyleGuide.Collector.Xaml.WPF">
+            <params>
+              <source-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties.Resources" type="class" path="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties.Resources">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+                <node name="Properties" type="namespace" />
+                <node name="Resources" type="class" />
+              </source-fqn>
+              <to-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF" type="namespace">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+              </to-fqn>
+            </params>
+          </action>
+          <action type="move" active="true" last-applied="true" description="Move Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties.Settings to Centigrade.LiveStyleGuide.Collector.Xaml.WPF">
+            <params>
+              <source-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties.Settings" type="class" path="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties.Settings">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+                <node name="Properties" type="namespace" />
+                <node name="Settings" type="class" />
+              </source-fqn>
+              <to-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF" type="namespace">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+              </to-fqn>
+            </params>
+          </action>
+          <action type="move" active="true" last-applied="true" description="Move Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Helpers.MetadataCollector to Centigrade.LiveStyleGuide.Collector.Xaml.WPF">
+            <params>
+              <source-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Helpers.MetadataCollector" type="class" path="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Helpers.MetadataCollector">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+                <node name="Sources" type="namespace" />
+                <node name="Helpers" type="namespace" />
+                <node name="MetadataCollector" type="class" />
+              </source-fqn>
+              <to-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF" type="namespace">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+              </to-fqn>
+            </params>
+          </action>
+          <action type="move" active="true" last-applied="true" description="Move Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Views.InspectionView to Centigrade.LiveStyleGuide.Collector.Xaml.WPF">
+            <params>
+              <source-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Views.InspectionView" type="class" path="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources.Views.InspectionView">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+                <node name="Sources" type="namespace" />
+                <node name="Views" type="namespace" />
+                <node name="InspectionView" type="class" />
+              </source-fqn>
+              <to-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF" type="namespace">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+              </to-fqn>
+            </params>
+          </action>
+          <action type="remove-node" active="true" last-applied="true" description="Remove Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources">
+            <params onlyIfEmptyOfEntities="true">
+              <source-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Sources" type="namespace">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+                <node name="Sources" type="namespace" />
+              </source-fqn>
+            </params>
+          </action>
+          <action type="remove-node" active="true" last-applied="true" description="Remove Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties">
+            <params onlyIfEmptyOfEntities="true">
+              <source-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Properties" type="namespace">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+                <node name="Properties" type="namespace" />
+              </source-fqn>
+            </params>
+          </action>
+          <action type="remove-node" active="true" last-applied="true" description="Remove Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Handler">
+            <params onlyIfEmptyOfEntities="true">
+              <source-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF.Handler" type="namespace">
+                <node name="Centigrade" type="namespace" />
+                <node name="LiveStyleGuide" type="namespace" />
+                <node name="Collector" type="namespace" />
+                <node name="Xaml" type="namespace" />
+                <node name="WPF" type="namespace" />
+                <node name="Handler" type="namespace" />
+              </source-fqn>
+            </params>
+          </action>
+        </composite-set>
+        <params flattenLeafFolders="true">
+          <container-fqn fqn="Centigrade.LiveStyleGuide.Collector.Xaml.WPF" type="namespace">
+            <node name="Centigrade" type="namespace" />
+            <node name="LiveStyleGuide" type="namespace" />
+            <node name="Collector" type="namespace" />
+            <node name="Xaml" type="namespace" />
+            <node name="WPF" type="namespace" />
+          </container-fqn>
+        </params>
+      </action>
+    </set>
+    <set version="3" name="Model 2" hiview="Codemap" active="true" todo="false" list="0">
+      <action type="auto-structure" active="true" last-applied="false" description="Auto-levelize root">
+        <composite-set />
+        <params flattenLeafFolders="true">
+          <container-fqn fqn="root" type="root" path="" isroot="true" />
+        </params>
+      </action>
+    </set>
+  </restructuring>
+  <grid-set sep="." version="4.1.5613">
+    <grid name="Diagram 1" enforce="true" locked="true" strict="false">
+      <row>
+        <cell name="Collector" pattern="Centigrade.LiveStyleGuide.Collector.*" vexpanded="true" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="Xaml" pattern="Centigrade.LiveStyleGuide.Collector.Xaml.*" vexpanded="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="Binary" pattern="Centigrade.LiveStyleGuide.Collector.Binary.*" vexpanded="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="Common" pattern="Centigrade.LiveStyleGuide.Collector.Common.?" vexpanded="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="CopyAssembliesToLocal" pattern="Centigrade.LiveStyleGuide.Collector.Common.CopyAssembliesToLocal" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="LoadedExtensions" pattern="Centigrade.LiveStyleGuide.Collector.Common.LoadedExtensions" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="LoadedMetadata" pattern="Centigrade.LiveStyleGuide.Collector.Common.LoadedMetadata" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="LoadedProjects" pattern="Centigrade.LiveStyleGuide.Collector.Common.LoadedProjects" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="StudioFilesReader" pattern="Centigrade.LiveStyleGuide.Collector.Common.StudioFilesReader" vexpanded="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="ICopyAssembliesToLocal" pattern="Centigrade.LiveStyleGuide.Collector.Common.ICopyAssembliesToLocal" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ILoadedExtensions" pattern="Centigrade.LiveStyleGuide.Collector.Common.ILoadedExtensions" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ILoadedMetadata" pattern="Centigrade.LiveStyleGuide.Collector.Common.ILoadedMetadata" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ILoadedProjects" pattern="Centigrade.LiveStyleGuide.Collector.Common.ILoadedProjects" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="Journal" pattern="Centigrade.LiveStyleGuide.Collector.Common.Journal" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="LoadedAssemblies" pattern="Centigrade.LiveStyleGuide.Collector.Common.LoadedAssemblies" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="StudioSolution" pattern="Centigrade.LiveStyleGuide.Collector.Common.StudioSolution" vexpanded="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="IJournal" pattern="Centigrade.LiveStyleGuide.Collector.Common.IJournal" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="LoadedNamespaces" pattern="Centigrade.LiveStyleGuide.Collector.Common.LoadedNamespaces" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ProjectMetadata" pattern="Centigrade.LiveStyleGuide.Collector.Common.ProjectMetadata" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ProjectParser" pattern="Centigrade.LiveStyleGuide.Collector.Common.ProjectParser" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="StudioProject" pattern="Centigrade.LiveStyleGuide.Collector.Common.StudioProject" vexpanded="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="AssemblyHelpers" pattern="Centigrade.LiveStyleGuide.Collector.Common.AssemblyHelpers" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ExtensionLoadedArgs" pattern="Centigrade.LiveStyleGuide.Collector.Common.ExtensionLoadedArgs" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ExtensionLoadResult" pattern="Centigrade.LiveStyleGuide.Collector.Common.ExtensionLoadResult" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="Fusion" pattern="Centigrade.LiveStyleGuide.Collector.Common.Fusion" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ILoadedAssemblies" pattern="Centigrade.LiveStyleGuide.Collector.Common.ILoadedAssemblies" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ILoadedNamespaces" pattern="Centigrade.LiveStyleGuide.Collector.Common.ILoadedNamespaces" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="IReadStudioFiles" pattern="Centigrade.LiveStyleGuide.Collector.Common.IReadStudioFiles" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="JournalEntry" pattern="Centigrade.LiveStyleGuide.Collector.Common.JournalEntry" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="LoadedNamespacesEntry" pattern="Centigrade.LiveStyleGuide.Collector.Common.LoadedNamespacesEntry" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="MetadataInvalidException" pattern="Centigrade.LiveStyleGuide.Collector.Common.MetadataInvalidException" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="MetadataProjectNotFoundException" pattern="Centigrade.LiveStyleGuide.Collector.Common.MetadataProjectNotFoundException" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="NamespaceHelpers" pattern="Centigrade.LiveStyleGuide.Collector.Common.NamespaceHelpers" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ProjectNotAvailabeException" pattern="Centigrade.LiveStyleGuide.Collector.Common.ProjectNotAvailabeException" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="PropertyGroup" pattern="Centigrade.LiveStyleGuide.Collector.Common.PropertyGroup" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="ResourceMetadata" pattern="Centigrade.LiveStyleGuide.Collector.Common.ResourceMetadata" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="SolutionParser" pattern="Centigrade.LiveStyleGuide.Collector.Common.SolutionParser" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="StudioFileInfo" pattern="Centigrade.LiveStyleGuide.Collector.Common.StudioFileInfo" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="StudioXamlFile" pattern="Centigrade.LiveStyleGuide.Collector.Common.StudioXamlFile" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="TargetNotBuiltException" pattern="Centigrade.LiveStyleGuide.Collector.Common.TargetNotBuiltException" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="UnknownStudioFileExtensionException" pattern="Centigrade.LiveStyleGuide.Collector.Common.UnknownStudioFileExtensionException" vexpanded="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="CaptureControl" pattern="Centigrade.LiveStyleGuide.CaptureControl.*" vexpanded="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="CaptureControl" pattern="Centigrade.LiveStyleGuide.CaptureControl.?" vexpanded="false" visibility="public" drill="false" />
+              <cell name="Properties" pattern="Centigrade.LiveStyleGuide.CaptureControl.Properties.?" vexpanded="false" visibility="public" drill="false" />
+            </row>
+          </grid>
+        </cell>
+        <cell name="Common" pattern="Centigrade.LiveStyleGuide.Common.*" vexpanded="false" visibility="public" drill="false" />
+      </row>
+      <row>
+        <cell name="LiveStyleGuide" pattern="Centigrade.LiveStyleGuide.?" vexpanded="true" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="ProjectPath" pattern="Centigrade.LiveStyleGuide.ProjectPath" vexpanded="false" visibility="public" drill="false" />
+            </row>
+          </grid>
+        </cell>
+        <cell name="Bridge" pattern="Centigrade.LiveStyleGuide.Bridge.?" vexpanded="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="DtoDispatchingListener" pattern="Centigrade.LiveStyleGuide.Bridge.DtoDispatchingListener" vexpanded="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="Listener" pattern="Centigrade.LiveStyleGuide.Bridge.Listener" vexpanded="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="ConditionRegistrationHelper" pattern="Centigrade.LiveStyleGuide.Bridge.ConditionRegistrationHelper" vexpanded="false" visibility="public" drill="false" />
+              <cell name="DelegateMessageHandler`1" pattern="Centigrade.LiveStyleGuide.Bridge.DelegateMessageHandler`1" vexpanded="false" visibility="public" drill="false" />
+              <cell name="DtoSender" pattern="Centigrade.LiveStyleGuide.Bridge.DtoSender" vexpanded="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="BridgeMessageHandlerBase`1" pattern="Centigrade.LiveStyleGuide.Bridge.BridgeMessageHandlerBase`1" vexpanded="false" visibility="public" drill="false" />
+              <cell name="IConditionRegistry" pattern="Centigrade.LiveStyleGuide.Bridge.IConditionRegistry" vexpanded="false" visibility="public" drill="false" />
+              <cell name="IListener" pattern="Centigrade.LiveStyleGuide.Bridge.IListener" vexpanded="false" visibility="public" drill="false" />
+              <cell name="MessageTypeValidationRuleViolationException" pattern="Centigrade.LiveStyleGuide.Bridge.MessageTypeValidationRuleViolationException" vexpanded="false" visibility="public" drill="false" />
+              <cell name="MultipleResourcesMessage" pattern="Centigrade.LiveStyleGuide.Bridge.MultipleResourcesMessage" vexpanded="false" visibility="public" drill="false" />
+              <cell name="OpenFileCommand" pattern="Centigrade.LiveStyleGuide.Bridge.OpenFileCommand" vexpanded="false" visibility="public" drill="false" />
+              <cell name="Sender" pattern="Centigrade.LiveStyleGuide.Bridge.Sender" vexpanded="false" visibility="public" drill="false" />
+              <cell name="SingleResourceFlattenedMessage" pattern="Centigrade.LiveStyleGuide.Bridge.SingleResourceFlattenedMessage" vexpanded="false" visibility="public" drill="false" />
+              <cell name="SingleResourceReferenceMessage" pattern="Centigrade.LiveStyleGuide.Bridge.SingleResourceReferenceMessage" vexpanded="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="Bridge" pattern="Centigrade.LiveStyleGuide.Bridge.Bridge" vexpanded="false" visibility="public" drill="false" />
+              <cell name="BridgeMessageBase" pattern="Centigrade.LiveStyleGuide.Bridge.BridgeMessageBase" vexpanded="false" visibility="public" drill="false" />
+              <cell name="ConditionEvaluator" pattern="Centigrade.LiveStyleGuide.Bridge.ConditionEvaluator" vexpanded="false" visibility="public" drill="false" />
+              <cell name="DtoDispatchingListenerActivationException" pattern="Centigrade.LiveStyleGuide.Bridge.DtoDispatchingListenerActivationException" vexpanded="false" visibility="public" drill="false" />
+              <cell name="IBridgeMessageHandler" pattern="Centigrade.LiveStyleGuide.Bridge.IBridgeMessageHandler" vexpanded="false" visibility="public" drill="false" />
+              <cell name="IpcMessageSubject" pattern="Centigrade.LiveStyleGuide.Bridge.IpcMessageSubject" vexpanded="false" visibility="public" drill="false" />
+              <cell name="LazyMessageBuilder" pattern="Centigrade.LiveStyleGuide.Bridge.LazyMessageBuilder" vexpanded="false" visibility="public" drill="false" />
+              <cell name="ListenerRetrievedEventHandler" pattern="Centigrade.LiveStyleGuide.Bridge.ListenerRetrievedEventHandler" vexpanded="false" visibility="public" drill="false" />
+              <cell name="MessageForUnknownTargetReceivedEventHandler" pattern="Centigrade.LiveStyleGuide.Bridge.MessageForUnknownTargetReceivedEventHandler" vexpanded="false" visibility="public" drill="false" />
+              <cell name="MessageReceivedEventHandler" pattern="Centigrade.LiveStyleGuide.Bridge.MessageReceivedEventHandler" vexpanded="false" visibility="public" drill="false" />
+              <cell name="ReceivedRequestFromSenderWithIncompatibleVersionNumberEventHandler" pattern="Centigrade.LiveStyleGuide.Bridge.ReceivedRequestFromSenderWithIncompatibleVersionNumberEventHandler" vexpanded="false" visibility="public" drill="false" />
+              <cell name="SenderDetectedEventHandler" pattern="Centigrade.LiveStyleGuide.Bridge.SenderDetectedEventHandler" vexpanded="false" visibility="public" drill="false" />
+              <cell name="SendingFinishedEventHandler" pattern="Centigrade.LiveStyleGuide.Bridge.SendingFinishedEventHandler" vexpanded="false" visibility="public" drill="false" />
+              <cell name="ServerStartState" pattern="Centigrade.LiveStyleGuide.Bridge.ServerStartState" vexpanded="false" visibility="public" drill="false" />
+              <cell name="VersionHelpers" pattern="Centigrade.LiveStyleGuide.Bridge.VersionHelpers" vexpanded="false" visibility="public" drill="false" />
+            </row>
+          </grid>
+        </cell>
+        <cell name="Theme" pattern="Centigrade.LiveStyleGuide.Theme.*" vexpanded="true" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="Theme" pattern="Centigrade.LiveStyleGuide.Theme.?" vexpanded="false" visibility="public" drill="false" />
+              <cell name="Properties" pattern="Centigrade.LiveStyleGuide.Theme.Properties.?" vexpanded="false" visibility="public" drill="false" />
+              <cell name="Sources" pattern="Centigrade.LiveStyleGuide.Theme.Sources.*" vexpanded="false" visibility="public" drill="false" />
+            </row>
+          </grid>
+        </cell>
+        <cell name="XamlBoard" pattern="Centigrade.LiveStyleGuide.XamlBoard.*" vexpanded="true" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="Extension" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.?" vexpanded="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="IHandleImageExport" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IHandleImageExport" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="IProcessMetadata" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IProcessMetadata" vexpanded="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="IFallbackImageExport" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IFallbackImageExport" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="IProvideResourceInspectionBox" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IProvideResourceInspectionBox" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="IProvideResourceInspectionContainer" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IProvideResourceInspectionContainer" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="IProvideResourceInspectionEditor" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IProvideResourceInspectionEditor" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="IXamlBoardExtensionAttribute" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IXamlBoardExtensionAttribute" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="IXamlExportMetadata" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IXamlExportMetadata" vexpanded="false" visibility="public" drill="false" />
+                    <cell name="IXamlResourceMetadata" pattern="Centigrade.LiveStyleGuide.XamlBoard.Extension.IXamlResourceMetadata" vexpanded="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <description>Subsystem breakout for 'Centigrade.LiveStyleGuide'</description>
+    </grid>
+    <grid name="Diagram 2" enforce="true" locked="false" strict="false">
+      <row>
+        <cell pattern="" vexpanded="true" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="Folded" desc="Give me a reason" pattern="" vexpanded="true" visibility="public" drill="false" bgcolor="255,0,153">
+                <grid>
+                  <row>
+                    <cell name="CaptureTargetControl" pattern="CaptureControl.CaptureTargetControl" vexpanded="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell pattern="" vexpanded="false" visibility="public" drill="false" />
+      </row>
+      <row>
+        <cell pattern="" vexpanded="false" visibility="public" drill="false" />
+      </row>
+      <row>
+        <cell pattern="" vexpanded="false" visibility="public" drill="false" />
+      </row>
+      <override source="$GP0.0$GP0.0" target="$GP1.0" allowed="false" source_disp="Folded" target_disp="&lt;untitled&gt;" synthetic="false" num-violations="0" num-violations-weighted="0" />
+      <description>&lt;empty&gt;</description>
+    </grid>
+  </grid-set>
+</local-project>
+
