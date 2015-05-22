@@ -33,46 +33,46 @@
         <StackPanel>
 
             <HeaderedContentControl Header="ToolBar">
-                <StackPanel Orientation="Horizontal">
+                <WrapPanel Orientation="Horizontal">
                     <ContentControl Content="{StaticResource Images.Back}" />
                     <ContentControl Content="{StaticResource Images.Forward}" />
                     <ContentControl Content="{StaticResource Images.Home}" />
                     <ContentControl Content="{StaticResource Images.Settings}" />
                     <ContentControl Content="{StaticResource Images.Logout}" />
                     <ContentControl Content="{StaticResource Images.Quit}" />
-                </StackPanel>
+                </WrapPanel>
             </HeaderedContentControl>
 
             <HeaderedContentControl Header="Dialog">
-                <StackPanel Orientation="Horizontal">
+                <WrapPanel Orientation="Horizontal">
                     <ContentControl Content="{StaticResource Images.Ok}" />
                     <ContentControl Content="{StaticResource Images.Cancel}" />
                     <ContentControl Content="{StaticResource Images.Help}" />
                     <ContentControl Content="{StaticResource Images.Information}" />
                     <ContentControl Content="{StaticResource Images.Warning}" />
                     <ContentControl Content="{StaticResource Images.Error}" />
-                </StackPanel>
+                </WrapPanel>
             </HeaderedContentControl>
 
             <HeaderedContentControl Header="List">
-                <StackPanel Orientation="Horizontal">
+                <WrapPanel Orientation="Horizontal">
                     <ContentControl Content="{StaticResource Images.Add}" />
                     <ContentControl Content="{StaticResource Images.Edit}" />
                     <ContentControl Content="{StaticResource Images.Remove}" />
-                </StackPanel>
+                </WrapPanel>
             </HeaderedContentControl>
 
             <HeaderedContentControl Header="Countries">
-                <StackPanel Orientation="Horizontal">
+                <WrapPanel Orientation="Horizontal">
                     <ContentControl Content="{StaticResource Images.Flag.Gr}" />
                     <ContentControl Content="{StaticResource Images.Flag.Fr}" />
                     <ContentControl Content="{StaticResource Images.Flag.Uk}" />
                     <ContentControl Content="{StaticResource Images.Flag.Us}" />
-                </StackPanel>
+                </WrapPanel>
             </HeaderedContentControl>
 
             <HeaderedContentControl Header="Unused">
-                <StackPanel Orientation="Horizontal">
+                <WrapPanel Orientation="Horizontal">
                     <ContentControl Content="{StaticResource Images.Up}" />
                     <ContentControl Content="{StaticResource Images.Down}" />
                     <ContentControl Content="{StaticResource Images.First}" />
@@ -83,7 +83,7 @@
                     <ContentControl Content="{StaticResource Images.Save}" />
                     <ContentControl Content="{StaticResource Images.Copy}" />
                     <ContentControl Content="{StaticResource Images.Cut}" />
-                </StackPanel>
+                </WrapPanel>
             </HeaderedContentControl>
 
         </StackPanel>

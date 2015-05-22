@@ -17,6 +17,10 @@
         <TabItem Header="Images">
             <views:ImagesView />
         </TabItem>
+
+        <TabItem Header="Buttons">
+            <views:ButtonsView />
+        </TabItem>
         
        <TabItem Header="MainView">
             <views:DesignMainView/>
