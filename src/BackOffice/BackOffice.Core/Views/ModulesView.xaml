@@ -1,13 +1,13 @@
-﻿<UserControl x:Class="Poseidon.BackOffice.Core.ModulesView"
+﻿<UserControl x:Class="Poseidon.BackOffice.Core.Views.ModulesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:DesignTime="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Core.DesignTime"
              xmlns:core="clr-namespace:Poseidon.BackOffice.Core"
              xmlns:local="clr-namespace:Poseidon.BackOffice.Core.ViewModels"
-             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
-             xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             xmlns:viewModels="clr-namespace:Poseidon.BackOffice.Common.ViewModels;assembly=Poseidon.BackOffice.Common"
+             xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -15,78 +15,38 @@
 
         <core:ModulesViewModelLocator x:Key="ModulesViewModel" />
 
-        <CollectionViewSource x:Key="ModulesCollection" Source="{Binding Modules}">
-            <CollectionViewSource.SortDescriptions>
-                <cm:SortDescription PropertyName="Priority" />
-                <!--<cm:SortDescription PropertyName="Title" />-->
-            </CollectionViewSource.SortDescriptions>
-            <CollectionViewSource.GroupDescriptions>
-                <PropertyGroupDescription PropertyName="Parent.Title"></PropertyGroupDescription>
-            </CollectionViewSource.GroupDescriptions>
-        </CollectionViewSource>
-
-        
-        <DataTemplate DataType="{x:Type local:OfficeModuleViewModel}">
+        <HierarchicalDataTemplate DataType="{x:Type local:OfficeModuleViewModel}">
             <HeaderedContentControl>
                 <HeaderedContentControl.Header>
-                    <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
-                            FocusVisualStyle="{x:Null}"
-                        cal:Message.Attach="ActivateCommand()" 
-                        cal:Action.TargetWithoutContext="{Binding RelativeSource={RelativeSource Self}}">
-                        <!--<i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Click">
-                                <cal:ActionMessage cal:Message.Attach="SomeMethod()" cal:Action.TargetWithoutContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
-                        <StackPanel Orientation="Vertical" Margin="3">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-
-                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="LightBlue" CornerRadius="5" />
-                            <Image Margin="2"  Grid.RowSpan="2" Width="48" Height="48" Source="{Binding IconFileName}"/>
-                            <TextBlock Margin="2" Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" FontSize="24" />
-                            <TextBlock Grid.Column="1" Grid.Row="1" Margin="2"  Text="{Binding Description}"/>
-                        </Grid>
-                    </StackPanel>
-                    </Button>
+                    <Controls:ModuleButton 
+                        Background="{StaticResource Brush.Module.Header}"
+                        Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeViewItem}}}"
+                        Content="{Binding Title}"
+                        Description="{Binding Description}"
+                        IconFile="{Binding IconFileName}" 
+                        IconSize="48"
+                        TitleFontSize="24"
+                        TitleFontWeight="Bold"
+                        ToolTip="{Binding ToolTip}" />
                 </HeaderedContentControl.Header>
                 <HeaderedContentControl.Content>
-                    <ListBox ItemsSource="{Binding Children}" FocusVisualStyle="{x:Null}" BorderThickness="0" />
+                    <ListBox ItemsSource="{Binding Children}" FocusVisualStyle="{x:Null}" BorderThickness="0" Margin="23,0,0,0" HorizontalContentAlignment="Stretch" />
                 </HeaderedContentControl.Content>
             </HeaderedContentControl>
-        </DataTemplate>
+        </HierarchicalDataTemplate>
 
         
-        <DataTemplate DataType="{x:Type local:ModuleViewModel}">
-            <Button ToolTip="{Binding ToolTip}" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0"
-                    FocusVisualStyle="{x:Null}"
-                    cal:Message.Attach="ActivateCommand()" 
-                    cal:Action.TargetWithoutContext="{Binding RelativeSource={RelativeSource Self}}">
-                <StackPanel Orientation="Vertical" Margin="23,0,0,0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Image Grid.RowSpan="2" Width="24" Height="24" Source="{Binding IconFileName}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" />
-                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
-                    </Grid>
-                    <ItemsControl ItemsSource="{Binding Children}" />
-                </StackPanel>
-            </Button>
-        </DataTemplate>
+        <HierarchicalDataTemplate DataType="{x:Type viewModels:ModuleViewModel}">
+            <Controls:ModuleButton
+                    Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}"
+                    Content="{Binding Title}"
+                    Description="{Binding Description}"
+                    IconFile="{Binding IconFileName}" 
+                    IconSize="24"
+                    TitleFontSize="16"
+                    TitleFontWeight="SemiBold"
+                    ToolTip="{Binding ToolTip}" />
+        </HierarchicalDataTemplate>
         
         
         <ItemsPanelTemplate x:Key="ModuleListPanelTemplate">
@@ -100,12 +60,13 @@
         <Binding Path="ViewModel" Source="{StaticResource ModulesViewModel}" />
     </UserControl.DataContext>
     <d:UserControl.DataContext>
-        <DesignTime:DesignTimeModulesViewModel />
+        <design:DesignTimeModulesViewModel />
     </d:UserControl.DataContext>
 
     
-    <Grid>
-        <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
+    <Grid Margin="10">
+        <!--<ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />-->
+        <TreeView ItemsSource="{Binding ModulesCollection}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
     </Grid>
     
 </UserControl>

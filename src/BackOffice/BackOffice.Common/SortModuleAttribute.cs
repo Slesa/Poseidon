@@ -1,10 +1,13 @@
-﻿namespace Poseidon.BackOffice.Common
+﻿using System;
+
+namespace Poseidon.BackOffice.Common
 {
     /// <summary>
     /// Allows the order of module loading to be controlled.  Where dependencies
     /// allow, module loading order will be controlled by relative values of priority
     /// </summary>
-    public class SortModuleAttribute
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+    public class SortModuleAttribute : Attribute
     {
         /// <summary>
         /// Constructor

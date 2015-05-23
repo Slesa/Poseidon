@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Poseidon.BackOffice.Module.Ums.Contracts;
 using Poseidon.Ums.Domain.Model;
 
 namespace Poseidon.BackOffice.Module.Ums.DesignTime
 {
-    public class DesignTimeUserRolesViewModel : IUserRolesViewModel
+    public class DesignTimeUserRolesViewModel
     {
         public ObservableCollection<UserRole> UserRoles
         {
@@ -15,7 +14,7 @@ namespace Poseidon.BackOffice.Module.Ums.DesignTime
             }
         }
 
-        IEnumerable<UserRole> CreateUserRoles()
+        public static IEnumerable<UserRole> CreateUserRoles()
         {
             yield return new UserRole { Name = "Captain" };
             yield return new UserRole { Name = "Lieutenant" };

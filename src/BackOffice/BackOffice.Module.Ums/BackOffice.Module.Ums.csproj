@@ -32,32 +32,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro">
-      <HintPath>..\packages\Caliburn.Micro.1.5.2\lib\net45\Caliburn.Micro.dll</HintPath>
-    </Reference>
-    <Reference Include="LightCore, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\LightCore.1.5.1\lib\net40\LightCore.dll</HintPath>
-    </Reference>
-    <Reference Include="LightCore.CommonServiceLocator">
-      <HintPath>..\packages\LightCore.1.5.1\lib\net40\LightCore.CommonServiceLocator.dll</HintPath>
-    </Reference>
-    <Reference Include="LightCore.Configuration">
-      <HintPath>..\packages\LightCore.1.5.1\lib\net40\LightCore.Configuration.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Expression\Microsoft.Expression.Interactions.dll</HintPath>
+      <HintPath>..\libs\BlendSDK\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\LightCore.1.5.1\lib\net40\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents">
+      <HintPath>..\..\packages\Prism.PubSubEvents.1.0.0\lib\portable-sl4+wp7+windows8+net40\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.1.5.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\BlendSDK\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
@@ -67,16 +59,21 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\VersionInfo.cs">
+    <Compile Include="..\..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Contracts\ITokensViewModel.cs" />
     <Compile Include="Contracts\IUmsModulesViewModel.cs" />
-    <Compile Include="Contracts\IUserRolesViewModel.cs" />
-    <Compile Include="Contracts\IUsersViewModel.cs" />
+    <Compile Include="DesignTime\DesignTimeEditUserRoleViewModel.cs" />
+    <Compile Include="DesignTime\DesignTimeEditUserViewModel.cs" />
+    <Compile Include="DesignTime\DesignTimeTokensViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUmsModulesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUserRolesViewModel.cs" />
     <Compile Include="DesignTime\DesignTimeUsersViewModel.cs" />
-    <Compile Include="ModuleRegister.cs" />
+    <Compile Include="Modules\TokenModule.cs" />
+    <Compile Include="Modules\UserModule.cs" />
+    <Compile Include="Modules\UserRoleModule.cs" />
+    <Compile Include="RegisterUmsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,11 +82,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="UmsOfficeModule.cs" />
+    <Compile Include="UmsEvents.cs" />
+    <Compile Include="UmsPrismModule.cs" />
+    <Compile Include="Modules\UmsOfficeModule.cs" />
+    <Compile Include="UmsViews.cs" />
     <Compile Include="ViewModelLocators.cs" />
+    <Compile Include="ViewModels\EditUserRoleViewModel.cs" />
+    <Compile Include="ViewModels\EditUserViewModel.cs" />
+    <Compile Include="ViewModels\TokensViewModel.cs" />
     <Compile Include="ViewModels\UmsModulesViewModel.cs" />
     <Compile Include="ViewModels\UserRolesViewModel.cs" />
+    <Compile Include="ViewModels\UserRoleViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="Views\EditUserRoleView.xaml.cs">
+      <DependentUpon>EditUserRoleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditUserView.xaml.cs">
+      <DependentUpon>EditUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TokensView.xaml.cs">
+      <DependentUpon>TokensView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UmsModulesView.xaml.cs">
       <DependentUpon>UmsModulesView.xaml</DependentUpon>
     </Compile>
@@ -107,12 +121,18 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LightCore.xsd">
+    <Page Include="Views\EditUserRoleView.xaml">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TokensView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UmsModulesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +155,10 @@
       <Project>{f2f299af-2b1a-43a2-ae10-6b23af9721fd}</Project>
       <Name>BackOffice.Theme</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj">
+      <Project>{b9af147e-06d4-400e-a8d5-9adf291993ba}</Project>
+      <Name>Common.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Wpf\Common.Wpf.csproj">
       <Project>{eab8e2bf-b1a4-400d-9db0-b90ea8edf860}</Project>
       <Name>Common.Wpf</Name>
@@ -142,6 +166,10 @@
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
       <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
       <Name>Domain.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ums.Domain.Hibernate\Ums.Domain.Hibernate.csproj">
+      <Project>{a1bcaddc-62fa-4fb4-a4ef-06315ea85311}</Project>
+      <Name>Ums.Domain.Hibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ums.Domain.Model\Ums.Domain.Model.csproj">
       <Project>{da8a5822-355b-4138-80c3-b03193917fea}</Project>
@@ -152,6 +180,12 @@
       <Name>Ums.Domain.Resources</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="paket.references" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -160,4 +194,262 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.Composition">
+          <HintPath>..\..\packages\Prism.Composition\lib\NET45\Microsoft.Practices.Prism.Composition.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.Composition">
+          <HintPath>..\..\packages\Prism.Composition\lib\NET45\Microsoft.Practices.Prism.Composition.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.SharedInterfaces">
+          <HintPath>..\..\packages\Prism.Composition\lib\NET45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.SharedInterfaces">
+          <HintPath>..\..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.SharedInterfaces">
+          <HintPath>..\..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.Interactivity">
+          <HintPath>..\..\packages\Prism.Interactivity\lib\NET45\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.Interactivity">
+          <HintPath>..\..\packages\Prism.Interactivity\lib\NET45\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop">
+          <HintPath>..\..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop">
+          <HintPath>..\..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.Mvvm">
+          <HintPath>..\..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.Mvvm">
+          <HintPath>..\..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.UnityExtensions">
+          <HintPath>..\..\packages\Prism.UnityExtensions\lib\NET45\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Prism.UnityExtensions">
+          <HintPath>..\..\packages\Prism.UnityExtensions\lib\NET45\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Unity.Configuration">
+          <HintPath>..\..\packages\Unity\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Unity.Configuration">
+          <HintPath>..\..\packages\Unity\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Unity">
+          <HintPath>..\..\packages\Unity\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Unity">
+          <HintPath>..\..\packages\Unity\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+          <HintPath>..\..\packages\Unity\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+          <HintPath>..\..\packages\Unity\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="WPFLocalizeExtension">
+          <HintPath>..\..\packages\WpfLocalizeExtension\lib\net35\WPFLocalizeExtension.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="WPFLocalizeExtension">
+          <HintPath>..\..\packages\WpfLocalizeExtension\lib\net35\WPFLocalizeExtension.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == 'WindowsPhoneApp' And $(TargetPlatformVersion) == '7.1'">
+      <ItemGroup>
+        <Reference Include="WP7LocalizeExtension">
+          <HintPath>..\..\packages\WpfLocalizeExtension\lib\sl4-wp71\WP7LocalizeExtension.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'WindowsPhoneApp'">
+      <ItemGroup>
+        <Reference Include="WP7LocalizeExtension">
+          <HintPath>..\..\packages\WpfLocalizeExtension\lib\sl4-wp71\WP7LocalizeExtension.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="XAMLMarkupExtensions">
+          <HintPath>..\..\packages\XAMLMarkupExtensions\lib\net35\XAMLMarkupExtensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
+      <ItemGroup>
+        <Reference Include="XAMLMarkupExtensions">
+          <HintPath>..\..\packages\XAMLMarkupExtensions\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework'">
+      <ItemGroup>
+        <Reference Include="XAMLMarkupExtensions">
+          <HintPath>..\..\packages\XAMLMarkupExtensions\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
 </Project>

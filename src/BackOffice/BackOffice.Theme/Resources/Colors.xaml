@@ -1,8 +1,29 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <Color x:Key="Color.First" />
+    <Color x:Key="Color.Second" />
+    <Color x:Key="Color.Third" />
 
     <Color x:Key="Color.Foreground">BlanchedAlmond</Color>
     <Color x:Key="Color.Background">#FF445566</Color>
+    <Color x:Key="Color.Warning">#FFFF8000</Color>
+    <Color x:Key="Color.Error">#FFFF0000</Color>
+    <Color x:Key="Color.Selection">#FFB300FF</Color>
+
+
+    
+    <Color x:Key="Color.BreadCrumb.Foreground">Black</Color>
+    <Color x:Key="Color.BreadCrumb.Inverted">White</Color>
+    <Color x:Key="Color.BreadCrumb.Background">Transparent</Color>
+    <Color x:Key="Color.BreadCrumb.Button">#FF445566</Color>
+    <Color x:Key="Color.BreadCrumb.Button.Pressed">White</Color>
+    <Color x:Key="Color.BreadCrumb.Button.Hover">LightBlue</Color>
+
+    <Color x:Key="Color.Navigation.Button">DarkCyan</Color>
+    <Color x:Key="Color.Navigation.Button.Pressed">DarkCyan</Color>
+
+    <Color x:Key="Color.Module.Header">LightBlue</Color>
+    <Color x:Key="Color.Module.Border">DimGray</Color>
+    <Color x:Key="Color.Module.Hightlighted">LightCyan</Color>
 
 </ResourceDictionary>

@@ -1,0 +1,20 @@
+﻿CI Server:
+https://ci.appveyor.com/projects
+
+YouTack:
+http://slesa.myjetbrains.com/youtrack/rest/agile/Poseidon+Board-0/sprint/Version+0.1
+
+Paket:
+http://fsprojects.github.io/Paket/
+
+Console Framework:
+https://github.com/elw00d/consoleframework
+
+StyleCop:
+http://stylecop.codeplex.com/
+
+
+
+Prism, InteractionTrigger, open child window:
+http://sysmagazine.com/posts/152003/
+http://briannoyesblogwp.azurewebsites.net/2010/11/15/prompting-the-user-from-a-view-modelprism-4-gems/

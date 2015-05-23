@@ -1,0 +1,19 @@
+﻿<viewModels:InboxViewModel
+    xmlns:viewModels="clr-namespace:ViewSwitchingNavigation.Email.ViewModels" 
+    xmlns:model="clr-namespace:ViewSwitchingNavigation.Email.Model" 
+    xmlns:infra="clr-namespace:ViewSwitchingNavigation.Infrastructure;assembly=ViewSwitchingNavigation.Infrastructure" >
+    <viewModels:InboxViewModel.Messages>
+        <infra:DesignDataCollectionView>
+            <model:EmailDocument From="Class aenean maecenas" Subject="Vestibulum curae" Text="Cras donec aliquam integer" To="Mauris etiam" />
+            <model:EmailDocument From="Nam quisque adipiscing duis sed" Subject="Nullam dis fusce" Text="Curabitur vivamus parturient" To="Phasellus est" />
+            <model:EmailDocument From="Lorem aptent hac leo" Subject="Consequat auctor congue" Text="Mus praesent" To="Nec nunc" />
+            <model:EmailDocument From="Non convallis" Subject="Amet accumsan morbi vestibulum per" Text="Sed aliquam cursus" To="Ante dignissim vestibulum adipiscing" />
+            <model:EmailDocument From="Sem bibendum sit dictumst eleifend" Subject="Aliquet dictum blandit commodo" Text="Conubia parturient vel nulla elementum" To="Nam vestibulum" />
+            <model:EmailDocument From="Arcu proin" Subject="Lectus facilisi sed augue" Text="Diam dolor vestibulum" To="Facilisis cubilia adipiscing fames faucibus" />
+            <model:EmailDocument From="Eget dapibus elit dis habitant" Subject="Inceptos felis libero est egestas" Text="Interdum euismod ipsum feugiat fermentum" To="Justo lobortis" />
+            <model:EmailDocument From="Lacus parturient gravida enim vestibulum" Subject="Ligula erat vestibulum" Text="Fringilla iaculis habitasse nascetur" To="Hendrerit hac lacinia lorem" />
+            <model:EmailDocument From="Adipiscing litora luctus parturient" Subject="Eros nibh magnis laoreet himenaeos" Text="Magna vestibulum vestibulum" To="Natoque leo pharetra" />
+            <model:EmailDocument From="Posuere placerat" Subject="Nisi nisl" Text="Adipiscing pulvinar" To="Mattis massa nunc parturient" />
+        </infra:DesignDataCollectionView>
+    </viewModels:InboxViewModel.Messages>
+</viewModels:InboxViewModel>

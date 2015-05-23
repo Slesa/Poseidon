@@ -5,7 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
-             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
+             xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
+             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -13,6 +20,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <ums:UsersViewModelLocator x:Key="UsersViewModel" />
@@ -34,17 +42,55 @@
         <design:DesignTimeUsersViewModel />
     </d:UserControl.DataContext>
 
-    <HeaderedContentControl Style="{StaticResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UsersView_Title}">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <DockPanel>
 
-        <ListView ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}">
+            <StackPanel DockPanel.Dock="Bottom" Style="{DynamicResource Style.ModuleInfo.Commands}">
+                <Button ToolTip="{lex:Loc UserModule_AddUser}" Command="{Binding AddNewUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
+                <Button ToolTip="{lex:Loc UserModule_EditUser}" Command="{Binding EditUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
+                <Button ToolTip="{lex:Loc UserModule_RemoveUser}" Command="{Binding RemoveUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
+            </StackPanel>
+
+            <Controls:ModuleInfoArea
+                Content="{lex:Loc UserModule}"
+                Description="{lex:Loc UserModule_Description}"
+                DockPanel.Dock="Top"
+                IconFile="{StaticResource Image.User}"/>
+            
+        </DockPanel>
+
+        <ListView Grid.Column="1" ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}" SelectionMode="Extended">
+            <i:Interaction.Behaviors>
+                <behaviors:SelectedItemsBehavior Selections="{Binding SelectedItems}" />
+                <behaviors:MouseDoubleClickBehavior Command="{Binding EditUserCommand}" />
+            </i:Interaction.Behaviors>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Width="Auto" Header="{x:Static res:Strings.Heading_UserRole}" DisplayMemberBinding="{Binding UserRole.Name}" />
+                    <GridViewColumn Header="{lex:Loc Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Width="Auto" Header="{lex:Loc Heading_UserRole}" DisplayMemberBinding="{Binding UserRole.Name}" />
                 </GridView>
             </ListView.View>
         </ListView>
 
-    </HeaderedContentControl>
-    
+    </Grid>
+
+<!-- @@@
+    <i:Interaction.Triggers>
+        <ei:KeyTrigger Key="Insert">
+            <i:InvokeCommandAction Command="{Binding AddNewUserCommand}" />
+        </ei:KeyTrigger>
+        <ei:KeyTrigger Key="Return">
+            <i:InvokeCommandAction Command="{Binding EditUserCommand}" />
+        </ei:KeyTrigger>
+        <ei:KeyTrigger Key="Delete">
+            <i:InvokeCommandAction Command="{Binding RemoveUserCommand}" />
+        </ei:KeyTrigger>
+    </i:Interaction.Triggers>
+-->
 </UserControl>

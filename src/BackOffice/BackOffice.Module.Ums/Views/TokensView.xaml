@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Poseidon.BackOffice.Module.Ums.Views.TokensView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
+             xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <ums:TokensViewModelLocator x:Key="TokensViewModel" />
+
+            <DataTemplate x:Key="ItemTemplate.Token">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="{Binding Key}"/>
+                    <TextBlock VerticalAlignment="Center" Text="{Binding TokenType.Name}"/>
+                </StackPanel>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Path="ViewModel" Source="{StaticResource TokensViewModel}" />
+    </UserControl.DataContext>
+    <d:UserControl.DataContext >
+        <design:DesignTimeTokensViewModel />
+    </d:UserControl.DataContext>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel>
+            <Controls:ModuleInfoArea
+                Content="{lex:Loc TokenModule}"
+                Description="{lex:Loc TokenModule_Description}"
+                DockPanel.Dock="Top"
+                MaxWidth="200"
+                IconFile="{StaticResource Image.User}"
+                IconSize="48"
+                TitleFontSize="24"/>
+        </DockPanel>
+
+        <ListView Grid.Column="1" ItemsSource="{Binding Tokens}" ItemTemplate="{StaticResource ItemTemplate.Token}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{lex:Loc Heading_Data}" DisplayMemberBinding="{Binding Data}" />
+                    <GridViewColumn Width="Auto" Header="{lex:Loc Heading_TokenType}" DisplayMemberBinding="{Binding TokenType.Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+    
+</UserControl>

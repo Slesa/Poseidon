@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEBA11BE-76AE-44E1-B405-7C6AE790A582}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Poseidon.Domain.Pms.Hibernate.Specs</RootNamespace>
+    <AssemblyName>Poseidon.Domain.Pms.Hibernate.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\packages\Machine.Fakes.1.6.0\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks">
+      <HintPath>..\packages\Machine.Fakes.RhinoMocks.1.6.0\lib\net40\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications, Version=0.5.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Machine.Specifications.0.5.14\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4, Version=0.5.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Machine.Specifications.0.5.14\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="CurrencyMapSpecs.cs" />
+    <Compile Include="DiscountMapSpecs.cs" />
+    <Compile Include="PayformMapSpecs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesFamilyGroupMapSpecs.cs" />
+    <Compile Include="SalesFamilyMapSpecs.cs" />
+    <Compile Include="SalesItemMapSpecs.cs" />
+    <Compile Include="WaiterMapSpecs.cs" />
+    <Compile Include="WaiterTeamMapSpecs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BackOffice\Domain.Common\Domain.Common.csproj">
+      <Project>{656ba96e-66b5-435a-b97f-4abeac25ad85}</Project>
+      <Name>Domain.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BackOffice\Ums.Domain.Model\Ums.Domain.Model.csproj">
+      <Project>{da8a5822-355b-4138-80c3-b03193917fea}</Project>
+      <Name>Ums.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Pms.Hibernate\Domain.Pms.Hibernate.csproj">
+      <Project>{ce4b54db-63b6-48e2-8268-0aefb53aeade}</Project>
+      <Name>Domain.Pms.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Pms.Model\Domain.Pms.Model.csproj">
+      <Project>{43b0af8e-ed61-4d64-b227-83cf3f9a0aba}</Project>
+      <Name>Domain.Pms.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Ums.Hibernate\Domain.Ums.Hibernate.csproj">
+      <Project>{11c6f596-a4b7-49a7-8cca-b5b2091acd40}</Project>
+      <Name>Domain.Ums.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hibernate.Specs.Common\Hibernate.Specs.Common.csproj">
+      <Project>{1149316a-92ef-477f-9207-2338f0e6f989}</Project>
+      <Name>Hibernate.Specs.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,7 +44,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\VersionInfo.cs">
+    <Compile Include="..\..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -63,11 +64,39 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Fonts\comic.ttf" />
+    <Resource Include="Resources\Fonts\comicbd.ttf" />
+    <Resource Include="Resources\Fonts\Candara.ttf" />
+    <Resource Include="Resources\Fonts\Candarab.ttf" />
+    <Resource Include="Resources\Fonts\Candarai.ttf" />
+    <Resource Include="Resources\Fonts\Candaraz.ttf" />
+    <Resource Include="Resources\Fonts\axis.otf" />
+    <Page Include="Resources\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Backgrounds.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Style.Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Style.Modules.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\Style.ListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +135,66 @@
   <ItemGroup>
     <Resource Include="Resources\Images\back.png" />
     <Resource Include="Resources\Images\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{9f588452-447c-4efd-8fb2-4817cc0043c8}</Project>
+      <Name>BackOffice.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\add.png" />
+    <Resource Include="Resources\Images\edit.png" />
+    <Resource Include="Resources\Images\ok.png" />
+    <Resource Include="Resources\Images\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\flag_fr.png" />
+    <Resource Include="Resources\Images\flag_gr.png" />
+    <Resource Include="Resources\Images\flag_uk.png" />
+    <Resource Include="Resources\Images\flag_us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\down.png" />
+    <Resource Include="Resources\Images\first.png" />
+    <Resource Include="Resources\Images\last.png" />
+    <Resource Include="Resources\Images\next.png" />
+    <Resource Include="Resources\Images\previous.png" />
+    <Resource Include="Resources\Images\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\error.png" />
+    <Resource Include="Resources\Images\information.png" />
+    <Resource Include="Resources\Images\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cut.png" />
+    <Resource Include="Resources\Images\print.png" />
+    <Resource Include="Resources\Images\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\ButtonTemplate.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

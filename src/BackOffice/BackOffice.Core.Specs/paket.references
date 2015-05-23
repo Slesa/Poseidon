@@ -1,0 +1,11 @@
+CommonServiceLocator
+Machine.Fakes
+Machine.Fakes.RhinoMocks
+Machine.Specifications
+Machine.Specifications.Should
+Prism
+Prism.Composition
+Prism.Interactivity
+Prism.Mvvm
+Prism.PubSubEvents
+RhinoMocks

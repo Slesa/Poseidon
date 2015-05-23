@@ -1,14 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Colors.xaml"/>
-        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Brushes.xaml"/>
-        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Images.xaml"/>
-        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
-        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Shell.xaml"/>
-        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.NavigationBar.xaml"/>
-        <ResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.StatusBar.xaml"/>
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Fonts.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Colors.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Brushes.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Images.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Buttons.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Shell.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.NavigationBar.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.StatusBar.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Modules.xaml" />
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Edit.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

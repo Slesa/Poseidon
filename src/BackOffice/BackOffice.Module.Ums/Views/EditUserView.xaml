@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Poseidon.BackOffice.Module.Ums.Views.EditUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
+             xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
+             xmlns:Behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <ums:EditUserViewModelLocator x:Key="EditUserViewModel" />
+
+            <Style x:Key="LayoutRoot" TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger Property="UIElement.Visibility" Value="Visible">
+                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=_textName}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Path="ViewModel" Source="{StaticResource EditUserViewModel}" />
+    </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <design:DesignTimeEditUserViewModel />
+    </d:UserControl.DataContext>
+
+    <Grid Style="{StaticResource LayoutRoot}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Width="24" Height="24" Source="{StaticResource Image.User}"/>
+            <TextBlock VerticalAlignment="Center" FontSize="24" Text="{Binding TitleText}"/>
+        </StackPanel>
+
+        <Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="{lex:Loc EditUserView_Name}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="_textName" 
+                 HorizontalAlignment="Stretch"
+                 Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
+                 ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}">
+            <i:Interaction.Behaviors>
+                <Behaviors:SelectAllOnFocusBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
+
+        <Label Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=_comboUserRole}" Content="{lex:Loc EditUserView_UserRole}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
+                  ItemsSource="{Binding Path=AllUserRoles}" DisplayMemberPath="Name" 
+                  SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                  IsEditable="False" />
+
+        <Button Grid.ColumnSpan="3" Grid.Row="4" Command="{Binding CommitCommand}" Style="{DynamicResource Style.Edit.Buttons.Ok}" />
+        
+    </Grid>
+
+<!-- @@@
+    <i:Interaction.Triggers>
+        <ei:KeyTrigger Key="Enter" Modifiers="Control">
+            <i:InvokeCommandAction Command="{Binding CommitCommand}" />
+        </ei:KeyTrigger>
+    </i:Interaction.Triggers>
+-->
+</UserControl>

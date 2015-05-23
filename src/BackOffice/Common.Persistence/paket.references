@@ -1,0 +1,12 @@
+CommonServiceLocator
+FluentNHibernate
+Iesi.Collections
+Inflector
+NHibernate
+Prism
+Prism.Composition
+Prism.Interactivity
+Prism.Mvvm
+Prism.PubSubEvents
+Prism.UnityExtensions
+Unity

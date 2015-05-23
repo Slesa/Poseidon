@@ -1,9 +1,8 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:Poseidon.BackOffice.Common.Controls"
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
-    
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Poseidon.BackOffice.Common.Controls"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
+
     <Style TargetType="{x:Type controls:ModuleListControl}">
         <Setter Property="Template">
             <Setter.Value>
@@ -17,27 +16,37 @@
                                 <i:InvokeCommandAction Command="{Binding ClickCommand}" />
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
-                        
+
                         <StackPanel Orientation="Vertical">
 
-                            <Grid FocusVisualStyle="{x:Null}" Margin="10">
+                            <Grid Margin="10" FocusVisualStyle="{x:Null}">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
 
-                                <Image Margin="2"  Grid.RowSpan="2" Width="48" Height="48" Source="{Binding ParentModule.IconFileName}"/>
-                                <TextBlock Margin="2" Grid.Column="1" Text="{Binding ParentModule.Title}" FontWeight="Bold" FontSize="24" />
-                                <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding ParentModule.Description}"/>
+                                <Image Grid.RowSpan="2"
+                                       Width="48"
+                                       Height="48"
+                                       Margin="2"
+                                       Source="{Binding ParentModule.IconFileName}" />
+                                <TextBlock Grid.Column="1"
+                                           Margin="2"
+                                           FontSize="24"
+                                           FontWeight="Bold"
+                                           Text="{Binding ParentModule.Title}" />
+                                <TextBlock Grid.Row="1"
+                                           Grid.Column="1"
+                                           Text="{Binding ParentModule.Description}" />
 
                             </Grid>
-                            
+
                             <ItemsControl ItemsSource="{Binding Children}" />
-                            
+
                         </StackPanel>
 
                     </Border>

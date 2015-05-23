@@ -1,65 +1,69 @@
-﻿using System.Windows;
-using Caliburn.Micro;
-using LightCore;
-using Poseidon.BackOffice.Core;
-using Poseidon.BackOffice.Core.Events;
+﻿using System.ComponentModel;
+using System.Windows;
+using System.Windows.Input;
+using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
+using Microsoft.Practices.Prism.PubSubEvents;
+using Microsoft.Practices.ServiceLocation;
+using Poseidon.BackOffice.Common;
+
 
 namespace Poseidon.BackOffice.ViewModels
 {
-    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell
-        , IHandle<ActivateScreenEvent>
+    public class ShellViewModel
     {
-        public ShellViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
+        public ShellViewModel()
         {
-            EventAggregator = eventAggregator;
-            WindowManager = windowManager;
-            DisplayName = "Poseidon BackOffice";
 
-            EventAggregator.Subscribe(this);
-        }
+            LoginUserRequest = new InteractionRequest<INotification>();
 
-        public IEventAggregator EventAggregator { get; private set; }
-        public IWindowManager WindowManager { get; private set; }
-        public IContainer Container { get; set; }
+            OnQuitCommand = new DelegateCommand(OnQuit);
+            LoginUserCommand = new DelegateCommand(RaiseLoginUserRequest, CanRaiseLoginUserRequest);
 
-        protected override void OnInitialize()
-        {
-            base.OnInitialize();
-
-            ActivateItem(Container.Resolve<ModulesViewModel>());
-        }
-
-        public override void ActivateItem(IScreen screen)
-        {
-            System.Diagnostics.Debug.WriteLine("Activating " + screen.DisplayName);
-            base.ActivateItem(screen);
-            System.Diagnostics.Debug.WriteLine("Activated " + ActiveItem.DisplayName);
+            if (!DesignerProperties.GetIsInDesignMode(new DependencyObject()))
+            {
+                var eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
+                eventAggregator.GetEvent<ApplicationReadyEvent>().Subscribe(_ => RaiseLoginUserRequest());
+            }
         }
 
         #region Commands
-        
-        public void DoQuit()
+
+        public ICommand OnQuitCommand { get; private set; }
+
+        void OnQuit()
         {
             Application.Current.Shutdown();
         }
 
+        public ICommand LoginUserCommand { get; private set; }
+
+        void RaiseLoginUserRequest()
+        {
+            LoginUserRequest.Raise(new Notification
+            {
+                Title = "Enter credentials..."
+            }, LoginNotification);
+        }
+
+        void LoginNotification(INotification obj)
+        {
+            var i = obj;
+        }
+
+        bool CanRaiseLoginUserRequest()
+        {
+            return true;
+        }
+
+
         #endregion
 
-        public void Handle(ActivateScreenEvent message)
-        {
-            if (message.ScreenType == null) return;
+        #region Interaction
 
-            var screenView = Container.Resolve(message.ScreenType) as IScreen;
-            if (screenView == null) return;
-            //WindowManager.ShowDialog(screenView);
+        public InteractionRequest<INotification> LoginUserRequest { get; private set; }
 
-            screenView.Deactivated += (obj, args) =>
-                {
-                    /*var screen = message.ScreenType;
-                    if (screen != null) */Items.Remove(screenView);
-                };
-            ActivateItem(screenView);
+        #endregion
 
-        }
     }
 }

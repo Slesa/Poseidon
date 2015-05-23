@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Paket</id>
+    <version>1.4.14</version>
+    <authors>Paket team</authors>
+    <licenseUrl>http://fsprojects.github.io/Paket/license.html</licenseUrl>
+    <projectUrl>http://fsprojects.github.com/Paket</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/fsprojects/Paket/master/docs/files/img/logo.png</iconUrl>
+    <description>A package dependency manager for .NET with support for NuGet packages and GitHub repositories.</description>
+    <summary>A package dependency manager for .NET with support for NuGet packages and GitHub repositories.</summary>
+    <releaseNotes>Allow to specify the directory for `Convert to NuGet` in PublicAPI</releaseNotes>
+    <tags>nuget bundler F#</tags>
+  </metadata>
+</package>

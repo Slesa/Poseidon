@@ -117,8 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EditUserRoleView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditUserView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditUserView_UserRole" xml:space="preserve">
+    <value>_User role:</value>
+  </data>
+  <data name="Heading_Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
   <data name="Heading_Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="Heading_TokenType" xml:space="preserve">
+    <value>Token type</value>
   </data>
   <data name="Heading_UserRole" xml:space="preserve">
     <value>Role</value>
@@ -147,8 +162,17 @@
   <data name="UserModule" xml:space="preserve">
     <value>Users</value>
   </data>
+  <data name="UserModule_AddUser" xml:space="preserve">
+    <value>Add new user...</value>
+  </data>
   <data name="UserModule_Description" xml:space="preserve">
     <value>Manage users of the system, edit their profiles and their rights</value>
+  </data>
+  <data name="UserModule_EditUser" xml:space="preserve">
+    <value>Edit users...</value>
+  </data>
+  <data name="UserModule_RemoveUser" xml:space="preserve">
+    <value>Remove users...</value>
   </data>
   <data name="UserModule_Tooltip" xml:space="preserve">
     <value>Manage your users</value>
@@ -156,8 +180,17 @@
   <data name="UserRoleModule" xml:space="preserve">
     <value>User roles</value>
   </data>
+  <data name="UserRoleModule_AddUserRole" xml:space="preserve">
+    <value>Add new user role...</value>
+  </data>
   <data name="UserRoleModule_Description" xml:space="preserve">
     <value>Manage user roles, the users can act as</value>
+  </data>
+  <data name="UserRoleModule_EditUserRole" xml:space="preserve">
+    <value>Edit user roles...</value>
+  </data>
+  <data name="UserRoleModule_RemoveUserRole" xml:space="preserve">
+    <value>Remove user roles...</value>
   </data>
   <data name="UserRoleModule_Tooltip" xml:space="preserve">
     <value>Manage your user roles</value>

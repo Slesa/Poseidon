@@ -5,7 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
              xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
-             xmlns:res="clr-namespace:Poseidon.BackOffice.Module.Ums.Resources"
+             xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
+             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -13,6 +20,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <ums:UserRolesViewModelLocator x:Key="UserRolesViewModel" />
@@ -34,16 +42,54 @@
         <design:DesignTimeUserRolesViewModel />
     </d:UserControl.DataContext>
 
-    <HeaderedContentControl Style="{DynamicResource Style.ListView.HeaderedContent}" Header="{x:Static res:Strings.UserRolesView_Title}">
+    <Grid>
 
-        <ListView ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel>
+
+            <StackPanel DockPanel.Dock="Bottom" Style="{DynamicResource Style.ModuleInfo.Commands}">
+                <Button ToolTip="{lex:Loc UserRoleModule_AddUserRole}" Command="{Binding AddNewUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
+                <Button ToolTip="{lex:Loc UserRoleModule_EditUserRole}" Command="{Binding EditUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
+                <Button ToolTip="{lex:Loc UserRoleModule_RemoveUserRole}" Command="{Binding RemoveUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
+            </StackPanel>
+
+            <Controls:ModuleInfoArea
+                Content="{lex:Loc UserRoleModule}"
+                Description="{lex:Loc UserRoleModule_Description}"
+                DockPanel.Dock="Top"
+                IconFile="{StaticResource Image.UserRole}"/>
+            
+        </DockPanel>
+
+        <ListView Grid.Column="1" ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}" SelectionMode="Extended">
+            <i:Interaction.Behaviors>
+                <behaviors:SelectedItemsBehavior Selections="{Binding SelectedItems}" />
+                <behaviors:MouseDoubleClickBehavior Command="{Binding EditUserRoleCommand}" />
+            </i:Interaction.Behaviors>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="{x:Static res:Strings.Heading_Name}" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="{lex:Loc Heading_Name}" DisplayMemberBinding="{Binding Name}" />
                 </GridView>
             </ListView.View>
         </ListView>
+    </Grid>
 
-    </HeaderedContentControl>
-
+<!-- @@@
+    <i:Interaction.Triggers>
+        <ei:KeyTrigger Key="Insert">
+            <i:InvokeCommandAction Command="{Binding AddNewUserRoleCommand}" />
+        </ei:KeyTrigger>
+        <ei:KeyTrigger Key="Return">
+            <i:InvokeCommandAction Command="{Binding EditUserRoleCommand}" />
+        </ei:KeyTrigger>
+        <ei:KeyTrigger Key="Delete">
+            <i:InvokeCommandAction Command="{Binding RemoveUserRoleCommand}" />
+        </ei:KeyTrigger>
+    </i:Interaction.Triggers>
+-->
+    
 </UserControl>

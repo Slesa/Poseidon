@@ -1,0 +1,38 @@
+﻿Minimum valuable product:
+* Office Framework with loadable modules and database support
+* UMS: manage users with their roles
+* Allow login into office by setting
+* Add shift calculator for existing users with rules, holidays, weekends
+
+
+Todo:
+--------------------------------------
+[Task]	Add OnFocusSelectAll behaviour
+[Task]	How to show dialogs in PRISM?
+[Task]	Revisit Prism navigation journal
+[Task]	Add splash screen and connect to db
+[Task]	Add user login dialog
+[Tools]	Try out StyleCop
+[Tools]	Add clickonce setup according to new features of latest FAKE
+[Style]	Find according colours
+[Style]	Find according fonts, define font sizes
+[Style]	Style buttons with normal, disabled, mouse over, pressed
+[Style]	Style scrollbars
+[Mods]	Consider yahoo currency converter
+[Mods]	Consider weather forecast module
+
+
+In progress:
+--------------------------------------
+[Style]	Review statusbar fading - render transform?
+
+
+
+V 0.1
+--------------------------------------
+[Tools]	Use git flow
+[Tools]	Use latest FAKE version
+[Tools]	Review latest WiX setup.exe
+[Tools]	Use Paket
+[Task]	Remove module references. Use loading per directory
+

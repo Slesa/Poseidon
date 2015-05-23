@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ViewModels="clr-namespace:Poseidon.BackOffice.Module.Ums.ViewModels" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:Poseidon.Ums.Domain.Model;assembly=Poseidon.Ums.Domain.Model"
+    mc:Ignorable="d">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Poseidon.BackOffice.Module.Ums;component/DesignTime/DesignTimeUserRolesViewModel.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <ViewModels:UsersViewModel x:Key="DesignTimeUsersViewModel" d:IsDataSource="True">
+        <ViewModels:UsersViewModel.Users>
+            <model:User Name="Jean-Luc Picard" UserRole="{StaticResource Captain}" />
+            <model:User Name="Worf" UserRole="{StaticResource Commander}" />
+            <model:User Name="Riker" UserRole="{StaticResource LieutenantCmd}" />
+        </ViewModels:UsersViewModel.Users>
+    </ViewModels:UsersViewModel>
+    
+</ResourceDictionary>

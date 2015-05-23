@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="Poseidon.BackOffice.Module.Ums.Views.EditUserRoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ums:EditUserRoleViewModelLocator x:Key="EditUserRoleViewModel" />
+
+            <Style x:Key="LayoutRoot" TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger Property="UIElement.Visibility" Value="Visible">
+                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=_textName}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Path="ViewModel" Source="{StaticResource EditUserRoleViewModel}" />
+    </UserControl.DataContext>
+    <d:UserControl.DataContext>
+        <design:DesignTimeEditUserRoleViewModel />
+    </d:UserControl.DataContext>
+
+
+    <Grid Style="{StaticResource LayoutRoot}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="3"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+            <Image Width="24"
+                   Height="24"
+                   Source="{StaticResource Image.UserRole}" />
+            <TextBlock VerticalAlignment="Center"
+                       FontSize="24"
+                       Text="{Binding TitleText}" />
+        </StackPanel>
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Content="{lex:Loc EditUserRoleView_Name}"
+               Target="{Binding ElementName=_textName}" />
+        <TextBox x:Name="_textName"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Text="{Binding Path=Name,
+                                ValidatesOnDataErrors=true,
+                                UpdateSourceTrigger=PropertyChanged}"
+                 ToolTip="{Binding ElementName=_textName,
+                                   Path=(Validation.Errors).CurrentItem}">
+            <i:Interaction.Behaviors>
+                <Behaviors:SelectAllOnFocusBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
+
+        <Button Grid.Row="3"
+                Grid.ColumnSpan="3"
+                Command="{Binding CommitCommand}"
+                Style="{DynamicResource Style.Edit.Buttons.Ok}" />
+
+    </Grid>
+
+<!-- @@@
+    <i:Interaction.Triggers>
+        <ei:KeyTrigger Key="Enter" Modifiers="Control">
+            <i:InvokeCommandAction Command="{Binding CommitCommand}" />
+        </ei:KeyTrigger>
+    </i:Interaction.Triggers>
+-->
+</UserControl>

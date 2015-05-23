@@ -61,11 +61,56 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditUserRoleView_Name {
+            get {
+                return ResourceManager.GetString("EditUserRoleView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditUserView_Name {
+            get {
+                return ResourceManager.GetString("EditUserView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _User role:.
+        /// </summary>
+        public static string EditUserView_UserRole {
+            get {
+                return ResourceManager.GetString("EditUserView_UserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string Heading_Data {
+            get {
+                return ResourceManager.GetString("Heading_Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Heading_Name {
             get {
                 return ResourceManager.GetString("Heading_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Token type.
+        /// </summary>
+        public static string Heading_TokenType {
+            get {
+                return ResourceManager.GetString("Heading_TokenType", resourceCulture);
             }
         }
         
@@ -151,11 +196,38 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new user....
+        /// </summary>
+        public static string UserModule_AddUser {
+            get {
+                return ResourceManager.GetString("UserModule_AddUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage users of the system, edit their profiles and their rights.
         /// </summary>
         public static string UserModule_Description {
             get {
                 return ResourceManager.GetString("UserModule_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit users....
+        /// </summary>
+        public static string UserModule_EditUser {
+            get {
+                return ResourceManager.GetString("UserModule_EditUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove users....
+        /// </summary>
+        public static string UserModule_RemoveUser {
+            get {
+                return ResourceManager.GetString("UserModule_RemoveUser", resourceCulture);
             }
         }
         
@@ -178,11 +250,38 @@ namespace Poseidon.BackOffice.Module.Ums.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new user role....
+        /// </summary>
+        public static string UserRoleModule_AddUserRole {
+            get {
+                return ResourceManager.GetString("UserRoleModule_AddUserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage user roles, the users can act as.
         /// </summary>
         public static string UserRoleModule_Description {
             get {
                 return ResourceManager.GetString("UserRoleModule_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit user roles....
+        /// </summary>
+        public static string UserRoleModule_EditUserRole {
+            get {
+                return ResourceManager.GetString("UserRoleModule_EditUserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove user roles....
+        /// </summary>
+        public static string UserRoleModule_RemoveUserRole {
+            get {
+                return ResourceManager.GetString("UserRoleModule_RemoveUserRole", resourceCulture);
             }
         }
         

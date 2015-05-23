@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
+                    xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common">
+
+    <ResourceDictionary.MergedDictionaries>
+        <helpers:SharedResourceDictionary Source="Fonts.xaml" />
+        <helpers:SharedResourceDictionary Source="Brushes.xaml" />
+        <helpers:SharedResourceDictionary Source="Images.xaml" />
+        <helpers:SharedResourceDictionary Source="Buttons.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type Controls:ModuleButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Controls:ModuleButton">
+                    <StackPanel Margin="3" Orientation="Vertical">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Border x:Name="border"
+                                    Grid.RowSpan="2"
+                                    Grid.ColumnSpan="2"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="5" />
+                            <Image Grid.RowSpan="2"
+                                   Width="{TemplateBinding IconSize}"
+                                   Height="{TemplateBinding IconSize}"
+                                   Margin="2"
+                                   Source="{TemplateBinding IconFile}" />
+                            <TextBlock Grid.Column="1"
+                                       Margin="2,4,4,2"
+                                       FontFamily="{StaticResource Font.Title}"
+                                       FontSize="{TemplateBinding TitleFontSize}"
+                                       FontWeight="{TemplateBinding TitleFontWeight}"
+                                       Text="{TemplateBinding Content}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="1"
+                                       Margin="2,2,4,4"
+                                       FontFamily="{StaticResource Font.Normal}"
+                                       Text="{TemplateBinding Description}" />
+                        </Grid>
+
+                    </StackPanel>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource Brush.Module.Border}" />
+                <Setter Property="Background" Value="{StaticResource Brush.Module.Highlighted}" />
+                <Setter Property="BorderThickness" Value="2" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style TargetType="{x:Type Controls:ModuleInfoArea}">
+        <Setter Property="MaxWidth" Value="200" />
+        <Setter Property="IconSize" Value="48" />
+        <Setter Property="TitleFontSize" Value="24" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Controls:ModuleInfoArea">
+                    <StackPanel Margin="20" Orientation="Vertical">
+                        <Image Width="{TemplateBinding IconSize}"
+                               Height="{TemplateBinding IconSize}"
+                               Source="{TemplateBinding IconFile}" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   FontSize="{TemplateBinding TitleFontSize}"
+                                   Text="{TemplateBinding Content}" />
+                        <TextBlock Text="{TemplateBinding Description}" TextWrapping="Wrap" />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="Style.ModuleInfo.Commands" TargetType="{x:Type StackPanel}">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="Style.ModuleInfo.Buttons"
+           BasedOn="{StaticResource Buttons.RoundButton}"
+           TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Width" Value="42" />
+        <Setter Property="Height" Value="42" />
+    </Style>
+    <Style x:Key="Style.ModuleInfo.Buttons.Add"
+           BasedOn="{StaticResource Style.ModuleInfo.Buttons}"
+           TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="{StaticResource Images.Add}" />
+    </Style>
+    <Style x:Key="Style.ModuleInfo.Buttons.Edit"
+           BasedOn="{StaticResource Style.ModuleInfo.Buttons}"
+           TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="{StaticResource Images.Edit}" />
+    </Style>
+    <Style x:Key="Style.ModuleInfo.Buttons.Remove"
+           BasedOn="{StaticResource Style.ModuleInfo.Buttons}"
+           TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="{StaticResource Images.Remove}" />
+    </Style>
+
+</ResourceDictionary>
