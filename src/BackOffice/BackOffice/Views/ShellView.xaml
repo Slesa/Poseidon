@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common"
+        xmlns:core="clr-namespace:Poseidon.BackOffice.Core.Views;assembly=Poseidon.BackOffice.Core"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:helpers="clr-namespace:Poseidon.BackOffice.Common.Helpers;assembly=Poseidon.BackOffice.Common"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9,12 +10,15 @@
         xmlns:viewModels="clr-namespace:Poseidon.BackOffice.ViewModels"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:prism="http://www.codeplex.com/prism"
-        xmlns:views="clr-namespace:Poseidon.BackOffice.Core.Views;assembly=Poseidon.BackOffice.Core"
-        Title="Poseidon Backoffice"
+        BorderBrush="Black"
+        FontFamily="{StaticResource Font.Normal}"
+        Icon="pack://application:,,,/Resources/BackOffice.jpg"
         MinWidth="800"
         MinHeight="600"
-        Icon="pack://application:,,,/Resources/BackOffice.jpg"
-        Style="{DynamicResource Style.Shell}"
+        ResizeMode="CanResizeWithGrip"
+        Style="{StaticResource Style.Shell}"
+        Title="Poseidon Backoffice"
+        WindowStyle="None"
         d:DesignHeight="300"
         d:DesignWidth="800"
         mc:Ignorable="d">
@@ -37,23 +41,24 @@
                     Modifiers="Control" />
     </Window.InputBindings>
 
-    <DockPanel LastChildFill="True" Style="{DynamicResource Style.Shell.DockPanel}">
+    <DockPanel LastChildFill="True">
         <ContentControl x:Name="Navigation"
                         DockPanel.Dock="Top"
                         regions:RegionManager.RegionName="{x:Static common:Regions.TagNavigationRegion}" />
         <ContentControl x:Name="StatusBar"
                         DockPanel.Dock="Bottom"
                         regions:RegionManager.RegionName="{x:Static common:Regions.TagStatusBarRegion}" />
-        <ContentControl x:Name="Modules" regions:RegionManager.RegionName="{x:Static common:Regions.TagModulesRegion}" />
+        <ContentControl x:Name="Modules" 
+                        regions:RegionManager.RegionName="{x:Static common:Regions.TagModulesRegion}" />
     </DockPanel>
 
-    <i:Interaction.Triggers>
+    <!--<i:Interaction.Triggers>
         <prism:InteractionRequestTrigger SourceObject="{Binding LoginUserRequest, Mode=OneWay}">
             <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
                 <prism:PopupWindowAction.WindowContent>
-                    <views:LoginView />
+                    <core:LoginView />
                 </prism:PopupWindowAction.WindowContent>
             </prism:PopupWindowAction>
         </prism:InteractionRequestTrigger>
-    </i:Interaction.Triggers>
+    </i:Interaction.Triggers>-->
 </Window>

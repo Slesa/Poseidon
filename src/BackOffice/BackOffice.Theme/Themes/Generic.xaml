@@ -8,8 +8,10 @@
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Brushes.xaml" />
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Images.xaml" />
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Buttons.xaml" />
-        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml" />
+
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Shell.xaml" />
+
+        <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml" />
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.NavigationBar.xaml" />
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.StatusBar.xaml" />
         <helpers:SharedResourceDictionary Source="/Poseidon.BackOffice.Theme;component/Resources/Style.Modules.xaml" />

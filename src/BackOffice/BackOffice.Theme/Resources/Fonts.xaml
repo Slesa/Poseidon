@@ -9,7 +9,8 @@
     <sys:Double x:Key="FontSize.Tooltip">10</sys:Double>
     
     <FontFamily x:Key="Font.Title">Fonts/#Axis</FontFamily>
-    <FontFamily x:Key="Font.Normal">Fonts/#Comic Sans MS</FontFamily>
+    <!--<FontFamily x:Key="Font.Normal">Fonts/#Comic Sans MS</FontFamily>-->
+    <FontFamily x:Key="Font.Normal">Fonts/#Candara</FontFamily>
     <FontFamily x:Key="Font.Hint">Fonts/#Comic Sans MS</FontFamily>
     <FontFamily x:Key="Font.Tooltip">Fonts/#Comic Sans MS</FontFamily>
 
