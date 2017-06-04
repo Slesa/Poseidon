@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBuzzer.cs" />
+    <Compile Include="IChanger.cs" />
     <Compile Include="IDevice.cs" />
     <Compile Include="IDisplay.cs" />
+    <Compile Include="IDrawer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
