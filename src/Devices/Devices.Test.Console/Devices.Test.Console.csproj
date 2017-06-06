@@ -36,10 +36,12 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -48,6 +50,14 @@
     <ProjectReference Include="..\Devices.Core\Devices.Core.csproj">
       <Project>{77a62a98-6ec4-40f6-ae79-9ee2403f561c}</Project>
       <Name>Devices.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devices.GtkUi\Devices.GtkUi.csproj">
+      <Project>{5699D232-6CC0-46B7-AC23-0C0ED1E0217A}</Project>
+      <Name>Devices.GtkUi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devices.Impl\Devices.Impl.csproj">
+      <Project>{0267C78B-9406-47B0-814B-D237916B8815}</Project>
+      <Name>Devices.Impl</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

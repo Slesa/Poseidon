@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBuzzer.cs" />
     <Compile Include="IChanger.cs" />
     <Compile Include="IDevice.cs" />
     <Compile Include="IDisplay.cs" />

@@ -1,4 +1,4 @@
-namespace Devices
+namespace Devices.Core.Contracts
 {
     public interface IBuzzer : IDevice
     {
