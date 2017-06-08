@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devices", "Devices\Devices\Devices.csproj", "{99CAFEB2-8D8F-410D-9B18-40C135449B97}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devices.Impl", "Devices\Devices.Impl\Devices.Impl.csproj", "{0267C78B-9406-47B0-814B-D237916B8815}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devices.GtkUi", "Devices\Devices.GtkUi\Devices.GtkUi.csproj", "{5699D232-6CC0-46B7-AC23-0C0ED1E0217A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devices.Forms", "devices\Devices.Forms\Devices.Forms.csproj", "{6EBD4233-3E74-4610-B894-5F68E9DC2B65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5699D232-6CC0-46B7-AC23-0C0ED1E0217A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5699D232-6CC0-46B7-AC23-0C0ED1E0217A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5699D232-6CC0-46B7-AC23-0C0ED1E0217A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EBD4233-3E74-4610-B894-5F68E9DC2B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EBD4233-3E74-4610-B894-5F68E9DC2B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EBD4233-3E74-4610-B894-5F68E9DC2B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EBD4233-3E74-4610-B894-5F68E9DC2B65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

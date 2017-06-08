@@ -13,11 +13,18 @@ namespace Devices.GtkUi
             this.Build();
         }
 
-        public bool CanFrequency => throw new NotImplementedException();
+        public bool CanFrequency { get {  throw new NotImplementedException();
+            }
+        }
 
-        public bool CanVolume => throw new NotImplementedException();
+        public bool CanVolume { get {  throw new NotImplementedException();
+            }
+        }
 
-        public string Description => throw new NotImplementedException();
+        public string Description
+        {
+            get { throw new NotImplementedException(); }
+        }
 
         public void Beep()
         {
