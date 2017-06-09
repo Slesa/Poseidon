@@ -46,11 +46,11 @@ namespace Devices.Forms
         {
             if (_dialog == null)
             {
-                FormDevice.ExecuteRemote(remote =>
-                {
-                    _dialog = remote.CreateBuzzerDlg();
-                    _dialog.Show();
-                });
+                //FormDevice.ExecuteRemote(remote =>
+                //{
+                //    _dialog = remote.CreateBuzzerDlg();
+                //    //_dialog.Show();
+                //});
                 /*    (FormBuzzerDlg)
                     FormDevice.AppDomain.CreateInstanceAndUnwrap(
                         typeof(FormBuzzerDlg).Assembly.FullName,

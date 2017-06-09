@@ -1,6 +1,4 @@
-﻿using Devices.Core;
-
-namespace Devices.Test.Console
+﻿namespace Devices.Test.Console
 {
     class Program
     {
