@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?><coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"><dc:creator>Microsoft</dc:creator><dc:description>Contains System.Windows.Interactivity for:
-- WPF 4.0, 4.5
--Silverligt 4.0, 5.0
-- Windows Phone 7.1, 8.0
-- Windows Store 8, 8.1</dc:description><dc:identifier>Expression.Blend.Sdk</dc:identifier><version>1.0.2</version><keywords /><dc:subject>NuGet Package Explorer</dc:subject></coreProperties>
