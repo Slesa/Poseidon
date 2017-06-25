@@ -10,6 +10,7 @@ namespace Devices.Test.Console
     enum Verb
     {
         Quit, Exit, List, Start, Stop,
+        Beep, Sound, // Buzzers
         Unknown,
     }
 
@@ -30,8 +31,11 @@ namespace Devices.Test.Console
             _container.ComposeParts(this);
         }
 
-        [Import]
+        [Import(typeof(IDeviceSpace))]
         private IDeviceSpace deviceSpace { get; set; }
+
+        [ImportMany(typeof(ICommands))]
+        private ICommands[] _commandHandlers;
 
         public void Loop()
         {
@@ -54,61 +58,23 @@ namespace Devices.Test.Console
                 var buffer = input.Split(' ');
                 if (buffer.Length < 1) continue;
 
-                var verb = GetVerb(buffer);
-                if (verb == Verb.Unknown)
+                var verb = CommandReader.GetVerb<Verb>(buffer);
+                if (verb == null) { PrintVerbs(); continue; }
+
+                if (verb==Verb.Quit || verb==Verb.Exit)
                 {
-                    PrintVerbs();
+                    StopDevices();
+                    done = true;
                     continue;
                 }
-                var target = GetTarget(buffer);
 
-                switch (verb)
-                {
-                    case Verb.Quit:
-                    case Verb.Exit:
-                        StopDevices();
-                        done = true;
-                        break;
-                    case Verb.Start:
-                        //if (!string.IsNullOrEmpty(target))
-                        //{
-                        //    var devices = deviceSpace.Devices.Where(dev => dev.Name == target).Select(dev => target);
+                Execute(buffer);
 
-                        //}
-                        StartDevices();
-                        break;
-                    case Verb.Stop:
-                        StopDevices();
-                        break;
-                    case Verb.List:
-                        if (!CheckTarget(target))
-                            continue;
-                        switch (target)
-                        {
-                            case Target.Devices:
-                                System.Console.WriteLine("{0, 20}: Description", "Name");
-                                var devices = deviceSpace.Devices;
-                                foreach (var device in devices)
-                                {
-                                    System.Console.WriteLine("{0, 20}: {1}", device.Name, device.Description);
-                                }
-                                break;
-                        }
-                        break;
+                //var target = GetTarget(buffer);
+                /*
                 }
+                */
             }
-        }
-
-        private void StopDevices()
-        {
-            foreach (var device in deviceSpace.Devices)
-                device.Stop();
-        }
-
-        private void StartDevices()
-        {
-            foreach (var device in deviceSpace.Devices)
-                device.Start();
         }
 
         private bool CheckTarget(Target target)
@@ -121,24 +87,45 @@ namespace Devices.Test.Console
             return true;
         }
 
-        Verb GetVerb(string[] buffer)
+        //private bool CheckTargetType(Target target, Target requested)
+        //{
+        //    if (target != requested)
+        //    {
+        //        System.Console.WriteLine("{0} is not of type {1}", target, requested);
+        //        return false;
+        //    }
+        //    return true;
+        //}
+
+        void Execute(string[] input)
         {
-            foreach (var str in buffer)
+            foreach (var handler in _commandHandlers)
             {
-                Verb result;
-                if (Enum.TryParse(str, true, out result))
-                    return result;
+                var result = handler.Handle(input);
+                if (result == Execution.Empty)
+                {
+                    PrintVerbs();
+                    return;
+                }
+                if (result == Execution.Done)
+                {
+                    return;
+                }
             }
-            return Verb.Unknown;
+            PrintVerbs();
+        }
+
+        private void StopDevices()
+        {
+            foreach (var device in deviceSpace.Devices)
+                device.Stop();
         }
 
         void PrintVerbs()
         {
             System.Console.WriteLine("Known verbs:");
-            foreach (var verb in Enum.GetValues(typeof(Verb)))
-            {
-                System.Console.WriteLine("- {0}", verb);
-            }
+            foreach (var handler in _commandHandlers)
+                handler.PrintVerbs();
         }
 
         Target GetTarget(string[] buffer)

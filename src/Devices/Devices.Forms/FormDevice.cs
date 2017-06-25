@@ -56,7 +56,13 @@ namespace Devices.Forms
     {
         private DeviceWindow _deviceWindow;
 
-        public FormBuzzerDlg CreateBuzzerDlg()
+        private FormBuzzerDlg _formBuzzerDlg;
+        public FormBuzzerDlg FormBuzzerDlg
+        {
+            get { return _formBuzzerDlg ?? (_formBuzzerDlg = CreateBuzzerDlg()); }
+        }
+
+        FormBuzzerDlg CreateBuzzerDlg()
         {
             var dlg = new FormBuzzerDlg();
             dlg.MdiParent = _deviceWindow;
@@ -70,7 +76,8 @@ namespace Devices.Forms
             {
                 _deviceWindow = new DeviceWindow();
                 _deviceWindow.Show();
-                CreateBuzzerDlg().Show();
+                _formBuzzerDlg = CreateBuzzerDlg();
+                //CreateBuzzerDlg().Show();
                 Application.Run(_deviceWindow);
             });
         }

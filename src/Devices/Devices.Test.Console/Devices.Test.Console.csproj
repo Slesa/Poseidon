@@ -39,6 +39,10 @@
     <Reference Include="System.ComponentModel.Composition" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuzzerCommands.cs" />
+    <Compile Include="CommandReader.cs" />
+    <Compile Include="DeviceCommands.cs" />
+    <Compile Include="ICommands.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runner.cs" />

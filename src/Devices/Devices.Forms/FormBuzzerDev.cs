@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.Runtime.InteropServices;
 using Devices.Core.Contracts;
 
 namespace Devices.Forms
 {
-    [Export(typeof(Devices.Core.Contracts.IBuzzer))]
+    [Export(typeof(IBuzzer))]
     public class FormBuzzerDev : IBuzzer
     {
         private FormBuzzerDlg _dialog;
@@ -34,35 +35,29 @@ namespace Devices.Forms
 
         public void Beep()
         {
-            throw new NotImplementedException();
+            _dialog.Beep();
         }
 
         public void Sound(int num, int pause)
         {
-            throw new NotImplementedException();
+            _dialog.Sound(num, pause);
         }
 
         public void Start()
         {
             if (_dialog == null)
             {
-                //FormDevice.ExecuteRemote(remote =>
-                //{
-                //    _dialog = remote.CreateBuzzerDlg();
-                //    //_dialog.Show();
-                //});
-                /*    (FormBuzzerDlg)
-                    FormDevice.AppDomain.CreateInstanceAndUnwrap(
-                        typeof(FormBuzzerDlg).Assembly.FullName,
-                        typeof(FormBuzzerDlg).FullName);*/
+                _dialog = FormDevice.RemoteApp.FormBuzzerDlg;
             }
-            //System.Windows.Forms.Application.Run(_dialog);
+            _dialog.ShowRemote();
         }
 
         public void Stop()
         {
-            _dialog.Hide();
-            _dialog = null;
+            if (_dialog != null)
+            {
+                _dialog.HideRemote();
+            }
         }
     }
 }
