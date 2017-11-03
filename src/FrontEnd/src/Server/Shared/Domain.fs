@@ -27,6 +27,10 @@ type Waiter =
 type WaiterList =
   { UserName : string
     Waiters : Waiter list}
+    
+  static member New userName =
+    { UserName = userName
+      Waiters = [] } 
 
 type WaiterListResetDetails =
   { Time : DateTime }
