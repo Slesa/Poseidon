@@ -11,6 +11,8 @@ type Login =
     Password : string
     PasswordId : Guid }
 
+
+// Waiters - Groups
 type WaiterGroup =
   { Id : int64
     Name : string }
@@ -19,6 +21,16 @@ type WaiterGroupList =
   { UserName : string
     Groups : WaiterGroup list }
 
+// Waiters - Teams
+type WaiterTeam =
+  { Id: int64
+    Name : string }
+
+type WaiterTeamList =
+  { UserName : string
+    Teams : WaiterTeam list }
+
+// Waiters
 type Waiter =
   { Id : int64
     Name : string
@@ -34,3 +46,6 @@ type WaiterList =
 
 type WaiterListResetDetails =
   { Time : DateTime }
+
+
+//

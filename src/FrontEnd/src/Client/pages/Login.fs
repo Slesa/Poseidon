@@ -58,14 +58,14 @@ let authUser (login:Login) =
 let authUserCmd login =
   Cmd.ofPromise authUser login GetTokenSuccess AuthError
 
-let init (user:Menu.UserData option) =
+let init (user:Menu.WaiterData option) =
   match user with
   | None ->
       { Login = { UserName = ""; Password = ""; PasswordId = Guid.NewGuid() }
         State = LoggedOut
         ErrorMsg = ""}, Cmd.none
   | Some user ->
-      { Login = { UserName = user.UserName; Password = ""; PasswordId = Guid.NewGuid() }
+      { Login = { UserName = user.Name; Password = ""; PasswordId = Guid.NewGuid() }
         State = LoggedIn user.Token
         ErrorMsg = ""}, Cmd.none
 
@@ -99,7 +99,7 @@ let view model (dispatch: Msg -> unit) =
   match model.State with
   | LoggedIn _ ->
       div [Id "greeting"] [
-        h3 [ ClassName "text-center" ] [ str (sprintf "Hi %s!" model.Login.UserName) ]
+        h3 [ ClassName "text-center" ] [ str (sprintf "You are currently logged on as %s." model.Login.UserName) ]
       ]
 
   | LoggedOut ->

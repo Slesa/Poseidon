@@ -1,0 +1,11 @@
+a {
+    cursor:pointer;
+    color:#9D9D9D;
+}
+
+.app-container {
+    background-color: black;
+    background-image: url("/images/background.jpg");
+    color: white;
+  }
+  

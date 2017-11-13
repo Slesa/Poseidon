@@ -21,15 +21,15 @@ let start databaseType clientPath port =
             homeFolder = Some clientPath
             bindings = [ HttpBinding.create HTTP (IPAddress.Parse "0.0.0.0") port] }
 
-    // let db = Database.getDatabase logger databaseType startupTime
+    let db = Database.getDatabase logger databaseType startupTime
 
     let app =
         choose [
             GET >=> choose [
                 path "/" >=> Files.browseFileHome "index.html"
                 pathRegex @"/(public|js|css|Images)/(.*)\.(css|png|gif|jpg|js|map)" >=> Files.browseHome
-                //path ServerUrls.WaiterList >=> WaiterList.getWaiterList db.LoadWaiterList
-                //path ServerUrls.ResetTime >=> WaiterList.getResetTime db.GetLastResetTime 
+                path ServerUrls.WaiterList >=> WaiterList.getWaiterList db.LoadWaiterList
+                path ServerUrls.ResetTime >=> WaiterList.getResetTime db.GetLastResetTime 
                 ]
 
             POST >=> choose [

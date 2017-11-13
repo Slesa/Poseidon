@@ -10,8 +10,8 @@
     <Compile Include="Pages.fs" />
     <Compile Include="Style.fs" />
     <Compile Include="Utils.fs" />
-    <Compile Include="pages/Menu.fs" />
-    <Compile Include="pages/Home.fs" />
+    <Compile Include="pages/About.fs" />
+    <Compile Include="pages/Menu.fs" /> 
     <Compile Include="pages/WaiterList.fs" />
     <Compile Include="pages/Login.fs" />
     <Compile Include="App.fs" />

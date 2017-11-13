@@ -15,7 +15,7 @@ JsInterop.importSideEffects "whatwg-fetch"
 JsInterop.importSideEffects "babel-polyfill"
 
 type PageModel = 
-  | HomePageModel
+  | AboutPageModel
   | LoginModel of Login.Model
   | WaiterListModel of WaiterList.Model
 
@@ -38,27 +38,27 @@ let urlUpdate (result:Page option) model =
   match result with
   | None ->
       Browser.console.error("Error parsing url: " + Browser.window.location.href)
-      (model, Navigation.modifyUrl (toHash Page.Home) )
+      (model, Navigation.modifyUrl (toHash Page.Login) )
 
   | Some Page.Login ->
-      let m,cmd = Login.init model.Menu.User
+      let m,cmd = Login.init model.Menu.Waiter
       { model with PageModel = LoginModel m }, Cmd.map LoginMsg cmd
   
   | Some Page.WaiterList ->
-      match model.Menu.User with
+      match model.Menu.Waiter with
       | Some user ->
           let m,cmd = WaiterList.init user
           { model with PageModel = WaiterListModel m }, Cmd.map WaiterListMsg cmd
   
-  | Some Page.Home ->
-      { model with PageModel = HomePageModel }, Cmd.none
+  | Some Page.About ->
+      { model with PageModel = AboutPageModel }, Cmd.none
 
 
 let init result =
   let menu,menuCmd = Menu.init()
   let m =
     { Menu = menu
-      PageModel = HomePageModel }
+      PageModel = AboutPageModel }
 
   let m,cmd = urlUpdate result m
   m,Cmd.batch [cmd; menuCmd]
@@ -71,7 +71,7 @@ let update msg model =
       { model with PageModel = LoginModel m }, Cmd.batch [cmd; Navigation.newUrl (toHash Page.Login) ]
 
   | StorageFailure e, _ ->
-      printfn "Unable to access local storag: %A" e
+      printfn "Unable to access local storage: %A" e
       model, []
 
   | LoginMsg msg, LoginModel m ->
@@ -79,19 +79,19 @@ let update msg model =
       let cmd = Cmd.map LoginMsg cmd
       match m.State with
       | Login.LoginState.LoggedIn token ->
-          let newUser : Menu.UserData = { UserName = m.Login.UserName; Token = token }
+          let newUser : Menu.WaiterData = { Name = m.Login.UserName; Token = token }
           let cmd =
-            if model.Menu.User = Some newUser then cmd else 
+            if model.Menu.Waiter = Some newUser then cmd else 
             Cmd.batch [ cmd  
                         Cmd.ofFunc (Utils.save "user") newUser (fun _ -> LoggedIn) StorageFailure ]
           { model with
               PageModel = LoginModel m
-              Menu = { model.Menu with User = Some newUser }}, cmd
+              Menu = { model.Menu with Waiter = Some newUser }}, cmd
 
       | _ ->
           { model with 
               PageModel = LoginModel m
-              Menu = { model.Menu with User = None }}, cmd
+              Menu = { model.Menu with Waiter = None }}, cmd
   | LoginMsg _, _ -> model, Cmd.none
 
   | MenuMsg msg, _ ->
@@ -109,7 +109,7 @@ let update msg model =
   | LoggedIn, _ -> 
       let nextPage = Page.WaiterList
       let m,cmd = urlUpdate (Some nextPage) model
-      match m.Menu.User with
+      match m.Menu.Waiter with
       | Some _ ->
           m, Cmd.batch [cmd; Navigation.newUrl (toHash nextPage) ]
       | None ->
@@ -117,8 +117,8 @@ let update msg model =
 
   | LoggedOut, _ ->
       { model with
-          PageModel = HomePageModel
-          Menu = { model.Menu with User = None } }, Navigation.newUrl(toHash Page.Home)
+          PageModel = AboutPageModel
+          Menu = { model.Menu with Waiter = None } }, Navigation.newUrl(toHash Page.About)
           
   | Logout, _ ->
       model, Cmd.ofFunc Utils.delete "user" (fun _ -> LoggedOut) StorageFailure
@@ -133,8 +133,8 @@ open Client.Style
 /// Constructs the view for a page given the model and dispatcher.
 let viewPage model dispatch =
     match model.PageModel with
-    | HomePageModel ->
-        Home.view ()
+    | AboutPageModel ->
+        About.view ()
 
     | LoginModel m ->
         [ Login.view m (LoginMsg >> dispatch) ]

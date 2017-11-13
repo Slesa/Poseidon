@@ -52,8 +52,8 @@ let loadResetTimeCmd token =
   Cmd.ofPromise getResetTime token FetchedResetTime FetchError
   
 
-let init (user:Menu.UserData) =
-  { WaiterList = WaiterList.New user.UserName
+let init (user:Menu.WaiterData) =
+  { WaiterList = WaiterList.New user.Name
     Token = user.Token
     ResetTime = None
     ErrorMsg = None },
